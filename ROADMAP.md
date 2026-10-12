@@ -98,8 +98,9 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - 🎮 · 🟢
 
 ### 1.4 Jour/nuit
-- Garder la vraie horloge (RTC). Vérifier la teinte et la cohérence des événements horaires.
-- **Vérif** : changer l'heure via debug ; test sur mGBA et VBA-M.
+- Garder la vraie horloge (RTC) et les plages horaires Gen 9 (matin 6 h-10 h, jour 10 h-19 h, soir 19 h-20 h, nuit 20 h-6 h).
+- Restaurer les éclairages nocturnes de Hoenn fournis par expansion (annulation du commit `a5b079d833` : fenêtres, lampes, enseignes ; inclut le correctif d'ombre de Lavarise).
+- **Vérif** : menu debug → Time Functions → Set time of day ; parcourir une ville de nuit.
 - 🎮 · 🟢
 
 ### 1.5 Évolutions dans le résumé *(ajout demandé le 2026-10-12)*
