@@ -33,11 +33,10 @@
 | 2026-10-12 | **CS → objets clés** obtenus aux mêmes moments de l'histoire, sans Pokémon qui connaît l'attaque. |
 | 2026-10-12 | **Vraie horloge (RTC)** pour le jour/nuit. |
 | 2026-10-12 | **Intro RHH retirée** ; crédit RHH dans le README, les notes de version et le générique de fin. |
-| 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le 6ᵉ badge, Île du Sud, combat en duo avec Steven. |
+| 2026-10-12 | **Nouvelles zones** : quelques zones facultatives pendant l'aventure + des zones nouvelles en post-game. Maps dessinées par l'utilisateur (Porymap) **et** par Claude. |
+| 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
 
-1. **ROM de base** : une ROM Émeraude US propre (SHA1 `f3ae088181bf583e55daf962a92bb46f4f1d07b7`), à ranger hors du repo. Bloque l'étape 0.2.
-2. **Nouvelles zones** : uniquement en post-game, ou aussi des zones facultatives pendant l'aventure ?
-3. **Dessin des maps** : l'utilisateur dessine dans Porymap (recommandé), ou Claude génère les maps en recombinant des maps existantes ?
-4. **Level caps** : valeurs à fournir avant l'étape 2.2 (sinon valeurs provisoires).
+1. **ROM de base** : ROM Émeraude US propre attendue dans `~/Documents/pokemon/nabla/rom/emerald_us.gba` (SHA1 `f3ae088181bf583e55daf962a92bb46f4f1d07b7`). Bloque l'étape 0.2.
+2. **Level caps** : valeurs à fournir avant l'étape 2.2 (sinon valeurs provisoires).

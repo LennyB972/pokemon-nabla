@@ -23,12 +23,13 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
   `export DEVKITPRO=/opt/devkitpro DEVKITARM=/opt/devkitpro/devkitARM`
 - Build : `make -j$(sysctl -n hw.ncpu)` → `pokeemerald.gba`. Build de distribution : `make release`.
 - Remotes : `origin` = LennyB972/pokemon-nabla (notre fork), `upstream` = rh-hideout/pokeemerald-expansion.
+- ROM Émeraude US propre (base du patch BPS, hors repo) : `~/Documents/pokemon/nabla/rom/emerald_us.gba`.
 - Distribution : patch BPS jouable sur n'importe quel émulateur (et doit tourner sous Windows comme macOS).
 
 ## Conventions
 
 - **Config** : les réglages se font dans `include/config/*.h`. Toujours modifier la valeur existante plutôt que dupliquer un define, pour que les merges upstream restent simples.
-- **Flags / vars** : prendre dans les `FLAG_UNUSED_*` / `VAR_UNUSED_*` et les renommer avec un nom explicite (ex. `FLAG_NABLA_NUZLOCKE`). Les vars libres sont rares (~29) : les économiser.
+- **Flags / vars** : prendre dans les `FLAG_UNUSED_*` / `VAR_UNUSED_*` et les renommer avec un nom explicite (ex. `FLAG_NABLA_LEVEL_CAPS`). Les vars libres sont rares (~29) : les économiser.
 - **Textes nouveaux** :
   - scripts : `data/text/nabla/*.inc` (un fichier par thème), labels préfixés `gText_Nabla_` ou `Nabla_Text_` ;
   - textes C : regroupés dans un fichier dédié plutôt que dispersés.

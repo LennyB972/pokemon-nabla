@@ -153,9 +153,9 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - 🎮 · 🟢
 
 ### 3.4 Événement Latios et Méga-Évolution *(1er ajout narratif)*
-- **Type** : script + data. Calqué sur ROSA : après le 6ᵉ badge, Steven sur la Route 118 ; Latios apparaît et demande de l'aide ; Île du Sud ; combat en duo avec Steven contre un Admin + un Sbire (le partenaire de combat est natif) ; Latios rejoint l'équipe avec son Latiosite et Steven donne le **Méga-Bracelet**. Puis placement des autres Méga-Gemmes.
+- **Type** : script + data. Inspiré de ROSA : déclenché **après le 5ᵉ badge** (Norman — le joueur obtient Surf juste après, ce qui ouvre l'est de la Route 118), Steven sur la Route 118 ; Latios apparaît et demande de l'aide ; Île du Sud ; combat en duo avec Steven contre un Admin + un Sbire (le partenaire de combat est natif) ; Latios rejoint l'équipe avec son Latiosite et Steven donne le **Méga-Bracelet**. Puis placement des autres Méga-Gemmes.
 - Points à trancher dans la mini-conception : comment rejoindre l'Île du Sud sans le vol en 3D, quelle équipe (Aqua ou Magma), et comment ça s'articule avec le Latios/Latias post-game d'Émeraude (choix à la TV, Passe Éon).
-- **Vérif** : jouer la scène depuis une sauvegarde debug à 6 badges ; Méga-Évolution en combat.
+- **Vérif** : jouer la scène depuis une sauvegarde debug à 5 badges ; Méga-Évolution en combat.
 - 🎮 · 🟡
 
 ---
@@ -188,12 +188,13 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 ## Phase 6 — Monde étendu : nouvelles zones et ajouts narratifs
 
 ### 6.1 Chaîne de création de maps
-- **Fait** : installation et réglage de Porymap, conventions de nommage (`Nabla_*`), création d'une première **petite zone réelle** (tilesets existants) avec PNJ, texte et rencontres, accessible d'abord via le menu debug.
+- **Fait** : réglage de Porymap (installé par toi), conventions de nommage (`Nabla_*`), petit script d'aperçu qui rend une map en PNG (pour relire mes maps sans ouvrir Porymap), puis une première **petite zone réelle** créée par Claude (tilesets existants) avec PNJ, texte et rencontres, accessible d'abord via le menu debug. Elle sert de test : on juge le rendu avant de décider qui dessine quoi.
 - **Vérif** : warp debug vers la zone, rien de cassé ailleurs.
 - 🎮 · 🟡 — ne dépend que de la phase 0 : on peut l'avancer si tu veux commencer à dessiner tôt.
 
 ### 6.2 Plan du monde étendu
-- **Fait** : un document `docs/nabla/world.md` qui liste chaque nouvelle zone (rôle, accès, moment du jeu, rencontres, liens avec l'histoire) et chaque ajout narratif (scène, personnages, déclencheur).
+- **Fait** : un document `docs/nabla/world.md` qui liste chaque nouvelle zone (rôle, accès, moment du jeu, rencontres, liens avec l'histoire, **dessinée par toi ou par Claude**) et chaque ajout narratif (scène, personnages, déclencheur).
+- Deux familles de zones : **quelques zones facultatives pendant l'aventure** et **des zones nouvelles en post-game**.
 - **Vérif** : validé par toi avant toute construction. Nécessite tes idées.
 - ROM : non · 🟢
 
