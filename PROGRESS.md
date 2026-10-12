@@ -52,7 +52,7 @@
 - Étape 1.3 — combats sauvages en double : `WE_DOUBLE_WILD_CHANCE` = 8, `WE_DOUBLE_WILD_REQUIRE_2_MONS` = TRUE (jamais de double avec un seul Pokémon valide). Concerne les herbes et le Surf, pas la pêche ni le Parc Safari. Capture impossible tant que deux Pokémon sauvages sont sur le terrain (comportement Gen 5+, natif). Tests : 0 échec.
 - Étape 1.5 — évolutions dans le résumé (demande de l'utilisateur) :
   - Rien de natif dans le résumé ; le Pokédex HGSS d'expansion sait déjà décrire chaque méthode d'évolution. Ce code a été extrait dans une fonction partagée `BufferEvolutionMethodText` (`src/pokedex_plus_hgss.c`), utilisée par le Pokédex HGSS et par le résumé.
-  - Page INFO : invite « START EVOLUTION » en haut à droite (même emplacement que « START RELEARN » sur les pages d'attaques) ; START fait défiler mémo → évolutions (4 par page) → mémo. Rien pour les Œufs. « Does not evolve. » si aucune évolution.
+  - Page INFO : invite « START EVOLUTION » en haut à droite (même emplacement que « START RELEARN » sur les pages d'attaques) ; START fait défiler mémo → évolutions (3 par page, la 4ᵉ ligne débordait) → mémo. Rien pour les Œufs. « Does not evolve. » si aucune évolution.
   - ⚠️ Merge upstream : l'extraction ré-indente ~290 lignes de `pokedex_plus_hgss.c` ; un conflit est probable si upstream modifie ces textes (résolution : garder notre fonction et y reporter leur changement).
   - Tests : 0 échec.
 

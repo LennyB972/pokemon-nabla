@@ -774,7 +774,7 @@ static const u8 sText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: d
 static const u8 sText_Evolution[] = _("{START_BUTTON} EVOLUTION");
 static const u8 sText_DoesNotEvolve[] = _("Does not evolve.");
 
-#define EVOLUTIONS_PER_PAGE 4
+#define EVOLUTIONS_PER_PAGE 3
 
 static const u8 sMemoNatureTextColor[] = _("{COLOR LIGHT_RED}{SHADOW GREEN}");
 static const u8 sMemoMiscTextColor[] = _("{COLOR WHITE}{SHADOW DARK_GRAY}"); // This is also affected by palettes, apparently
