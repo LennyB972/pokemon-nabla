@@ -4,8 +4,8 @@
 
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
-- **Jeu** : aucune modification pour l'instant (expansion par défaut).
-- **Étape en cours** : 0.1 terminée (documents). Prochaine : 0.2 — distribution et crédits (attend la ROM de base).
+- **Jeu** : expansion par défaut, sans l'intro RHH.
+- **Étape en cours** : 0.2 terminée (patch BPS, README, crédits, intro retirée), en attente de ton test. Prochaine : 1.1 — combat moderne.
 
 ## Journal
 
@@ -21,6 +21,15 @@
 - Note technique : le shell de Claude doit exporter `DEVKITPRO`/`DEVKITARM` avant `make` (voir CLAUDE.md).
 - Retours sur la roadmap intégrés : Nuzlocke retiré, 2 difficultés, phase 6 « Monde étendu » (nouvelles zones + ajouts narratifs) créée, post-game devient la phase 7, événement Latios/Méga-Bracelet façon ROSA en 3.4, crédits RHH en 0.2.
 
+### Session 2 — 2026-10-12
+- Étape 0.2 :
+  - ROM de base vérifiée (SHA1 Émeraude US correct), rangée dans `../rom/`.
+  - Flips compilé depuis les sources officielles (Alcaro/Flips) dans `../tools/flips`.
+  - `make_bps.sh` : build release → patch `build/pokemon_nabla.bps` (16,8 Mo) → ré-application et comparaison SHA1 ✅.
+  - `README.md` remplacé : présentation de Nabla, comment jouer, crédits RHH (pokeemerald-expansion 1.17.2) + pret.
+  - `EXPANSION_INTRO` = FALSE ; code de l'intro absent de la ROM (vérifié dans les symboles).
+  - **À tester par toi** : appliquer le patch sur la ROM propre, le jeu démarre sur l'écran de copyright puis l'intro Game Freak, sans la scène RHH.
+
 ## Décisions prises
 
 | Date | Décision |
@@ -34,9 +43,10 @@
 | 2026-10-12 | **Vraie horloge (RTC)** pour le jour/nuit. |
 | 2026-10-12 | **Intro RHH retirée** ; crédit RHH dans le README, les notes de version et le générique de fin. |
 | 2026-10-12 | **Nouvelles zones** : quelques zones facultatives pendant l'aventure + des zones nouvelles en post-game. Maps dessinées par l'utilisateur (Porymap) **et** par Claude. |
+| 2026-10-12 | En-tête de ROM inchangé (titre `POKEMON EMER`, code `BPEE`) : les émulateurs s'en servent pour détecter la sauvegarde et l'horloge. |
+| 2026-10-12 | README public en anglais (le jeu est en anglais d'abord). |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
 
-1. **ROM de base** : ROM Émeraude US propre attendue dans `~/Documents/pokemon/nabla/rom/emerald_us.gba` (SHA1 `f3ae088181bf583e55daf962a92bb46f4f1d07b7`). Bloque l'étape 0.2.
-2. **Level caps** : valeurs à fournir avant l'étape 2.2 (sinon valeurs provisoires).
+1. **Level caps** : valeurs à fournir avant l'étape 2.2 (sinon valeurs provisoires).
