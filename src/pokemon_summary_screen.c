@@ -29,6 +29,7 @@
 #include "party_menu.h"
 #include "palette.h"
 #include "pokeball.h"
+#include "pokedex_plus_hgss.h"
 #include "pokemon.h"
 #include "pokemon_sprite_visualizer.h"
 #include "pokemon_storage_system.h"
@@ -183,6 +184,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     bool8 lockMovesFlag; // This is used to prevent the player from changing position of moves in a battle or when trading.
     u8 bgDisplayOrder; // Determines the order page backgrounds are loaded while scrolling between them
     bool8 hasRelearnableMoves;
+    u8 evolutionsPage; // 0 shows the trainer memo, then each page lists the evolutions
     u8 windowIds[8];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or Pokémon data
@@ -336,6 +338,7 @@ static void ClearStatLabel(u32 length, u32 statsCoordX, u32 statsCoordY);
 u32 GetAdjustedIvData(struct Pokemon *mon, u32 stat);
 static void UpdateMoveRelearnerState();
 static void UpdateRelearnPrompt(void);
+static void ShowNextInfoMemoPage(void);
 static struct BoxPokemon *GetCurrentBoxmon(void);
 
 #define IS_MOVE_PAGE(page) (page == PSS_PAGE_BATTLE_MOVES || page == PSS_PAGE_CONTEST_MOVES)
@@ -768,6 +771,10 @@ static const TaskFunc sTextPrinterTasks[] =
 };
 
 static const u8 sText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
+static const u8 sText_Evolution[] = _("{START_BUTTON} EVOLUTION");
+static const u8 sText_DoesNotEvolve[] = _("Does not evolve.");
+
+#define EVOLUTIONS_PER_PAGE 4
 
 static const u8 sMemoNatureTextColor[] = _("{COLOR LIGHT_RED}{SHADOW GREEN}");
 static const u8 sMemoMiscTextColor[] = _("{COLOR WHITE}{SHADOW DARK_GRAY}"); // This is also affected by palettes, apparently
@@ -1809,6 +1816,11 @@ static void Task_HandleInput(u8 taskId)
             PlaySE(SE_SELECT);
             CloseSummaryScreen(taskId);
         }
+        else if (JOY_NEW(START_BUTTON) && sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO && !sMonSummaryScreen->summary.isEgg)
+        {
+            PlaySE(SE_SELECT);
+            ShowNextInfoMemoPage();
+        }
         else if (ShouldShowMoveRelearner() && IS_MOVE_PAGE(sMonSummaryScreen->currPageIndex))
         {
             HandleMoveRelearnerInput(taskId);
@@ -2019,6 +2031,10 @@ static void Task_ChangeSummaryMon(u8 taskId)
         if (P_SUMMARY_SCREEN_RENAME && sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
             ShowUtilityPrompt(SUMMARY_MODE_NORMAL);
 
+        sMonSummaryScreen->evolutionsPage = 0;
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
+            UpdateRelearnPrompt();
+
         if (ShouldShowIvEvPrompt() && sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
         {
             sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_STATS;
@@ -2156,6 +2172,8 @@ static void ChangePage(u8 taskId, s8 delta)
     PlaySE(SE_SELECT);
     ClearPageWindowTilemaps(sMonSummaryScreen->currPageIndex);
     currPageIndex = sMonSummaryScreen->currPageIndex += delta;
+    sMonSummaryScreen->evolutionsPage = 0;
+    UpdateRelearnPrompt();
     data[0] = 0;
     if (delta == 1)
         SetTaskFuncWithFollowupFunc(taskId, PssScrollRight, gTasks[taskId].func);
@@ -3315,6 +3333,7 @@ static void PutPageWindowTilemaps(u8 page)
         if (InBattleFactory() == TRUE || InSlateportBattleTent() == TRUE)
             PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_RENTAL);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE);
+        PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_RELEARN);
         break;
     case PSS_PAGE_SKILLS:
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
@@ -4839,17 +4858,89 @@ static inline void ShowUtilityPrompt(s16 mode)
     PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_UTILITY, promptText, stringXPos, 1, 0, 0);
 }
 
+// The START prompt shows "Relearn" on the move pages and "Evolution" on the info page.
 static void UpdateRelearnPrompt(void)
 {
+    const u8 *promptText = NULL;
+
     FillWindowPixelBuffer(PSS_LABEL_WINDOW_PROMPT_RELEARN, PIXEL_FILL(0));
-    if (!sMonSummaryScreen->hasRelearnableMoves)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
+    {
+        if (!sMonSummaryScreen->summary.isEgg)
+            promptText = sText_Evolution;
+    }
+    else if (sMonSummaryScreen->hasRelearnableMoves)
+    {
+        promptText = sText_Relearn;
+    }
+
+    if (promptText != NULL)
+    {
+        s32 promptTextXPos = GetStringRightAlignXOffset(FONT_SMALL, promptText, TILE_WIDTH * sSummaryTemplate[PSS_LABEL_WINDOW_PROMPT_RELEARN].width);
+        PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_PROMPT_RELEARN, promptText, promptTextXPos, 4, 0, 0, FONT_SMALL);
+    }
+    CopyWindowToVram(PSS_LABEL_WINDOW_PROMPT_RELEARN, COPYWIN_GFX);
+}
+
+static u32 CountShownEvolutions(const struct Evolution *evolutions)
+{
+    u32 count = 0;
+
+    for (u32 i = 0; evolutions != NULL && evolutions[i].method != EVOLUTIONS_END; i++)
+    {
+        if (IsSpeciesEnabled(evolutions[i].targetSpecies))
+            count++;
+    }
+    return count;
+}
+
+static void PrintMonEvolutions(u8 windowId)
+{
+    const struct Evolution *evolutions = GetSpeciesEvolutions(sMonSummaryScreen->summary.species);
+    u32 windowWidth = TILE_WIDTH * sPageInfoTemplate[PSS_DATA_WINDOW_INFO_MEMO].width;
+    u32 firstShown = (sMonSummaryScreen->evolutionsPage - 1) * EVOLUTIONS_PER_PAGE;
+    u32 shown = 0, line = 0;
+
+    if (CountShownEvolutions(evolutions) == 0)
+    {
+        PrintTextOnWindowWithFont(windowId, sText_DoesNotEvolve, 0, 1, 0, 0, FONT_SMALL);
         return;
+    }
 
-    const u8 *relearnText;
-    relearnText = sText_Relearn;
+    for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END && line < EVOLUTIONS_PER_PAGE; i++)
+    {
+        if (!IsSpeciesEnabled(evolutions[i].targetSpecies) || shown++ < firstShown)
+            continue;
 
-    s32 relearnTextXPos = GetStringRightAlignXOffset(FONT_SMALL, relearnText, TILE_WIDTH * sSummaryTemplate[PSS_LABEL_WINDOW_PROMPT_RELEARN].width);
-    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_PROMPT_RELEARN, relearnText, relearnTextXPos, 4, 0, 0, FONT_SMALL);
+        BufferEvolutionMethodText(&evolutions[i]);
+        StringCopy(gStringVar1, GetSpeciesName(evolutions[i].targetSpecies));
+        StringAppend(gStringVar1, COMPOUND_STRING(": "));
+        StringAppend(gStringVar1, gStringVar4);
+        StringAppend(gStringVar1, COMPOUND_STRING("."));
+        PrintTextOnWindowWithFont(windowId, gStringVar1, 0, 1 + line * 12, 0, 0, GetFontIdToFit(gStringVar1, FONT_SMALL, 0, windowWidth));
+        line++;
+    }
+}
+
+// START on the info page cycles the memo box through the trainer memo and the pages of evolutions.
+static void ShowNextInfoMemoPage(void)
+{
+    u32 evolutionCount = CountShownEvolutions(GetSpeciesEvolutions(sMonSummaryScreen->summary.species));
+    u32 pageCount = max(1, (evolutionCount + EVOLUTIONS_PER_PAGE - 1) / EVOLUTIONS_PER_PAGE);
+    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
+
+    sMonSummaryScreen->evolutionsPage = (sMonSummaryScreen->evolutionsPage + 1) % (pageCount + 1);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+    if (sMonSummaryScreen->evolutionsPage == 0)
+    {
+        BufferMonTrainerMemo();
+        PrintMonTrainerMemo();
+    }
+    else
+    {
+        PrintMonEvolutions(windowId);
+    }
+    CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 
 static void CB2_ReturnToSummaryScreenFromNamingScreen(void)

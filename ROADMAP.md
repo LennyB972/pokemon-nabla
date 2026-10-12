@@ -102,6 +102,11 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Vérif** : changer l'heure via debug ; test sur mGBA et VBA-M.
 - 🎮 · 🟢
 
+### 1.5 Évolutions dans le résumé *(ajout demandé le 2026-10-12)*
+- **Type** : code. Page INFO du résumé : START fait défiler l'encadré du mémo entre le mémo du dresseur et la liste des évolutions (espèce + méthode, 4 par page). Le texte des méthodes réutilise celui du Pokédex HGSS d'expansion (fonction partagée `BufferEvolutionMethodText`).
+- **Vérif** : résumé d'un starter, d'Évoli (plusieurs pages), d'un Pokémon sans évolution, d'un Œuf.
+- 🎮 · 🟢
+
 ---
 
 ## Phase 2 — Systèmes de jeu
