@@ -36,6 +36,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 - **Textes nouveaux** :
   - scripts : `data/text/nabla/*.inc` (un fichier par thème), labels préfixés `gText_Nabla_` ou `Nabla_Text_` ;
   - textes C : regroupés dans un fichier dédié plutôt que dispersés.
+  - exception : un libellé qui modifie une interface existante reste à côté des textes d'origine de cette interface (ex. options du menu dans `src/option_menu.c`).
   - Ne pas réécrire les textes d'origine sauf demande explicite.
 - **Nouveau contenu** (maps, scripts, trainers) : préfixer ou regrouper sous « Nabla » pour qu'il soit identifiable face au contenu vanilla.
 - **Maps d'origine** : on n'y touche que pour ajouter (entrée vers une nouvelle zone, événement), jamais pour retirer.

@@ -4,8 +4,8 @@
 
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
-- **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; sans l'intro RHH.
-- **Étape en cours** : 1.1 terminée (combat moderne), en attente de ton test. Prochaine : 1.2 — qualité de vie.
+- **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané ; sans l'intro RHH.
+- **Étape en cours** : 1.2 terminée (qualité de vie), en attente de ton test. Prochaine : 1.3 — combats sauvages en double.
 
 ## Journal
 
@@ -39,6 +39,16 @@
   - Inchangé car déjà moderne : tout le reste de `battle.h` est à `GEN_LATEST` ; Dynamax, Téracristal et Capacités Z restent inaccessibles (leurs objets ne sont jamais donnés).
   - Tests : 0 échec ; 33 tests ignorés, tous parce qu'ils supposent la Grêle (attendu). Référence avant changement : 5 417 réussis, 0 échec.
 
+- Étape 1.1 validée par l'utilisateur (types affichés correctement).
+- Étape 1.2 — qualité de vie :
+  - `I_REUSABLE_TMS` = TRUE : les CT ne s'usent plus ; les boutiques ne vendent une CT que si on ne l'a pas déjà (natif).
+  - Multi Exp moderne : `I_EXP_SHARE_ITEM` = GEN_LATEST + flag `FLAG_NABLA_EXP_SHARE` (ex-`FLAG_UNUSED_0x020`). Le Multi Exp donné par M. Rochard devient un objet clé à activer/désactiver depuis le Sac (désactivé à la réception, comportement natif).
+  - Résumé : page Stats → IV → EV avec valeurs chiffrées, et libellé de la page qui change (`P_SUMMARY_SCREEN_IV_EV_*`).
+  - Vitesse du texte : le menu Options propose MID / FAST / INSTANT (SLOW retiré), FAST par défaut (`src/option_menu.c`, `src/new_game.c`). Une ancienne sauvegarde en SLOW s'affiche en MID.
+  - Laissés tels quels (déjà présents dans expansion) : réapprendre des capacités et renommer depuis le résumé.
+  - Correction : la roadmap disait à tort que « Instantané » existait déjà dans le menu.
+  - Tests : 0 échec, mêmes 33 tests ignorés (Grêle) ; 1 test de l'ancien Multi Exp Gen 5 n'est plus compilé (attendu).
+
 ## Décisions prises
 
 | Date | Décision |
@@ -55,6 +65,8 @@
 | 2026-10-12 | En-tête de ROM inchangé (titre `POKEMON EMER`, code `BPEE`) : les émulateurs s'en servent pour détecter la sauvegarde et l'horloge. |
 | 2026-10-12 | README public en anglais (le jeu est en anglais d'abord). |
 | 2026-10-12 | Combat : Gelure, Neige à la place de la Grêle, affection désactivée, types adverses affichés pour les espèces vues. |
+| 2026-10-12 | QoL : CT réutilisables, Multi Exp Gen 6+ (on/off), IV/EV en valeurs chiffrées, texte MID / FAST / INSTANT (FAST par défaut). |
+| 2026-10-12 | Les cases non cochées de VISION.md = « je te laisse choisir » : Claude tranche les petits réglages et les signale ; les choix qui changent l'expérience de jeu restent soumis à l'utilisateur. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes

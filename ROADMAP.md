@@ -41,7 +41,7 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 | Dex national Gen 1-9 | ✅ déjà actif | Tout est activé. **À concevoir** : où trouver ces espèces (tables de rencontres) |
 | Évolutions par échange remplacées | ✅ presque natif | Chaque évolution par échange a déjà une alternative : **Fil de Liaison** ou objet utilisé depuis le sac. Seuls Carabing/Escargaume restent à traiter. Il faut surtout rendre ces objets **trouvables** |
 | Course en intérieur | ✅ déjà actif | `OW_RUNNING_INDOORS` = GEN_LATEST |
-| Texte rapide / instantané | ✅ déjà là | Option « Instant » dans le menu Options |
+| Texte rapide / instantané | 🛠️ code léger | La vitesse instantanée existe dans le moteur mais pas dans le menu Options → ajoutée en 1.2 |
 | Multi Exp moderne | ✅ config | `I_EXP_SHARE_ITEM` ≥ GEN_6 : le Multi Exp (donné par M. Rochard) devient un objet clé qui couvre toute l'équipe |
 | CT réutilisables | ✅ config | `I_REUSABLE_TMS` |
 | CS en objets clés | ❌ code | Rien de natif. Voir étape 3.2 |
@@ -88,8 +88,8 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - 🎮 · 🟢
 
 ### 1.2 Qualité de vie
-- CT réutilisables, Multi Exp Gen 6+, IV/EV dans le résumé, menu repousse, etc.
-- **Vérif** : quickstart + menu debug : utiliser une CT deux fois, ouvrir le résumé.
+- CT réutilisables, Multi Exp Gen 6+, IV/EV dans le résumé, vitesse de texte Moyen / Rapide / Instantané.
+- **Vérif** : quickstart + menu debug : utiliser une CT deux fois, ouvrir le résumé, changer la vitesse du texte.
 - 🎮 · 🟢 · ⚠️ Certaines options changent le format de sauvegarde : on les fixe **avant** toute bêta publique.
 
 ### 1.3 Combats sauvages en double
