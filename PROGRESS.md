@@ -4,8 +4,8 @@
 
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
-- **Jeu** : expansion par défaut, sans l'intro RHH.
-- **Étape en cours** : 0.2 terminée (patch BPS, README, crédits, intro retirée), en attente de ton test. Prochaine : 1.1 — combat moderne.
+- **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; sans l'intro RHH.
+- **Étape en cours** : 1.1 terminée (combat moderne), en attente de ton test. Prochaine : 1.2 — qualité de vie.
 
 ## Journal
 
@@ -30,6 +30,15 @@
   - `EXPANSION_INTRO` = FALSE ; code de l'intro absent de la ROM (vérifié dans les symboles).
   - **À tester par toi** : appliquer le patch sur la ROM propre, le jeu démarre sur l'écran de copyright puis l'intro Game Freak, sans la scène RHH.
 
+- Étape 0.2 validée par l'utilisateur (le jeu se lance normalement).
+- Étape 1.1 — combat moderne (`include/config/battle.h`) :
+  - `B_USE_FROSTBITE` = TRUE : la Gelure remplace le Gel (VISION).
+  - `B_AFFECTION_MECHANICS` = FALSE : plus d'effets d'affection en combat (comme Gen 9).
+  - `B_PREFERRED_ICE_WEATHER` = SNOW : Grêle et Alerte Neige donnent la Neige (comme Gen 9).
+  - `B_SHOW_TYPES` = SEEN : types de l'adversaire affichés si l'espèce a déjà été vue (même règle que l'efficacité).
+  - Inchangé car déjà moderne : tout le reste de `battle.h` est à `GEN_LATEST` ; Dynamax, Téracristal et Capacités Z restent inaccessibles (leurs objets ne sont jamais donnés).
+  - Tests : 0 échec ; 33 tests ignorés, tous parce qu'ils supposent la Grêle (attendu). Référence avant changement : 5 417 réussis, 0 échec.
+
 ## Décisions prises
 
 | Date | Décision |
@@ -45,6 +54,7 @@
 | 2026-10-12 | **Nouvelles zones** : quelques zones facultatives pendant l'aventure + des zones nouvelles en post-game. Maps dessinées par l'utilisateur (Porymap) **et** par Claude. |
 | 2026-10-12 | En-tête de ROM inchangé (titre `POKEMON EMER`, code `BPEE`) : les émulateurs s'en servent pour détecter la sauvegarde et l'horloge. |
 | 2026-10-12 | README public en anglais (le jeu est en anglais d'abord). |
+| 2026-10-12 | Combat : Gelure, Neige à la place de la Grêle, affection désactivée, types adverses affichés pour les espèces vues. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
