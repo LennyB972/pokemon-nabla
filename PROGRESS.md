@@ -59,7 +59,7 @@
 - Étape 1.4 — jour/nuit :
   - Config déjà correcte : `OW_ENABLE_DNS` = TRUE, vraie horloge, plages horaires Gen 9.
   - Éclairages nocturnes restaurés (accord de l'utilisateur) : patch inverse du commit expansion `a5b079d833` (93 fichiers : objets lumière sur les maps de villes, palettes `.pal`/`.pla`, tilesets, `headers.h`, correctif des Lavaridge old ladies). Appliqué sans conflit avant toute modification de map.
-  - Rappel : l'heure du jeu = horloge de la cartouche + réglage de la pendule de la chambre du joueur au début (comme Émeraude).
+  - Heure du jeu = heure de l'appareil (horloge de l'émulateur) + décalage choisi à la pendule de la chambre au début. Expansion (PR #7860) ouvre cette pendule sur l'heure de l'appareil (Émeraude démarrait à 10:00) : valider sans toucher = heure réelle. Scène d'origine conservée, aucun code à changer.
   - Build OK. Pas de `make check` : seules des données de maps/tilesets ont changé.
 
 ## Décisions prises
