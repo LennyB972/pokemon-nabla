@@ -123,9 +123,8 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Valeurs** : table `sLevelCapFlagMap` en tête de `src/caps.c` (une ligne par badge), à modifier librement.
 - 🎮 · 🟢
 
-### 2.3 Évolutions par échange
-- **Type** : data. Carabing ↔ Escargaume passent au Fil de Liaison ; placement du Fil de Liaison et des objets d'évolution (Peau Métal, Écaille Draco, Protecteur…) sur les maps ou en boutique.
-- **Vérif** : debug : Kadabra + Fil de Liaison → Alakazam ; Carabing + Fil de Liaison → Lançargot.
+### 2.3 Évolutions par échange ✅
+- **Type** : data + script. Carabing ↔ Escargaume évoluent aussi avec le Fil de Liaison. Fil de Liaison vendu dans les 11 Boutiques Pokémon dès le 3ᵉ badge (critère natif `shopCriteriaFunc`). Nouveau vendeur au 3ᵉ étage du Centre Commercial de Nénucrique : tous les objets d'évolution par échange.
 - 🎮 · 🟢
 
 ### 2.4 Style de combat « Choix à l'aveugle »

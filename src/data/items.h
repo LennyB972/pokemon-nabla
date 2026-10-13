@@ -15512,6 +15512,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_LinkingCord,
         .iconPalette = gItemIconPalette_LinkingCord,
+        .shopCriteriaFunc = ShopCriteriaByThreeBadges,
     },
 
     [ITEM_PEAT_BLOCK] =

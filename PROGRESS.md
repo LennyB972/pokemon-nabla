@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 2.2 terminée (level caps), en attente de ton test. Prochaine : 2.3 — évolutions par échange.
+- **Étape en cours** : 2.3 terminée (évolutions par échange), en attente de ton test. Prochaine : 2.4 — style de combat « Choix à l'aveugle ».
 
 ## Journal
 
@@ -76,6 +76,13 @@
   - Valeurs (= Pokémon le plus fort de chaque Champion d'Émeraude) : 15, 19, 24, 29, 31, 33, 42, 46, puis 58 jusqu'au titre de Maître, aucun cap ensuite. Modifiables dans `sLevelCapFlagMap`.
   - Effets natifs du cap : plus d'XP en combat, Super Bonbon refusé, Bonbons Exp. et Pension plafonnés.
   - Tests : 0 échec.
+- Étape 2.2 validée par l'utilisateur.
+- Étape 2.3 — évolutions par échange :
+  - Carabing/Escargaume : `EVO_ITEM ITEM_LINKING_CORD` ajouté (l'échange reste possible) dans `gen_5_families.h`.
+  - Fil de Liaison ajouté à la fin des listes des 11 Boutiques Pokémon de Hoenn, visible seulement à partir de 3 badges (`ShopCriteriaByThreeBadges` dans `src/shop_criteria.c`, champ `.shopCriteriaFunc` de l'objet).
+  - Nouveau vendeur (sprite d'employé de Boutique) au 3ᵉ étage du Centre Commercial de Nénucrique, derrière le comptoir entre les deux vendeuses (case 9,2) : Fil de Liaison, Roche Royale, Peau Métal, Écaille Draco, Améliorator, CD Douteux, Protecteur, Électriseur, Magmariseur, Tissu Fauche, Dent/Écaille Océan, Bel'Écaille, Sachet Senteur, Chantibonbon. Script et texte dans `data/scripts/nabla/` et `data/text/nabla/evolution_items.inc`.
+  - Prix natifs d'expansion (Fil de Liaison 8 000, Roche Royale 10 000, la plupart 2 000-4 000) : à ajuster si trop chers.
+  - Tests : 0 échec.
 
 ## Décisions prises
 
@@ -101,4 +108,6 @@
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
+
+- Prix du Fil de Liaison (8 000 dès le 3ᵉ badge) : à garder ou baisser ?
 

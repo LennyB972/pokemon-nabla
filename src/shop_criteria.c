@@ -8,7 +8,7 @@
 static EWRAM_DATA const u16 *sDynamicShopItemListRef = NULL;
 
 // Remove the UNUSED if you'll use the functions!
-static UNUSED bool32 ShopCriteriaByBadgeCount(u32 count);
+static bool32 ShopCriteriaByBadgeCount(u32 count);
 static UNUSED bool32 ShopCriteriaByFlag(u32 flagId);
 static UNUSED bool32 ShopCriteriaByVar(u32 varId, u32 varValue);
 
@@ -46,7 +46,12 @@ void TryFreeDynamicShopItemList(const u16 **ogItemList)
 
 // Add new Criterias below!
 
-static UNUSED bool32 ShopCriteriaByBadgeCount(u32 count)
+bool32 ShopCriteriaByThreeBadges(enum Item item)
+{
+    return ShopCriteriaByBadgeCount(3);
+}
+
+static bool32 ShopCriteriaByBadgeCount(u32 count)
 {
     u32 badgeCount = 0;
 

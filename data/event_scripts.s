@@ -1742,3 +1742,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	@ Pokémon Nabla
 	.include "data/scripts/nabla/new_game_options.inc"
 	.include "data/text/nabla/new_game_options.inc"
+	.include "data/scripts/nabla/evolution_items.inc"
+	.include "data/text/nabla/evolution_items.inc"
