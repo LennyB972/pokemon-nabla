@@ -5,7 +5,8 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 2.3 terminée (évolutions par échange), en attente de ton test. Prochaine : 2.4 — style de combat « Choix à l'aveugle ».
+- **Étape en cours** : 2.4 + ajouts terminés (style BLIND, messages de level cap, sac), en attente de ton test. Prochaine : 3.1 — Pokémon qui suivent.
+- **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
 
@@ -83,6 +84,17 @@
   - Nouveau vendeur (sprite d'employé de Boutique) au 3ᵉ étage du Centre Commercial de Nénucrique, derrière le comptoir entre les deux vendeuses (case 9,2) : Fil de Liaison, Roche Royale, Peau Métal, Écaille Draco, Améliorator, CD Douteux, Protecteur, Électriseur, Magmariseur, Tissu Fauche, Dent/Écaille Océan, Bel'Écaille, Sachet Senteur, Chantibonbon. Script et texte dans `data/scripts/nabla/` et `data/text/nabla/evolution_items.inc`.
   - Prix natifs d'expansion (Fil de Liaison 8 000, Roche Royale 10 000, la plupart 2 000-4 000) : à ajuster si trop chers.
   - Tests : 0 échec.
+- Étape 2.3 : l'utilisateur ne s'est pas prononcé sur le prix du Fil de Liaison (question ouverte).
+- Étape 2.4 — style « Choix à l'aveugle » :
+  - `OPTIONS_BATTLE_STYLE_BLIND` (= 2) ; `optionsBattleStyle` passe à 2 bits dans SaveBlock2 (pris sur le padding, taille inchangée ; les options Animations/Style peuvent se décaler une fois sur les anciennes sauvegardes).
+  - Menu Options : SHIFT / SET / BLIND. Script `BattleScript_FaintedMon…` : en BLIND, nouveau message `STRINGID_ENEMYABOUTTOSWITCHPKMNBLIND` sans le nom du Pokémon (le hack d'Illusion n'est pas activé dans ce cas).
+- Ajouts demandés par l'utilisateur (même lot de tests) :
+  - Combat : `STRINGID_PKMNATLEVELCAP` « X can't gain Exp. Points past the level cap! » au lieu de « gained 0 Exp. Points ».
+  - Super Bonbon / Bonbons Exp. au cap : « X can't level up past the level cap! » (`gText_PkmnCantLevelPastCap`), seulement si un vrai cap (< 100) est atteint.
+  - Sac : `FREE_MYSTERY_EVENT_BUFFERS` = TRUE (1 104 octets ; distributions e-Reader/câble impossibles sur émulateur) ; poches Objets 60, Objets rares 50, Poké Balls 30, Baies 70, CT 64 (inchangé).
+  - Sac : flèche haut sur la 1ʳᵉ ligne → dernière ligne, flèche bas sur la dernière → première (`src/item_menu.c`).
+  - `test/save.c` : taille SaveBlock1 mise à jour (14 916 dans le build de test) ; ce test sert désormais de garde-fou de compatibilité.
+  - Tests : 0 échec après mise à jour de `test/save.c`.
 
 ## Décisions prises
 
@@ -103,6 +115,7 @@
 | 2026-10-12 | QoL : CT réutilisables, Multi Exp Gen 6+ (on/off), IV/EV en valeurs chiffrées, texte MID / FAST / INSTANT (FAST par défaut). |
 | 2026-10-12 | Les cases non cochées de VISION.md = « je te laisse choisir » : Claude tranche les petits réglages et les signale ; les choix qui changent l'expérience de jeu restent soumis à l'utilisateur. |
 | 2026-10-13 | Éclairages nocturnes de Hoenn restaurés (patch officiel d'expansion). |
+| 2026-10-13 | Mémoire des Événements Mystère libérée pour agrandir le sac ; les sauvegardes de test antérieures sont abandonnées. |
 | 2026-10-13 | Level caps : cap dur, sans bonus d'XP ; valeurs = as des Champions, modifiables dans `src/caps.c`. |
 | 2026-10-13 | Menu de début de partie dans le camion arrêté, juste avant la sortie ; choix définitifs. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |

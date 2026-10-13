@@ -27,6 +27,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 - ROM Émeraude US propre (base du patch BPS, hors repo) : `../rom/emerald_us.gba`. Flips (compilé depuis les sources) : `../tools/flips`.
 - Patch : `./make_bps.sh` → build release + `build/pokemon_nabla.bps`, vérifié par ré-application.
 - Tests automatiques : `make check` (~8 min, à lancer après chaque changement de config ou de code de combat). Attendu : 0 `FAIL`. Les `ASSUMPTION_FAIL` sont des tests ignorés parce qu'une de nos options contredit leur hypothèse (ex. Grêle → Neige) : à vérifier, mais normaux.
+- Sauvegarde : `test/save.c` contient les tailles de nos blocs de sauvegarde. Si un test « is backwards compatible » échoue, c'est qu'un changement casse les sauvegardes : vérifier qu'il est voulu, puis mettre à jour la taille (et le signaler).
 - Test headless : `tools/mgba/mgba-rom-test-mac` n'a pas de Lua (pas de captures d'écran) ; les tests visuels se font par l'utilisateur.
 - Distribution : patch BPS jouable sur n'importe quel émulateur (et doit tourner sous Windows comme macOS).
 

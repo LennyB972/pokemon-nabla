@@ -127,10 +127,15 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Type** : data + script. Carabing ↔ Escargaume évoluent aussi avec le Fil de Liaison. Fil de Liaison vendu dans les 11 Boutiques Pokémon dès le 3ᵉ badge (critère natif `shopCriteriaFunc`). Nouveau vendeur au 3ᵉ étage du Centre Commercial de Nénucrique : tous les objets d'évolution par échange.
 - 🎮 · 🟢
 
-### 2.4 Style de combat « Choix à l'aveugle »
-- **Type** : code. 3ᵉ valeur dans le menu Options, message « L'adversaire va envoyer un Pokémon. Changer ? » sans nom.
-- **Vérif** : combat dresseur dans les 3 modes.
-- 🎮 · 🟡
+### 2.4 Style de combat « Choix à l'aveugle » ✅
+- **Type** : code. Menu Options : SHIFT / SET / BLIND (`OPTIONS_BATTLE_STYLE_BLIND`, réglage sur 2 bits). En BLIND, la proposition de changer de Pokémon après un K.O. ne nomme pas le Pokémon adverse.
+- 🎮 · 🟢
+
+### 2.5 Petits ajouts demandés ✅
+- Messages explicites au level cap (combat, Super Bonbon / Bonbons Exp.).
+- Poches du sac agrandies (Objets 60, Objets rares 50, Poké Balls 30, Baies 70), mémoire des Événements Mystère libérée.
+- Curseur du sac qui passe du haut au bas d'une poche (et inversement).
+- 🎮 · 🟢
 
 ---
 
