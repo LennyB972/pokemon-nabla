@@ -118,10 +118,9 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - La difficulté utilise le système natif (`B_VAR_DIFFICULTY` + `setdifficulty`) : cela couvre l'ancienne étape 2.5.
 - 🎮 · 🟢
 
-### 2.2 Level caps
-- **Type** : config + code léger. Cap par badge (`LEVEL_CAP_FLAG_LIST`), désactivé si l'option est sur « non » ; Super Bonbon bloqué au cap.
-- **Valeurs définies à la main par toi** dans `src/caps.c` (on met des valeurs provisoires en attendant).
-- **Vérif** : debug : au cap → pas d'XP ; badge obtenu → cap relevé ; option « non » → aucun cap.
+### 2.2 Level caps ✅
+- **Type** : config + code léger. Cap dur par badge (`LEVEL_CAP_FLAG_LIST`), actif seulement si `FLAG_NABLA_LEVEL_CAPS` ; Super Bonbon et Bonbons Exp. bloqués au cap ; pas de bonus d'XP sous le cap.
+- **Valeurs** : table `sLevelCapFlagMap` en tête de `src/caps.c` (une ligne par badge), à modifier librement.
 - 🎮 · 🟢
 
 ### 2.3 Évolutions par échange

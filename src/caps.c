@@ -7,6 +7,7 @@
 
 u32 GetCurrentLevelCap(void)
 {
+    // Pokémon Nabla: level cap until each flag is set. Edit the levels here.
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_BADGE01_GET, 15},
@@ -21,6 +22,10 @@ u32 GetCurrentLevelCap(void)
     };
 
     u32 i;
+
+    // Level caps are optional, chosen at the start of the game
+    if (!FlagGet(FLAG_NABLA_LEVEL_CAPS))
+        return MAX_LEVEL;
 
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
     {

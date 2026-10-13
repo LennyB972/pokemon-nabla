@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 2.1 terminée (menu de début de partie), en attente de ton test. Prochaine : 2.2 — level caps.
+- **Étape en cours** : 2.2 terminée (level caps), en attente de ton test. Prochaine : 2.3 — évolutions par échange.
 
 ## Journal
 
@@ -69,6 +69,13 @@
   - Level caps : `FLAG_NABLA_LEVEL_CAPS` (ex-`FLAG_UNUSED_0x021`), sans effet avant 2.2.
   - Premiers fichiers Nabla : `data/scripts/nabla/new_game_options.inc`, `data/text/nabla/new_game_options.inc`. Largeur des lignes vérifiée (≤ 201 px sur 208).
   - Tests : 0 échec.
+- Étape 2.1 validée par l'utilisateur.
+- Étape 2.2 — level caps :
+  - `B_EXP_CAP_TYPE` = HARD, `B_LEVEL_CAP_TYPE` = FLAG_LIST, `B_RARE_CANDY_CAP` = TRUE, `B_LEVEL_CAP_EXP_UP` = FALSE (choix de l'utilisateur).
+  - `GetCurrentLevelCap` (`src/caps.c`) renvoie `MAX_LEVEL` si `FLAG_NABLA_LEVEL_CAPS` n'est pas posé.
+  - Valeurs (= Pokémon le plus fort de chaque Champion d'Émeraude) : 15, 19, 24, 29, 31, 33, 42, 46, puis 58 jusqu'au titre de Maître, aucun cap ensuite. Modifiables dans `sLevelCapFlagMap`.
+  - Effets natifs du cap : plus d'XP en combat, Super Bonbon refusé, Bonbons Exp. et Pension plafonnés.
+  - Tests : 0 échec.
 
 ## Décisions prises
 
@@ -89,9 +96,9 @@
 | 2026-10-12 | QoL : CT réutilisables, Multi Exp Gen 6+ (on/off), IV/EV en valeurs chiffrées, texte MID / FAST / INSTANT (FAST par défaut). |
 | 2026-10-12 | Les cases non cochées de VISION.md = « je te laisse choisir » : Claude tranche les petits réglages et les signale ; les choix qui changent l'expérience de jeu restent soumis à l'utilisateur. |
 | 2026-10-13 | Éclairages nocturnes de Hoenn restaurés (patch officiel d'expansion). |
+| 2026-10-13 | Level caps : cap dur, sans bonus d'XP ; valeurs = as des Champions, modifiables dans `src/caps.c`. |
 | 2026-10-13 | Menu de début de partie dans le camion arrêté, juste avant la sortie ; choix définitifs. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
 
-1. **Level caps** : valeurs à fournir avant l'étape 2.2 (sinon valeurs provisoires).
