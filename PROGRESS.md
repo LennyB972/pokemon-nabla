@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 3.1 terminée (Pokémon qui suivent), en test par l'utilisateur au fil de ses parties. Prochaine : 3.2 — CS en objets clés.
+- **Étape en cours** : 3.2 + course automatique terminées, en attente de ton test. Prochaine : 3.3 — objets de progression.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -101,6 +101,19 @@
   - Pas de flag permanent réservé : pour corriger une cinématique, `FLAG_TEMP_HIDE_FOLLOWER` ou `hidefollower` (natifs).
   - Coût : ROM 79,67 % (+0,01 pt), EWRAM inchangée. Tests : 0 échec.
   - Bugs de cinématique à corriger au fil des signalements (liste ci-dessous).
+- Étape 3.1 : premiers tests OK selon l'utilisateur.
+- Étape 3.2 — CS sans slot :
+  - `PlayerHasHMForFieldMove` (`src/field_move.c`) : vrai si la CS correspondante (ITEM_HM01-08) est dans le Sac.
+  - `checkfieldmove` (`src/scrcmd.c`) : si aucun Pokémon ne connaît l'attaque mais que la CS est possédée, le premier Pokémon non-Œuf est choisi (il fait l'animation, c'est le suiveur).
+  - `PartyHasMonWithSurf` : vrai si la CS Surf est possédée. Cascade et Plongée passent par `checkfieldmove`.
+  - Menu de l'équipe : Vol et Flash ajoutés à chaque Pokémon non-Œuf si la CS est possédée et débloquée, sans doublon et en gardant la place pour Échanger/Objet/Retour (8 actions max).
+  - `P_CAN_FORGET_HIDDEN_MOVE` = TRUE.
+  - Choix : la CS elle-même sert d'« objet clé » (pas de nouveaux objets ni d'icônes).
+- Course automatique (demande de l'utilisateur, menu défilant choisi par lui) :
+  - Menu Options défilant : 7 lignes visibles, flèches de défilement natives (`AddScrollIndicatorArrowPairParameterized`), objets autorisés dans la fenêtre (WINOUT_OBJ).
+  - Nouvelle ligne RUNNING : HOLD / AUTO, stockée dans `optionsAutoRun` (1 bit du padding de SaveBlock2, taille inchangée).
+  - `field_player_avatar.c` : on court si « B tenu » est différent de « AUTO ».
+- Tests : 0 échec.
 
 ## Bugs connus
 

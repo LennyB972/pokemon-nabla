@@ -146,10 +146,13 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Vérif** : parties de test de l'utilisateur ; chaque bug signalé = une petite correction.
 - 🎮 · 🟡
 
-### 3.2 CS en objets clés
-- **Type** : code + script. Chaque CS devient un **objet clé** obtenu au même moment de l'histoire ; l'action de terrain marche si objet + badge, sans Pokémon qui connaît l'attaque. Les CS restent des CT normales pour qui veut l'attaque en combat.
-- **Vérif** : parcours Coupe / Éclate-Roc / Force / Surf / Cascade / Plongée / Flash / Vol sans aucun Pokémon compatible.
-- 🎮 · 🟡
+### 3.2 CS sans slot d'attaque ✅
+- **Type** : code. Posséder la CS dans le Sac (+ badge) suffit : le premier Pokémon de l'équipe (hors Œuf) l'utilise sur le terrain. Coupe, Éclate-Roc, Force, Surf, Cascade, Plongée via A ; Vol et Flash proposés dans le menu de chaque Pokémon. Les attaques de CS peuvent être oubliées.
+- 🎮 · 🟢
+
+### 3.2 bis Course automatique ✅ *(ajout demandé)*
+- Menu Options défilant (flèches) avec une ligne RUNNING : HOLD / AUTO. En AUTO, le joueur court par défaut et marche en tenant B.
+- 🎮 · 🟢
 
 ### 3.3 Objets de progression
 - **Type** : data. Aromates, Capsules Talent, Bonbons Exp. sur les maps et dans quelques boutiques (selon les badges).
