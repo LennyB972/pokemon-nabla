@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 2.4 + ajouts terminés (style BLIND, messages de level cap, sac), en attente de ton test. Prochaine : 3.1 — Pokémon qui suivent.
+- **Étape en cours** : 3.1 terminée (Pokémon qui suivent), en test par l'utilisateur au fil de ses parties. Prochaine : 3.2 — CS en objets clés.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -95,6 +95,17 @@
   - Sac : flèche haut sur la 1ʳᵉ ligne → dernière ligne, flèche bas sur la dernière → première (`src/item_menu.c`).
   - `test/save.c` : taille SaveBlock1 mise à jour (14 916 dans le build de test) ; ce test sert désormais de garde-fou de compatibilité.
   - Tests : 0 échec après mise à jour de `test/save.c`.
+- Étape 2.4 et ajouts validés par l'utilisateur.
+- Étape 3.1 — Pokémon qui suivent :
+  - `OW_FOLLOWERS_ENABLED` = TRUE ; autres options laissées par défaut (Ball d'origine, rebond, gros sprites cachés en intérieur, retour dans la Ball si un PNJ le percute).
+  - Pas de flag permanent réservé : pour corriger une cinématique, `FLAG_TEMP_HIDE_FOLLOWER` ou `hidefollower` (natifs).
+  - Coût : ROM 79,67 % (+0,01 pt), EWRAM inchangée. Tests : 0 échec.
+  - Bugs de cinématique à corriger au fil des signalements (liste ci-dessous).
+
+## Bugs connus
+
+| Lieu | Symptôme | Statut |
+|---|---|---|
 
 ## Décisions prises
 

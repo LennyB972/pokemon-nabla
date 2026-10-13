@@ -141,10 +141,10 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 
 ## Phase 3 — Monde et objets
 
-### 3.1 Pokémon qui suivent
-- **Type** : config + correctifs de scripts.
-- **Vérif** : parcourir les cinématiques clés (Team Aqua/Magma, Mont Chimnée, Pilier Céleste, Musée…) via sauvegardes debug.
-- 🎮 · 🟡 — bugs visuels possibles en cinématique ; corrigés au fil de l'eau.
+### 3.1 Pokémon qui suivent ✅ (corrections au fil des tests)
+- **Type** : config (`OW_FOLLOWERS_ENABLED`). Pour une cinématique qui pose problème : `setflag FLAG_TEMP_HIDE_FOLLOWER` (natif, remis à zéro au changement de map) ou `hidefollower`.
+- **Vérif** : parties de test de l'utilisateur ; chaque bug signalé = une petite correction.
+- 🎮 · 🟡
 
 ### 3.2 CS en objets clés
 - **Type** : code + script. Chaque CS devient un **objet clé** obtenu au même moment de l'histoire ; l'action de terrain marche si objet + badge, sans Pokémon qui connaît l'attaque. Les CS restent des CT normales pour qui veut l'attaque en combat.
