@@ -1324,6 +1324,21 @@ static void Task_BagMenu_HandleInput(u8 taskId)
             break;
         }
 
+        // Wrap around between the first and the last entry of the pocket
+        if (JOY_NEW(DPAD_UP | DPAD_DOWN))
+        {
+            struct ListMenu *list = (void *)gTasks[tListTaskId].data;
+            u32 position = list->scrollOffset + list->selectedRow;
+            u32 lastPosition = list->template.totalItems - 1;
+
+            if (lastPosition != 0 && ((JOY_NEW(DPAD_UP) && position == 0) || (JOY_NEW(DPAD_DOWN) && position == lastPosition)))
+            {
+                ListMenuChangeSelection(list, TRUE, lastPosition, position == 0);
+                ListMenuGetScrollAndRow(tListTaskId, scrollPos, cursorPos);
+                return;
+            }
+        }
+
         listPosition = ListMenu_ProcessInput(tListTaskId);
         ListMenuGetScrollAndRow(tListTaskId, scrollPos, cursorPos);
         switch (listPosition)
