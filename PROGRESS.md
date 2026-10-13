@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 3.3 terminée (objets de progression), en attente de ton test. Prochaine : 3.4 — événement Latios et Méga-Évolution.
+- **Étape en cours** : 3.4 terminée (événement Latios + Méga-Bracelet), en attente de ton test. Prochaine : 3.5 — Méga-Gemmes.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -125,6 +125,14 @@
   - Les 11 Boutiques Pokémon de Hoenn vendent la même liste `Nabla_Pokemart_Items` (anciennes listes par ville et leurs variantes supprimées).
   - Paliers dans `sShopItemRequirements` (badges + flag optionnel), vérifiés dans `TryBuildDynamicShopItemList` pour toutes les boutiques normales. Chaque palier = nombre de badges à l'arrivée dans la ville qui vendait l'article dans Émeraude (Chrono/Bis Ball : 1 badge, rencontre de l'employé Devon). Poké Ball : flag `FLAG_ADVENTURE_STARTED`, comme à Rosalia.
   - Plus de `.shopCriteriaFunc` dans `items.h` : une seule source de vérité.
+- Étape 3.4 — événement Latios (plan validé par l'utilisateur) :
+  - Flags `FLAG_NABLA_HIDE_ROUTE118_STEVEN/LATIOS`, `FLAG_NABLA_HIDE_SOUTHERN_ISLAND_EVENT/LATIOS`, `FLAG_NABLA_LATIOS_EVENT_ACTIVE`, `FLAG_NABLA_RECEIVED_LATIOS` (ex-`FLAG_UNUSED_0x280`-`0x285`). Les flags « hide » sont recalculés à chaque chargement de map (OnTransition), donc rien à initialiser en début de partie.
+  - Route 118 : une ligne `call` ajoutée dans `Route118_OnTransition`, deux objets (Steven, Latios). Île du Sud (intérieur) : une ligne `call` dans `OnTransition`, une table ON_FRAME ajoutée, quatre objets (Steven, Matt, Sbire, Latios). Matt utilise le sprite de membre Aqua, comme dans Émeraude.
+  - Combat : `multi_2_vs_2` comme à Algatia (choix de 3 Pokémon), `TRAINER_NABLA_MATT_SOUTHERN_ISLAND` / `TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND` (855-856, Normal + Difficile), partenaire `PARTNER_STEVEN_SOUTHERN_ISLAND` (Airmure 32, Métang 33). Défaite : retour au Centre Pokémon, Steven réapparaît sur la Route 118 pour réessayer.
+  - Récompense : Latios Nv. 30 tenant le Latiosite (`givemon`, gestion équipe pleine → PC, surnom), Méga-Bracelet (`ITEM_MEGA_RING` renommé « Mega Bracelet »).
+  - Post-game : `players_house.inc` saute la question « rouge ou bleu ? » si Latios a été reçu, et Latias erre.
+  - Cas limite non géré : équipe ET PC pleins au moment du don (message natif « plus de place », l'événement reste bloqué sur l'île).
+  - Tests : 0 échec.
 
 ## Bugs connus
 

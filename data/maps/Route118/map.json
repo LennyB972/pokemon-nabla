@@ -310,6 +310,34 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route118_EventScript_Deandre",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE118_NABLA_STEVEN",
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 33,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_Route118_EventScript_Steven",
+      "flag": "FLAG_NABLA_HIDE_ROUTE118_STEVEN"
+    },
+    {
+      "local_id": "LOCALID_ROUTE118_NABLA_LATIOS",
+      "graphics_id": "OBJ_EVENT_GFX_LATIOS",
+      "x": 33,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_NABLA_HIDE_ROUTE118_LATIOS"
     }
   ],
   "warp_events": [

@@ -1,0 +1,169 @@
+@ After the 5th badge, Steven waits on the east bank of Route 118. Latios asks for help and flies
+@ the player and Steven to Southern Island, where they battle Team Aqua together. Latios then joins
+@ the player with its Latiosite, and Steven gives the Mega Bracelet.
+
+@ Route 118
+
+Nabla_Route118_EventScript_UpdateLatiosEvent::
+	setflag FLAG_NABLA_HIDE_ROUTE118_LATIOS
+	setflag FLAG_NABLA_HIDE_ROUTE118_STEVEN
+	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
+	goto_if_set FLAG_NABLA_RECEIVED_LATIOS, Common_EventScript_NopReturn
+	clearflag FLAG_NABLA_HIDE_ROUTE118_STEVEN
+	return
+
+Nabla_Route118_EventScript_Steven::
+	lock
+	faceplayer
+	msgbox Nabla_Text_StevenRoute118Greeting, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_LATIOS, CRY_MODE_NORMAL
+	clearflag FLAG_NABLA_HIDE_ROUTE118_LATIOS
+	addobject LOCALID_ROUTE118_NABLA_LATIOS
+	applymovement LOCALID_ROUTE118_NABLA_LATIOS, Nabla_Route118_Movement_LatiosArrives
+	waitmovement 0
+	waitmoncry
+	applymovement LOCALID_ROUTE118_NABLA_STEVEN, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Nabla_Text_StevenItsLatios, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE118_NABLA_STEVEN, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Nabla_Text_StevenLetsFollowLatios, MSGBOX_DEFAULT
+	msgbox Nabla_Text_LatiosCarriesYou, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_ROUTE118_NABLA_LATIOS
+	removeobject LOCALID_ROUTE118_NABLA_STEVEN
+	setflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
+	warp MAP_SOUTHERN_ISLAND_INTERIOR, 13, 16
+	waitstate
+	release
+	end
+
+Nabla_Route118_Movement_LatiosArrives:
+	walk_fast_down
+	step_end
+
+@ Southern Island
+
+Nabla_SouthernIsland_EventScript_SetUpLatiosEvent::
+	setflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_EVENT
+	setflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_LATIOS
+	goto_if_unset FLAG_NABLA_LATIOS_EVENT_ACTIVE, Common_EventScript_NopReturn
+	clearflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_EVENT
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setvar VAR_TEMP_5, 1
+	return
+
+Nabla_SouthernIsland_Interior_OnFrame::
+	map_script_2 VAR_TEMP_5, 1, Nabla_SouthernIsland_EventScript_AquaAmbush
+	.2byte 0
+
+Nabla_SouthernIsland_EventScript_AquaAmbush::
+	lockall
+	setvar VAR_TEMP_5, 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Nabla_Text_MattSouthernIsland, MSGBOX_DEFAULT
+	applymovement LOCALID_SOUTHERN_ISLAND_NABLA_STEVEN, Common_Movement_WalkInPlaceFasterRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox Nabla_Text_StevenLetsBattleTogether, MSGBOX_DEFAULT
+	closemessage
+Nabla_SouthernIsland_EventScript_ChoosePartyForMultiBattle:
+	special SavePlayerParty
+	fadescreenswapbuffers FADE_TO_BLACK
+	special ChooseHalfPartyForBattle
+	goto_if_ne VAR_RESULT, 0, Nabla_SouthernIsland_EventScript_MultiBattle
+	special LoadPlayerParty
+	msgbox Nabla_Text_StevenChooseYourPokemon, MSGBOX_DEFAULT
+	closemessage
+	goto Nabla_SouthernIsland_EventScript_ChoosePartyForMultiBattle
+
+Nabla_SouthernIsland_EventScript_MultiBattle:
+	multi_2_vs_2 TRAINER_NABLA_MATT_SOUTHERN_ISLAND, Nabla_Text_MattDefeat, TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND, Nabla_Text_GruntDefeat, PARTNER_STEVEN_SOUTHERN_ISLAND
+	switch VAR_RESULT
+	case 1, Nabla_SouthernIsland_EventScript_DefeatedAqua
+	@ Lost: the player can try again by talking to Steven on Route 118
+	clearflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
+	fadescreenswapbuffers FADE_TO_BLACK
+	special SetCB2WhiteOut
+
+Nabla_SouthernIsland_EventScript_DefeatedAqua::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Nabla_Text_MattRetreat, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_SOUTHERN_ISLAND_NABLA_MATT
+	removeobject LOCALID_SOUTHERN_ISLAND_NABLA_GRUNT
+	fadescreenswapbuffers FADE_FROM_BLACK
+	playmoncry SPECIES_LATIOS, CRY_MODE_NORMAL
+	clearflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_LATIOS
+	addobject LOCALID_SOUTHERN_ISLAND_NABLA_LATIOS
+	applymovement LOCALID_SOUTHERN_ISLAND_NABLA_LATIOS, Nabla_SouthernIsland_Movement_LatiosApproach
+	waitmovement 0
+	waitmoncry
+	applymovement LOCALID_SOUTHERN_ISLAND_NABLA_STEVEN, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox Nabla_Text_StevenLatiosWantsToJoin, MSGBOX_DEFAULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LATIOS
+	givemon SPECIES_LATIOS, 30, ITEM_LATIOSITE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Nabla_SouthernIsland_EventScript_ReceiveLatiosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Nabla_SouthernIsland_EventScript_ReceiveLatiosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Nabla_SouthernIsland_EventScript_ReceiveLatiosParty::
+	call Nabla_SouthernIsland_EventScript_ReceivedLatiosFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Nabla_SouthernIsland_EventScript_ReceiveMegaBracelet
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Nabla_SouthernIsland_EventScript_ReceiveMegaBracelet
+	end
+
+Nabla_SouthernIsland_EventScript_ReceiveLatiosPC::
+	call Nabla_SouthernIsland_EventScript_ReceivedLatiosFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Nabla_SouthernIsland_EventScript_SendLatiosToPC
+	call Common_EventScript_NameReceivedBoxMon
+Nabla_SouthernIsland_EventScript_SendLatiosToPC:
+	call Common_EventScript_TransferredToPC
+	goto Nabla_SouthernIsland_EventScript_ReceiveMegaBracelet
+	end
+
+Nabla_SouthernIsland_EventScript_ReceivedLatiosFanfare::
+	removeobject LOCALID_SOUTHERN_ISLAND_NABLA_LATIOS
+	setflag FLAG_NABLA_RECEIVED_LATIOS
+	playfanfare MUS_OBTAIN_ITEM
+	message Nabla_Text_PlayerReceivedLatios
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_LATIOS
+	return
+
+Nabla_SouthernIsland_EventScript_ReceiveMegaBracelet::
+	msgbox Nabla_Text_StevenLatiosite, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	msgbox Nabla_Text_StevenExplainMegaEvolution, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	clearflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
+	setflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_EVENT
+	warp MAP_ROUTE118, 32, 11
+	waitstate
+	releaseall
+	end
+
+Nabla_SouthernIsland_Movement_LatiosApproach:
+	walk_down
+	walk_down
+	step_end
+
+@ After the Elite Four, the roaming Eon Pokémon is always Latias if the player already has Latios
+Nabla_PlayersHouse_EventScript_LatiasRoams::
+	setvar VAR_0x8004, 0
+	setvar VAR_RESULT, 0
+	goto PlayersHouse_1F_EventScript_InitLatiRoamer
+	end

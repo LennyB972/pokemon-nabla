@@ -16877,3 +16877,117 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_NABLA_MATT_SOUTHERN_ISLAND ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Multi Party: Half
+
+Mightyena
+Level: 31
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Golbat
+Level: 31
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Sharpedo
+Level: 32
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_NABLA_MATT_SOUTHERN_ISLAND ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Multi Party: Half
+Difficulty: Hard
+
+Mightyena @ Sitrus Berry
+Ability: Intimidate
+Level: 33
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Crunch
+- Ice Fang
+- Thunder Fang
+- Sucker Punch
+
+Golbat
+Ability: Inner Focus
+Level: 33
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Poison Fang
+- Air Cutter
+- Bite
+- Confuse Ray
+
+Sharpedo @ Sitrus Berry
+Ability: Speed Boost
+Level: 33
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Crunch
+- Aqua Jet
+- Poison Fang
+- Protect
+
+=== TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+Multi Party: Half
+
+Carvanha
+Level: 29
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailmer
+Level: 29
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer
+Multi Party: Half
+Difficulty: Hard
+
+Carvanha
+Ability: Speed Boost
+Level: 31
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Aqua Jet
+- Ice Fang
+- Agility
+
+Wailmer
+Level: 31
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Rollout
+- Astonish
+- Rest

@@ -1,6 +1,7 @@
 SouthernIsland_Interior_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SouthernIsland_Interior_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SouthernIsland_Interior_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Nabla_SouthernIsland_Interior_OnFrame
 	.byte 0
 
 SouthernIsland_Interior_OnResume:
@@ -17,6 +18,7 @@ SouthernIsland_Interior_OnTransition:
 	call_if_eq VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatios
 	call_if_ne VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatias
 	call SouthernIsland_Interior_EventScript_SetUpPlayerGfx
+	call Nabla_SouthernIsland_EventScript_SetUpLatiosEvent
 	end
 
 SouthernIsland_Interior_EventScript_SetUpLatios::

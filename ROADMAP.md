@@ -158,11 +158,14 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Type** : data. 27 objets cachés (Bonbons Exp. XS→XL selon la progression, 8 Aromates, 3 Capsules Talent, 2 Patchs Talent en post-game) ; Bonbons Exp. S/M/L en Boutique selon les badges ; Aromates et Capsule Talent à Nénucrique. Référence : `docs/nabla/items.md`.
 - 🎮 · 🟢
 
-### 3.4 Événement Latios et Méga-Évolution *(1er ajout narratif)*
-- **Type** : script + data. Inspiré de ROSA : déclenché **après le 5ᵉ badge** (Norman — le joueur obtient Surf juste après, ce qui ouvre l'est de la Route 118), Steven sur la Route 118 ; Latios apparaît et demande de l'aide ; Île du Sud ; combat en duo avec Steven contre un Admin + un Sbire (le partenaire de combat est natif) ; Latios rejoint l'équipe avec son Latiosite et Steven donne le **Méga-Bracelet**. Puis placement des autres Méga-Gemmes.
-- Points à trancher dans la mini-conception : comment rejoindre l'Île du Sud sans le vol en 3D, quelle équipe (Aqua ou Magma), et comment ça s'articule avec le Latios/Latias post-game d'Émeraude (choix à la TV, Passe Éon).
-- **Vérif** : jouer la scène depuis une sauvegarde debug à 5 badges ; Méga-Évolution en combat.
+### 3.4 Événement Latios et Méga-Bracelet ✅
+- **Type** : script + data. Après le 5ᵉ badge, Steven sur la rive est de la Route 118 (33, 11) ; Latios arrive et les emmène (fondu) à l'Île du Sud ; combat en duo avec Steven contre Matt et un Sbire Aqua (équipes Normal/Difficile) ; Latios Nv. 30 avec Latiosite rejoint l'équipe, Steven donne le Méga-Bracelet ; retour en fondu sur la Route 118. En post-game, l'Éon errant est toujours Latias.
+- Fichiers : `data/scripts/nabla/latios_event.inc`, `data/text/nabla/latios_event.inc`.
 - 🎮 · 🟡
+
+### 3.5 Méga-Gemmes
+- **Type** : data. Répartir les autres Méga-Gemmes (cadeaux, objets cachés, boutiques post-game) selon un tableau validé par l'utilisateur, consigné dans `docs/nabla/items.md`.
+- 🎮 · 🟢
 
 ---
 
