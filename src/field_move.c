@@ -3,6 +3,7 @@
 #include "field_move.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
+#include "item.h"
 #include "party_menu.h"
 #include "strings.h"
 #include "constants/field_move.h"
@@ -42,6 +43,19 @@ const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =
         .lockedMessage = gText_CantUseUntilNewBadge,
     },
 };
+
+// Owning the HM in the Bag lets any party Pokémon use its field move.
+bool32 PlayerHasHMForFieldMove(enum FieldMove fieldMove)
+{
+    enum Move move = FieldMove_GetMoveId(fieldMove);
+
+    for (enum Item item = ITEM_HM01; item <= ITEM_HM08; item++)
+    {
+        if (GetItemTMHMMoveId(item) == move)
+            return CheckBagHasItem(item, 1);
+    }
+    return FALSE;
+}
 
 #define FLAG_TO_BADGE(flag) flag - FLAG_BADGE01_GET
 

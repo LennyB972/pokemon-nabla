@@ -2970,6 +2970,20 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         }
     }
 
+    // With the HM in the Bag, any Pokémon can use Fly and Flash, which are only used from this menu
+    static const enum FieldMove sHMFieldMovesFromMenu[] = {FIELD_MOVE_FLY, FIELD_MOVE_FLASH};
+    for (i = 0; i < ARRAY_COUNT(sHMFieldMovesFromMenu); i++)
+    {
+        enum FieldMove fieldMove = sHMFieldMovesFromMenu[i];
+
+        // Keep room for Switch, Item and Cancel
+        if (sPartyMenuInternal->numActions >= ARRAY_COUNT(sPartyMenuInternal->actions) - 3)
+            break;
+        if (FieldMove_IsVisible(fieldMove) && PlayerHasHMForFieldMove(fieldMove)
+         && !GetMonData(&mons[slotId], MON_DATA_IS_EGG) && !MonKnowsMove(&mons[slotId], FieldMove_GetMoveId(fieldMove)))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, fieldMove + MENU_FIELD_MOVES);
+    }
+
     if (!InBattlePike())
     {
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
