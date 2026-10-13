@@ -5824,9 +5824,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
+    u32 levelCap = GetCurrentLevelCap();
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    if (!(B_RARE_CANDY_CAP && sInitialLevel >= levelCap))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5863,7 +5864,16 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         else
         {
             gPartyMenuUseExitCallback = FALSE;
-            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            if (B_RARE_CANDY_CAP && levelCap < MAX_LEVEL && GetMonData(mon, MON_DATA_LEVEL) >= levelCap)
+            {
+                GetMonNickname(mon, gStringVar1);
+                StringExpandPlaceholders(gStringVar4, gText_PkmnCantLevelPastCap);
+                DisplayPartyMenuMessage(gStringVar4, TRUE);
+            }
+            else
+            {
+                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            }
             ScheduleBgCopyTilemapToVram(2);
             if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
                 gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
