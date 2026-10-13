@@ -2007,7 +2007,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyS,
         .iconPalette = gItemIconPalette_ExpCandies,
-        .shopCriteriaFunc = ShopCriteriaByBadgeRequirement,
     },
 
     [ITEM_EXP_CANDY_M] =
@@ -2028,7 +2027,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyM,
         .iconPalette = gItemIconPalette_ExpCandies,
-        .shopCriteriaFunc = ShopCriteriaByBadgeRequirement,
     },
 
     [ITEM_EXP_CANDY_L] =
@@ -2049,7 +2047,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyL,
         .iconPalette = gItemIconPalette_ExpCandies,
-        .shopCriteriaFunc = ShopCriteriaByBadgeRequirement,
     },
 
     [ITEM_EXP_CANDY_XL] =
@@ -15515,7 +15512,6 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_LinkingCord,
         .iconPalette = gItemIconPalette_LinkingCord,
-        .shopCriteriaFunc = ShopCriteriaByBadgeRequirement,
     },
 
     [ITEM_PEAT_BLOCK] =

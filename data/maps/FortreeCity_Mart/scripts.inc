@@ -6,28 +6,10 @@ FortreeCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart FortreeCity_Mart_Pokemart
+	pokemart Nabla_Pokemart_Items
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
-
-	.align 2
-FortreeCity_Mart_Pokemart:
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_REVIVE
-	.2byte ITEM_SUPER_REPEL
-	.2byte ITEM_WOOD_MAIL
-	.2byte ITEM_LINKING_CORD
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
-	.2byte ITEM_EXP_CANDY_L
-	pokemartlistend
 
 FortreeCity_Mart_EventScript_Woman::
 	msgbox FortreeCity_Mart_Text_SuperRepelBetter, MSGBOX_NPC

@@ -4,14 +4,28 @@ Référence de tous les objets que Nabla rend trouvables ou achetables. À tenir
 
 ## Boutiques
 
-| Où | Objets | Condition | Défini dans |
-|---|---|---|---|
-| Les 11 Boutiques Pokémon de Hoenn | Fil de Liaison | 3 badges | listes `data/maps/*_Mart/scripts.inc` |
-| Les 11 Boutiques Pokémon de Hoenn | Bonbon Exp. S / M / L | 2 / 4 / 6 badges | idem |
-| Centre Commercial de Nénucrique, 3ᵉ étage, vendeuse de gauche (vitamines) | Les 21 Aromates, Capsule Talent | — | `data/maps/LilycoveCity_DepartmentStore_3F/scripts.inc` |
-| Centre Commercial de Nénucrique, 3ᵉ étage, vendeur du milieu | Objets d'évolution par échange | — | `data/scripts/nabla/evolution_items.inc` |
+**Boutiques Pokémon** : les 11 Boutiques de Hoenn proposent **la même liste** (`Nabla_Pokemart_Items`, `data/scripts/nabla/pokemart.inc`). Un article reste caché tant que le joueur n'a pas le nombre de badges requis, comme dans les jeux récents. Les paliers reprennent le moment où l'article apparaissait dans Émeraude :
 
-**Badges requis** : tableau `sShopItemBadgeRequirements` dans `src/shop_criteria.c`. Un objet qui y figure doit aussi avoir `.shopCriteriaFunc = ShopCriteriaByBadgeRequirement` dans `src/data/items.h`.
+| Badges | Articles débloqués |
+|---|---|
+| 0 | Poké Ball (après avoir reçu le Pokédex), Potion, Super Potion, Antidote, Anti-Para, Réveil, Corde Sortie, Repousse, Attaque +, Défense +, Vitesse +, Lettre Orange |
+| 1 | Chrono Ball, Bis Ball |
+| 2 | Super Ball, Précision +, Muscle +, Défense Spéciale, Bonbon Exp. S, Lettre Port |
+| 3 | Faiblo Ball, Rappel, Anti-Brûle, Antigel, Queue Skitty, Super Repousse, Spécial +, Fil de Liaison |
+| 4 | Bonbon Exp. M |
+| 5 | Hyper Ball, Hyper Potion, Lettre Bois |
+| 6 | Filet Ball, Scuba Ball, Total Soin, Max Repousse, Bonbon Exp. L |
+| 7 | Potion Max, Lettre Ombre |
+
+- Modifier un palier : tableau `sShopItemRequirements` dans `src/shop_criteria.c` (badges, et un flag optionnel). Il s'applique à toutes les boutiques normales.
+- Ajouter un article : l'ajouter à `Nabla_Pokemart_Items`, et au tableau s'il doit être débloqué plus tard.
+
+**Autres vendeurs** :
+
+| Où | Objets | Défini dans |
+|---|---|---|
+| Centre Commercial de Nénucrique, 3ᵉ étage, vendeuse de gauche (vitamines) | Vitamines, les 21 Aromates, Capsule Talent | `data/maps/LilycoveCity_DepartmentStore_3F/scripts.inc` |
+| Centre Commercial de Nénucrique, 3ᵉ étage, vendeur du milieu | Objets d'évolution par échange | `data/scripts/nabla/evolution_items.inc` |
 
 ## Objets cachés
 

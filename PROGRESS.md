@@ -121,6 +121,10 @@
   - 27 objets cachés placés avec `dev_scripts/nabla/hidden_item_spots.py` (outil réutilisable : cases accessibles à pied, sans CS, coins/culs-de-sac ; les objets de la map comptent comme obstacles). Flags `FLAG_NABLA_HIDDEN_ITEM_*` = anciens `FLAG_UNUSED_0x264`-`0x27E`.
   - Liste complète et procédure d'ajout : `docs/nabla/items.md`.
   - Tests : 0 échec.
+- Boutiques à la moderne (demande de l'utilisateur) :
+  - Les 11 Boutiques Pokémon de Hoenn vendent la même liste `Nabla_Pokemart_Items` (anciennes listes par ville et leurs variantes supprimées).
+  - Paliers dans `sShopItemRequirements` (badges + flag optionnel), vérifiés dans `TryBuildDynamicShopItemList` pour toutes les boutiques normales. Chaque palier = nombre de badges à l'arrivée dans la ville qui vendait l'article dans Émeraude (Chrono/Bis Ball : 1 badge, rencontre de l'employé Devon). Poké Ball : flag `FLAG_ADVENTURE_STARTED`, comme à Rosalia.
+  - Plus de `.shopCriteriaFunc` dans `items.h` : une seule source de vérité.
 
 ## Bugs connus
 
