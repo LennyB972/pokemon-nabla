@@ -23,6 +23,9 @@ MossdeepCity_Mart_Pokemart:
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 MossdeepCity_Mart_EventScript_Woman::

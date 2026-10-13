@@ -26,6 +26,9 @@ MauvilleCity_Mart_Pokemart:
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_X_ACCURACY
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 MauvilleCity_Mart_EventScript_ExpertM::

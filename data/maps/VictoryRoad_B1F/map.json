@@ -341,5 +341,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_XL",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_VICTORY_ROAD_B1F_EXP_CANDY_XL"
+    }
+  ]
 }

@@ -263,7 +263,7 @@
       "flag": "FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1"
     },
     {
-       "local_id": "LOCALID_ROUTE120_GABBY_2",
+      "local_id": "LOCALID_ROUTE120_GABBY_2",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 36,
       "y": 5,
@@ -861,6 +861,22 @@
       "y": 76,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_SHRUB1_4"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_L",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE120_EXP_CANDY_L"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_IMPISH_MINT",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE120_IMPISH_MINT"
     }
   ]
 }

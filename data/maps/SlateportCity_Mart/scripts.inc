@@ -23,6 +23,9 @@ SlateportCity_Mart_Pokemart:
 	.2byte ITEM_REPEL
 	.2byte ITEM_HARBOR_MAIL
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 SlateportCity_Mart_EventScript_BlackBelt::

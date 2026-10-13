@@ -525,6 +525,14 @@
       "elevation": 3,
       "item": "ITEM_BLACK_GLASSES",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_XS",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE116_EXP_CANDY_XS"
     }
   ]
 }

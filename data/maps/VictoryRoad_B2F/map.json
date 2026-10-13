@@ -154,6 +154,14 @@
       "elevation": 3,
       "item": "ITEM_MAX_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 32,
+      "y": 8,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_XL",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_VICTORY_ROAD_B2F_EXP_CANDY_XL"
     }
   ]
 }

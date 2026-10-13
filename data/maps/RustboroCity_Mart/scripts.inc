@@ -29,6 +29,9 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
@@ -52,6 +55,9 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokefanF::

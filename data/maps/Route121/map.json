@@ -535,6 +535,22 @@
       "elevation": 3,
       "item": "ITEM_MAX_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_MAX_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 3,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_L",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE121_EXP_CANDY_L"
+    },
+    {
+      "type": "hidden_item",
+      "x": 33,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_CAREFUL_MINT",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE121_CAREFUL_MINT"
     }
   ]
 }

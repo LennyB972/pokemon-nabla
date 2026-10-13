@@ -23,6 +23,9 @@ SootopolisCity_Mart_Pokemart:
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_SHADOW_MAIL
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 SootopolisCity_Mart_EventScript_FatMan::

@@ -23,6 +23,9 @@ LavaridgeTown_Mart_Pokemart:
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 LavaridgeTown_Mart_EventScript_ExpertM::

@@ -765,6 +765,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_CyclingRoadSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 15,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE110_EXP_CANDY_S"
     }
   ]
 }

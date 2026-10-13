@@ -154,9 +154,8 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - Menu Options défilant (flèches) avec une ligne RUNNING : HOLD / AUTO. En AUTO, le joueur court par défaut et marche en tenant B.
 - 🎮 · 🟢
 
-### 3.3 Objets de progression
-- **Type** : data. Aromates, Capsules Talent, Bonbons Exp. sur les maps et dans quelques boutiques (selon les badges).
-- **Vérif** : parcours debug ; liste des emplacements dans PROGRESS.md.
+### 3.3 Objets de progression ✅
+- **Type** : data. 27 objets cachés (Bonbons Exp. XS→XL selon la progression, 8 Aromates, 3 Capsules Talent, 2 Patchs Talent en post-game) ; Bonbons Exp. S/M/L en Boutique selon les badges ; Aromates et Capsule Talent à Nénucrique. Référence : `docs/nabla/items.md`.
 - 🎮 · 🟢
 
 ### 3.4 Événement Latios et Méga-Évolution *(1er ajout narratif)*

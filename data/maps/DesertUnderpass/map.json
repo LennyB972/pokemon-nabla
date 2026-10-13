@@ -40,5 +40,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 107,
+      "y": 3,
+      "elevation": 0,
+      "item": "ITEM_ABILITY_PATCH",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_DESERT_UNDERPASS_ABILITY_PATCH"
+    }
+  ]
 }

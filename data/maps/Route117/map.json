@@ -408,6 +408,14 @@
       "elevation": 3,
       "item": "ITEM_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_117_REPEL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 3,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE117_EXP_CANDY_S"
     }
   ]
 }

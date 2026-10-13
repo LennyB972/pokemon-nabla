@@ -451,6 +451,14 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_MODEST_MINT",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE115_MODEST_MINT"
     }
   ]
 }

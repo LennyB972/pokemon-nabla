@@ -42,6 +42,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
   - Ne pas réécrire les textes d'origine sauf demande explicite.
 - **Nouveau contenu** (maps, scripts, trainers) : préfixer ou regrouper sous « Nabla » pour qu'il soit identifiable face au contenu vanilla.
 - **Jour/nuit** : dans un script en extérieur, utiliser `fadescreenswapbuffers` (pas `fadescreen`). Les lumières se posent avec des objets `OBJ_EVENT_GFX_LIGHT_SPRITE` et des fichiers `.pla` (voir `docs/tutorials/dns.md`). Ne pas appliquer le tutoriel « triple-layer metatiles » sans le correctif de l'issue expansion #7034.
+- **Objets** : tout objet ajouté (boutique, objet caché) est listé dans `docs/nabla/items.md`, qui explique aussi comment en ajouter. Badges requis en boutique : `sShopItemBadgeRequirements` (`src/shop_criteria.c`). Emplacements d'objets cachés : `dev_scripts/nabla/hidden_item_spots.py`.
 - **Maps d'origine** : on n'y touche que pour ajouter (entrée vers une nouvelle zone, événement), jamais pour retirer.
 - **Crédits** : pokeemerald-expansion doit être crédité (« RHH (Rom Hacking Hideout) », avec la version). Toute ressource communautaire utilisée est ajoutée à la section Crédits du `README.md` avec son auteur, au moment où on l'intègre.
 - **Tests** : utiliser le menu debug (R + START) et le quickstart (SELECT à l'écran titre) pour vérifier ; les décrire dans `PROGRESS.md`.

@@ -461,6 +461,14 @@
       "elevation": 3,
       "item": "ITEM_NUGGET",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_M",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE113_EXP_CANDY_M"
     }
   ]
 }

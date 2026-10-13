@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 3.2 + course automatique terminées, en attente de ton test. Prochaine : 3.3 — objets de progression.
+- **Étape en cours** : 3.3 terminée (objets de progression), en attente de ton test. Prochaine : 3.4 — événement Latios et Méga-Évolution.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -114,6 +114,13 @@
   - Nouvelle ligne RUNNING : HOLD / AUTO, stockée dans `optionsAutoRun` (1 bit du padding de SaveBlock2, taille inchangée).
   - `field_player_avatar.c` : on court si « B tenu » est différent de « AUTO ».
 - Tests : 0 échec.
+- Étape 3.2 et course automatique validées par l'utilisateur.
+- Étape 3.3 — objets de progression (exigence : facilement modifiable plus tard) :
+  - Badges requis en boutique centralisés dans `sShopItemBadgeRequirements` (`src/shop_criteria.c`) ; `ShopCriteriaByThreeBadges` remplacé par `ShopCriteriaByBadgeRequirement` (Fil de Liaison 3, Bonbon Exp. S 2, M 4, L 6).
+  - Bonbons Exp. S/M/L ajoutés aux 11 Boutiques Pokémon ; 21 Aromates + Capsule Talent ajoutés à la vendeuse « vitamines » du 3ᵉ étage de Nénucrique.
+  - 27 objets cachés placés avec `dev_scripts/nabla/hidden_item_spots.py` (outil réutilisable : cases accessibles à pied, sans CS, coins/culs-de-sac ; les objets de la map comptent comme obstacles). Flags `FLAG_NABLA_HIDDEN_ITEM_*` = anciens `FLAG_UNUSED_0x264`-`0x27E`.
+  - Liste complète et procédure d'ajout : `docs/nabla/items.md`.
+  - Tests : 0 échec.
 
 ## Bugs connus
 

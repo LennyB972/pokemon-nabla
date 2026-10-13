@@ -46,9 +46,28 @@ void TryFreeDynamicShopItemList(const u16 **ogItemList)
 
 // Add new Criterias below!
 
-bool32 ShopCriteriaByThreeBadges(enum Item item)
+// Pokémon Nabla: number of badges needed before shops sell these items.
+// An item listed here also needs `.shopCriteriaFunc = ShopCriteriaByBadgeRequirement` in src/data/items.h.
+static const struct
 {
-    return ShopCriteriaByBadgeCount(3);
+    enum Item item;
+    u8 badges;
+} sShopItemBadgeRequirements[] =
+{
+    { ITEM_LINKING_CORD, 3 },
+    { ITEM_EXP_CANDY_S,  2 },
+    { ITEM_EXP_CANDY_M,  4 },
+    { ITEM_EXP_CANDY_L,  6 },
+};
+
+bool32 ShopCriteriaByBadgeRequirement(enum Item item)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sShopItemBadgeRequirements); i++)
+    {
+        if (sShopItemBadgeRequirements[i].item == item)
+            return ShopCriteriaByBadgeCount(sShopItemBadgeRequirements[i].badges);
+    }
+    return TRUE;
 }
 
 static bool32 ShopCriteriaByBadgeCount(u32 count)

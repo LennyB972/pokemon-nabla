@@ -836,6 +836,14 @@
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 3,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_L",
+      "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE123_EXP_CANDY_L"
     }
   ]
 }
