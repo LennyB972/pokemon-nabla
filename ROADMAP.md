@@ -12,7 +12,7 @@ Vue d'ensemble :
 |---|---|---|
 | 0 | Fondations : docs, patch BPS, crédits | — |
 | 1 | Réglages natifs (config) | 0 |
-| 2 | Systèmes : menu de départ, difficulté, level caps, style de combat | 1 |
+| 2 | Systèmes : menu de départ (difficulté), level caps, échanges, style de combat | 1 |
 | 3 | Monde et objets : suiveurs, CS en objets clés, événement Latios + Méga | 2 |
 | 4 | Contenu et équilibrage : Dex national, équipes Normal/Difficile | 2, 3 |
 | 5 | Interface | 1 |
@@ -112,10 +112,10 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 
 ## Phase 2 — Systèmes de jeu
 
-### 2.1 Menu de début de partie
-- **Type** : script (`dynmultichoice` natif) + flags/vars dédiés.
-- Après le discours de Birch : **difficulté** (Normal / Difficile) et **level caps** (oui / non). Choix définitifs pour la partie.
-- **Vérif** : nouvelle partie, vérifier flags/vars via debug.
+### 2.1 Menu de début de partie ✅
+- **Type** : script (`dynmultichoice`, `msgbox` natifs) + `VAR_NABLA_DIFFICULTY` / `FLAG_NABLA_LEVEL_CAPS`.
+- Dans le camion arrêté, juste avant d'en sortir (script `InsideOfTruck_EventScript_SetIntroFlags`) : **difficulté** (Normal / Difficile) puis **level caps** (oui / non), récapitulatif et confirmation. Choix définitifs.
+- La difficulté utilise le système natif (`B_VAR_DIFFICULTY` + `setdifficulty`) : cela couvre l'ancienne étape 2.5.
 - 🎮 · 🟢
 
 ### 2.2 Level caps
@@ -133,11 +133,6 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - **Type** : code. 3ᵉ valeur dans le menu Options, message « L'adversaire va envoyer un Pokémon. Changer ? » sans nom.
 - **Vérif** : combat dresseur dans les 3 modes.
 - 🎮 · 🟡
-
-### 2.5 Branchement de la difficulté
-- **Type** : config + script. `B_VAR_DIFFICULTY` relié au choix 2.1. Les équipes « Difficile » sont écrites en phase 4.
-- **Vérif** : un dresseur de test change d'équipe selon la difficulté.
-- 🎮 · 🟢
 
 ---
 

@@ -52,7 +52,7 @@
 #else
 
 #define FLAG_NABLA_EXP_SHARE 0x20 // Nabla: Gen 6+ Exp. Share on/off
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
+#define FLAG_NABLA_LEVEL_CAPS 0x21 // Nabla: level caps chosen at the start
 #define FLAG_UNUSED_0x022    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag

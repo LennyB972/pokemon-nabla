@@ -1738,3 +1738,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+
+	@ Pokémon Nabla
+	.include "data/scripts/nabla/new_game_options.inc"
+	.include "data/text/nabla/new_game_options.inc"

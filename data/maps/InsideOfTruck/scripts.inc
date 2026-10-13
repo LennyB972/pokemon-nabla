@@ -15,6 +15,7 @@ InsideOfTruck_OnResume:
 
 InsideOfTruck_EventScript_SetIntroFlags::
 	lockall
+	call Nabla_EventScript_ChooseGameOptions
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, InsideOfTruck_EventScript_SetIntroFlagsMale

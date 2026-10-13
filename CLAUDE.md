@@ -10,6 +10,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 - **Natif d'abord** : avant d'écrire du code, vérifier si expansion propose déjà la fonctionnalité (`include/config/*.h`, `docs/tutorials/`, macros de script). Toujours préférer la solution native.
 - **Build vert** : le jeu doit compiler à la fin de chaque étape.
 - **Un commit par étape**, message clair en anglais, puis `git push origin master`.
+- **Annonce** : avant d'entamer une étape, présenter à l'utilisateur ce qui va y être fait (quoi, où, comment on vérifie) et attendre son feu vert.
 - **Validation** : ne passer à l'étape suivante qu'après validation de l'utilisateur. Si une décision n'est pas couverte par `VISION.md` ou `PROGRESS.md`, demander plutôt que supposer.
 - **Suivi** : mettre à jour `PROGRESS.md` à la fin de chaque étape et de chaque session.
 - **Textes** : regrouper tous les nouveaux textes du jeu pour faciliter une future traduction française (voir « Conventions » ci-dessous).
@@ -34,7 +35,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 - **Config** : les réglages se font dans `include/config/*.h`. Toujours modifier la valeur existante plutôt que dupliquer un define, pour que les merges upstream restent simples.
 - **Flags / vars** : prendre dans les `FLAG_UNUSED_*` / `VAR_UNUSED_*` et les renommer avec un nom explicite (ex. `FLAG_NABLA_LEVEL_CAPS`). Les vars libres sont rares (~29) : les économiser.
 - **Textes nouveaux** :
-  - scripts : `data/text/nabla/*.inc` (un fichier par thème), labels préfixés `gText_Nabla_` ou `Nabla_Text_` ;
+  - scripts : textes dans `data/text/nabla/*.inc` et scripts dans `data/scripts/nabla/*.inc` (un fichier par thème, inclus en fin de `data/event_scripts.s`), labels préfixés `Nabla_Text_` / `Nabla_EventScript_` ;
   - textes C : regroupés dans un fichier dédié plutôt que dispersés.
   - exception : un libellé qui modifie une interface existante reste à côté des textes d'origine de cette interface (ex. options du menu dans `src/option_menu.c`).
   - Ne pas réécrire les textes d'origine sauf demande explicite.

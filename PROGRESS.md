@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 1.4 terminée (jour/nuit + éclairages), en attente de ton test. Prochaine : 2.1 — menu de début de partie.
+- **Étape en cours** : 2.1 terminée (menu de début de partie), en attente de ton test. Prochaine : 2.2 — level caps.
 
 ## Journal
 
@@ -61,6 +61,14 @@
   - Éclairages nocturnes restaurés (accord de l'utilisateur) : patch inverse du commit expansion `a5b079d833` (93 fichiers : objets lumière sur les maps de villes, palettes `.pal`/`.pla`, tilesets, `headers.h`, correctif des Lavaridge old ladies). Appliqué sans conflit avant toute modification de map.
   - Heure du jeu = heure de l'appareil (horloge de l'émulateur) + décalage choisi à la pendule de la chambre au début. Expansion (PR #7860) ouvre cette pendule sur l'heure de l'appareil (Émeraude démarrait à 10:00) : valider sans toucher = heure réelle. Scène d'origine conservée, aucun code à changer.
   - Build OK. Pas de `make check` : seules des données de maps/tilesets ont changé.
+- Étape 1.4 validée par l'utilisateur.
+- Nouvelle règle : avant chaque étape, Claude présente le plan et attend le feu vert (CLAUDE.md).
+- Étape 2.1 — menu de début de partie :
+  - Déclenché dans le camion arrêté, quand le joueur marche vers la sortie (une ligne `call` ajoutée en tête de `InsideOfTruck_EventScript_SetIntroFlags`, demande de l'utilisateur).
+  - Difficulté : `VAR_NABLA_DIFFICULTY` (ex-`VAR_UNUSED_0x404E`) branchée sur `B_VAR_DIFFICULTY`, réglée par `setdifficulty`. Un dresseur sans équipe Difficile garde son équipe Normale (natif). L'ancienne étape 2.5 est absorbée.
+  - Level caps : `FLAG_NABLA_LEVEL_CAPS` (ex-`FLAG_UNUSED_0x021`), sans effet avant 2.2.
+  - Premiers fichiers Nabla : `data/scripts/nabla/new_game_options.inc`, `data/text/nabla/new_game_options.inc`. Largeur des lignes vérifiée (≤ 201 px sur 208).
+  - Tests : 0 échec.
 
 ## Décisions prises
 
@@ -81,6 +89,7 @@
 | 2026-10-12 | QoL : CT réutilisables, Multi Exp Gen 6+ (on/off), IV/EV en valeurs chiffrées, texte MID / FAST / INSTANT (FAST par défaut). |
 | 2026-10-12 | Les cases non cochées de VISION.md = « je te laisse choisir » : Claude tranche les petits réglages et les signale ; les choix qui changent l'expérience de jeu restent soumis à l'utilisateur. |
 | 2026-10-13 | Éclairages nocturnes de Hoenn restaurés (patch officiel d'expansion). |
+| 2026-10-13 | Menu de début de partie dans le camion arrêté, juste avant la sortie ; choix définitifs. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
 
 ## Questions ouvertes
