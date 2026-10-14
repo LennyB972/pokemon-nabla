@@ -159,7 +159,7 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - 🎮 · 🟢
 
 ### 3.4 Événement Latios et Méga-Bracelet ✅
-- **Type** : script + data. Après le 5ᵉ badge, Steven sur la rive est de la Route 118 (33, 11) ; Latios arrive et les emmène (fondu) à l'Île du Sud ; combat en duo avec Steven contre Matt et un Sbire Aqua (équipes Normal/Difficile) ; Latios Nv. 30 avec Latiosite rejoint l'équipe, Steven donne le Méga-Bracelet ; retour en fondu sur la Route 118. En post-game, l'Éon errant est toujours Latias.
+- **Type** : script + data. Pendant la scène d'origine de Steven sur la Route 118, au moment où il s'apprête à partir, Latios arrive et les emmène (fondu) à l'Île du Sud ; combat en duo avec Steven contre Matt et un Sbire Aqua (équipes Normal/Difficile) ; Latios Nv. 30 avec Latiosite rejoint l'équipe, Steven donne le Méga-Bracelet ; retour en fondu sur la Route 118. En post-game, l'Éon errant est toujours Latias.
 - Fichiers : `data/scripts/nabla/latios_event.inc`, `data/text/nabla/latios_event.inc`.
 - 🎮 · 🟡
 

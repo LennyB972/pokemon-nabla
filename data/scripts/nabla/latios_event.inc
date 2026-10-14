@@ -1,43 +1,33 @@
-@ After the 5th badge, Steven waits on the east bank of Route 118. Latios asks for help and flies
+@ As Steven is about to leave after his Route 118 scene, Latios arrives and asks for help. It flies
 @ the player and Steven to Southern Island, where they battle Team Aqua together. Latios then joins
 @ the player with its Latiosite, and Steven gives the Mega Bracelet.
 
 @ Route 118
 
-Nabla_Route118_EventScript_UpdateLatiosEvent::
-	setflag FLAG_NABLA_HIDE_ROUTE118_LATIOS
-	setflag FLAG_NABLA_HIDE_ROUTE118_STEVEN
-	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
-	goto_if_set FLAG_NABLA_RECEIVED_LATIOS, Common_EventScript_NopReturn
-	clearflag FLAG_NABLA_HIDE_ROUTE118_STEVEN
-	return
-
-Nabla_Route118_EventScript_Steven::
-	lock
-	faceplayer
-	msgbox Nabla_Text_StevenRoute118Greeting, MSGBOX_DEFAULT
-	closemessage
+@ Called from Steven's original Route 118 scene, just before he leaves
+Nabla_Route118_EventScript_LatiosAppears::
 	playmoncry SPECIES_LATIOS, CRY_MODE_NORMAL
 	clearflag FLAG_NABLA_HIDE_ROUTE118_LATIOS
 	addobject LOCALID_ROUTE118_NABLA_LATIOS
 	applymovement LOCALID_ROUTE118_NABLA_LATIOS, Nabla_Route118_Movement_LatiosArrives
 	waitmovement 0
 	waitmoncry
-	applymovement LOCALID_ROUTE118_NABLA_STEVEN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROUTE118_STEVEN, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox Nabla_Text_StevenItsLatios, MSGBOX_DEFAULT
-	applymovement LOCALID_ROUTE118_NABLA_STEVEN, Common_Movement_FacePlayer
+	applymovement LOCALID_ROUTE118_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox Nabla_Text_StevenLetsFollowLatios, MSGBOX_DEFAULT
 	msgbox Nabla_Text_LatiosCarriesYou, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE118_NABLA_LATIOS
-	removeobject LOCALID_ROUTE118_NABLA_STEVEN
+	removeobject LOCALID_ROUTE118_STEVEN
+	setvar VAR_ROUTE118_STATE, 1
 	setflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
 	warp MAP_SOUTHERN_ISLAND_INTERIOR, 13, 16
 	waitstate
-	release
+	releaseall
 	end
 
 Nabla_Route118_Movement_LatiosArrives:
@@ -84,8 +74,10 @@ Nabla_SouthernIsland_EventScript_MultiBattle:
 	multi_2_vs_2 TRAINER_NABLA_MATT_SOUTHERN_ISLAND, Nabla_Text_MattDefeat, TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND, Nabla_Text_GruntDefeat, PARTNER_STEVEN_SOUTHERN_ISLAND
 	switch VAR_RESULT
 	case 1, Nabla_SouthernIsland_EventScript_DefeatedAqua
-	@ Lost: the player can try again by talking to Steven on Route 118
+	@ Lost: Steven's Route 118 scene plays again so the player can retry
 	clearflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
+	setvar VAR_ROUTE118_STATE, 0
+	clearflag FLAG_HIDE_ROUTE_118_STEVEN
 	fadescreenswapbuffers FADE_TO_BLACK
 	special SetCB2WhiteOut
 
@@ -151,7 +143,7 @@ Nabla_SouthernIsland_EventScript_ReceiveMegaBracelet::
 	fadescreenswapbuffers FADE_TO_BLACK
 	clearflag FLAG_NABLA_LATIOS_EVENT_ACTIVE
 	setflag FLAG_NABLA_HIDE_SOUTHERN_ISLAND_EVENT
-	warp MAP_ROUTE118, 32, 11
+	warp MAP_ROUTE118, 44, 11
 	waitstate
 	releaseall
 	end

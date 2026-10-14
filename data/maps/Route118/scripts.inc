@@ -6,7 +6,7 @@ Route118_MapScripts::
 
 Route118_OnTransition:
 	call GabbyAndTy_EventScript_UpdateLocation
-	call Nabla_Route118_EventScript_UpdateLatiosEvent
+	setflag FLAG_NABLA_HIDE_ROUTE118_LATIOS
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_StartGroudonWeather
@@ -96,6 +96,7 @@ Route118_EventScript_StevenTrigger::
 	delay 30
 	msgbox Route118_Text_StevenQuestions, MSGBOX_DEFAULT
 	closemessage
+	goto_if_unset FLAG_NABLA_RECEIVED_LATIOS, Nabla_Route118_EventScript_LatiosAppears
 	call_if_eq VAR_0x8008, 0, Route118_EventScript_StevenExit0
 	call_if_eq VAR_0x8008, 1, Route118_EventScript_StevenExit1
 	call_if_eq VAR_0x8008, 2, Route118_EventScript_StevenExit2

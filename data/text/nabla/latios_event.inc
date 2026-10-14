@@ -1,12 +1,6 @@
-Nabla_Text_StevenRoute118Greeting:
-	.string "STEVEN: Oh, {PLAYER}{KUN}! What a nice\n"
-	.string "surprise.\p"
-	.string "I came to look for rare stones along\n"
-	.string "the river, but…\p"
-	.string "Hm? Did you hear that cry?$"
-
 Nabla_Text_StevenItsLatios:
-	.string "STEVEN: That's LATIOS!\p"
+	.string "STEVEN: Wait… that cry!\n"
+	.string "It's LATIOS!\p"
 	.string "It's said to be very intelligent.\n"
 	.string "It can even understand people.\p"
 	.string "It looks restless…\n"
