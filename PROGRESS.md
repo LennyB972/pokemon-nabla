@@ -132,6 +132,7 @@
   - Récompense : Latios Nv. 30 tenant le Latiosite (`givemon`, gestion équipe pleine → PC, surnom), Méga-Bracelet (`ITEM_MEGA_RING` renommé « Mega Bracelet »).
   - Post-game : `players_house.inc` saute la question « rouge ou bleu ? » si Latios a été reçu, et Latias erre.
   - Retour utilisateur : déclenchement déplacé dans la scène d'origine de Steven (Route 118, cases 43-45, 11), comme dans ROSA. Après son dialogue, au lieu de partir, Latios arrive (`goto_if_unset FLAG_NABLA_RECEIVED_LATIOS` ajouté dans `Route118_EventScript_StevenTrigger`). Steven de la plage supprimé, `FLAG_NABLA_HIDE_ROUTE118_STEVEN` rendu (redevenu `FLAG_UNUSED_0x280`). Défaite : `VAR_ROUTE118_STATE` remis à 0 et Steven réaffiché, la scène se rejoue. Retour de l'île en (44, 11).
+  - Bug rencontré en test : la sauvegarde de l'utilisateur, faite sur la Route 118 avec l'ancienne version, gardait l'ancienne liste d'objets (23 au lieu de 22) ; `addobject` faisait apparaître l'ancien Steven au lieu de Latios. Corrigé en recopiant la liste depuis la ROM dans la sauvegarde ; règle « objets ajoutés en fin de liste uniquement » ajoutée à CLAUDE.md. À rappeler dans les notes de version : sauvegarder dans un Centre Pokémon avant de mettre à jour le patch.
   - Cas limite non géré : équipe ET PC pleins au moment du don (message natif « plus de place », l'événement reste bloqué sur l'île).
   - Tests : 0 échec.
 
