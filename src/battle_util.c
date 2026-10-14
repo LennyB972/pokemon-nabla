@@ -9985,7 +9985,8 @@ bool32 AreMultiPartiesFullTeams(void)
         return FALSE;
     }
 
-    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+    // Scripts call this before the battle starts, when the battle type flags are still those of the previous battle
+    if (gMain.inBattle && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
     {
         gSpecialVar_Result = TRUE;
         return TRUE;
