@@ -2,7 +2,8 @@
 
 Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 - Cahier des charges : `VISION.md`. Plan : `ROADMAP.md`. État et décisions : `PROGRESS.md`.
-- Lire `PROGRESS.md` en début de session pour savoir où on en est. Ses décisions priment sur VISION.md.
+- En début de session, lire d'abord `ETAT_DU_PROJET.md` (point de reprise), puis `PROGRESS.md` pour le détail. Les décisions de PROGRESS.md priment sur VISION.md.
+- Mettre `ETAT_DU_PROJET.md` à jour en fin de session (et avant un compact).
 
 ## Règles permanentes
 
