@@ -34,7 +34,7 @@ Romhack de Pokémon Émeraude basé sur pokeemerald-expansion (RHH).
 ## Conventions
 
 - **Config** : les réglages se font dans `include/config/*.h`. Toujours modifier la valeur existante plutôt que dupliquer un define, pour que les merges upstream restent simples.
-- **Flags / vars** : prendre dans les `FLAG_UNUSED_*` / `VAR_UNUSED_*` et les renommer avec un nom explicite (ex. `FLAG_NABLA_LEVEL_CAPS`). Les vars libres sont rares (~29) : les économiser.
+- **Flags / vars** : prendre dans les `FLAG_UNUSED_*` / `VAR_UNUSED_*` et les renommer avec un nom explicite (ex. `FLAG_NABLA_LEVEL_CAPS`). Les vars libres sont rares (~29) : les économiser. Un flag ou une var Nabla qui ne sert plus n'est **jamais réattribué** (des sauvegardes peuvent l'avoir posé) : le garder avec un commentaire « retired » et en prendre un autre.
 - **Textes nouveaux** :
   - scripts : textes dans `data/text/nabla/*.inc` et scripts dans `data/scripts/nabla/*.inc` (un fichier par thème, inclus en fin de `data/event_scripts.s`), labels préfixés `Nabla_Text_` / `Nabla_EventScript_` ;
   - textes C : regroupés dans un fichier dédié plutôt que dispersés.

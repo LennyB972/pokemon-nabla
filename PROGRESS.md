@@ -146,6 +146,7 @@
   - Retours utilisateur : don de Steven et vendeur validés.
     - Gardevoirite introuvable : elle était collée à la Potion d'origine de la Route 102 (enclos en bas à gauche). L'outil exclut maintenant les cases à 2 pas ou moins d'un objet ; Gardevoirite déplacée en (16, 2), et 6 autres Méga-Gemmes collées à un objet replacées (dont celle de la Grotte Tréfonds, à côté d'un rocher à pousser).
     - Corde Sortie gratuite : objet rare réutilisable (expansion, Gen 8+), prix fixé à 1 000 ₽ (achat unique, choix de l'utilisateur).
+    - Gardevoirite toujours invisible : son flag 0x280 avait servi à cacher le Steven de la plage (ancienne version de l'événement Latios), et la sauvegarde de l'utilisateur l'avait posé. Corrigé dans la sauvegarde (flag effacé + liste d'objets de la Route 102 recopiée) ; règle « ne jamais réattribuer un flag Nabla libéré » ajoutée à CLAUDE.md.
     - `dev_scripts/nabla/list_items.py` génère les tableaux de `docs/nabla/items.md` depuis les maps.
   - Outil `hidden_item_spots.py` amélioré : exclut les ponts (altitude 15) et l'altitude 0 quand le sol de la map est ailleurs ; deux objets cachés de la 3.3 déplacés (Bonbon Exp. S Route 110, Aromate Assuré Route 118).
 
