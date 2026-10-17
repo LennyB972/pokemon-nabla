@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 3.5 terminée (Méga-Gemmes), en attente de ton test. Prochaine : phase 4 — contenu et équilibrage (4.1 répartition du Dex national).
+- **Étape en cours** : phase 4. 4.1a (jour/nuit 12 h/12 h) faite ; 4.1b (Safari par région) en conception.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -149,6 +149,12 @@
     - Gardevoirite toujours invisible : son flag 0x280 avait servi à cacher le Steven de la plage (ancienne version de l'événement Latios), et la sauvegarde de l'utilisateur l'avait posé. Corrigé dans la sauvegarde (flag effacé + liste d'objets de la Route 102 recopiée) ; règle « ne jamais réattribuer un flag Nabla libéré » ajoutée à CLAUDE.md.
     - `dev_scripts/nabla/list_items.py` génère les tableaux de `docs/nabla/items.md` depuis les maps.
   - Outil `hidden_item_spots.py` amélioré : exclut les ponts (altitude 15) et l'altitude 0 quand le sol de la map est ailleurs ; deux objets cachés de la 3.3 déplacés (Bonbon Exp. S Route 110, Aromate Assuré Route 118).
+- Étape 3.5 validée par l'utilisateur.
+- Phase 4.1 refondue (choix de l'utilisateur) : pas de répartition des 420 lignées sur les routes. Les routes restent proches d'Émeraude (retouches par l'utilisateur) ; un **Safari par région** rend le reste capturable.
+  - Safari : Hoenn exclu ; régions permanentes Kanto, Johto, Sinnoh, Unys, Kalos, Alola, Galar(+Hisui), Paldea (26 à 66 lignées chacune) ; zones spéciales après la Ligue : Starters (toutes régions), Zone Zéro (Paradoxes), Ultra-Espace (Ultra-Chimères). Niveaux qui suivent les badges (niveau des routes voisines au déblocage → 60-70 après la Ligue).
+  - Règles du Safari d'Émeraude : 500 pas, 30 Safari Balls, POKéBLOC / S'APPROCHER (équivalents de l'Appât et de la Pierre de RF/VF, qui a 600 pas).
+- Étape 4.1a — jour/nuit : `OW_TIMES_OF_DAY` = GEN_7 (matin 6-10 h, jour 10-17 h, soir 17-18 h, nuit 18-6 h) et `OW_TIME_OF_DAY_ENCOUNTERS` = TRUE. Les tables existantes servent de repli à toute heure. Tests : 0 échec.
+- Fil de Liaison : 4 000 ₽, comme les autres objets d'évolution (demande de l'utilisateur).
 
 ## Bugs connus
 
@@ -181,5 +187,5 @@
 
 ## Questions ouvertes
 
-- Prix du Fil de Liaison (8 000 dès le 3ᵉ badge) : à garder ou baisser ?
+- Conception du Safari par région (voir message du 2026-10-17).
 
