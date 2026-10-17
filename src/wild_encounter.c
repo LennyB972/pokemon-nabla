@@ -30,6 +30,8 @@
 #include "constants/item.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
+#include "constants/nabla.h"
+#include "constants/region_map_sections.h"
 #include "constants/weather.h"
 
 extern const u8 EventScript_SprayWoreOff[];
@@ -418,6 +420,65 @@ u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, en
     }
 }
 
+// Pokémon Nabla: each Safari Zone area has one table per region after its own,
+// picked by VAR_NABLA_SAFARI_REGION (see dev_scripts/nabla/safari_tables.py)
+static bool32 InSafariZoneRegion(void)
+{
+    return gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE && VarGet(VAR_NABLA_SAFARI_REGION) != NABLA_SAFARI_REGION_NONE;
+}
+
+static u32 GetSafariZoneRegionHeaderOffset(u32 headerId)
+{
+    u32 region = VarGet(VAR_NABLA_SAFARI_REGION);
+
+    if (!InSafariZoneRegion())
+        return 0;
+    for (u32 i = 1; i <= region; i++)
+    {
+        if (gWildMonHeaders[headerId + i].mapGroup != gWildMonHeaders[headerId].mapGroup
+         || gWildMonHeaders[headerId + i].mapNum != gWildMonHeaders[headerId].mapNum)
+            return 0;
+    }
+    return region;
+}
+
+// Levels follow the player's badges: those of the nearby routes when the Safari Zone opens, 60-70 after the League
+static u8 GetSafariZoneRegionWildLevel(void)
+{
+    static const u8 sLevelRanges[NUM_BADGES + 2][2] =
+    {
+        {5, 8}, {9, 12}, {13, 16}, {17, 20}, {21, 24}, {24, 27}, {27, 31}, {33, 37}, {40, 45}, // by badge count
+        {60, 70}, // League champion
+    };
+    u32 range = 0;
+
+    if (FlagGet(FLAG_IS_CHAMPION))
+    {
+        range = NUM_BADGES + 1;
+    }
+    else
+    {
+        for (u32 flag = FLAG_BADGE01_GET; flag < FLAG_BADGE01_GET + NUM_BADGES; flag++)
+            range += FlagGet(flag);
+    }
+    return sLevelRanges[range][0] + Random() % (sLevelRanges[range][1] - sLevelRanges[range][0] + 1);
+}
+
+// The Pokémon evolves as far as its level allows
+static void CreateSafariZoneRegionWildMon(enum Species species, u8 level)
+{
+    bool32 canStopEvo;
+
+    CreateWildMon(species, level);
+    for (u32 i = 0; i < 3; i++)
+    {
+        species = GetEvolutionTargetSpecies(&gParties[B_TRAINER_OPPONENT_A][0], EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
+        if (species == SPECIES_NONE)
+            break;
+        CreateWildMon(species, level);
+    }
+}
+
 u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;
@@ -441,7 +502,7 @@ u16 GetCurrentMapWildMonHeaderId(void)
                 i += alteringCaveId;
             }
 
-            return i;
+            return i + GetSafariZoneRegionHeaderOffset(i);
         }
     }
 
@@ -573,12 +634,17 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
     }
 
     level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    if (InSafariZoneRegion())
+        level = GetSafariZoneRegionWildLevel();
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    if (InSafariZoneRegion())
+        CreateSafariZoneRegionWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    else
+        CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }
 
@@ -589,7 +655,10 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
     u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
 
     UpdateChainFishingStreak();
-    CreateWildMon(wildMonSpecies, level);
+    if (InSafariZoneRegion())
+        CreateSafariZoneRegionWildMon(wildMonSpecies, GetSafariZoneRegionWildLevel());
+    else
+        CreateWildMon(wildMonSpecies, level);
     return wildMonSpecies;
 }
 

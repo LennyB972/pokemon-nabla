@@ -23,6 +23,7 @@
 #include "constants/daycare.h"
 #include "constants/decorations.h"
 #include "constants/difficulty.h"
+#include "constants/nabla.h"
 #include "constants/easy_chat.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
@@ -1749,3 +1750,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/latios_event.inc"
 	.include "data/scripts/nabla/mega_stones.inc"
 	.include "data/text/nabla/mega_stones.inc"
+	.include "data/scripts/nabla/safari_zone.inc"
+	.include "data/text/nabla/safari_zone.inc"

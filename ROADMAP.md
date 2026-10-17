@@ -175,7 +175,7 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt que saturer les routes, le **Safari par région** rend tout capturable ; les routes restent proches d'Émeraude et l'utilisateur les retouche lui-même.
 
 - **4.1a Jour/nuit 12 h / 12 h** ✅ — horaires Soleil/Lune (`OW_TIMES_OF_DAY` = GEN_7), tables de nuit possibles (`_Night`, éditables dans Porymap) ; sans table de nuit, une map garde ses rencontres.
-- **4.1b Safari par région** — à l'entrée, choix d'une région (Kanto, Johto, Sinnoh, Unys, Kalos, Alola, Galar+Hisui, Paldea : permanentes) ; après la Ligue, zones spéciales : Starters (27 lignées), Zone Zéro (Paradoxes), Ultra-Espace (Ultra-Chimères). Niveaux selon les badges. Mini-conception à valider.
+- **4.1b Safari par région** — 4.1b-1 ✅ (Safari moderne + Kanto), 4.1b-2 déblocage payant (30 000 ₽ par région, dans n'importe quel ordre) + 7 régions, 4.1b-3 zones spéciales (100 000 ₽, après la Ligue). À l'entrée, choix d'une région (Kanto, Johto, Sinnoh, Unys, Kalos, Alola, Galar+Hisui, Paldea : permanentes) ; après la Ligue, zones spéciales : Starters (27 lignées), Zone Zéro (Paradoxes), Ultra-Espace (Ultra-Chimères). Niveaux selon les badges. Mini-conception à valider.
 - **4.1c Outil de couverture** — rapport des lignées obtenables (routes, Safari, cadeaux) et manquantes.
 - **4.1d Retouches des routes par l'utilisateur** — Porymap (onglet Wild Pokémon) ou listes appliquées par Claude.
 - 🎮 · 🟡

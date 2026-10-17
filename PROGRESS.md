@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a (jour/nuit 12 h/12 h) faite ; 4.1b (Safari par région) en conception.
+- **Étape en cours** : phase 4. 4.1a faite ; 4.1b-1 (Safari moderne + Kanto) terminée, en attente de ton test. Prochaine : 4.1b-2 (déblocage des régions).
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -155,6 +155,12 @@
   - Règles du Safari d'Émeraude : 500 pas, 30 Safari Balls, POKéBLOC / S'APPROCHER (équivalents de l'Appât et de la Pierre de RF/VF, qui a 600 pas).
 - Étape 4.1a — jour/nuit : `OW_TIMES_OF_DAY` = GEN_7 (matin 6-10 h, jour 10-17 h, soir 17-18 h, nuit 18-6 h) et `OW_TIME_OF_DAY_ENCOUNTERS` = TRUE. Les tables existantes servent de repli à toute heure. Tests : 0 échec.
 - Fil de Liaison : 4 000 ₽, comme les autres objets d'évolution (demande de l'utilisateur).
+- Étape 4.1b-1 — Safari moderne (choix de l'utilisateur : comme ROSA) :
+  - Plus de mode Safari : entrée gratuite, pas de Safari Balls ni de limite de pas, vrais combats avec ses Poké Balls (doubles sauvages possibles). Script d'entrée réécrit (Pokébloc, 500 ₽, balls, `EnterSafariMode` retirés) ; textes Nabla pour l'entrée, l'info et la sortie (`data/text/nabla/safari_zone.inc`).
+  - `VAR_NABLA_SAFARI_REGION` (ex-`VAR_UNUSED_0x4083`), constantes `NABLA_SAFARI_REGION_*` (`include/constants/nabla.h`). Pour l'instant Kanto est imposé à l'entrée ; remise à zéro à la sortie.
+  - `src/wild_encounter.c` : dans le Safari, `GetCurrentMapWildMonHeaderId` saute à la table de la région (même principe que la Grotte Altérée) ; niveaux selon les badges (27-31 à 6 badges, 33-37, 40-45, 60-70 Maître) ; évolution dynamique par `GetEvolutionTargetSpecies` (niveau, sexe, heure… ; pas les évolutions par objet ou échange).
+  - Tables de Kanto (71 Pokémon) générées par `dev_scripts/nabla/safari_tables.py` : lignées dont le premier membre est de Kanto (bébés plus récents exclus, évolutions inter-générations exclues), par type et par puissance ; relecture : `docs/nabla/safari.md`. Tables d'origine strictement inchangées.
+  - Tests : 0 échec.
 
 ## Bugs connus
 

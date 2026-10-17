@@ -11,6 +11,7 @@ Route121_SafariZoneEntrance_EventScript_ExitSafariZone::
 	applymovement LOCALID_PLAYER, Route121_SafariZoneEntrance_Movement_ExitSafariZone
 	waitmovement 0
 	setvar VAR_SAFARI_ZONE_STATE, 0
+	setvar VAR_NABLA_SAFARI_REGION, NABLA_SAFARI_REGION_NONE
 	releaseall
 	end
 
@@ -39,7 +40,7 @@ Route121_SafariZoneEntrance_EventScript_InfoAttendant::
 	end
 
 Route121_SafariZoneEntrance_EventScript_FirstTimeInfo::
-	msgbox Route121_SafariZoneEntrance_Text_FirstTimeInfo, MSGBOX_DEFAULT
+	msgbox Nabla_Text_SafariZoneInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -48,32 +49,21 @@ Route121_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	showmoneybox 0, 0
-	msgbox Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay, MSGBOX_YESNO
+	msgbox Nabla_Text_SafariZoneWouldYouLikeToEnter, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone
 	msgbox Route121_SafariZoneEntrance_Text_PlayAnotherTime, MSGBOX_DEFAULT
 	goto Route121_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter
 	end
 
+@ Nabla: free entry, no Safari Game (real battles with the player's own Poké Balls)
 Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone::
-	checkitem ITEM_POKEBLOCK_CASE
-	goto_if_eq VAR_RESULT, 0, Route121_SafariZoneEntrance_EventScript_NoPokeblockCase
 	call Route121_SafariZoneEntrance_EventScript_CheckHasRoomForPokemon
-	checkmoney 500
-	goto_if_eq VAR_RESULT, 0, Route121_SafariZoneEntrance_EventScript_NotEnoughMoney
-	playse SE_SHOP
-	msgbox Route121_SafariZoneEntrance_Text_ThatWillBe500Please, MSGBOX_DEFAULT
-	removemoney 500
-	updatemoneybox
-	msgbox Route121_SafariZoneEntrance_Text_HereAreYourSafariBalls, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message Route121_SafariZoneEntrance_Text_Received30SafariBalls
-	waitfanfare
-	msgbox Route121_SafariZoneEntrance_Text_PleaseEnjoyYourself, MSGBOX_DEFAULT
+	call Nabla_EventScript_SafariZoneChooseRegion
+	msgbox Nabla_Text_SafariZoneEnjoy, MSGBOX_DEFAULT
 	closemessage
 	hidemoneybox
 	applymovement LOCALID_PLAYER, Route121_SafariZoneEntrance_Movement_EnterSafariZone
 	waitmovement 0
-	special EnterSafariMode
 	setvar VAR_SAFARI_ZONE_STATE, 2
 	clearflag FLAG_GOOD_LUCK_SAFARI_ZONE
 	warp MAP_SAFARI_ZONE_SOUTH, 32, 33
