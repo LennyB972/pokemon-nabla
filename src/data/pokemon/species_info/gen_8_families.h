@@ -5275,6 +5275,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .expYield = 165,
         .evYield_Attack = 2,
         .evYield_SpDefense = 1,
+        .itemRare = ITEM_FALINKSITE,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
