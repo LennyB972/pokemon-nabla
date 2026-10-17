@@ -2309,7 +2309,7 @@ const struct ItemInfo gItemsInfo[] =
             "instantly from a\n"
             "cave or a dungeon."),
     #if I_KEY_ESCAPE_ROPE >= GEN_8
-        .price = 0,
+        .price = 1000, // Nabla: bought once, then kept
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
     #else

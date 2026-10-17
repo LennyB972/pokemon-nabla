@@ -5,7 +5,7 @@ A spot is a walkable land tile reachable on foot from the map's warps or
 edges, with no event on it, away from the map edges, and preferably in a
 corner or a dead end (more blocked neighbours). Object events (NPCs, cuttable
 trees, breakable rocks, boulders) block the way, so spots needing an HM to
-reach are left out.
+reach are left out, and spots right next to an object are skipped.
 
 Usage (from the repo root): python3 dev_scripts/nabla/hidden_item_spots.py MAP_FOLDER [COUNT]
 Example: python3 dev_scripts/nabla/hidden_item_spots.py Route104 5
@@ -78,6 +78,9 @@ def find_spots(map_name):
     spots = []
     for x, y in reachable:
         if (x, y) in events:
+            continue
+        # Keep away from other objects (NPCs, other item balls)
+        if any(abs(x - ox) + abs(y - oy) <= 2 for ox, oy in objects):
             continue
         if not (EDGE_MARGIN <= x < width - EDGE_MARGIN and EDGE_MARGIN <= y < height - EDGE_MARGIN):
             continue
