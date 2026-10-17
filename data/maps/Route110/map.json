@@ -502,6 +502,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_110_BIRCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 34,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MANECTITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_NABLA_ITEM_ROUTE110_MANECTITE"
     }
   ],
   "warp_events": [
@@ -768,9 +781,9 @@
     },
     {
       "type": "hidden_item",
-      "x": 15,
-      "y": 15,
-      "elevation": 0,
+      "x": 4,
+      "y": 11,
+      "elevation": 3,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE110_EXP_CANDY_S"
     }

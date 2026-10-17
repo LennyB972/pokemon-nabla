@@ -1747,3 +1747,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/nabla/pokemart.inc"
 	.include "data/scripts/nabla/latios_event.inc"
 	.include "data/text/nabla/latios_event.inc"
+	.include "data/scripts/nabla/mega_stones.inc"
+	.include "data/text/nabla/mega_stones.inc"

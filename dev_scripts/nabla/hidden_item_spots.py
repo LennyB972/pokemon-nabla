@@ -70,14 +70,21 @@ def find_spots(map_name):
                 reachable.add((nx, ny))
                 queue.append((nx, ny))
 
+    # Elevation 15 is used by bridges, and 0 by multi-level tiles unless the whole map lies at 0
+    elevations = [blocks[y][x] >> 12 for x, y in reachable]
+    ground = max(set(elevations), key=elevations.count) if elevations else 3
+    excluded = {15} if ground == 0 else {0, 15}
+
     spots = []
     for x, y in reachable:
         if (x, y) in events:
             continue
         if not (EDGE_MARGIN <= x < width - EDGE_MARGIN and EDGE_MARGIN <= y < height - EDGE_MARGIN):
             continue
+        if blocks[y][x] >> 12 in excluded:
+            continue
         blocked = sum(1 for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)) if (nx, ny) not in reachable)
-        if blocked >= 2:
+        if 2 <= blocked <= 3:
             spots.append((blocked, x, y, blocks[y][x] >> 12))
     # Dead ends first, then a stable order
     spots.sort(key=lambda s: (-s[0], s[2], s[1]))

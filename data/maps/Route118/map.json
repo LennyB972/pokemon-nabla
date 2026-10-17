@@ -324,6 +324,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_NABLA_HIDE_ROUTE118_LATIOS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SHARPEDONITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_NABLA_ITEM_ROUTE118_SHARPEDONITE"
     }
   ],
   "warp_events": [
@@ -449,9 +462,9 @@
     },
     {
       "type": "hidden_item",
-      "x": 9,
-      "y": 3,
-      "elevation": 0,
+      "x": 38,
+      "y": 5,
+      "elevation": 3,
       "item": "ITEM_BOLD_MINT",
       "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE118_BOLD_MINT"
     }

@@ -163,8 +163,8 @@ Les décisions de `PROGRESS.md` priment sur VISION.md (ex. : Nuzlocke retiré, 2
 - Fichiers : `data/scripts/nabla/latios_event.inc`, `data/text/nabla/latios_event.inc`.
 - 🎮 · 🟡
 
-### 3.5 Méga-Gemmes
-- **Type** : data. Répartir les autres Méga-Gemmes (cadeaux, objets cachés, boutiques post-game) selon un tableau validé par l'utilisateur, consigné dans `docs/nabla/items.md`.
+### 3.5 Méga-Gemmes ✅
+- **Type** : data + script. Méga-Gemmes en objet rare des Pokémon sauvages (lignées non légendaires) ; 17 Méga-Gemmes de Hoenn au sol (visibles) ; Steven donne celle du starter sur la Route 120 ; vendeur de 65 Méga-Gemmes à 5 000 ₽ au 4ᵉ étage de Nénucrique. Légendaires : plus tard. Référence : `docs/nabla/items.md`.
 - 🎮 · 🟢
 
 ---

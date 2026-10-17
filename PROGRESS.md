@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : 3.4 terminée (événement Latios + Méga-Bracelet), en attente de ton test. Prochaine : 3.5 — Méga-Gemmes.
+- **Étape en cours** : 3.5 terminée (Méga-Gemmes), en attente de ton test. Prochaine : phase 4 — contenu et équilibrage (4.1 répartition du Dex national).
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -136,6 +136,14 @@
   - Bug expansion corrigé : dans un combat en duo lancé par script (Île du Sud, et Algatia en vanilla), la sélection des 3 Pokémon était ignorée si le combat précédent était sauvage. `AreMultiPartiesFullTeams` (`src/battle_util.c`) lisait les drapeaux du combat précédent ; ils ne sont plus consultés qu'en combat (`gMain.inBattle`). Tests : 0 échec. Correctif à proposer à expansion.
   - Cas limite non géré : équipe ET PC pleins au moment du don (message natif « plus de place », l'événement reste bloqué sur l'île).
   - Tests : 0 échec.
+- Étape 3.4 validée par l'utilisateur (événement complet, sélection d'équipe corrigée).
+- Étape 3.5 — Méga-Gemmes (choix de l'utilisateur) :
+  - Objets sauvages : 177 espèces/formes non légendaires des lignées Méga portent leur Méga-Gemme en objet rare (5 % / 20 %). Charizard/Raichu → gemme X ; Absol/Carchacrok/Lucario → gemme de base ; Tarsal/Kirlia → Gardevoirite ; Stalgamin → Oniglalite. Ancien objet rare → objet commun si libre (46 cas), sinon retiré (Morceau d'Étoile de Stari/Staross, Baie Sitrus de Nanméouïe).
+  - 17 Méga-Gemmes de Hoenn au sol, visibles (Poké Balls ajoutées en fin de liste d'objets, flags `FLAG_NABLA_ITEM_*` ex-`FLAG_UNUSED_0x280`-`0x290`).
+  - Route 120 : Steven donne aussi la Méga-Gemme du starter (`VAR_STARTER_MON`), une ligne `call` ajoutée après le Scope Devon.
+  - Vendeur au 4ᵉ étage de Nénucrique (entre les deux vendeuses de CT) : les 65 autres Méga-Gemmes non légendaires (starters, X/Y/Z, autres régions), prix fixé à 5 000 ₽ (0 par défaut dans expansion).
+  - Légendaires (Mewtwo X/Y, Latias, Diancie, Zygarde, Heatran, Darkrai, Zeraora, Magearna) : à traiter avec les légendaires.
+  - Outil `hidden_item_spots.py` amélioré : exclut les ponts (altitude 15) et l'altitude 0 quand le sol de la map est ailleurs ; deux objets cachés de la 3.3 déplacés (Bonbon Exp. S Route 110, Aromate Assuré Route 118).
 
 ## Bugs connus
 
