@@ -53,13 +53,13 @@
 
 #define FLAG_NABLA_EXP_SHARE 0x20 // Nabla: Gen 6+ Exp. Share on/off
 #define FLAG_NABLA_LEVEL_CAPS 0x21 // Nabla: level caps chosen at the start
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_NABLA_SAFARI_JOHTO 0x22 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_SINNOH 0x23 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_UNOVA 0x24 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_KALOS 0x25 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_ALOLA 0x26 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_GALAR 0x27 // Nabla: Safari Zone region unlocked
+#define FLAG_NABLA_SAFARI_PALDEA 0x28 // Nabla: Safari Zone region unlocked
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

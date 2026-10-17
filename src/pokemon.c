@@ -31,6 +31,7 @@
 #include "main.h"
 #include "mail.h"
 #include "move_relearner.h"
+#include "nabla_safari_zone.h"
 #include "naming_screen.h"
 #include "overworld.h"
 #include "ow_abilities.h"
@@ -4371,11 +4372,11 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             }
             break;
         case IF_REGION:
-            if (GetCurrentRegion() == params[i].arg1)
+            if (IsPlayerInEvolutionRegion(params[i].arg1))
                 currentCondition = TRUE;
             break;
         case IF_NOT_REGION:
-            if (GetCurrentRegion() != params[i].arg1)
+            if (!IsPlayerInEvolutionRegion(params[i].arg1))
                 currentCondition = TRUE;
             break;
         case CONDITIONS_END:

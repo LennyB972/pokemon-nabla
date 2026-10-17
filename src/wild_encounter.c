@@ -12,6 +12,7 @@
 #include "link.h"
 #include "mass_outbreak.h"
 #include "metatile_behavior.h"
+#include "nabla_safari_zone.h"
 #include "overworld.h"
 #include "ow_abilities.h"
 #include "pokeblock.h"
@@ -422,11 +423,6 @@ u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, en
 
 // Pokémon Nabla: each Safari Zone area has one table per region after its own,
 // picked by VAR_NABLA_SAFARI_REGION (see dev_scripts/nabla/safari_tables.py)
-static bool32 InSafariZoneRegion(void)
-{
-    return gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE && VarGet(VAR_NABLA_SAFARI_REGION) != NABLA_SAFARI_REGION_NONE;
-}
-
 static u32 GetSafariZoneRegionHeaderOffset(u32 headerId)
 {
     u32 region = VarGet(VAR_NABLA_SAFARI_REGION);

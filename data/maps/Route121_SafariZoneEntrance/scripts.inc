@@ -49,16 +49,15 @@ Route121_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	showmoneybox 0, 0
-	msgbox Nabla_Text_SafariZoneWouldYouLikeToEnter, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone
+	call Route121_SafariZoneEntrance_EventScript_CheckHasRoomForPokemon
+	call Nabla_EventScript_SafariZoneChooseRegion
+	goto_if_ne VAR_NABLA_SAFARI_REGION, NABLA_SAFARI_REGION_NONE, Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone
 	msgbox Route121_SafariZoneEntrance_Text_PlayAnotherTime, MSGBOX_DEFAULT
 	goto Route121_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter
 	end
 
 @ Nabla: free entry, no Safari Game (real battles with the player's own Poké Balls)
 Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone::
-	call Route121_SafariZoneEntrance_EventScript_CheckHasRoomForPokemon
-	call Nabla_EventScript_SafariZoneChooseRegion
 	msgbox Nabla_Text_SafariZoneEnjoy, MSGBOX_DEFAULT
 	closemessage
 	hidemoneybox

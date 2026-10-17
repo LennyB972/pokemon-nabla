@@ -17,4 +17,9 @@
 #define NABLA_SAFARI_REGION_PARADOX      10
 #define NABLA_SAFARI_REGION_ULTRA_BEASTS 11
 
+// Safari Zone counter: price of a region, extra entries of the region menus
+#define NABLA_SAFARI_REGION_PRICE  30000
+#define NABLA_SAFARI_MENU_UNLOCK   100
+#define NABLA_SAFARI_MENU_CANCEL   101
+
 #endif // GUARD_CONSTANTS_NABLA_H

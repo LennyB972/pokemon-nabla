@@ -6,8 +6,10 @@ order of SAFARI_REGIONS (the game picks the table with VAR_NABLA_SAFARI_REGION).
 A region contains every non-legendary Pokémon that starts a line in that region:
 babies added in later generations are skipped (Pikachu is Kanto, Pichu is Johto) and so are
 cross-generation evolutions (Magmortar comes from Magmar). Regional forms belong to the
-region of their form. The game sets the level and evolves the Pokémon, so tables only
-list species.
+region of their form, and lines with a regional evolution also live in that region (Cubone in
+Alola: the game evolves Pokémon into their regional form in their region's Safari Zone).
+Non-Water Pokémon of the Water 1/2 egg groups (Dratini) live both on land and in the water.
+The game sets the level and evolves the Pokémon, so tables only list species.
 
 Usage (from the repo root):
   python3 dev_scripts/nabla/safari_tables.py Kanto      (re)generate one region
@@ -28,6 +30,7 @@ NATIONAL_DEX_RANGES = {"Kanto": (1, 151), "Johto": (152, 251), "Hoenn": (252, 38
                        "Unova": (494, 649), "Kalos": (650, 721), "Alola": (722, 809), "Galar": (810, 905),
                        "Paldea": (906, 1025)}
 FORM_REGIONS = {"_ALOLA": "Alola", "_GALAR": "Galar", "_HISUI": "Galar", "_PALDEA": "Paldea"}
+NOT_REGIONAL_FORMS = ["PIKACHU_ALOLA"]  # Pikachu in an Alola Cap
 STARTERS = ("BULBASAUR CHARMANDER SQUIRTLE CHIKORITA CYNDAQUIL TOTODILE TREECKO TORCHIC MUDKIP TURTWIG "
             "CHIMCHAR PIPLUP SNIVY TEPIG OSHAWOTT CHESPIN FENNEKIN FROAKIE ROWLET LITTEN POPPLIO GROOKEY "
             "SCORBUNNY SOBBLE SPRIGATITO FUECOCO QUAXLY").split()
@@ -42,6 +45,7 @@ AREAS = {
     "MAP_SAFARI_ZONE_SOUTHEAST": ("Southeast", []),
 }
 SLOTS = {"land_mons": 12, "water_mons": 5, "rock_smash_mons": 5, "fishing_mons": 10}
+MIN_SPECIES = {"land_mons": 6, "water_mons": 3, "rock_smash_mons": 2, "fishing_mons": 3}
 
 
 def number(text):
@@ -50,24 +54,67 @@ def number(text):
     return int(values[0]) if values else 0
 
 
+def expand_calls(text, functions):
+    # Expands the calls of function-like macros (UNOWN_MISC_INFO(A, ...))
+    call = re.compile(r"\b(%s)\(" % "|".join(functions))
+    out, i = [], 0
+    while (m := call.search(text, i)):
+        out.append(text[i:m.start()])
+        args, start, depth, j = [], m.end(), 1, m.end()
+        while depth:
+            depth += text[j] in "([{"
+            depth -= text[j] in ")]}"
+            if depth == 0 or (depth == 1 and text[j] == ","):
+                args.append(text[start:j].strip())
+                start = j + 1
+            j += 1
+        params, value = functions[m.group(1)]
+        out.append(re.sub(r"#*\b\w+\b", lambda w: args[params.index(w.group(0).lstrip("#"))] if w.group(0).lstrip("#") in params else w.group(0), value).replace("##", ""))
+        i = j
+    return "".join(out + [text[i:]])
+
+
+def species_files():
+    # Some species are built by macros (Unown, Vivillon...) and some types and stats are macros
+    # (JIGGLYPUFF_FAMILY_TYPES): expand them, keeping the updated value, which is defined first
+    texts = [open(path).read().replace("\\\n", " ") for path in sorted(glob.glob("src/data/pokemon/species_info/gen_*_families.h"))]
+    macros, functions = {}, {}
+    for text in texts:
+        for name, params, value in re.findall(r"^\s*#define (\w+)(\([^)]*\))?[ \t]+(.+?)\s*$", text, re.M):
+            if params:
+                functions.setdefault(name, ([p.strip() for p in params[1:-1].split(",")], re.sub(r"\s*##\s*", "##", value)))
+            else:
+                macros.setdefault(name, value)
+    for text in texts:
+        text = expand_calls(expand_calls(text, functions), functions)
+        for _ in range(2):
+            text = re.sub(r"\b[A-Z]\w+\b", lambda w: macros.get(w.group(0), w.group(0)), text)
+        yield text
+
+
 def load_species():
     order = re.findall(r"^\s+NATIONAL_DEX_(\w+),", open("include/constants/pokedex.h").read(), re.M)
     national = {name: i for i, name in enumerate(order)}
     species = {}
-    for path in sorted(glob.glob("src/data/pokemon/species_info/gen_*_families.h")):
-        for m in re.finditer(r"\n    \[SPECIES_(\w+)\] =\n    \{(.*?)\n    \},", open(path).read(), re.S):
-            name, body = m.groups()
+    for text in species_files():
+        entries = re.findall(r"\n    \[SPECIES_(\w+)\] =\n    \{(.*?)\n    \},", text, re.S)
+        entries += re.findall(r"\n    \[SPECIES_(\w+)\]\s*=\s*\{([^\n]*)\},?[ \t]*(?=\n)", text)
+        for name, body in entries:
             dex = re.search(r"\.natDexNum = NATIONAL_DEX_(\w+)", body)
-            types = re.search(r"\.types = MON_TYPES\(TYPE_(\w+)(?:, TYPE_(\w+))?", body)
+            # Types can be "P_UPDATED_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL": keep the updated one
+            types = re.search(r"\.types = (MON_TYPES\([^)]*\)|\{[^}]*\})", body)
+            types = re.sub(r":\s*TYPE_\w+", "", types.group(1)) if types else ""
             stats = sum(number(s) for s in re.findall(r"\.base(?:HP|Attack|Defense|Speed|SpAttack|SpDefense)\s*= ([^,\n]+)", body))
             species[name] = dict(
                 dex=national.get(dex.group(1)) if dex else None,
-                types=[t for t in (types.groups() if types else ()) if t],
+                types=list(dict.fromkeys(re.findall(r"\bTYPE_(\w+)", types))),
                 bst=stats,
                 legend=re.search(r"\.is(Legendary|SubLegendary|RestrictedLegendary|Mythical) = TRUE", body) is not None,
                 ultra=".isUltraBeast = TRUE" in body,
                 paradox=".isParadox = TRUE" in body,
                 evos=re.findall(r"\{EVO_\w+, [^,]+, SPECIES_(\w+)", body),
+                water_eggs=re.search(r"\.eggGroups = MON_EGG_GROUPS\([^)]*EGG_GROUP_WATER_[12]", body) is not None,
+                regional_evos=[FORM_REGIONS["_" + r] for r in re.findall(r"\{IF_REGION, REGION_(\w+)\}", body)],
             )
     for data in species.values():
         data["pre"] = None
@@ -79,6 +126,8 @@ def load_species():
 
 
 def region_of(name, data):
+    if name in NOT_REGIONAL_FORMS:
+        return None
     for suffix, region in FORM_REGIONS.items():
         if name.endswith(suffix) or suffix + "_" in name:
             return region
@@ -86,6 +135,13 @@ def region_of(name, data):
         if data["dex"] is not None and first <= data["dex"] <= last:
             return region
     return None
+
+
+def line_start(species, name):
+    # Babies added in later generations don't start the line (Pikachu, not Pichu)
+    while species[name]["pre"] and species[species[name]["pre"]]["dex"] <= species[name]["dex"]:
+        name = species[name]["pre"]
+    return name
 
 
 def final_bst(species, name, seen=()):
@@ -116,7 +172,11 @@ def region_species(species, region):
                   and not data["legend"] and not data["ultra"] and not data["paradox"])
         if ok:
             picked.append(name)
-    return sorted(picked, key=lambda n: (final_bst(species, n), n))
+        if region in data["regional_evos"]:
+            start = line_start(species, name)
+            if start not in STARTERS and not species[start]["legend"] and start not in picked:
+                picked.append(start)
+    return sorted(set(picked), key=lambda n: (final_bst(species, n), n))
 
 
 def fill(names, count):
@@ -126,20 +186,20 @@ def fill(names, count):
 
 def build_region(species, region, area_types):
     names = region_species(species, region)
-    water = [n for n in names if "WATER" in species[n]["types"]]
+    water = [n for n in names if "WATER" in species[n]["types"] or species[n]["water_eggs"]]
     rock = [n for n in names if species[n]["types"][:1] == ["ROCK"]]
-    land = [n for n in names if n not in water]
+    land = [n for n in names if "WATER" not in species[n]["types"]]
     areas = {area: {"land_mons": [], "water_mons": [], "rock_smash_mons": [], "fishing_mons": []} for area in AREAS}
 
-    # Land: by type theme, then fill the emptiest pre-League area, then the post-League ones
+    # Land: by type theme, the post-League areas take the Pokémon left when the themed areas are full
     pre_league = [a for a in AREAS if AREAS[a][1]]
+    themed = {n: [a for t in species[n]["types"] for a in pre_league if t in AREAS[a][1] and "land_mons" in area_types[a]] for n in land}
     for n in land:
-        themed = [a for t in species[n]["types"] for a in pre_league if t in AREAS[a][1] and "land_mons" in area_types[a]]
-        candidates = [a for a in themed if len(areas[a]["land_mons"]) < SLOTS["land_mons"]]
+        candidates = [a for a in themed[n] if len(areas[a]["land_mons"]) < SLOTS["land_mons"]]
         if not candidates:
-            candidates = sorted((a for a in AREAS if "land_mons" in area_types[a]), key=lambda a: len(areas[a]["land_mons"]))
+            candidates = sorted((a for a in AREAS if a not in pre_league and "land_mons" in area_types[a]), key=lambda a: len(areas[a]["land_mons"]))
         areas[candidates[0]]["land_mons"].append(n)
-    # Water Pokémon alternate between surfing and fishing, rock Pokémon also hide under rocks
+    # Water Pokémon alternate between surfing and fishing, Rock Pokémon also hide under rocks
     surf_areas = [a for a in AREAS if "water_mons" in area_types[a]]
     fish_areas = [a for a in AREAS if "fishing_mons" in area_types[a]]
     for i, n in enumerate(water):
@@ -149,12 +209,21 @@ def build_region(species, region, area_types):
     rock_areas = [a for a in AREAS if "rock_smash_mons" in area_types[a]]
     for i, n in enumerate(rock):
         areas[rock_areas[i % len(rock_areas)]]["rock_smash_mons"].append(n)
-    # Areas left empty (small regions) reuse the region's strongest Pokémon
+    # Tables with too few Pokémon (small regions) borrow the region's least used ones: weak ones
+    # of the area's types before the League, the strongest after
+    pools = {"land_mons": land, "water_mons": water, "fishing_mons": water, "rock_smash_mons": rock or land}
     for a in AREAS:
         for kind in area_types[a]:
-            if not areas[a][kind]:
-                pool = {"land_mons": land, "water_mons": water, "fishing_mons": water, "rock_smash_mons": rock or land}[kind] or names
-                areas[a][kind] = pool[-SLOTS[kind]:]
+            def priority(n):
+                uses = sum(n in table for area in areas.values() for table in area.values())
+                if a in pre_league:
+                    return (uses, a not in themed.get(n, []), final_bst(species, n), n)
+                return (uses, -final_bst(species, n), n)
+            while len(areas[a][kind]) < MIN_SPECIES[kind]:
+                options = [n for n in pools[kind] or names if n not in areas[a][kind]]
+                if not options:
+                    break
+                areas[a][kind].append(min(options, key=priority))
     for a in AREAS:
         for kind in areas[a]:
             areas[a][kind].sort(key=lambda n: (final_bst(species, n), n))
@@ -198,7 +267,9 @@ def write_doc():
     labels = {"land_mons": "Herbes", "water_mons": "Surf", "rock_smash_mons": "Éclate-Roc", "fishing_mons": "Pêche"}
     lines = ["# Safari par région", "",
              "Généré par `python3 dev_scripts/nabla/safari_tables.py --doc`. Chaque Pokémon apparaît au niveau des badges",
-             "du joueur et évolue selon son niveau. Les zones Nord-Est et Sud-Est s'ouvrent après la Ligue.", ""]
+             "du joueur et évolue selon son niveau. Les zones Nord-Est et Sud-Est s'ouvrent après la Ligue.",
+             "Dans le Safari d'une région, les évolutions régionales donnent la forme de cette région (Pikachu → Raichu",
+             "d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).", ""]
     encounters = data["wild_encounter_groups"][0]["encounters"]
     for region in SAFARI_REGIONS:
         tables = [e for e in encounters if e["base_label"].endswith("_" + region) and e["map"] in AREAS]

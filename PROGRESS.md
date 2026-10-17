@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a faite ; 4.1b-1 (Safari moderne + Kanto) terminée, en attente de ton test. Prochaine : 4.1b-2 (déblocage des régions).
+- **Étape en cours** : phase 4. 4.1a et 4.1b-1 faites ; 4.1b-2 (déblocage des régions du Safari, 7 régions, évolutions régionales) terminée, en attente de ton test. Prochaine : 4.1b-3 (zones spéciales après la Ligue).
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -161,6 +161,21 @@
   - `src/wild_encounter.c` : dans le Safari, `GetCurrentMapWildMonHeaderId` saute à la table de la région (même principe que la Grotte Altérée) ; niveaux selon les badges (27-31 à 6 badges, 33-37, 40-45, 60-70 Maître) ; évolution dynamique par `GetEvolutionTargetSpecies` (niveau, sexe, heure… ; pas les évolutions par objet ou échange).
   - Tables de Kanto (71 Pokémon) générées par `dev_scripts/nabla/safari_tables.py` : lignées dont le premier membre est de Kanto (bébés plus récents exclus, évolutions inter-générations exclues), par type et par puissance ; relecture : `docs/nabla/safari.md`. Tables d'origine strictement inchangées.
   - Tests : 0 échec.
+- Étape 4.1b-2 — déblocage des régions du Safari :
+  - Comptoir : menu des régions ouvertes (+ « UNLOCK A REGION » tant qu'il en reste, + CANCEL). Le déblocage coûte 30 000 ₽ (`NABLA_SAFARI_REGION_PRICE`), dans n'importe quel ordre, définitif ; après un achat (ou un refus faute d'argent) on reste dans la liste des régions à acheter, B revient au menu des régions. Plus de question oui/non : le menu s'ouvre directement.
+  - Flags `FLAG_NABLA_SAFARI_JOHTO` … `PALDEA` (0x22-0x28, jamais utilisés). Kanto n'a pas de flag (toujours ouvert).
+  - `src/nabla_safari_zone.c` : liste des régions (nom, flag, régions d'évolution), specials du comptoir (`NablaSafariZone_*`, dans `data/specials.inc`), `InSafariZoneRegion` (déplacé depuis `src/wild_encounter.c`).
+  - Évolutions régionales : les conditions `IF_REGION` / `IF_NOT_REGION` d'expansion utilisent la région du Safari visitée (`IsPlayerInEvolutionRegion`, `src/pokemon.c`). Ex. Pikachu + Pierre Foudre → Raichu d'Alola dans le Safari Alola ; Feurisson niv. 36 → Typhlosion de Hisui dans Galar & Hisui ; ailleurs, formes normales. Vaut aussi pour les sauvages du Safari (évolution dynamique). Test : `test/nabla_safari_zone.c`.
+  - 7 régions générées (Johto 49, Sinnoh 35, Unys 66, Kalos 28, Alola 41, Galar & Hisui 56, Paldea 39 lignées), Kanto régénéré (71).
+  - Générateur corrigé et complété :
+    - types et stats écrits en macros (Rondoudou, Mélofée, Togepi, Motisma… n'avaient pas de type) et espèces construites par macros (Zarbi, Lépidonille, Flabébé, Couafarel, Météno manquaient) ;
+    - Pikachu casquette d'Alola exclu ;
+    - les non-Eau des groupes d'œufs Eau 1/2 (Minidraco, Delibird, Inkay…) vont aussi dans l'eau ;
+    - les lignées à évolution régionale vivent aussi dans cette région (Pikachu, Noeunoeuf, Osselait en Alola ; Smogo, Mime Jr., Teddiursa, Chlorobule, Furaiglon, Grelaçon, Mucuscule en Galar & Hisui) ;
+    - chaque table a un minimum de variété (6 espèces en herbes, 3 en surf/pêche, 2 sous les rochers), complétée avec les Pokémon les moins présents de la région (les plus faibles avant la Ligue, les plus forts après) ;
+    - le surplus d'une région ne va plus que dans les zones post-Ligue. Les Pokémon Roche sont dans les herbes (ou l'eau) **et** sous les rochers.
+  - À prévoir (4.1c) : Ursaring → Ursaking demande un Bloc de Tourbe (introuvable pour l'instant), comme d'autres évolutions de Galar/Hisui par objet.
+  - Tests : 0 échec (5 382 réussis) + test Nabla.
 
 ## Bugs connus
 
@@ -190,8 +205,11 @@
 | 2026-10-13 | Level caps : cap dur, sans bonus d'XP ; valeurs = as des Champions, modifiables dans `src/caps.c`. |
 | 2026-10-13 | Menu de début de partie dans le camion arrêté, juste avant la sortie ; choix définitifs. |
 | 2026-10-12 | **Méga-Bracelet** donné comme dans ROSA : événement Latios après le **5ᵉ badge**, Île du Sud, combat en duo avec Steven. |
+| 2026-10-17 | Safari moderne façon ROSA : entrée gratuite, vrais combats, pas de limite de pas ni de Safari Balls ; une région par visite, niveaux selon les badges (60-70 après la Ligue), évolution dynamique. Hoenn retiré du Safari. |
+| 2026-10-17 | Régions du Safari : Kanto ouvert d'office, les 7 autres à 30 000 ₽ chacune, dans n'importe quel ordre ; zones spéciales (Starters, Paradoxes, Ultra-Chimères) à 100 000 ₽ après la Ligue ; **la zone Starters est au niveau 5**. |
+| 2026-10-17 | Formes régionales : un Pokémon prend sa forme régionale en évoluant dans le Safari de la région (Raichu d'Alola en Alola, Typhlosion de Hisui en Galar & Hisui). |
+| 2026-10-17 | Répartition du Safari : équilibrée selon la puissance (les plus faibles sont les plus communs), pas de Pokémon Roche uniquement sous les rochers, Pokémon aquatiques non-Eau aussi dans l'eau. |
 
 ## Questions ouvertes
 
-- Conception du Safari par région (voir message du 2026-10-17).
-
+- Aucune pour l'instant.
