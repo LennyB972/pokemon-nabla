@@ -15499,7 +15499,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_LINKING_CORD] =
     {
         .name = ITEM_NAME("Linking Cord"),
-        .price = 8000,
+        .price = 4000,
         .description = COMPOUND_STRING(
             "A string exuding\n"
             "energy loved by\n"
