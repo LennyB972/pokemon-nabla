@@ -14997,7 +14997,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_GIMMIGHOUL_COIN] =
     {
         .name = ITEM_NAME("Gimmighoul Coin"),
-        .price = 400,
+        .price = 10, // Pokémon Nabla: sold at Lilycove, Gholdengo needs 999
         .description = COMPOUND_STRING(
             "A dropped material\n"
             "Gimmighoul hoard\n"

@@ -6575,6 +6575,7 @@ static const struct LevelUpMove sStantlerLevelUpLearnset[] = {
     LEVEL_UP_MOVE(13, MOVE_STOMP),
     LEVEL_UP_MOVE(16, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(21, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(21, MOVE_PSYSHIELD_BASH), // Pokémon Nabla: as in Legends: Arceus, for Wyrdeer
     LEVEL_UP_MOVE(23, MOVE_CONFUSE_RAY),
     LEVEL_UP_MOVE(27, MOVE_CALM_MIND),
     LEVEL_UP_MOVE(32, MOVE_ROLE_PLAY),
@@ -18814,6 +18815,7 @@ static const struct LevelUpMove sAppletunLevelUpLearnset[] = {
 #if P_GEN_9_CROSS_EVOS
 static const struct LevelUpMove sDipplinLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_DOUBLE_HIT),
+    LEVEL_UP_MOVE( 0, MOVE_DRAGON_CHEER), // Pokémon Nabla: no TM for it here, needed for Hydrapple
     LEVEL_UP_MOVE( 1, MOVE_INFESTATION),
     LEVEL_UP_MOVE( 1, MOVE_WITHDRAW),
     LEVEL_UP_MOVE( 1, MOVE_SWEET_SCENT),

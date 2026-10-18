@@ -11546,6 +11546,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .catchRate = 45,
         .expYield = 172,
         .evYield_Attack = 2,
+        .itemCommon = ITEM_LEADERS_CREST, // Pokémon Nabla: always held, like the Bisharp leaders of Scarlet/Violet (Kingambit)
         .itemRare = ITEM_LEADERS_CREST,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,

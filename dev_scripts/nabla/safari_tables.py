@@ -31,6 +31,7 @@ NATIONAL_DEX_RANGES = {"Kanto": (1, 151), "Johto": (152, 251), "Hoenn": (252, 38
                        "Paldea": (906, 1025)}
 FORM_REGIONS = {"_ALOLA": "Alola", "_GALAR": "Galar", "_HISUI": "Galar", "_PALDEA": "Paldea"}
 NOT_REGIONAL_FORMS = ["PIKACHU_ALOLA"]  # Pikachu in an Alola Cap
+OTHER_REGIONAL_FORMS = {"BASCULIN_WHITE_STRIPED": "Galar"}  # Hisuian forms without the _HISUI suffix
 STARTERS = ("BULBASAUR CHARMANDER SQUIRTLE CHIKORITA CYNDAQUIL TOTODILE TREECKO TORCHIC MUDKIP TURTWIG "
             "CHIMCHAR PIPLUP SNIVY TEPIG OSHAWOTT CHESPIN FENNEKIN FROAKIE ROWLET LITTEN POPPLIO GROOKEY "
             "SCORBUNNY SOBBLE SPRIGATITO FUECOCO QUAXLY").split()
@@ -92,30 +93,34 @@ def species_files():
         yield text
 
 
+def species_entries():
+    # (name, body) of every species of the species_info files, macros expanded
+    for text in species_files():
+        yield from re.findall(r"\n    \[SPECIES_(\w+)\] =\n    \{(.*?)\n    \},", text, re.S)
+        yield from re.findall(r"\n    \[SPECIES_(\w+)\]\s*=\s*\{([^\n]*)\},?[ \t]*(?=\n)", text)
+
+
 def load_species():
     order = re.findall(r"^\s+NATIONAL_DEX_(\w+),", open("include/constants/pokedex.h").read(), re.M)
     national = {name: i for i, name in enumerate(order)}
     species = {}
-    for text in species_files():
-        entries = re.findall(r"\n    \[SPECIES_(\w+)\] =\n    \{(.*?)\n    \},", text, re.S)
-        entries += re.findall(r"\n    \[SPECIES_(\w+)\]\s*=\s*\{([^\n]*)\},?[ \t]*(?=\n)", text)
-        for name, body in entries:
-            dex = re.search(r"\.natDexNum = NATIONAL_DEX_(\w+)", body)
-            # Types can be "P_UPDATED_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL": keep the updated one
-            types = re.search(r"\.types = (MON_TYPES\([^)]*\)|\{[^}]*\})", body)
-            types = re.sub(r":\s*TYPE_\w+", "", types.group(1)) if types else ""
-            stats = sum(number(s) for s in re.findall(r"\.base(?:HP|Attack|Defense|Speed|SpAttack|SpDefense)\s*= ([^,\n]+)", body))
-            species[name] = dict(
-                dex=national.get(dex.group(1)) if dex else None,
-                types=list(dict.fromkeys(re.findall(r"\bTYPE_(\w+)", types))),
-                bst=stats,
-                legend=re.search(r"\.is(Legendary|SubLegendary|RestrictedLegendary|Mythical) = TRUE", body) is not None,
-                ultra=".isUltraBeast = TRUE" in body,
-                paradox=".isParadox = TRUE" in body,
-                evos=re.findall(r"\{EVO_\w+, [^,]+, SPECIES_(\w+)", body),
-                water_eggs=re.search(r"\.eggGroups = MON_EGG_GROUPS\([^)]*EGG_GROUP_WATER_[12]", body) is not None,
-                regional_evos=[FORM_REGIONS["_" + r] for r in re.findall(r"\{IF_REGION, REGION_(\w+)\}", body)],
-            )
+    for name, body in species_entries():
+        dex = re.search(r"\.natDexNum = NATIONAL_DEX_(\w+)", body)
+        # Types can be "P_UPDATED_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL": keep the updated one
+        types = re.search(r"\.types = (MON_TYPES\([^)]*\)|\{[^}]*\})", body)
+        types = re.sub(r":\s*TYPE_\w+", "", types.group(1)) if types else ""
+        stats = sum(number(s) for s in re.findall(r"\.base(?:HP|Attack|Defense|Speed|SpAttack|SpDefense)\s*= ([^,\n]+)", body))
+        species[name] = dict(
+            dex=national.get(dex.group(1)) if dex else None,
+            types=list(dict.fromkeys(re.findall(r"\bTYPE_(\w+)", types))),
+            bst=stats,
+            legend=re.search(r"\.is(Legendary|SubLegendary|RestrictedLegendary|Mythical) = TRUE", body) is not None,
+            ultra=".isUltraBeast = TRUE" in body,
+            paradox=".isParadox = TRUE" in body,
+            evos=re.findall(r"\{EVO_\w+, [^,]+, SPECIES_(\w+)", body),
+            water_eggs=re.search(r"\.eggGroups = MON_EGG_GROUPS\([^)]*EGG_GROUP_WATER_[12]", body) is not None,
+            regional_evos=[FORM_REGIONS["_" + r] for r in re.findall(r"\{IF_REGION, REGION_(\w+)\}", body)],
+        )
     for data in species.values():
         data["pre"] = None
     for name, data in species.items():
@@ -126,10 +131,10 @@ def load_species():
 
 
 def region_of(name, data):
-    if name in NOT_REGIONAL_FORMS:
-        return None
+    if name in OTHER_REGIONAL_FORMS:
+        return OTHER_REGIONAL_FORMS[name]
     for suffix, region in FORM_REGIONS.items():
-        if name.endswith(suffix) or suffix + "_" in name:
+        if (name.endswith(suffix) or suffix + "_" in name) and name not in NOT_REGIONAL_FORMS:
             return region
     for region, (first, last) in NATIONAL_DEX_RANGES.items():
         if data["dex"] is not None and first <= data["dex"] <= last:

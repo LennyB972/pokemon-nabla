@@ -181,8 +181,8 @@ d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 
 **Southwest**
 - Herbes : Pincurchin 21 %, Morpeko_Full_Belly 21 %, Koffing 10 %, Voltorb_Hisui 10 %, Yamper 10 %, Milcery 10 %, Toxel 5 %, Arctozolt 5 %, Dracozolt 4 %, Mime_Jr 4 %
-- Surf : Pincurchin 64 %, Cramorant 31 %, Arrokuda 5 %
-- Pêche : Eiscue_Ice 44 %, Slowpoke_Galar 35 %, Chewtle 22 %
+- Surf : Pincurchin 64 %, Arrokuda 31 %, Basculin_White_Striped 5 %
+- Pêche : Eiscue_Ice 44 %, Slowpoke_Galar 35 %, Cramorant 22 %
 
 **North**
 - Herbes : Meowth_Galar 20 %, Falinks 20 %, Stonjourner 10 %, Stunfisk_Galar 10 %, Clobbopus 10 %, Yamask_Galar 10 %, Cufant 5 %, Farfetchd_Galar 5 %, Rolycoly 4 %, Silicobra 4 %, Sneasel_Hisui 1 %, Sizzlipede 1 %
@@ -190,13 +190,13 @@ d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 
 **Northwest**
 - Herbes : Nickit 20 %, Eiscue_Ice 20 %, Indeedee_M 10 %, Snom 10 %, Darumaka_Galar 10 %, Slowpoke_Galar 10 %, Ponyta_Galar 5 %, Sinistea_Phony 5 %, Corsola_Galar 4 %, Hatenna 4 %, Impidimp 1 %, Qwilfish_Hisui 1 %
-- Surf : Stunfisk_Galar 64 %, Arrokuda 31 %, Arctovish 5 %
-- Pêche : Cramorant 44 %, Dracovish 35 %, Arctovish 22 %
+- Surf : Stunfisk_Galar 64 %, Chewtle 31 %, Arctovish 5 %
+- Pêche : Cramorant 44 %, Dracovish 35 %, Arrokuda 22 %
 
 **Southeast**
 - Herbes : Mr_Mime_Galar 25 %, Applin 25 %, Growlithe_Hisui 14 %, Dreepy 14 %, Duraludon 11 %, Goomy 11 %
-- Surf : Clobbopus 64 %, Dracovish 31 %, Corsola_Galar 5 %
-- Pêche : Chewtle 44 %, Qwilfish_Hisui 35 %, Corsola_Galar 22 %
+- Surf : Clobbopus 64 %, Corsola_Galar 31 %, Basculin_White_Striped 5 %
+- Pêche : Chewtle 44 %, Qwilfish_Hisui 35 %, Arctovish 22 %
 
 **Northeast**
 - Herbes : Bergmite 25 %, Growlithe_Hisui 25 %, Teddiursa 14 %, Dreepy 14 %, Duraludon 11 %, Goomy 11 %

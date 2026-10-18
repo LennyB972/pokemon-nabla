@@ -45,7 +45,7 @@ WILD_BATTLE_TEST("Evolution Tracker: Bisharp KO-ing a Bisharp that doesn't hold 
 {
     GIVEN {
         PLAYER(SPECIES_BISHARP);
-        OPPONENT(SPECIES_BISHARP) { HP(1); }
+        OPPONENT(SPECIES_BISHARP) { Item(ITEM_EVERSTONE); HP(1); } // Pokémon Nabla: wild Bisharp always hold Leader's Crest
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {

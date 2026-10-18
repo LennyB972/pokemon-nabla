@@ -26,7 +26,7 @@ Référence de tous les objets que Nabla rend trouvables ou achetables. À tenir
 | Où | Objets | Défini dans |
 |---|---|---|
 | Centre Commercial de Nénucrique, 3ᵉ étage, vendeuse de gauche (vitamines) | Vitamines, les 21 Aromates, Capsule Talent | `data/maps/LilycoveCity_DepartmentStore_3F/scripts.inc` |
-| Centre Commercial de Nénucrique, 3ᵉ étage, vendeur du milieu | Objets d'évolution par échange | `data/scripts/nabla/evolution_items.inc` |
+| Centre Commercial de Nénucrique, 3ᵉ étage, vendeur du milieu | Tous les objets d'évolution (45) : les 10 pierres (3 000 ₽), les objets qui remplacent les échanges (Fil de Liaison 4 000 ₽…), les 7 Friandises (Charmilly), Bracelet et Couronne Galanoa, les 3 pommes, Théière Fêlée et Bol Médiocre, les 2 armures, Obsidienne, Bloc de Tourbe, Métal Composite, Pièces de Mordudor (10 ₽ au lieu de 400 : il en faut 999 pour Gromago). Prix d'expansion sauf mention. | `data/scripts/nabla/evolution_items.inc` |
 | Centre Commercial de Nénucrique, 4ᵉ étage, vendeur du milieu | 65 Méga-Gemmes à 5 000 ₽ (toutes sauf celles de Hoenn trouvables au sol et celles des légendaires) | `data/scripts/nabla/mega_stones.inc` |
 
 ## Objets sur les maps
@@ -88,6 +88,10 @@ Liste générée par `python3 dev_scripts/nabla/list_items.py` (objets cachés e
 | Route120 | 28, 18 | `ITEM_ABSOLITE` | `FLAG_NABLA_ITEM_ROUTE120_ABSOLITE` |
 | ShoalCave_LowTideIceRoom | 13, 2 | `ITEM_GLALITITE` | `FLAG_NABLA_ITEM_SHOAL_CAVE_LOW_TIDE_ICE_ROOM_GLALITITE` |
 | ShoalCave_LowTideLowerRoom | 6, 2 | `ITEM_FROSLASSITE` | `FLAG_NABLA_ITEM_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM_FROSLASSITE` |
+
+## Objets tenus par les Pokémon sauvages
+
+- **Emblème du Général** : tenu par tous les Scalproie sauvages (au lieu de 5 % ; `src/data/pokemon/species_info/gen_5_families.h`), comme les Scalproie chefs d'Écarlate/Violet. Un Scalproie qui en bat 3 évolue en Scalpereur. On les croise dans le Safari d'Unys après la Ligue.
 
 ## Méga-Gemmes
 
