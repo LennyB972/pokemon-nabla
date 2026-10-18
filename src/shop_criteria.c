@@ -84,6 +84,7 @@ static const struct
     { ITEM_EXP_CANDY_L,   6 },
     { ITEM_MAX_POTION,    7 },
     { ITEM_SHADOW_MAIL,   7 },
+    { ITEM_BEAST_BALL,    0, FLAG_IS_CHAMPION },
 };
 
 static bool32 HasShopItemRequirements(enum Item item)

@@ -464,7 +464,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_BEAST_BALL] =
     {
         .name = ITEM_NAME("Beast Ball"),
-        .price = 0,
+        .price = 1000, // Pokémon Nabla: sold after the League
         .description = COMPOUND_STRING(
             "A special Poké Ball\n"
             "designed to catch\n"

@@ -640,6 +640,6 @@ gSpecials::
 	def_special CheckAddCoins
 	@ Pokémon Nabla
 	def_special NablaSafariZone_PushRegions
-	def_special NablaSafariZone_CountLockedRegions
-	def_special NablaSafariZone_UnlockRegion
+	def_special NablaSafariZone_CountRegionsForSale
+	def_special NablaSafariZone_TryBuyRegion
 	def_special NablaSafariZone_BufferRegionName

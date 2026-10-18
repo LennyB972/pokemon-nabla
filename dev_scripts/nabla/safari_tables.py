@@ -159,15 +159,15 @@ def region_species(species, region):
     for name, data in species.items():
         if data["dex"] is None or "_MEGA" in name or "_GMAX" in name or not is_base_entry(name, data):
             continue
+        pre = data["pre"]
+        starts_line = pre is None or species[pre]["dex"] > data["dex"]  # babies come from later generations
         if region == "Starters":
             ok = name in STARTERS
         elif region == "Paradox":
             ok = data["paradox"]
         elif region == "UltraBeasts":
-            ok = data["ultra"]
+            ok = data["ultra"] and starts_line
         else:
-            pre = data["pre"]
-            starts_line = pre is None or species[pre]["dex"] > data["dex"]  # babies come from later generations
             ok = (region_of(name, data) == region and starts_line and name not in STARTERS
                   and not data["legend"] and not data["ultra"] and not data["paradox"])
         if ok:
@@ -267,7 +267,8 @@ def write_doc():
     labels = {"land_mons": "Herbes", "water_mons": "Surf", "rock_smash_mons": "Éclate-Roc", "fishing_mons": "Pêche"}
     lines = ["# Safari par région", "",
              "Généré par `python3 dev_scripts/nabla/safari_tables.py --doc`. Chaque Pokémon apparaît au niveau des badges",
-             "du joueur et évolue selon son niveau. Les zones Nord-Est et Sud-Est s'ouvrent après la Ligue.",
+             "du joueur (au niveau 5 dans la zone Starters) et évolue selon son niveau. Les zones Nord-Est et Sud-Est",
+             "s'ouvrent après la Ligue, comme les zones spéciales (Starters, Paradox, UltraBeasts).",
              "Dans le Safari d'une région, les évolutions régionales donnent la forme de cette région (Pikachu → Raichu",
              "d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).", ""]
     encounters = data["wild_encounter_groups"][0]["encounters"]

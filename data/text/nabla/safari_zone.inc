@@ -12,18 +12,23 @@ Nabla_Text_SafariZoneWhichRegion:
 Nabla_Text_SafariZoneUnlockARegion:
 	.string "UNLOCK A REGION$"
 
-@ Price: NABLA_SAFARI_REGION_PRICE (include/constants/nabla.h)
 Nabla_Text_SafariZoneWhichRegionToUnlock:
-	.string "Unlocking a region costs ¥30,000.\n"
-	.string "Which one would you like?$"
+	.string "Which region would you like\n"
+	.string "to unlock?$"
 
 Nabla_Text_SafariZoneConfirmUnlock:
-	.string "Unlock {STR_VAR_1} for ¥30,000?$"
+	.string "Unlock {STR_VAR_1} for ¥{STR_VAR_2}?$"
+
+@ Prices: NABLA_SAFARI_REGION_PRICE and NABLA_SAFARI_SPECIAL_PRICE (include/constants/nabla.h)
+Nabla_Text_SafariZoneRegionPrice::
+	.string "30,000$"
+
+Nabla_Text_SafariZoneSpecialPrice::
+	.string "100,000$"
 
 Nabla_Text_SafariZoneRegionUnlocked:
-	.string "Thank you!\p"
-	.string "POKéMON from {STR_VAR_1} can now\n"
-	.string "be met in the SAFARI ZONE!$"
+	.string "Thank you!\n"
+	.string "{STR_VAR_1} is now open to you!$"
 
 Nabla_Text_SafariZoneInfo:
 	.string "In the SAFARI ZONE, you battle and\n"
@@ -38,8 +43,7 @@ Nabla_Text_SafariZoneInfo:
 	.string "the POKéMON you'll meet!$"
 
 Nabla_Text_SafariZoneEnjoy:
-	.string "Today, the SAFARI ZONE is home to\n"
-	.string "POKéMON from {STR_VAR_1}.\p"
+	.string "Today's destination: {STR_VAR_1}!\p"
 	.string "Enjoy yourself! Talk to the attendant\n"
 	.string "at the gate when you want to leave.$"
 
@@ -74,3 +78,12 @@ Nabla_Text_SafariZoneRegionGalar::
 
 Nabla_Text_SafariZoneRegionPaldea::
 	.string "PALDEA$"
+
+Nabla_Text_SafariZoneRegionStarters::
+	.string "STARTER ZONE$"
+
+Nabla_Text_SafariZoneRegionParadox::
+	.string "AREA ZERO$"
+
+Nabla_Text_SafariZoneRegionUltraBeasts::
+	.string "ULTRA SPACE$"

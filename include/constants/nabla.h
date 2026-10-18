@@ -17,8 +17,9 @@
 #define NABLA_SAFARI_REGION_PARADOX      10
 #define NABLA_SAFARI_REGION_ULTRA_BEASTS 11
 
-// Safari Zone counter: price of a region, extra entries of the region menus
+// Safari Zone counter: prices (also written in data/text/nabla/safari_zone.inc), extra entries of the region menus
 #define NABLA_SAFARI_REGION_PRICE  30000
+#define NABLA_SAFARI_SPECIAL_PRICE 100000 // Starters, Paradox and Ultra Beasts, after the League
 #define NABLA_SAFARI_MENU_UNLOCK   100
 #define NABLA_SAFARI_MENU_CANCEL   101
 

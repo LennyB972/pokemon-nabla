@@ -4,7 +4,7 @@ Référence de tous les objets que Nabla rend trouvables ou achetables. À tenir
 
 ## Boutiques
 
-**Boutiques Pokémon** : les 11 Boutiques de Hoenn proposent **la même liste** (`Nabla_Pokemart_Items`, `data/scripts/nabla/pokemart.inc`). Un article reste caché tant que le joueur n'a pas le nombre de badges requis, comme dans les jeux récents. Les paliers reprennent le moment où l'article apparaissait dans Émeraude :
+**Boutiques Pokémon** : les 11 Boutiques de Hoenn proposent **la même liste** (`Nabla_Pokemart_Items`, `data/scripts/nabla/pokemart.inc`). Un article reste caché tant que le joueur n'a pas le nombre de badges requis (ou le titre de Maître), comme dans les jeux récents. Les paliers reprennent le moment où l'article apparaissait dans Émeraude :
 
 | Badges | Articles débloqués |
 |---|---|
@@ -16,6 +16,7 @@ Référence de tous les objets que Nabla rend trouvables ou achetables. À tenir
 | 5 | Hyper Ball, Hyper Potion, Lettre Bois |
 | 6 | Filet Ball, Scuba Ball, Total Soin, Max Repousse, Bonbon Exp. L |
 | 7 | Potion Max, Lettre Ombre |
+| Maître de la Ligue | Beast Ball (1 000 ₽ ; prix 0 dans expansion, fixé par Nabla) |
 
 - Modifier un palier : tableau `sShopItemRequirements` dans `src/shop_criteria.c` (badges, et un flag optionnel). Il s'applique à toutes les boutiques normales.
 - Ajouter un article : l'ajouter à `Nabla_Pokemart_Items`, et au tableau s'il doit être débloqué plus tard.

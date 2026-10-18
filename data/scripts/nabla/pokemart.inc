@@ -1,5 +1,5 @@
 @ Items sold by the clerk of every Hoenn Poké Mart. Items are hidden until the player has
-@ enough badges: see sShopItemRequirements in src/shop_criteria.c.
+@ enough badges (or is the Champion): see sShopItemRequirements in src/shop_criteria.c.
 	.align 2
 Nabla_Pokemart_Items::
 	.2byte ITEM_POKE_BALL
@@ -10,6 +10,7 @@ Nabla_Pokemart_Items::
 	.2byte ITEM_NEST_BALL
 	.2byte ITEM_NET_BALL
 	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_BEAST_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_HYPER_POTION

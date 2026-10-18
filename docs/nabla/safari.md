@@ -1,7 +1,8 @@
 # Safari par région
 
 Généré par `python3 dev_scripts/nabla/safari_tables.py --doc`. Chaque Pokémon apparaît au niveau des badges
-du joueur et évolue selon son niveau. Les zones Nord-Est et Sud-Est s'ouvrent après la Ligue.
+du joueur (au niveau 5 dans la zone Starters) et évolue selon son niveau. Les zones Nord-Est et Sud-Est
+s'ouvrent après la Ligue, comme les zones spéciales (Starters, Paradox, UltraBeasts).
 Dans le Safari d'une région, les évolutions régionales donnent la forme de cette région (Pikachu → Raichu
 d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 
@@ -228,3 +229,87 @@ d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 **Northeast**
 - Herbes : Smoliv 25 %, Toedscool 25 %, Cetoddle 14 %, Charcadet 14 %, Gimmighoul_Chest 11 %, Frigibax 11 %
 - Éclate-Roc : Nacli 66 %, Glimmet 34 %
+
+## Starters
+
+**South**
+- Herbes : Bulbasaur 24 %, Chikorita 21 %, Turtwig 11 %, Snivy 10 %, Chespin 10 %, Grookey 10 %, Rowlet 5 %, Sprigatito 5 %, Treecko 4 %
+
+**Southwest**
+- Herbes : Bulbasaur 25 %, Chikorita 25 %, Turtwig 14 %, Snivy 14 %, Chespin 11 %, Grookey 11 %
+- Surf : Oshawott 64 %, Froakie 31 %, Squirtle 5 %
+- Pêche : Oshawott 44 %, Totodile 35 %, Froakie 22 %
+
+**North**
+- Herbes : Tepig 24 %, Fuecoco 21 %, Litten 11 %, Scorbunny 10 %, Torchic 10 %, Charmander 10 %, Chimchar 5 %, Cyndaquil 5 %, Fennekin 4 %
+- Éclate-Roc : Tepig 66 %, Fuecoco 34 %
+
+**Northwest**
+- Herbes : Litten 25 %, Rowlet 25 %, Scorbunny 14 %, Sprigatito 14 %, Torchic 11 %, Treecko 11 %
+- Surf : Piplup 64 %, Popplio 31 %, Mudkip 5 %
+- Pêche : Piplup 44 %, Quaxly 35 %, Popplio 22 %
+
+**Southeast**
+- Herbes : Grookey 25 %, Litten 25 %, Rowlet 14 %, Scorbunny 14 %, Cyndaquil 11 %, Fennekin 11 %
+- Surf : Quaxly 64 %, Sobble 31 %, Mudkip 5 %
+- Pêche : Sobble 44 %, Totodile 35 %, Squirtle 22 %
+
+**Northeast**
+- Herbes : Chespin 25 %, Fuecoco 25 %, Charmander 14 %, Chimchar 14 %, Cyndaquil 11 %, Fennekin 11 %
+- Éclate-Roc : Charmander 66 %, Chimchar 34 %
+
+## Paradox
+
+**South**
+- Herbes : Brute_Bonnet 25 %, Flutter_Mane 25 %, Great_Tusk 14 %, Iron_Jugulis 14 %, Slither_Wing 11 %, Iron_Leaves 11 %
+
+**Southwest**
+- Herbes : Brute_Bonnet 25 %, Iron_Hands 25 %, Sandy_Shocks 14 %, Scream_Tail 14 %, Iron_Valiant 11 %, Raging_Bolt 11 %
+- Surf : Iron_Bundle 66 %, Walking_Wake 34 %
+- Pêche : Iron_Bundle 65 %, Walking_Wake 35 %
+
+**North**
+- Herbes : Great_Tusk 24 %, Iron_Hands 24 %, Iron_Moth 11 %, Iron_Thorns 11 %, Iron_Treads 10 %, Gouging_Fire 10 %, Iron_Boulder 5 %, Iron_Crown 5 %
+- Éclate-Roc : Iron_Thorns 66 %, Iron_Boulder 34 %
+
+**Northwest**
+- Herbes : Flutter_Mane 25 %, Iron_Jugulis 25 %, Scream_Tail 14 %, Gouging_Fire 14 %, Iron_Crown 11 %, Roaring_Moon 11 %
+- Surf : Iron_Bundle 66 %, Walking_Wake 34 %
+- Pêche : Iron_Bundle 65 %, Walking_Wake 35 %
+
+**Southeast**
+- Herbes : Sandy_Shocks 25 %, Slither_Wing 25 %, Gouging_Fire 14 %, Iron_Crown 14 %, Iron_Leaves 11 %, Iron_Valiant 11 %
+- Surf : Iron_Bundle 66 %, Walking_Wake 34 %
+- Pêche : Iron_Bundle 65 %, Walking_Wake 35 %
+
+**Northeast**
+- Herbes : Iron_Moth 25 %, Iron_Treads 25 %, Iron_Leaves 14 %, Iron_Valiant 14 %, Raging_Bolt 11 %, Roaring_Moon 11 %
+- Éclate-Roc : Iron_Thorns 66 %, Iron_Boulder 34 %
+
+## UltraBeasts
+
+**South**
+- Herbes : Poipole 25 %, Blacephalon 25 %, Buzzwole 14 %, Celesteela 14 %, Kartana 11 %, Pheromosa 11 %
+
+**Southwest**
+- Herbes : Poipole 25 %, Buzzwole 25 %, Guzzlord 14 %, Kartana 14 %, Pheromosa 11 %, Xurkitree 11 %
+- Surf : Poipole 64 %, Kartana 31 %, Xurkitree 5 %
+- Pêche : Blacephalon 44 %, Xurkitree 35 %, Nihilego 22 %
+
+**North**
+- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Nihilego 14 %, Pheromosa 11 %, Stakataka 11 %
+- Éclate-Roc : Nihilego 66 %, Stakataka 34 %
+
+**Northwest**
+- Herbes : Poipole 25 %, Blacephalon 25 %, Buzzwole 14 %, Celesteela 14 %, Guzzlord 11 %, Kartana 11 %
+- Surf : Celesteela 64 %, Guzzlord 31 %, Nihilego 5 %
+- Pêche : Guzzlord 44 %, Stakataka 35 %, Pheromosa 22 %
+
+**Southeast**
+- Herbes : Poipole 25 %, Blacephalon 25 %, Buzzwole 14 %, Pheromosa 14 %, Stakataka 11 %, Xurkitree 11 %
+- Surf : Celesteela 64 %, Guzzlord 31 %, Kartana 5 %
+- Pêche : Nihilego 44 %, Stakataka 35 %, Pheromosa 22 %
+
+**Northeast**
+- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Guzzlord 14 %, Kartana 11 %, Xurkitree 11 %
+- Éclate-Roc : Nihilego 66 %, Stakataka 34 %

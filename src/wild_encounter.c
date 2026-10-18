@@ -438,28 +438,6 @@ static u32 GetSafariZoneRegionHeaderOffset(u32 headerId)
     return region;
 }
 
-// Levels follow the player's badges: those of the nearby routes when the Safari Zone opens, 60-70 after the League
-static u8 GetSafariZoneRegionWildLevel(void)
-{
-    static const u8 sLevelRanges[NUM_BADGES + 2][2] =
-    {
-        {5, 8}, {9, 12}, {13, 16}, {17, 20}, {21, 24}, {24, 27}, {27, 31}, {33, 37}, {40, 45}, // by badge count
-        {60, 70}, // League champion
-    };
-    u32 range = 0;
-
-    if (FlagGet(FLAG_IS_CHAMPION))
-    {
-        range = NUM_BADGES + 1;
-    }
-    else
-    {
-        for (u32 flag = FLAG_BADGE01_GET; flag < FLAG_BADGE01_GET + NUM_BADGES; flag++)
-            range += FlagGet(flag);
-    }
-    return sLevelRanges[range][0] + Random() % (sLevelRanges[range][1] - sLevelRanges[range][0] + 1);
-}
-
 // The Pokémon evolves as far as its level allows
 static void CreateSafariZoneRegionWildMon(enum Species species, u8 level)
 {

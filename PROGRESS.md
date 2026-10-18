@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a et 4.1b-1 faites ; 4.1b-2 (déblocage des régions du Safari, 7 régions, évolutions régionales) terminée, en attente de ton test. Prochaine : 4.1b-3 (zones spéciales après la Ligue).
+- **Étape en cours** : phase 4. 4.1a, 4.1b-1 et 4.1b-2 faites ; 4.1b-3 (zones spéciales du Safari après la Ligue, Beast Balls) terminée, en attente de ton test. Prochaine : 4.1c (couverture : Pokémon de Hoenn manquants, Bargantua blanc, objets d'évolution).
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -176,6 +176,15 @@
     - le surplus d'une région ne va plus que dans les zones post-Ligue. Les Pokémon Roche sont dans les herbes (ou l'eau) **et** sous les rochers.
   - À prévoir (4.1c) : Ursaring → Ursaking demande un Bloc de Tourbe (introuvable pour l'instant), comme d'autres évolutions de Galar/Hisui par objet.
   - Tests : 0 échec (5 382 réussis) + test Nabla.
+  - Testé par l'utilisateur : refus sans argent, régions conservées après sauvegarde, Raichu d'Alola obtenu.
+- Couverture (analyse du 2026-10-18, script provisoire) : 569 lignées (formes cosmétiques regroupées, formes régionales à part), 480 obtenables après la 4.1b-3. Manquent : 84 légendaires/fabuleux (phase 7) ; Arakdo, Méditikka, Mangriff, Séléroc (absents d'Émeraude) ; Paragruel (Bargantua à rayures blanches non capturable). Le second fossile est bien au Passage du Désert après la Ligue. Objets d'évolution introuvables : Pierres Aube, Nuit, Éclat, Glace ; objets de Galar/Hisui/Paldea (Galanoa, pommes, théières, armures, Obsidienne, Bloc de Tourbe, Emblème du Général, Métal Composite, pièces de Mordudor) ; Pierres Feu/Eau/Foudre/Plante en un seul exemplaire. → 4.1c.
+- Étape 4.1b-3 — zones spéciales du Safari :
+  - Après la Ligue (`FLAG_IS_CHAMPION`), la liste d'achat propose STARTER ZONE (27 starters, niveau 5), AREA ZERO (20 Paradoxes) et ULTRA SPACE (10 Ultra-Chimères, Mandrache par évolution) à 100 000 ₽ (`NABLA_SAFARI_SPECIAL_PRICE`). Flags `FLAG_NABLA_SAFARI_STARTERS` / `PARADOX` / `ULTRA_BEASTS` (0x29-0x2B).
+  - `sSafariZoneRegions` : prix, texte du prix et condition « après la Ligue » par région ; specials `NablaSafariZone_CountRegionsForSale` et `NablaSafariZone_TryBuyRegion` (vérifie et retire l'argent). La confirmation affiche le prix de la région. `GetSafariZoneRegionWildLevel` déplacé dans `src/nabla_safari_zone.c` (niveau 5 dans la STARTER ZONE).
+  - Message d'entrée : « Today's destination: … ! ».
+  - Beast Ball : 1 000 ₽, dans la liste commune des Boutiques, visible une fois Maître (`sShopItemRequirements`).
+  - Générateur : Mandrache n'est plus listé à part (il évolue de Vémini). Zones sans Pokémon Eau ou Roche (Starters, Ultra-Chimères) : surf, pêche et rochers reprennent les Pokémon de la zone.
+  - Tests : 3 tests Nabla (évolutions régionales, niveaux, vente des zones spéciales).
 
 ## Bugs connus
 
@@ -209,6 +218,8 @@
 | 2026-10-17 | Régions du Safari : Kanto ouvert d'office, les 7 autres à 30 000 ₽ chacune, dans n'importe quel ordre ; zones spéciales (Starters, Paradoxes, Ultra-Chimères) à 100 000 ₽ après la Ligue ; **la zone Starters est au niveau 5**. |
 | 2026-10-17 | Formes régionales : un Pokémon prend sa forme régionale en évoluant dans le Safari de la région (Raichu d'Alola en Alola, Typhlosion de Hisui en Galar & Hisui). |
 | 2026-10-17 | Répartition du Safari : équilibrée selon la puissance (les plus faibles sont les plus communs), pas de Pokémon Roche uniquement sous les rochers, Pokémon aquatiques non-Eau aussi dans l'eau. |
+| 2026-10-18 | Zones spéciales nommées STARTER ZONE, AREA ZERO, ULTRA SPACE. Beast Balls vendues 1 000 ₽ dans les Boutiques après la Ligue. |
+| 2026-10-18 | Ordre : 4.1b-3, puis 4.1c qui comble la couverture (4 Pokémon de Hoenn ajoutés aux routes comme dans Rubis/Saphir, Bargantua blanc, objets d'évolution en vente). |
 
 ## Questions ouvertes
 
