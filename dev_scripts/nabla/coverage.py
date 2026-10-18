@@ -131,6 +131,9 @@ def main():
     for item in re.findall(r"ITEM_\w+", open("data/maps/BattleFrontier_ExchangeServiceCorner/scripts.inc").read()):
         items.setdefault(item, "Échange de PCo")
 
+    # Evolutions triggered by a script of the game (Runerigus: Route 111 carvings)
+    triggers = {t for text in scripts.values() for t in re.findall(r"tryspecialevo (EVO_TRIGGER_\w+)", text)}
+
     # --- Obtainable species: sources, then breeding and evolutions until nothing changes
     reached = {name: source for name, source in sources.items()}
     special = {}
@@ -162,7 +165,7 @@ def main():
                 needed += ["ITEM_LINKING_CORD"] if method == "EVO_TRADE" else []
                 needed += ["ITEM_POKE_BALL"] if method == "EVO_SPLIT_FROM_EVO" else []
                 needed += [c[1] for c in conditions if c[0] in ("IF_HOLD_ITEM", "IF_BAG_ITEM_COUNT")]
-                if method in ("EVO_NONE", "EVO_SCRIPT_TRIGGER") or any(i not in items for i in needed):
+                if method == "EVO_NONE" or (method == "EVO_SCRIPT_TRIGGER" and param not in triggers) or any(i not in items for i in needed):
                     continue
                 if any(c[0] in ("IF_TRADE_PARTNER_SPECIES",) for c in conditions):
                     continue
@@ -174,8 +177,8 @@ def main():
                 if [c for c in checks if c[0] == "move"]:
                     special[(name, target)] = checks
                     continue
-                if checks or method in ("EVO_SPIN", "EVO_BATTLE_END"):
-                    special[(name, target)] = checks + ([(method,)] if method in ("EVO_SPIN", "EVO_BATTLE_END") else [])
+                if checks or method in ("EVO_SPIN", "EVO_BATTLE_END", "EVO_SCRIPT_TRIGGER"):
+                    special[(name, target)] = checks + ([(method,) + ((param,) if method == "EVO_SCRIPT_TRIGGER" else ())] if method in ("EVO_SPIN", "EVO_BATTLE_END", "EVO_SCRIPT_TRIGGER") else [])
                 reached[target] = "évolution de " + name.title()
                 changed = True
 
@@ -217,7 +220,7 @@ def main():
               "## Évolutions à vérifier en jeu", "",
               "Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capacité hors niveau).", ""]
     labels = {"move": "capacité absente de ses capacités par niveau", "EVO_SPIN": "tourner sur soi-même",
-              "EVO_BATTLE_END": "fin de combat"}
+              "EVO_BATTLE_END": "fin de combat", "EVO_SCRIPT_TRIGGER": "script"}
     shown = {}  # one line per species, whatever its form
     for (name, target), checks in sorted(special.items()):
         what = ", ".join(labels.get(c[0], c[0]) + (" " + " ".join(c[1:]) if len(c) > 1 else "") for c in checks)

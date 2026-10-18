@@ -3,7 +3,7 @@
 Point de reprise pour une nouvelle session. À lire en premier, puis `CLAUDE.md` (règles), `ROADMAP.md` (plan) et `PROGRESS.md` (journal détaillé et décisions).
 
 ## En une phrase
-Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.1c (couverture : 983 / 984 espèces non légendaires obtenables) livrée, en attente du test de l'utilisateur ; reste Tutétékri (stèle à placer)**, à présenter avant de commencer.
+Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.1c (couverture) livrée et validée : 984 / 984 espèces non légendaires obtenables ; prochaine étape à choisir (4.1d routes ou 4.2 équipes)**, à présenter avant de commencer.
 
 ## Méthode de travail (rappel des règles clés)
 - Communication en français, recommandations franches. Code et commits en anglais.
@@ -29,19 +29,18 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 | 4.1b-1 | Safari moderne : entrée gratuite, vrais combats, pas de limite de pas ; tables par région ; niveaux selon badges ; évolution dynamique ; Kanto (71 Pokémon) |
 | 4.1b-2 | Comptoir : choix parmi les régions ouvertes + déblocage à 30 000 ₽ (n'importe quel ordre, on reste dans la liste d'achat, B = retour) ; 7 régions générées ; évolutions régionales selon la région du Safari (Raichu d'Alola, Typhlosion de Hisui…) ; générateur corrigé (macros d'expansion, variété minimale, aquatiques non-Eau dans l'eau) |
 | 4.1b-3 | Après la Ligue, à 100 000 ₽ : STARTER ZONE (27 starters, niveau 5), AREA ZERO (20 Paradoxes), ULTRA SPACE (10 Ultra-Chimères) ; Beast Ball 1 000 ₽ dans les Boutiques une fois Maître |
-| 4.1c | Outil `dev_scripts/nabla/coverage.py` (→ `docs/nabla/couverture.md`) ; Arakdo, Méditikka, Mangriff, Séléroc (nuit) sur les routes ; Bargantua blanc (Galar & Hisui) ; tous les objets d'évolution à Nénucrique ; Scalproie sauvages avec Emblème du Général ; capacités ajoutées pour Cerbyllin et Pomdorochi |
+| 4.1c | Outil `dev_scripts/nabla/coverage.py` (→ `docs/nabla/couverture.md`) ; Arakdo, Méditikka, Mangriff, Séléroc (nuit) sur les routes ; Bargantua blanc (Galar & Hisui) ; tous les objets d'évolution à Nénucrique ; Scalproie sauvages avec Emblème du Général ; capacités ajoutées pour Cerbyllin et Pomdorochi ; inscriptions des Ruines du Désert (Tutétékri) |
 
 ## En attente côté utilisateur
 - 4.1b-2 testée et validée (refus sans argent, sauvegarde, Raichu d'Alola).
 - 4.1b-3 testée et validée (niveau 5 des starters, Beast Balls) ; starters retirés des rochers à sa demande.
-- Tester la 4.1c : pierres et objets au vendeur du milieu de Nénucrique 3ᵉ ; Séléroc la nuit (18 h-6 h) aux Chutes Météore ; Arakdo route 102/117, Mangriff route 114, Méditikka extérieur du Mont Mémoria.
-- Choisir l'emplacement de la stèle de Tutétékri.
+- 4.1c testée et validée (Méditikka, Arakdo, Séléroc, vendeur de Nénucrique). Inscriptions de Tutétékri (Route 111, Ruines du Désert) pas encore testées en jeu.
 - Relire la répartition dans `docs/nabla/safari.md` (facultatif : l'utilisateur voulait surtout savoir si tout est obtenable).
 - Retouches des routes sauvages (4.1d) : il les fera lui-même dans Porymap (onglet Wild Pokémon) ou par listes.
 
-## Prochaine étape (à choisir avec l'utilisateur)
-- **Tutétékri (Runerigus)** : seule espèce non légendaire manquante. Il faut une stèle (objet de map avec `tryspecialevo EVO_TRIGGER_TABLET_CURSE`) : emplacement à faire choisir par l'utilisateur.
-- Puis 4.1d (retouches des routes par l'utilisateur, Porymap ou listes) ou 4.2 (équipes Normal/Difficile) ; 4.3 calibrage ; phases 5 à 8 (voir ROADMAP).
+## Prochaine étape (à choisir avec l'utilisateur, plan à présenter)
+- 4.1d : retouches des routes par l'utilisateur (Porymap, onglet Wild Pokémon, ou listes appliquées par Claude) ; relancer `coverage.py` après.
+- ou 4.2 : équipes Normal/Difficile des dresseurs ; puis 4.3 calibrage ; phases 5 à 8 (voir ROADMAP).
 
 ## Repères techniques
 - **Safari** : `VAR_NABLA_SAFARI_REGION` (0x4083) ; constantes `NABLA_SAFARI_REGION_*`, prix et ids de menu (`include/constants/nabla.h`) ; `src/nabla_safari_zone.c` (table `sSafariZoneRegions` : nom, flag, prix, condition après la Ligue, régions d'évolution ; specials du comptoir ; niveaux `GetSafariZoneRegionWildLevel` ; `IsPlayerInEvolutionRegion` appelé par `IF_REGION`/`IF_NOT_REGION` dans `src/pokemon.c`) ; dans `src/wild_encounter.c`, `GetCurrentMapWildMonHeaderId` saute à la table de la région (11 tables placées juste après celle d'origine de chaque zone, comme la Grotte Altérée) ; évolution `CreateSafariZoneRegionWildMon`. Scripts : `data/scripts/nabla/safari_zone.inc` (menus du comptoir), entrée `Route121_SafariZoneEntrance`, sortie `SafariZone_South`. Test : `test/nabla_safari_zone.c` (`make check TESTS="Nabla"`).

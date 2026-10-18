@@ -1131,6 +1131,22 @@
       "elevation": 3,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_NABLA_HIDDEN_ITEM_ROUTE111_EXP_CANDY_S"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 87,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Nabla_EventScript_Route111AncientCarvings"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 87,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Nabla_EventScript_Route111AncientCarvings"
     }
   ]
 }

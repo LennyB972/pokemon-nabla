@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a et 4.1b faites ; 4.1c (couverture) terminée sauf Runerigus (emplacement de la stèle à choisir), en attente de ton test. Prochaine : 4.1d (retouches des routes par l'utilisateur) ou 4.2 (équipes Normal/Difficile).
+- **Étape en cours** : phase 4. 4.1a, 4.1b et 4.1c faites (toutes les espèces non légendaires obtenables). Prochaine : 4.1d (retouches des routes par l'utilisateur) ou 4.2 (équipes Normal/Difficile), à choisir.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -188,13 +188,15 @@
   - Testé par l'utilisateur : niveau 5 dans la STARTER ZONE, Beast Balls en Boutique après la Ligue.
 - Étape 4.1c — couverture :
   - Outil `dev_scripts/nabla/coverage.py` → `docs/nabla/couverture.md` : espèce par espèce (formes cosmétiques regroupées), sources (rencontres d'Émeraude et du Safari, cadeaux, fixes, échanges, vagabond, œufs, évolutions avec objet trouvable, régions du Safari pour les formes régionales), objets d'évolution et où les trouver, évolutions à condition spéciale à vérifier en jeu. Ignore les tables de RFVF et les tables d'origine du Safari. Capacités vérifiées dans les capacités par niveau du jeu (`P_LVL_UP_LEARNSETS`).
-  - Résultat : **983 / 984 espèces non légendaires obtenables** ; manque Runerigus (stèle, voir Questions ouvertes). Légendaires : 8 / 97 (phase 7).
+  - Résultat : **984 / 984 espèces non légendaires obtenables**. Légendaires : 8 / 97 (phase 7).
   - Hoenn (comme dans Rubis/Saphir, emplacements en double convertis, aucune espèce retirée) : Arakdo route 102 (1 %, ex-Zigzaton) et route 117 (4 %, ex-Lumivole) ; Mangriff route 114 (4 %, ex-Séviper, qui garde 5 %) ; Méditikka à l'extérieur du Mont Mémoria (10 %, ex-Goupix qui garde 20 % ; pas à la Route Victoire, choix de l'utilisateur) ; Séléroc la nuit aux Chutes Météore (tables `_Night` des 5 salles où vit Solaroc, herbes et surf).
   - Bargantua à rayures blanches dans Galar & Hisui (`OTHER_REGIONAL_FORMS` du générateur) → Paragruel.
   - Vendeur d'objets d'évolution de Nénucrique : + 10 pierres, 7 Friandises, Galanoa, pommes, Théière Fêlée, Bol Médiocre, armures, Obsidienne, Bloc de Tourbe, Métal Composite, Pièces de Mordudor (10 ₽ au lieu de 400). Prix d'expansion (officiels).
   - Scalproie sauvages : tiennent toujours l'Emblème du Général (Scalpereur).
   - Capacités ajoutées (`level_up_learnsets/gen_9.h`) : Cerfrousse apprend Sprint Bouclier au niveau 21 (Légendes Arceus) → Cerbyllin ; Pomdramour apprend Dragon Cheer à l'évolution → Pomdorochi.
   - Générateur : Pikachu casquette rattaché à Kanto (forme cosmétique). Lecture des espèces factorisée (`species_entries`), réutilisée par l'outil.
+  - Tutétékri : inscriptions anciennes gravées dans la paroi des Ruines du Désert (Route 111, de part et d'autre de l'entrée, à lire face au nord ; `data/scripts/nabla/ancient_tablet.inc`). Un Tutafeh de Galar ayant perdu au moins 49 PV y évolue (`tryspecialevo EVO_TRIGGER_TABLET_CURSE`), comme sous l'arche de pierre d'Épée/Bouclier. L'outil reconnaît les évolutions déclenchées par un script du jeu.
+  - Testé par l'utilisateur : Méditikka, Arakdo, Séléroc, vendeur de Nénucrique.
   - Tests : 0 échec (5 385 réussis). Test d'expansion adapté : `test/battle/evolution_tracker.c` (le Scalproie sauvage « sans Emblème » tient une Pierre Stase, puisque les sauvages tiennent désormais toujours l'Emblème).
 
 ## Bugs connus
@@ -236,4 +238,4 @@
 
 ## Questions ouvertes
 
-- Tutétékri (Runerigus) : où placer la stèle qui fait évoluer Tutafeh de Galar (`tryspecialevo EVO_TRIGGER_TABLET_CURSE`) ?
+- Aucune pour l'instant.

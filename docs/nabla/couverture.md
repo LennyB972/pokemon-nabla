@@ -3,12 +3,12 @@
 Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosmétiques comprises) est obtenable si on
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
-- **Espèces obtenables** : 983 / 984 hors légendaires et fabuleux.
+- **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
 - **Légendaires et fabuleux** : 8 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
-- Runerigus : évolution de Yamask_Galar impossible (EVO_SCRIPT_TRIGGER, EVO_TRIGGER_TABLET_CURSE, [('IF_CURRENT_DAMAGE_GE', '49')])
+Aucune.
 
 ## Légendaires et fabuleux obtenables
 
@@ -34,6 +34,7 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 - Rellor → Rabsca : IF_MIN_OVERWORLD_STEPS 1000
 - Sliggoo → Goodra : IF_WEATHER WEATHER_RAIN
 - Sliggoo_Hisui → Goodra_Hisui : IF_WEATHER WEATHER_RAIN
+- Yamask_Galar → Runerigus : IF_CURRENT_DAMAGE_GE 49, script EVO_TRIGGER_TABLET_CURSE
 
 ## Objets d'évolution
 

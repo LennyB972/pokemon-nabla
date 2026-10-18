@@ -1752,3 +1752,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/mega_stones.inc"
 	.include "data/scripts/nabla/safari_zone.inc"
 	.include "data/text/nabla/safari_zone.inc"
+	.include "data/scripts/nabla/ancient_tablet.inc"
+	.include "data/text/nabla/ancient_tablet.inc"
