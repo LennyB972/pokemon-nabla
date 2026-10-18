@@ -242,21 +242,19 @@ d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 
 **North**
 - Herbes : Tepig 24 %, Fuecoco 21 %, Litten 11 %, Scorbunny 10 %, Torchic 10 %, Charmander 10 %, Chimchar 5 %, Cyndaquil 5 %, Fennekin 4 %
-- Éclate-Roc : Tepig 66 %, Fuecoco 34 %
 
 **Northwest**
-- Herbes : Litten 25 %, Rowlet 25 %, Scorbunny 14 %, Sprigatito 14 %, Torchic 11 %, Treecko 11 %
+- Herbes : Tepig 25 %, Fuecoco 25 %, Litten 14 %, Rowlet 14 %, Scorbunny 11 %, Sprigatito 11 %
 - Surf : Piplup 64 %, Popplio 31 %, Mudkip 5 %
 - Pêche : Piplup 44 %, Quaxly 35 %, Popplio 22 %
 
 **Southeast**
-- Herbes : Grookey 25 %, Litten 25 %, Rowlet 14 %, Scorbunny 14 %, Cyndaquil 11 %, Fennekin 11 %
+- Herbes : Chespin 25 %, Fuecoco 25 %, Charmander 14 %, Chimchar 14 %, Cyndaquil 11 %, Fennekin 11 %
 - Surf : Quaxly 64 %, Sobble 31 %, Mudkip 5 %
 - Pêche : Sobble 44 %, Totodile 35 %, Squirtle 22 %
 
 **Northeast**
-- Herbes : Chespin 25 %, Fuecoco 25 %, Charmander 14 %, Chimchar 14 %, Cyndaquil 11 %, Fennekin 11 %
-- Éclate-Roc : Charmander 66 %, Chimchar 34 %
+- Herbes : Torchic 25 %, Treecko 25 %, Charmander 14 %, Chimchar 14 %, Cyndaquil 11 %, Fennekin 11 %
 
 ## Paradox
 
@@ -293,23 +291,17 @@ d'Alola en Alola, Feurisson → Typhlosion de Hisui en Galar & Hisui).
 
 **Southwest**
 - Herbes : Poipole 25 %, Buzzwole 25 %, Guzzlord 14 %, Kartana 14 %, Pheromosa 11 %, Xurkitree 11 %
-- Surf : Poipole 64 %, Kartana 31 %, Xurkitree 5 %
-- Pêche : Blacephalon 44 %, Xurkitree 35 %, Nihilego 22 %
 
 **North**
-- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Nihilego 14 %, Pheromosa 11 %, Stakataka 11 %
+- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Nihilego 14 %, Stakataka 11 %, Xurkitree 11 %
 - Éclate-Roc : Nihilego 66 %, Stakataka 34 %
 
 **Northwest**
-- Herbes : Poipole 25 %, Blacephalon 25 %, Buzzwole 14 %, Celesteela 14 %, Guzzlord 11 %, Kartana 11 %
-- Surf : Celesteela 64 %, Guzzlord 31 %, Nihilego 5 %
-- Pêche : Guzzlord 44 %, Stakataka 35 %, Pheromosa 22 %
+- Herbes : Poipole 25 %, Blacephalon 25 %, Celesteela 14 %, Guzzlord 14 %, Kartana 11 %, Nihilego 11 %
 
 **Southeast**
-- Herbes : Poipole 25 %, Blacephalon 25 %, Buzzwole 14 %, Pheromosa 14 %, Stakataka 11 %, Xurkitree 11 %
-- Surf : Celesteela 64 %, Guzzlord 31 %, Kartana 5 %
-- Pêche : Nihilego 44 %, Stakataka 35 %, Pheromosa 22 %
+- Herbes : Poipole 25 %, Guzzlord 25 %, Kartana 14 %, Pheromosa 14 %, Stakataka 11 %, Xurkitree 11 %
 
 **Northeast**
-- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Guzzlord 14 %, Kartana 11 %, Xurkitree 11 %
+- Herbes : Blacephalon 25 %, Buzzwole 25 %, Celesteela 14 %, Guzzlord 14 %, Pheromosa 11 %, Xurkitree 11 %
 - Éclate-Roc : Nihilego 66 %, Stakataka 34 %

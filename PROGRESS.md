@@ -183,8 +183,9 @@
   - `sSafariZoneRegions` : prix, texte du prix et condition « après la Ligue » par région ; specials `NablaSafariZone_CountRegionsForSale` et `NablaSafariZone_TryBuyRegion` (vérifie et retire l'argent). La confirmation affiche le prix de la région. `GetSafariZoneRegionWildLevel` déplacé dans `src/nabla_safari_zone.c` (niveau 5 dans la STARTER ZONE).
   - Message d'entrée : « Today's destination: … ! ».
   - Beast Ball : 1 000 ₽, dans la liste commune des Boutiques, visible une fois Maître (`sShopItemRequirements`).
-  - Générateur : Mandrache n'est plus listé à part (il évolue de Vémini). Zones sans Pokémon Eau ou Roche (Starters, Ultra-Chimères) : surf, pêche et rochers reprennent les Pokémon de la zone.
+  - Générateur : Mandrache n'est plus listé à part (il évolue de Vémini). Une zone sans Pokémon Eau ou Roche n'a pas de rencontre en surf/pêche ou sous les rochers (demande de l'utilisateur : starters Plante et Feu dans les herbes, Eau seulement dans l'eau ; Ultra-Chimères seulement dans les herbes et sous les rochers).
   - Tests : 3 tests Nabla (évolutions régionales, niveaux, vente des zones spéciales).
+  - Testé par l'utilisateur : niveau 5 dans la STARTER ZONE, Beast Balls en Boutique après la Ligue.
 
 ## Bugs connus
 

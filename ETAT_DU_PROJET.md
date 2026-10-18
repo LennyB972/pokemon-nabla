@@ -3,7 +3,7 @@
 Point de reprise pour une nouvelle session. À lire en premier, puis `CLAUDE.md` (règles), `ROADMAP.md` (plan) et `PROGRESS.md` (journal détaillé et décisions).
 
 ## En une phrase
-Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.1b-3 (zones spéciales du Safari après la Ligue + Beast Balls) livrée, en attente du test de l'utilisateur ; prochaine étape 4.1c (couverture)**, à présenter avant de commencer.
+Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.1b-3 (zones spéciales du Safari après la Ligue + Beast Balls) livrée et validée ; prochaine étape 4.1c (couverture)**, à présenter avant de commencer.
 
 ## Méthode de travail (rappel des règles clés)
 - Communication en français, recommandations franches. Code et commits en anglais.
@@ -32,7 +32,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 
 ## En attente côté utilisateur
 - 4.1b-2 testée et validée (refus sans argent, sauvegarde, Raichu d'Alola).
-- Tester la 4.1b-3 : zones spéciales invisibles avant la Ligue ; avec le flag de Maître (debug *Flags & Vars → Set Flag XYZ* → 0x87F) et de l'argent, achat à 100 000 ₽, STARTER ZONE au niveau 5, Beast Ball en Boutique.
+- 4.1b-3 testée et validée (niveau 5 des starters, Beast Balls) ; starters retirés des rochers à sa demande.
 - Relire la répartition dans `docs/nabla/safari.md` (facultatif : l'utilisateur voulait surtout savoir si tout est obtenable).
 - Retouches des routes sauvages (4.1d) : il les fera lui-même dans Porymap (onglet Wild Pokémon) ou par listes.
 

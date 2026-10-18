@@ -210,8 +210,9 @@ def build_region(species, region, area_types):
     for i, n in enumerate(rock):
         areas[rock_areas[i % len(rock_areas)]]["rock_smash_mons"].append(n)
     # Tables with too few Pokémon (small regions) borrow the region's least used ones: weak ones
-    # of the area's types before the League, the strongest after
-    pools = {"land_mons": land, "water_mons": water, "fishing_mons": water, "rock_smash_mons": rock or land}
+    # of the area's types before the League, the strongest after. A region without Water or Rock
+    # Pokémon has no encounter there (no starter under rocks).
+    pools = {"land_mons": land, "water_mons": water, "fishing_mons": water, "rock_smash_mons": rock}
     for a in AREAS:
         for kind in area_types[a]:
             def priority(n):
@@ -220,7 +221,7 @@ def build_region(species, region, area_types):
                     return (uses, a not in themed.get(n, []), final_bst(species, n), n)
                 return (uses, -final_bst(species, n), n)
             while len(areas[a][kind]) < MIN_SPECIES[kind]:
-                options = [n for n in pools[kind] or names if n not in areas[a][kind]]
+                options = [n for n in pools[kind] if n not in areas[a][kind]]
                 if not options:
                     break
                 areas[a][kind].append(min(options, key=priority))
@@ -233,7 +234,7 @@ def build_region(species, region, area_types):
 def make_entry(map_id, region, kinds, vanilla):
     entry = {"map": map_id, "base_label": f"gSafariZone_{AREAS[map_id][0]}_{region}"}
     for kind, names in kinds.items():
-        if kind not in vanilla:
+        if kind not in vanilla or not names:
             continue
         entry[kind] = {"encounter_rate": vanilla[kind]["encounter_rate"],
                        "mons": [{"min_level": 25, "max_level": 30, "species": f"SPECIES_{n}"} for n in fill(names, SLOTS[kind])]}
