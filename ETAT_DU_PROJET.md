@@ -11,6 +11,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 - Un commit par étape (ou par sujet), build vert, `git push origin master`. Mettre à jour `PROGRESS.md`.
 - Décision non couverte par VISION.md / PROGRESS.md → demander.
 - L'utilisateur teste sur `pokeemerald.gba` (build debug, menu debug R+START, quickstart SELECT) avec mGBA ; sa sauvegarde est `pokeemerald.sav` à la racine (jamais commitée).
+- L'utilisateur a Porymap 6.3.1 : il doit le **fermer** pendant que Claude modifie le projet (sinon un enregistrement écrase les changements), et le rouvrir ensuite.
 
 ## Environnement
 - `export DEVKITPRO=/opt/devkitpro DEVKITARM=/opt/devkitpro/devkitARM` avant `make -j$(sysctl -n hw.ncpu)`.
@@ -38,6 +39,10 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 - Relire la répartition dans `docs/nabla/safari.md` (facultatif : l'utilisateur voulait surtout savoir si tout est obtenable).
 - Retouches des routes sauvages (4.1d) : il les fera lui-même dans Porymap (onglet Wild Pokémon) ou par listes.
 
+## Zone en cours : WEST BEACH v1
+- Livrée (passage de sable au sud de la route 115 → île de sable avec hautes herbes ; nom « WEST BEACH » ; case du bas de la route 115 sur la carte). En attente du test de l'utilisateur et de ses retouches éventuelles dans Porymap. Contenu (Pokémon, dresseurs, objets) à définir plus tard.
+- Méthode : `docs/nabla/zones.md`. Outil d'image de map : `dev_scripts/nabla/render_map.py`.
+
 ## Prochaine étape (à choisir avec l'utilisateur, plan à présenter)
 - 4.1d : retouches des routes par l'utilisateur (Porymap, onglet Wild Pokémon, ou listes appliquées par Claude) ; relancer `coverage.py` après.
 - ou 4.2 : équipes Normal/Difficile des dresseurs ; puis 4.3 calibrage ; phases 5 à 8 (voir ROADMAP).
@@ -46,7 +51,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 - **Safari** : `VAR_NABLA_SAFARI_REGION` (0x4083) ; constantes `NABLA_SAFARI_REGION_*`, prix et ids de menu (`include/constants/nabla.h`) ; `src/nabla_safari_zone.c` (table `sSafariZoneRegions` : nom, flag, prix, condition après la Ligue, régions d'évolution ; specials du comptoir ; niveaux `GetSafariZoneRegionWildLevel` ; `IsPlayerInEvolutionRegion` appelé par `IF_REGION`/`IF_NOT_REGION` dans `src/pokemon.c`) ; dans `src/wild_encounter.c`, `GetCurrentMapWildMonHeaderId` saute à la table de la région (11 tables placées juste après celle d'origine de chaque zone, comme la Grotte Altérée) ; évolution `CreateSafariZoneRegionWildMon`. Scripts : `data/scripts/nabla/safari_zone.inc` (menus du comptoir), entrée `Route121_SafariZoneEntrance`, sortie `SafariZone_South`. Test : `test/nabla_safari_zone.c` (`make check TESTS="Nabla"`).
 - **Flags Nabla** : `FLAG_NABLA_EXP_SHARE` 0x20, `FLAG_NABLA_LEVEL_CAPS` 0x21, régions du Safari 0x22-0x28 (Johto → Paldea), zones spéciales 0x29-0x2B, objets cachés 0x264-0x27E, Méga-Gemmes au sol 0x280 et 0x286-0x295, événement Latios 0x281-0x285. **Vars** : `VAR_NABLA_DIFFICULTY` 0x404E, `VAR_NABLA_SAFARI_REGION` 0x4083.
 - **Dresseurs ajoutés** : `TRAINER_NABLA_MATT_SOUTHERN_ISLAND` 855, `TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND` 856 ; partenaire `PARTNER_STEVEN_SOUTHERN_ISLAND` 2.
-- **Outils** (`dev_scripts/nabla/`) : `hidden_item_spots.py` (cases valides pour un objet), `list_items.py` (tableaux de `docs/nabla/items.md`), `safari_tables.py` (tables du Safari + `docs/nabla/safari.md`), `coverage.py` (espèces obtenables + `docs/nabla/couverture.md`).
+- **Outils** (`dev_scripts/nabla/`) : `hidden_item_spots.py` (cases valides pour un objet), `list_items.py` (tableaux de `docs/nabla/items.md`), `safari_tables.py` (tables du Safari + `docs/nabla/safari.md`), `coverage.py` (espèces obtenables + `docs/nabla/couverture.md`), `render_map.py` (image d'une map).
 - **Docs de référence** : `docs/nabla/items.md` (tous les objets ajoutés, boutiques, Méga-Gemmes), `docs/nabla/safari.md`, `docs/nabla/couverture.md`.
 - **Correctif d'expansion à proposer en amont** : `AreMultiPartiesFullTeams` (`src/battle_util.c`) lisait les drapeaux du combat précédent → sélection d'équipe ignorée dans les combats en duo scriptés.
 - **Fichiers d'expansion modifiés** (attention aux merges upstream ; `pokedex_plus_hgss.c` le plus risqué) : `src/{battle_message,battle_script_commands,battle_util,caps,field_move,field_player_avatar,item_menu,new_game,option_menu,party_menu,pokedex_plus_hgss,pokemon,pokemon_summary_screen,scrcmd,shop_criteria,strings,wild_encounter}.c`, `data/specials.inc`, `src/data/{items.h,trainers.party,battle_partners.party,wild_encounters.json}`, `src/data/pokemon/species_info/gen_*_families.h`, `src/data/pokemon/level_up_learnsets/gen_9.h`, `include/{global.h,field_move.h,pokedex_plus_hgss.h,strings.h}`, `include/constants/{flags,vars,global,opponents,battle_partner,battle_string_ids}.h`, `include/config/*.h`, nombreuses maps et scripts (`data/maps/*`, `data/scripts/players_house.inc`, `data/battle_scripts_1.s`).

@@ -1630,6 +1630,14 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_NABLA_WEST_BEACH",
+      "name": "WEST BEACH",
+      "x": 0,
+      "y": 4,
+      "width": 1,
+      "height": 1
     }
   ]
 }

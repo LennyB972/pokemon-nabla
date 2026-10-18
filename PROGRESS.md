@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a, 4.1b et 4.1c faites (toutes les espèces non légendaires obtenables). Prochaine : 4.1d (retouches des routes par l'utilisateur) ou 4.2 (équipes Normal/Difficile), à choisir.
+- **Étape en cours** : phase 4. 4.1a, 4.1b et 4.1c faites (toutes les espèces non légendaires obtenables). En parallèle, première zone de la phase 6 : WEST BEACH v1 (en attente du test de l'utilisateur). Prochaine : 4.2 (équipes Normal/Difficile) à présenter ; 4.1d (routes) faite par l'utilisateur dans Porymap.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -198,6 +198,13 @@
   - Tutétékri : inscriptions anciennes gravées dans la paroi des Ruines du Désert (Route 111, de part et d'autre de l'entrée, à lire face au nord ; `data/scripts/nabla/ancient_tablet.inc`). Un Tutafeh de Galar ayant perdu au moins 49 PV y évolue (`tryspecialevo EVO_TRIGGER_TABLET_CURSE`), comme sous l'arche de pierre d'Épée/Bouclier. L'outil reconnaît les évolutions déclenchées par un script du jeu.
   - Testé par l'utilisateur : Méditikka, Arakdo, Séléroc, vendeur de Nénucrique.
   - Tests : 0 échec (5 385 réussis). Test d'expansion adapté : `test/battle/evolution_tracker.c` (le Scalproie sauvage « sans Emblème » tient une Pierre Stase, puisque les sauvages tiennent désormais toujours l'Emblème).
+
+- Porymap 6.3.1 installé par l'utilisateur (version macOS Apple Silicon ; quarantaine retirée avec `xattr -dr com.apple.quarantine`). Ses fichiers `porymap.*.cfg` sont ignorés par git.
+- Zone WEST BEACH v1 (Plage de l'Ouest, demande de l'utilisateur) :
+  - Route 115 : bande de sable prolongée vers l'ouest au sud de la route (lignes 64-67 ; trois rochers dans l'eau retirés pour le passage), connexion à gauche vers la nouvelle map.
+  - Map `NablaWestBeach` (30 × 26, tilesets General + Fallarbor comme la route 115, musique de la route 115), groupe `gMapGroup_Nabla` : île de sable entourée d'eau, carré de hautes herbes (bords sable/herbe de l'île Mirage), rochers dans l'eau. Pas encore de Pokémon ni de contenu.
+  - Section `MAPSEC_NABLA_WEST_BEACH` (« WEST BEACH »), ajoutée en fin de liste ; sur la carte de la région, la case du bas de la route 115 (la route 115 est au bord gauche de la carte : pas de case libre plus à l'ouest).
+  - Outil `dev_scripts/nabla/render_map.py` : image d'une map (ou d'un layout), avec grille et collisions, pour vérifier un dessin sans Porymap. Marche à suivre pour créer une zone : `docs/nabla/zones.md`.
 
 ## Bugs connus
 

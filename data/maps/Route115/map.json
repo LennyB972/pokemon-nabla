@@ -23,6 +23,11 @@
       "map": "MAP_ROUTE114",
       "offset": -40,
       "direction": "right"
+    },
+    {
+      "map": "MAP_NABLA_WEST_BEACH",
+      "offset": 52,
+      "direction": "left"
     }
   ],
   "object_events": [

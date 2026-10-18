@@ -9323,6 +9323,17 @@
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_NABLA_WEST_BEACH",
+      "name": "NablaWestBeach_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/NablaWestBeach/border.bin",
+      "blockdata_filepath": "data/layouts/NablaWestBeach/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
