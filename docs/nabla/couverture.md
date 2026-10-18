@@ -67,7 +67,7 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Metal Alloy | boutique ou script (evolution_items.inc) |
 | Metal Coat | boutique ou script (evolution_items.inc) |
 | Moon Stone | boutique ou script (evolution_items.inc) |
-| Oval Stone | tenu par Chansey sauvage |
+| Oval Stone | tenu par Happiny sauvage |
 | Peat Block | boutique ou script (evolution_items.inc) |
 | Poke Ball | boutique ou script (LilycoveCity_DepartmentStore_2F) |
 | Prism Scale | boutique ou script (evolution_items.inc) |

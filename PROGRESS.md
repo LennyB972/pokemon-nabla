@@ -204,6 +204,7 @@
   - Route 115 : bande de sable prolongée vers l'ouest au sud de la route (lignes 64-67 ; trois rochers dans l'eau retirés pour le passage), connexion à gauche vers la nouvelle map.
   - Map `NablaWestBeach` (30 × 26, tilesets General + Fallarbor comme la route 115, musique de la route 115), groupe `gMapGroup_Nabla` : île de sable entourée d'eau, carré de hautes herbes (bords sable/herbe de l'île Mirage), rochers dans l'eau. Pas encore de Pokémon ni de contenu.
   - Section `MAPSEC_NABLA_WEST_BEACH` (« WEST BEACH »), ajoutée en fin de liste ; sur la carte de la région, la case du bas de la route 115 (la route 115 est au bord gauche de la carte : pas de case libre plus à l'ouest).
+  - Retouches de l'utilisateur dans Porymap : petite bosse de sable à la jonction, deux flaques d'eau peu profonde ; rencontres de test (herbes, surf, pêche).
   - Outil `dev_scripts/nabla/render_map.py` : image d'une map (ou d'un layout), avec grille et collisions, pour vérifier un dessin sans Porymap. Marche à suivre pour créer une zone : `docs/nabla/zones.md`.
 
 ## Bugs connus
