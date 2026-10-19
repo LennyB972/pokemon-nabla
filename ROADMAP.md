@@ -200,12 +200,12 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 
 ## Phase 6 — Monde étendu : nouvelles zones et ajouts narratifs
 
-### 6.1 Chaîne de création de maps
+### 6.1 Chaîne de création de maps ✅ (Porymap, `render_map.py`, `docs/nabla/zones.md`, première zone : WEST BEACH)
 - **Fait** : réglage de Porymap (installé par toi), conventions de nommage (`Nabla_*`), petit script d'aperçu qui rend une map en PNG (pour relire mes maps sans ouvrir Porymap), puis une première **petite zone réelle** créée par Claude (tilesets existants) avec PNJ, texte et rencontres, accessible d'abord via le menu debug. Elle sert de test : on juge le rendu avant de décider qui dessine quoi.
 - **Vérif** : warp debug vers la zone, rien de cassé ailleurs.
 - 🎮 · 🟡 — ne dépend que de la phase 0 : on peut l'avancer si tu veux commencer à dessiner tôt.
 
-### 6.2 Plan du monde étendu
+### 6.2 Plan du monde étendu (en cours : `docs/nabla/world.md`)
 - **Fait** : un document `docs/nabla/world.md` qui liste chaque nouvelle zone (rôle, accès, moment du jeu, rencontres, liens avec l'histoire, **dessinée par toi ou par Claude**) et chaque ajout narratif (scène, personnages, déclencheur).
 - Deux familles de zones : **quelques zones facultatives pendant l'aventure** et **des zones nouvelles en post-game**.
 - **Vérif** : validé par toi avant toute construction. Nécessite tes idées.

@@ -43,6 +43,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 - Livrée (passage de sable au sud de la route 115 → île de sable avec hautes herbes ; nom « WEST BEACH » ; case du bas de la route 115 sur la carte). En attente du test de l'utilisateur et de ses retouches éventuelles dans Porymap. Contenu (Pokémon, dresseurs, objets) à définir plus tard.
 - Méthode : `docs/nabla/zones.md`. Outil d'image de map : `dev_scripts/nabla/render_map.py`.
 
+## Plan du monde étendu (6.2)
+- `docs/nabla/world.md` : forêt au sud de la route 123 (intrigue juste après le Mont Mémoria, Timmy/Wally), îles accessibles par Plongée, îles mirages des légendaires après la Ligue. Niveaux : réglés plus tard avec les level caps (choix de l'utilisateur).
+
 ## Prochaine étape (à choisir avec l'utilisateur, plan à présenter)
 - 4.1d : retouches des routes par l'utilisateur (Porymap, onglet Wild Pokémon, ou listes appliquées par Claude) ; relancer `coverage.py` après.
 - ou 4.2 : équipes Normal/Difficile des dresseurs ; puis 4.3 calibrage ; phases 5 à 8 (voir ROADMAP).
