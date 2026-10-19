@@ -181,7 +181,8 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 - 🎮 · 🟡
 
 ### 4.2 Équipes des dresseurs importants
-- **Type** : data. Champions, Conseil 4, rival, boss Aqua/Magma : équipes Normal et Difficile (objets, natures, EV, talents, IA).
+- **Type** : data. Champions, Conseil 4, rival, boss Aqua/Magma : équipes Normal et Difficile (objets, natures, EV, talents, IA). Compositions choisies par l'utilisateur (`docs/nabla/trainers.md`), Difficile = même composition avec niveaux et/ou sets améliorés ; Méga-Évolution à partir de la 6ᵉ arène.
+- Sous-étapes : 4.2a Champions d'arène, 4.2b Conseil 4 et Maître, 4.2c rival et Timmy, 4.2d Aqua/Magma.
 - **Vérif** : combats test dans les deux modes.
 - 🎮 · 🔴
 

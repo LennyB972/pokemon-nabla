@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1a, 4.1b et 4.1c faites (toutes les espèces non légendaires obtenables). En parallèle, première zone de la phase 6 : WEST BEACH v1 (en attente du test de l'utilisateur). Prochaine : 4.2 (équipes Normal/Difficile) à présenter ; 4.1d (routes) faite par l'utilisateur dans Porymap.
+- **Étape en cours** : phase 4. 4.1 faite (4.1d : routes retouchées par l'utilisateur dans Porymap, au fil de l'eau). **4.2a (Champions d'arène) en cours** : fiche `docs/nabla/trainers.md` préparée, en attente des équipes de l'utilisateur. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -243,6 +243,7 @@
 | 2026-10-18 | Ordre : 4.1b-3, puis 4.1c qui comble la couverture (4 Pokémon de Hoenn ajoutés aux routes comme dans Rubis/Saphir, Bargantua blanc, objets d'évolution en vente). |
 | 2026-10-18 | Starters du Safari : Plante et Feu dans les herbes, Eau seulement dans l'eau, rien sous les rochers. |
 | 2026-10-18 | Couverture : objets d'évolution vendus aux prix officiels (Pièces de Mordudor à 10 ₽) ; Méditikka seulement au Mont Mémoria (pas à la Route Victoire). |
+| 2026-10-19 | Équipes des dresseurs importants (4.2) : **l'utilisateur compose les équipes**, Claude les intègre et vérifie. Normal : équipes modifiables, niveaux d'origine, 6 Pokémon à partir de la 6ᵉ arène. Méga-Évolution à partir de la 6ᵉ arène dans les deux modes. Difficile : même composition, niveaux et/ou sets améliorés (sets proposés par Claude), pas d'objets de soin. Découpage : 4.2a Champions, 4.2b Conseil 4 et Maître, 4.2c rival et Timmy, 4.2d Aqua/Magma. |
 
 ## Questions ouvertes
 

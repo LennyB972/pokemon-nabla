@@ -46,9 +46,11 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 ## Plan du monde étendu (6.2)
 - `docs/nabla/world.md` : forêt au sud de la route 123 (intrigue juste après le Mont Mémoria, Timmy/Wally), îles accessibles par Plongée, îles mirages des légendaires après la Ligue. Niveaux : réglés plus tard avec les level caps (choix de l'utilisateur).
 
-## Prochaine étape (à choisir avec l'utilisateur, plan à présenter)
-- 4.1d : retouches des routes par l'utilisateur (Porymap, onglet Wild Pokémon, ou listes appliquées par Claude) ; relancer `coverage.py` après.
-- ou 4.2 : équipes Normal/Difficile des dresseurs ; puis 4.3 calibrage ; phases 5 à 8 (voir ROADMAP).
+## Étape en cours : 4.2a Champions d'arène
+- Fiche `docs/nabla/trainers.md` : équipes d'origine des 8 Champions, règles, cases « Normal » à remplir par l'utilisateur (format Pokémon Showdown), liste des Pokémon méga-évolutifs pour les arènes 6 à 8.
+- Règles : Normal = équipes de l'utilisateur, niveaux d'origine, 6 Pokémon dès la 6ᵉ arène ; Méga dès la 6ᵉ arène (deux modes) ; Difficile = même composition, sets proposés par Claude, niveaux au calibrage.
+- Intégration : remplacer l'équipe Normal dans `src/data/trainers.party`, ajouter une version `Difficulty: Hard` du même dresseur, compléter IV/EV/natures (Showdown n'écrit pas les IV parfaits), vérifier espèces/capacités/objets, build, test via le menu debug *Trainers…*.
+- Ensuite : 4.2b Conseil 4 et Maître, 4.2c rival et Timmy, 4.2d Aqua/Magma ; 4.3 calibrage ; phases 5 à 8.
 
 ## Repères techniques
 - **Safari** : `VAR_NABLA_SAFARI_REGION` (0x4083) ; constantes `NABLA_SAFARI_REGION_*`, prix et ids de menu (`include/constants/nabla.h`) ; `src/nabla_safari_zone.c` (table `sSafariZoneRegions` : nom, flag, prix, condition après la Ligue, régions d'évolution ; specials du comptoir ; niveaux `GetSafariZoneRegionWildLevel` ; `IsPlayerInEvolutionRegion` appelé par `IF_REGION`/`IF_NOT_REGION` dans `src/pokemon.c`) ; dans `src/wild_encounter.c`, `GetCurrentMapWildMonHeaderId` saute à la table de la région (11 tables placées juste après celle d'origine de chaque zone, comme la Grotte Altérée) ; évolution `CreateSafariZoneRegionWildMon`. Scripts : `data/scripts/nabla/safari_zone.inc` (menus du comptoir), entrée `Route121_SafariZoneEntrance`, sortie `SafariZone_South`. Test : `test/nabla_safari_zone.c` (`make check TESTS="Nabla"`).
