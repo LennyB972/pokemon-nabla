@@ -2,12 +2,22 @@
 #include "battle.h"
 #include "event_data.h"
 #include "caps.h"
+#include "difficulty.h"
 #include "pokemon.h"
 
 
+// Pokémon Nabla: Hard mode raises the levels of the opponents' Pokémon and the level caps by 10%
+// (rounded down, at least one level more)
+u32 GetDifficultyLevel(u32 level)
+{
+    if (GetCurrentDifficultyLevel() != DIFFICULTY_HARD)
+        return level;
+    return min(MAX_LEVEL, max(level + 1, level * 11 / 10));
+}
+
 u32 GetCurrentLevelCap(void)
 {
-    // Pokémon Nabla: level cap until each flag is set. Edit the levels here.
+    // Pokémon Nabla: level cap until each flag is set (Normal mode). Edit the levels here.
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_BADGE01_GET, 16},
@@ -32,7 +42,7 @@ u32 GetCurrentLevelCap(void)
         for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
         {
             if (!FlagGet(sLevelCapFlagMap[i][0]))
-                return sLevelCapFlagMap[i][1];
+                return GetDifficultyLevel(sLevelCapFlagMap[i][1]);
         }
     }
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
