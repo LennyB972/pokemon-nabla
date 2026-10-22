@@ -28,7 +28,7 @@ u32 GetCurrentLevelCap(void)
         {FLAG_BADGE06_GET, 41},
         {FLAG_BADGE07_GET, 51},
         {FLAG_BADGE08_GET, 59},
-        {FLAG_IS_CHAMPION, 59}, // to set with the Elite Four teams (4.2b)
+        {FLAG_IS_CHAMPION, 72}, // Victory Road and the League: Wallace's strongest Pokémon
     };
 
     u32 i;

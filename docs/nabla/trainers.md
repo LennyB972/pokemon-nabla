@@ -756,7 +756,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 # Conseil 4 et Maître (4.2b)
 
 - **Règles** : comme les Champions de la 6ᵉ arène et plus : 6 Pokémon et une Méga-Évolution par équipe, dans les deux modes (proposition, libre à toi de faire autrement). Niveaux à relever : Juan est désormais au niveau 59.
-- **Level cap** : un seul cap pour toute la Ligue, au niveau du Pokémon le plus fort de Marc (`src/caps.c`, +10 % en Difficile).
+- **Level cap** : un seul cap après le 8ᵉ badge (Route Victoire et Ligue), au niveau du Pokémon le plus fort de Marc : **72** (`src/caps.c`, 79 en Difficile).
+- **Formes Originelles** : le jeu suit la génération 9, où les Orbes ne changent plus la forme. Dialga, Palkia et Giratina Originels tiennent donc Adamant Crystal, Lustrous Globe et Griseous Core (même bonus que les Orbes).
 - **Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Pokémon méga-évolutifs (hors légendaires) par type
@@ -818,10 +819,62 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Slash
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Meowscarada @ Choice Band
+Ability: Protean
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Knock Off
+- U-turn
+- Triple Axel
+- Flower Trick
 
+Moltres-Galar @ Heavy-Duty Boots
+Ability: Berserk
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nasty Plot
+- Air Slash
+- Fiery Wrath
+- U-turn
+
+Hoopa-Unbound @ Choice Band
+Ability: Magician
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Hyperspace Fury
+- Knock Off
+- Zen Headbutt
+
+Darkrai @ Life Orb
+Ability: Bad Dreams
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Void
+- Dream Eater
+- Dark Pulse
+- Sludge Bomb
+
+Kingambit @ Leftovers
+Ability: Supreme Overlord
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sucker Punch
+- Iron Head
+- Swords Dance
+- Kowtow Cleave
+
+Absol @ Absolite Z
+Ability: Super Luck
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Shadow Claw
+- Swords Dance
+- Close Combat
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
@@ -875,10 +928,62 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Marshadow @ Life Orb
+Ability: Technician
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Sneak
+- Close Combat
+- Spectral Thief
+- Ice Punch
 
+Aegislash @ Weakness Policy
+Ability: Stance Change
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- King's Shield
+- Iron Head
+- Shadow Sneak
+- Shadow Ball
+
+Flutter Mane @ Booster Energy
+Ability: Protosynthesis
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 30 SpD / 31 Spe
+- Moonblast
+- Shadow Ball
+- Power Gem
+- Sacred Fire
+
+Dragapult @ Choice Specs
+Ability: Infiltrator
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- U-turn
+- Flamethrower
+- Shadow Ball
+
+Giratina-Origin @ Griseous Core
+Ability: Levitate
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poltergeist
+- Dragon Tail
+- Will-O-Wisp
+- Defog
+
+Chandelure @ Chandelurite
+Ability: Flash Fire
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Overheat
+- Shadow Ball
+- Flamethrower
+- Energy Ball
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
@@ -932,10 +1037,62 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sheer Cold
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Ninetales-Alola @ Light Clay
+Ability: Snow Warning
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aurora Veil
+- Moonblast
+- Freeze Dry
+- Encore
 
+Chien-Pao @ Focus Sash
+Ability: Sword of Ruin
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sucker Punch
+- Sacred Sword
+- Icicle Crash
+- Ice Shard
+
+Mamoswine @ Life Orb
+Ability: Thick Fat
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Kyurem-White @ Choice Scarf
+Ability: Turboblaze
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Freeze Dry
+- Earth Power
+- Fusion Flare
+
+Kyurem-Black @ Loaded Dice
+Ability: Teravolt
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Icicle Spear
+- Scale Shot
+- Dragon Dance
+- Fusion Bolt
+
+Froslass @ Froslassite
+Ability: Cursed Body
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Nasty Plot
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
@@ -989,10 +1146,62 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Garchomp @ Rocky Helmet
+Ability: Rough Skin
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Dragon Tail
+- Stealth Rock
+- Spikes
 
+Hydreigon @ Choice Specs
+Ability: Levitate
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Draco Meteor
+- Nasty Plot
+- U-turn
+
+Naganadel @ Focus Sash
+Ability: Beast Boost
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Draco Meteor
+- Tailwind
+- Heat Wave
+
+Palkia-Origin @ Lustrous Globe
+Ability: Pressure
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Draco Meteor
+- Thunder
+- Fire Blast
+
+Dialga-Origin @ Adamant Crystal
+Ability: Pressure
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Flash Cannon
+- Earth Power
+- Ice Beam
+
+Salamence @ Salamencite
+Ability: Intimidate
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Earthquake
+- Roost
+- Double-Edge
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
@@ -1054,10 +1263,62 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Kyogre @ Blue Orb
+Ability: Drizzle
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunder
+- Origin Pulse
+- Calm Mind
 
+Zygarde-50-Power-Construct @ Leftovers
+Ability: Power Construct
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thousand Arrows
+- Coil
+- Glare
+- Substitute
+
+Miraidon @ Choice Scarf
+Ability: Hadron Engine
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Volt Switch
+- Dazzling Gleam
+- Electro Drift
+
+Arceus @ Silk Scarf
+Ability: Multitype
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Extreme Speed
+- Earthquake
+- Recover
+- Judgment
+
+Calyrex-Shadow @ Choice Specs
+Ability: As One Shadow Rider
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Trick
+- Astral Barrage
+- Draining Kiss
+
+Magearna @ Magearnite
+Ability: Soul-Heart
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shift Gear
+- Volt Switch
+- Stored Power
+- Fleur Cannon
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).

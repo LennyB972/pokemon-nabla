@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1 et 4.2a faites. **4.2b (Conseil 4 et Maître)** : fiche préparée dans `docs/nabla/trainers.md`, en attente des équipes de l'utilisateur. Level cap de la Ligue : un seul, au niveau du Pokémon le plus fort de Marc. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1 et 4.2a faites ; **4.2b (Conseil 4 et Maître) intégrée**, en attente du test de l'utilisateur. Prochaine : 4.2c (rival et Timmy). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -213,6 +213,8 @@
   - Mode Difficile : les level caps suivent la même règle (`GetDifficultyLevel`, `src/caps.c` : 17 au lieu de 16… 64 au lieu de 59). Tests Nabla : `test/nabla_difficulty.c`.
   - Testé par l'utilisateur : trois combats en Difficile au bon niveau, combat double de Lévy & Tatia. L'IV PV de 1 du Racaillou de Roxanne est voulu.
   - Mode Difficile : règle automatique pour tous les dresseurs adverses (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c`) : niveau × 1,1 arrondi à l'inférieur, au moins +1. Les partenaires (Steven) ne changent pas, et un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard`, ex. événement Latios) l'utilise telle quelle. Trois tests d'expansion (`test/battle/trainer_control.c`) vérifient ce dernier point.
+
+- Étape 4.2b — Conseil 4 et Maître (équipes de l'utilisateur) : Damien, Spectra, Glacia, Aragon (niveaux 66-70) et Marc (72), 6 Pokémon et une Méga-Évolution chacun (Méga-Absol Z, Méga-Lugulabre, Méga-Momartik, Méga-Drattak, Méga-Magearna ; Kyogre Primal avec l'Orbe Bleu). Noms corrigés (Moltres-Galar, Froslass/Froslassite, Miraidon, Calyrex-Shadow, Zygarde-50-Power-Construct, Poltergeist, Judgment, Psyshock) ; formes Originelles avec les objets de la génération 9 (Adamant Crystal, Lustrous Globe, Griseous Core ; Giratina mis en forme Originelle, comme son set). Talents vérifiés valides. Level cap après le 8ᵉ badge : 72.
 
 ## Bugs connus
 

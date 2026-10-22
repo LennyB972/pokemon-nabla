@@ -4597,45 +4597,59 @@ Double Battle: No
 AI: Basic Trainer / Force Setup First Turn
 Mugshot: Purple
 
-Mightyena
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
-- Crunch
-
-Shiftry
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
-
-Cacturne
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
-
-Crawdaunt
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
-- Swords Dance
-- Strength
-- Facade
-
-Absol @ Sitrus Berry
-Level: 49
+Meowscarada @ Choice Band
+Ability: Protean
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
+- Knock Off
+- U-turn
+- Triple Axel
+- Flower Trick
+
+Moltres-Galar @ Heavy-Duty Boots
+Ability: Berserk
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nasty Plot
+- Air Slash
+- Fiery Wrath
+- U-turn
+
+Hoopa-Unbound @ Choice Band
+Ability: Magician
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Hyperspace Fury
+- Knock Off
+- Zen Headbutt
+
+Darkrai @ Life Orb
+Ability: Bad Dreams
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Void
+- Dream Eater
+- Dark Pulse
+- Sludge Bomb
+
+Kingambit @ Leftovers
+Ability: Supreme Overlord
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sucker Punch
+- Iron Head
 - Swords Dance
-- Slash
+- Kowtow Cleave
+
+Absol @ Absolite Z
+Ability: Super Luck
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Shadow Claw
+- Swords Dance
+- Close Combat
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4648,45 +4662,59 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Green
 
-Dusclops
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
-
-Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
-
-Dusclops @ Sitrus Berry
-Level: 51
+Marshadow @ Life Orb
+Ability: Technician
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Sneak
+- Close Combat
+- Spectral Thief
+- Ice Punch
+
+Aegislash @ Weakness Policy
+Ability: Stance Change
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- King's Shield
+- Iron Head
+- Shadow Sneak
 - Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
+
+Flutter Mane @ Booster Energy
+Ability: Protosynthesis
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 30 SpD / 31 Spe
+- Moonblast
+- Shadow Ball
+- Power Gem
+- Sacred Fire
+
+Dragapult @ Choice Specs
+Ability: Infiltrator
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- U-turn
+- Flamethrower
+- Shadow Ball
+
+Giratina-Origin @ Griseous Core
+Ability: Levitate
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poltergeist
+- Dragon Tail
+- Will-O-Wisp
+- Defog
+
+Chandelure @ Chandelurite
+Ability: Flash Fire
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Overheat
+- Shadow Ball
+- Flamethrower
+- Energy Ball
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4699,45 +4727,59 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Pink
 
-Sealeo
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
-
-Glalie
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
-
-Sealeo
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
-- Hail
-- Blizzard
-
-Glalie
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
-
-Walrein @ Sitrus Berry
-Level: 53
+Ninetales-Alola @ Light Clay
+Ability: Snow Warning
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+- Aurora Veil
+- Moonblast
+- Freeze Dry
+- Encore
+
+Chien-Pao @ Focus Sash
+Ability: Sword of Ruin
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sucker Punch
+- Sacred Sword
+- Icicle Crash
+- Ice Shard
+
+Mamoswine @ Life Orb
+Ability: Thick Fat
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Kyurem-White @ Choice Scarf
+Ability: Turboblaze
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Freeze Dry
+- Earth Power
+- Fusion Flare
+
+Kyurem-Black @ Loaded Dice
+Ability: Teravolt
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Icicle Spear
+- Scale Shot
+- Dragon Dance
+- Fusion Bolt
+
+Froslass @ Froslassite
+Ability: Cursed Body
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Nasty Plot
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4750,45 +4792,59 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Blue
 
-Shelgon
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
-
-Altaria
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
-
-Kingdra
-Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
-
-Flygon
-Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
-
-Salamence @ Sitrus Berry
-Level: 55
+Garchomp @ Rocky Helmet
+Ability: Rough Skin
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+- Earthquake
+- Dragon Tail
+- Stealth Rock
+- Spikes
+
+Hydreigon @ Choice Specs
+Ability: Levitate
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Draco Meteor
+- Nasty Plot
+- U-turn
+
+Naganadel @ Focus Sash
+Ability: Beast Boost
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Draco Meteor
+- Tailwind
+- Heat Wave
+
+Palkia-Origin @ Lustrous Globe
+Ability: Pressure
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Draco Meteor
+- Thunder
+- Fire Blast
+
+Dialga-Origin @ Adamant Crystal
+Ability: Pressure
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Flash Cannon
+- Earth Power
+- Ice Beam
+
+Salamence @ Salamencite
+Ability: Intimidate
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Earthquake
+- Roost
+- Double-Edge
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -6338,53 +6394,59 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Yellow
 
-Wailord
-Level: 57
+Kyogre @ Blue Orb
+Ability: Drizzle
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
-
-Tentacruel
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Hydro Pump
-- Sludge Bomb
 - Ice Beam
+- Thunder
+- Origin Pulse
+- Calm Mind
 
-Ludicolo
-Level: 56
+Zygarde-50-Power-Construct @ Leftovers
+Ability: Power Construct
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+- Thousand Arrows
+- Coil
+- Glare
+- Substitute
 
-Whiscash
-Level: 56
+Miraidon @ Choice Scarf
+Ability: Hadron Engine
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Volt Switch
+- Dazzling Gleam
+- Electro Drift
+
+Arceus @ Silk Scarf
+Ability: Multitype
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Extreme Speed
 - Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
-
-Gyarados
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
-
-Milotic @ Sitrus Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Recover
-- Surf
-- Ice Beam
-- Toxic
+- Judgment
+
+Calyrex-Shadow @ Choice Specs
+Ability: As One Shadow Rider
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Trick
+- Astral Barrage
+- Draining Kiss
+
+Magearna @ Magearnite
+Ability: Soul-Heart
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shift Gear
+- Volt Switch
+- Stored Power
+- Fleur Cannon
 
 === TRAINER_ANDREW ===
 Name: ANDREW
