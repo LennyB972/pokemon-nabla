@@ -752,3 +752,312 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+# Conseil 4 et Maître (4.2b)
+
+- **Règles** : comme les Champions de la 6ᵉ arène et plus : 6 Pokémon et une Méga-Évolution par équipe, dans les deux modes (proposition, libre à toi de faire autrement). Niveaux à relever : Juan est désormais au niveau 59.
+- **Level cap** : un seul cap pour toute la Ligue, au niveau du Pokémon le plus fort de Marc (`src/caps.c`, +10 % en Difficile).
+- **Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Pokémon méga-évolutifs (hors légendaires) par type
+
+- **Ténèbres (Damien)** : Absol, Absol Z, Greninja, Gyarados, Houndoom, Malamar, Sableye, Scrafty, Sharpedo, Tyranitar.
+- **Spectre (Spectra)** : Absol Z, Banette, Chandelure, Froslass, Gengar, Golurk, Sableye.
+- **Glace (Glacia)** : Abomasnow, Baxcalibur, Crabominable, Froslass, Glalie.
+- **Dragon (Aragon)** : Altaria, Ampharos, Baxcalibur, Charizard X, Dragalge, Dragonite, Drampa, Feraligatr, Garchomp, Garchomp Z, Salamence, Sceptile, Tatsugiri.
+- **Eau (Marc)** : Barbaracle, Blastoise, Feraligatr, Golisopod, Greninja, Gyarados, Sharpedo, Slowbro, Starmie, Swampert, Tatsugiri.
+
+(Le Pokémon ou sa Méga-Évolution a le type du dresseur. Nom de la Méga-Gemme : celui de Showdown, ex. Absolite, Banettite, Glalitite, Salamencite, Gyaradosite. « Z » = Méga-Évolutions de Légendes Z-A : Absolite Z, Garchompite Z.)
+
+## Damien (Sidney) (Ténèbres)
+
+- Niveaux d'origine : 46-49 (5 Pokémon).
+- Objets de soin d'origine : Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Roar
+- Double Edge
+- Sand Attack
+- Crunch
+
+Shiftry
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Torment
+- Double Team
+- Swagger
+- Extrasensory
+
+Cacturne
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Leech Seed
+- Feint Attack
+- Needle Arm
+- Cotton Spore
+
+Crawdaunt
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Surf
+- Swords Dance
+- Strength
+- Facade
+
+Absol @ Sitrus Berry
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Rock Slide
+- Swords Dance
+- Slash
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Spectra (Phoebe) (Spectre)
+
+- Niveaux d'origine : 48-51 (5 Pokémon).
+- Objets de soin d'origine : Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Dusclops
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Punch
+- Confuse Ray
+- Curse
+- Protect
+
+Banette
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Grudge
+- Will O Wisp
+- Feint Attack
+
+Sableye
+Level: 50
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Double Team
+- Night Shade
+- Feint Attack
+
+Banette
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Psychic
+- Thunderbolt
+- Facade
+
+Dusclops @ Sitrus Berry
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Ice Beam
+- Rock Slide
+- Earthquake
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Glacia (Glace)
+
+- Niveaux d'origine : 50-53 (5 Pokémon).
+- Objets de soin d'origine : Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Sealeo
+Level: 50
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Encore
+- Body Slam
+- Hail
+- Ice Ball
+
+Glalie
+Level: 50
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Light Screen
+- Crunch
+- Icy Wind
+- Ice Beam
+
+Sealeo
+Level: 52
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Attract
+- Double Edge
+- Hail
+- Blizzard
+
+Glalie
+Level: 52
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Explosion
+- Hail
+- Ice Beam
+
+Walrein @ Sitrus Berry
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Body Slam
+- Ice Beam
+- Sheer Cold
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Aragon (Drake) (Dragon)
+
+- Niveaux d'origine : 52-55 (5 Pokémon).
+- Objets de soin d'origine : Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Shelgon
+Level: 52
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Rock Tomb
+- Dragon Claw
+- Protect
+- Double Edge
+
+Altaria
+Level: 54
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Double Edge
+- Dragon Breath
+- Dragon Dance
+- Aerial Ace
+
+Kingdra
+Level: 53
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Smokescreen
+- Dragon Dance
+- Surf
+- Body Slam
+
+Flygon
+Level: 53
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Flamethrower
+- Crunch
+- Dragon Breath
+- Earthquake
+
+Salamence @ Sitrus Berry
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Dragon Claw
+- Rock Slide
+- Crunch
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Marc (Wallace), Maître (Eau)
+
+- Niveaux d'origine : 55-58 (6 Pokémon).
+- Objets de soin d'origine : Full Restore / Full Restore / Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Wailord
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rain Dance
+- Water Spout
+- Double Edge
+- Blizzard
+
+Tentacruel
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Hydro Pump
+- Sludge Bomb
+- Ice Beam
+
+Ludicolo
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Surf
+- Leech Seed
+- Double Team
+
+Whiscash
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Surf
+- Amnesia
+- Hyper Beam
+
+Gyarados
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Earthquake
+- Hyper Beam
+- Surf
+
+Milotic @ Sitrus Berry
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Recover
+- Surf
+- Ice Beam
+- Toxic
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
