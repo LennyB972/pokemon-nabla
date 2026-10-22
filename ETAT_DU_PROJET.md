@@ -4,12 +4,12 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernière étape livrée : 4.2c (rival et Timmy), en attente de mon test. Prochaine : 4.2d (Team Aqua / Magma), à me présenter avant de commencer (même méthode que les autres dresseurs : fiche dans `docs/nabla/trainers.md`, je compose, tu intègres).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. 4.2c (rival et Timmy) intégrée, en attente de mon test. 4.2d (Team Aqua / Magma) : fiche prête dans `docs/nabla/trainers.md`, j'y compose les équipes, puis tu intègres (même méthode que les autres dresseurs).
 
 ## Où on en est
 Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch BPS. Phases 0 à 3 terminées, phase 4 en cours :
 - **4.1 (Pokémon sauvages)** : faite (jour/nuit, Safari par région, couverture : 984 / 984 espèces non légendaires obtenables).
-- **4.2 (dresseurs importants)** : 4.2a Champions ✅, 4.2b Conseil 4 et Maître ✅, **4.2c rival et Timmy intégrée (à tester par l'utilisateur)**, **4.2d Team Aqua / Magma à faire**.
+- **4.2 (dresseurs importants)** : 4.2a Champions ✅, 4.2b Conseil 4 et Maître ✅, **4.2c rival et Timmy intégrée (à tester par l'utilisateur)**, **4.2d Team Aqua / Magma : fiche prête, en attente des équipes de l'utilisateur**.
 - En parallèle (phase 6) : première zone **WEST BEACH** v1 faite et validée ; plan du monde dans `docs/nabla/world.md`.
 
 ## Méthode de travail avec l'utilisateur
@@ -51,12 +51,13 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## En attente côté utilisateur
 - **Tester la 4.2c** : rival (IDs `TRAINER_{MAY,BRENDAN}_{ROUTE_103,RUSTBORO,ROUTE_110,ROUTE_119,LILYCOVE}_{TREECKO,TORCHIC,MUDKIP}`, suffixe = starter du joueur, numéros dans `include/constants/opponents.h`), Timmy (Lavandia 656, Route Victoire 519, Forêt 857, revanches `WALLY_VR_2`-`5`).
+- **Composer les équipes de la 4.2d** dans `docs/nabla/trainers.md` (section « Team Aqua et Team Magma ») et répondre à la question ouverte de `PROGRESS.md` (équipes Difficile faites à la main de l'Île du Sud : garder ou retirer).
 - Pas encore testé en jeu : inscriptions de Tutétékri (Route 111).
 - Il retouchera lui-même routes et West Beach dans Porymap au fil de l'eau (et préviendra).
 
 ## Prochaines étapes (dans l'ordre)
-1. **4.2d Team Aqua / Magma** (à présenter) : Arthur/Archie (1 combat), Max/Maxie (3), Matthieu/Matt (2), Spencer/Shelly (2), Tabitha (3) ; même méthode (fiche avec équipes d'origine, l'utilisateur compose, Claude intègre). Questions à lui poser : nombre de Pokémon, Méga pour les combats après la 6ᵉ arène (Arthur et Max finaux), combats en duo (Centre Spatial : Max + Tabitha en multi avec Steven).
-2. **4.3 Calibrage** : niveaux des Pokémon sauvages et des dresseurs ordinaires pour suivre la nouvelle courbe (Champions relevés), ajustement des level caps après parties de test.
+1. **4.2d Team Aqua / Magma** (fiche prête, plan validé) : 10 combats, Arthur/Archie (1), Max/Maxie (3), Matt (2, dont l'Île du Sud), Shelly (2), Tabitha (3), plus le sbire de l'Île du Sud et les deux équipes de Pierre Rochard (`PARTNER_STEVEN_SOUTHERN_ISLAND`, `PARTNER_STEVEN`, dans `src/data/battle_partners.party`). L'utilisateur choisit le nombre de Pokémon ; duos à 3 Pokémon par dresseur (`Multi Party: Half`). Intégration : talents, capacités vides (par niveau ; sets compétitifs pour le dernier combat de chaque personnage), IV, noms ; objets de soin et IA d'origine gardés. Test : *Trainers… → Try Battle* ; Centre Spatial : *Utilities → Steven Multi* ; Île du Sud : *Trainer 1* 855, *Trainer 2* 856, *Partner* 2 (Pierre de l'Île du Sud), puis *Try Battle*.
+2. **4.3 Calibrage** : relever les niveaux de **tous** les dresseurs ordinaires (sbires compris, demande de l'utilisateur : simple relèvement pour suivre la courbe) et des Pokémon sauvages ; ajustement des level caps après parties de test.
 3. **Phase 5 Interface** : name box sur les personnages importants, ajustements du résumé.
 4. **Phase 6 Zones** (`docs/nabla/world.md`) : Forêt Émeraude au sud du Mont Mémoria (scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire — dresseur prêt) ; îles accessibles par Plongée (hors scénario) ; contenu de West Beach.
 5. **Phase 7 Post-game** : Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon (sans vol en 3D).

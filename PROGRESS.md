@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; **4.2c (rival et Timmy) intégrée**, en attente du test de l'utilisateur. Prochaine : 4.2d (Team Aqua / Magma). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; 4.2c (rival et Timmy) intégrée, en attente du test de l'utilisateur. **4.2d (Team Aqua / Magma)** : fiche préparée dans `docs/nabla/trainers.md` (10 combats, dont les 2 duos avec Pierre Rochard), en attente des équipes de l'utilisateur. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -262,7 +262,9 @@
 | 2026-10-22 | En Difficile, les level caps suivent aussi la règle des +10 %. |
 | 2026-10-22 | Rival : une équipe par combat (mêmes pour Brendan et Flora) avec une ligne `STARTER` ; Claude génère les 3 versions selon le starter du joueur. Timmy (Lavandia avant le 3ᵉ badge, Route Victoire avant la Ligue) traité avec le rival ; ses revanches au post-game. |
 | 2026-10-22 | Un Pokémon de dresseur sans capacités dans la fiche : Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (même logique que pour `STARTER`). |
+| 2026-10-22 | Team Aqua / Magma (4.2d) : l'utilisateur choisit le nombre de Pokémon de chaque combat. Combats en duo (Île du Sud, Centre Spatial) : 3 Pokémon par dresseur, Pierre Rochard compris ; l'utilisateur compose aussi les équipes de Pierre. |
+| 2026-10-22 | 4.3 : les niveaux de **tous** les dresseurs ordinaires (sbires compris) seront relevés pour suivre la nouvelle courbe (simple relèvement de niveaux). |
 
 ## Questions ouvertes
 
-- Aucune pour l'instant.
+- Île du Sud (événement Latios) : garder les équipes Difficile faites à la main de Matt et du sbire (855, 856), ou les retirer pour appliquer la règle des +10 % comme partout ailleurs ?

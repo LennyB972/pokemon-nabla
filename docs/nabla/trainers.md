@@ -1883,3 +1883,416 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 ## Timmy — revanches (après la Ligue, Route Victoire)
 
 Même équipe et mêmes sets que sur la Route Victoire, tous les Pokémon au niveau **80** (1ʳᵉ revanche), **90** (2ᵉ), puis **100** (3ᵉ et suivantes). `TRAINER_WALLY_VR_2` à `VR_5`.
+
+# Team Aqua et Team Magma (4.2d)
+
+- **Nombre de Pokémon** : au choix de l'utilisateur, combat par combat.
+- **Combats en duo** (Île du Sud, Centre Spatial) : **3 Pokémon par dresseur**, Pierre Rochard compris ; le joueur choisit 3 de ses Pokémon avant le combat.
+- **Méga-Évolution** : à partir de la 6ᵉ arène (combats du Repaire Magma et après). En duo, chaque dresseur peut méga-évoluer une fois. Méga-Gemmes liées aux équipes d'origine : Cameruptite (Camérupt), Sharpedonite (Sharpedo), Houndoominite (Démolosse) ; pour Pierre : Metagrossite (Métalosse), Aggronite (Galeking), Skarmorite (Airmure).
+- **Capacités laissées vides** : 4 capacités apprises par niveau jusqu'au niveau du Pokémon, variées ; pour le **dernier combat** de chaque personnage (Tabitha et Max au Centre Spatial, Matt au Repaire Aqua, Shelly et Arthur à la Grotte du Fond Marin, Pierre au Centre Spatial), sets inspirés des sets compétitifs, comme pour la 4.2c.
+- **Level cap** au moment du combat : indiqué pour chaque combat.
+- **Difficile** : même équipe, niveaux +10 % (règle automatique). Pierre Rochard est un allié : son équipe ne change pas en Difficile.
+- Les sbires (dresseurs ordinaires) seront relevés avec les autres dresseurs en 4.3, sauf le sbire de l'Île du Sud, qui fait équipe avec Matt.
+
+## Combats d'origine, dans l'ordre de l'histoire
+
+| # | Combat | Moment | Level cap | Équipe d'origine | N° |
+|---|---|---|---|---|---|
+| 1 | Tabitha, Mont Chimnée | après le 3ᵉ badge | 34 | Numel 18, Poochyena 20, Numel 22, Zubat 22 | 597 |
+| 2 | Max (Maxie), Mont Chimnée, juste après Tabitha | après le 3ᵉ badge | 34 | Mightyena 24, Zubat 24, Camerupt 25 | 602 |
+| 3 | Matt et un sbire contre toi et Pierre, Île du Sud (événement Latios) | après le 5ᵉ badge | 41 | Matt : Mightyena 31, Golbat 31, Sharpedo 32. Sbire : Carvanha 29, Wailmer 29. Pierre : Skarmory 32, Metang 33 | 855 + 856 |
+| 4 | Shelly, Institut Météo | après le 5ᵉ badge | 41 | Carvanha 28, Mightyena 28 | 32 |
+| 5 | Tabitha, Repaire Magma | après le 6ᵉ badge | 51 | Numel 26, Mightyena 28, Zubat 30, Camerupt 33 | 732 |
+| 6 | Max, Repaire Magma, après Tabitha | après le 6ᵉ badge | 51 | Mightyena 37, Crobat 38, Camerupt 39 | 601 |
+| 7 | Matt, Repaire Aqua | après le 6ᵉ badge | 51 | Mightyena 34, Golbat 34 | 30 |
+| 8 | Max et Tabitha contre toi et Pierre, Centre Spatial | après le 7ᵉ badge | 59 | Max : Mightyena 42, Crobat 43, Camerupt 44. Tabitha : Camerupt 36, Mightyena 38, Golbat 40. Pierre : Metang 42, Skarmory 43, Aggron 44 | 734 + 514 |
+| 9 | Shelly, Grotte du Fond Marin | après le 7ᵉ badge | 59 | Sharpedo 37, Mightyena 37 | 33 |
+| 10 | Arthur (Archie), Grotte du Fond Marin | après le 7ᵉ badge | 59 | Mightyena 41, Crobat 41, Sharpedo 43 | 34 |
+
+Repères dans la nouvelle courbe : rival Route 119 à 35-36 (cap 41) ; rival Nénucrique à 43-46 et Timmy dans la Forêt Émeraude à 40-43 (cap 51).
+
+## Tabitha — Mont Chimnée, après le 3ᵉ badge
+
+- Level cap à ce moment : **34**. Combat juste avant celui de Max, sans Centre Pokémon entre les deux.
+- Objets de soin d'origine : aucun.
+
+**Équipe d'origine**
+
+```
+Numel
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Poochyena
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Numel
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Zubat
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Max (Maxie) — Mont Chimnée, après le 3ᵉ badge
+
+- Level cap à ce moment : **34**.
+- Objets de soin d'origine : Super Potion / Super Potion.
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Zubat
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Camerupt
+Level: 25
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Île du Sud — Matt et un sbire contre toi et Pierre Rochard, après le 5ᵉ badge (événement Latios)
+
+- Level cap à ce moment : **41**.
+- Combat en duo : **3 Pokémon par dresseur** (le joueur en choisit 3).
+- Objets de soin : aucun.
+- Équipes actuelles : celles de l'événement Latios (étape 3.4). Matt et le sbire ont aussi une équipe Difficile faite à la main à l'époque (sets différents) : à décider avec l'utilisateur (garder, ou la retirer pour appliquer la règle des +10 %).
+
+### Matt (`TRAINER_NABLA_MATT_SOUTHERN_ISLAND`, 855)
+
+**Équipe actuelle (Normal)**
+
+```
+Mightyena
+Level: 31
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Golbat
+Level: 31
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Sharpedo
+Level: 32
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+### Sbire de la Team Aqua (`TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND`, 856)
+
+**Équipe actuelle (Normal)**
+
+```
+Carvanha
+Level: 29
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailmer
+Level: 29
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+### Pierre Rochard, allié (`PARTNER_STEVEN_SOUTHERN_ISLAND`)
+
+**Équipe actuelle**
+
+```
+Skarmory
+Level: 32
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Steel Wing
+- Aerial Ace
+- Spikes
+- Protect
+
+Metang
+Level: 33
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Metal Claw
+- Zen Headbutt
+- Bullet Punch
+- Take Down
+```
+
+**Équipe** (à remplir, 3 Pokémon)
+
+```
+
+```
+
+## Shelly — Institut Météo (Route 119), après le 5ᵉ badge
+
+- Level cap à ce moment : **41**.
+- Objets de soin d'origine : aucun.
+
+**Équipe d'origine**
+
+```
+Carvanha
+Level: 28
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Mightyena
+Level: 28
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Tabitha — Repaire Magma, après le 6ᵉ badge
+
+- Level cap à ce moment : **51**. Combat juste avant celui de Max.
+- Objets de soin d'origine : aucun.
+
+**Équipe d'origine**
+
+```
+Numel
+Level: 26
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+
+Mightyena
+Level: 28
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+
+Zubat
+Level: 30
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+
+Camerupt
+Level: 33
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Max (Maxie) — Repaire Magma, après le 6ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **51**.
+- Objets de soin d'origine : Super Potion / Super Potion.
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Crobat
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Camerupt
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Matt — Repaire Aqua (Nénucrique), après le 6ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **51**.
+- Objets de soin d'origine : Super Potion.
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 34
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Golbat
+Level: 34
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Centre Spatial (Algatia) — Max et Tabitha contre toi et Pierre Rochard, après le 7ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **59**.
+- Combat en duo : **3 Pokémon par dresseur** (le joueur en choisit 3).
+- Objets de soin d'origine : aucun.
+
+### Max (`TRAINER_MAXIE_MOSSDEEP`, 734)
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Crobat
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Camerupt
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+```
+
+**Normal** (à remplir, 3 Pokémon)
+
+```
+
+```
+
+### Tabitha (`TRAINER_TABITHA_MOSSDEEP`, 514)
+
+**Équipe d'origine**
+
+```
+Camerupt
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Mightyena
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Golbat
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+```
+
+**Normal** (à remplir, 3 Pokémon)
+
+```
+
+```
+
+### Pierre Rochard, allié (`PARTNER_STEVEN`)
+
+**Équipe d'origine**
+
+```
+Metang
+Level: 42
+Brave Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Light Screen
+- Psychic
+- Reflect
+- Metal Claw
+
+Skarmory
+Level: 43
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Aerial Ace
+- Protect
+- Steel Wing
+
+Aggron
+Level: 44
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder
+- Protect
+- Solar Beam
+- Dragon Claw
+```
+
+**Équipe** (à remplir, 3 Pokémon)
+
+```
+
+```
+
+## Shelly — Grotte du Fond Marin, après le 7ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **59**. Combat avant celui d'Arthur, dans la même grotte.
+- Objets de soin d'origine : aucun.
+
+**Équipe d'origine**
+
+```
+Sharpedo
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Mightyena
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Arthur (Archie) — Grotte du Fond Marin, après le 7ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **59**.
+- Objets de soin d'origine : Super Potion / Super Potion.
+
+**Équipe d'origine**
+
+```
+Mightyena
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Crobat
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Sharpedo
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
