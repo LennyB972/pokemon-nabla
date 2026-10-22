@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1 faite (4.1d : routes retouchées par l'utilisateur dans Porymap, au fil de l'eau). **4.2a (Champions d'arène) en cours** : fiche `docs/nabla/trainers.md` préparée, en attente des équipes de l'utilisateur. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1 faite. **4.2a (Champions d'arène) intégrée**, en attente du test de l'utilisateur ; question ouverte : level caps en mode Difficile. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -207,6 +207,11 @@
   - Retouches de l'utilisateur dans Porymap : petite bosse de sable à la jonction, deux flaques d'eau peu profonde ; rencontres de test (herbes, surf, pêche).
   - Outil `dev_scripts/nabla/render_map.py` : image d'une map (ou d'un layout), avec grille et collisions, pour vérifier un dessin sans Porymap. Marche à suivre pour créer une zone : `docs/nabla/zones.md`.
 
+- Étape 4.2a — Champions d'arène (équipes composées par l'utilisateur dans `docs/nabla/trainers.md`) :
+  - Les 8 équipes Normal intégrées dans `src/data/trainers.party` (3 Pokémon pour Roxanne et Bastien, jusqu'à 6 dès Alizée ; Méga-Évolution dès la 6ᵉ arène : Méga-Ptéra, Méga-Alakazam, Méga-Amphinobi). Noms corrigés (Motisma → Rotom-Heat, Gallame → Gallade, Psycho Cut, Alakazite) ; formes écrites à la Showdown (`Arcanine-Hisui`). Talents choisis par Claude (meilleur talent compétitif), tous vérifiés valides. Objets de soin et IA d'origine gardés.
+  - Level caps relevés au Pokémon le plus fort de chaque Champion : 16, 20, 27, 34, 35, 41, 51, 59 ; cap avant le Maître provisoirement à 59 (à fixer avec le Conseil 4, 4.2b).
+  - Mode Difficile : règle automatique pour tous les dresseurs adverses (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c`) : niveau × 1,1 arrondi à l'inférieur, au moins +1. Les partenaires (Steven) ne changent pas, et un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard`, ex. événement Latios) l'utilise telle quelle. Trois tests d'expansion (`test/battle/trainer_control.c`) vérifient ce dernier point.
+
 ## Bugs connus
 
 | Lieu | Symptôme | Statut |
@@ -244,7 +249,8 @@
 | 2026-10-18 | Starters du Safari : Plante et Feu dans les herbes, Eau seulement dans l'eau, rien sous les rochers. |
 | 2026-10-18 | Couverture : objets d'évolution vendus aux prix officiels (Pièces de Mordudor à 10 ₽) ; Méditikka seulement au Mont Mémoria (pas à la Route Victoire). |
 | 2026-10-19 | Équipes des dresseurs importants (4.2) : **l'utilisateur compose les équipes**, Claude les intègre et vérifie. Normal : équipes modifiables, niveaux d'origine, 6 Pokémon à partir de la 6ᵉ arène. Méga-Évolution à partir de la 6ᵉ arène dans les deux modes. Difficile : même composition, niveaux et/ou sets améliorés (sets proposés par Claude), pas d'objets de soin. Découpage : 4.2a Champions, 4.2b Conseil 4 et Maître, 4.2c rival et Timmy, 4.2d Aqua/Magma. |
+| 2026-10-22 | Difficile = mêmes équipes, niveaux de tous les dresseurs adverses × 1,1 (arrondi inférieur, au moins +1) ; les sets pourront changer plus tard. Talents : le meilleur en compétitif. Level caps = Pokémon le plus fort de chaque Champion. Niveaux des sauvages et des autres dresseurs à adapter plus tard. |
 
 ## Questions ouvertes
 
-- Aucune pour l'instant.
+- Level caps en mode Difficile : suivre les niveaux Difficile (+10 %) ou rester ceux du Normal ?

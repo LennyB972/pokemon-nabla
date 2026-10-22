@@ -4,9 +4,11 @@ Fiche de travail de l'étape 4.2. C'est l'utilisateur qui compose les équipes ;
 
 ## Règles
 
-- **Mode Normal** : équipes libres, **niveaux d'origine** conservés (le Pokémon le plus fort est au niveau du level cap du badge). **6 Pokémon à partir de la 6ᵉ arène.**
+- **Mode Normal** : équipes de l'utilisateur, niveaux proches de ceux d'origine (un peu relevés). **6 Pokémon à partir de la 6ᵉ arène.**
 - **Méga-Évolution à partir de la 6ᵉ arène, dans les deux modes** : un seul Pokémon méga-évolutif par équipe, qui tient sa Méga-Gemme (`Altaria @ Altarianite`).
-- **Mode Difficile** : **même composition** qu'en Normal ; seuls les niveaux et/ou les sets changent (capacités, objets, talents, natures, EV/IV, IA avancée, pas d'objets de soin). Claude proposera les sets à partir de tes équipes ; les niveaux seront réglés au calibrage (4.3).
+- **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
+- **Talents** : le meilleur en compétitif (sets de référence Smogon / Coupcritique), choisi par Claude quand il n'est pas précisé.
+- **Level caps** : niveau du Pokémon le plus fort de chaque Champion (`src/caps.c`).
 
 ## Comment écrire une équipe
 
@@ -36,7 +38,7 @@ Level: 33
 
 ## Roxanne — Mérouville (Roche)
 
-- Niveau maximal : **15** (level cap du badge).
+- Niveau maximal : **16** (level cap du badge ; 15 dans Émeraude).
 - Objets de soin d'origine : Potion / Potion.
 
 **Équipe d'origine**
@@ -67,17 +69,41 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rock Tomb
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Geodude @ Berry Juice
+Ability: Sturdy
+Level: 13
+IVs: 1 HP / 24 Atk / 24 Def / 12 SpA / 24 SpD / 24 Spe
+- Defense Curl
+- Rollout
+- Sand Tomb
 
+Anorith
+Ability: Battle Armor
+Level: 14
+IVs: 31 HP / 24 Atk / 24 Def / 12 SpA / 24 SpD / 24 Spe
+- Bug Bite
+- Harden
+- Metal Claw
+- Rock Throw
+
+Nosepass @ Berry Juice
+Ability: Sturdy
+Level: 16
+IVs: 31 HP / 24 Atk / 31 Def / 24 SpA / 31 SpD / 24 Spe
+- Block
+- Harden
+- Thunder Wave
+- Rock Tomb
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Bastien (Brawly) — Myokara (Combat)
 
-- Niveau maximal : **19** (level cap du badge).
+- Niveau maximal : **20** (level cap du badge ; 19 dans Émeraude).
 - Objets de soin d'origine : Super Potion / Super Potion.
 
 **Équipe d'origine**
@@ -108,17 +134,42 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bulk Up
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Meditite
+Ability: Pure Power
+Level: 16
+IVs: 24 HP / 24 Atk / 24 Def / 12 SpA / 24 SpD / 24 Spe
+- Karate Chop
+- Light Screen
+- Reflect
+- Bulk Up
 
+Makuhita @ Sitrus Berry
+Ability: Thick Fat
+Level: 18
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Arm Thrust
+- Bullet Punch
+- Fake Out
+- Bulk Up
+
+Flamigo @ Lum Berry
+Ability: Scrappy
+Level: 20
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Focus Energy
+- Peck
+- Double Kick
+- Detect
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Voltère (Wattson) — Lavandia (Électrik)
 
-- Niveau maximal : **24** (level cap du badge).
+- Niveau maximal : **27** (level cap du badge ; 24 dans Émeraude).
 - Objets de soin d'origine : Super Potion / Super Potion.
 
 **Équipe d'origine**
@@ -157,17 +208,51 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Howl
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Emolga
+Ability: Motor Drive
+Level: 24
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Acrobatics
+- Spark
+- Charge
+- Volt Switch
 
+Dedenne @ Sitrus Berry
+Ability: Cheek Pouch
+Level: 25
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Parabolic Charge
+- Draining Kiss
+- Volt Switch
+- Thunder Wave
+
+Magneton
+Ability: Magnet Pull
+Level: 25
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Volt Switch
+- Shock Wave
+- Thunder Wave
+- Mirror Shot
+
+Manectric @ Sitrus Berry
+Ability: Lightning Rod
+Level: 27
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Charge
+- Thunder Wave
+- Volt Switch
+- Signal Beam
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Adriane (Flannery) — Vermilava (Feu)
 
-- Niveau maximal : **29** (level cap du badge).
+- Niveau maximal : **34** (level cap du badge ; 29 dans Émeraude).
 - Objets de soin d'origine : Hyper Potion / Hyper Potion.
 
 **Équipe d'origine**
@@ -206,17 +291,60 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Attract
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Scovillain
+Ability: Chlorophyll
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sunny Day
+- Solar Beam
+- Overheat
+- Growth
 
+Camerupt @ Sitrus Berry
+Ability: Solid Rock
+Level: 30
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Yawn
+- Lava Plume
+- Earth Power
+- Attract
+
+Salazzle
+Ability: Corrosion
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Toxic
+- Sludge Bomb
+- Flamethrower
+- Toxic Spikes
+
+Arcanine-Hisui @ Sitrus Berry
+Ability: Rock Head
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flare Blitz
+- Rock Slide
+- Extreme Speed
+- Crunch
+
+Rotom-Heat @ Leftovers
+Ability: Levitate
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Thunder Shock
+- Will-O-Wisp
+- Hex
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Norman — Clémenti-Ville (Normal)
 
-- Niveau maximal : **31** (level cap du badge).
+- Niveau maximal : **35** (level cap du badge ; 31 dans Émeraude).
 - Objets de soin d'origine : Hyper Potion / Hyper Potion.
 
 **Équipe d'origine**
@@ -255,17 +383,60 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Feint Attack
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Wigglytuff
+Ability: Competitive
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stealth Rock
+- Light Screen
+- Reflect
+- Psychic
 
+Obstagoon @ Chople Berry
+Ability: Guts
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Obstruct
+- Night Slash
+- Shadow Claw
+- Retaliate
+
+Maushold @ Wide Lens
+Ability: Technician
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Population Bomb
+- Bite
+- Tidy Up
+- Encore
+
+Slaking @ Life Orb
+Ability: Truant
+Level: 34
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Counter
+- Yawn
+- Giga Impact
+- Earthquake
+
+Zoroark-Hisui @ Focus Sash
+Ability: Illusion
+Level: 35
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Focus Blast
+- Nasty Plot
+- Hyper Voice
+- Shadow Ball
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Alizée (Winona) — Cimetronelle (Vol)
 
-- Niveau maximal : **33** (level cap du badge) ; **6 Pokémon, une Méga-Évolution**.
+- Niveau maximal : **41** (level cap du badge ; 33 dans Émeraude) ; **6 Pokémon, une Méga-Évolution**.
 - Objets de soin d'origine : Hyper Potion / Hyper Potion.
 
 **Équipe d'origine**
@@ -312,17 +483,69 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Altaria @ Sitrus Berry
+Ability: Natural Cure
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Roost
+- Dragon Dance
+- Sky Attack
 
+Iron Jugulis @ Booster Energy
+Ability: Quark Drive
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Hurricane
+- Dark Pulse
+- Taunt
+
+Tornadus-Therian @ Assault Vest
+Ability: Regenerator
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- U-turn
+- Heat Wave
+- Focus Blast
+
+Corviknight @ Rocky Helmet
+Ability: Pressure
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Roost
+- Defog
+- U-turn
+- Brave Bird
+
+Shaymin-Sky @ Life Orb
+Ability: Serene Grace
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Seed Flare
+- Earth Power
+- Dazzling Gleam
+
+Aerodactyl @ Aerodactylite
+Ability: Unnerve
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stone Edge
+- Earthquake
+- Roost
+- Ice Fang
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Lévy & Tatia (Tate & Liza) — Algatia (Psy, combat en duo)
 
-- Niveau maximal : **42** (level cap du badge) ; **6 Pokémon, une Méga-Évolution**.
+- Niveau maximal : **51** (level cap du badge ; 42 dans Émeraude) ; **6 Pokémon, une Méga-Évolution**.
 - Objets de soin d'origine : Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion.
 
 **Équipe d'origine**
@@ -361,17 +584,69 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Flamethrower
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Gardevoir @ Choice Scarf
+Ability: Trace
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Psychic Noise
+- Trick
+- Sacred Fire
 
+Gallade @ Choice Band
+Ability: Sharpness
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psycho Cut
+- Sacred Sword
+- Leaf Blade
+- Shadow Sneak
+
+Jirachi @ Leftovers
+Ability: Serene Grace
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- U-turn
+- Wish
+- Body Slam
+
+Iron Boulder @ Booster Energy
+Ability: Quark Drive
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mighty Cleave
+- Close Combat
+- Earthquake
+- Zen Headbutt
+
+Metagross @ Weakness Policy
+Ability: Clear Body
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Heavy Slam
+- Knock Off
+- Bullet Punch
+
+Alakazam @ Alakazite
+Ability: Magic Guard
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Focus Blast
+- Shadow Ball
+- Calm Mind
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).
 
 ## Juan — Atalanopolis (Eau)
 
-- Niveau maximal : **46** (level cap du badge) ; **6 Pokémon, une Méga-Évolution**.
+- Niveau maximal : **59** (level cap du badge ; 46 dans Émeraude) ; **6 Pokémon, une Méga-Évolution**.
 - Objets de soin d'origine : Hyper Potion / Hyper Potion.
 
 **Équipe d'origine**
@@ -418,10 +693,62 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Rest
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Pelipper @ Damp Rock
+Ability: Drizzle
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- U-turn
+- Roost
+- Weather Ball
 
+Kingdra @ Choice Specs
+Ability: Swift Swim
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Draco Meteor
+- Hydro Pump
+- Hurricane
+
+Urshifu-Rapid-Strike @ Choice Scarf
+Ability: Unseen Fist
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surging Strikes
+- Close Combat
+- Aqua Jet
+- U-turn
+
+Volcanion @ Heavy-Duty Boots
+Ability: Water Absorb
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Steam Eruption
+- Flamethrower
+- Earth Power
+- Taunt
+
+Tapu Fini @ Leftovers
+Ability: Misty Surge
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Moonblast
+- Defog
+- Draining Kiss
+
+Greninja @ Greninjite
+Ability: Protean
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Gunk Shot
 ```
 
-**Difficile** : même composition ; sets proposés par Claude une fois l'équipe Normal fixée.
+**Difficile** : même équipe, niveaux +10 % (règle automatique).

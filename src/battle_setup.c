@@ -1,5 +1,6 @@
 #include "global.h"
 #include "data.h"
+#include "difficulty.h"
 #include "main.h"
 #include "battle.h"
 #include "battle_frontier.h"
@@ -2230,6 +2231,16 @@ void SetMultiTrainerBattle(struct ScriptContext *ctx)
     gPartnerTrainerId = TRAINER_PARTNER(ScriptReadHalfword(ctx));
 };
 
+// Pokémon Nabla: in Hard mode, opponents without a party of their own for Hard mode use their Normal
+// party 10% higher level (rounded down, at least one level more)
+static u8 GetDifficultyTrainerMonLevel(const struct Trainer *trainer, u8 level)
+{
+    if (GetCurrentDifficultyLevel() != DIFFICULTY_HARD
+     || trainer < gTrainers[DIFFICULTY_NORMAL] || trainer >= gTrainers[DIFFICULTY_NORMAL] + TRAINERS_COUNT)
+        return level;
+    return min(MAX_LEVEL, max(level + 1, level * 11 / 10));
+}
+
 void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer)
 {
     s32 i;
@@ -2251,8 +2262,10 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
 
     for (i = 0; i < monsCount; i++)
     {
-        u32 monIndex = monIndices[i];
-        GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
+        struct TrainerMon trainerMon = trainer->party[monIndices[i]];
+
+        trainerMon.lvl = GetDifficultyTrainerMonLevel(trainer, trainerMon.lvl);
+        GenerateMonFromTrainerMon(&party[i], &trainerMon, trainerGen);
     }
     Free(trainerGen);
 }
