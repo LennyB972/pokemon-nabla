@@ -6,7 +6,7 @@ Fiche de travail de l'étape 4.2. C'est l'utilisateur qui compose les équipes ;
 
 - **Mode Normal** : équipes de l'utilisateur, niveaux proches de ceux d'origine (un peu relevés). **6 Pokémon à partir de la 6ᵉ arène.**
 - **Méga-Évolution à partir de la 6ᵉ arène, dans les deux modes** : un seul Pokémon méga-évolutif par équipe, qui tient sa Méga-Gemme (`Altaria @ Altarianite`).
-- **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
+- **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** et les partenaires (Pierre Rochard) : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
 - **Talents** : le meilleur en compétitif (sets de référence Smogon / Coupcritique), choisi par Claude quand il n'est pas précisé.
 - **Level caps** : niveau du Pokémon le plus fort de chaque Champion (`src/caps.c`) ; en Difficile, même règle des +10 %.
 
@@ -1889,9 +1889,9 @@ Même équipe et mêmes sets que sur la Route Victoire, tous les Pokémon au niv
 - **Nombre de Pokémon** : au choix de l'utilisateur, combat par combat.
 - **Combats en duo** (Île du Sud, Centre Spatial) : **3 Pokémon par dresseur**, Pierre Rochard compris ; le joueur choisit 3 de ses Pokémon avant le combat.
 - **Méga-Évolution** : à partir de la 6ᵉ arène (combats du Repaire Magma et après). En duo, chaque dresseur peut méga-évoluer une fois. Méga-Gemmes liées aux équipes d'origine : Cameruptite (Camérupt), Sharpedonite (Sharpedo), Houndoominite (Démolosse) ; pour Pierre : Metagrossite (Métalosse), Aggronite (Galeking), Skarmorite (Airmure).
-- **Capacités laissées vides** : 4 capacités apprises par niveau jusqu'au niveau du Pokémon, variées ; pour le **dernier combat** de chaque personnage (Tabitha et Max au Centre Spatial, Matt au Repaire Aqua, Shelly et Arthur à la Grotte du Fond Marin, Pierre au Centre Spatial), sets inspirés des sets compétitifs, comme pour la 4.2c.
+- **Capacités laissées vides** : 4 capacités apprises par niveau jusqu'au niveau du Pokémon, variées (sans objet tenu) ; pour le **dernier combat** de chaque personnage (Tabitha et Max au Centre Spatial, Matt au Repaire Aqua, Shelly et Arthur à la Grotte du Fond Marin, Pierre au Centre Spatial), sets inspirés des sets compétitifs, avec leurs objets, comme pour la 4.2c.
 - **Level cap** au moment du combat : indiqué pour chaque combat.
-- **Difficile** : même équipe, niveaux +10 % (règle automatique). Pierre Rochard est un allié : son équipe ne change pas en Difficile.
+- **Difficile** : même équipe, niveaux +10 % (règle automatique). Pierre Rochard suit la même règle, pour ne pas être en retard sur les adversaires.
 - Les sbires (dresseurs ordinaires) seront relevés avec les autres dresseurs en 4.3, sauf le sbire de l'Île du Sud, qui fait équipe avec Matt.
 
 ## Combats d'origine, dans l'ordre de l'histoire
@@ -1936,10 +1936,44 @@ Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Numel
+Ability: Simple
+Level: 27
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Lava Plume
+- Earth Power
+- Amnesia
+- Growl
 
+Mightyena
+Ability: Intimidate
+Level: 27
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Ice Fang
+- Thunder Fang
+- Scary Face
+
+Darumaka
+Ability: Hustle
+Level: 27
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Fire Fang
+- Headbutt
+- Bite
+- Work Up
+
+Carkol
+Ability: Flame Body
+Level: 28
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Incinerate
+- Ancient Power
+- Rapid Spin
+- Rock Polish
 ```
 
 ## Max (Maxie) — Mont Chimnée, après le 3ᵉ badge
@@ -1963,10 +1997,44 @@ Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Mightyena
+Ability: Intimidate
+Level: 30
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Taunt
 
+Carkol
+Ability: Flame Body
+Level: 30
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Incinerate
+- Ancient Power
+- Stealth Rock
+- Rapid Spin
+
+Marowak-Alola
+Ability: Rock Head
+Level: 30
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Bone
+- Flame Wheel
+- Bone Rush
+- Double-Edge
+
+Camerupt
+Ability: Solid Rock
+Level: 33
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Lava Plume
+- Earth Power
+- Rock Slide
+- Amnesia
 ```
 
 ## Île du Sud — Matt et un sbire contre toi et Pierre Rochard, après le 5ᵉ badge (événement Latios)
@@ -1974,11 +2042,11 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Level cap à ce moment : **41**.
 - Combat en duo : **3 Pokémon par dresseur** (le joueur en choisit 3).
 - Objets de soin : aucun.
-- Équipes actuelles : celles de l'événement Latios (étape 3.4). Matt et le sbire ont aussi une équipe Difficile faite à la main à l'époque (sets différents) : à décider avec l'utilisateur (garder, ou la retirer pour appliquer la règle des +10 %).
+- Équipes d'origine : celles de l'événement Latios (étape 3.4). Les équipes Difficile faites à la main à l'époque pour Matt et le sbire sont retirées : la règle des +10 % s'applique.
 
 ### Matt (`TRAINER_NABLA_MATT_SOUTHERN_ISLAND`, 855)
 
-**Équipe actuelle (Normal)**
+**Équipe d'origine**
 
 ```
 Mightyena
@@ -1994,15 +2062,40 @@ Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Mightyena
+Ability: Intimidate
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Yawn
 
+Crobat
+Ability: Inner Focus
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Cross Poison
+- Air Cutter
+- Tailwind
+- Bite
+
+Sharpedo
+Ability: Speed Boost
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Aqua Jet
+- Ice Fang
+- Scary Face
 ```
 
 ### Sbire de la Team Aqua (`TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND`, 856)
 
-**Équipe actuelle (Normal)**
+**Équipe d'origine**
 
 ```
 Carvanha
@@ -2014,15 +2107,31 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Wailmer
+Ability: Water Veil
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Brine
+- Heavy Slam
+- Astonish
+- Mist
 
+Gorebyss
+Ability: Swift Swim
+Level: 33
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Water Pulse
+- Draining Kiss
+- Confusion
+- Rain Dance
 ```
 
 ### Pierre Rochard, allié (`PARTNER_STEVEN_SOUTHERN_ISLAND`)
 
-**Équipe actuelle**
+**Équipe d'origine**
 
 ```
 Skarmory
@@ -2044,10 +2153,38 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Take Down
 ```
 
-**Équipe** (à remplir, 3 Pokémon)
+**Équipe** (dans le jeu)
 
 ```
+Skarmory
+Ability: Sturdy
+Impish Nature
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Steel Wing
+- Wing Attack
+- Payback
+- Agility
 
+Metang
+Ability: Clear Body
+Adamant Nature
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Bullet Punch
+- Take Down
+- Magnet Rise
+
+Lairon
+Ability: Sturdy
+Adamant Nature
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Headbutt
+- Protect
 ```
 
 ## Shelly — Institut Météo (Route 119), après le 5ᵉ badge
@@ -2067,10 +2204,35 @@ Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Sharpedo
+Ability: Speed Boost
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Aqua Jet
+- Ice Fang
+- Screech
 
+Basculegion
+Ability: Adaptability
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Phantom Force
+- Aqua Jet
+- Crunch
+- Scary Face
+
+Golisopod
+Ability: Emergency Exit
+Level: 36
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- First Impression
+- Razor Shell
+- Sucker Punch
+- Iron Defense
 ```
 
 ## Tabitha — Repaire Magma, après le 6ᵉ badge
@@ -2098,10 +2260,44 @@ Level: 33
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Camerupt
+Ability: Solid Rock
+Level: 40
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Lava Plume
+- Earthquake
+- Rock Slide
+- Yawn
 
+Mightyena
+Ability: Intimidate
+Level: 40
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Crunch
+- Sucker Punch
+- Ice Fang
+- Taunt
+
+Darmanitan
+Ability: Sheer Force
+Level: 42
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Flare Blitz
+- Hammer Arm
+- Headbutt
+- Work Up
+
+Coalossal
+Ability: Flame Body
+Level: 43
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Heat Crash
+- Rock Blast
+- Tar Shot
+- Stealth Rock
 ```
 
 ## Max (Maxie) — Repaire Magma, après le 6ᵉ badge (Méga-Évolution possible)
@@ -2125,10 +2321,44 @@ Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Mightyena
+Ability: Intimidate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Crunch
+- Sucker Punch
+- Thunder Fang
+- Yawn
 
+Coalossal
+Ability: Flame Body
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Heat Crash
+- Ancient Power
+- Rock Polish
+- Rapid Spin
+
+Marowak-Alola
+Ability: Lightning Rod
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Bone
+- Bonemerang
+- Flame Wheel
+- Will-O-Wisp
+
+Camerupt @ Cameruptite
+Ability: Solid Rock
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flamethrower
+- Earth Power
+- Rock Slide
+- Amnesia
 ```
 
 ## Matt — Repaire Aqua (Nénucrique), après le 6ᵉ badge (Méga-Évolution possible)
@@ -2148,10 +2378,35 @@ Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Mightyena @ Sitrus Berry
+Ability: Intimidate
+Level: 43
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Sucker Punch
+- Play Rough
+- Yawn
 
+Crobat @ Black Sludge
+Ability: Infiltrator
+Level: 43
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Sharpedo @ Life Orb
+Ability: Speed Boost
+Level: 45
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Waterfall
+- Crunch
+- Earthquake
+- Protect
 ```
 
 ## Centre Spatial (Algatia) — Max et Tabitha contre toi et Pierre Rochard, après le 7ᵉ badge (Méga-Évolution possible)
@@ -2178,10 +2433,35 @@ Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 ```
 
-**Normal** (à remplir, 3 Pokémon)
+**Normal** (dans le jeu)
 
 ```
+Coalossal @ Sitrus Berry
+Ability: Flame Body
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Heat Wave
+- Rock Slide
+- Will-O-Wisp
+- Protect
 
+Marowak-Alola @ Thick Club
+Ability: Lightning Rod
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flare Blitz
+- Shadow Bone
+- Bonemerang
+- Protect
+
+Camerupt @ Cameruptite
+Ability: Solid Rock
+Level: 52
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
 ```
 
 ### Tabitha (`TRAINER_TABITHA_MOSSDEEP`, 514)
@@ -2202,10 +2482,35 @@ Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 ```
 
-**Normal** (à remplir, 3 Pokémon)
+**Normal** (dans le jeu)
 
 ```
+Torkoal @ Heat Rock
+Ability: Drought
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Heat Wave
+- Solar Beam
+- Earth Power
+- Protect
 
+Typhlosion-Hisui @ Choice Specs
+Ability: Blaze
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Eruption
+- Heat Wave
+- Shadow Ball
+- Focus Blast
+
+Darmanitan @ Choice Band
+Ability: Sheer Force
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flare Blitz
+- Rock Slide
+- Superpower
+- U-turn
 ```
 
 ### Pierre Rochard, allié (`PARTNER_STEVEN`)
@@ -2241,10 +2546,38 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
 ```
 
-**Équipe** (à remplir, 3 Pokémon)
+**Équipe** (dans le jeu)
 
 ```
+Metagross @ Metagrossite
+Ability: Clear Body
+Jolly Nature
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Meteor Mash
+- Zen Headbutt
+- Rock Slide
+- Protect
 
+Aggron @ Rocky Helmet
+Ability: Rock Head
+Adamant Nature
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Smash
+- Iron Head
+- Thunder Punch
+- Protect
+
+Skarmory @ Leftovers
+Ability: Sturdy
+Impish Nature
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Body Press
+- Tailwind
+- Roost
 ```
 
 ## Shelly — Grotte du Fond Marin, après le 7ᵉ badge (Méga-Évolution possible)
@@ -2264,10 +2597,44 @@ Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Samurott-Hisui @ Assault Vest
+Ability: Sharpness
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Ceaseless Edge
+- Knock Off
+- Flip Turn
+- Sucker Punch
 
+Huntail @ White Herb
+Ability: Water Veil
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shell Smash
+- Waterfall
+- Sucker Punch
+- Ice Fang
+
+Toxapex @ Black Sludge
+Ability: Regenerator
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Recover
+- Toxic Spikes
+- Poison Jab
+- Toxic
+
+Araquanid @ Leftovers
+Ability: Water Bubble
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
 ```
 
 ## Arthur (Archie) — Grotte du Fond Marin, après le 7ᵉ badge (Méga-Évolution possible)
@@ -2291,8 +2658,60 @@ Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Politoed @ Damp Rock
+Ability: Drizzle
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Scald
+- Ice Beam
+- Encore
+- Hypnosis
 
+Basculegion @ Choice Band
+Ability: Swift Swim
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Wave Crash
+- Last Respects
+- Aqua Jet
+- Flip Turn
+
+Seismitoad @ Life Orb
+Ability: Swift Swim
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Hydro Pump
+- Earth Power
+- Sludge Wave
+- Focus Blast
+
+Gyarados @ Lum Berry
+Ability: Moxie
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Ice Fang
+
+Tatsugiri @ Focus Sash
+Ability: Storm Drain
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Dragon Pulse
+- Muddy Water
+- Icy Wind
+
+Sharpedo @ Sharpedonite
+Ability: Speed Boost
+Level: 54
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Protect
+- Crunch
+- Waterfall
+- Ice Fang
 ```

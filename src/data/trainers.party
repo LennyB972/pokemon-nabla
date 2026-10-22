@@ -535,13 +535,32 @@ Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Mightyena
-Level: 34
+Mightyena @ Sitrus Berry
+Ability: Intimidate
+Level: 43
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Sucker Punch
+- Play Rough
+- Yawn
 
-Golbat
-Level: 34
+Crobat @ Black Sludge
+Ability: Infiltrator
+Level: 43
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Sharpedo @ Life Orb
+Ability: Speed Boost
+Level: 45
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Waterfall
+- Crunch
+- Earthquake
+- Protect
 
 === TRAINER_ZANDER ===
 Name: ZANDER
@@ -565,13 +584,32 @@ Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-Carvanha
-Level: 28
+Sharpedo
+Ability: Speed Boost
+Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Aqua Jet
+- Ice Fang
+- Screech
 
-Mightyena
-Level: 28
+Basculegion
+Ability: Adaptability
+Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Phantom Force
+- Aqua Jet
+- Crunch
+- Scary Face
+
+Golisopod
+Ability: Emergency Exit
+Level: 36
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- First Impression
+- Razor Shell
+- Sucker Punch
+- Iron Defense
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
 Name: SHELLY
@@ -582,13 +620,41 @@ Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-Sharpedo
-Level: 37
+Samurott-Hisui @ Assault Vest
+Ability: Sharpness
+Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Ceaseless Edge
+- Knock Off
+- Flip Turn
+- Sucker Punch
 
-Mightyena
-Level: 37
+Huntail @ White Herb
+Ability: Water Veil
+Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shell Smash
+- Waterfall
+- Sucker Punch
+- Ice Fang
+
+Toxapex @ Black Sludge
+Ability: Regenerator
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Recover
+- Toxic Spikes
+- Poison Jab
+- Toxic
+
+Araquanid @ Leftovers
+Ability: Water Bubble
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -600,17 +666,59 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Mightyena
-Level: 41
+Politoed @ Damp Rock
+Ability: Drizzle
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Scald
+- Ice Beam
+- Encore
+- Hypnosis
 
-Crobat
-Level: 41
+Basculegion @ Choice Band
+Ability: Swift Swim
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Wave Crash
+- Last Respects
+- Aqua Jet
+- Flip Turn
 
-Sharpedo
-Level: 43
+Seismitoad @ Life Orb
+Ability: Swift Swim
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Hydro Pump
+- Earth Power
+- Sludge Wave
+- Focus Blast
+
+Gyarados @ Lum Berry
+Ability: Moxie
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Ice Fang
+
+Tatsugiri @ Focus Sash
+Ability: Storm Drain
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Dragon Pulse
+- Muddy Water
+- Icy Wind
+
+Sharpedo @ Sharpedonite
+Ability: Speed Boost
+Level: 54
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Protect
+- Crunch
+- Waterfall
+- Ice Fang
 
 === TRAINER_LEAH ===
 Name: LEAH
@@ -9521,17 +9629,32 @@ Double Battle: No
 AI: Check Bad Move
 Multi Party: Half
 
-Camerupt
-Level: 36
+Torkoal @ Heat Rock
+Ability: Drought
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Heat Wave
+- Solar Beam
+- Earth Power
+- Protect
 
-Mightyena
-Level: 38
+Typhlosion-Hisui @ Choice Specs
+Ability: Blaze
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Eruption
+- Heat Wave
+- Shadow Ball
+- Focus Blast
 
-Golbat
-Level: 40
+Darmanitan @ Choice Band
+Ability: Sheer Force
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flare Blitz
+- Rock Slide
+- Superpower
+- U-turn
 
 === TRAINER_EDWIN_2 ===
 Name: EDWIN
@@ -11555,20 +11678,40 @@ Double Battle: No
 AI: Basic Trainer
 
 Numel
-Level: 18
+Ability: Simple
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Lava Plume
+- Earth Power
+- Amnesia
+- Growl
 
-Poochyena
-Level: 20
+Mightyena
+Ability: Intimidate
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Crunch
+- Ice Fang
+- Thunder Fang
+- Scary Face
 
-Numel
-Level: 22
+Darumaka
+Ability: Hustle
+Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Fire Fang
+- Headbutt
+- Bite
+- Work Up
 
-Zubat
-Level: 22
+Carkol
+Ability: Flame Body
+Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Incinerate
+- Ancient Power
+- Rapid Spin
+- Rock Polish
 
 === TRAINER_JONATHAN ===
 Name: JONATHAN
@@ -11671,16 +11814,40 @@ Double Battle: No
 AI: Basic Trainer
 
 Mightyena
-Level: 37
+Ability: Intimidate
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Crunch
+- Sucker Punch
+- Thunder Fang
+- Yawn
 
-Crobat
-Level: 38
+Coalossal
+Ability: Flame Body
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Heat Crash
+- Ancient Power
+- Rock Polish
+- Rapid Spin
 
-Camerupt
-Level: 39
+Marowak-Alola
+Ability: Lightning Rod
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Bone
+- Bonemerang
+- Flame Wheel
+- Will-O-Wisp
+
+Camerupt @ Cameruptite
+Ability: Solid Rock
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flamethrower
+- Earth Power
+- Rock Slide
+- Amnesia
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: MAXIE
@@ -11693,16 +11860,40 @@ Double Battle: No
 AI: Basic Trainer
 
 Mightyena
-Level: 24
+Ability: Intimidate
+Level: 30
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Crunch
+- Fire Fang
+- Thunder Fang
+- Taunt
 
-Zubat
-Level: 24
+Carkol
+Ability: Flame Body
+Level: 30
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Incinerate
+- Ancient Power
+- Stealth Rock
+- Rapid Spin
+
+Marowak-Alola
+Ability: Rock Head
+Level: 30
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Bone
+- Flame Wheel
+- Bone Rush
+- Double-Edge
 
 Camerupt
-Level: 25
+Ability: Solid Rock
+Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Lava Plume
+- Earth Power
+- Rock Slide
+- Amnesia
 
 === TRAINER_TIANA ===
 Name: TIANA
@@ -14459,21 +14650,41 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 26
+Camerupt
+Ability: Solid Rock
+Level: 40
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Lava Plume
+- Earthquake
+- Rock Slide
+- Yawn
 
 Mightyena
-Level: 28
+Ability: Intimidate
+Level: 40
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Crunch
+- Sucker Punch
+- Ice Fang
+- Taunt
 
-Zubat
-Level: 30
+Darmanitan
+Ability: Sheer Force
+Level: 42
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Flare Blitz
+- Hammer Arm
+- Headbutt
+- Work Up
 
-Camerupt
-Level: 33
+Coalossal
+Ability: Flame Body
+Level: 43
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Heat Crash
+- Rock Blast
+- Tar Shot
+- Stealth Rock
 
 === TRAINER_DARCY ===
 Name: DARCY
@@ -14503,17 +14714,32 @@ Double Battle: No
 AI: Basic Trainer
 Multi Party: Half
 
-Mightyena
-Level: 42
+Coalossal @ Sitrus Berry
+Ability: Flame Body
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Heat Wave
+- Rock Slide
+- Will-O-Wisp
+- Protect
 
-Crobat
-Level: 43
+Marowak-Alola @ Thick Club
+Ability: Lightning Rod
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flare Blitz
+- Shadow Bone
+- Bonemerang
+- Protect
 
-Camerupt
-Level: 44
+Camerupt @ Cameruptite
+Ability: Solid Rock
+Level: 52
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
 
 === TRAINER_PETE ===
 Name: PETE
@@ -17897,25 +18123,25 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Crunch
 - Fire Fang
 - Thunder Fang
-- Scary Face
+- Yawn
 
-Golbat
+Crobat
 Ability: Inner Focus
 Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Cross Poison
 - Air Cutter
-- Poison Fang
+- Tailwind
 - Bite
-- Supersonic
 
-Sharpedo @ Sitrus Berry
+Sharpedo
 Ability: Speed Boost
-Level: 37
+Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Crunch
 - Aqua Jet
 - Ice Fang
-- Screech
+- Scary Face
 
 === TRAINER_NABLA_GRUNT_SOUTHERN_ISLAND ===
 Name: GRUNT
@@ -17927,32 +18153,23 @@ Double Battle: No
 AI: Check Bad Move
 Multi Party: Half
 
-Pelipper
-Ability: Drizzle
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Water Pulse
-- Air Slash
-- Tailwind
-- Protect
-
-Carvanha
-Ability: Speed Boost
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Crunch
-- Aqua Jet
-- Ice Fang
-- Scary Face
-
 Wailmer
 Ability: Water Veil
-Level: 34
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Brine
 - Heavy Slam
-- Bounce
+- Astonish
 - Mist
+
+Gorebyss
+Ability: Swift Swim
+Level: 33
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Water Pulse
+- Draining Kiss
+- Confusion
+- Rain Dance
 
 === TRAINER_NABLA_WALLY_EMERALD_FOREST ===
 Name: WALLY

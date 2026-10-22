@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; 4.2c (rival et Timmy) intégrée, en attente du test de l'utilisateur. **4.2d (Team Aqua / Magma)** : fiche préparée dans `docs/nabla/trainers.md` (10 combats, dont les 2 duos avec Pierre Rochard), en attente des équipes de l'utilisateur. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; 4.2c (rival et Timmy) et **4.2d (Team Aqua / Magma, avec les équipes de Pierre Rochard)** intégrées, en attente du test de l'utilisateur. Prochaine : 4.3 (niveaux de tous les dresseurs ordinaires et des Pokémon sauvages). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -220,8 +220,11 @@
   - Rival : 5 combats × 3 versions (selon le starter du joueur) × 2 (Brendan et Flora) = 30 équipes générées depuis une seule par combat ; `STARTER` remplacé par la lignée qui contre le starter du joueur, au stade du niveau (16/36), talent Speed Boost / Torrent / Overgrow ; Méga à Nénucrique (Jungkite, Braségalite, Laggronite). IV comme les équipes d'origine du combat.
   - Timmy : Lavandia (Magnéton, Tylton, Kirlia), Route Victoire (6 Pokémon, Méga-Gallame), revanches `VR_2` à `VR_5` aux niveaux 80, 90, 100, 100 (même équipe) ; nouveau combat dans la Forêt Émeraude : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), à brancher avec la zone (scénario dans `docs/nabla/world.md`).
   - Capacités : apprises par niveau jusqu'au niveau du Pokémon (vérifié par script), variées ; combats finaux (rival à Nénucrique, Timmy sur la Route Victoire) : sets compétitifs, qui peuvent contenir des capacités hors CT d'Émeraude (U-turn, Volt Switch…).
-- Étape 4.2d — Team Aqua / Magma (en cours) :
-  - Fiche préparée (10 combats). Île du Sud composée par Claude (cap 41, juste après le 5ᵉ badge) : Matt (Grahyèna 35, Nosferalto 35, Sharpedo 37), sbire (Bekipan Crachin, Carvanha, Wailmer, 34 ; la pluie renforce les attaques Eau de l'équipe), Pierre (Airmure 36, Kaorine 36, Métang 37). Capacités par niveau et talents vérifiés par script. Équipes Difficile faites à la main de Matt et du sbire retirées.
+- Étape 4.2d — Team Aqua / Magma (équipes de l'utilisateur, capacités, talents et objets des combats finaux choisis par Claude) :
+  - 10 combats : Tabitha et Max au Mont Chimnée (27-33), Île du Sud (Matt 35, sbire 32-33, Pierre 34), Shelly à l'Institut Météo (35-36), Tabitha et Max au Repaire Magma (40-45, Méga-Camérupt), Matt au Repaire Aqua (43-45), Centre Spatial en duo (Max avec Méga-Camérupt, Tabitha avec Chartor Sécheresse, Pierre avec Méga-Métalosse, 50-52), Shelly (52) et Arthur (53-54, équipe pluie, Méga-Sharpedo) à la Grotte du Fond Marin.
+  - Île du Sud : équipes de l'utilisateur (le sbire n'a que 2 Pokémon) ; les équipes Difficile faites à la main de Matt et du sbire sont retirées.
+  - Capacités : par niveau jusqu'au niveau du Pokémon (vérifié par script), sans objet tenu ; dernier combat de chaque personnage (Matt au Repaire Aqua, Max et Tabitha au Centre Spatial, Shelly et Arthur à la Grotte, Pierre au Centre Spatial) : sets compétitifs avec objets. En duo, pas d'attaque qui touche le partenaire chez Pierre (pas de Séisme).
+  - Mode Difficile : les partenaires (Pierre) suivent maintenant la même règle des +10 % que les adversaires (`FillPartnerParty`, `src/battle_partner.c`), sauf s'ils ont leur propre équipe Difficile.
 
 ## Bugs connus
 
@@ -264,8 +267,9 @@
 | 2026-10-22 | En Difficile, les level caps suivent aussi la règle des +10 %. |
 | 2026-10-22 | Rival : une équipe par combat (mêmes pour Brendan et Flora) avec une ligne `STARTER` ; Claude génère les 3 versions selon le starter du joueur. Timmy (Lavandia avant le 3ᵉ badge, Route Victoire avant la Ligue) traité avec le rival ; ses revanches au post-game. |
 | 2026-10-22 | Un Pokémon de dresseur sans capacités dans la fiche : Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (même logique que pour `STARTER`). |
-| 2026-10-22 | Team Aqua / Magma (4.2d) : l'utilisateur choisit le nombre de Pokémon de chaque combat. Combats en duo (Île du Sud, Centre Spatial) : 3 Pokémon par dresseur, Pierre Rochard compris ; l'utilisateur compose aussi l'équipe de Pierre au Centre Spatial. |
-| 2026-10-22 | Île du Sud (événement Latios) : équipes de Matt, du sbire et de Pierre composées par Claude (3 Pokémon chacun) ; les équipes Difficile faites à la main de Matt et du sbire sont retirées, la règle des +10 % s'applique. |
+| 2026-10-22 | Team Aqua / Magma (4.2d) : l'utilisateur choisit le nombre de Pokémon de chaque combat. Combats en duo (Île du Sud, Centre Spatial) : 3 Pokémon par dresseur, Pierre Rochard compris ; l'utilisateur compose aussi les équipes de Pierre. |
+| 2026-10-22 | Île du Sud (événement Latios) : équipes composées par l'utilisateur ; les équipes Difficile faites à la main de Matt et du sbire sont retirées, la règle des +10 % s'applique. |
+| 2026-10-23 | Mode Difficile : les partenaires (Pierre Rochard) ont aussi leurs niveaux +10 %, sinon ils seraient trop faibles face aux adversaires. Objets tenus : seulement dans les sets des combats finaux (et ceux écrits par l'utilisateur). |
 | 2026-10-22 | 4.3 : les niveaux de **tous** les dresseurs ordinaires (sbires compris) seront relevés pour suivre la nouvelle courbe (simple relèvement de niveaux). |
 
 ## Questions ouvertes

@@ -13,35 +13,35 @@ Gender: Male
 Music: Male
 AI: Basic Trainer
 
-Metang
-Brave Nature
-Level: 42
+Metagross @ Metagrossite
+Ability: Clear Body
+Jolly Nature
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-Skarmory
-Impish Nature
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 6 SpA / 252 SpD
-- Toxic
-- Aerial Ace
+- Meteor Mash
+- Zen Headbutt
+- Rock Slide
 - Protect
-- Steel Wing
 
-Aggron
+Aggron @ Rocky Helmet
+Ability: Rock Head
 Adamant Nature
-Level: 44
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 SpA / 6 SpD
-- Thunder
+- Head Smash
+- Iron Head
+- Thunder Punch
 - Protect
-- Solar Beam
-- Dragon Claw
+
+Skarmory @ Leftovers
+Ability: Sturdy
+Impish Nature
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Body Press
+- Tailwind
+- Roost
 
 === PARTNER_STEVEN_SOUTHERN_ISLAND ===
 Name: STEVEN
@@ -54,29 +54,29 @@ AI: Basic Trainer
 Skarmory
 Ability: Sturdy
 Impish Nature
-Level: 36
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drill Peck
 - Steel Wing
-- Agility
+- Wing Attack
 - Payback
-
-Claydol
-Ability: Levitate
-Modest Nature
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earth Power
-- Extrasensory
-- Ancient Power
-- Cosmic Power
+- Agility
 
 Metang
 Ability: Clear Body
 Adamant Nature
-Level: 37
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Zen Headbutt
 - Bullet Punch
 - Take Down
 - Magnet Rise
+
+Lairon
+Ability: Sturdy
+Adamant Nature
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Headbutt
+- Protect

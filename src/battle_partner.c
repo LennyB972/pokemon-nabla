@@ -3,6 +3,7 @@
 #include "battle.h"
 #include "battle_partner.h"
 #include "battle_frontier.h"
+#include "caps.h"
 #include "data.h"
 #include "frontier_util.h"
 #include "difficulty.h"
@@ -44,7 +45,13 @@ void FillPartnerParty(u16 trainerId)
             partnerGen.otID = OTID_STRUCT_PRESET(STEVEN_OTID);
         for (i = 0; i < lastIndex && i < partner->partySize; i++)
         {
-            GenerateMonFromTrainerMon(&gParties[B_TRAINER_PARTNER][i], &partner->party[i], &partnerGen);
+            struct TrainerMon partnerMon = partner->party[i];
+
+            // Pokémon Nabla: in Hard mode, partners without a party of their own for Hard mode use their Normal
+            // party at a higher level, like the opponents (see GetDifficultyLevel)
+            if (partner >= gBattlePartners[DIFFICULTY_NORMAL] && partner < gBattlePartners[DIFFICULTY_NORMAL] + PARTNER_COUNT)
+                partnerMon.lvl = GetDifficultyLevel(partnerMon.lvl);
+            GenerateMonFromTrainerMon(&gParties[B_TRAINER_PARTNER][i], &partnerMon, &partnerGen);
         }
     }
     else if (trainerId == TRAINER_EREADER)
