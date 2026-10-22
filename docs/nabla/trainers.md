@@ -1322,3 +1322,156 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 ```
 
 **Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+# Rival et Timmy (4.2c)
+
+- **Rival (Brendan ou Flora)** : une équipe par combat, **les mêmes pour Brendan et Flora**. Le rival prend le starter qui a l'avantage sur le tien (Arcko → Poussifeu, Poussifeu → Gobou, Gobou → Arcko) : écris une ligne **`STARTER`** à sa place, Claude génère les 3 versions.
+- **`STARTER`** : écris seulement son niveau (et un objet si tu veux) :
+
+```
+STARTER @ Sitrus Berry
+Level: 31
+```
+
+  Claude choisit le stade d'évolution selon le niveau (évolution aux niveaux 16 et 36 pour les trois lignées), le meilleur talent et 4 capacités apprises par niveau jusqu'à ce niveau, variées (attaque du type, couverture, soutien). `STARTER @ Mega` donne la Méga-Gemme de la lignée (Jungkite, Braségalite, Laggronite : Sceptilite, Blazikenite, Swampertite), à partir de la 6ᵉ arène.
+- **Level cap** au moment du combat : indiqué pour chaque combat.
+- **Difficile** : même équipe, niveaux +10 % (règle automatique).
+
+## Rival — combats d'origine
+
+| Combat | Si tu as pris Arcko | Si tu as pris Poussifeu | Si tu as pris Gobou |
+|---|---|---|---|
+| Route 103 | Torchic 5 | Mudkip 5 | Treecko 5 |
+| Mérouville | Lotad 13, Torchic 15 | Torkoal 13, Mudkip 15 | Wingull 13, Treecko 15 |
+| Route 110 | Wingull 18, Lombre 18, Combusken 20 | Lombre 18, Slugma 18, Marshtomp 20 | Wingull 18, Slugma 18, Grovyle 20 |
+| Route 119 | Pelipper 29, Lombre 29, Combusken 31 | Lombre 29, Slugma 29, Marshtomp 31 | Slugma 29, Lombre 29, Grovyle 31 |
+| Nénucrique | Tropius 31, Pelipper 32, Ludicolo 32, Combusken 34 | Tropius 31, Ludicolo 32, Slugma 32, Marshtomp 34 | Tropius 31, Slugma 32, Pelipper 32, Grovyle 34 |
+
+## Rival — Route 103, au tout début (avant le 1er badge)
+
+- Level cap à ce moment : **16**.
+- Objets de soin d'origine : aucun.
+
+**Normal** (à remplir, avec une ligne `STARTER`)
+
+```
+
+```
+
+## Rival — Mérouville, après le 1er badge
+
+- Level cap à ce moment : **20**.
+- Objets de soin d'origine : aucun.
+
+**Normal** (à remplir, avec une ligne `STARTER`)
+
+```
+
+```
+
+## Rival — Route 110, après le 2ᵉ badge
+
+- Level cap à ce moment : **27**.
+- Objets de soin d'origine : aucun.
+
+**Normal** (à remplir, avec une ligne `STARTER`)
+
+```
+
+```
+
+## Rival — Route 119, après le 5ᵉ badge
+
+- Level cap à ce moment : **41**.
+- Objets de soin d'origine : aucun.
+
+**Normal** (à remplir, avec une ligne `STARTER`)
+
+```
+
+```
+
+## Rival — Nénucrique, après le 6ᵉ badge (Méga-Évolution possible)
+
+- Level cap à ce moment : **51**.
+- Objets de soin d'origine : aucun.
+
+**Normal** (à remplir, avec une ligne `STARTER`)
+
+```
+
+```
+
+## Timmy — Lavandia, devant l'arène, avant le 3ᵉ badge
+
+- Level cap à ce moment : **27**.
+- Objets de soin d'origine : aucun.
+
+**Équipe d'origine**
+
+```
+Ralts
+Level: 16
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+```
+
+**Normal** (à remplir)
+
+```
+
+```
+
+## Timmy — Route Victoire, avant la Ligue
+
+- Level cap à ce moment : **72**.
+- Objets de soin d'origine : Full Restore / Full Restore.
+
+**Équipe d'origine**
+
+```
+Altaria
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Aerial Ace
+- Safeguard
+- Dragon Breath
+- Dragon Dance
+
+Delcatty
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Sing
+- Assist
+- Charm
+- Feint Attack
+
+Roselia
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Magical Leaf
+- Leech Seed
+- Giga Drain
+- Toxic
+
+Magneton
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Supersonic
+- Thunderbolt
+- Tri Attack
+- Screech
+
+Gardevoir
+Level: 45
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Double Team
+- Calm Mind
+- Psychic
+- Future Sight
+```
+
+**Normal** (à remplir)
+
+```
+
+```

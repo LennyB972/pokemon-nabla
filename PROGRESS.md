@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1 et 4.2a faites ; **4.2b (Conseil 4 et Maître) intégrée**, en attente du test de l'utilisateur. Prochaine : 4.2c (rival et Timmy). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites. **4.2c (rival et Timmy)** : fiche préparée dans `docs/nabla/trainers.md`, en attente des équipes de l'utilisateur (ligne `STARTER` pour le starter du rival : Claude génère les 3 versions, stade selon le niveau, meilleur talent, 4 capacités par niveau variées). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -255,6 +255,7 @@
 | 2026-10-19 | Équipes des dresseurs importants (4.2) : **l'utilisateur compose les équipes**, Claude les intègre et vérifie. Normal : équipes modifiables, niveaux d'origine, 6 Pokémon à partir de la 6ᵉ arène. Méga-Évolution à partir de la 6ᵉ arène dans les deux modes. Difficile : même composition, niveaux et/ou sets améliorés (sets proposés par Claude), pas d'objets de soin. Découpage : 4.2a Champions, 4.2b Conseil 4 et Maître, 4.2c rival et Timmy, 4.2d Aqua/Magma. |
 | 2026-10-22 | Difficile = mêmes équipes, niveaux de tous les dresseurs adverses × 1,1 (arrondi inférieur, au moins +1) ; les sets pourront changer plus tard. Talents : le meilleur en compétitif. Level caps = Pokémon le plus fort de chaque Champion. Niveaux des sauvages et des autres dresseurs à adapter plus tard. |
 | 2026-10-22 | En Difficile, les level caps suivent aussi la règle des +10 %. |
+| 2026-10-22 | Rival : une équipe par combat (mêmes pour Brendan et Flora) avec une ligne `STARTER` ; Claude génère les 3 versions selon le starter du joueur. Timmy (Lavandia avant le 3ᵉ badge, Route Victoire avant la Ligue) traité avec le rival ; ses revanches au post-game. |
 
 ## Questions ouvertes
 

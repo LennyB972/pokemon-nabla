@@ -3,7 +3,7 @@
 Point de reprise pour une nouvelle session. À lire en premier, puis `CLAUDE.md` (règles), `ROADMAP.md` (plan) et `PROGRESS.md` (journal détaillé et décisions).
 
 ## En une phrase
-Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.2b (Conseil 4 et Maître) intégrée, en attente du test de l'utilisateur ; prochaine étape 4.2c (rival et Timmy)**, à présenter avant de commencer.
+Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 terminées. Phase 4 en cours : **4.2c (rival et Timmy) : fiche prête, en attente des équipes de l'utilisateur**, à présenter avant de commencer.
 
 ## Méthode de travail (rappel des règles clés)
 - Communication en français, recommandations franches. Code et commits en anglais.
@@ -46,7 +46,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH). Phases 0 à 3 termin
 ## Plan du monde étendu (6.2)
 - `docs/nabla/world.md` : forêt au sud de la route 123 (intrigue juste après le Mont Mémoria, Timmy/Wally), îles accessibles par Plongée, îles mirages des légendaires après la Ligue. Niveaux : réglés plus tard avec les level caps (choix de l'utilisateur).
 
-## 4.2a faite ; 4.2b Conseil 4 et Maître intégrée, à tester (IDs : Damien 261, Spectra 262, Glacia 263, Aragon 264, Marc 335 ; cap après le 8ᵉ badge : 72) ; prochaine : 4.2c rival et Timmy
+## 4.2a et 4.2b faites (IDs Conseil 4 : Damien 261, Spectra 262, Glacia 263, Aragon 264, Marc 335 ; cap après le 8ᵉ badge : 72) ; 4.2c rival et Timmy en cours (fiche prête, en attente des équipes ; `STARTER` → 3 versions générées par Claude ; IDs rival `TRAINER_{MAY,BRENDAN}_{ROUTE_103,RUSTBORO,ROUTE_110,ROUTE_119,LILYCOVE}_{TREECKO,TORCHIC,MUDKIP}` où le suffixe est le starter du joueur ; Timmy : `TRAINER_WALLY_MAUVILLE` 656, `TRAINER_WALLY_VR_1` 519)
 - Champions : équipes de l'utilisateur dans `src/data/trainers.party` (fiche : `docs/nabla/trainers.md`), talents choisis par Claude, level caps 16/20/27/34/35/41/51/59, puis 72 jusqu'au titre de Maître.
 - Difficile : `GetDifficultyLevel` (`src/caps.c`) = niveau × 1,1 arrondi à l'inférieur, au moins +1 ; appliqué aux équipes Normal des dresseurs adverses (`src/battle_setup.c`) et aux level caps. Une équipe `Difficulty: Hard` faite à la main est utilisée telle quelle.
 - Test : menu debug *Trainers… → Trainer 1* (Roxanne 265 … Juan 272 ; Lévy & Tatia en *Double Battle*) → *Try Battle* ; Difficile : *Flags & Vars → Set Var XYZ…* `0x404E` = 2 (Normal = 1).
