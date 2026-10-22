@@ -8,6 +8,7 @@ Fiche de travail de l'étape 4.2. C'est l'utilisateur qui compose les équipes ;
 - **Méga-Évolution à partir de la 6ᵉ arène, dans les deux modes** : un seul Pokémon méga-évolutif par équipe, qui tient sa Méga-Gemme (`Altaria @ Altarianite`).
 - **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
 - **Talents** : le meilleur en compétitif (sets de référence Smogon / Coupcritique), choisi par Claude quand il n'est pas précisé.
+- **Capacités** : si un Pokémon n'en a pas, Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (attaque de son type, couverture, soutien ; pas 4 attaques du même type).
 - **Level caps** : niveau du Pokémon le plus fort de chaque Champion (`src/caps.c`) ; en Difficile, même règle des +10 %.
 
 ## Comment écrire une équipe

@@ -256,6 +256,7 @@
 | 2026-10-22 | Difficile = mêmes équipes, niveaux de tous les dresseurs adverses × 1,1 (arrondi inférieur, au moins +1) ; les sets pourront changer plus tard. Talents : le meilleur en compétitif. Level caps = Pokémon le plus fort de chaque Champion. Niveaux des sauvages et des autres dresseurs à adapter plus tard. |
 | 2026-10-22 | En Difficile, les level caps suivent aussi la règle des +10 %. |
 | 2026-10-22 | Rival : une équipe par combat (mêmes pour Brendan et Flora) avec une ligne `STARTER` ; Claude génère les 3 versions selon le starter du joueur. Timmy (Lavandia avant le 3ᵉ badge, Route Victoire avant la Ligue) traité avec le rival ; ses revanches au post-game. |
+| 2026-10-22 | Un Pokémon de dresseur sans capacités dans la fiche : Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (même logique que pour `STARTER`). |
 
 ## Questions ouvertes
 
