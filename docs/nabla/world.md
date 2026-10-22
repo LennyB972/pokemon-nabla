@@ -4,10 +4,12 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 
 ## Pendant l'aventure
 
-### Forêt au sud de la route 123
-- **Idée** : une forêt au sud de la route 123, où l'on doit aller pour résoudre un élément de l'intrigue, juste après le Mont Mémoria. L'occasion de recroiser Timmy (Wally).
-- **Place** : la carte de la région a des cases libres juste sous la route 123.
-- **À définir** : l'élément d'intrigue et le rôle de Timmy (combat, scène) ; l'entrée depuis la route 123 ; qui dessine.
+### Forêt Émeraude (au sud du Mont Mémoria)
+- **Idée** : une forêt au sud du Mont Mémoria, vers les routes 122 et 123.
+- **Scénario (résumé, à mieux écrire)** : après l'événement du Mont Mémoria, Timmy (Wally) vient voir le joueur : il a entendu parler d'activités suspectes dans la Forêt Émeraude. On y va, on affronte des ennemis ; à la fin, Timmy obtient Celebi, que le joueur a sauvé. Timmy propose alors un combat, obligatoire.
+- **Combat** : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), déjà prêt (Magnézone, Altaria, Pyronille, Celebi, Gallame ; niveaux 40-43, avant le 7ᵉ badge).
+- **Place** : la carte de la région a des cases libres sous la route 123.
+- **À définir** : les ennemis (Team Aqua/Magma ? autres ?), l'entrée de la forêt, qui dessine.
 
 ### Îles accessibles par Plongée
 - **Idée** : des zones sous-marines (Plongée) qui mènent à des îles en plus, hors scénario.

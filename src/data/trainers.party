@@ -9611,45 +9611,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 44
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 65
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
 - Thunderbolt
-- Tri Attack
-- Screech
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Gardevoir
-Level: 45
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
 - Psychic
-- Future Sight
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 66
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BRENDAN
@@ -9661,8 +9675,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Treecko
+Ability: Overgrow
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Leer
+- Leafage
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -9673,17 +9691,41 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Wingull
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Grovyle
-Level: 20
+Ability: Overgrow
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Giga Drain
+- Assurance
+- Quick Attack
+- Detect
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: BRENDAN
@@ -9694,17 +9736,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Pelipper
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Grovyle
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Sceptile
+Ability: Overgrow
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Leaf Blade
+- X-Scissor
+- Quick Attack
+- Detect
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BRENDAN
@@ -9716,8 +9800,12 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Torchic
+Ability: Speed Boost
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Growl
+- Ember
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
 Name: BRENDAN
@@ -9728,17 +9816,41 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Lombre
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Combusken
-Level: 20
+Ability: Speed Boost
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Charge
+- Double Kick
+- Slash
+- Detect
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
 Name: BRENDAN
@@ -9749,17 +9861,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Lombre
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Combusken
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Blaziken
+Ability: Speed Boost
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Blaze Kick
+- Double Kick
+- Bounce
+- Detect
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BRENDAN
@@ -9771,8 +9925,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Mudkip
+Ability: Torrent
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Water Gun
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
 Name: BRENDAN
@@ -9783,17 +9941,41 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Slugma
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Marshtomp
-Level: 20
+Ability: Torrent
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud Shot
+- Water Pulse
+- Rock Slide
+- Protect
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
@@ -9804,17 +9986,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Slugma
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Marshtomp
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Swampert
+Ability: Torrent
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Surf
+- Earthquake
+- Rock Slide
+- Protect
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
 Name: MAY
@@ -9826,8 +10050,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Treecko
+Ability: Overgrow
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Leer
+- Leafage
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -9838,17 +10066,41 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Slugma
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Grovyle
-Level: 20
+Ability: Overgrow
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Giga Drain
+- Assurance
+- Quick Attack
+- Detect
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: MAY
@@ -9859,17 +10111,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Lombre
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Grovyle
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Sceptile
+Ability: Overgrow
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Leaf Blade
+- X-Scissor
+- Quick Attack
+- Detect
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
 Name: MAY
@@ -9881,8 +10175,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Torchic
+Ability: Speed Boost
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Growl
+- Ember
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
@@ -9893,17 +10191,41 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Lombre
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Combusken
-Level: 20
+Ability: Speed Boost
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Charge
+- Double Kick
+- Slash
+- Detect
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
 Name: MAY
@@ -9914,17 +10236,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Lombre
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Combusken
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Blaziken
+Ability: Speed Boost
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Blaze Kick
+- Double Kick
+- Bounce
+- Detect
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
@@ -9936,8 +10300,12 @@ Double Battle: No
 AI: Basic Trainer
 
 Mudkip
+Ability: Torrent
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Water Gun
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
 Name: MAY
@@ -9948,17 +10316,41 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 18
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
-Slugma
-Level: 18
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
 
 Marshtomp
-Level: 20
+Ability: Torrent
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud Shot
+- Water Pulse
+- Rock Slide
+- Protect
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
@@ -9969,17 +10361,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 29
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
-Slugma
-Level: 29
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
 
-Marshtomp
-Level: 31
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+Swampert
+Ability: Torrent
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Surf
+- Earthquake
+- Rock Slide
+- Protect
 
 === TRAINER_ISAAC_1 ===
 Name: ISAAC
@@ -11001,13 +11435,32 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Lotad
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Torchic
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Combusken
+Ability: Speed Boost
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Double Kick
+- Flame Charge
+- Aerial Ace
+- Detect
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
 Name: BRENDAN
@@ -11018,13 +11471,32 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Treecko
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Grovyle
+Ability: Overgrow
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Assurance
+- Quick Attack
+- Detect
 
 === TRAINER_PAXTON ===
 Name: PAXTON
@@ -11125,13 +11597,32 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Mudkip
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Marshtomp
+Ability: Torrent
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mud Shot
+- Water Pulse
+- Rock Throw
+- Protect
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
 Name: MAY
@@ -11142,13 +11633,32 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Wingull
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Treecko
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Grovyle
+Ability: Overgrow
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Assurance
+- Quick Attack
+- Detect
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
@@ -12191,9 +12701,32 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Ralts
-Level: 16
+Magneton
+Ability: Magnet Pull
+Level: 24
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Spark
+- Gyro Ball
+- Thunder Wave
+- Supersonic
+
+Swablu
+Ability: Natural Cure
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Dragon Breath
+- Disarming Voice
+- Round
+- Safeguard
+
+Kirlia
+Ability: Trace
+Level: 25
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Psybeam
+- Draining Kiss
+- Hypnosis
+- Life Dew
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -12205,45 +12738,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 47
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 80
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 46
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 47
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
 - Thunderbolt
-- Tri Attack
-- Screech
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Gardevoir
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 80
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 80
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 80
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
 - Psychic
-- Future Sight
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 80
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 80
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 
 === TRAINER_WALLY_VR_3 ===
 Name: WALLY
@@ -12255,45 +12802,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 50
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 90
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 49
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 47
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
 - Thunderbolt
-- Tri Attack
-- Screech
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Gardevoir
-Level: 51
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 90
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 90
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 90
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
 - Psychic
-- Future Sight
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 90
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 90
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 
 === TRAINER_WALLY_VR_4 ===
 Name: WALLY
@@ -12305,45 +12866,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 53
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 100
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 52
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
 - Thunderbolt
-- Tri Attack
-- Screech
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Gardevoir
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
 - Psychic
-- Future Sight
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 
 === TRAINER_WALLY_VR_5 ===
 Name: WALLY
@@ -12355,45 +12930,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 56
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 100
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 55
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 56
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
-Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
 - Thunderbolt
-- Tri Attack
-- Screech
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Gardevoir
-Level: 57
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
 - Psychic
-- Future Sight
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 100
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
 Name: BRENDAN
@@ -12404,21 +12993,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Slugma
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Pelipper
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Grovyle
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Sceptile @ Sceptilite
+Ability: Overgrow
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Storm
+- Dragon Pulse
+- Focus Blast
+- Earthquake
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
 Name: BRENDAN
@@ -12429,21 +13056,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Pelipper
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Ludicolo
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Combusken
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Blaziken @ Blazikenite
+Ability: Speed Boost
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Protect
+- Flare Blitz
+- Close Combat
+- Swords Dance
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
 Name: BRENDAN
@@ -12454,21 +13119,59 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Ludicolo
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Slugma
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Marshtomp
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Swampert @ Swampertite
+Ability: Torrent
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
+- Waterfall
+- Earthquake
+- Ice Punch
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
 Name: MAY
@@ -12479,21 +13182,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Slugma
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Pelipper
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Grovyle
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Sceptile @ Sceptilite
+Ability: Overgrow
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Storm
+- Dragon Pulse
+- Focus Blast
+- Earthquake
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
 Name: MAY
@@ -12504,21 +13245,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Pelipper
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Ludicolo
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Combusken
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Blaziken @ Blazikenite
+Ability: Speed Boost
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Protect
+- Flare Blitz
+- Close Combat
+- Swords Dance
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
 Name: MAY
@@ -12529,21 +13308,59 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
-Ludicolo
-Level: 32
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
 
-Slugma
-Level: 32
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
 
-Marshtomp
-Level: 34
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+Swampert @ Swampertite
+Ability: Torrent
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
+- Waterfall
+- Earthquake
+- Ice Punch
 
 === TRAINER_JONAH ===
 Name: JONAH
@@ -14279,13 +15096,32 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Lotad
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Torchic
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Combusken
+Ability: Speed Boost
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Double Kick
+- Flame Charge
+- Aerial Ace
+- Detect
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
 Name: MAY
@@ -14296,13 +15132,32 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Torkoal
-Level: 13
+Taillow
+Ability: Guts
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
-Mudkip
-Level: 15
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+Marshtomp
+Ability: Torrent
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mud Shot
+- Water Pulse
+- Rock Throw
+- Protect
 
 === TRAINER_ROXANNE_2 ===
 Name: ROXANNE
@@ -17138,3 +17993,57 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rollout
 - Astonish
 - Rest
+
+=== TRAINER_NABLA_WALLY_EMERALD_FOREST ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Magnezone
+Ability: Magnet Pull
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Discharge
+- Flash Cannon
+- Tri Attack
+- Thunder Wave
+
+Altaria
+Ability: Natural Cure
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Sing
+
+Larvesta
+Ability: Flame Body
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Wheel
+- Leech Life
+- Flame Charge
+- Screech
+
+Celebi
+Ability: Natural Cure
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Magical Leaf
+- Confusion
+- Ancient Power
+- Life Dew
+
+Gallade
+Ability: Sharpness
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psycho Cut
+- Sacred Sword
+- Night Slash
+- Swords Dance

@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites. **4.2c (rival et Timmy)** : fiche préparée dans `docs/nabla/trainers.md`, en attente des équipes de l'utilisateur (ligne `STARTER` pour le starter du rival : Claude génère les 3 versions, stade selon le niveau, meilleur talent, 4 capacités par niveau variées). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; **4.2c (rival et Timmy) intégrée**, en attente du test de l'utilisateur. Prochaine : 4.2d (Team Aqua / Magma). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -215,6 +215,11 @@
   - Mode Difficile : règle automatique pour tous les dresseurs adverses (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c`) : niveau × 1,1 arrondi à l'inférieur, au moins +1. Les partenaires (Steven) ne changent pas, et un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard`, ex. événement Latios) l'utilise telle quelle. Trois tests d'expansion (`test/battle/trainer_control.c`) vérifient ce dernier point.
 
 - Étape 4.2b — Conseil 4 et Maître (équipes de l'utilisateur) : Damien, Spectra, Glacia, Aragon (niveaux 66-70) et Marc (72), 6 Pokémon et une Méga-Évolution chacun (Méga-Absol Z, Méga-Lugulabre, Méga-Momartik, Méga-Drattak, Méga-Magearna ; Kyogre Primal avec l'Orbe Bleu). Noms corrigés (Moltres-Galar, Froslass/Froslassite, Miraidon, Calyrex-Shadow, Zygarde-50-Power-Construct, Poltergeist, Judgment, Psyshock) ; formes Originelles avec les objets de la génération 9 (Adamant Crystal, Lustrous Globe, Griseous Core ; Giratina mis en forme Originelle, comme son set). Talents vérifiés valides. Level cap après le 8ᵉ badge : 72.
+
+- Étape 4.2c — rival et Timmy (équipes de l'utilisateur, capacités et talents choisis par Claude) :
+  - Rival : 5 combats × 3 versions (selon le starter du joueur) × 2 (Brendan et Flora) = 30 équipes générées depuis une seule par combat ; `STARTER` remplacé par la lignée qui contre le starter du joueur, au stade du niveau (16/36), talent Speed Boost / Torrent / Overgrow ; Méga à Nénucrique (Jungkite, Braségalite, Laggronite). IV comme les équipes d'origine du combat.
+  - Timmy : Lavandia (Magnéton, Tylton, Kirlia), Route Victoire (6 Pokémon, Méga-Gallame), revanches `VR_2` à `VR_5` aux niveaux 80, 90, 100, 100 (même équipe) ; nouveau combat dans la Forêt Émeraude : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), à brancher avec la zone (scénario dans `docs/nabla/world.md`).
+  - Capacités : apprises par niveau jusqu'au niveau du Pokémon (vérifié par script), variées ; combats finaux (rival à Nénucrique, Timmy sur la Route Victoire) : sets compétitifs, qui peuvent contenir des capacités hors CT d'Émeraude (U-turn, Volt Switch…).
 
 ## Bugs connus
 

@@ -8,7 +8,6 @@ Fiche de travail de l'étape 4.2. C'est l'utilisateur qui compose les équipes ;
 - **Méga-Évolution à partir de la 6ᵉ arène, dans les deux modes** : un seul Pokémon méga-évolutif par équipe, qui tient sa Méga-Gemme (`Altaria @ Altarianite`).
 - **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
 - **Talents** : le meilleur en compétitif (sets de référence Smogon / Coupcritique), choisi par Claude quand il n'est pas précisé.
-- **Capacités** : si un Pokémon n'en a pas, Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (attaque de son type, couverture, soutien ; pas 4 attaques du même type).
 - **Level caps** : niveau du Pokémon le plus fort de chaque Champion (`src/caps.c`) ; en Difficile, même règle des +10 %.
 
 ## Comment écrire une équipe
@@ -1337,6 +1336,8 @@ Level: 31
   Claude choisit le stade d'évolution selon le niveau (évolution aux niveaux 16 et 36 pour les trois lignées), le meilleur talent et 4 capacités apprises par niveau jusqu'à ce niveau, variées (attaque du type, couverture, soutien). `STARTER @ Mega` donne la Méga-Gemme de la lignée (Jungkite, Braségalite, Laggronite : Sceptilite, Blazikenite, Swampertite), à partir de la 6ᵉ arène.
 - **Level cap** au moment du combat : indiqué pour chaque combat.
 - **Difficile** : même équipe, niveaux +10 % (règle automatique).
+- **Combats finaux** (rival à Nénucrique, Timmy sur la Route Victoire et ses revanches) : sets inspirés des sets compétitifs, avec des capacités des jeux officiels qui ne s'apprennent pas forcément par les CT d'Émeraude (U-turn, Volt Switch…). Ailleurs, capacités apprises par niveau jusqu'au niveau du Pokémon.
+- **Timmy dans la Forêt Émeraude** : nouveau dresseur `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), branché quand la zone sera construite.
 
 ## Rival — combats d'origine
 
@@ -1353,10 +1354,35 @@ Level: 31
 - Level cap à ce moment : **16**.
 - Objets de soin d'origine : aucun.
 
-**Normal** (à remplir, avec une ligne `STARTER`)
+**Normal** (dans le jeu ; les mêmes pour Brendan et Flora)
 
 ```
+# STARTER, si tu as pris Arcko :
+Torchic
+Ability: Speed Boost
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Growl
+- Ember
 
+# STARTER, si tu as pris Poussifeu :
+Mudkip
+Ability: Torrent
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Water Gun
+
+# STARTER, si tu as pris Gobou :
+Treecko
+Ability: Overgrow
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Leer
+- Leafage
 ```
 
 ## Rival — Mérouville, après le 1er badge
@@ -1364,10 +1390,56 @@ Level: 31
 - Level cap à ce moment : **20**.
 - Objets de soin d'origine : aucun.
 
-**Normal** (à remplir, avec une ligne `STARTER`)
+**Normal** (dans le jeu ; les mêmes pour Brendan et Flora)
 
 ```
+Taillow
+Ability: Guts
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Growl
 
+Aron
+Ability: Sturdy
+Level: 17
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Harden
+
+# STARTER, si tu as pris Arcko :
+Combusken
+Ability: Speed Boost
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Double Kick
+- Flame Charge
+- Aerial Ace
+- Detect
+
+# STARTER, si tu as pris Poussifeu :
+Marshtomp
+Ability: Torrent
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mud Shot
+- Water Pulse
+- Rock Throw
+- Protect
+
+# STARTER, si tu as pris Gobou :
+Grovyle
+Ability: Overgrow
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Assurance
+- Quick Attack
+- Detect
 ```
 
 ## Rival — Route 110, après le 2ᵉ badge
@@ -1375,10 +1447,65 @@ Level: 31
 - Level cap à ce moment : **27**.
 - Objets de soin d'origine : aucun.
 
-**Normal** (à remplir, avec une ligne `STARTER`)
+**Normal** (dans le jeu ; les mêmes pour Brendan et Flora)
 
 ```
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aerial Ace
+- Quick Attack
+- Double Team
+- Growl
 
+Aron @ Leftovers
+Ability: Sturdy
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Metal Claw
+- Rock Tomb
+- Headbutt
+- Protect
+
+Trapinch
+Ability: Arena Trap
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bulldoze
+- Bite
+- Astonish
+- Sand Attack
+
+# STARTER, si tu as pris Arcko :
+Combusken
+Ability: Speed Boost
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Charge
+- Double Kick
+- Slash
+- Detect
+
+# STARTER, si tu as pris Poussifeu :
+Marshtomp
+Ability: Torrent
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud Shot
+- Water Pulse
+- Rock Slide
+- Protect
+
+# STARTER, si tu as pris Gobou :
+Grovyle
+Ability: Overgrow
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Giga Drain
+- Assurance
+- Quick Attack
+- Detect
 ```
 
 ## Rival — Route 119, après le 5ᵉ badge
@@ -1386,10 +1513,83 @@ Level: 31
 - Level cap à ce moment : **41**.
 - Objets de soin d'origine : aucun.
 
-**Normal** (à remplir, avec une ligne `STARTER`)
+**Normal** (dans le jeu ; les mêmes pour Brendan et Flora)
 
 ```
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brave Bird
+- Quick Attack
+- Agility
+- Double Team
 
+Vibrava @ Soft Sand
+Ability: Levitate
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dig
+- Dragon Breath
+- Bug Buzz
+- Screech
+
+Lairon @ Leftovers
+Ability: Sturdy
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Rock Slide
+- Protect
+- Roar
+
+Snorunt
+Ability: Inner Focus
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Frost Breath
+- Bite
+- Ice Shard
+- Protect
+
+Latias
+Ability: Levitate
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Breath
+- Confusion
+- Recover
+- Charm
+
+# STARTER, si tu as pris Arcko :
+Blaziken
+Ability: Speed Boost
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Blaze Kick
+- Double Kick
+- Bounce
+- Detect
+
+# STARTER, si tu as pris Poussifeu :
+Swampert
+Ability: Torrent
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Surf
+- Earthquake
+- Rock Slide
+- Protect
+
+# STARTER, si tu as pris Gobou :
+Sceptile
+Ability: Overgrow
+Level: 36
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Leaf Blade
+- X-Scissor
+- Quick Attack
+- Detect
 ```
 
 ## Rival — Nénucrique, après le 6ᵉ badge (Méga-Évolution possible)
@@ -1397,10 +1597,83 @@ Level: 31
 - Level cap à ce moment : **51**.
 - Objets de soin d'origine : aucun.
 
-**Normal** (à remplir, avec une ligne `STARTER`)
+**Normal** (dans le jeu ; les mêmes pour Brendan et Flora)
 
 ```
+Swellow @ Sitrus Berry
+Ability: Guts
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- U-turn
 
+Flygon @ Soft Sand
+Ability: Levitate
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Aggron @ Leftovers
+Ability: Rock Head
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Stealth Rock
+
+Glalie @ Never-Melt Ice
+Ability: Inner Focus
+Level: 45
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Freeze-Dry
+- Ice Shard
+- Crunch
+- Earthquake
+
+Latias @ Soul Dew
+Ability: Levitate
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draco Meteor
+- Psyshock
+- Calm Mind
+- Recover
+
+# STARTER, si tu as pris Arcko :
+Blaziken @ Blazikenite
+Ability: Speed Boost
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Protect
+- Flare Blitz
+- Close Combat
+- Swords Dance
+
+# STARTER, si tu as pris Poussifeu :
+Swampert @ Swampertite
+Ability: Torrent
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
+- Waterfall
+- Earthquake
+- Ice Punch
+
+# STARTER, si tu as pris Gobou :
+Sceptile @ Sceptilite
+Ability: Overgrow
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Storm
+- Dragon Pulse
+- Focus Blast
+- Earthquake
 ```
 
 ## Timmy — Lavandia, devant l'arène, avant le 3ᵉ badge
@@ -1416,10 +1689,88 @@ Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Magneton
+Ability: Magnet Pull
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Spark
+- Gyro Ball
+- Thunder Wave
+- Supersonic
 
+Swablu
+Ability: Natural Cure
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Dragon Breath
+- Disarming Voice
+- Round
+- Safeguard
+
+Kirlia
+Ability: Trace
+Level: 25
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Psybeam
+- Draining Kiss
+- Hypnosis
+- Life Dew
+```
+
+## Timmy — Forêt Emeraude, avant le 7ᵉ badge
+
+- Level cap à ce moment : **51**.
+
+**Normal** (dans le jeu)
+
+```
+Magnezone
+Ability: Magnet Pull
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Discharge
+- Flash Cannon
+- Tri Attack
+- Thunder Wave
+
+Altaria
+Ability: Natural Cure
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Sing
+
+Larvesta
+Ability: Flame Body
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Wheel
+- Leech Life
+- Flame Charge
+- Screech
+
+Celebi
+Ability: Natural Cure
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Magical Leaf
+- Confusion
+- Ancient Power
+- Life Dew
+
+Gallade
+Ability: Sharpness
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psycho Cut
+- Sacred Sword
+- Night Slash
+- Swords Dance
 ```
 
 ## Timmy — Route Victoire, avant la Ligue
@@ -1471,8 +1822,64 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 ```
 
-**Normal** (à remplir)
+**Normal** (dans le jeu)
 
 ```
+Magnezone @ Magnet
+Ability: Magnet Pull
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
+Altaria @ Lum Berry
+Ability: Natural Cure
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Leftovers
+Ability: Flame Body
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Miracle Seed
+Ability: Natural Cure
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Nasty Plot
+- Giga Drain
+- Psychic
+- Earth Power
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+Level: 65
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bitter Blade
+- Poltergeist
+- Swords Dance
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+Level: 66
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
 ```
+
+## Timmy — revanches (après la Ligue, Route Victoire)
+
+Même équipe et mêmes sets que sur la Route Victoire, tous les Pokémon au niveau **80** (1ʳᵉ revanche), **90** (2ᵉ), puis **100** (3ᵉ et suivantes). `TRAINER_WALLY_VR_2` à `VR_5`.
