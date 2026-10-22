@@ -220,6 +220,8 @@
   - Rival : 5 combats × 3 versions (selon le starter du joueur) × 2 (Brendan et Flora) = 30 équipes générées depuis une seule par combat ; `STARTER` remplacé par la lignée qui contre le starter du joueur, au stade du niveau (16/36), talent Speed Boost / Torrent / Overgrow ; Méga à Nénucrique (Jungkite, Braségalite, Laggronite). IV comme les équipes d'origine du combat.
   - Timmy : Lavandia (Magnéton, Tylton, Kirlia), Route Victoire (6 Pokémon, Méga-Gallame), revanches `VR_2` à `VR_5` aux niveaux 80, 90, 100, 100 (même équipe) ; nouveau combat dans la Forêt Émeraude : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), à brancher avec la zone (scénario dans `docs/nabla/world.md`).
   - Capacités : apprises par niveau jusqu'au niveau du Pokémon (vérifié par script), variées ; combats finaux (rival à Nénucrique, Timmy sur la Route Victoire) : sets compétitifs, qui peuvent contenir des capacités hors CT d'Émeraude (U-turn, Volt Switch…).
+- Étape 4.2d — Team Aqua / Magma (en cours) :
+  - Fiche préparée (10 combats). Île du Sud composée par Claude (cap 41, juste après le 5ᵉ badge) : Matt (Grahyèna 35, Nosferalto 35, Sharpedo 37), sbire (Bekipan Crachin, Carvanha, Wailmer, 34 ; la pluie renforce les attaques Eau de l'équipe), Pierre (Airmure 36, Kaorine 36, Métang 37). Capacités par niveau et talents vérifiés par script. Équipes Difficile faites à la main de Matt et du sbire retirées.
 
 ## Bugs connus
 
@@ -262,9 +264,10 @@
 | 2026-10-22 | En Difficile, les level caps suivent aussi la règle des +10 %. |
 | 2026-10-22 | Rival : une équipe par combat (mêmes pour Brendan et Flora) avec une ligne `STARTER` ; Claude génère les 3 versions selon le starter du joueur. Timmy (Lavandia avant le 3ᵉ badge, Route Victoire avant la Ligue) traité avec le rival ; ses revanches au post-game. |
 | 2026-10-22 | Un Pokémon de dresseur sans capacités dans la fiche : Claude lui donne 4 capacités apprises par niveau jusqu'à son niveau, variées (même logique que pour `STARTER`). |
-| 2026-10-22 | Team Aqua / Magma (4.2d) : l'utilisateur choisit le nombre de Pokémon de chaque combat. Combats en duo (Île du Sud, Centre Spatial) : 3 Pokémon par dresseur, Pierre Rochard compris ; l'utilisateur compose aussi les équipes de Pierre. |
+| 2026-10-22 | Team Aqua / Magma (4.2d) : l'utilisateur choisit le nombre de Pokémon de chaque combat. Combats en duo (Île du Sud, Centre Spatial) : 3 Pokémon par dresseur, Pierre Rochard compris ; l'utilisateur compose aussi l'équipe de Pierre au Centre Spatial. |
+| 2026-10-22 | Île du Sud (événement Latios) : équipes de Matt, du sbire et de Pierre composées par Claude (3 Pokémon chacun) ; les équipes Difficile faites à la main de Matt et du sbire sont retirées, la règle des +10 % s'applique. |
 | 2026-10-22 | 4.3 : les niveaux de **tous** les dresseurs ordinaires (sbires compris) seront relevés pour suivre la nouvelle courbe (simple relèvement de niveaux). |
 
 ## Questions ouvertes
 
-- Île du Sud (événement Latios) : garder les équipes Difficile faites à la main de Matt et du sbire (855, 856), ou les retirer pour appliquer la règle des +10 % comme partout ailleurs ?
+- Aucune pour l'instant.

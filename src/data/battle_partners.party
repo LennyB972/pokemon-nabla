@@ -52,19 +52,31 @@ Music: Male
 AI: Basic Trainer
 
 Skarmory
+Ability: Sturdy
 Impish Nature
-Level: 32
+Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drill Peck
 - Steel Wing
-- Aerial Ace
-- Spikes
-- Protect
+- Agility
+- Payback
+
+Claydol
+Ability: Levitate
+Modest Nature
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Extrasensory
+- Ancient Power
+- Cosmic Power
 
 Metang
+Ability: Clear Body
 Adamant Nature
-Level: 33
+Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Metal Claw
 - Zen Headbutt
 - Bullet Punch
 - Take Down
+- Magnet Rise
