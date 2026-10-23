@@ -198,6 +198,13 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 - **Type** : script + config. Minimal.
 - **Fait** : name box native d'expansion ; nom automatique sur les répliques d'avant-combat de tous les dresseurs (`OW_NAME_BOX_NPC_TRAINER`) ; nom repris automatiquement des 830 textes d'Émeraude qui commencent par « NOM: » (textes d'origine inchangés). Résumé : inchangé (réapprendre seulement les capacités d'œuf/tuteur déjà connues demanderait trop de place dans la sauvegarde).
 - **À décider après le test** : ajouter le nom à la main (`setspeaker`) dans les dialogues des personnages principaux qui n'ont pas de nom dans le texte.
+
+### 5.2 Utiliser plusieurs objets d'un coup, menus en boucle ✅
+- Hors combat, choix de la quantité après le Pokémon (Super Bonbon, Bonbons Exp, vitamines, plumes, baies qui baissent les EV, soins de PV partiels) ; maximum = utilisations qui ont un effet (`GetItemUseMaxQuantity`, `src/party_menu.c`).
+- Tous les menus et toutes les listes bouclent (↑ en haut → en bas) : `src/menu.c`, `src/list_menu.c`.
+
+### 5.3 Objets d'entraînement (vitamines…)
+- Quantité d'EV, prix, lieu et moment de vente : valeurs à donner par l'utilisateur.
 - 🎮 · 🟢
 
 ---

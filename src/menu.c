@@ -744,6 +744,7 @@ s8 Menu_ProcessInput(void)
     return MENU_NOTHING_CHOSEN;
 }
 
+// Pokémon Nabla: these menus wrap around too, like the others (Menu_MoveCursor)
 s8 Menu_ProcessInputNoWrap(void)
 {
     u8 oldPos = sMenu.cursorPos;
@@ -760,13 +761,13 @@ s8 Menu_ProcessInputNoWrap(void)
     }
     else if (JOY_NEW(DPAD_UP))
     {
-        if (oldPos != Menu_MoveCursorNoWrapAround(-1))
+        if (oldPos != Menu_MoveCursor(-1))
             PlaySE(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
-        if (oldPos != Menu_MoveCursorNoWrapAround(1))
+        if (oldPos != Menu_MoveCursor(1))
             PlaySE(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
@@ -802,6 +803,7 @@ s8 ProcessMenuInput_other(void)
     return MENU_NOTHING_CHOSEN;
 }
 
+// Pokémon Nabla: these menus wrap around too, like the others (Menu_MoveCursor)
 s8 Menu_ProcessInputNoWrapAround_other(void)
 {
     u8 oldPos = sMenu.cursorPos;
@@ -818,13 +820,13 @@ s8 Menu_ProcessInputNoWrapAround_other(void)
     }
     else if (JOY_REPEAT(DPAD_ANY) == DPAD_UP)
     {
-        if (oldPos != Menu_MoveCursorNoWrapAround(-1))
+        if (oldPos != Menu_MoveCursor(-1))
             PlaySE(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
     else if (JOY_REPEAT(DPAD_ANY) == DPAD_DOWN)
     {
-        if (oldPos != Menu_MoveCursorNoWrapAround(1))
+        if (oldPos != Menu_MoveCursor(1))
             PlaySE(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }

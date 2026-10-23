@@ -366,6 +366,19 @@ u8 ListMenuInit(struct ListMenuTemplate *listMenuTemplate, u16 scrollOffset, u16
     return taskId;
 }
 
+// Pokémon Nabla: a new press of up on the first entry goes to the last one, and of down on the last one
+// to the first (holding the button still stops at the end)
+static bool32 TryWrapListMenuSelection(struct ListMenu *list, bool32 movingDown)
+{
+    u32 position = list->scrollOffset + list->selectedRow;
+    u32 lastPosition = list->template.totalItems - 1;
+
+    if (lastPosition == 0 || lastPosition > 0xFF || position != (movingDown ? lastPosition : 0))
+        return FALSE;
+    ListMenuChangeSelection(list, TRUE, lastPosition, !movingDown);
+    return TRUE;
+}
+
 s32 ListMenu_ProcessInput(u8 listTaskId)
 {
     struct ListMenu *list = (void *) gTasks[listTaskId].data;
@@ -383,12 +396,14 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
     }
     else if (JOY_REPEAT(DPAD_UP))
     {
-        ListMenuChangeSelection(list, TRUE, 1, FALSE);
+        if (!(JOY_NEW(DPAD_UP) && TryWrapListMenuSelection(list, FALSE)))
+            ListMenuChangeSelection(list, TRUE, 1, FALSE);
         return LIST_NOTHING_CHOSEN;
     }
     else if (JOY_REPEAT(DPAD_DOWN))
     {
-        ListMenuChangeSelection(list, TRUE, 1, TRUE);
+        if (!(JOY_NEW(DPAD_DOWN) && TryWrapListMenuSelection(list, TRUE)))
+            ListMenuChangeSelection(list, TRUE, 1, TRUE);
         return LIST_NOTHING_CHOSEN;
     }
     else // try to move by one window scroll

@@ -101,6 +101,7 @@ bool8 MonKnowsMove(struct Pokemon *mon, enum Move move);
 bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, enum Move move);
 void ItemUseCB_TMHM(u8 taskId, TaskFunc task);
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task);
+u32 GetItemUseMaxQuantity(struct Pokemon *mon, enum Item item);
 void ItemUseCB_DynamaxCandy(u8 taskId, TaskFunc task);
 void ItemUseCB_SacredAsh(u8 taskId, TaskFunc task);
 void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task);

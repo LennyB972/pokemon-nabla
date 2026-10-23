@@ -318,6 +318,7 @@ static void Task_CancelChooseMonYesNo(u8);
 static void PartyMenuDisplayYesNoMenu(void);
 static void Task_HandleCancelChooseMonYesNoInput(u8);
 static void Task_ReturnToChooseMonAfterText(u8);
+static bool32 TryChooseItemUseQuantity(u8);
 static void UpdateCurrentPartySelection(s8 *, s8);
 static void UpdatePartySelectionSingleLayout(s8 *, s8);
 static void UpdatePartySelectionDoubleLayout(s8 *, s8);
@@ -1543,7 +1544,8 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
                     sPartyMenuInternal->exitCallback = CB2_SetUpExitToBattleScreen;
 
                 PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
-                gItemUseCB(taskId, Task_ClosePartyMenuAfterText);
+                if (!TryChooseItemUseQuantity(taskId))
+                    gItemUseCB(taskId, Task_ClosePartyMenuAfterText);
             }
             break;
         case PARTY_ACTION_MOVE_TUTOR:
@@ -4854,6 +4856,132 @@ static bool32 IsItemFlute(enum Item item)
     return FALSE;
 }
 
+// Pokémon Nabla: in the field, an item that works several times in a row (Potions, vitamins, Rare Candies...)
+// can be used several times at once: the quantity is chosen after the Pokémon. The first use is the usual
+// one, the others follow it while they have an effect.
+#define ITEM_USE_QUANTITY_MAX 99
+
+static EWRAM_DATA s16 sItemUseQuantity = 0;
+static EWRAM_DATA u16 sItemUseMaxQuantity = 0;
+static EWRAM_DATA u8 sItemUseQuantityWindowId = 0;
+
+static const struct WindowTemplate sItemUseQuantityWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 24,
+    .tilemapTop = 17,
+    .width = 5,
+    .height = 2,
+    .paletteNum = 14,
+    .baseBlock = 0x2E9,
+};
+
+// Uses the item on the Pokémon once more; FALSE if it has no effect
+static bool32 TryUseItemAgain(struct Pokemon *mon, enum Item item)
+{
+    enum ItemEffectType effectType = GetItemEffectType(item);
+    u32 experience = GetMonData(mon, MON_DATA_EXP);
+    u32 ev = (gItemUseCB == ItemUseCB_ReduceEV) ? ItemEffectToMonEv(mon, effectType) : 0;
+
+    if (gItemUseCB == ItemUseCB_RareCandy && B_RARE_CANDY_CAP && GetMonData(mon, MON_DATA_LEVEL) >= GetCurrentLevelCap())
+        return FALSE;
+    if (gItemUseCB == ItemUseCB_Medicine && !NotUsingHPEVItemOnShedinja(mon, item))
+        return FALSE;
+    if (ExecuteTableBasedItemEffect(mon, item, gPartyMenu.slotId, 0))
+        return FALSE;
+    if (gItemUseCB == ItemUseCB_RareCandy)
+        return GetMonData(mon, MON_DATA_EXP) != experience;
+    if (gItemUseCB == ItemUseCB_ReduceEV)
+        return ItemEffectToMonEv(mon, effectType) != ev;
+    return TRUE;
+}
+
+// How many times in a row the item has an effect on the Pokémon (tried on a copy), within the bag's quantity
+u32 GetItemUseMaxQuantity(struct Pokemon *mon, enum Item item)
+{
+    struct Pokemon copy = *mon;
+    u32 count = 0;
+    u32 max = min(CountTotalItemQuantityInBag(item), ITEM_USE_QUANTITY_MAX);
+
+    if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD || IsItemFlute(item)
+     || (gItemUseCB != ItemUseCB_Medicine && gItemUseCB != ItemUseCB_ReduceEV && gItemUseCB != ItemUseCB_RareCandy))
+        return 1;
+    while (count < max && TryUseItemAgain(&copy, item))
+        count++;
+    return count;
+}
+
+// After the first use: uses the item again as many times as chosen; returns how many more times it was used
+static u32 UseItemAgainAsChosen(struct Pokemon *mon, enum Item item)
+{
+    u32 count = 0;
+
+    while (count + 1 < sItemUseQuantity && TryUseItemAgain(mon, item))
+        count++;
+    sItemUseQuantity = 1;
+    return count;
+}
+
+static void PrintItemUseQuantity(void)
+{
+    ConvertIntToDecimalStringN(gStringVar1, sItemUseQuantity, STR_CONV_MODE_LEADING_ZEROS, 2);
+    StringExpandPlaceholders(gStringVar4, gText_xVar1);
+    FillWindowPixelBuffer(sItemUseQuantityWindowId, PIXEL_FILL(1));
+    AddTextPrinterParameterized(sItemUseQuantityWindowId, FONT_NORMAL, gStringVar4, 8, 1, 0, NULL);
+    CopyWindowToVram(sItemUseQuantityWindowId, COPYWIN_GFX);
+}
+
+static void CloseItemUseQuantityWindows(void)
+{
+    ClearStdWindowAndFrameToTransparent(sItemUseQuantityWindowId, FALSE);
+    RemoveWindow(sItemUseQuantityWindowId);
+    ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+    ClearWindowTilemap(WIN_MSG);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static void Task_ChooseItemUseQuantity(u8 taskId)
+{
+    if (IsPartyMenuTextPrinterActive())
+        return;
+    if (AdjustQuantityAccordingToDPadInput(&sItemUseQuantity, sItemUseMaxQuantity))
+    {
+        PrintItemUseQuantity();
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        CloseItemUseQuantityWindows();
+        gItemUseCB(taskId, Task_ClosePartyMenuAfterText);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        sItemUseQuantity = 1;
+        CloseItemUseQuantityWindows();
+        DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
+        gTasks[taskId].func = Task_HandleChooseMonInput;
+    }
+}
+
+static bool32 TryChooseItemUseQuantity(u8 taskId)
+{
+    sItemUseQuantity = 1;
+    sItemUseMaxQuantity = GetItemUseMaxQuantity(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], gSpecialVar_ItemId);
+    if (sItemUseMaxQuantity < 2)
+        return FALSE;
+
+    CopyItemName(gSpecialVar_ItemId, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, gText_UseHowManyVar1s);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    sItemUseQuantityWindowId = AddWindow(&sItemUseQuantityWindowTemplate);
+    DrawStdFrameWithCustomTileAndPalette(sItemUseQuantityWindowId, FALSE, 0x4F, 13);
+    PrintItemUseQuantity();
+    PutWindowTilemap(sItemUseQuantityWindowId);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_ChooseItemUseQuantity;
+    return TRUE;
+}
+
 // Battle scripts called in HandleAction_UseItem
 void ItemUseCB_BattleScript(u8 taskId, TaskFunc task)
 {
@@ -4931,7 +5059,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
         if (!IsItemFlute(item))
         {
             PlaySE(SE_USE_ITEM);
-            RemoveBagItem(item, 1);
+            RemoveBagItem(item, 1 + UseItemAgainAsChosen(mon, item));
         }
         else
         {
@@ -5323,7 +5451,7 @@ void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
     {
         gPartyMenuUseExitCallback = TRUE;
         PlaySE(SE_USE_ITEM);
-        RemoveBagItem(item, 1);
+        RemoveBagItem(item, 1 + UseItemAgainAsChosen(mon, item));
         GetMonNickname(mon, gStringVar1);
         ItemEffectToStatString(effectType, gStringVar2);
         if (friendship != newFriendship)
@@ -5839,12 +5967,16 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     bool8 cannotUseEffect;
     u8 holdEffectParam = GetItemHoldEffectParam(*itemPtr);
     u32 levelCap = GetCurrentLevelCap();
+    u32 experience = GetMonData(mon, MON_DATA_EXP);
+    u32 extraUses = 0;
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
     if (!(B_RARE_CANDY_CAP && sInitialLevel >= levelCap))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
+        if (!cannotUseEffect)
+            extraUses = UseItemAgainAsChosen(mon, *itemPtr);
         BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
     }
     else
@@ -5900,7 +6032,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        RemoveBagItem(gSpecialVar_ItemId, 1);
+        RemoveBagItem(gSpecialVar_ItemId, 1 + extraUses);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
         {
@@ -5912,7 +6044,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
             else // Exp Candies
             {
-                ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+                ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_EXP) - experience, STR_CONV_MODE_LEFT_ALIGN, 6);
                 ConvertIntToDecimalStringN(gStringVar3, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
                 StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
             }
@@ -5924,7 +6056,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         else
         {
             PlaySE(SE_USE_ITEM);
-            ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+            ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_EXP) - experience, STR_CONV_MODE_LEFT_ALIGN, 6);
             StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExp);
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             ScheduleBgCopyTilemapToVram(2);
