@@ -18,23 +18,8 @@ Groudon, Kyogre, Latias, Latios, Rayquaza, Regice, Regirock, Registeel
 
 Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capacité hors niveau).
 
-- Basculin_White_Striped → Basculegion_M : IF_RECOIL_DAMAGE_GE 294
-- Bisharp → Kingambit : IF_DEFEAT_X_WITH_ITEMS SPECIES_BISHARP ITEM_LEADERS_CREST 3
-- Bramblin → Brambleghast : IF_MIN_OVERWORLD_STEPS 1000
-- Charjabug → Vikavolt : IF_IN_MAPSEC MAPSEC_NEW_MAUVILLE
-- Crabrawler → Crabominable : IF_IN_MAP MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM
-- Eevee → Glaceon : IF_IN_MAP MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM
-- Eevee → Leafeon : IF_IN_MAP MAP_PETALBURG_WOODS
-- Farfetchd_Galar → Sirfetchd : IF_CRITICAL_HITS_GE 3, fin de combat
 - Feebas → Milotic : IF_MIN_BEAUTY 170
-- Magneton → Magnezone : IF_IN_MAPSEC MAPSEC_NEW_MAUVILLE
-- Milcery → Alcremie_Strawberry_Vanilla_Cream : tourner sur soi-même
 - Nosepass → Probopass : IF_IN_MAPSEC MAPSEC_NEW_MAUVILLE
-- Pawmo → Pawmot : IF_MIN_OVERWORLD_STEPS 1000
-- Rellor → Rabsca : IF_MIN_OVERWORLD_STEPS 1000
-- Sliggoo → Goodra : IF_WEATHER WEATHER_RAIN
-- Sliggoo_Hisui → Goodra_Hisui : IF_WEATHER WEATHER_RAIN
-- Yamask_Galar → Runerigus : IF_CURRENT_DAMAGE_GE 49, script EVO_TRIGGER_TABLET_CURSE
 
 ## Objets d'évolution
 
@@ -67,12 +52,12 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Metal Alloy | boutique ou script (evolution_items.inc) |
 | Metal Coat | boutique ou script (evolution_items.inc) |
 | Moon Stone | boutique ou script (evolution_items.inc) |
-| Oval Stone | tenu par Happiny sauvage |
+| Oval Stone | tenu par Blissey sauvage |
 | Peat Block | boutique ou script (evolution_items.inc) |
 | Poke Ball | boutique ou script (LilycoveCity_DepartmentStore_2F) |
 | Prism Scale | boutique ou script (evolution_items.inc) |
 | Protector | boutique ou script (evolution_items.inc) |
-| Razor Claw | tenu par Jangmo_O sauvage |
+| Razor Claw | tenu par Hakamo_O sauvage |
 | Razor Fang | tenu par Bruxish sauvage |
 | Reaper Cloth | boutique ou script (evolution_items.inc) |
 | Ribbon Sweet | boutique ou script (evolution_items.inc) |

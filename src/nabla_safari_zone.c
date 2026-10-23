@@ -63,14 +63,14 @@ bool32 InSafariZoneRegion(void)
     return gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE && VarGet(VAR_NABLA_SAFARI_REGION) != NABLA_SAFARI_REGION_NONE;
 }
 
-// Levels follow the player's badges: those of the nearby routes when the Safari Zone opens, 60-70 after
-// the League. Starters are always met at level 5, as when they are received.
+// Levels follow the player's badges: about 40 when the Safari Zone opens (6 badges), 50 with 7 badges,
+// 55 with 8, 70 after the League. Starters are always met at level 5, as when they are received.
 u8 GetSafariZoneRegionWildLevel(void)
 {
     static const u8 sLevelRanges[NUM_BADGES + 2][2] =
     {
-        {5, 8}, {9, 12}, {13, 16}, {17, 20}, {21, 24}, {24, 27}, {27, 31}, {33, 37}, {40, 45}, // by badge count
-        {60, 70}, // League champion
+        {5, 8}, {9, 12}, {13, 16}, {17, 20}, {21, 24}, {24, 27}, {38, 42}, {48, 52}, {53, 57}, // by badge count
+        {68, 72}, // League champion
     };
     u32 range = 0;
 

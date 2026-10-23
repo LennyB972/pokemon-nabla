@@ -438,15 +438,76 @@ static u32 GetSafariZoneRegionHeaderOffset(u32 headerId)
     return region;
 }
 
-// The Pokémon evolves as far as its level allows
-static void CreateSafariZoneRegionWildMon(enum Species species, u8 level)
+// Pokémon Nabla: the conditions that choose between evolutions (gender, nature, time, region...), without
+// those the player has to meet (friendship, held item, known move...)
+static bool32 MeetsEvolutionBranchConditions(struct Pokemon *mon, const struct EvolutionParam *params)
+{
+    struct EvolutionParam branchParams[8];
+    u32 count = 0;
+
+    for (u32 i = 0; params != NULL && params[i].condition != CONDITIONS_END && count < ARRAY_COUNT(branchParams) - 1; i++)
+    {
+        switch (params[i].condition)
+        {
+        case IF_GENDER:
+        case IF_TIME:
+        case IF_NOT_TIME:
+        case IF_ATK_GT_DEF:
+        case IF_ATK_EQ_DEF:
+        case IF_ATK_LT_DEF:
+        case IF_PID_UPPER_MODULO_10_GT:
+        case IF_PID_UPPER_MODULO_10_EQ:
+        case IF_PID_UPPER_MODULO_10_LT:
+        case IF_NATURE:
+        case IF_AMPED_NATURE:
+        case IF_LOW_KEY_NATURE:
+        case IF_PID_MODULO_100_GT:
+        case IF_PID_MODULO_100_EQ:
+        case IF_PID_MODULO_100_LT:
+        case IF_REGION:
+        case IF_NOT_REGION:
+            branchParams[count++] = params[i];
+            break;
+        default:
+            break;
+        }
+    }
+    branchParams[count].condition = CONDITIONS_END;
+    return DoesMonMeetAdditionalConditions(mon, branchParams, NULL, PARTY_SIZE, NULL, CHECK_EVO);
+}
+
+// Pokémon Nabla: wild Pokémon evolve as far as their level allows. Evolutions that need more than a level
+// (trade, item, friendship...) happen from NABLA_OTHER_EVOLUTIONS_LEVEL, picking one at random if there are several.
+enum Species GetNablaWildEvolution(struct Pokemon *mon)
 {
     bool32 canStopEvo;
+    enum Species targets[16];
+    u32 count = 0;
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
+    enum Species target = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
+    const struct Evolution *evolutions = GetSpeciesEvolutions(GetMonData(mon, MON_DATA_SPECIES));
 
+    if (target != SPECIES_NONE || level < NABLA_OTHER_EVOLUTIONS_LEVEL || evolutions == NULL)
+        return target;
+    for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END && count < ARRAY_COUNT(targets); i++)
+    {
+        if (SanitizeSpeciesId(evolutions[i].targetSpecies) == SPECIES_NONE
+         || evolutions[i].method == EVO_NONE
+         || evolutions[i].method == EVO_SPLIT_FROM_EVO
+         || ((evolutions[i].method == EVO_LEVEL || evolutions[i].method == EVO_LEVEL_BATTLE_ONLY) && evolutions[i].param > level)
+         || !MeetsEvolutionBranchConditions(mon, evolutions[i].params))
+            continue;
+        targets[count++] = evolutions[i].targetSpecies;
+    }
+    return count != 0 ? targets[Random() % count] : SPECIES_NONE;
+}
+
+static void CreateEvolvedWildMon(enum Species species, u8 level)
+{
     CreateWildMon(species, level);
     for (u32 i = 0; i < 3; i++)
     {
-        species = GetEvolutionTargetSpecies(&gParties[B_TRAINER_OPPONENT_A][0], EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
+        species = GetNablaWildEvolution(&gParties[B_TRAINER_OPPONENT_A][0]);
         if (species == SPECIES_NONE)
             break;
         CreateWildMon(species, level);
@@ -615,10 +676,7 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    if (InSafariZoneRegion())
-        CreateSafariZoneRegionWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
-    else
-        CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    CreateEvolvedWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }
 
@@ -630,10 +688,9 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
 
     UpdateChainFishingStreak();
     if (InSafariZoneRegion())
-        CreateSafariZoneRegionWildMon(wildMonSpecies, GetSafariZoneRegionWildLevel());
-    else
-        CreateWildMon(wildMonSpecies, level);
-    return wildMonSpecies;
+        level = GetSafariZoneRegionWildLevel();
+    CreateEvolvedWildMon(wildMonSpecies, level);
+    return GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES);
 }
 
 static bool8 EncounterOddsCheck(u16 encounterRate)

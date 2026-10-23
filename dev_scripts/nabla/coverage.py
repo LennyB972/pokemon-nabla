@@ -22,6 +22,10 @@ DOC = "docs/nabla/couverture.md"
 SAFARI_LABEL = re.compile(r"_(%s)$" % "|".join(st.SAFARI_REGIONS))
 NOT_SPECIES = ("_MEGA", "_GMAX", "_TOTEM", "_PRIMAL")
 # Conditions the game handles and the player can meet (time, friendship, battles...)
+# Regions of the regional evolutions in each Safari Zone region (sSafariZoneRegions, src/nabla_safari_zone.c)
+SAFARI_EVOLUTION_REGIONS = {"Kanto": ("REGION_KANTO",), "Johto": ("REGION_JOHTO",), "Sinnoh": ("REGION_SINNOH",),
+                            "Unova": ("REGION_UNOVA",), "Kalos": ("REGION_KALOS",), "Alola": ("REGION_ALOLA",),
+                            "Galar": ("REGION_GALAR", "REGION_HISUI"), "Paldea": ("REGION_PALDEA",)}
 CHECK_IN_GAME = {"IF_RECOIL_DAMAGE_GE", "IF_CRITICAL_HITS_GE", "IF_CURRENT_DAMAGE_GE", "IF_MIN_OVERWORLD_STEPS",
                  "IF_MIN_BEAUTY", "IF_WEATHER", "IF_IN_MAP", "IF_IN_MAPSEC", "IF_DEFEAT_X_WITH_ITEMS"}
 
@@ -91,6 +95,8 @@ def main():
     def add(name, source):
         if is_species(name):
             sources.setdefault(name, source)
+    # Wild Pokémon evolve with their level (see scale_levels.wild_forms); the Safari Zone's levels follow the badges
+    import scale_levels as sl
     for e in json.load(open("src/data/wild_encounters.json"))["wild_encounter_groups"][0]["encounters"]:
         label = e["base_label"]
         if label.endswith(("_FireRed", "_LeafGreen")):
@@ -98,11 +104,17 @@ def main():
         region = SAFARI_LABEL.search(label)
         if e["map"].startswith("MAP_SAFARI_ZONE") and not region:
             continue  # the Safari Zone always uses a region table
+        regions = SAFARI_EVOLUTION_REGIONS.get(region.group(1), ("REGION_HOENN",)) if region else ("REGION_HOENN",)
         for kind, table in e.items():
             if kind.endswith("_mons"):
                 for mon in table["mons"]:
-                    add(mon["species"][8:], "Safari " + region.group(1) if region else place(e["map"]))
-                    wild.add(mon["species"][8:])
+                    if region:
+                        levels = [5] if region.group(1) == "Starters" else range(5, 73)
+                    else:
+                        levels = range(mon["min_level"], mon["max_level"] + 1)
+                    for name in set().union(*(sl.wild_forms(evos, mon["species"][8:], level, regions) for level in levels)):
+                        add(name, "Safari " + region.group(1) if region else place(e["map"]))
+                        wild.add(name)
     add("FEEBAS", "Route 119")
     wild.add("FEEBAS")
     for f, text in scripts.items():
@@ -140,15 +152,11 @@ def main():
     changed = True
     while changed:
         changed = False
-        # Held items of wild Pokémon (Thief, Covet); Safari Pokémon evolve with their level
+        # Held items of wild Pokémon (Thief, Covet)
         for name in [n for n in wild if n in reached]:
             for item in re.findall(r"\.item(?:Common|Rare) = (ITEM_\w+)", bodies.get(name, "")):
                 if item not in items:
                     items[item] = "tenu par " + name.title() + " sauvage"
-                    changed = True
-            for method, _, target, conditions in evos.get(name, []):
-                if method == "EVO_LEVEL" and not any(c[0] in ("IF_HOLD_ITEM", "IF_KNOWS_MOVE", "IF_BAG_ITEM_COUNT") for c in conditions) and target not in wild:
-                    wild.add(target)
                     changed = True
         for name in list(reached):
             # Breeding gives the first stage of the line

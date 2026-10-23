@@ -1,6 +1,6 @@
 # Plan du monde étendu
 
-Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées. Chaque zone sera construite comme une étape à part (phase 6), après validation de sa fiche. Les niveaux (Pokémon, dresseurs) ne sont pas fixés ici : ils seront réglés avec les level caps, après des parties de test. Zones déjà construites : `docs/nabla/zones.md`.
+Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées. Chaque zone sera construite comme une étape à part (phase 6), après validation de sa fiche. Les niveaux (Pokémon, dresseurs) sont calés sur les zones qui entourent chaque nouvelle zone (`docs/nabla/levels.md`). Zones déjà construites : `docs/nabla/zones.md`.
 
 ## Pendant l'aventure
 

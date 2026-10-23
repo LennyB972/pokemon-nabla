@@ -15,7 +15,8 @@
    - warp (porte, grotte) : un événement *Warp* dans chaque map, chacun pointant vers le numéro du warp d'arrivée.
    - Une map d'origine ne se modifie que pour ajouter le passage.
 4. **Nom et carte de la région** : nouvelle section ajoutée **à la fin** de `src/data/region_map/region_map_sections.json` (les numéros de sections sont gardés dans les Pokémon comme lieu de rencontre), case(s) dans `src/data/region_map/region_map_layout.h` (ou *Tools → Region Map Editor*), puis la section dans le champ *Location* du Header de la map.
-5. **Vérifier** : `python3 dev_scripts/nabla/render_map.py <Map> image.png --grid` pour une image de la map, build, test en jeu ; rencontres sauvages → relancer `dev_scripts/nabla/coverage.py`.
+5. **Niveaux** : dresseurs et Pokémon sauvages calés sur les zones qui entourent la nouvelle zone (niveaux après l'étape 4.3 : `docs/nabla/levels.md`). Les Pokémon sauvages évoluent selon leur niveau (échange, objet, bonheur… au niveau 40) : choisir les espèces en conséquence.
+6. **Vérifier** : `python3 dev_scripts/nabla/render_map.py <Map> image.png --grid` pour une image de la map, build, test en jeu ; rencontres sauvages → relancer `dev_scripts/nabla/coverage.py`.
 
 ## Porymap
 

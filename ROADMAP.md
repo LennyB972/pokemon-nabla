@@ -186,8 +186,8 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 - **Vérif** : combats test dans les deux modes.
 - 🎮 · 🔴
 
-### 4.3 Calibrage des level caps et des dresseurs normaux
-- Relever les niveaux de tous les dresseurs ordinaires (sbires Aqua/Magma compris) et des Pokémon sauvages pour suivre la nouvelle courbe ; ajuster les level caps après des parties de test.
+### 4.3 Calibrage des level caps et des dresseurs normaux ✅
+- Niveaux de tous les dresseurs ordinaires (sbires Aqua/Magma et revanches compris), des Pokémon sauvages et des Pokémon fixes relevés par un facteur par étape de l'aventure (`dev_scripts/nabla/scale_levels.py`, `docs/nabla/levels.md`) ; évolutions des Pokémon de dresseurs et des sauvages selon leur niveau (échange, objet, bonheur… au niveau 40) ; Safari : 40 / 50 / 55 / 70 selon les badges. Level caps et équilibrage fin : après la partie complète de l'utilisateur en v1.
 - 🎮 · 🟡
 
 ---

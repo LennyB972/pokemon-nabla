@@ -29,13 +29,18 @@ TEST("Nabla: regional evolutions happen in the matching Safari Zone region")
 
 TEST("Nabla: Safari Zone Pokémon are level 5 in the Starter Zone and follow the badges elsewhere")
 {
-    u32 region = NABLA_SAFARI_REGION_NONE, champion = FALSE, minLevel = 0, maxLevel = 0;
+    u32 region = NABLA_SAFARI_REGION_NONE, badges = 0, champion = FALSE, minLevel = 0, maxLevel = 0;
 
     PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; minLevel = 5; maxLevel = 8; }
-    PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; champion = TRUE; minLevel = 60; maxLevel = 70; }
+    PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; badges = 6; minLevel = 38; maxLevel = 42; }
+    PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; badges = 7; minLevel = 48; maxLevel = 52; }
+    PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; badges = 8; minLevel = 53; maxLevel = 57; }
+    PARAMETRIZE { region = NABLA_SAFARI_REGION_KANTO; champion = TRUE; minLevel = 68; maxLevel = 72; }
     PARAMETRIZE { region = NABLA_SAFARI_REGION_STARTERS; champion = TRUE; minLevel = 5; maxLevel = 5; }
 
     VarSet(VAR_NABLA_SAFARI_REGION, region);
+    for (u32 i = 0; i < badges; i++)
+        FlagSet(FLAG_BADGE01_GET + i);
     if (champion)
         FlagSet(FLAG_IS_CHAMPION);
     for (u32 i = 0; i < 20; i++)

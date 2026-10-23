@@ -23,4 +23,8 @@
 #define NABLA_SAFARI_MENU_UNLOCK   100
 #define NABLA_SAFARI_MENU_CANCEL   101
 
+// Level from which wild and trainers' Pokémon take the evolutions that need more than a level
+// (trade, item, friendship...): Onix is a Steelix from level 40
+#define NABLA_OTHER_EVOLUTIONS_LEVEL 40
+
 #endif // GUARD_CONSTANTS_NABLA_H
