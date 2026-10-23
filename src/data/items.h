@@ -1268,7 +1268,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_HP_UP] =
     {
         .name = ITEM_NAME("HP Up"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base HP\n"
             "of one Pokémon."),
@@ -1285,7 +1285,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_PROTEIN] =
     {
         .name = ITEM_NAME("Protein"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Attack stat of one\n"
@@ -1303,7 +1303,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_IRON] =
     {
         .name = ITEM_NAME("Iron"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Defense stat of\n"
@@ -1321,7 +1321,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_CALCIUM] =
     {
         .name = ITEM_NAME("Calcium"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Sp. Atk stat of one\n"
@@ -1339,7 +1339,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_ZINC] =
     {
         .name = ITEM_NAME("Zinc"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Sp. Def stat of one\n"
@@ -1358,7 +1358,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Carbos"),
         .pluralName = ITEM_PLURAL_NAME("Carbos"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = 5000, // Pokémon Nabla
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Speed stat of one\n"

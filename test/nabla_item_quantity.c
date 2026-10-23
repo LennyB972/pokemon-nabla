@@ -15,7 +15,8 @@ TEST("Nabla: an item can be used at once as many times in a row as it has an eff
     PARAMETRIZE { item = ITEM_POTION; hpLost = 50; expected = 3; }
     PARAMETRIZE { item = ITEM_POTION; hpLost = 50; quantity = 2; expected = 2; }
     PARAMETRIZE { item = ITEM_POTION; hpLost = 0; expected = 0; }
-    PARAMETRIZE { item = ITEM_HP_UP; hpEv = 232; expected = 2; }
+    PARAMETRIZE { item = ITEM_HP_UP; hpEv = 0; expected = 8; } // 32 EVs each, up to 252
+    PARAMETRIZE { item = ITEM_HP_UP; hpEv = 188; expected = 2; }
     PARAMETRIZE { item = ITEM_FULL_HEAL; status = STATUS1_POISON; expected = 1; }
     PARAMETRIZE { item = ITEM_RARE_CANDY; callback = ItemUseCB_RareCandy; level = 95; expected = 5; }
     PARAMETRIZE { item = ITEM_RARE_CANDY; callback = ItemUseCB_RareCandy; level = 14; levelCaps = TRUE; expected = 2; }

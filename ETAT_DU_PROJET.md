@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. 4.2c, 4.2d (dresseurs importants) et 4.3 (niveaux des dresseurs ordinaires et des sauvages) faites ; je testerai l'ensemble pendant ma partie complète en v1, puis on équilibrera. Phase 5 : 5.1 name box faite et validée ; 5.2 (plusieurs objets d'un coup, menus en boucle) faite, à tester ; 5.3 (vitamines et objets d'entraînement) attend mes valeurs. Je prépare aussi des changements de rencontres des routes.
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. 4.2c, 4.2d (dresseurs importants) et 4.3 (niveaux des dresseurs ordinaires et des sauvages) faites ; je testerai l'ensemble pendant ma partie complète en v1, puis on équilibrera. Phase 5 : 5.1 name box faite et validée ; 5.2 (plusieurs objets d'un coup, menus en boucle) faite, à tester  ; 5.3 vitamines (+32 EV, 5 000 ₽) faite. Je prépare aussi des changements de rencontres des routes.
 
 ## Où on en est
 Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch BPS. Phases 0 à 3 terminées, phase 4 en cours :
@@ -62,7 +62,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 - Il retouchera lui-même routes et West Beach dans Porymap au fil de l'eau (et préviendra).
 
 ## Prochaines étapes (dans l'ordre)
-1. **Phase 5 Interface** : 5.1 name box faite (automatique : dresseurs + textes « NOM: » ; ajout à la main pour les dialogues sans nom des personnages principaux, à décider après le test de l'utilisateur ; résumé inchangé). **5.2** (plusieurs objets d'un coup, menus en boucle) faite. **5.3 objets d'entraînement** : vitamines (+10 EV jusqu'à 252, 10 000 ₽, Nénucrique 3ᵉ), plumes (+1, 300 ₽), objets Pouvoir (+8, 10 000 ₽), Bracelet Macho (3 000 ₽) ; l'utilisateur donne les valeurs voulues (EV, prix, lieu, palier de badges), puis présenter l'étape.
+1. **Phase 5 Interface** (terminée) : 5.1 name box (automatique : dresseurs + textes « NOM: » ; ajout à la main pour les dialogues sans nom des personnages principaux, à décider après le test de l'utilisateur ; résumé inchangé) ; 5.2 plusieurs objets d'un coup, menus en boucle ; 5.3 vitamines (+32 EV, 5 000 ₽, Nénucrique 3ᵉ ; plumes et Mochis inchangés).
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) : Forêt Émeraude au sud du Mont Mémoria (scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire — dresseur prêt) ; îles accessibles par Plongée (hors scénario) ; contenu de West Beach.
 3. **Phase 7 Post-game** (revanches des Champions, zones d'après la Ligue) : Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon (sans vol en 3D).
 4. **Phase 8 Release 1.0**, après la partie complète de l'utilisateur et l'équilibrage (niveaux, équipes, level caps).

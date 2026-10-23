@@ -203,8 +203,8 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 - Hors combat, choix de la quantité après le Pokémon (Super Bonbon, Bonbons Exp, vitamines, plumes, baies qui baissent les EV, soins de PV partiels) ; maximum = utilisations qui ont un effet (`GetItemUseMaxQuantity`, `src/party_menu.c`).
 - Tous les menus et toutes les listes bouclent (↑ en haut → en bas) : `src/menu.c`, `src/list_menu.c`.
 
-### 5.3 Objets d'entraînement (vitamines…)
-- Quantité d'EV, prix, lieu et moment de vente : valeurs à donner par l'utilisateur.
+### 5.3 Objets d'entraînement (vitamines…) ✅
+- Vitamines (PV Plus, Protéine, Fer, Calcium, Zinc, Carbone) : +32 EV chacune (`ITEM6_ADD_VITAMIN_EV`), 5 000 ₽, toujours à Nénucrique (3ᵉ étage). Plumes et Mochis inchangés.
 - 🎮 · 🟢
 
 ---
