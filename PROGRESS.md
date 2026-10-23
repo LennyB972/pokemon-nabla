@@ -5,7 +5,7 @@
 - **Base** : pokeemerald-expansion **1.17.2** (master, commit non tagué, `git describe` = `expansion/1.17.1-11-g87cc74b5ec`).
 - **Build** : ✅ `make` passe sur macOS (devkitARM). ROM utilisée à 79,7 % (26,7 Mo / 32 Mo), EWRAM 86 %, IWRAM 87 %.
 - **Jeu** : expansion + Gelure, Neige à la place de la Grêle, sans affection, types adverses affichés ; CT réutilisables, Multi Exp moderne, IV/EV chiffrés, texte instantané, 8 % de combats sauvages en double ; sans l'intro RHH.
-- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; 4.2c (rival et Timmy) et **4.2d (Team Aqua / Magma, avec les équipes de Pierre Rochard)** intégrées, en attente du test de l'utilisateur. **4.3 (niveaux des dresseurs ordinaires et des sauvages)** faite, en attente du test de l'utilisateur. Prochaine : phase 5 (interface). Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
+- **Étape en cours** : phase 4. 4.1, 4.2a et 4.2b faites ; 4.2c (rival et Timmy) et **4.2d (Team Aqua / Magma, avec les équipes de Pierre Rochard)** intégrées, en attente du test de l'utilisateur. **4.3 (niveaux des dresseurs ordinaires et des sauvages)** faite. Phase 5 : **5.1 name box** faite, à tester par l'utilisateur ; 5.2 (vitamines et autres objets d'entraînement) en attente de ses valeurs. Phase 6 : WEST BEACH v1 validée ; plan du monde dans `docs/nabla/world.md`.
 - **Sauvegarde** : SaveBlock1 = 15 044 octets en jeu (828 libres sur 15 872). Les sauvegardes faites avant le 2026-10-13 (agrandissement du sac) ne sont plus compatibles.
 
 ## Journal
@@ -232,6 +232,11 @@
   - Safari : niveaux 38-42 avec 6 badges, 48-52 avec 7, 53-57 avec 8, 68-72 après la Ligue (zone Starters toujours au niveau 5).
   - Couverture (`coverage.py`) : tient compte de l'évolution des sauvages selon le niveau de leur table ; 984 / 984.
 
+- Étape 5.1 — name box :
+  - Native d'expansion (`include/config/name_box.h`, `setspeaker`). `OW_NAME_BOX_NPC_TRAINER` activé : le nom du dresseur s'affiche sur sa réplique d'avant-combat.
+  - Nom repris des textes : 830 textes d'Émeraude commencent par le nom de celui qui parle (« STEVEN: », « MOM: », « PROF. BIRCH: », « MR. BRINEY: »…). `TryTakeSpeakerFromMessage` (`src/field_message_box.c`) met ce nom dans la name box et l'enlève du texte affiché : majuscules, espaces, points et « & », 12 caractères au plus, suivis de « : » ou « : » (traduction française). Les textes d'origine ne changent pas. Un texte où plusieurs personnes parlent (Lévy et Tatia, ~130 textes) reste comme dans Émeraude ; un message sans nom après un message nommé (objet reçu, narration) n'a pas de name box. « DAD » s'affiche « NORMAN » (`sMessageSpeakerAliases`). Tests : `test/nabla_name_box.c`.
+  - Réapprentissage des capacités d'œuf/tuteur déjà connues : abandonné (il faudrait les mémoriser pour chaque Pokémon, la sauvegarde n'a qu'une vingtaine de bits libres par Pokémon).
+
 ## Bugs connus
 
 | Lieu | Symptôme | Statut |
@@ -279,6 +284,8 @@
 | 2026-10-22 | 4.3 : les niveaux de **tous** les dresseurs ordinaires (sbires compris) seront relevés pour suivre la nouvelle courbe (simple relèvement de niveaux). |
 | 2026-10-23 | 4.3 : un facteur par étape de l'aventure (level cap ÷ Champion d'origine), Route Victoire ×1,40 (calée sur le Conseil 4). Les Pokémon évoluent selon leur nouveau niveau, dresseurs comme sauvages ; évolutions par échange, objet (et les autres qui demandent plus qu'un niveau) au niveau 40. Pokémon fixes non légendaires relevés ; légendaires et cadeaux inchangés ; post-game plus tard (phase 7). |
 | 2026-10-23 | Safari : niveaux autour de 40 avec 6 badges, 50 avec 7, 55 avec 8, 70 après la Ligue. |
+| 2026-10-23 | Name box : nom automatique sur les répliques d'avant-combat des dresseurs et sur les textes qui commencent par « NOM: » (textes d'origine inchangés) ; père affiché « NORMAN ». Noms ajoutés à la main pour les dialogues sans nom : à décider après le test. Résumé inchangé. |
+| 2026-10-23 | Objets d'entraînement (vitamines…) : étape 5.2, valeurs à donner par l'utilisateur. |
 | 2026-10-23 | Nouvelles zones (West Beach, Forêt Émeraude…) : niveaux calés sur les zones qui les entourent. Équilibrage fin (niveaux, puissance des équipes, sets) après la partie complète de l'utilisateur en v1. |
 
 ## Questions ouvertes

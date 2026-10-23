@@ -196,6 +196,8 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 
 ### 5.1 Name box sur les personnages importants, ajustements du résumé
 - **Type** : script + config. Minimal.
+- **Fait** : name box native d'expansion ; nom automatique sur les répliques d'avant-combat de tous les dresseurs (`OW_NAME_BOX_NPC_TRAINER`) ; nom repris automatiquement des 830 textes d'Émeraude qui commencent par « NOM: » (textes d'origine inchangés). Résumé : inchangé (réapprendre seulement les capacités d'œuf/tuteur déjà connues demanderait trop de place dans la sauvegarde).
+- **À décider après le test** : ajouter le nom à la main (`setspeaker`) dans les dialogues des personnages principaux qui n'ont pas de nom dans le texte.
 - 🎮 · 🟢
 
 ---

@@ -127,9 +127,79 @@ bool8 ShowFieldMessageFromBuffer(void)
     return TRUE;
 }
 
+// Pokémon Nabla: a message that starts with the name of who speaks ("STEVEN: Hi!") shows this name in the
+// name box instead, unless several people speak in it. The original texts stay as they are.
+#define MESSAGE_SPEAKER_MAX_LENGTH 12
+
+static EWRAM_DATA u8 sMessageSpeaker[MESSAGE_SPEAKER_MAX_LENGTH + 1] = {0};
+
+// Names shown in the name box under another name than in the texts
+static const struct { const u8 *inText; const u8 *shown; } sMessageSpeakerAliases[] =
+{
+    {COMPOUND_STRING("DAD"), COMPOUND_STRING("NORMAN")},
+};
+
+// Length of the name that starts the message (capital letters, spaces, periods, "&"), followed by ": "
+// or " : "; 0 if there is none
+static u32 GetMessageSpeakerLength(const u8 *str)
+{
+    if (str[0] < CHAR_A || str[0] > CHAR_Z)
+        return 0;
+    for (u32 i = 1; i <= MESSAGE_SPEAKER_MAX_LENGTH; i++)
+    {
+        if (str[i] == CHAR_COLON || (str[i] == CHAR_SPACE && str[i + 1] == CHAR_COLON))
+            return str[i + (str[i] == CHAR_SPACE) + 1] == CHAR_SPACE ? i : 0;
+        if ((str[i] < CHAR_A || str[i] > CHAR_Z) && str[i] != CHAR_SPACE && str[i] != CHAR_PERIOD && str[i] != CHAR_AMPERSAND)
+            return 0;
+    }
+    return 0;
+}
+
+void TryTakeSpeakerFromMessage(u8 *str)
+{
+    u8 speaker[MESSAGE_SPEAKER_MAX_LENGTH + 1];
+    u32 length = GetMessageSpeakerLength(str);
+    bool32 isAutomatic = (gSpeakerName == sMessageSpeaker);
+
+    for (u32 i = 0; length != 0 && str[i] != EOS; i++)
+    {
+        if (str[i] == CHAR_PROMPT_CLEAR && GetMessageSpeakerLength(&str[i + 1]) != 0)
+            length = 0;
+    }
+    if (length == 0)
+    {
+        // A message without a name after a named one: narration
+        if (isAutomatic)
+            gSpeakerName = NULL;
+        return;
+    }
+
+    StringCopyN(speaker, str, length);
+    speaker[length] = EOS;
+    for (u32 i = 0; i < ARRAY_COUNT(sMessageSpeakerAliases); i++)
+    {
+        if (StringCompare(speaker, sMessageSpeakerAliases[i].inText) == 0)
+            StringCopy(speaker, sMessageSpeakerAliases[i].shown);
+    }
+    // A name given by the script or by the trainer's data comes first
+    if (gSpeakerName != NULL && !isAutomatic && StringCompare(gSpeakerName, speaker) != 0)
+        return;
+
+    StringCopy(sMessageSpeaker, speaker);
+    gSpeakerName = sMessageSpeaker;
+    length += (str[length] == CHAR_SPACE) + 2;
+    for (u32 i = 0; ; i++)
+    {
+        str[i] = str[i + length];
+        if (str[i] == EOS)
+            break;
+    }
+}
+
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
     StringExpandPlaceholders(gStringVar4, str);
+    TryTakeSpeakerFromMessage(gStringVar4);
     TrySpawnNamebox(gStringVar4, NAME_BOX_BASE_TILE_NUM);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
