@@ -243,6 +243,17 @@
 - Rencontres du début du jeu (demandes de l'utilisateur) : Route 101 (Zigzaton de jour, Medhyèna de nuit, Chenipotte, Rocabot 5 % et Rocabot Tempo Perso 5 % pour le Lougaroc Crépusculaire), Route 102 (Zigzaton/Medhyèna jour/nuit, Araqua, Tarsal, Nénupiot, Grainipiot, Arakdo), Route 103 (Roucool, Goélise, Passerouge, Étourmi, Minisange), Route 104 (Manglouton et Zigzaton de jour, Rattata d'Alola et Zigzaton de Galar de nuit, Nirondelle, Marill), Route 116 (Pâtachiot), Bois Clémenti (Venipatte), West Beach (herbes 5-8, Surf et pêche comme la Route 103). Tables de nuit `_Night` (Routes 101, 102, 104) ; `scale_levels.py` leur donne les niveaux de la table de jour. Couverture 984 / 984.
 - Rencontres, 2e lot (zones entre le 1er et le 2e badge) : Tunnel Mérazon (Coupenotte, Griknot, Embrylex, Terhal, Solochi, 20 % chacun), Grotte Granite à tous les étages (Galekid 30, Ténéfix 20, Charbi 20, Chovsourir 15, Nodulithe 15), pêche des Routes 106 (Barpau 60 / Magicarpe 40) et 107 (Embrochet 60 / Magicarpe 40) et de Myokara (Qwilfish de Hisui 70 / Bargantua motif rouge 30). Approximations dues aux emplacements : Canne 70/30 au lieu de 60/40 ; Myokara Super Canne 80/20 et Méga Canne 60/40 (70/30 en moyenne). Surf et Éclate-Roc inchangés. Méga Canne de la Route 106 : 5 % de Milobellus (Barpau de niveau 40+). Couverture 984 / 984.
 - Rencontres, 3e lot (zones entre le 2e et le 3e badge) : Route 110 (Dynavolt 20, Zorua 20, Gloupti 15, Zorua de Hisui 15, Négapi 10, Posipi 10, Mystherbe 10), Route 117 (Motorizard 30, Zébibron 20, Hélionceau 20, Muciole 15, Lumivole 15), pêche à 100 % : Minidraco (Route 109), Barloche (Route 111), Sinistrail (Poivressel), Écrapince (Route 118) ; Éclate-Roc de la Route 111 : Selutin. Surf inchangé. Couverture 984 / 984.
+- Rencontres, 4e lot (zones entre le 3e et le 4e badge) :
+  - Chemin Ardent : Chamallot 30, Charbambin 20, Pyronille 20, Caninos de Hisui 15, Limagma 10, Chartor 5.
+  - Chutes Météore (toutes les salles, Grotte de Pierre comprise) : Météno 30 (rouge), Lewsor 20, Draby 20, Germéclat 20, Solaroc 10 de jour / Séléroc 10 de nuit ; Surf : Nigirigon (Courbé 60, Affalé 30, Raide 10). Pêche inchangée. Après la cascade (niveaux 46-56) et dans la Grotte de Pierre (33-40), les Pokémon évoluent selon leur niveau : Drackhaus, Floréclat, Neitram (49+).
+  - Sentier Sinuroc : Ponyta 20, Wagomine 20, Vostourno 15, Magmar 15, Kangourex 10, Spinda 10, Ossatueur d'Alola 10.
+  - Route 112 : Évoli 30, Chamallot 25, Pohm 15 (« pawm » ; Pohmotte au niveau 19), Frison 15, Tiboudet 15.
+  - Route 113 : Pimito 30, Malosse 20, Darumarond 20, Héliatronc 15, Airmure 15.
+  - Route 114 : Tylton 30, Scorplane 20, Mangriff de jour / Seviper de nuit 15 (nouvelle table `_Night`), Lestombaile 15, Bébécaille 10, Férosinge 10. Surf, Éclate-Roc et pêche inchangés.
+  - Route 115 : Doudouvet 30, Lixy 20 (Luxio en jeu), Flingouste 15, Sepiatop 15, Ramoloss 10, Toutombe 10 (Tomberro la nuit au niveau 30). Approximation : Lixy et Toutombe demandés à 15/15, impossible avec deux emplacements à 20 %. Surf et pêche inchangés.
+  - Correction du lot 1 : Manglouton est Yungoos (Route 104), pas Skwovet.
+  - Couverture 982 / 984 : Spoink et Groret n'ont plus de source (ils n'étaient qu'au Sentier Sinuroc), à placer.
+- Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
 
 ## Bugs connus
@@ -297,6 +308,7 @@
 | 2026-10-23 | Vitamines : +32 EV chacune, 5 000 ₽. |
 | 2026-10-25 | Rencontres : l'utilisateur envoie ses changements par zone (pourcentages, jour/nuit) ; Claude les traduit en emplacements. Premier lot : zones d'avant le 1er badge. Niveaux un peu relevés plus tard, après la partie de test de l'utilisateur. |
 | 2026-10-23 | Nouvelles zones (West Beach, Forêt Émeraude…) : niveaux calés sur les zones qui les entourent. Équilibrage fin (niveaux, puissance des équipes, sets) après la partie complète de l'utilisateur en v1. |
+| 2026-10-25 | Objets d'évolution vendus aussi au marché de Poivressel (dès le 2e badge), par un vendeur ajouté sous une tente vide plutôt qu'en remplaçant un personnage d'origine. |
 
 ## Questions ouvertes
 

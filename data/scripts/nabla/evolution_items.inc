@@ -1,5 +1,5 @@
-@ Lilycove Department Store 3F clerk selling the evolution items: stones, items that replace
-@ trade evolutions, and items of later regions (see docs/nabla/couverture.md).
+@ Clerks selling the evolution items (Lilycove Department Store 3F, Slateport market): stones, items
+@ that replace trade evolutions, and items of later regions (see docs/nabla/couverture.md).
 Nabla_EventScript_EvolutionItemsClerk::
 	lock
 	faceplayer

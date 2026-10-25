@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 3e badge (lots 1 à 3). Prochaine chose : je t'envoie le lot de rencontres des zones entre le 3e et le 4e badge, même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 4e badge (lots 1 à 4), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 4e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
 
 ## Où on en est
 
@@ -20,7 +20,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 1 : avant le 1er badge ;
   - lot 2 : 1er → 2e badge ;
   - lot 3 : 2e → 3e badge ;
-  - **lot 4 (3e → 4e badge) attendu**.
+  - lot 4 : 3e → 4e badge (Chemin Ardent, Chutes Météore, Sentier Sinuroc, Routes 112 à 115) ;
+  - **lot 5 (après le 4e badge) attendu** ;
+  - **Spoink et Groret sans source** depuis le lot 4 (couverture 982 / 984) : à placer dans un prochain lot.
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -96,24 +98,26 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
-| Rencontres | Lots 1 à 3 (zones jusqu'au 3e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Rencontres | Lots 1 à 4 (zones jusqu'au 4e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
 
 ## En attente côté utilisateur
 
-- **Lot 4 de rencontres** (zones entre le 3e et le 4e badge : Routes 111-114, Mont Chimnée, Chemin Cendré/Jagged Pass, Chemin Ardent/Fiery Path, Chutes Météore 1F, Route 115, New Mauville…). Il l'envoie en message ou en fichier texte.
+- **Lot 5 de rencontres** (zones après le 4e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink (et donc Groret), sans source depuis le lot 4.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
   - 4.3 niveaux ;
   - 5.2 (Super Bonbons ×N, Potions ×N, vitamines ×N ; menus en boucle) ;
-  - inscriptions de Tutétékri (Route 111).
+  - inscriptions de Tutétékri (Route 111) ;
+  - vendeur d'objets d'évolution du marché de Poivressel.
 - **Décision ouverte** : ajouter le nom à la main (`setspeaker`) dans les dialogues sans nom des personnages principaux (Pierre dans la Grotte Granite…).
 - **West Beach** : il ajoutera des objets plus tard, et peut-être un événement pour y attirer le joueur (un dresseur qui propose un échange contre un Pokémon de West Beach).
 - Il retouchera parfois des maps dans Porymap (et préviendra).
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (3e → 4e badge, puis la suite), au fil de ses envois.
+1. **Lots de rencontres** suivants (après le 4e badge), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
    - Forêt Émeraude au sud du Mont Mémoria. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
@@ -128,7 +132,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Français | Constante | Français | Constante | Français | Constante |
 |---|---|---|---|---|---|
 | Rocabot (Tempo Perso) | ROCKRUFF (_OWN_TEMPO) | Araqua | DEWPIDER | Passerouge | FLETCHLING |
-| Étourmi | STARLY | Minisange | ROOKIDEE | Manglouton | SKWOVET |
+| Étourmi | STARLY | Minisange | ROOKIDEE | Manglouton | YUNGOOS |
 | Pâtachiot | FIDOUGH | Venipatte | VENIPEDE | Taupikeau | WIGLETT |
 | Concombaffe | PYUKUMUKU | Bacabouh | SANDYGAST | Babimanta | MANTYKE |
 | Flingouste | CLAUNCHER | Crabicoque | DWEBBLE | Vorastérie | MAREANIE |
@@ -141,6 +145,19 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Barloche | BARBOACH | Zébibron | BLITZLE | Hélionceau | LITLEO |
 | Motorizard | CYCLIZAR | Sinistrail | DHELMISE | Écrapince | CLOBBOPUS |
 | Barpau | FEEBAS | Medhyèna | POOCHYENA | Zigzaton | ZIGZAGOON |
+| Chamallot | NUMEL | Limagma | SLUGMA | Chartor | TORKOAL |
+| Charbambin | CHARCADET | Caninos de Hisui | GROWLITHE_HISUI | Pyronille | LARVESTA |
+| Séléroc | LUNATONE | Solaroc | SOLROCK | Lewsor | ELGYEM |
+| Météno | MINIOR | Draby | BAGON | Germéclat | GLIMMET |
+| Nigirigon | TATSUGIRI (_CURLY, _DROOPY, _STRETCHY) | Kangourex | KANGASKHAN | Ossatueur d'Alola | MAROWAK_ALOLA |
+| Wagomine | CARKOL | Vostourno | VULLABY | Évoli | EEVEE |
+| Pohm (« pawm ») | PAWMI | Frison | BOUFFALANT | Tiboudet | MUDBRAY |
+| Malosse | HOUNDOUR | Darumarond | DARUMAKA | Pimito | CAPSAKID |
+| Héliatronc | SUNFLORA | Airmure | SKARMORY | Tylton | SWABLU |
+| Mangriff | ZANGOOSE | Scorplane | GLIGAR | Lestombaile | BOMBIRDIER |
+| Bébécaille | JANGMO_O | Férosinge | MANKEY | Doudouvet | COTTONEE |
+| Lixy | SHINX | Sepiatop | INKAY | Toutombe | GREAVARD |
+| Ramoloss | SLOWPOKE | Spoink | SPOINK | Groret | GRUMPIG |
 
 Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIGZAGOON_GALAR, ZORUA_HISUI, QWILFISH_HISUI). En cas de doute sur un nom, vérifier dans `include/constants/species.h` et demander plutôt que deviner.
 
