@@ -43,7 +43,7 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Wailmer 60 % (30-55) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (36-43)
 
 ### Route 104
-- **Herbes** : Skwovet 40 % (4) · Taillow 20 % (5) · Zigzagoon 20 % (4-5) · Marill 20 % (3-5) — *changé : +Skwovet, +Zigzagoon, −Poochyena, −Wingull, −Wurmple*
+- **Herbes** : Yungoos 40 % (4) · Taillow 20 % (5) · Zigzagoon 20 % (4-5) · Marill 20 % (3-5) — *changé : +Yungoos, +Zigzagoon, −Poochyena, −Wingull, −Wurmple*
 - **Surf** : Wingull 95 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Magikarp 100 % (5-11)
 - **Super Canne** : Magikarp 100 % (12-37) → en jeu : Gyarados (selon le niveau)
@@ -124,21 +124,21 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ## 3e → 4e badge
 
 ### Fiery Path
-- **Herbes** : Numel 30 % (18-19) · Koffing 25 % (18-19) · Torkoal 18 % (16-19) · Machop 15 % (18-19) · Slugma 10 % (18) · Grimer 2 % (16)
+- **Herbes** : Numel 30 % (18-19) · Charcadet 20 % (18) · Larvesta 20 % (18) · Growlithe-Hisui 15 % (18-19) · Slugma 10 % (16-19) · Torkoal 5 % (16-19) — *changé : +Charcadet, +Growlithe-Hisui, +Larvesta, −Grimer, −Koffing, −Machop*
 
 ### Jagged Pass
-- **Herbes** : Numel 55 % (23-26) · Machop 25 % (23-26) · Spoink 20 % (23-26)
+- **Herbes** : Ponyta 20 % (25) · Carkol 20 % (25) · Vullaby 15 % (25) · Magmar 15 % (23-26) · Kangaskhan 10 % (23) · Spinda 10 % (23) · Marowak-Alola 10 % (26) — *changé : +Carkol, +Kangaskhan, +Magmar, +Marowak-Alola, +Ponyta, +Spinda, +Vullaby, −Machop, −Numel, −Spoink*
 
 ### Meteor Falls 1F 1R
-- **Herbes** : Zubat 80 % (16-23) → en jeu : Golbat (selon le niveau) · Solrock 20 % (16-21)
-- **Surf** : Zubat 90 % (6-43) → en jeu : Crobat, Golbat (selon le niveau) · Solrock 10 % (6-43)
+- **Herbes** : Minior 30 % (19-21) · Elgyem 20 % (20) · Bagon 20 % (16-18) · Glimmet 20 % (16-21) · Solrock 10 % (22-23) — *changé : +Bagon, +Elgyem, +Glimmet, +Minior, −Zubat*
+- **Surf** : Tatsugiri-Curly 60 % (6-43) · Tatsugiri-Droopy 30 % (37-43) · Tatsugiri-Stretchy 10 % (6-43) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Solrock, −Zubat*
 - **Canne** : Magikarp 70 % (6-12) · Goldeen 30 % (6-12)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (12-37) → en jeu : Seaking (selon le niveau) · Barboach 20 % (12-37) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 100 % (24-55) → en jeu : Whiscash (selon le niveau)
 
 ### Meteor Falls 1F 1R (nuit)
-- **Herbes** : Zubat 80 % (16-23) → en jeu : Golbat (selon le niveau) · Lunatone 20 % (16-21) — *changé : +Lunatone, −Solrock*
-- **Surf** : Zubat 90 % (6-43) → en jeu : Crobat, Golbat (selon le niveau) · Lunatone 10 % (6-43) — *changé : +Lunatone, −Solrock*
+- **Herbes** : Minior 30 % (19-21) · Elgyem 20 % (20) · Bagon 20 % (16-18) · Glimmet 20 % (16-21) · Lunatone 10 % (22-23) — *changé : +Bagon, +Elgyem, +Glimmet, +Lunatone, +Minior, −Solrock, −Zubat*
+- **Surf** : Tatsugiri-Curly 60 % (6-43) · Tatsugiri-Droopy 30 % (37-43) · Tatsugiri-Stretchy 10 % (6-43) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Solrock, −Zubat*
 
 ### New Mauville Entrance
 - **Herbes** : Voltorb 50 % (26-30) → en jeu : Electrode (selon le niveau) · Magnemite 50 % (26-30) → en jeu : Magneton (selon le niveau)
@@ -147,21 +147,24 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Herbes** : Voltorb 49 % (26-30) → en jeu : Electrode (selon le niveau) · Magnemite 49 % (26-30) → en jeu : Magneton (selon le niveau) · Electrode 1 % (30) · Magneton 1 % (30)
 
 ### Route 112
-- **Herbes** : Numel 75 % (16-19) · Marill 25 % (16-19) → en jeu : Azumarill (selon le niveau)
+- **Herbes** : Eevee 30 % (18) · Numel 25 % (18-19) · Pawmi 15 % (16-19) → en jeu : Pawmo (selon le niveau) · Bouffalant 15 % (16-19) · Mudbray 15 % (16-19) — *changé : +Bouffalant, +Eevee, +Mudbray, +Pawmi, −Marill*
 
 ### Route 113
-- **Herbes** : Spinda 70 % (16-19) · Slugma 25 % (16-19) · Skarmory 5 % (19)
+- **Herbes** : Capsakid 30 % (18) · Houndour 20 % (18) · Darumaka 20 % (16) · Sunflora 15 % (16-19) · Skarmory 15 % (19) — *changé : +Capsakid, +Darumaka, +Houndour, +Sunflora, −Slugma, −Spinda*
 
 ### Route 114
-- **Herbes** : Swablu 40 % (18-20) · Lotad 30 % (18-19) → en jeu : Lombre · Lombre 20 % (19-21) · Seviper 5 % (20) · Zangoose 4 % (18) · Nuzleaf 1 % (18) — *changé : +Zangoose*
+- **Herbes** : Swablu 30 % (19-20) · Gligar 20 % (19) · Zangoose 15 % (18-19) · Bombirdier 15 % (18-21) · Jangmo-O 10 % (19) · Mankey 10 % (18-20) — *changé : +Bombirdier, +Gligar, +Jangmo-O, +Mankey, +Zangoose, −Lombre, −Lotad, −Nuzleaf, −Seviper*
 - **Surf** : Marill 99 % (6-43) → en jeu : Azumarill (selon le niveau) · Goldeen 1 % (25-37) → en jeu : Seaking (selon le niveau)
 - **Éclate-Roc** : Geodude 100 % (6-23)
 - **Canne** : Magikarp 70 % (6-12) · Goldeen 30 % (6-12)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (12-37) → en jeu : Seaking (selon le niveau) · Barboach 20 % (12-37) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 100 % (24-55) → en jeu : Whiscash (selon le niveau)
 
+### Route 114 (nuit)
+- **Herbes** : Swablu 30 % (19-20) · Gligar 20 % (19) · Seviper 15 % (18-19) · Bombirdier 15 % (18-21) · Jangmo-O 10 % (19) · Mankey 10 % (18-20) — *changé : +Bombirdier, +Gligar, +Jangmo-O, +Mankey, −Lombre, −Lotad, −Nuzleaf*
+
 ### Route 115
-- **Herbes** : Taillow 40 % (27-29) → en jeu : Swellow · Swablu 30 % (27-29) · Swellow 10 % (29) · Jigglypuff 10 % (28-29) · Wingull 10 % (28-30) → en jeu : Pelipper
+- **Herbes** : Cottonee 30 % (27-29) · Shinx 20 % (27) → en jeu : Luxio · Clauncher 15 % (28) · Inkay 15 % (29) · Slowpoke 10 % (29) · Greavard 10 % (28-30) → en jeu : Houndstone (selon le niveau) — *changé : +Clauncher, +Cottonee, +Greavard, +Inkay, +Shinx, +Slowpoke, −Jigglypuff, −Swablu, −Swellow, −Taillow, −Wingull*
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
@@ -488,37 +491,37 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Wailmer 45 % (42-63) → en jeu : Wailord · Luvdisc 40 % (42-49) · Corsola 15 % (42-49)
 
 ### Meteor Falls 1F 2R
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Solrock 35 % (46-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Solrock 10 % (7-49)
+- **Herbes** : Minior 30 % (46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (46-49) → en jeu : Shelgon · Glimmet 20 % (49-55) → en jeu : Glimmora · Solrock 10 % (53-56) — *changé : +Bagon, +Elgyem, +Glimmet, +Minior, −Golbat*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 - **Canne** : Magikarp 70 % (7-14) · Goldeen 30 % (7-14)
 - **Super Canne** : Magikarp 60 % (14-42) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (14-42) → en jeu : Seaking (selon le niveau) · Barboach 20 % (14-42) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls 1F 2R (nuit)
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55) — *changé : +Lunatone, −Solrock*
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
+- **Herbes** : Minior 30 % (46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (46-49) → en jeu : Shelgon · Glimmet 20 % (49-55) → en jeu : Glimmora · Lunatone 10 % (53-56) — *changé : +Bagon, +Elgyem, +Glimmet, +Lunatone, +Minior, −Golbat, −Solrock*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 
 ### Meteor Falls B1F 1R
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Solrock 35 % (46-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Solrock 10 % (7-49)
+- **Herbes** : Minior 30 % (46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (46-49) → en jeu : Shelgon · Glimmet 20 % (49-55) → en jeu : Glimmora · Solrock 10 % (53-56) — *changé : +Bagon, +Elgyem, +Glimmet, +Minior, −Golbat*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 - **Canne** : Magikarp 70 % (7-14) · Goldeen 30 % (7-14)
 - **Super Canne** : Magikarp 60 % (14-42) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (14-42) → en jeu : Seaking (selon le niveau) · Barboach 20 % (14-42) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls B1F 1R (nuit)
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55) — *changé : +Lunatone, −Solrock*
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
+- **Herbes** : Minior 30 % (46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (46-49) → en jeu : Shelgon · Glimmet 20 % (49-55) → en jeu : Glimmora · Lunatone 10 % (53-56) — *changé : +Bagon, +Elgyem, +Glimmet, +Lunatone, +Minior, −Golbat, −Solrock*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 
 ### Meteor Falls B1F 2R
-- **Herbes** : Golbat 50 % (46-56) → en jeu : Crobat · Bagon 25 % (35-49) → en jeu : Shelgon · Solrock 25 % (49-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Solrock 10 % (7-49)
+- **Herbes** : Minior 30 % (42-46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (49) → en jeu : Shelgon · Glimmet 20 % (35-55) → en jeu : Glimmora · Solrock 10 % (53-56) — *changé : +Elgyem, +Glimmet, +Minior, −Golbat*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 - **Canne** : Magikarp 70 % (7-14) · Goldeen 30 % (7-14)
 - **Super Canne** : Magikarp 60 % (14-42) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (14-42) → en jeu : Seaking (selon le niveau) · Barboach 20 % (14-42) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls B1F 2R (nuit)
-- **Herbes** : Golbat 50 % (46-56) → en jeu : Crobat · Bagon 25 % (35-49) → en jeu : Shelgon · Lunatone 25 % (49-55) — *changé : +Lunatone, −Solrock*
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
+- **Herbes** : Minior 30 % (42-46) · Elgyem 20 % (49) → en jeu : Beheeyem · Bagon 20 % (49) → en jeu : Shelgon · Glimmet 20 % (35-55) → en jeu : Glimmora · Lunatone 10 % (53-56) — *changé : +Elgyem, +Glimmet, +Lunatone, +Minior, −Golbat, −Solrock*
+- **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 
 ### Victory Road 1F
 - **Herbes** : Golbat 25 % (53-56) → en jeu : Crobat · Hariyama 25 % (53-56) · Lairon 10 % (56) → en jeu : Aggron · Loudred 10 % (56) → en jeu : Exploud · Zubat 10 % (50) → en jeu : Crobat · Makuhita 10 % (50) → en jeu : Hariyama · Aron 5 % (50) → en jeu : Aggron · Whismur 5 % (50) → en jeu : Exploud
@@ -573,10 +576,10 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Herbes** : Ditto 50 % (38-45) · Whismur 34 % (35-38) → en jeu : Loudred · Loudred 16 % (38-44) → en jeu : Exploud (selon le niveau)
 
 ### Meteor Falls Stevens Cave
-- **Herbes** : Golbat 65 % (33-40) → en jeu : Crobat (selon le niveau) · Solrock 35 % (33-39)
+- **Herbes** : Minior 30 % (33) · Elgyem 20 % (35) · Bagon 20 % (33-35) → en jeu : Shelgon · Glimmet 20 % (35-39) → en jeu : Glimmora · Solrock 10 % (38-40) — *changé : +Bagon, +Elgyem, +Glimmet, +Minior, −Golbat*
 
 ### Meteor Falls Stevens Cave (nuit)
-- **Herbes** : Golbat 65 % (33-40) → en jeu : Crobat (selon le niveau) · Lunatone 35 % (33-39) — *changé : +Lunatone, −Solrock*
+- **Herbes** : Minior 30 % (33) · Elgyem 20 % (35) · Bagon 20 % (33-35) → en jeu : Shelgon · Glimmet 20 % (35-39) → en jeu : Glimmora · Lunatone 10 % (38-40) — *changé : +Bagon, +Elgyem, +Glimmet, +Lunatone, +Minior, −Golbat, −Solrock*
 
 ### Nabla West Beach
 - *Table ajoutée par Nabla.*
