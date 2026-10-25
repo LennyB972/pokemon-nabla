@@ -3,13 +3,15 @@
 Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosmétiques comprises) est obtenable si on
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
-- **Espèces obtenables** : 982 / 984 hors légendaires et fabuleux.
+- **Espèces obtenables** : 980 / 984 hors légendaires et fabuleux.
 - **Légendaires et fabuleux** : 8 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
 - Spoink : aucune source
 - Grumpig : aucune source
+- Cacnea : aucune source
+- Cacturne : aucune source
 
 ## Légendaires et fabuleux obtenables
 
@@ -57,7 +59,7 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Poke Ball | boutique ou script (LilycoveCity_DepartmentStore_2F) |
 | Prism Scale | boutique ou script (evolution_items.inc) |
 | Protector | boutique ou script (evolution_items.inc) |
-| Razor Claw | tenu par Hakamo_O sauvage |
+| Razor Claw | tenu par Kommo_O sauvage |
 | Razor Fang | tenu par Bruxish sauvage |
 | Reaper Cloth | boutique ou script (evolution_items.inc) |
 | Ribbon Sweet | boutique ou script (evolution_items.inc) |

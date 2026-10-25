@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 4e badge (lots 1 à 4), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 4e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 5e badge (lots 1 à 5), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 5e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
 
 ## Où on en est
 
@@ -21,8 +21,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 2 : 1er → 2e badge ;
   - lot 3 : 2e → 3e badge ;
   - lot 4 : 3e → 4e badge (Chemin Ardent, Chutes Météore, Sentier Sinuroc, Routes 112 à 115) ;
-  - **lot 5 (après le 4e badge) attendu** ;
-  - **Spoink et Groret sans source** depuis le lot 4 (couverture 982 / 984) : à placer dans un prochain lot.
+  - lot 5 : 4e → 5e badge (désert de la Route 111, Tour Mirage) ;
+  - **lot 6 (après le 5e badge) attendu** ;
+  - **Spoink, Groret, Cacnea et Cacturne sans source** depuis les lots 4 et 5 (couverture 980 / 984) : à placer dans un prochain lot.
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -98,12 +99,12 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
-| Rencontres | Lots 1 à 4 (zones jusqu'au 4e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Rencontres | Lots 1 à 5 (zones jusqu'au 5e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
 
 ## En attente côté utilisateur
 
-- **Lot 5 de rencontres** (zones après le 4e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink (et donc Groret), sans source depuis le lot 4.
+- **Lot 6 de rencontres** (zones après le 5e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink et Cacnea (et donc Groret et Cacturne), sans source depuis les lots 4 et 5.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -117,7 +118,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (après le 4e badge), au fil de ses envois.
+1. **Lots de rencontres** suivants (après le 5e badge), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
    - Forêt Émeraude au sud du Mont Mémoria. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
@@ -158,6 +159,10 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Bébécaille | JANGMO_O | Férosinge | MANKEY | Doudouvet | COTTONEE |
 | Lixy | SHINX | Sepiatop | INKAY | Toutombe | GREAVARD |
 | Ramoloss | SLOWPOKE | Spoink | SPOINK | Groret | GRUMPIG |
+| Kraknoix | TRAPINCH | Dunaja | SILICOBRA | Sabelette | SANDSHREW |
+| Mascaïman | SANDILE | Virovent | BRAMBLIN | Tutafeh | YAMASK |
+| Balbuto | BALTOY | Archéomire | BRONZOR | Gringolem | GOLETT |
+| Monorpale | HONEDGE | Cacnea | CACNEA | Cacturne | CACTURNE |
 
 Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIGZAGOON_GALAR, ZORUA_HISUI, QWILFISH_HISUI). En cas de doute sur un nom, vérifier dans `include/constants/species.h` et demander plutôt que deviner.
 

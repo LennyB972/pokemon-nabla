@@ -101,7 +101,7 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
 
 ### Route 111
-- **Herbes** : Sandshrew 35 % (21-24) → en jeu : Sandslash (selon le niveau) · Trapinch 35 % (21-24) · Baltoy 24 % (21-24) · Cacnea 6 % (23-25)
+- **Herbes** : Trapinch 30 % (23-24) · Hippopotas 20 % (23) · Sandile 15 % (21-24) · Sandshrew 15 % (21) · Silicobra 10 % (24) · Bramblin 10 % (23-25) — *changé : +Bramblin, +Hippopotas, +Sandile, +Silicobra, −Baltoy, −Cacnea*
 - **Surf** : Marill 99 % (6-43) → en jeu : Azumarill (selon le niveau) · Goldeen 1 % (25-37) → en jeu : Seaking (selon le niveau)
 - **Éclate-Roc** : Nacli 100 % (6-23) — *changé : +Nacli, −Geodude*
 - **Canne** : Barboach 100 % (6-11) — *changé : +Barboach, −Goldeen, −Magikarp*
@@ -173,16 +173,16 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ## 4e → 5e badge
 
 ### Mirage Tower 1F
-- **Herbes** : Sandshrew 50 % (23-27) → en jeu : Sandslash · Trapinch 50 % (23-27)
+- **Herbes** : Yamask 20 % (24) · Baltoy 20 % (24) · Bronzor 20 % (23) · Golett 20 % (23) · Honedge 20 % (25-27) — *changé : +Baltoy, +Bronzor, +Golett, +Honedge, +Yamask, −Sandshrew, −Trapinch*
 
 ### Mirage Tower 2F
-- **Herbes** : Sandshrew 50 % (23-27) → en jeu : Sandslash · Trapinch 50 % (23-27)
+- **Herbes** : Yamask 20 % (24) · Baltoy 20 % (24) · Bronzor 20 % (23) · Golett 20 % (23) · Honedge 20 % (25-27) — *changé : +Baltoy, +Bronzor, +Golett, +Honedge, +Yamask, −Sandshrew, −Trapinch*
 
 ### Mirage Tower 3F
-- **Herbes** : Sandshrew 50 % (23-27) → en jeu : Sandslash · Trapinch 50 % (23-27)
+- **Herbes** : Yamask 20 % (24) · Baltoy 20 % (24) · Bronzor 20 % (23) · Golett 20 % (23) · Honedge 20 % (25-27) — *changé : +Baltoy, +Bronzor, +Golett, +Honedge, +Yamask, −Sandshrew, −Trapinch*
 
 ### Mirage Tower 4F
-- **Herbes** : Sandshrew 50 % (23-27) → en jeu : Sandslash · Trapinch 50 % (23-27)
+- **Herbes** : Yamask 20 % (24) · Baltoy 20 % (24) · Bronzor 20 % (23) · Golett 20 % (23) · Honedge 20 % (25-27) — *changé : +Baltoy, +Bronzor, +Golett, +Honedge, +Yamask, −Sandshrew, −Trapinch*
 
 ## 5e → 6e badge
 
