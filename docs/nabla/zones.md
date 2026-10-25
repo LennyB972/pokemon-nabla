@@ -4,7 +4,7 @@
 
 | Zone | Map | Accès | Carte de la région | Contenu |
 |---|---|---|---|---|
-| WEST BEACH (Plage de l'Ouest) | `NablaWestBeach` (30 × 26) | Route 115 : bande de sable vers l'ouest au sud de la route (connexion est ↔ ouest, sans Surf) | case du bas de la route 115 (`MAPSEC_NABLA_WEST_BEACH`) | v2 (avant le 1er badge) : grande plage de sable, îlots d'herbe aux bords arrondis avec hautes herbes, mer à l'ouest bordée de rochers (pas de mur invisible), arbres au nord et au sud, dômes de rochers aux coins, liseré de plage à l'est qui prolonge la côte de la Route 115. Herbes 5-8 : Taupikeau, Crabicoque, Concombaffe, Bacabouh, Krabby, Babimanta, Flingouste, Stari ; Surf et pêche : Vorastérie, Tentacool |
+| WEST BEACH (Plage de l'Ouest) | `NablaWestBeach` (30 × 26) | Route 115 : bande de sable vers l'ouest au sud de la route (connexion est ↔ ouest, sans Surf) | case du bas de la route 115 (`MAPSEC_NABLA_WEST_BEACH`) | v2 (avant le 1er badge) : grande plage de sable entourée par la mer au nord, à l'ouest et au sud (rivage arrondi, rangée de rochers dans l'eau au bord de la carte : pas de mur invisible), îlots d'herbe aux bords arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est qui prolonge la côte de la Route 115. Herbes 5-8 : Taupikeau, Crabicoque, Concombaffe, Bacabouh, Krabby, Babimanta, Flingouste, Stari ; Surf et pêche : Vorastérie, Tentacool |
 
 ## Créer une zone
 
@@ -28,5 +28,6 @@ Porymap réécrit à sa façon certains fichiers qu'il enregistre (ordre des cl�
 - Herbe dans le sable : bords `118 119 11a / 120 122 / 128 129 12a` posés sur le sable ; là où l'herbe ne touche qu'en diagonale, sable plein `124` (comme sur la Route 118). Pas de bloc pour une case de sable entre deux herbes opposées : laisser au moins 2 cases de sable entre deux zones d'herbe.
 - Hautes herbes `d` entourées d'herbe `1`. Le bloc `e` n'est pas une frange d'herbe mais le haut d'un petit arbre : ne pas l'utiliser seul.
 - Arbre rond (2 × 3) : `1ce 1cf / 1d6 1d7 / 1e6 1e7` ; empilés : `1dc 1dd` et `1d4 1d5` entre les deux. Dôme de rocher sur le sable (3 × 3) : `80 81 82 / 88 71 8a / 90 79 92`. Rocher dans l'eau (2 × 2) : `150 151 / 158 159`. Petit rocher : `e2` (sable), `e0` (herbe). Fleurs : `4`.
-- Bords de la carte : aucune case accessible ne doit toucher le bord sans connexion (mur invisible) ; border la mer de rochers, fermer les coins par des rochers ou des arbres.
+- Bords de la carte : aucune case accessible ne doit toucher le bord sans connexion (mur invisible) ; border la mer d'une rangée de rochers. Hors de la carte, c'est le bloc de bordure (ici la mer) : faire descendre la plage jusqu'à l'eau plutôt que d'arrêter une ligne d'arbres net contre la mer.
+- Les dômes ont des coins de sable : les entourer de sable de tous les côtés (sinon, angles jaunes contre l'eau ou l'herbe).
 - Valeurs des blocs (collision, hauteur) : reprendre celles des maps d'Émeraude (valeur la plus fréquente de chaque bloc).
