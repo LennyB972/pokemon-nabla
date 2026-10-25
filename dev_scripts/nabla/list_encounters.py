@@ -96,7 +96,7 @@ def main():
         name = map_name(folder) + (" (nuit)" if label.endswith("_Night") else "")
         if folder == "AlteringCave":
             name += " (table %s)" % re.search(r"(\d+)$", label).group(1)
-        before = original.get(label)
+        before = original.get(label) or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None)
         lines.append("### " + name)
         if before is None:
             lines.append("- *Table ajoutée par Nabla.*")

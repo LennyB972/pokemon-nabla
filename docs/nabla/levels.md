@@ -995,15 +995,18 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | Map | Table | Zone | Avant | Après |
 |---|---|---|---|---|
 | Route101 | `gRoute101` | herbes | 2-3 | 2-3 |
+| Route101 | `gRoute101_Night` | herbes | 2-3 | 2-3 |
 | Route102 | `gRoute102` | herbes | 3-4 | 3-4 |
 | Route102 | `gRoute102` | Surf | 5-35 | 6-43 |
 | Route102 | `gRoute102` | pêche | 5-45 | 5-55 |
+| Route102 | `gRoute102_Night` | herbes | 3-4 | 3-4 |
 | Route103 | `gRoute103` | herbes | 2-4 | 2-4 |
 | Route103 | `gRoute103` | Surf | 5-35 | 6-43 |
 | Route103 | `gRoute103` | pêche | 5-45 | 5-55 |
 | Route104 | `gRoute104` | herbes | 3-5 | 3-5 |
 | Route104 | `gRoute104` | Surf | 10-30 | 12-37 |
 | Route104 | `gRoute104` | pêche | 5-45 | 5-55 |
+| Route104 | `gRoute104_Night` | herbes | 3-5 | 3-5 |
 | Route105 | `gRoute105` | Surf | 5-35 | 6-43 |
 | Route105 | `gRoute105` | pêche | 5-45 | 6-55 |
 | Route110 | `gRoute110` | herbes | 12-13 | 14-15 |

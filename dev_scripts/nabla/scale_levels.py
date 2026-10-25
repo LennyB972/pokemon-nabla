@@ -302,7 +302,8 @@ def scale_wild(report):
         part = map_part(folders[e["map"]])
         if part is None:
             continue
-        before = original.get(label)
+        # A night table added after step 4.1 has the levels of the day table of its map
+        before = original.get(label) or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None)
         for area, table in e.items():
             if not area.endswith("_mons"):
                 continue

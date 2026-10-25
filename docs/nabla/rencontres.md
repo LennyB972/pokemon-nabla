@@ -17,34 +17,43 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Corphish 100 % (24-55) → en jeu : Crawdaunt (selon le niveau)
 
 ### Petalburg Woods
-- **Herbes** : Poochyena 30 % (5-6) · Wurmple 25 % (5-6) · Shroomish 15 % (5-6) · Silcoon 10 % (5) · Cascoon 10 % (5) · Taillow 5 % (5-6) · Slakoth 5 % (5-6)
+- **Herbes** : Venipede 30 % (5-6) · Wurmple 25 % (5-6) · Shroomish 15 % (5-6) · Silcoon 10 % (5) · Cascoon 10 % (5) · Taillow 5 % (5-6) · Slakoth 5 % (5-6) — *changé : +Venipede, −Poochyena*
 
 ### Route 101
-- **Herbes** : Wurmple 45 % (2-3) · Poochyena 45 % (2-3) · Zigzagoon 10 % (2-3)
+- **Herbes** : Zigzagoon 45 % (2-3) · Wurmple 45 % (2-3) · Rockruff 5 % (3) · Rockruff-Own-Tempo 5 % (3) — *changé : +Rockruff, +Rockruff-Own-Tempo, −Poochyena*
+
+### Route 101 (nuit)
+- **Herbes** : Poochyena 45 % (2-3) · Wurmple 45 % (2-3) · Rockruff 5 % (3) · Rockruff-Own-Tempo 5 % (3) — *changé : +Rockruff, +Rockruff-Own-Tempo, −Zigzagoon*
 
 ### Route 102
-- **Herbes** : Poochyena 30 % (3-4) · Wurmple 30 % (3-4) · Lotad 20 % (3-4) · Zigzagoon 14 % (3-4) · Ralts 4 % (4) · Surskit 1 % (4) · Seedot 1 % (3) — *changé : +Surskit*
+- **Herbes** : Zigzagoon 30 % (3-4) · Dewpider 30 % (3-4) · Ralts 10 % (3) · Lotad 10 % (4) · Seedot 10 % (3) · Surskit 10 % (3-4) — *changé : +Dewpider, +Surskit, −Poochyena, −Wurmple*
 - **Surf** : Marill 99 % (6-43) → en jeu : Azumarill (selon le niveau) · Goldeen 1 % (25-37) → en jeu : Seaking (selon le niveau)
 - **Canne** : Magikarp 70 % (5-11) · Goldeen 30 % (5-11)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (12-37) → en jeu : Seaking (selon le niveau) · Corphish 20 % (12-37) → en jeu : Crawdaunt (selon le niveau)
 - **Méga Canne** : Corphish 100 % (24-55) → en jeu : Crawdaunt (selon le niveau)
 
+### Route 102 (nuit)
+- **Herbes** : Poochyena 30 % (3-4) · Dewpider 30 % (3-4) · Ralts 10 % (3) · Lotad 10 % (4) · Seedot 10 % (3) · Surskit 10 % (3-4) — *changé : +Dewpider, +Surskit, −Wurmple, −Zigzagoon*
+
 ### Route 103
-- **Herbes** : Poochyena 60 % (2-4) · Wingull 20 % (2-4) · Zigzagoon 20 % (3-4)
+- **Herbes** : Pidgey 20 % (2) · Wingull 20 % (3) · Fletchling 20 % (3-4) · Starly 20 % (2-3) · Rookidee 20 % (2-4) — *changé : +Fletchling, +Pidgey, +Rookidee, +Starly, −Poochyena, −Zigzagoon*
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Magikarp 70 % (5-11) · Tentacool 30 % (5-11)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
 - **Méga Canne** : Wailmer 60 % (30-55) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (36-43)
 
 ### Route 104
-- **Herbes** : Poochyena 40 % (4-5) · Wurmple 20 % (4) · Marill 20 % (4-5) · Taillow 10 % (4-5) · Wingull 10 % (3-5)
+- **Herbes** : Skwovet 40 % (4) · Taillow 20 % (5) · Zigzagoon 20 % (4-5) · Marill 20 % (3-5) — *changé : +Skwovet, +Zigzagoon, −Poochyena, −Wingull, −Wurmple*
 - **Surf** : Wingull 95 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Magikarp 100 % (5-11)
 - **Super Canne** : Magikarp 100 % (12-37) → en jeu : Gyarados (selon le niveau)
 - **Méga Canne** : Magikarp 100 % (24-55) → en jeu : Gyarados
 
+### Route 104 (nuit)
+- **Herbes** : Rattata-Alola 40 % (4) · Taillow 20 % (5) · Zigzagoon-Galar 20 % (4-5) · Marill 20 % (3-5) — *changé : +Rattata-Alola, +Zigzagoon-Galar, −Poochyena, −Wingull, −Wurmple*
+
 ### Route 116
-- **Herbes** : Poochyena 28 % (6-9) · Whismur 20 % (6) · Nincada 20 % (6-7) · Taillow 20 % (6-9) · Abra 10 % (7) · Skitty 2 % (7-9)
+- **Herbes** : Fidough 28 % (6-9) · Whismur 20 % (6) · Nincada 20 % (6-7) · Taillow 20 % (6-9) · Abra 10 % (7) · Skitty 2 % (7-9) — *changé : +Fidough, −Poochyena*
 
 ## 1er → 2e badge
 
@@ -128,9 +137,8 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Barboach 100 % (24-55) → en jeu : Whiscash (selon le niveau)
 
 ### Meteor Falls 1F 1R (nuit)
-- *Table ajoutée par Nabla.*
-- **Herbes** : Zubat 80 % (16-23) → en jeu : Golbat (selon le niveau) · Lunatone 20 % (16-21)
-- **Surf** : Zubat 90 % (6-43) → en jeu : Crobat, Golbat (selon le niveau) · Lunatone 10 % (6-43)
+- **Herbes** : Zubat 80 % (16-23) → en jeu : Golbat (selon le niveau) · Lunatone 20 % (16-21) — *changé : +Lunatone, −Solrock*
+- **Surf** : Zubat 90 % (6-43) → en jeu : Crobat, Golbat (selon le niveau) · Lunatone 10 % (6-43) — *changé : +Lunatone, −Solrock*
 
 ### New Mauville Entrance
 - **Herbes** : Voltorb 50 % (26-30) → en jeu : Electrode (selon le niveau) · Magnemite 50 % (26-30) → en jeu : Magneton (selon le niveau)
@@ -487,9 +495,8 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls 1F 2R (nuit)
-- *Table ajoutée par Nabla.*
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49)
+- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55) — *changé : +Lunatone, −Solrock*
+- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
 
 ### Meteor Falls B1F 1R
 - **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Solrock 35 % (46-55)
@@ -499,9 +506,8 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls B1F 1R (nuit)
-- *Table ajoutée par Nabla.*
-- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49)
+- **Herbes** : Golbat 65 % (46-56) → en jeu : Crobat · Lunatone 35 % (46-55) — *changé : +Lunatone, −Solrock*
+- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
 
 ### Meteor Falls B1F 2R
 - **Herbes** : Golbat 50 % (46-56) → en jeu : Crobat · Bagon 25 % (35-49) → en jeu : Shelgon · Solrock 25 % (49-55)
@@ -511,9 +517,8 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
 
 ### Meteor Falls B1F 2R (nuit)
-- *Table ajoutée par Nabla.*
-- **Herbes** : Golbat 50 % (46-56) → en jeu : Crobat · Bagon 25 % (35-49) → en jeu : Shelgon · Lunatone 25 % (49-55)
-- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49)
+- **Herbes** : Golbat 50 % (46-56) → en jeu : Crobat · Bagon 25 % (35-49) → en jeu : Shelgon · Lunatone 25 % (49-55) — *changé : +Lunatone, −Solrock*
+- **Surf** : Golbat 90 % (42-49) → en jeu : Crobat · Lunatone 10 % (7-49) — *changé : +Lunatone, −Solrock*
 
 ### Victory Road 1F
 - **Herbes** : Golbat 25 % (53-56) → en jeu : Crobat · Hariyama 25 % (53-56) · Lairon 10 % (56) → en jeu : Aggron · Loudred 10 % (56) → en jeu : Exploud · Zubat 10 % (50) → en jeu : Crobat · Makuhita 10 % (50) → en jeu : Hariyama · Aron 5 % (50) → en jeu : Aggron · Whismur 5 % (50) → en jeu : Exploud
@@ -571,13 +576,12 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Herbes** : Golbat 65 % (33-40) → en jeu : Crobat (selon le niveau) · Solrock 35 % (33-39)
 
 ### Meteor Falls Stevens Cave (nuit)
-- *Table ajoutée par Nabla.*
-- **Herbes** : Golbat 65 % (33-40) → en jeu : Crobat (selon le niveau) · Lunatone 35 % (33-39)
+- **Herbes** : Golbat 65 % (33-40) → en jeu : Crobat (selon le niveau) · Lunatone 35 % (33-39) — *changé : +Lunatone, −Solrock*
 
 ### Nabla West Beach
 - *Table ajoutée par Nabla.*
-- **Herbes** : Eevee 60 % (5) · Lunatone 20 % (5) · Flabebe 20 % (5)
-- **Surf** : Clawitzer 60 % (37-40) · Dragalge 40 % (37-40)
-- **Canne** : Feebas 100 % (5)
-- **Super Canne** : Feebas 100 % (5)
-- **Méga Canne** : Feebas 100 % (5)
+- **Herbes** : Wiglett 20 % (5-7) · Dwebble 20 % (5-7) · Pyukumuku 10 % (5-8) · Sandygast 10 % (5-8) · Krabby 10 % (5-8) · Mantyke 10 % (5-8) · Clauncher 10 % (6-8) · Staryu 10 % (6-8)
+- **Surf** : Mareanie 60 % (6-43) → en jeu : Toxapex (selon le niveau) · Tentacool 40 % (12-37) → en jeu : Tentacruel (selon le niveau)
+- **Canne** : Mareanie 70 % (5-11) · Tentacool 30 % (5-11)
+- **Super Canne** : Mareanie 60 % (12-37) · Tentacool 40 % (12-37) → en jeu : Tentacruel (selon le niveau)
+- **Méga Canne** : Mareanie 60 % (30-55) → en jeu : Toxapex (selon le niveau) · Tentacool 40 % (36-43) → en jeu : Tentacruel
