@@ -23,7 +23,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 4 : 3e → 4e badge (Chemin Ardent, Chutes Météore, Sentier Sinuroc, Routes 112 à 115) ;
   - lot 5 : 4e → 5e badge (désert de la Route 111, Tour Mirage) ;
   - **lot 6 (après le 5e badge) attendu** ;
-  - **Spoink, Groret, Cacnea et Cacturne sans source** depuis les lots 4 et 5 (couverture 980 / 984) : à placer dans un prochain lot.
+  - **Spoink et Groret sans source** depuis le lot 4 (couverture 982 / 984) : à placer dans un prochain lot.
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -104,7 +104,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## En attente côté utilisateur
 
-- **Lot 6 de rencontres** (zones après le 5e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink et Cacnea (et donc Groret et Cacturne), sans source depuis les lots 4 et 5.
+- **Lot 6 de rencontres** (zones après le 5e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink (et donc Groret), sans source depuis le lot 4.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;

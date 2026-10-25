@@ -101,7 +101,7 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
 
 ### Route 111
-- **Herbes** : Trapinch 30 % (23-24) · Hippopotas 20 % (23) · Sandile 15 % (21-24) · Sandshrew 15 % (21) · Silicobra 10 % (24) · Bramblin 10 % (23-25) — *changé : +Bramblin, +Hippopotas, +Sandile, +Silicobra, −Baltoy, −Cacnea*
+- **Herbes** : Trapinch 30 % (23-24) · Sandile 20 % (23) · Hippopotas 15 % (21-24) · Sandshrew 15 % (21) · Silicobra 10 % (24) · Bramblin 5 % (23-25) · Cacnea 5 % (23-25) — *changé : +Bramblin, +Hippopotas, +Sandile, +Silicobra, −Baltoy*
 - **Surf** : Marill 99 % (6-43) → en jeu : Azumarill (selon le niveau) · Goldeen 1 % (25-37) → en jeu : Seaking (selon le niveau)
 - **Éclate-Roc** : Nacli 100 % (6-23) — *changé : +Nacli, −Geodude*
 - **Canne** : Barboach 100 % (6-11) — *changé : +Barboach, −Goldeen, −Magikarp*

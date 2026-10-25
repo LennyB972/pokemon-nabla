@@ -254,9 +254,9 @@
   - Correction du lot 1 : Manglouton est Yungoos (Route 104), pas Skwovet.
   - Couverture 982 / 984 : Spoink et Groret n'ont plus de source (ils n'étaient qu'au Sentier Sinuroc), à placer.
 - Rencontres, 5e lot (zones entre le 4e et le 5e badge) :
-  - Désert de la Route 111 : Kraknoix 30, Hippopotas 20, Mascaïman 15, Sabelette 15, Dunaja 10, Virovent 10. Le lot faisait 95 % : Hippopotas passe de 15 à 20 (deux emplacements à 20 %). Sabelette est sur les emplacements de niveau 21, pour qu'il reste Sabelette (Sablaireau au niveau 22).
+  - Désert de la Route 111 : Kraknoix 30, Mascaïman 20, Hippopotas 15, Sabelette 15, Dunaja 10, Virovent 5, Cacnea 5 (les 5 % qui manquaient au lot). Approximation : Mascaïman 15 → 20 et Virovent 10 → 5, car le second emplacement à 20 % doit revenir à une espèce. Sabelette est sur les emplacements de niveau 21, pour qu'il reste Sabelette (Sablaireau au niveau 22).
   - Tour Mirage (tous les étages) : Tutafeh, Balbuto, Archéomire, Gringolem, Monorpale, 20 % chacun.
-  - Couverture 980 / 984 : Cacnea et Cacturne n'ont plus de source (ils n'étaient que dans le désert), en plus de Spoink et Groret.
+  - Couverture 982 / 984 : Spoink et Groret toujours sans source.
 - Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
 
