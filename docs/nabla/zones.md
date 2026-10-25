@@ -24,6 +24,9 @@ Porymap réécrit à sa façon certains fichiers qu'il enregistre (ordre des cl�
 
 ## Dessiner une côte (leçons de West Beach v2)
 
+West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes → blocs, bords choisis selon les voisins, valeurs des blocs reprises d'Émeraude) : base à réutiliser pour d'autres plages. Le relancer écrase les retouches faites dans Porymap.
+
+
 - Rivage sable/eau (jeu General) : `11b 11c 11d / 123 124 125 / 12b 12c 12d`, coins intérieurs `13d 13e 145 146`. Les bords côté eau (`11b 11d 123 125 12b 12c 12d 145 146`) sont des cases d'eau (Surf, hauteur 1) dessinées avec du sable ; `11c 13d 13e` sont du sable.
 - Herbe dans le sable : bords `118 119 11a / 120 122 / 128 129 12a` posés sur le sable ; là où l'herbe ne touche qu'en diagonale, sable plein `124` (comme sur la Route 118). Pas de bloc pour une case de sable entre deux herbes opposées : laisser au moins 2 cases de sable entre deux zones d'herbe.
 - Hautes herbes `d` entourées d'herbe `1`. Le bloc `e` n'est pas une frange d'herbe mais le haut d'un petit arbre : ne pas l'utiliser seul.
