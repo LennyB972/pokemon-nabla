@@ -11,7 +11,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 - **4.1 (Pokémon sauvages)** : faite (jour/nuit, Safari par région, couverture : 984 / 984 espèces non légendaires obtenables).
 - **4.2 (dresseurs importants)** : 4.2a Champions ✅, 4.2b Conseil 4 et Maître ✅, 4.2c rival et Timmy ✅, 4.2d Team Aqua / Magma ✅ (à tester par l'utilisateur pendant sa partie).
 - **4.3 (niveaux des dresseurs ordinaires, des sauvages et des Pokémon fixes)** ✅ : facteur par étape de l'aventure, évolutions selon le niveau (échange, objet… au niveau 40), Safari 40/50/55/70.
-- En parallèle (phase 6) : première zone **WEST BEACH** v1 faite et validée ; plan du monde dans `docs/nabla/world.md`.
+- En parallèle (phase 6) : **WEST BEACH v2** (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers) faite et validée en jeu ; plan du monde dans `docs/nabla/world.md`.
 
 ## Méthode de travail avec l'utilisateur
 - Français avec l'utilisateur, recommandations franches et conclusion claire ; code, commits et textes du jeu en anglais (traduction française plus tard).
@@ -57,14 +57,14 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 - **Tester la 4.2d** : *Trainers… → Trainer 1* (numéro) *→ Try Battle* : Tabitha 597 / 732, Max 602 / 601, Shelly 32 / 33, Matt 30, Arthur 34 ; Île du Sud : *Trainer 1* 855, *Trainer 2* 856, *Partner* 2, *Try Battle* ; Centre Spatial : *Utilities → Steven Multi*. En Difficile, vérifier que Pierre a aussi ses niveaux +10 %.
 - **4.3** : en jeu, quelques dresseurs de chaque étape (*Trainers… → Try Battle*, numéros dans `docs/nabla/levels.md`) et un tour sur une route (sauvages évolués selon leur niveau). Il fera surtout sa partie complète en v1, puis reviendra pour l'équilibrage (niveaux, puissance des équipes, sets).
 - **Tester la 5.2** : Super Bonbons ×N sur un Pokémon (attaques apprises, évolution, level cap), Potions ×N, vitamines ×N ; menus en boucle : boutique (ACHETER/VENDRE/QUITTER et liste d'articles), comptoir du Safari, menu d'un objet du sac, OUI/NON.
-- **Tester West Beach v2 et les rencontres d'avant le 1er badge** (partie de test en cours) ; ensuite : relever un peu les niveaux (facteurs de `scale_levels.py`, West Beach à la main), puis les lots suivants de rencontres.
+- **Rencontres, lot suivant** : l'utilisateur prépare les zones entre le 1er et le 2e badge (Route 116 ?, Tunnel Mérazon, Myokara, Grotte Granite, Route 106…). À venir aussi : relever un peu les niveaux (facteurs de `scale_levels.py`, West Beach à la main) après sa partie de test.
 - **Rencontres des routes** (premier lot fait : zones d'avant le 1er badge) : l'utilisateur prépare de nombreux changements d'espèces (gros message ou fichier texte), à partir de `docs/nabla/rencontres.md` (état actuel : quasiment les rencontres d'Émeraude ; `dev_scripts/nabla/list_encounters.py`). À l'arrivée : traduire ses pourcentages en emplacements (herbes 20/20/10/10/10/10/5/5/4/4/1/1, Surf et Éclate-Roc 60/30/5/4/1, cannes 70/30 · 60/20/20 · 40/40/15/4/1), garder les niveaux des emplacements sauf indication, tables `_Night` possibles ; puis `coverage.py` (984 / 984), `list_encounters.py`, build, commit. Ne changer que les espèces des emplacements existants pour que `scale_levels.py` reste relançable.
 - Pas encore testé en jeu : inscriptions de Tutétékri (Route 111).
 - Il retouchera lui-même routes et West Beach dans Porymap au fil de l'eau (et préviendra).
 
 ## Prochaines étapes (dans l'ordre)
 1. **Phase 5 Interface** (terminée) : 5.1 name box (automatique : dresseurs + textes « NOM: » ; ajout à la main pour les dialogues sans nom des personnages principaux, à décider après le test de l'utilisateur ; résumé inchangé) ; 5.2 plusieurs objets d'un coup, menus en boucle ; 5.3 vitamines (+32 EV, 5 000 ₽, Nénucrique 3ᵉ ; plumes et Mochis inchangés).
-2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) : Forêt Émeraude au sud du Mont Mémoria (scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire — dresseur prêt) ; îles accessibles par Plongée (hors scénario) ; contenu de West Beach.
+2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) : Forêt Émeraude au sud du Mont Mémoria (scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire — dresseur prêt) ; îles accessibles par Plongée (hors scénario) ; West Beach : objets à ajouter (l'utilisateur les choisira) et peut-être un événement pour y attirer le joueur (un dresseur qui propose un échange contre un Pokémon de West Beach).
 3. **Phase 7 Post-game** (revanches des Champions, zones d'après la Ligue) : Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon (sans vol en 3D).
 4. **Phase 8 Release 1.0**, après la partie complète de l'utilisateur et l'équilibrage (niveaux, équipes, level caps).
 - À proposer un jour en amont (expansion) : correctif `AreMultiPartiesFullTeams` (`src/battle_util.c`).

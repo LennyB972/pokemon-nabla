@@ -16,6 +16,10 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 - **Place** : la mer de l'est de Hoenn a de la place sur la carte de la région.
 - **À définir** : combien d'îles, sur quelles routes marines, leur contenu.
 
+### West Beach (faite, v2)
+- **Fait** : la plage (`docs/nabla/zones.md`) et ses rencontres (avant le 1er badge).
+- **À venir** : objets à obtenir (choisis par l'utilisateur) ; peut-être un événement dans l'histoire pour y attirer le joueur, par exemple un dresseur qui propose un échange contre un Pokémon qu'on ne trouve que sur West Beach.
+
 ## Après la Ligue
 
 ### Îles mirages des légendaires
