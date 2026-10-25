@@ -59,31 +59,31 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 
 ### Dewford Town
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Magikarp 70 % (5-11) · Tentacool 30 % (5-11)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
-- **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
+- **Canne** : Qwilfish-Hisui 70 % (5-11) · Basculin 30 % (5-11) — *changé : +Basculin, +Qwilfish-Hisui, −Magikarp, −Tentacool*
+- **Super Canne** : Qwilfish-Hisui 80 % (12-37) · Basculin 20 % (12-37) — *changé : +Basculin, +Qwilfish-Hisui, −Magikarp, −Tentacool, −Wailmer*
+- **Méga Canne** : Qwilfish-Hisui 60 % (24-55) → en jeu : Overqwil (selon le niveau) · Basculin 40 % (36-43) — *changé : +Basculin, +Qwilfish-Hisui, −Wailmer*
 
 ### Granite Cave 1F
-- **Herbes** : Makuhita 50 % (6-11) · Zubat 30 % (7-8) · Abra 10 % (8) · Geodude 10 % (6-9)
+- **Herbes** : Aron 30 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Woobat 15 % (8-11) · Roggenrola 15 % (6-9) — *changé : +Aron, +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Geodude, −Makuhita, −Zubat*
 
 ### Granite Cave B1F
-- **Herbes** : Aron 40 % (9-12) · Zubat 30 % (9-11) · Abra 10 % (9) · Makuhita 10 % (11-12) · Sableye 10 % (9-12)
+- **Herbes** : Aron 30 % (9) · Sableye 20 % (11) · Rolycoly 20 % (11-12) · Woobat 15 % (9-11) · Roggenrola 15 % (9-12) — *changé : +Roggenrola, +Rolycoly, +Woobat, −Abra, −Makuhita, −Zubat*
 
 ### Granite Cave B2F
-- **Herbes** : Aron 40 % (11-13) · Zubat 30 % (11-12) · Sableye 20 % (11-13) · Abra 10 % (11)
+- **Herbes** : Aron 30 % (11) · Sableye 20 % (12) · Rolycoly 20 % (12-13) · Woobat 15 % (11) · Roggenrola 15 % (11-13) — *changé : +Roggenrola, +Rolycoly, +Woobat, −Abra, −Zubat*
 - **Éclate-Roc** : Geodude 70 % (6-23) · Nosepass 30 % (12-23)
 
 ### Granite Cave Stevens Room
-- **Herbes** : Makuhita 50 % (6-11) · Zubat 30 % (7-8) · Abra 10 % (8) · Aron 10 % (7-8)
+- **Herbes** : Aron 30 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Woobat 15 % (8-11) · Roggenrola 15 % (6-8) — *changé : +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Makuhita, −Zubat*
 
 ### Route 106
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Magikarp 70 % (5-11) · Tentacool 30 % (5-11)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
-- **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
+- **Canne** : Feebas 70 % (5-11) · Magikarp 30 % (5-11) — *changé : +Feebas, −Tentacool*
+- **Super Canne** : Feebas 60 % (12-37) · Magikarp 40 % (12-37) → en jeu : Gyarados (selon le niveau) — *changé : +Feebas, −Tentacool, −Wailmer*
+- **Méga Canne** : Feebas 60 % (24-55) → en jeu : Milotic (selon le niveau) · Magikarp 40 % (36-43) → en jeu : Gyarados — *changé : +Feebas, +Magikarp, −Wailmer*
 
 ### Rusturf Tunnel
-- **Herbes** : Whismur 100 % (5-8)
+- **Herbes** : Axew 20 % (6) · Gible 20 % (7) · Larvitar 20 % (6) · Beldum 20 % (7) · Deino 20 % (5-8) — *changé : +Axew, +Beldum, +Deino, +Gible, +Larvitar, −Whismur*
 
 ## 2e → 3e badge
 
@@ -203,9 +203,9 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 
 ### Route 107
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
-- **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
+- **Canne** : Arrokuda 70 % (6-12) · Magikarp 30 % (6-12) — *changé : +Arrokuda, −Tentacool*
+- **Super Canne** : Arrokuda 60 % (12-37) → en jeu : Barraskewda (selon le niveau) · Magikarp 40 % (12-37) → en jeu : Gyarados (selon le niveau) — *changé : +Arrokuda, −Tentacool, −Wailmer*
+- **Méga Canne** : Arrokuda 60 % (24-55) → en jeu : Barraskewda (selon le niveau) · Magikarp 40 % (36-43) → en jeu : Gyarados — *changé : +Arrokuda, +Magikarp, −Wailmer*
 
 ### Route 108
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)

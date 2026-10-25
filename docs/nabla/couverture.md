@@ -18,7 +18,6 @@ Groudon, Kyogre, Latias, Latios, Rayquaza, Regice, Regirock, Registeel
 
 Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capacité hors niveau).
 
-- Feebas → Milotic : IF_MIN_BEAUTY 170
 - Nosepass → Probopass : IF_IN_MAPSEC MAPSEC_NEW_MAUVILLE
 
 ## Objets d'évolution
@@ -57,7 +56,7 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Poke Ball | boutique ou script (LilycoveCity_DepartmentStore_2F) |
 | Prism Scale | boutique ou script (evolution_items.inc) |
 | Protector | boutique ou script (evolution_items.inc) |
-| Razor Claw | tenu par Kommo_O sauvage |
+| Razor Claw | tenu par Hakamo_O sauvage |
 | Razor Fang | tenu par Bruxish sauvage |
 | Reaper Cloth | boutique ou script (evolution_items.inc) |
 | Ribbon Sweet | boutique ou script (evolution_items.inc) |
