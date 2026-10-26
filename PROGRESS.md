@@ -257,6 +257,14 @@
   - Désert de la Route 111 : Kraknoix 30, Mascaïman 20, Hippopotas 15, Sabelette 15, Dunaja 10, Virovent 5, Cacnea 5 (les 5 % qui manquaient au lot). Approximation : Mascaïman 15 → 20 et Virovent 10 → 5, car le second emplacement à 20 % doit revenir à une espèce. Sabelette est sur les emplacements de niveau 21, pour qu'il reste Sabelette (Sablaireau au niveau 22).
   - Tour Mirage (tous les étages) : Tutafeh, Balbuto, Archéomire, Gringolem, Monorpale, 20 % chacun.
   - Couverture 982 / 984 : Spoink et Groret toujours sans source.
+- Rencontres, 6e lot (zones entre le 5e et le 6e badge, Surf débloqué ; les Surf des zones des lots précédents restent inchangés) :
+  - Surf et pêche à 60/40 : Route 105 (Hypocéan / Lanturn), Route 107 (Viskuse / Octillery, à la place d'Embrochet et Magicarpe du lot 2), Route 108 (Mamanbo / Oyacata). Canne 70/30 (deux emplacements). Au niveau 40+, Hypocéan devient Hyporoi et Viskuse Moyade.
+  - Route 118 : Mimantis 20, Yanma 20, Spoink 15, Kecleon 15, Insécateur 15, Lilliterelle 15. En jeu (niveaux 30-34) : Lilliterelle est un Gambex, Spoink un Groret sur ses emplacements de niveau 32 (10 %).
+  - Route 119 : Léopardus 30, Tropius 25, Arboliva 20, Ixon 15, Migalos 10.
+  - Route 120 : Absol 30, Tengalice 20, Ludicolo 20, Azumarill 15, Roublenard 15.
+  - Épave (salles avec de l'eau) : Surf Sinistrail 60 / Gromago 40 ; pêche Corayon de Galar 70 / Sinistrail 30 (Super Canne 80/20 et Méga Canne 60/40, 70/30 en moyenne). Corayon de Galar devient Corayôme au niveau 38 (Méga Canne).
+  - Grotte Zénith (Scorched Slab) : nouvelle table, sol de la grotte seulement (taux 10 comme les autres grottes), ni Surf ni pêche : Forgerette 25, Mimiqui 20, Mucuscule 20, Rhinocorne 20, Paras 15. Niveaux de la Route 120 (`LEVELS_FROM` dans `scale_levels.py`, la grotte est dans l'étape 5e → 6e badge). En jeu : Forgerette est une Forgella, Paras un Parasect.
+  - Couverture 984 / 984.
 - Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
 

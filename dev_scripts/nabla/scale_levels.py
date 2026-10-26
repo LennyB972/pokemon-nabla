@@ -56,7 +56,7 @@ MAP_PARTS = [
     (3, "Route112 Route113 Route114 Route115 FallarborTown MeteorFalls_1F_1R MtChimney JaggedPass "
         "LavaridgeTown FieryPath NewMauville"),
     (4, "PetalburgCity_Gym MirageTower"),
-    (5, "Route105 Route107 Route108 AbandonedShip Route118 Route119 Route120 FortreeCity"),
+    (5, "Route105 Route107 Route108 AbandonedShip Route118 Route119 Route120 ScorchedSlab FortreeCity"),
     (6, "Route121 Route122 MtPyre Route123 LilycoveCity MagmaHideout AquaHideout Route124 Route125 "
         "MossdeepCity Route126 Route127 Route128 ShoalCave"),
     (7, "MossdeepCity_SpaceCenter SeafloorCavern Route129 Route130 Route131 Route132 Route133 Route134 "
@@ -77,6 +77,8 @@ STATIC_POKEMON = [
     ("data/scripts/kecleon.inc", "KECLEON"),
 ]
 STATIC_PARTS = {"NewMauville_Inside": 3, "AquaHideout_B1F": 6, "Route120": 5, "kecleon.inc": 5}
+# Tables added by Pokémon Nabla to original maps: the table whose original levels they take
+LEVELS_FROM = {"gScorchedSlab": "gRoute120"}
 # Trainers of step 4.2 (and the Gym Leaders' rematches, after the League)
 EXCLUDED = re.compile(r"TRAINER_((ROXANNE|BRAWLY|WATTSON|FLANNERY|NORMAN|WINONA|TATE_AND_LIZA|JUAN)_\d"
                       r"|SIDNEY|PHOEBE|GLACIA|DRAKE|WALLACE|STEVEN|(MAY|BRENDAN|WALLY)_\w+"
@@ -303,7 +305,8 @@ def scale_wild(report):
         if part is None:
             continue
         # A night table added after step 4.1 has the levels of the day table of its map
-        before = original.get(label) or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None)
+        before = (original.get(label) or original.get(LEVELS_FROM.get(label))
+                  or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None))
         for area, table in e.items():
             if not area.endswith("_mons"):
                 continue

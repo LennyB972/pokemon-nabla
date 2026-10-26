@@ -32,7 +32,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | 2e → 3e badge | Route109, SlateportCity, Route110, MauvilleCity, Route117, Route111 |
 | 3e → 4e badge | Route112, Route113, Route114, Route115, FallarborTown, MeteorFalls_1F_1R, MtChimney, JaggedPass, LavaridgeTown, FieryPath, NewMauville |
 | 4e → 5e badge | PetalburgCity_Gym, MirageTower |
-| 5e → 6e badge | Route105, Route107, Route108, AbandonedShip, Route118, Route119, Route120, FortreeCity |
+| 5e → 6e badge | Route105, Route107, Route108, AbandonedShip, Route118, Route119, Route120, ScorchedSlab, FortreeCity |
 | 6e → 7e badge | Route121, Route122, MtPyre, Route123, LilycoveCity, MagmaHideout, AquaHideout, Route124, Route125, MossdeepCity, Route126, Route127, Route128, ShoalCave |
 | 7e → 8e badge | MossdeepCity_SpaceCenter, SeafloorCavern, Route129, Route130, Route131, Route132, Route133, Route134, PacifidlogTown, SootopolisCity, CaveOfOrigin, SkyPillar, Underwater |
 | Route Victoire | VictoryRoad, EverGrandeCity, MeteorFalls_1F_2R, MeteorFalls_B1F |
@@ -1022,6 +1022,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | Route114 | `gRoute114` | Surf | 5-35 | 6-43 |
 | Route114 | `gRoute114` | Éclate-Roc | 5-20 | 6-23 |
 | Route114 | `gRoute114` | pêche | 5-45 | 6-55 |
+| Route114 | `gRoute114_Night` | herbes | 15-18 | 18-21 |
 | Route116 | `gRoute116` | herbes | 6-8 | 6-9 |
 | Route117 | `gRoute117` | herbes | 13-14 | 15-16 |
 | Route117 | `gRoute117` | Surf | 5-35 | 6-43 |
@@ -1067,6 +1068,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | Route120 | `gRoute120` | herbes | 25-27 | 31-34 |
 | Route120 | `gRoute120` | Surf | 5-35 | 6-43 |
 | Route120 | `gRoute120` | pêche | 5-45 | 6-55 |
+| ScorchedSlab | `gScorchedSlab` | herbes | 25-27 | 31-34 |
 | Route121 | `gRoute121` | herbes | 25-28 | 30-34 |
 | Route121 | `gRoute121` | Surf | 5-35 | 6-43 |
 | Route121 | `gRoute121` | pêche | 5-45 | 6-55 |

@@ -187,55 +187,59 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ## 5e → 6e badge
 
 ### Abandoned Ship Hidden Floor Corridors
-- **Surf** : Tentacool 99 % (6-43) → en jeu : Tentacruel (selon le niveau) · Tentacruel 1 % (37-43)
-- **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 40 % (12-37) → en jeu : Tentacruel (selon le niveau)
-- **Méga Canne** : Tentacool 80 % (30-43) → en jeu : Tentacruel · Tentacruel 20 % (24-43)
+- **Surf** : Dhelmise 60 % (6-43) · Gholdengo 40 % (6-43) — *changé : +Dhelmise, +Gholdengo, −Tentacool, −Tentacruel*
+- **Canne** : Corsola-Galar 70 % (6-12) · Dhelmise 30 % (6-12) — *changé : +Corsola-Galar, +Dhelmise, −Magikarp, −Tentacool*
+- **Super Canne** : Corsola-Galar 80 % (12-37) · Dhelmise 20 % (12-37) — *changé : +Corsola-Galar, +Dhelmise, −Magikarp, −Tentacool*
+- **Méga Canne** : Corsola-Galar 60 % (24-43) → en jeu : Cursola (selon le niveau) · Dhelmise 40 % (36-43) — *changé : +Corsola-Galar, +Dhelmise, −Tentacool, −Tentacruel*
 
 ### Abandoned Ship Rooms B1F
-- **Surf** : Tentacool 99 % (6-43) → en jeu : Tentacruel (selon le niveau) · Tentacruel 1 % (37-43)
-- **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 40 % (12-37) → en jeu : Tentacruel (selon le niveau)
-- **Méga Canne** : Tentacool 80 % (30-43) → en jeu : Tentacruel · Tentacruel 20 % (24-43)
+- **Surf** : Dhelmise 60 % (6-43) · Gholdengo 40 % (6-43) — *changé : +Dhelmise, +Gholdengo, −Tentacool, −Tentacruel*
+- **Canne** : Corsola-Galar 70 % (6-12) · Dhelmise 30 % (6-12) — *changé : +Corsola-Galar, +Dhelmise, −Magikarp, −Tentacool*
+- **Super Canne** : Corsola-Galar 80 % (12-37) · Dhelmise 20 % (12-37) — *changé : +Corsola-Galar, +Dhelmise, −Magikarp, −Tentacool*
+- **Méga Canne** : Corsola-Galar 60 % (24-43) → en jeu : Cursola (selon le niveau) · Dhelmise 40 % (36-43) — *changé : +Corsola-Galar, +Dhelmise, −Tentacool, −Tentacruel*
 
 ### Route 105
-- **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
-- **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
+- **Surf** : Seadra 60 % (6-43) → en jeu : Kingdra (selon le niveau) · Lanturn 40 % (12-37) — *changé : +Lanturn, +Seadra, −Pelipper, −Tentacool, −Wingull*
+- **Canne** : Seadra 70 % (6-12) · Lanturn 30 % (6-12) — *changé : +Lanturn, +Seadra, −Magikarp, −Tentacool*
+- **Super Canne** : Seadra 60 % (12-37) · Lanturn 40 % (12-37) — *changé : +Lanturn, +Seadra, −Magikarp, −Tentacool, −Wailmer*
+- **Méga Canne** : Seadra 60 % (24-55) → en jeu : Kingdra (selon le niveau) · Lanturn 40 % (36-43) — *changé : +Lanturn, +Seadra, −Wailmer*
 
 ### Route 107
-- **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Arrokuda 70 % (6-12) · Magikarp 30 % (6-12) — *changé : +Arrokuda, −Tentacool*
-- **Super Canne** : Arrokuda 60 % (12-37) → en jeu : Barraskewda (selon le niveau) · Magikarp 40 % (12-37) → en jeu : Gyarados (selon le niveau) — *changé : +Arrokuda, −Tentacool, −Wailmer*
-- **Méga Canne** : Arrokuda 60 % (24-55) → en jeu : Barraskewda (selon le niveau) · Magikarp 40 % (36-43) → en jeu : Gyarados — *changé : +Arrokuda, +Magikarp, −Wailmer*
+- **Surf** : Frillish 60 % (6-43) → en jeu : Jellicent (selon le niveau) · Octillery 40 % (12-37) — *changé : +Frillish, +Octillery, −Pelipper, −Tentacool, −Wingull*
+- **Canne** : Frillish 70 % (6-12) · Octillery 30 % (6-12) — *changé : +Frillish, +Octillery, −Magikarp, −Tentacool*
+- **Super Canne** : Frillish 60 % (12-37) · Octillery 40 % (12-37) — *changé : +Frillish, +Octillery, −Magikarp, −Tentacool, −Wailmer*
+- **Méga Canne** : Frillish 60 % (24-55) → en jeu : Jellicent (selon le niveau) · Octillery 40 % (36-43) — *changé : +Frillish, +Octillery, −Wailmer*
 
 ### Route 108
-- **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
-- **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
-- **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (12-37)
-- **Méga Canne** : Wailmer 100 % (24-55) → en jeu : Wailord (selon le niveau)
+- **Surf** : Alomomola 60 % (6-43) · Dondozo 40 % (12-37) — *changé : +Alomomola, +Dondozo, −Pelipper, −Tentacool, −Wingull*
+- **Canne** : Alomomola 70 % (6-12) · Dondozo 30 % (6-12) — *changé : +Alomomola, +Dondozo, −Magikarp, −Tentacool*
+- **Super Canne** : Alomomola 60 % (12-37) · Dondozo 40 % (12-37) — *changé : +Alomomola, +Dondozo, −Magikarp, −Tentacool, −Wailmer*
+- **Méga Canne** : Alomomola 60 % (24-55) · Dondozo 40 % (36-43) — *changé : +Alomomola, +Dondozo, −Wailmer*
 
 ### Route 118
-- **Herbes** : Zigzagoon 30 % (30-32) → en jeu : Linoone · Electrike 30 % (30-32) → en jeu : Manectric · Wingull 19 % (31-34) → en jeu : Pelipper · Linoone 10 % (32) · Manectric 10 % (32) · Kecleon 1 % (31)
+- **Herbes** : Fomantis 20 % (30) · Yanma 20 % (30) · Spoink 15 % (31-32) → en jeu : Grumpig (selon le niveau) · Kecleon 15 % (31-32) · Scyther 15 % (32-34) · Nymble 15 % (31-32) → en jeu : Lokix — *changé : +Fomantis, +Nymble, +Scyther, +Spoink, +Yanma, −Electrike, −Linoone, −Manectric, −Wingull, −Zigzagoon*
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Clobbopus 100 % (6-12) — *changé : +Clobbopus, −Magikarp, −Tentacool*
 - **Super Canne** : Clobbopus 100 % (12-37) — *changé : +Clobbopus, −Carvanha, −Magikarp, −Tentacool*
 - **Méga Canne** : Clobbopus 100 % (24-55) → en jeu : Grapploct (selon le niveau) — *changé : +Clobbopus, −Carvanha, −Sharpedo*
 
 ### Route 119
-- **Herbes** : Zigzagoon 30 % (31-34) → en jeu : Linoone · Linoone 30 % (31-34) · Oddish 30 % (30-34) → en jeu : Gloom · Tropius 9 % (31-34) · Kecleon 1 % (31)
+- **Herbes** : Liepard 30 % (31-34) · Tropius 25 % (31-34) · Arboliva 20 % (31-34) · Obstagoon 15 % (30-32) · Ariados 10 % (31-34) — *changé : +Arboliva, +Ariados, +Liepard, +Obstagoon, −Kecleon, −Linoone, −Oddish, −Zigzagoon*
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
 - **Canne** : Magikarp 70 % (6-12) · Tentacool 30 % (6-12)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (12-37) → en jeu : Tentacruel (selon le niveau) · Carvanha 20 % (12-37) → en jeu : Sharpedo (selon le niveau)
 - **Méga Canne** : Carvanha 100 % (24-55) → en jeu : Sharpedo (selon le niveau)
 
 ### Route 120
-- **Herbes** : Mightyena 30 % (31-34) · Oddish 25 % (31-34) → en jeu : Gloom · Poochyena 20 % (31) → en jeu : Mightyena · Marill 15 % (31-34) → en jeu : Azumarill · Absol 8 % (31-34) · Kecleon 1 % (31) · Seedot 1 % (31) → en jeu : Nuzleaf
+- **Herbes** : Absol 30 % (31-34) · Shiftry 20 % (31) · Ludicolo 20 % (31) · Azumarill 15 % (32-34) · Thievul 15 % (31-34) — *changé : +Azumarill, +Ludicolo, +Shiftry, +Thievul, −Kecleon, −Marill, −Mightyena, −Oddish, −Poochyena, −Seedot*
 - **Surf** : Marill 99 % (6-43) → en jeu : Azumarill (selon le niveau) · Goldeen 1 % (25-37) → en jeu : Seaking (selon le niveau)
 - **Canne** : Magikarp 70 % (6-12) · Goldeen 30 % (6-12)
 - **Super Canne** : Magikarp 60 % (12-37) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (12-37) → en jeu : Seaking (selon le niveau) · Barboach 20 % (12-37) → en jeu : Whiscash (selon le niveau)
 - **Méga Canne** : Barboach 100 % (24-55) → en jeu : Whiscash (selon le niveau)
+
+### Scorched Slab
+- *Table ajoutée par Nabla.*
+- **Herbes** : Tinkatink 25 % (31-34) → en jeu : Tinkatuff · Mimikyu 20 % (31) · Goomy 20 % (31-34) · Rhyhorn 20 % (31-32) · Paras 15 % (31-34) → en jeu : Parasect
 
 ## 6e → 7e badge
 

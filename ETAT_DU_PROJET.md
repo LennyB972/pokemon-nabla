@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 5e badge (lots 1 à 5), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 5e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 6e badge (lots 1 à 6), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 6e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
 
 ## Où on en est
 
@@ -22,8 +22,8 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 3 : 2e → 3e badge ;
   - lot 4 : 3e → 4e badge (Chemin Ardent, Chutes Météore, Sentier Sinuroc, Routes 112 à 115) ;
   - lot 5 : 4e → 5e badge (désert de la Route 111, Tour Mirage) ;
-  - **lot 6 (après le 5e badge) attendu** ;
-  - **Spoink et Groret sans source** depuis le lot 4 (couverture 982 / 984) : à placer dans un prochain lot.
+  - lot 6 : 5e → 6e badge (Routes 105, 107, 108 en Surf et pêche, Routes 118 à 120, Épave, Grotte Zénith avec une table ajoutée) ;
+  - **lot 7 (après le 6e badge) attendu**. Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -99,12 +99,12 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
-| Rencontres | Lots 1 à 5 (zones jusqu'au 5e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Rencontres | Lots 1 à 6 (zones jusqu'au 6e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
 
 ## En attente côté utilisateur
 
-- **Lot 6 de rencontres** (zones après le 5e badge). Il l'envoie en message ou en fichier texte. Y placer Spoink (et donc Groret), sans source depuis le lot 4.
+- **Lot 7 de rencontres** (zones après le 6e badge). Il l'envoie en message ou en fichier texte.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -118,7 +118,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (après le 5e badge), au fil de ses envois.
+1. **Lots de rencontres** suivants (après le 6e badge), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
    - Forêt Émeraude au sud du Mont Mémoria. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
@@ -163,6 +163,14 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Mascaïman | SANDILE | Virovent | BRAMBLIN | Tutafeh | YAMASK |
 | Balbuto | BALTOY | Archéomire | BRONZOR | Gringolem | GOLETT |
 | Monorpale | HONEDGE | Cacnea | CACNEA | Cacturne | CACTURNE |
+| Hypocéan | SEADRA | Viskuse | FRILLISH | Mamanbo | ALOMOMOLA |
+| Oyacata | DONDOZO | Mimantis | FOMANTIS | Insécateur | SCYTHER |
+| Lilliterelle | NYMBLE | Léopardus | LIEPARD | Ixon | OBSTAGOON |
+| Migalos | ARIADOS | Tengalice | SHIFTRY | Roublenard | THIEVUL |
+| Gromago (« gromagot ») | GHOLDENGO | Corayon de Galar | CORSOLA_GALAR | Forgerette | TINKATINK |
+| Mimiqui | MIMIKYU | Mucuscule | GOOMY | Rhinocorne | RHYHORN |
+
+Lieux : Grotte Zénith = `ScorchedSlab` ; Épave = `AbandonedShip` ; Sentier Sinuroc = `JaggedPass` ; Chemin Ardent = `FieryPath`.
 
 Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIGZAGOON_GALAR, ZORUA_HISUI, QWILFISH_HISUI). En cas de doute sur un nom, vérifier dans `include/constants/species.h` et demander plutôt que deviner.
 
@@ -172,6 +180,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 - **Niveaux (4.3)** : `dev_scripts/nabla/scale_levels.py`.
   - Réglages : `PARTS` (facteurs par étape), `MAP_PARTS` (étape de chaque map), `EXCLUDED` (dresseurs de la 4.2).
   - Il repart toujours des dresseurs d'expansion (commit 87cc74b5ec) et des tables sauvages de la 4.1 (commit 476e2584ec). Une table `_Night` ajoutée depuis prend les niveaux de sa table de jour.
+  - Table ajoutée par Nabla dans une map d'origine (Grotte Zénith) : `LEVELS_FROM` lui donne les niveaux d'origine d'une table voisine, et la map doit être dans `MAP_PARTS` (sinon `scale_levels.py` et `list_encounters.py` s'arrêtent).
   - Évolution des sauvages dans le jeu : `GetNablaWildEvolution` (`src/wild_encounter.c`), `NABLA_OTHER_EVOLUTIONS_LEVEL` = 40 (`include/constants/nabla.h`). Même règle en Python : `scale_levels.wild_forms`, utilisée par `coverage.py` et `list_encounters.py`.
 - **Rencontres** : `src/data/wild_encounters.json`. Fiche lisible : `python3 dev_scripts/nabla/list_encounters.py` → `docs/nabla/rencontres.md` (parts par espèce, niveaux, « → en jeu », changements depuis Émeraude). Couverture : `coverage.py` → `docs/nabla/couverture.md`.
 - **Name box (5.1)** : `include/config/name_box.h` (`OW_NAME_BOX_NPC_TRAINER` TRUE) ; `TryTakeSpeakerFromMessage` et `sMessageSpeakerAliases` dans `src/field_message_box.c` ; test `test/nabla_name_box.c`. Convention pour les nouveaux textes : « NOM: » au début de la réplique (voir `CLAUDE.md`).
