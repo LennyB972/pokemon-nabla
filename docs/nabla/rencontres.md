@@ -379,10 +379,10 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ## 7e → 8e badge
 
 ### Cave Of Origin 1F
-- **Herbes** : Zubat 60 % (38-44) → en jeu : Crobat, Golbat · Sableye 30 % (38-44) · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Tyrantrum 20 % (38) · Aurorus 20 % (40) · Cranidos 20 % (38-41) → en jeu : Rampardos · Armaldo 20 % (41-44) · Bastiodon 20 % (42-46) — *changé : +Armaldo, +Aurorus, +Bastiodon, +Cranidos, +Tyrantrum, −Golbat, −Sableye, −Zubat*
 
 ### Cave Of Origin Entrance
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Tyrantrum 20 % (38) · Aurorus 20 % (40) · Cranidos 20 % (41-42) → en jeu : Rampardos · Armaldo 20 % (36-37) · Bastiodon 20 % (42-46) — *changé : +Armaldo, +Aurorus, +Bastiodon, +Cranidos, +Tyrantrum, −Golbat, −Zubat*
 
 ### Pacifidlog Town
 - **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
@@ -391,94 +391,94 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Wailmer 60 % (32-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45)
 
 ### Route 129
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 4 % (32-38) · Wailord 1 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wailord, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 60 % (32-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45)
 
 ### Route 130
 - **Herbes** : Wynaut 100 % (6-64) → en jeu : Wobbuffet (selon le niveau)
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 60 % (32-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45)
 
 ### Route 131
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 60 % (32-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45)
 
 ### Route 132
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 45 % (38-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45) · Horsea 15 % (32-38) → en jeu : Seadra
 
 ### Route 133
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 45 % (38-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45) · Horsea 15 % (32-38) → en jeu : Seadra
 
 ### Route 134
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (13-38) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (32-38)
+- **Surf** : Clawitzer 60 % (6-45) · Dragalge 40 % (13-38) — *changé : +Clawitzer, +Dragalge, −Pelipper, −Tentacool, −Wingull*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 45 % (38-58) → en jeu : Wailord (selon le niveau) · Sharpedo 40 % (38-45) · Horsea 15 % (32-38) → en jeu : Seadra
 
 ### Seafloor Cavern Entrance
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Zubat 35 % (6-45) → en jeu : Crobat, Golbat (selon le niveau) · Golbat 5 % (38-45) → en jeu : Crobat (selon le niveau)
+- **Surf** : Dragalge 100 % (6-45) — *changé : +Dragalge, −Golbat, −Tentacool, −Zubat*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 100 % (26-58) → en jeu : Wailord (selon le niveau)
 
 ### Seafloor Cavern Room 1
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Seafloor Cavern Room 2
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Seafloor Cavern Room 3
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Seafloor Cavern Room 4
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Seafloor Cavern Room 5
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Seafloor Cavern Room 6
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Zubat 35 % (6-45) → en jeu : Crobat, Golbat (selon le niveau) · Golbat 5 % (38-45) → en jeu : Crobat (selon le niveau)
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
+- **Surf** : Dragalge 100 % (6-45) — *changé : +Dragalge, −Golbat, −Tentacool, −Zubat*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 100 % (26-58) → en jeu : Wailord (selon le niveau)
 
 ### Seafloor Cavern Room 7
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
-- **Surf** : Tentacool 60 % (6-45) → en jeu : Tentacruel (selon le niveau) · Zubat 35 % (6-45) → en jeu : Crobat, Golbat (selon le niveau) · Golbat 5 % (38-45) → en jeu : Crobat (selon le niveau)
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
+- **Surf** : Dragalge 100 % (6-45) — *changé : +Dragalge, −Golbat, −Tentacool, −Zubat*
 - **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
 - **Super Canne** : Magikarp 60 % (13-38) → en jeu : Gyarados (selon le niveau) · Tentacool 20 % (13-38) → en jeu : Tentacruel (selon le niveau) · Wailmer 20 % (13-38)
 - **Méga Canne** : Wailmer 100 % (26-58) → en jeu : Wailord (selon le niveau)
 
 ### Seafloor Cavern Room 8
-- **Herbes** : Zubat 90 % (36-45) → en jeu : Crobat, Golbat · Golbat 10 % (42-46) → en jeu : Crobat
+- **Herbes** : Kabutops 25 % (38-44) · Omastar 25 % (40-45) · Relicanth 25 % (41-46) · Tirtouga 25 % (36-44) → en jeu : Carracosta (selon le niveau) — *changé : +Kabutops, +Omastar, +Relicanth, +Tirtouga, −Golbat, −Zubat*
 
 ### Sky Pillar 1F
-- **Herbes** : Sableye 30 % (42-44) · Golbat 30 % (44-45) → en jeu : Crobat · Claydol 25 % (46-49) · Banette 15 % (47-49)
+- **Herbes** : Archeops 25 % (42-49) · Aerodactyl 25 % (44-46) · Golurk 25 % (44-47) · Sigilyph 25 % (46-49) — *changé : +Aerodactyl, +Archeops, +Golurk, +Sigilyph, −Banette, −Claydol, −Golbat, −Sableye*
 
 ### Sky Pillar 3F
-- **Herbes** : Sableye 30 % (42-44) · Golbat 30 % (44-45) → en jeu : Crobat · Claydol 25 % (46-49) · Banette 15 % (47-49)
+- **Herbes** : Archeops 25 % (42-49) · Aerodactyl 25 % (44-46) · Golurk 25 % (44-47) · Sigilyph 25 % (46-49) — *changé : +Aerodactyl, +Archeops, +Golurk, +Sigilyph, −Banette, −Claydol, −Golbat, −Sableye*
 
 ### Sky Pillar 5F
-- **Herbes** : Sableye 30 % (42-44) · Golbat 30 % (44-45) → en jeu : Crobat · Claydol 19 % (46-47) · Banette 15 % (47-49) · Altaria 6 % (49-50)
+- **Herbes** : Archeops 25 % (42-49) · Aerodactyl 25 % (44-46) · Golurk 25 % (44-50) · Sigilyph 25 % (46-50) — *changé : +Aerodactyl, +Archeops, +Golurk, +Sigilyph, −Altaria, −Banette, −Claydol, −Golbat, −Sableye*
 
 ### Sootopolis City
-- **Surf** : Magikarp 100 % (6-45) → en jeu : Gyarados (selon le niveau)
-- **Canne** : Magikarp 70 % (6-13) · Tentacool 30 % (6-13)
-- **Super Canne** : Magikarp 100 % (13-38) → en jeu : Gyarados (selon le niveau)
-- **Méga Canne** : Magikarp 80 % (38-45) → en jeu : Gyarados · Gyarados 20 % (6-58)
+- **Surf** : Milotic 100 % (6-45) — *changé : +Milotic, −Magikarp*
+- **Canne** : Milotic 100 % (6-13) — *changé : +Milotic, −Magikarp, −Tentacool*
+- **Super Canne** : Milotic 100 % (13-38) — *changé : +Milotic, −Magikarp*
+- **Méga Canne** : Milotic 100 % (6-58) — *changé : +Milotic, −Gyarados, −Magikarp*
 
 ### Underwater Route 124
 - **Surf** : Clamperl 65 % (26-45) → en jeu : Gorebyss, Huntail (selon le niveau) · Chinchou 30 % (26-38) → en jeu : Lanturn (selon le niveau) · Relicanth 5 % (38-45)

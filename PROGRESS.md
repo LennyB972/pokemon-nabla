@@ -278,6 +278,13 @@
   - Grotte Tréfonds (salles de marée basse, sauf la salle de glace) : Otaria, Obalie (en Phogleur en jeu), Colimucus, Terracool (en Terracruel), Tritosor (Occident 10, Orient 10), 20 % chacun. Salle de glace : Frigodo 30, Marcacrin 25, Goupix d'Alola 15, Stalgamin 15, Sabelette d'Alola 15. Surf et pêche inchangés.
   - Algatia inchangée. Forêt Émeraude : rencontres notées dans `docs/nabla/world.md`, à appliquer quand la zone existera.
   - Couverture 984 / 984.
+- Rencontres, 8e lot (zones entre le 7e et le 8e badge) :
+  - Grotte Originelle (entrée et 1er sous-sol) : Rexillius, Dragmara, Kranidos (en Charkos en jeu, niveaux 38-46), Armaldo, Bastiodon, 20 % chacun.
+  - Caverne Fondmer : sol Kabutops, Amonistar, Carapagos, Relicanth, 25 % chacun (Carapagos garde sa forme sur l'emplacement de niveau 36, en Mégapagos ailleurs) ; Surf 100 % Kravarech ; pêche inchangée.
+  - Routes 129 à 134 : Surf Gamblast 60 / Kravarech 40 ; pêche inchangée (l'île Mirage de la Route 130 aussi).
+  - Pilier Céleste (1er, 3e, 5e étages) : Aéroptéryx, Ptéra, Golemastoc, Cryptéro, 25 % chacun. Niveaux 42-50 inchangés (on y monte avant la 8e arène pour Rayquaza).
+  - Atalanopolis : Surf et pêche 100 % Milobellus. Pacifiville et rencontres sous-marines inchangées.
+  - Couverture 984 / 984.
 - Évolution des sauvages : le lieu de la rencontre ne fait plus évoluer un Pokémon sauvage (Magnéton → Magnézone, Tarinor → Tarinorme, Chrysapile → Lucanon à New Lavandia, `IsEvolutionByLocation` dans `src/wild_encounter.c`) ; ces évolutions comptent parmi celles du niveau 40, comme dans `scale_levels.py`. Test : `test/nabla_wild_evolution.c`.
 - Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
