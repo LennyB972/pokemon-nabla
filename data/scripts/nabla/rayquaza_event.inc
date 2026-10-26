@@ -1,8 +1,9 @@
 @ After the eighth Gym, Steven sends the player to the top of Sky Pillar, where a weakened Rayquaza
-@ appears. It eats the player's METEORITE, learns Dragon Ascent and battles until it is caught; then
+@ appears. It eats the player's METEORITE, learns Dragon Ascent and battles until it is caught, then
+@ joins the party at its head (with a full party, the player has to send a Pokémon to the PC); then
 @ Deoxys appears (it comes back after the League while it is not caught). Victory Road waits until
 @ the end of the event, and Sky Pillar's floors stay whole until then. Since Rayquaza ate the
-@ METEORITE, the white rock of Mossdeep City changes the form of Deoxys (src/nabla_white_rock.c).
+@ METEORITE, the white rock of Mossdeep City changes the form of Deoxys (src/nabla_rayquaza_event.c).
 
 @ Sootopolis City
 
@@ -158,6 +159,8 @@ Nabla_SkyPillar_Top_EventScript_CaughtRayquaza::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_SKY_PILLAR_TOP_NABLA_RAYQUAZA
 	fadescreenswapbuffers FADE_FROM_BLACK
+	specialvar VAR_RESULT, NablaRayquazaEvent_PutRayquazaFirst
+	call_if_eq VAR_RESULT, FALSE, Nabla_SkyPillar_Top_EventScript_RayquazaJoinsFullParty
 	call Nabla_SkyPillar_Top_EventScript_FaceEachOther
 	msgbox Nabla_Text_StevenRayquazaChoseYou, MSGBOX_DEFAULT
 Nabla_SkyPillar_Top_EventScript_DeoxysAppears::
@@ -207,6 +210,18 @@ Nabla_SkyPillar_Top_EventScript_BattleDeoxys::
 	goto_if_set FLAG_NABLA_DEOXYS_CAUGHT, Common_EventScript_NopReturn
 	bufferspeciesname STR_VAR_1, SPECIES_DEOXYS
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	closemessage
+	return
+
+@ Rayquaza went to the PC: the player sends a Pokémon there instead
+Nabla_SkyPillar_Top_EventScript_RayquazaJoinsFullParty::
+	msgbox Nabla_Text_RayquazaWantsToStayWithYou, MSGBOX_DEFAULT
+	closemessage
+	special ChoosePartyMon
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Nabla_SkyPillar_Top_EventScript_RayquazaJoinsFullParty
+	bufferpartymonnick STR_VAR_1, VAR_0x8004
+	special NablaRayquazaEvent_SwapRayquazaIntoParty
+	msgbox Nabla_Text_MonWentToPC, MSGBOX_DEFAULT
 	closemessage
 	return
 

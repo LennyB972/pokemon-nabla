@@ -45,6 +45,14 @@ Nabla_Text_RayquazaWantsToBattleAgain:
 	.string "RAYQUAZA is still glaring at you…\p"
 	.string "It wants to battle again!$"
 
+Nabla_Text_RayquazaWantsToStayWithYou:
+	.string "RAYQUAZA wants to stay by your side!\p"
+	.string "Your party is full. Choose a POKéMON\n"
+	.string "to send to the PC.$"
+
+Nabla_Text_MonWentToPC:
+	.string "{STR_VAR_1} was sent to the PC.$"
+
 Nabla_Text_StevenRayquazaChoseYou:
 	.string "STEVEN: Incredible…\n"
 	.string "RAYQUAZA chose you, {PLAYER}{KUN}.\p"

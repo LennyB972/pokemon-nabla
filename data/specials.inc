@@ -643,5 +643,7 @@ gSpecials::
 	def_special NablaSafariZone_CountRegionsForSale
 	def_special NablaSafariZone_TryBuyRegion
 	def_special NablaSafariZone_BufferRegionName
+	def_special NablaRayquazaEvent_PutRayquazaFirst
+	def_special NablaRayquazaEvent_SwapRayquazaIntoParty
 	def_special NablaWhiteRock_HasFormChangeMon
 	def_special NablaWhiteRock_TryFormChange
