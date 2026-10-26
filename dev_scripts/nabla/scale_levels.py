@@ -54,9 +54,9 @@ MAP_PARTS = [
     (1, "RusturfTunnel DewfordTown GraniteCave Route106"),
     (2, "Route109 SlateportCity Route110 MauvilleCity Route117 Route111"),
     (3, "Route112 Route113 Route114 Route115 FallarborTown MeteorFalls_1F_1R MtChimney JaggedPass "
-        "LavaridgeTown FieryPath NewMauville"),
+        "LavaridgeTown FieryPath"),
     (4, "PetalburgCity_Gym MirageTower"),
-    (5, "Route105 Route107 Route108 AbandonedShip Route118 Route119 Route120 ScorchedSlab FortreeCity"),
+    (5, "Route105 Route107 Route108 AbandonedShip Route118 Route119 Route120 ScorchedSlab NewMauville FortreeCity"),
     (6, "Route121 Route122 MtPyre Route123 LilycoveCity MagmaHideout AquaHideout Route124 Route125 "
         "MossdeepCity Route126 Route127 Route128 ShoalCave"),
     (7, "MossdeepCity_SpaceCenter SeafloorCavern Route129 Route130 Route131 Route132 Route133 Route134 "
@@ -76,7 +76,7 @@ STATIC_POKEMON = [
     ("data/maps/Route120/scripts.inc", "KECLEON"),
     ("data/scripts/kecleon.inc", "KECLEON"),
 ]
-STATIC_PARTS = {"NewMauville_Inside": 3, "AquaHideout_B1F": 6, "Route120": 5, "kecleon.inc": 5}
+STATIC_PARTS = {"NewMauville_Inside": 5, "AquaHideout_B1F": 6, "Route120": 5, "kecleon.inc": 5}
 # Tables added by Pokémon Nabla to original maps: the table whose original levels they take
 LEVELS_FROM = {"gScorchedSlab": "gRoute120"}
 # Trainers of step 4.2 (and the Gym Leaders' rematches, after the League)

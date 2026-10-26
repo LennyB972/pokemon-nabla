@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 6e badge (lots 1 à 6), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 6e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 7e badge (lots 1 à 7), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (zones après le 7e badge), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
 
 ## Où on en est
 
@@ -23,7 +23,8 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 4 : 3e → 4e badge (Chemin Ardent, Chutes Météore, Sentier Sinuroc, Routes 112 à 115) ;
   - lot 5 : 4e → 5e badge (désert de la Route 111, Tour Mirage) ;
   - lot 6 : 5e → 6e badge (Routes 105, 107, 108 en Surf et pêche, Routes 118 à 120, Épave, Grotte Zénith avec une table ajoutée) ;
-  - **lot 7 (après le 6e badge) attendu**. Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
+  - lot 7 : 6e → 7e badge (New Lavandia, Nénucrique, Planque Magma, Mont Mémoria, Routes 121 à 128, Grotte Tréfonds ; Forêt Émeraude notée pour plus tard) ;
+  - **lot 8 (après le 7e badge) attendu**. Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -72,7 +73,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 - `export DEVKITPRO=/opt/devkitpro DEVKITARM=/opt/devkitpro/devkitARM`, puis `make -j$(sysctl -n hw.ncpu)` → `pokeemerald.gba`.
 - `make check` (~8 min). Référence :
-  - **0 FAIL**, 5 391 réussis ;
+  - **0 FAIL**, 5 392 réussis (5 873 au total) ;
   - 33 `ASSUMPTION_FAIL` (Grêle → Neige, normal), 18 known failing, 9 expect failing, 421 TO_DO.
   - `make check TESTS="Nabla"` : tests Nabla seuls (`test/nabla_*.c`).
 - Patch : `./make_bps.sh` (ROM propre `../rom/emerald_us.gba`, Flips `../tools/flips`).
@@ -99,12 +100,12 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
-| Rencontres | Lots 1 à 6 (zones jusqu'au 6e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Rencontres | Lots 1 à 7 (zones jusqu'au 7e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
 
 ## En attente côté utilisateur
 
-- **Lot 7 de rencontres** (zones après le 6e badge). Il l'envoie en message ou en fichier texte.
+- **Lot 8 de rencontres** (zones après le 7e badge). Il l'envoie en message ou en fichier texte.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -118,9 +119,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (après le 6e badge), au fil de ses envois.
+1. **Lots de rencontres** suivants (après le 7e badge), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
-   - Forêt Émeraude au sud du Mont Mémoria. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
+   - Forêt Émeraude au sud du Mont Mémoria (rencontres déjà choisies, dans `docs/nabla/world.md`). Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
    - Objets et événement de West Beach.
 3. **Phase 7 Post-game** : revanches des Champions, zones d'après la Ligue, Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon.
@@ -170,7 +171,22 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Gromago (« gromagot ») | GHOLDENGO | Corayon de Galar | CORSOLA_GALAR | Forgerette | TINKATINK |
 | Mimiqui | MIMIKYU | Mucuscule | GOOMY | Rhinocorne | RHYHORN |
 
-Lieux : Grotte Zénith = `ScorchedSlab` ; Épave = `AbandonedShip` ; Sentier Sinuroc = `JaggedPass` ; Chemin Ardent = `FieryPath`.
+| Magnéton | MAGNETON | Élekable | ELECTIVIRE | Salarsen | TOXTRICITY_AMPED / _LOW_KEY |
+| Ampibidou | TADBULB | Motisma | ROTOM | Maganon | MAGMORTAR |
+| Tritox | SALANDIT | Carmadura | ARMAROUGE | Malvalame | CERULEDGE |
+| Branette | BANETTE | Funécire | LITWICK | Guériaigle | BRAVIARY |
+| Rapasdepic | FEAROW | Grodrive | DRIFBLIM | Téraclope | DUSCLOPS |
+| Méditikka | MEDITITE | Charmina | MEDICHAM | Zéblitz | ZEBSTRIKA |
+| Galopa de Galar | RAPIDASH_GALAR | Farigiraf | FARIGIRAF | Cerbyllin | WYRDEER |
+| Chapignon | BRELOOM | Terraiste | CLODSIRE | Noarfang | NOCTOWL |
+| Tissenboule | TAROUNTULA | Paragruel (« paragrêle ») | BASCULEGION_M / _F | Hyporoi | KINGDRA |
+| Otaria | SEEL | Obalie | SPHEAL | Colimucus | SLIGGOO |
+| Terracool | TOEDSCOOL | Tritosor | GASTRODON_WEST / _EAST | Frigodo | FRIGIBAX |
+| Marcacrin | SWINUB | Goupix d'Alola | VULPIX_ALOLA | Stalgamin | SNORUNT |
+| Sabelette d'Alola | SANDSHREW_ALOLA | Grimalin | IMPIDIMP | Brocélôme | PHANTUMP |
+| Magirêve | MISMAGIUS | Mushana | MUSHARNA | Bombydou | CUTIEFLY |
+
+Lieux : New Lavandia = `NewMauville` ; Nénucrique = `LilycoveCity` ; Planque Magma = `MagmaHideout` ; Algatia = `MossdeepCity` ; Mont Mémoria = `MtPyre` ; Grotte Tréfonds = `ShoalCave` ; Grotte Zénith = `ScorchedSlab` ; Épave = `AbandonedShip` ; Sentier Sinuroc = `JaggedPass` ; Chemin Ardent = `FieryPath`.
 
 Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIGZAGOON_GALAR, ZORUA_HISUI, QWILFISH_HISUI). En cas de doute sur un nom, vérifier dans `include/constants/species.h` et demander plutôt que deviner.
 
@@ -226,6 +242,8 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 - **Rencontres** :
   - la Canne n'a que deux emplacements (70/30) ;
   - un Pokémon sauvage de niveau 40 ou plus prend ses évolutions par échange ou par objet (exemples : Méga Canne → Milobellus, Hastacuda, Qwilpik) ;
+  - le lieu ne fait pas évoluer un sauvage (`IsEvolutionByLocation` : Magnéton à New Lavandia), sauf au niveau 40 ;
+  - lot qui ne fait pas 100 % : la place qui manque va à une espèce qui perdrait sa seule source (décision du 2026-10-26) ;
   - le Rocabot Tempo Perso est une espèce à part (`SPECIES_ROCKRUFF_OWN_TEMPO`), qui évolue en Lougaroc Crépusculaire entre 17 h et 18 h ;
   - `coverage.py` compte les formes avec leur espèce : une forme qui demande une pré-évolution particulière peut lui échapper.
 - Placement d'objets : `hidden_item_spots.py`. Édition de la sauvegarde de l'utilisateur : possible (format Gen 3), toujours avec une copie avant (copies hors repo : `../pokeemerald_backup_before_latios_edit.sav`, `../pokeemerald_backup_before_gardevoirite_fix.sav`).

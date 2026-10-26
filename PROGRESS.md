@@ -265,6 +265,20 @@
   - Épave (salles avec de l'eau) : Surf Sinistrail 60 / Gromago 40 ; pêche Corayon de Galar 70 / Sinistrail 30 (Super Canne 80/20 et Méga Canne 60/40, 70/30 en moyenne). Corayon de Galar devient Corayôme au niveau 38 (Méga Canne).
   - Grotte Zénith (Scorched Slab) : nouvelle table, sol de la grotte seulement (taux 10 comme les autres grottes), ni Surf ni pêche : Forgerette 25, Mimiqui 20, Mucuscule 20, Rhinocorne 20, Paras 15. Niveaux de la Route 120 (`LEVELS_FROM` dans `scale_levels.py`, la grotte est dans l'étape 5e → 6e badge). En jeu : Forgerette est une Forgella, Paras un Parasect.
   - Couverture 984 / 984.
+- Rencontres, 7e lot (zones entre le 6e et le 7e badge, et New Lavandia) :
+  - New Lavandia (entrée et intérieur) : Magnéton 25, Élekable 25, Salarsen 20 (Aigüe 10, Grave 10), Ampibidou 15, Motisma 15. Le lot faisait 110 % : Magnéton et Élekable passent de 30 à 25. Elle s'ouvre après la 5e arène : ses niveaux (et les Voltorbe fixes) passent à l'étape 5e → 6e badge (27-32).
+  - Nénucrique : Surf et pêche 100 % Wailord.
+  - Planque Magma (tous les étages) : Maganon 30, Carmadura 25, Malvalame 25, Tritox 20 (les femelles apparaissent en Malamandre).
+  - Mont Mémoria intérieur : Toutombe 25 (Tomberro la nuit), Spiritomb 25, Branette 20, Ténéfix 20, Funécire 10.
+  - Mont Mémoria extérieur et sommet : Guériaigle 30, Lestombaile 25, Grodrive 20, Rapasdepic 10, Téraclope 10, et Méditikka 5 % (le lot faisait 95 % ; Méditikka n'avait plus d'autre source).
+  - Route 121 : Zéblitz 20, Galopa de Galar 20, Nidoqueen 15, Nidoking 15, Farigiraf 15, Cerbyllin 15.
+  - Route 122 : Surf Nigirigon (Courbé 60, Affalé 30, Raide 10) ; pêche inchangée.
+  - Route 123 : Zoroark 25, Terraiste 25, Chapignon 20, Noarfang 15, Tissenboule 15 (en Filentrappe en jeu).
+  - Routes 124 à 128 : Surf Wailmer 60 / Paragruel 40 (« paragrêle » ; mâle 30, femelle 10) ; pêche 100 % Hyporoi.
+  - Grotte Tréfonds (salles de marée basse, sauf la salle de glace) : Otaria, Obalie (en Phogleur en jeu), Colimucus, Terracool (en Terracruel), Tritosor (Occident 10, Orient 10), 20 % chacun. Salle de glace : Frigodo 30, Marcacrin 25, Goupix d'Alola 15, Stalgamin 15, Sabelette d'Alola 15. Surf et pêche inchangés.
+  - Algatia inchangée. Forêt Émeraude : rencontres notées dans `docs/nabla/world.md`, à appliquer quand la zone existera.
+  - Couverture 984 / 984.
+- Évolution des sauvages : le lieu de la rencontre ne fait plus évoluer un Pokémon sauvage (Magnéton → Magnézone, Tarinor → Tarinorme, Chrysapile → Lucanon à New Lavandia, `IsEvolutionByLocation` dans `src/wild_encounter.c`) ; ces évolutions comptent parmi celles du niveau 40, comme dans `scale_levels.py`. Test : `test/nabla_wild_evolution.c`.
 - Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
 
@@ -321,6 +335,7 @@
 | 2026-10-25 | Rencontres : l'utilisateur envoie ses changements par zone (pourcentages, jour/nuit) ; Claude les traduit en emplacements. Premier lot : zones d'avant le 1er badge. Niveaux un peu relevés plus tard, après la partie de test de l'utilisateur. |
 | 2026-10-23 | Nouvelles zones (West Beach, Forêt Émeraude…) : niveaux calés sur les zones qui les entourent. Équilibrage fin (niveaux, puissance des équipes, sets) après la partie complète de l'utilisateur en v1. |
 | 2026-10-25 | Objets d'évolution vendus aussi au marché de Poivressel (dès le 2e badge), par un vendeur ajouté sous une tente vide plutôt qu'en remplaçant un personnage d'origine. |
+| 2026-10-26 | Un lot de rencontres qui ne fait pas 100 % : la place qui manque va à une espèce qui perdrait sa seule source (Cacnea, Méditikka), sinon les taux sont ramenés à 100 en gardant les proportions. |
 
 ## Questions ouvertes
 

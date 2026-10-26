@@ -9,6 +9,7 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 - **Scénario (résumé, à mieux écrire)** : après l'événement du Mont Mémoria, Timmy (Wally) vient voir le joueur : il a entendu parler d'activités suspectes dans la Forêt Émeraude. On y va, on affronte des ennemis ; à la fin, Timmy obtient Celebi, que le joueur a sauvé. Timmy propose alors un combat, obligatoire.
 - **Combat** : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), déjà prêt (Magnézone, Altaria, Pyronille, Celebi, Gallame ; niveaux 40-43, avant le 7ᵉ badge).
 - **Place** : la carte de la région a des cases libres sous la route 123.
+- **Rencontres** (choisies par l'utilisateur, à appliquer quand la zone existera) : Grimalin 20 %, Brocélôme 20 %, Mushana 20 %, Florges 20 %, Magirêve 10 %, Bombydou 10 % (`IMPIDIMP`, `PHANTUMP`, `MUSHARNA`, `FLORGES`, `MISMAGIUS`, `CUTIEFLY`). Niveaux : ceux des Routes 122-123.
 - **À définir** : les ennemis (Team Aqua/Magma ? autres ?), l'entrée de la forêt, qui dessine.
 
 ### Îles accessibles par Plongée

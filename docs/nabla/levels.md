@@ -30,9 +30,9 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | Avant le 1er badge | LittlerootTown, OldaleTown, Route101, Route102, Route103, Route104, PetalburgWoods, PetalburgCity, RustboroCity, Route116 |
 | 1er → 2e badge | RusturfTunnel, DewfordTown, GraniteCave, Route106 |
 | 2e → 3e badge | Route109, SlateportCity, Route110, MauvilleCity, Route117, Route111 |
-| 3e → 4e badge | Route112, Route113, Route114, Route115, FallarborTown, MeteorFalls_1F_1R, MtChimney, JaggedPass, LavaridgeTown, FieryPath, NewMauville |
+| 3e → 4e badge | Route112, Route113, Route114, Route115, FallarborTown, MeteorFalls_1F_1R, MtChimney, JaggedPass, LavaridgeTown, FieryPath |
 | 4e → 5e badge | PetalburgCity_Gym, MirageTower |
-| 5e → 6e badge | Route105, Route107, Route108, AbandonedShip, Route118, Route119, Route120, ScorchedSlab, FortreeCity |
+| 5e → 6e badge | Route105, Route107, Route108, AbandonedShip, Route118, Route119, Route120, ScorchedSlab, NewMauville, FortreeCity |
 | 6e → 7e badge | Route121, Route122, MtPyre, Route123, LilycoveCity, MagmaHideout, AquaHideout, Route124, Route125, MossdeepCity, Route126, Route127, Route128, ShoalCave |
 | 7e → 8e badge | MossdeepCity_SpaceCenter, SeafloorCavern, Route129, Route130, Route131, Route132, Route133, Route134, PacifidlogTown, SootopolisCity, CaveOfOrigin, SkyPillar, Underwater |
 | Route Victoire | VictoryRoad, EverGrandeCity, MeteorFalls_1F_2R, MeteorFalls_B1F |
@@ -42,7 +42,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 
 | Script | Pokémon | Avant | Après |
 |---|---|---|---|
-| `data/maps/NewMauville_Inside/scripts.inc` | Voltorb | 25 | 29 |
+| `data/maps/NewMauville_Inside/scripts.inc` | Voltorb | 25 | 31 |
 | `data/maps/AquaHideout_B1F/scripts.inc` | Electrode | 30 | 36 |
 | `data/maps/Route120/scripts.inc` | Kecleon | 30 | 37 |
 | `data/scripts/kecleon.inc` | Kecleon | 30 | 37 |
@@ -1061,7 +1061,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | Route115 | `gRoute115` | herbes | 23-26 | 27-30 |
 | Route115 | `gRoute115` | Surf | 5-35 | 6-43 |
 | Route115 | `gRoute115` | pêche | 5-45 | 6-55 |
-| NewMauville_Inside | `gNewMauville_Inside` | herbes | 22-26 | 26-30 |
+| NewMauville_Inside | `gNewMauville_Inside` | herbes | 22-26 | 27-32 |
 | Route119 | `gRoute119` | herbes | 24-27 | 30-34 |
 | Route119 | `gRoute119` | Surf | 5-35 | 6-43 |
 | Route119 | `gRoute119` | pêche | 5-45 | 6-55 |
@@ -1127,7 +1127,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | CaveOfOrigin_UnusedRubySapphireMap1 | `gCaveOfOrigin_UnusedRubySapphireMap1` | herbes | 30-36 | 38-46 |
 | CaveOfOrigin_UnusedRubySapphireMap2 | `gCaveOfOrigin_UnusedRubySapphireMap2` | herbes | 30-36 | 38-46 |
 | CaveOfOrigin_UnusedRubySapphireMap3 | `gCaveOfOrigin_UnusedRubySapphireMap3` | herbes | 30-36 | 38-46 |
-| NewMauville_Entrance | `gNewMauville_Entrance` | herbes | 22-26 | 26-30 |
+| NewMauville_Entrance | `gNewMauville_Entrance` | herbes | 22-26 | 27-32 |
 | VictoryRoad_B1F | `gVictoryRoad_B1F` | herbes | 38-42 | 53-59 |
 | VictoryRoad_B1F | `gVictoryRoad_B1F` | Éclate-Roc | 30-40 | 42-56 |
 | VictoryRoad_B2F | `gVictoryRoad_B2F` | herbes | 40-44 | 56-62 |
