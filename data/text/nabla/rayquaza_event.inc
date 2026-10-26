@@ -4,7 +4,7 @@ Nabla_Text_StevenSootopolisCall:
 	.string "But listen, I came because it's\n"
 	.string "urgent.\p"
 	.string "A POKéMON with emerald scales was\n"
-	.string "seen on a lost island west of\l"
+	.string "seen on a lost island east of\l"
 	.string "PACIFIDLOG TOWN.\p"
 	.string "It looked weakened… If it's the one\n"
 	.string "I think it is, we have to hurry.\p"
@@ -13,7 +13,7 @@ Nabla_Text_StevenSootopolisCall:
 
 Nabla_Text_VictoryRoadBlocked:
 	.string "STEVEN is waiting at the top of the\n"
-	.string "pillar west of PACIFIDLOG TOWN.\p"
+	.string "pillar east of PACIFIDLOG TOWN.\p"
 	.string "It sounded urgent…\n"
 	.string "VICTORY ROAD will have to wait.$"
 
