@@ -476,6 +476,21 @@ static bool32 MeetsEvolutionBranchConditions(struct Pokemon *mon, const struct E
     return DoesMonMeetAdditionalConditions(mon, branchParams, NULL, PARTY_SIZE, NULL, CHECK_EVO);
 }
 
+// Pokémon Nabla: where a wild Pokémon is met does not make it evolve (Magneton in New Mauville)
+static bool32 IsEvolutionByLocation(const struct Evolution *evolutions, enum Species target)
+{
+    for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+    {
+        for (u32 j = 0; evolutions[i].targetSpecies == target && evolutions[i].params != NULL
+                     && evolutions[i].params[j].condition != CONDITIONS_END; j++)
+        {
+            if (evolutions[i].params[j].condition == IF_IN_MAP || evolutions[i].params[j].condition == IF_IN_MAPSEC)
+                return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 // Pokémon Nabla: wild Pokémon evolve as far as their level allows. Evolutions that need more than a level
 // (trade, item, friendship...) happen from NABLA_OTHER_EVOLUTIONS_LEVEL, picking one at random if there are several.
 enum Species GetNablaWildEvolution(struct Pokemon *mon)
@@ -487,6 +502,8 @@ enum Species GetNablaWildEvolution(struct Pokemon *mon)
     enum Species target = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
     const struct Evolution *evolutions = GetSpeciesEvolutions(GetMonData(mon, MON_DATA_SPECIES));
 
+    if (target != SPECIES_NONE && IsEvolutionByLocation(evolutions, target))
+        target = SPECIES_NONE;
     if (target != SPECIES_NONE || level < NABLA_OTHER_EVOLUTIONS_LEVEL || evolutions == NULL)
         return target;
     for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END && count < ARRAY_COUNT(targets); i++)

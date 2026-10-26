@@ -3,6 +3,7 @@
 #include "wild_encounter.h"
 #include "test/test.h"
 #include "constants/nabla.h"
+#include "constants/region_map_sections.h"
 
 TEST("Nabla: wild Pokémon evolve with their level, and from level 40 for the other evolutions")
 {
@@ -20,5 +21,19 @@ TEST("Nabla: wild Pokémon evolve with their level, and from level 40 for the ot
     PARAMETRIZE { species = SPECIES_COMBEE; level = 21; gender = MON_FEMALE; evolution = SPECIES_VESPIQUEN; }
 
     CreateMon(&mon, species, level, GetMonPersonality(species, gender, NATURE_HARDY, RANDOM_UNOWN_LETTER), OTID_STRUCT_PLAYER_ID);
+    EXPECT_EQ(GetNablaWildEvolution(&mon), evolution);
+}
+
+TEST("Nabla: wild Pokémon do not evolve because of where they are met")
+{
+    struct Pokemon mon;
+    enum Species evolution = SPECIES_NONE;
+    u32 level = 0;
+
+    PARAMETRIZE { level = NABLA_OTHER_EVOLUTIONS_LEVEL - 1; evolution = SPECIES_NONE; }
+    PARAMETRIZE { level = NABLA_OTHER_EVOLUTIONS_LEVEL; evolution = SPECIES_MAGNEZONE; }
+
+    gMapHeader.regionMapSectionId = MAPSEC_NEW_MAUVILLE;
+    CreateMon(&mon, SPECIES_MAGNETON, level, 0, OTID_STRUCT_PLAYER_ID);
     EXPECT_EQ(GetNablaWildEvolution(&mon), evolution);
 }
