@@ -27,4 +27,7 @@
 // (trade, item, friendship...): Onix is a Steelix from level 40
 #define NABLA_OTHER_EVOLUTIONS_LEVEL 40
 
+// Rayquaza and Deoxys at the top of Sky Pillar, after the eighth Gym (data/scripts/nabla/rayquaza_event.inc)
+#define NABLA_SKY_PILLAR_LEGENDARIES_LEVEL 65
+
 #endif // GUARD_CONSTANTS_NABLA_H

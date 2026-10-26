@@ -4,6 +4,7 @@ SkyPillar_5F_MapScripts::
 
 SkyPillar_5F_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_5F_EventScript_CleanFloor
+	call_if_unset FLAG_NABLA_SKY_PILLAR_DONE, SkyPillar_5F_EventScript_CleanFloor
 	return
 
 SkyPillar_5F_EventScript_CleanFloor::

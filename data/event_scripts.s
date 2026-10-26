@@ -1755,3 +1755,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/safari_zone.inc"
 	.include "data/scripts/nabla/ancient_tablet.inc"
 	.include "data/text/nabla/ancient_tablet.inc"
+	.include "data/scripts/nabla/rayquaza_event.inc"
+	.include "data/text/nabla/rayquaza_event.inc"

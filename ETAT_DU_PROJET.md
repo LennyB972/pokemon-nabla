@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 8e badge (lots 1 à 8), vendeur d'objets d'évolution au marché de Poivressel. Prochaine chose : je t'envoie le lot de rencontres suivant (Route Victoire et zones d'après la Ligue), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 8e badge (lots 1 à 8), vendeur d'objets d'évolution au marché de Poivressel, événement Rayquaza/Deoxys du Pilier Céleste après la 8e arène. Prochaine chose : je t'envoie le lot de rencontres suivant (Route Victoire et zones d'après la Ligue), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
 
 ## Où on en est
 
@@ -27,6 +27,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 8 : 7e → 8e badge (Grotte Originelle, Caverne Fondmer, Routes 129 à 134, Pilier Céleste, Atalanopolis) ;
   - **lot suivant attendu** (Route Victoire, puis la suite). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
+- **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, à tester) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
 ## Méthode de travail avec l'utilisateur
@@ -74,7 +75,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 - `export DEVKITPRO=/opt/devkitpro DEVKITARM=/opt/devkitpro/devkitARM`, puis `make -j$(sysctl -n hw.ncpu)` → `pokeemerald.gba`.
 - `make check` (~8 min). Référence :
-  - **0 FAIL**, 5 392 réussis (5 873 au total) ;
+  - **0 FAIL**, 5 393 réussis (5 874 au total) ;
   - 33 `ASSUMPTION_FAIL` (Grêle → Neige, normal), 18 known failing, 9 expect failing, 421 TO_DO.
   - `make check TESTS="Nabla"` : tests Nabla seuls (`test/nabla_*.c`).
 - Patch : `./make_bps.sh` (ROM propre `../rom/emerald_us.gba`, Flips `../tools/flips`).
@@ -103,11 +104,16 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
 | Rencontres | Lots 1 à 8 (zones jusqu'au 8e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
+| Scénario | Événement du Pilier Céleste : Pierre après Juan, Rayquaza et Deoxys (niveau 65), Route Victoire bloquée jusqu'à la fin ; Cozmo laisse la Météorite au joueur ; rocher blanc d'Algatia (formes de Deoxys) |
 
 ## En attente côté utilisateur
 
-- **Lot suivant de rencontres** (Route Victoire, zones d'après la Ligue).
-- **Pilier Céleste** : il veut le rendre accessible par un élément de scénario entre la 8e arène et la Ligue ; il l'est déjà dans Émeraude (porte ouverte depuis l'événement de Rayquaza). Sa réponse à attendre (`docs/nabla/world.md`). Il l'envoie en message ou en fichier texte.
+- **Lot suivant de rencontres** (Route Victoire, zones d'après la Ligue). Il l'envoie en message ou en fichier texte.
+- **Test de l'événement du Pilier Céleste** (menu debug) :
+  - *Set Flag* `0x86E` (8e badge), *Give* Météorite, Méga-Bracelet, Poké Balls ; warp devant l'arène d'Atalanopolis (ou dedans, puis sortir) : Pierre.
+  - Éternara : l'entrée de la Route Victoire refuse le joueur tant que l'événement n'est pas fini.
+  - Pilier Céleste (sols intacts) jusqu'au sommet : scène, Rayquaza à capturer (le combat recommence), Deoxys ; Méga-Rayquaza en combat.
+  - Après la Ligue (*Set Flag* `0x864`) : Deoxys au sommet s'il n'a pas été capturé. Algatia : rocher blanc avec un Deoxys. Autéquia : Cozmo et la Météorite.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -220,7 +226,8 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
   - West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes → blocs ; le relancer écrase les retouches Porymap).
   - Règles des tuiles dans `docs/nabla/zones.md` : rivage `11b`-`12d` et coins `13d 13e 145 146`, herbe dans le sable `118`-`12a`, arbres `1ce`…, dômes, rochers marins de trois sortes, bloc `e` interdit seul, bords de carte fermés.
   - À réutiliser pour les prochaines plages et côtes. Après un dessin, vérifier qu'aucune case accessible ne touche un bord sans connexion (parcours des cases depuis l'entrée).
-- **Flags Nabla** : 0x20 Multi Exp, 0x21 level caps, 0x22-0x28 régions du Safari, 0x29-0x2B zones spéciales, 0x264-0x27E objets cachés, 0x280 et 0x286-0x295 Méga-Gemmes au sol, 0x281-0x285 événement Latios.
+- **Flags Nabla** : 0x20 Multi Exp, 0x21 level caps, 0x22-0x28 régions du Safari, 0x29-0x2B zones spéciales, 0x264-0x27E objets cachés, 0x280 et 0x286-0x295 Méga-Gemmes au sol, 0x281-0x285 événement Latios, 0x296-0x29D événement du Pilier Céleste.
+- **Événement du Pilier Céleste** : `data/scripts/nabla/rayquaza_event.inc` (appels ajoutés dans les scripts d'Atalanopolis, d'Éternara, du Pilier, de Cozmo et du rocher blanc d'Algatia) ; `src/nabla_white_rock.c` (formes de Deoxys, test `test/nabla_white_rock.c`) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL`.
 - **Vars Nabla** : `VAR_NABLA_DIFFICULTY` 0x404E (1 Normal, 2 Difficile), `VAR_NABLA_SAFARI_REGION` 0x4083.
 - **Outils** (`dev_scripts/nabla/`) : `hidden_item_spots.py`, `list_items.py`, `safari_tables.py`, `coverage.py`, `render_map.py`, `scale_levels.py`, `list_encounters.py`, `draw_west_beach.py`.
 - **Docs de référence** (`docs/nabla/`) : `items.md`, `safari.md`, `couverture.md`, `zones.md`, `world.md`, `trainers.md`, `levels.md`, `rencontres.md`.

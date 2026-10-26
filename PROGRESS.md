@@ -288,6 +288,15 @@
 - Évolution des sauvages : le lieu de la rencontre ne fait plus évoluer un Pokémon sauvage (Magnéton → Magnézone, Tarinor → Tarinorme, Chrysapile → Lucanon à New Lavandia, `IsEvolutionByLocation` dans `src/wild_encounter.c`) ; ces évolutions comptent parmi celles du niveau 40, comme dans `scale_levels.py`. Test : `test/nabla_wild_evolution.c`.
 - Marché de Poivressel : un vendeur d'objets d'évolution (les 45 articles de Nénucrique, même script `Nabla_EventScript_EvolutionItemsClerk`) ajouté sous la tente vide en bas à droite (case 11, 51), en fin de liste d'objets de la map. Fil de Liaison au 3e badge (palier commun des boutiques).
 - West Beach v2 (dessinée par Claude, retours de l'utilisateur intégrés) : grande plage entourée par la mer au nord, à l'ouest et au sud (rivages arrondis qui ondulent, barrière irrégulière de rochers marins de trois sortes au bord de la carte, plus de mur invisible), îlots d'herbe arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est dans le prolongement de la côte de la Route 115. Retirés après retour : les hauts d'arbres sans tronc (bloc `e`), les lignes d'arbres contre la mer, les dômes aux coins (angles jaunes) ; rochers marins en motif irrégulier. Validée en jeu par l'utilisateur (2026-10-25). Générée par script à partir des blocs d'Émeraude (règles notées dans `docs/nabla/zones.md`).
+- Événement du Pilier Céleste (scénario de l'utilisateur, `data/scripts/nabla/rayquaza_event.inc`, textes dans `data/text/nabla/rayquaza_event.inc`) :
+  - Atalanopolis : après le 8e badge, Pierre attend devant l'arène (objet ajouté en fin de liste). En sortant de l'arène, il vient vers le joueur ; arrivé autrement, le joueur va lui parler. Il donne rendez-vous au sommet du pilier de « l'île perdue à l'ouest de Pacifiville » : un Pokémon aux écailles émeraude y a été vu, affaibli.
+  - Éternara : tant que l'événement n'est pas fini, devant l'entrée de la Route Victoire (case 18, 42), le joueur se rappelle le rendez-vous et recule.
+  - Pilier Céleste : les sols restent intacts tant que l'événement n'est pas fini (plus besoin de la Bicyclette Course), fissurés ensuite comme dans Émeraude. Le Rayquaza niveau 70 d'Émeraude au sommet est retiré (il était capturable dès l'événement d'Atalanopolis, avant la 8e arène).
+  - Sommet : en haut de l'escalier, le joueur rejoint Pierre. Rayquaza descend du ciel, épuisé, mange la Météorite du sac (elle disparaît), retrouve ses forces et défie le joueur : combat de légendaire niveau 65 (Draco Ascension, Vitesse Extrême, Danse Draco, Dracochoc) qui recommence tant qu'il n'est pas capturé. Méga-Rayquaza : natif (Draco Ascension + Méga-Bracelet, sans gemme ; Draco Ascension se réapprend au niveau 1).
+  - Deoxys apparaît ensuite (niveau 65) : capturé ou non, Pierre conclut, part, et la Route Victoire s'ouvre. S'il n'est pas capturé, il attend au sommet après la Ligue (il revient à chaque visite jusqu'à sa capture). Perdre un combat : la scène reprend à la remontée (au combat contre Deoxys si Rayquaza est déjà capturé).
+  - Prof. Cozmo (Autéquia) refuse la Météorite et donne quand même la CT Retour : le joueur garde toujours la Météorite (scripts d'origine modifiés à la demande de l'utilisateur).
+  - Algatia : le rocher blanc (à côté de l'habitante qui en parle) change la forme d'un Deoxys de l'équipe, dans l'ordre Normale → Attaque → Défense → Vitesse (mécanisme natif de la Météorite, `src/nabla_white_rock.c`). Test : `test/nabla_white_rock.c`.
+  - Flags `FLAG_NABLA_SKY_PILLAR_CALL` à `FLAG_NABLA_HIDE_SKY_PILLAR_DEOXYS` (0x296-0x29D) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL` (`include/constants/nabla.h`).
 
 ## Bugs connus
 
@@ -343,6 +352,7 @@
 | 2026-10-23 | Nouvelles zones (West Beach, Forêt Émeraude…) : niveaux calés sur les zones qui les entourent. Équilibrage fin (niveaux, puissance des équipes, sets) après la partie complète de l'utilisateur en v1. |
 | 2026-10-25 | Objets d'évolution vendus aussi au marché de Poivressel (dès le 2e badge), par un vendeur ajouté sous une tente vide plutôt qu'en remplaçant un personnage d'origine. |
 | 2026-10-26 | Un lot de rencontres qui ne fait pas 100 % : la place qui manque va à une espèce qui perdrait sa seule source (Cacnea, Méditikka), sinon les taux sont ramenés à 100 en gardant les proportions. |
+| 2026-10-26 | Rayquaza et Deoxys : événement du Pilier Céleste entre la 8e arène et la Ligue (scénario de l'utilisateur), niveau 65 ; Cozmo laisse la Météorite au joueur ; le rocher blanc d'Algatia change la forme de Deoxys ; sols du Pilier intacts jusqu'à la fin de l'événement. |
 
 ## Questions ouvertes
 

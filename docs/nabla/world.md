@@ -17,10 +17,8 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 - **Place** : la mer de l'est de Hoenn a de la place sur la carte de la région.
 - **À définir** : combien d'îles, sur quelles routes marines, leur contenu.
 
-### Pilier Céleste entre la 8e arène et la Ligue
-- **Idée de l'utilisateur** : le rendre accessible par un élément de scénario après la 8e arène, avant la Ligue (rencontres faites au lot 8 : Aéroptéryx, Ptéra, Golemastoc, Cryptéro).
-- **Dans Émeraude** : la porte s'ouvre pendant l'événement de Rayquaza, avant la 8e arène (`FLAG_WALLACE_GOES_TO_SKY_PILLAR`, jamais retiré) et reste ouverte ; ensuite le sol du 4e étage est fissuré (Bicyclette Course) et Rayquaza revient au sommet après la Ligue.
-- **À définir** : ce que doit apporter l'élément de scénario (le Pilier est déjà accessible).
+### Pilier Céleste entre la 8e arène et la Ligue (fait)
+- **Fait** : événement de Rayquaza et Deoxys (voir `PROGRESS.md`, scripts dans `data/scripts/nabla/rayquaza_event.inc`). Rencontres du Pilier : lot 8.
 
 ### West Beach (faite, v2)
 - **Fait** : la plage (`docs/nabla/zones.md`) et ses rencontres (avant le 1er badge).

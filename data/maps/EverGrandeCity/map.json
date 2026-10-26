@@ -164,6 +164,15 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 42,
+      "elevation": 5,
+      "var": "VAR_TEMP_2",
+      "var_value": "1",
+      "script": "Nabla_EverGrandeCity_EventScript_VictoryRoadBlocked"
     }
   ],
   "bg_events": [
