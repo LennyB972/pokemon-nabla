@@ -306,7 +306,7 @@
   - Celebi : sprite de Pokémon d'expansion (`OBJ_EVENT_GFX_SPECIES(CELEBI)`). `OBJ_EVENT_GFX_CELEBI` faisait planter le jeu à son apparition : sa palette n'existe que dans la version Rouge Feu (à éviter : les sprites `*_Frlg` et les Pokémon « old » en palette NPC).
   - Sanctuaire : Max et Tabitha au pied du vieil arbre ; duo avec Timmy (le joueur choisit 3 Pokémon) ; Celebi sort de l'arbre et choisit Timmy ; la Team Magma part réveiller Groudon ; Timmy soigne l'équipe et se bat (`TRAINER_NABLA_WALLY_EMERALD_FOREST`). Perdre : la scène reprend au retour (au combat contre Timmy si Max est battu).
   - Événement obligatoire : tant qu'il n'est pas fini, un garde Magma ajouté devant le Repaire Magma (Sentier Sinuroc) bloque l'entrée.
-  - Dresseurs `TRAINER_NABLA_GRUNT_EMERALD_FOREST_1` à `_5`, `TRAINER_NABLA_TABITHA_EMERALD_FOREST`, `TRAINER_NABLA_MAXIE_EMERALD_FOREST` (858-863 et 568) et allié `PARTNER_WALLY_EMERALD_FOREST` : équipes proposées par Claude, à corriger par l'utilisateur (`docs/nabla/trainers.md`).
+  - Dresseurs `TRAINER_NABLA_GRUNT_EMERALD_FOREST_1` à `_5`, `TRAINER_NABLA_TABITHA_EMERALD_FOREST`, `TRAINER_NABLA_MAXIE_EMERALD_FOREST` (858-863 et 568) et allié `PARTNER_WALLY_EMERALD_FOREST` : équipes proposées par Claude, validées par l'utilisateur (`docs/nabla/trainers.md`).
   - Flags `FLAG_NABLA_EMERALD_FOREST_CALL`, `_WALLY_MET`, `_DONE` (0x29E-0x2A0) ; qui est visible sur chaque map est réglé en y entrant (flags temporaires).
 
 ## Bugs connus

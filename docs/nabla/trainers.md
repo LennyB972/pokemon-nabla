@@ -2238,7 +2238,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 ## Forêt Émeraude — sbires Magma, puis Max et Tabitha contre toi et Timmy, après le 6ᵉ badge
 
 - Level cap à ce moment : **51**. Événement Nabla (histoire de l'utilisateur) : juste après le sommet du Mont Mémoria, avant le Repaire Magma.
-- **Équipes proposées par Claude, à corriger** : un peu en dessous de celles du Repaire Magma (Tabitha 40-43, Max 43-45) ; Timmy se bat ensuite à 40-43.
+- **Équipes proposées par Claude, validées par l'utilisateur (2026-10-27)** : un peu en dessous de celles du Repaire Magma (Tabitha 40-43, Max 43-45) ; Timmy se bat ensuite à 40-43.
 - Cinq sbires, chacun au bord d'un passage obligé qu'il regarde en travers : impossible de les éviter.
 - Combat en duo contre Max et Tabitha : **3 Pokémon par dresseur** (le joueur en choisit 3), Timmy allié. Objets de soin : aucun.
 

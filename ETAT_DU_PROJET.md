@@ -1,10 +1,10 @@
-# État du projet — Pokémon Nabla (au 2026-10-25)
+# État du projet — Pokémon Nabla (au 2026-10-27)
 
 Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (règles permanentes), `ROADMAP.md` (plan) et `PROGRESS.md` (journal détaillé et décisions datées).
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : phase 5 (name box automatique, plusieurs objets d'un coup, menus en boucle, vitamines +32 EV à 5 000 ₽), West Beach v2 validée en jeu, rencontres des zones jusqu'au 8e badge (lots 1 à 8), vendeur d'objets d'évolution au marché de Poivressel, événement Rayquaza/Deoxys du Pilier Céleste après la 8e arène. Prochaine chose : je t'envoie le lot de rencontres suivant (Route Victoire et zones d'après la Ligue), même méthode que les lots précédents (mes pourcentages en noms français, tu les traduis en emplacements, couverture, fiche des rencontres, build, commit).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : rencontres de toute l'aventure (lots 1 à 8, Route Victoire), événement Rayquaza/Deoxys du Pilier Céleste, Forêt Émeraude (cartes, histoire avec Timmy, Max et Tabitha, Celebi), tous validés en jeu. Prochaine chose : la conception du post-game (phase 7, avec les îles par Plongée de la phase 6) : présente-moi ce qu'il faut décider, je te donne mes idées.
 
 ## Où on en est
 
@@ -28,7 +28,10 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - Route Victoire : pseudo-légendaires au niveau 55 (plus de Surf ni de pêche) ;
   - Grotte Granite retouchée : Galekid 20 %, Mysdibule et Makuhita 5 % chacun ;
   - **lot suivant attendu** (zones d'après la Ligue). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
-- **Phase 6 (monde étendu)** : **Forêt Émeraude** : cartes et histoire faites et validées en jeu (2026-10-27 : Timmy au sommet du Mont Mémoria, 5 sbires, duo contre Max et Tabitha, Celebi, combat contre Timmy) ; **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
+- **Phase 6 (monde étendu)** :
+  - **Forêt Émeraude** : cartes et histoire faites et validées en jeu (2026-10-27) : Timmy au sommet du Mont Mémoria, 5 sbires impossibles à éviter, duo avec Timmy contre Max et Tabitha, Celebi choisit Timmy, combat contre Timmy ; Repaire Magma fermé avant. Équipes validées par l'utilisateur.
+  - **West Beach v2** faite et validée en jeu.
+  - Reste : les îles par Plongée, et les objets (West Beach, culs-de-sac de la forêt) et l'événement de West Beach (`docs/nabla/world.md`).
 - **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, validé en jeu le 2026-10-27) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme, toujours placé en tête d'équipe) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -104,15 +107,16 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.1 | Name box native ; nom des dresseurs sur leur réplique d'avant-combat ; nom repris des 830 textes d'Émeraude qui commencent par « NOM: » (textes inchangés ; « DAD » → « NORMAN ») |
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
-| 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
+| 6 | **West Beach v2** et **Forêt Émeraude** (cartes + histoire), validées ; outils et règles de dessin des zones (`draw_west_beach.py`, `draw_emerald_forest.py`) |
 | Rencontres | Lots 1 à 8 et Route Victoire : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
-| Scénario | Événement du Pilier Céleste : Pierre après Juan, Rayquaza et Deoxys (niveau 65), Route Victoire bloquée jusqu'à la fin ; Cozmo laisse la Météorite au joueur ; rocher blanc d'Algatia (formes de Deoxys) |
+| Scénario | Événement du Pilier Céleste : Pierre après Juan, Rayquaza et Deoxys (niveau 65), Route Victoire bloquée jusqu'à la fin ; Cozmo laisse la Météorite au joueur ; rocher blanc d'Algatia (formes de Deoxys). Forêt Émeraude (voir phase 6) |
+| Divers | Échange à la capture : un Pokémon qui connaît une CS peut aller au PC ; Trioxhydre et Lanssorien évoluent au niveau 55, Solochi, Fantyrm et Mucuscule au niveau 35 |
 
 ## En attente côté utilisateur
 
-- **Lot suivant de rencontres** (zones d'après la Ligue). Il l'envoie en message ou en fichier texte.
-- **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
+- **Lot de rencontres d'après la Ligue**, s'il veut en changer : Grotte Altérée, Passage du Désert, Grotte Artisan, Grotte Tellurique / Grotte Marine, île Mirage de la Route 130, zones sous-marines (inchangées pour l'instant). Il l'envoie en message ou en fichier texte.
+- **Équilibrage des niveaux**, étape à part après sa partie complète : relever un peu les niveaux (facteurs `PARTS` de `scale_levels.py`) ; West Beach et Forêt Émeraude (zones Nabla, hors script) à régler à la main (forêt à 30-34 : Grimalin y est déjà Fourbelin).
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
   - 4.3 niveaux ;
@@ -125,13 +129,15 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (zones d'après la Ligue), au fil de ses envois.
-2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
-   - Forêt Émeraude : faite et validée ; restent les objets des culs-de-sac, et les niveaux et équipes à revoir avec l'équilibrage (rencontres à 30-34 : Grimalin y est déjà Fourbelin ; équipes Magma proposées par Claude). Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
-   - Îles accessibles par Plongée (hors scénario).
-   - Objets et événement de West Beach.
-3. **Phase 7 Post-game** : revanches des Champions, zones d'après la Ligue, Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon.
-4. **Phase 8 Release 1.0**, après sa partie complète et l'équilibrage.
+1. **Conception du post-game** (recommandée ensuite) : une mini-conception à valider avant de construire, dans `docs/nabla/world.md`. À décider avec lui :
+   - 7.1 Conseil 4 renforcé et revanches des Champions (il compose les équipes, comme en 4.2) ;
+   - 7.2 défense du titre (challengers à la Ligue) ;
+   - 7.3 et 7.4 légendaires et fabuleux (8 / 97 obtenables aujourd'hui, `docs/nabla/couverture.md`) : îles mirages façon Flûte Éon (introduites par Latios), à rapprocher des **îles par Plongée** de la phase 6 ;
+   - le lot de rencontres d'après la Ligue.
+   Puis construction étape par étape.
+2. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il choisit les objets), événement de West Beach.
+3. **Équilibrage** après sa partie complète (niveaux, level caps).
+4. **Phase 8 Release 1.0**.
 
 À proposer un jour en amont (expansion) : correctif `AreMultiPartiesFullTeams` (`src/battle_util.c`).
 
@@ -230,6 +236,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
   - Règles des tuiles dans `docs/nabla/zones.md` : rivage `11b`-`12d` et coins `13d 13e 145 146`, herbe dans le sable `118`-`12a`, arbres `1ce`…, dômes, rochers marins de trois sortes, bloc `e` interdit seul, bords de carte fermés.
   - À réutiliser pour les prochaines plages et côtes. Après un dessin, vérifier qu'aucune case accessible ne touche un bord sans connexion (parcours des cases depuis l'entrée).
 - **Flags Nabla** : 0x20 Multi Exp, 0x21 level caps, 0x22-0x28 régions du Safari, 0x29-0x2B zones spéciales, 0x264-0x27E objets cachés, 0x280 et 0x286-0x295 Méga-Gemmes au sol, 0x281-0x285 événement Latios, 0x296-0x29D événement du Pilier Céleste, 0x29E-0x2A0 Forêt Émeraude.
+- **Forêt Émeraude (histoire)** : `data/scripts/nabla/emerald_forest.inc` (appels ajoutés dans les scripts du sommet du Mont Mémoria et du Sentier Sinuroc) ; qui est visible sur chaque map est réglé en y entrant (flags temporaires `FLAG_TEMP_11` à `_13`) à partir de `FLAG_NABLA_EMERALD_FOREST_CALL` / `_WALLY_MET` / `_DONE` et des flags des dresseurs ; Celebi en `OBJ_EVENT_GFX_SPECIES(CELEBI)`.
 - **Événement du Pilier Céleste** : `data/scripts/nabla/rayquaza_event.inc` (appels ajoutés dans les scripts d'Atalanopolis, d'Éternara, du Pilier, de Cozmo et du rocher blanc d'Algatia) ; `src/nabla_rayquaza_event.c` (formes de Deoxys, test `test/nabla_rayquaza_event.c`) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL`.
 - **Vars Nabla** : `VAR_NABLA_DIFFICULTY` 0x404E (1 Normal, 2 Difficile), `VAR_NABLA_SAFARI_REGION` 0x4083.
 - **Outils** (`dev_scripts/nabla/`) : `hidden_item_spots.py`, `list_items.py`, `safari_tables.py`, `coverage.py`, `render_map.py`, `scale_levels.py`, `list_encounters.py`, `draw_west_beach.py`, `draw_emerald_forest.py`.
