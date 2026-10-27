@@ -4,6 +4,7 @@ MtPyre_Summit_MapScripts::
 
 MtPyre_Summit_OnTransition:
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions
+	call Nabla_MtPyre_Summit_EventScript_HideWally
 	end
 
 MtPyre_Summit_EventScript_SetArchieMaxiePositions::
@@ -60,6 +61,7 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	giveitem ITEM_MAGMA_EMBLEM
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
+	call Nabla_MtPyre_Summit_EventScript_WallyArrives
 	releaseall
 	end
 

@@ -20,6 +20,7 @@ JaggedPass_EventScript_SetReadyToOpenHideout::
 
 JaggedPass_OnTransition:
 	call_if_eq VAR_JAGGED_PASS_ASH_WEATHER, 1, JaggedPass_EventScript_SetWeatherAsh
+	call Nabla_JaggedPass_EventScript_SetUpGuard
 	end
 
 JaggedPass_EventScript_SetWeatherAsh::

@@ -1337,7 +1337,7 @@ Level: 31
 - **Level cap** au moment du combat : indiqué pour chaque combat.
 - **Difficile** : même équipe, niveaux +10 % (règle automatique).
 - **Combats finaux** (rival à Nénucrique, Timmy sur la Route Victoire et ses revanches) : sets inspirés des sets compétitifs, avec des capacités des jeux officiels qui ne s'apprennent pas forcément par les CT d'Émeraude (U-turn, Volt Switch…). Ailleurs, capacités apprises par niveau jusqu'au niveau du Pokémon.
-- **Timmy dans la Forêt Émeraude** : nouveau dresseur `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), branché quand la zone sera construite.
+- **Timmy dans la Forêt Émeraude** : nouveau dresseur `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), branché dans l'événement de la Forêt Émeraude (`data/scripts/nabla/emerald_forest.inc`).
 
 ## Rival — combats d'origine
 
@@ -2233,6 +2233,141 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Razor Shell
 - Sucker Punch
 - Iron Defense
+```
+
+## Forêt Émeraude — sbires Magma, puis Max et Tabitha contre toi et Timmy, après le 6ᵉ badge
+
+- Level cap à ce moment : **51**. Événement Nabla (histoire de l'utilisateur) : juste après le sommet du Mont Mémoria, avant le Repaire Magma.
+- **Équipes proposées par Claude, à corriger** : un peu en dessous de celles du Repaire Magma (Tabitha 40-43, Max 43-45) ; Timmy se bat ensuite à 40-43.
+- Combat en duo contre Max et Tabitha : **3 Pokémon par dresseur** (le joueur en choisit 3), Timmy allié. Objets de soin : aucun.
+
+### Sbire 1, couloir ouest (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_1`, 858)
+
+```
+Mightyena
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Camerupt
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+### Sbire 2, prairie (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_2`, 859)
+
+```
+Golbat
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magcargo
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+### Sbire 3, devant le sanctuaire (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_3`, 860)
+
+```
+Houndoom
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Claydol
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+### Tabitha (`TRAINER_NABLA_TABITHA_EMERALD_FOREST`, 861)
+
+```
+Camerupt
+Ability: Solid Rock
+Level: 39
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Lava Plume
+- Earth Power
+- Rock Slide
+- Yawn
+
+Mightyena
+Ability: Intimidate
+Level: 39
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Crunch
+- Sucker Punch
+- Ice Fang
+- Taunt
+
+Weezing
+Ability: Levitate
+Level: 40
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Sludge Bomb
+- Will-O-Wisp
+- Clear Smog
+- Haze
+```
+
+### Max (`TRAINER_NABLA_MAXIE_EMERALD_FOREST`, 862)
+
+```
+Mightyena
+Ability: Intimidate
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Crunch
+- Sucker Punch
+- Thunder Fang
+- Yawn
+
+Crobat
+Ability: Inner Focus
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Cross Poison
+- Air Slash
+- Bite
+- Confuse Ray
+
+Camerupt
+Ability: Solid Rock
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flamethrower
+- Earth Power
+- Rock Slide
+- Amnesia
+```
+
+### Timmy, allié (`PARTNER_WALLY_EMERALD_FOREST`)
+
+```
+Gallade
+Ability: Sharpness
+Level: 40
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psycho Cut
+- Sacred Sword
+- Night Slash
+- Swords Dance
+
+Altaria
+Ability: Natural Cure
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Sing
+
+Magnezone
+Ability: Magnet Pull
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Discharge
+- Flash Cannon
+- Tri Attack
+- Thunder Wave
 ```
 
 ## Tabitha — Repaire Magma, après le 6ᵉ badge

@@ -1,2 +1,7 @@
 NablaEmeraldForest_Sanctuary_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NablaEmeraldForest_Sanctuary_OnTransition
 	.byte 0
+
+NablaEmeraldForest_Sanctuary_OnTransition:
+	call Nabla_EmeraldForest_Sanctuary_EventScript_SetUp
+	end

@@ -300,6 +300,13 @@
   - Flags `FLAG_NABLA_SKY_PILLAR_CALL` à `FLAG_NABLA_HIDE_SKY_PILLAR_DEOXYS` (0x296-0x29D) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL` (`include/constants/nabla.h`).
 - Capture avec l'équipe pleine : l'échange proposé par le combat accepte un Pokémon qui connaît une CS (`B_CATCH_SWAP_CHECK_HMS` FALSE, `include/config/battle.h`) ; dans Nabla, les CS du sac suffisent pour les capacités de terrain (étape 3.2), donc aucun risque de blocage. Le PC garde la règle d'Émeraude pour relâcher (le dernier Pokémon qui connaît Surf ou Plongée ne peut pas être relâché).
 - Étape 6.2a — Forêt Émeraude, les cartes (sans l'histoire) : accès par la Route 123 (encoche des arbres du bas ouverte sur 6 cases, connexion vers le sud), trois maps raccordées en continu : lisière (24 × 22, petits arbres puis grands), forêt (48 × 56, chemin sinueux avec clairière, recoin, rebord, boucle, prairie, poche cachée ; ombre et musique du Bois Clémenti), sanctuaire (22 × 18, vieil arbre entouré de fleurs). Section de carte `MAPSEC_NABLA_EMERALD_FOREST` (« EMERALD FOREST », deux cases sous la Route 123). Rencontres de la lisière et de la forêt (choix de l'utilisateur, niveaux de la Route 123) : Grimalin, Brocélôme, Mushana, Florges 20 %, Magirêve, Bombydou 10 % (en jeu : Fourbelin, Rubombelle). Dessin : `dev_scripts/nabla/draw_emerald_forest.py` (règles dans `docs/nabla/zones.md`).
+- Étape 6.2b — Forêt Émeraude, l'histoire (scénario de l'utilisateur, `data/scripts/nabla/emerald_forest.inc`, textes dans `data/text/nabla/emerald_forest.inc`) :
+  - Sommet du Mont Mémoria : à la fin de la scène d'origine (Arthur prend l'Orbe Rouge, Emblème Magma), Timmy monte en courant : la Team Magma est partie dans la Forêt Émeraude chercher un Pokémon qui voyage dans le temps, pour récupérer l'orbe qui lui manque ; rendez-vous à l'entrée de la forêt.
+  - Lisière : Timmy attend devant les grands arbres, puis part devant. Forêt : trois sbires Magma (couloir ouest, prairie, devant le sanctuaire).
+  - Sanctuaire : Max et Tabitha au pied du vieil arbre ; duo avec Timmy (le joueur choisit 3 Pokémon) ; Celebi sort de l'arbre et choisit Timmy ; la Team Magma part réveiller Groudon ; Timmy soigne l'équipe et se bat (`TRAINER_NABLA_WALLY_EMERALD_FOREST`). Perdre : la scène reprend au retour (au combat contre Timmy si Max est battu).
+  - Événement obligatoire : tant qu'il n'est pas fini, un garde Magma ajouté devant le Repaire Magma (Sentier Sinuroc) bloque l'entrée.
+  - Dresseurs `TRAINER_NABLA_GRUNT_EMERALD_FOREST_1` à `_3`, `TRAINER_NABLA_TABITHA_EMERALD_FOREST`, `TRAINER_NABLA_MAXIE_EMERALD_FOREST` (858-862) et allié `PARTNER_WALLY_EMERALD_FOREST` : équipes proposées par Claude, à corriger par l'utilisateur (`docs/nabla/trainers.md`).
+  - Flags `FLAG_NABLA_EMERALD_FOREST_CALL`, `_WALLY_MET`, `_DONE` (0x29E-0x2A0) ; qui est visible sur chaque map est réglé en y entrant (flags temporaires).
 
 ## Bugs connus
 
@@ -358,6 +365,7 @@
 | 2026-10-26 | Rayquaza et Deoxys : événement du Pilier Céleste entre la 8e arène et la Ligue (scénario de l'utilisateur), niveau 65 ; Cozmo laisse la Météorite au joueur ; le rocher blanc d'Algatia change la forme de Deoxys ; sols du Pilier intacts jusqu'à la fin de l'événement. |
 | 2026-10-27 | Un Pokémon qui connaît une CS peut être envoyé au PC à l'échange de capture (`B_CATCH_SWAP_CHECK_HMS` FALSE) : les CS du sac suffisent dans Nabla. |
 | 2026-10-27 | Route Victoire : pseudo-légendaires au niveau 55 ; leurs lignées évoluent au niveau 35 au plus (premier stade) et 55 au plus (dernier) : Solochi, Fantyrm, Mucuscule à 35, Trioxhydre et Lanssorien à 55. |
+| 2026-10-27 | Forêt Émeraude : Timmy arrive au sommet du Mont Mémoria ; duo avec Timmy contre Max et Tabitha ; événement obligatoire (Repaire Magma fermé avant) ; équipes proposées par Claude, à corriger. |
 
 ## Questions ouvertes
 

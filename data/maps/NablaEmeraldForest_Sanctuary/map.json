@@ -20,8 +20,120 @@
       "direction": "up"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_EMERALD_FOREST_SANCTUARY_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 10,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Wally",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "local_id": "LOCALID_EMERALD_FOREST_SANCTUARY_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+      "x": 11,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_EMERALD_FOREST_SANCTUARY_TABITHA",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "x": 10,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_EMERALD_FOREST_SANCTUARY_CELEBI",
+      "graphics_id": "OBJ_EVENT_GFX_CELEBI",
+      "x": 10,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_TEMP_13"
+    }
+  ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
+    }
+  ],
   "bg_events": []
 }

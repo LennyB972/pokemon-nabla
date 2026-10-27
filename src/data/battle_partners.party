@@ -80,3 +80,38 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Headbutt
 - Protect
+
+=== PARTNER_WALLY_EMERALD_FOREST ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Gallade
+Ability: Sharpness
+Level: 40
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psycho Cut
+- Sacred Sword
+- Night Slash
+- Swords Dance
+
+Altaria
+Ability: Natural Cure
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Sing
+
+Magnezone
+Ability: Magnet Pull
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Discharge
+- Flash Cannon
+- Tri Attack
+- Thunder Wave

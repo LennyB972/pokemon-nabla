@@ -28,7 +28,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - Route Victoire : pseudo-légendaires au niveau 55 (plus de Surf ni de pêche) ;
   - Grotte Granite retouchée : Galekid 20 %, Mysdibule et Makuhita 5 % chacun ;
   - **lot suivant attendu** (zones d'après la Ligue). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
-- **Phase 6 (monde étendu)** : **Forêt Émeraude** : cartes faites (lisière, forêt, sanctuaire, accès par la Route 123), histoire à faire ; **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
+- **Phase 6 (monde étendu)** : **Forêt Émeraude** : cartes et histoire faites (Timmy au sommet du Mont Mémoria, sbires, duo contre Max et Tabitha, Celebi, combat contre Timmy), à tester ; **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, validé en jeu le 2026-10-27) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme, toujours placé en tête d'équipe) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -127,7 +127,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 1. **Lots de rencontres** suivants (zones d'après la Ligue), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
-   - Forêt Émeraude : cartes faites (`draw_emerald_forest.py`), à valider en jeu ; ensuite l'histoire (`docs/nabla/world.md`). Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
+   - Forêt Émeraude : faite, à tester ; équipes Magma proposées par Claude à corriger ; objets à placer dans les culs-de-sac. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
    - Objets et événement de West Beach.
 3. **Phase 7 Post-game** : revanches des Champions, zones d'après la Ligue, Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon.
@@ -206,7 +206,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 
 ## Repères techniques
 
-- **Dresseurs** : `src/data/trainers.party`. Une version `Difficulty: Hard` faite à la main est utilisée telle quelle ; sinon la règle +10 % s'applique (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c` ; `FillPartnerParty`, `src/battle_partner.c` ; formule `GetDifficultyLevel`, `src/caps.c`). Partenaires : `src/data/battle_partners.party`. Nouveaux dresseurs : `TRAINER_NABLA_*` 855-857 (`include/constants/opponents.h`, place pour 6 de plus).
+- **Dresseurs** : `src/data/trainers.party`. Une version `Difficulty: Hard` faite à la main est utilisée telle quelle ; sinon la règle +10 % s'applique (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c` ; `FillPartnerParty`, `src/battle_partner.c` ; formule `GetDifficultyLevel`, `src/caps.c`). Partenaires : `src/data/battle_partners.party`. Nouveaux dresseurs : `TRAINER_NABLA_*` 855-862 (`include/constants/opponents.h`, place pour 1 de plus avant `MAX_TRAINERS_COUNT`).
 - **Niveaux (4.3)** : `dev_scripts/nabla/scale_levels.py`.
   - Réglages : `PARTS` (facteurs par étape), `MAP_PARTS` (étape de chaque map), `EXCLUDED` (dresseurs de la 4.2), `FIXED_LAND_LEVELS` (niveau imposé : Route Victoire 55), `LEVELS_FROM` (tables ajoutées).
   - Il repart toujours des dresseurs d'expansion (commit 87cc74b5ec) et des tables sauvages de la 4.1 (commit 476e2584ec). Une table `_Night` ajoutée depuis prend les niveaux de sa table de jour.
@@ -229,7 +229,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
   - West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes → blocs ; le relancer écrase les retouches Porymap).
   - Règles des tuiles dans `docs/nabla/zones.md` : rivage `11b`-`12d` et coins `13d 13e 145 146`, herbe dans le sable `118`-`12a`, arbres `1ce`…, dômes, rochers marins de trois sortes, bloc `e` interdit seul, bords de carte fermés.
   - À réutiliser pour les prochaines plages et côtes. Après un dessin, vérifier qu'aucune case accessible ne touche un bord sans connexion (parcours des cases depuis l'entrée).
-- **Flags Nabla** : 0x20 Multi Exp, 0x21 level caps, 0x22-0x28 régions du Safari, 0x29-0x2B zones spéciales, 0x264-0x27E objets cachés, 0x280 et 0x286-0x295 Méga-Gemmes au sol, 0x281-0x285 événement Latios, 0x296-0x29D événement du Pilier Céleste.
+- **Flags Nabla** : 0x20 Multi Exp, 0x21 level caps, 0x22-0x28 régions du Safari, 0x29-0x2B zones spéciales, 0x264-0x27E objets cachés, 0x280 et 0x286-0x295 Méga-Gemmes au sol, 0x281-0x285 événement Latios, 0x296-0x29D événement du Pilier Céleste, 0x29E-0x2A0 Forêt Émeraude.
 - **Événement du Pilier Céleste** : `data/scripts/nabla/rayquaza_event.inc` (appels ajoutés dans les scripts d'Atalanopolis, d'Éternara, du Pilier, de Cozmo et du rocher blanc d'Algatia) ; `src/nabla_rayquaza_event.c` (formes de Deoxys, test `test/nabla_rayquaza_event.c`) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL`.
 - **Vars Nabla** : `VAR_NABLA_DIFFICULTY` 0x404E (1 Normal, 2 Difficile), `VAR_NABLA_SAFARI_REGION` 0x4083.
 - **Outils** (`dev_scripts/nabla/`) : `hidden_item_spots.py`, `list_items.py`, `safari_tables.py`, `coverage.py`, `render_map.py`, `scale_levels.py`, `list_encounters.py`, `draw_west_beach.py`, `draw_emerald_forest.py`.

@@ -1,2 +1,7 @@
 NablaEmeraldForest_Entrance_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NablaEmeraldForest_Entrance_OnTransition
 	.byte 0
+
+NablaEmeraldForest_Entrance_OnTransition:
+	call Nabla_EmeraldForest_Entrance_EventScript_SetUp
+	end
