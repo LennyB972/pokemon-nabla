@@ -9334,6 +9334,39 @@
       "border_filepath": "data/layouts/NablaWestBeach/border.bin",
       "blockdata_filepath": "data/layouts/NablaWestBeach/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_EMERALD_FOREST_ENTRANCE",
+      "name": "NablaEmeraldForest_Entrance_Layout",
+      "width": 24,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/NablaEmeraldForest_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/NablaEmeraldForest_Entrance/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_EMERALD_FOREST",
+      "name": "NablaEmeraldForest_Layout",
+      "width": 48,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/NablaEmeraldForest/border.bin",
+      "blockdata_filepath": "data/layouts/NablaEmeraldForest/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_EMERALD_FOREST_SANCTUARY",
+      "name": "NablaEmeraldForest_Sanctuary_Layout",
+      "width": 22,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/NablaEmeraldForest_Sanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/NablaEmeraldForest_Sanctuary/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

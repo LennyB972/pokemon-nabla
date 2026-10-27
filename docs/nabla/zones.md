@@ -5,6 +5,7 @@
 | Zone | Map | Accès | Carte de la région | Contenu |
 |---|---|---|---|---|
 | WEST BEACH (Plage de l'Ouest) | `NablaWestBeach` (30 × 26) | Route 115 : bande de sable vers l'ouest au sud de la route (connexion est ↔ ouest, sans Surf) | case du bas de la route 115 (`MAPSEC_NABLA_WEST_BEACH`) | v2 (avant le 1er badge) : grande plage de sable entourée par la mer au nord, à l'ouest et au sud (rivage arrondi, rangée de rochers dans l'eau au bord de la carte : pas de mur invisible), îlots d'herbe aux bords arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est qui prolonge la côte de la Route 115. Herbes 5-8 : Taupikeau, Crabicoque, Concombaffe, Bacabouh, Krabby, Babimanta, Flingouste, Stari ; Surf et pêche : Vorastérie, Tentacool |
+| EMERALD FOREST (Forêt Émeraude) | `NablaEmeraldForest_Entrance` (24 × 22), `NablaEmeraldForest` (48 × 56), `NablaEmeraldForest_Sanctuary` (22 × 18) | Route 123 : chemin vers le sud dans l'encoche des arbres du bas, colonnes 102-107 (connexions continues Route 123 → lisière → forêt → sanctuaire) | deux cases sous la Route 123 (`MAPSEC_NABLA_EMERALD_FOREST`) | Lisière en petits arbres comme la Route 123, puis grands arbres du Bois Clémenti ; forêt sinueuse (clairière avec un îlot, recoin à l'est, couloir ouest avec un rebord et une boucle, prairie, couloir est avec une poche cachée, chemin vers le sanctuaire) ; sanctuaire : clairière, vieil arbre entouré de fleurs. Ombre et musique du Bois Clémenti (lisière ensoleillée). Herbes 30-34 (lisière et forêt) : Grimalin, Brocélôme, Mushana, Florges, Magirêve, Bombydou. Dessinée par `dev_scripts/nabla/draw_emerald_forest.py` |
 
 ## Créer une zone
 
@@ -34,3 +35,13 @@ West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (pla
 - Bords de la carte : aucune case accessible ne doit toucher le bord sans connexion (mur invisible) ; border la mer de rochers en motif irrégulier (rochers décalés d'une case, trois sortes mélangées : `150 151 / 158 159` à écume, `175 176 / 17d 17e` bruns, `348 349 / 350 351` moussus du jeu Fallarbor), deux rochers voisins se touchant toujours par un côté, coins fermés au ras du bord. Vérifier par un parcours des cases accessibles depuis l'entrée qu'aucune ne touche un bord sans connexion. Hors de la carte, c'est le bloc de bordure (ici la mer) : faire descendre la plage jusqu'à l'eau plutôt que d'arrêter une ligne d'arbres net contre la mer.
 - Les dômes ont des coins de sable : les entourer de sable de tous les côtés (sinon, angles jaunes contre l'eau ou l'herbe).
 - Valeurs des blocs (collision, hauteur) : reprendre celles des maps d'Émeraude (valeur la plus fréquente de chaque bloc).
+
+## Dessiner une forêt (leçons de la Forêt Émeraude)
+
+La Forêt Émeraude est dessinée par `python3 dev_scripts/nabla/draw_emerald_forest.py` (plans en caractères, un caractère pour deux colonnes ; le relancer écrase les retouches faites dans Porymap). Blocs du jeu General :
+
+- Grands arbres (Bois Clémenti), deux cases de large, alignés sur les colonnes paires : haut `1ce 1cf`, puis `1d4 1d5` et `1dc 1dd` en alternance, pied `1e4 1e5` ; la rangée sous le haut et le pied ont des pièces de bord côté herbe (`1d6`/`1d7`, `1e6`/`1e7`). Entre deux rangées d'herbe, une colonne d'arbres fait donc 3, 5, 7… rangées : les bandes d'arbres qui séparent deux passages ont une épaisseur impaire (le script le vérifie).
+- Petits arbres (Route 123), une case de large : haut `e`, rangées `c6`/`c7`, pied `16` (au moins 2 rangées).
+- Herbe `1`, hautes herbes `d`, fleurs `4`, petit rocher `e0`, rebord à sauter vers le bas `d5 87 … d6`.
+- Raccord avec une map voisine : seuls les blocs du jeu General s'affichent bien de l'autre côté d'une connexion (les maps peuvent avoir des jeux secondaires différents) ; les forêts n'utilisent que lui.
+- Bordure : grands arbres (`1d4 1d5 / 1dc 1dd`) ou petits arbres comme la Route 123 (`c6 c7 / c7 c6`).

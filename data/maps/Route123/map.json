@@ -23,6 +23,11 @@
       "map": "MAP_ROUTE118",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_NABLA_EMERALD_FOREST_ENTRANCE",
+      "offset": 94,
+      "direction": "down"
     }
   ],
   "object_events": [

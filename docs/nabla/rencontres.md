@@ -581,6 +581,14 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ### Meteor Falls Stevens Cave (nuit)
 - **Herbes** : Minior 30 % (33) · Elgyem 20 % (35) · Bagon 20 % (33-35) → en jeu : Shelgon · Glimmet 20 % (35-39) → en jeu : Glimmora · Lunatone 10 % (38-40) — *changé : +Bagon, +Elgyem, +Glimmet, +Lunatone, +Minior, −Golbat, −Solrock*
 
+### Nabla Emerald Forest
+- *Table ajoutée par Nabla.*
+- **Herbes** : Impidimp 20 % (32) → en jeu : Morgrem · Phantump 20 % (32) · Musharna 20 % (32-34) · Florges 20 % (32-34) · Mismagius 10 % (32-34) · Cutiefly 10 % (30-34) → en jeu : Ribombee
+
+### Nabla Emerald Forest Entrance
+- *Table ajoutée par Nabla.*
+- **Herbes** : Impidimp 20 % (32) → en jeu : Morgrem · Phantump 20 % (32) · Musharna 20 % (32-34) · Florges 20 % (32-34) · Mismagius 10 % (32-34) · Cutiefly 10 % (30-34) → en jeu : Ribombee
+
 ### Nabla West Beach
 - *Table ajoutée par Nabla.*
 - **Herbes** : Wiglett 20 % (5-7) · Dwebble 20 % (5-7) · Pyukumuku 10 % (5-8) · Sandygast 10 % (5-8) · Krabby 10 % (5-8) · Mantyke 10 % (5-8) · Clauncher 10 % (6-8) · Staryu 10 % (6-8)

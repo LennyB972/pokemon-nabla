@@ -5,7 +5,9 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 ## Pendant l'aventure
 
 ### Forêt Émeraude (au sud du Mont Mémoria)
+- **Fait** : les cartes (lisière, forêt, sanctuaire) et leurs rencontres, accès par la Route 123 (`docs/nabla/zones.md`). **Reste** : l'histoire.
 - **Idée** : une forêt au sud du Mont Mémoria, vers les routes 122 et 123.
+- **Histoire (utilisateur, 2026-10-27)** : au sommet du Mont Mémoria, Timmy rejoint le joueur : la Team Magma est partie dans la Forêt Émeraude chercher un Pokémon qui voyage dans le temps, pour récupérer l'orbe qui lui manque. On retrouve Timmy à l'entrée de la forêt, on affronte des sbires Magma, puis le chef et son adjoint. Celebi apparaît et reconnaît Timmy comme son dresseur ; Timmy soigne l'équipe du joueur et le défie pour tester son nouveau Pokémon. Ensuite, l'histoire reprend où elle en était.
 - **Scénario (résumé, à mieux écrire)** : après l'événement du Mont Mémoria, Timmy (Wally) vient voir le joueur : il a entendu parler d'activités suspectes dans la Forêt Émeraude. On y va, on affronte des ennemis ; à la fin, Timmy obtient Celebi, que le joueur a sauvé. Timmy propose alors un combat, obligatoire.
 - **Combat** : `TRAINER_NABLA_WALLY_EMERALD_FOREST` (857), déjà prêt (Magnézone, Altaria, Pyronille, Celebi, Gallame ; niveaux 40-43, avant le 7ᵉ badge).
 - **Place** : la carte de la région a des cases libres sous la route 123.

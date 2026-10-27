@@ -601,6 +601,9 @@ gStdScripts_End::
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
 	.include "data/maps/NablaWestBeach/scripts.inc"
+	.include "data/maps/NablaEmeraldForest_Entrance/scripts.inc"
+	.include "data/maps/NablaEmeraldForest/scripts.inc"
+	.include "data/maps/NablaEmeraldForest_Sanctuary/scripts.inc"
 
 .if IS_FRLG
 
