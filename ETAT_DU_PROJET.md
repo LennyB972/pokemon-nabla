@@ -28,7 +28,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - Route Victoire : pseudo-légendaires au niveau 55 (plus de Surf ni de pêche) ;
   - Grotte Granite retouchée : Galekid 20 %, Mysdibule et Makuhita 5 % chacun ;
   - **lot suivant attendu** (zones d'après la Ligue). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
-- **Phase 6 (monde étendu)** : **Forêt Émeraude** : cartes et histoire faites (Timmy au sommet du Mont Mémoria, sbires, duo contre Max et Tabitha, Celebi, combat contre Timmy), à tester ; **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
+- **Phase 6 (monde étendu)** : **Forêt Émeraude** : cartes et histoire faites et validées en jeu (2026-10-27 : Timmy au sommet du Mont Mémoria, 5 sbires, duo contre Max et Tabitha, Celebi, combat contre Timmy) ; **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, validé en jeu le 2026-10-27) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme, toujours placé en tête d'équipe) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
 
@@ -127,7 +127,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 1. **Lots de rencontres** suivants (zones d'après la Ligue), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
-   - Forêt Émeraude : faite, à tester ; équipes Magma proposées par Claude à corriger ; objets à placer dans les culs-de-sac. Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
+   - Forêt Émeraude : faite et validée ; restent les objets des culs-de-sac, et les niveaux et équipes à revoir avec l'équilibrage (rencontres à 30-34 : Grimalin y est déjà Fourbelin ; équipes Magma proposées par Claude). Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
    - Objets et événement de West Beach.
 3. **Phase 7 Post-game** : revanches des Champions, zones d'après la Ligue, Conseil 4 renforcé, défense du titre, légendaires via des îles mirages façon Flûte Éon.
