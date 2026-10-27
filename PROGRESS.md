@@ -297,6 +297,7 @@
   - Prof. Cozmo (Autéquia) refuse la Météorite et donne quand même la CT Retour : le joueur garde toujours la Météorite (scripts d'origine modifiés à la demande de l'utilisateur).
   - Algatia : le rocher blanc (à côté de l'habitante qui en parle) change la forme d'un Deoxys de l'équipe, dans l'ordre Normale → Attaque → Défense → Vitesse (mécanisme natif de la Météorite, `src/nabla_rayquaza_event.c`). Tests : `test/nabla_rayquaza_event.c`.
   - Flags `FLAG_NABLA_SKY_PILLAR_CALL` à `FLAG_NABLA_HIDE_SKY_PILLAR_DEOXYS` (0x296-0x29D) ; niveau `NABLA_SKY_PILLAR_LEGENDARIES_LEVEL` (`include/constants/nabla.h`).
+- Capture avec l'équipe pleine : l'échange proposé par le combat accepte un Pokémon qui connaît une CS (`B_CATCH_SWAP_CHECK_HMS` FALSE, `include/config/battle.h`) ; dans Nabla, les CS du sac suffisent pour les capacités de terrain (étape 3.2), donc aucun risque de blocage. Le PC garde la règle d'Émeraude pour relâcher (le dernier Pokémon qui connaît Surf ou Plongée ne peut pas être relâché).
 
 ## Bugs connus
 
@@ -353,6 +354,7 @@
 | 2026-10-25 | Objets d'évolution vendus aussi au marché de Poivressel (dès le 2e badge), par un vendeur ajouté sous une tente vide plutôt qu'en remplaçant un personnage d'origine. |
 | 2026-10-26 | Un lot de rencontres qui ne fait pas 100 % : la place qui manque va à une espèce qui perdrait sa seule source (Cacnea, Méditikka), sinon les taux sont ramenés à 100 en gardant les proportions. |
 | 2026-10-26 | Rayquaza et Deoxys : événement du Pilier Céleste entre la 8e arène et la Ligue (scénario de l'utilisateur), niveau 65 ; Cozmo laisse la Météorite au joueur ; le rocher blanc d'Algatia change la forme de Deoxys ; sols du Pilier intacts jusqu'à la fin de l'événement. |
+| 2026-10-27 | Un Pokémon qui connaît une CS peut être envoyé au PC à l'échange de capture (`B_CATCH_SWAP_CHECK_HMS` FALSE) : les CS du sac suffisent dans Nabla. |
 
 ## Questions ouvertes
 
