@@ -6845,7 +6845,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sDrakloakLevelUpLearnset,
         .teachableLearnset = sDrakloakTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_DRAGAPULT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_DRAGAPULT}), // Pokémon Nabla: 55 instead of 60, like Dragonite and Tyranitar
     },
 
     [SPECIES_DRAGAPULT] =

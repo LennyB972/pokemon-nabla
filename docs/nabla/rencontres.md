@@ -64,17 +64,17 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Méga Canne** : Qwilfish-Hisui 60 % (24-55) → en jeu : Overqwil (selon le niveau) · Basculin 40 % (36-43) — *changé : +Basculin, +Qwilfish-Hisui, −Wailmer*
 
 ### Granite Cave 1F
-- **Herbes** : Aron 30 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Woobat 15 % (8-11) · Roggenrola 15 % (6-9) — *changé : +Aron, +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Geodude, −Makuhita, −Zubat*
+- **Herbes** : Aron 20 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Roggenrola 15 % (6-7) · Woobat 15 % (8-11) · Mawile 5 % (6-7) · Makuhita 5 % (8-9) — *changé : +Aron, +Mawile, +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Geodude, −Zubat*
 
 ### Granite Cave B1F
-- **Herbes** : Aron 30 % (9) · Sableye 20 % (11) · Rolycoly 20 % (11-12) · Woobat 15 % (9-11) · Roggenrola 15 % (9-12) — *changé : +Roggenrola, +Rolycoly, +Woobat, −Abra, −Makuhita, −Zubat*
+- **Herbes** : Aron 20 % (9) · Sableye 20 % (11) · Rolycoly 20 % (11-12) · Roggenrola 15 % (9-12) · Woobat 15 % (9-11) · Mawile 5 % (9-11) · Makuhita 5 % (11-12) — *changé : +Mawile, +Roggenrola, +Rolycoly, +Woobat, −Abra, −Zubat*
 
 ### Granite Cave B2F
-- **Herbes** : Aron 30 % (11) · Sableye 20 % (12) · Rolycoly 20 % (12-13) · Woobat 15 % (11) · Roggenrola 15 % (11-13) — *changé : +Roggenrola, +Rolycoly, +Woobat, −Abra, −Zubat*
+- **Herbes** : Aron 20 % (11) · Sableye 20 % (12) · Rolycoly 20 % (12-13) · Roggenrola 15 % (11-12) · Woobat 15 % (11) · Mawile 5 % (13) · Makuhita 5 % (11) — *changé : +Makuhita, +Mawile, +Roggenrola, +Rolycoly, +Woobat, −Abra, −Zubat*
 - **Éclate-Roc** : Geodude 70 % (6-23) · Nosepass 30 % (12-23)
 
 ### Granite Cave Stevens Room
-- **Herbes** : Aron 30 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Woobat 15 % (8-11) · Roggenrola 15 % (6-8) — *changé : +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Makuhita, −Zubat*
+- **Herbes** : Aron 20 % (7) · Sableye 20 % (8) · Rolycoly 20 % (8-9) · Roggenrola 15 % (6-7) · Woobat 15 % (8-11) · Mawile 5 % (7) · Makuhita 5 % (8) — *changé : +Mawile, +Roggenrola, +Rolycoly, +Sableye, +Woobat, −Abra, −Zubat*
 
 ### Route 106
 - **Surf** : Tentacool 60 % (6-43) → en jeu : Tentacruel (selon le niveau) · Wingull 35 % (12-37) → en jeu : Pelipper (selon le niveau) · Pelipper 5 % (31-37)
@@ -528,18 +528,14 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 
 ### Victory Road 1F
-- **Herbes** : Golbat 25 % (53-56) → en jeu : Crobat · Hariyama 25 % (53-56) · Lairon 10 % (56) → en jeu : Aggron · Loudred 10 % (56) → en jeu : Exploud · Zubat 10 % (50) → en jeu : Crobat · Makuhita 10 % (50) → en jeu : Hariyama · Aron 5 % (50) → en jeu : Aggron · Whismur 5 % (50) → en jeu : Exploud
+- **Herbes** : Dragonite 20 % (55) · Tyranitar 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Salamence 5 % (55) · Metagross 5 % (55) · Garchomp 5 % (55) · Hydreigon 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Aron, −Golbat, −Hariyama, −Lairon, −Loudred, −Makuhita, −Whismur, −Zubat*
 
 ### Victory Road B1F
-- **Herbes** : Golbat 35 % (53-59) → en jeu : Crobat · Hariyama 35 % (53-59) · Lairon 25 % (56-59) → en jeu : Aggron · Mawile 5 % (53)
+- **Herbes** : Salamence 20 % (55) · Metagross 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Dragonite 5 % (55) · Tyranitar 5 % (55) · Garchomp 5 % (55) · Hydreigon 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Golbat, −Hariyama, −Lairon, −Mawile*
 - **Éclate-Roc** : Graveler 70 % (42-56) → en jeu : Golem · Geodude 30 % (42-56) → en jeu : Golem
 
 ### Victory Road B2F
-- **Herbes** : Golbat 35 % (56-62) → en jeu : Crobat · Sableye 35 % (56-62) · Lairon 25 % (56-62) → en jeu : Aggron · Mawile 5 % (59-62)
-- **Surf** : Golbat 100 % (35-56) → en jeu : Crobat (selon le niveau)
-- **Canne** : Magikarp 70 % (7-14) · Goldeen 30 % (7-14)
-- **Super Canne** : Magikarp 60 % (14-42) → en jeu : Gyarados (selon le niveau) · Goldeen 20 % (14-42) → en jeu : Seaking (selon le niveau) · Barboach 20 % (14-42) → en jeu : Whiscash (selon le niveau)
-- **Méga Canne** : Barboach 80 % (35-49) → en jeu : Whiscash · Whiscash 20 % (42-63)
+- **Herbes** : Garchomp 20 % (55) · Hydreigon 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Dragonite 5 % (55) · Tyranitar 5 % (55) · Salamence 5 % (55) · Metagross 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Golbat, −Lairon, −Mawile, −Sableye*
 
 ## Hors aventure (après la Ligue, zones Nabla)
 

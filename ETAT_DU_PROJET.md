@@ -25,7 +25,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - lot 6 : 5e → 6e badge (Routes 105, 107, 108 en Surf et pêche, Routes 118 à 120, Épave, Grotte Zénith avec une table ajoutée) ;
   - lot 7 : 6e → 7e badge (New Lavandia, Nénucrique, Planque Magma, Mont Mémoria, Routes 121 à 128, Grotte Tréfonds ; Forêt Émeraude notée pour plus tard) ;
   - lot 8 : 7e → 8e badge (Grotte Originelle, Caverne Fondmer, Routes 129 à 134, Pilier Céleste, Atalanopolis) ;
-  - **lot suivant attendu** (Route Victoire, puis la suite). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
+  - Route Victoire : pseudo-légendaires au niveau 55 (plus de Surf ni de pêche) ;
+  - Grotte Granite retouchée : Galekid 20 %, Mysdibule et Makuhita 5 % chacun ;
+  - **lot suivant attendu** (zones d'après la Ligue). Les Surf des zones des lots précédents restent inchangés (demande de l'utilisateur).
 - **Phase 6 (monde étendu)** : **West Beach v2** faite et validée en jeu (plage entourée par la mer, îlots de hautes herbes, bosquets, rochers marins irréguliers). Reste la Forêt Émeraude, les îles par Plongée, et les objets et l'événement de West Beach (`docs/nabla/world.md`).
 - **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, validé en jeu le 2026-10-27) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme, toujours placé en tête d'équipe) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
@@ -103,13 +105,13 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | 5.2 | Hors combat, choix de la quantité d'objets à utiliser (Super Bonbon, Bonbons Exp, vitamines, plumes, baies EV, soins partiels ; maximum = utilisations utiles) ; tous les menus et listes bouclent (↑ en haut → en bas) |
 | 5.3 | Vitamines : +32 EV chacune, 5 000 ₽ |
 | 6 | **West Beach v2** (validée) ; outils et règles de dessin des zones |
-| Rencontres | Lots 1 à 8 (zones jusqu'au 8e badge) : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
+| Rencontres | Lots 1 à 8 et Route Victoire : voir `PROGRESS.md` et `docs/nabla/rencontres.md` |
 | Boutiques | Objets d'évolution aussi au marché de Poivressel (vendeur ajouté, tente en bas à droite) |
 | Scénario | Événement du Pilier Céleste : Pierre après Juan, Rayquaza et Deoxys (niveau 65), Route Victoire bloquée jusqu'à la fin ; Cozmo laisse la Météorite au joueur ; rocher blanc d'Algatia (formes de Deoxys) |
 
 ## En attente côté utilisateur
 
-- **Lot suivant de rencontres** (Route Victoire, zones d'après la Ligue). Il l'envoie en message ou en fichier texte.
+- **Lot suivant de rencontres** (zones d'après la Ligue). Il l'envoie en message ou en fichier texte.
 - **Relever un peu les niveaux** après sa partie de test : changer les facteurs `PARTS` de `scale_levels.py` et relancer. Pour West Beach (zone Nabla, hors script), régler à la main.
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -123,7 +125,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Lots de rencontres** suivants (Route Victoire et après), au fil de ses envois.
+1. **Lots de rencontres** suivants (zones d'après la Ligue), au fil de ses envois.
 2. **Phase 6 Zones** (`docs/nabla/world.md`, niveaux calés sur les zones voisines) :
    - Forêt Émeraude au sud du Mont Mémoria (rencontres déjà choisies, dans `docs/nabla/world.md`). Scénario : après le Mont Mémoria, Timmy signale des activités suspectes ; ennemis ; Timmy obtient Celebi ; combat obligatoire (dresseur 857 prêt).
    - Îles accessibles par Plongée (hors scénario).
@@ -193,6 +195,10 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 | Amonistar | OMASTAR | Carapagos | TIRTOUGA | Kravarech | DRAGALGE |
 | Gamblast | CLAWITZER | Aéroptéryx | ARCHEOPS | Ptéra | AERODACTYL |
 | Golemastoc | GOLURK | Cryptéro | SIGILYPH | Milobellus | MILOTIC |
+| Dracolosse | DRAGONITE | Tyranocif | TYRANITAR | Drattak | SALAMENCE |
+| Métalosse | METAGROSS | Carchacrok | GARCHOMP | Trioxhydre | HYDREIGON |
+| Muplodocus de Hisui | GOODRA_HISUI | Ékaïser | KOMMO_O | Lanssorien | DRAGAPULT |
+| Glaivodo | BAXCALIBUR | Mysdibule | MAWILE | Makuhita / Hariyama | MAKUHITA / HARIYAMA |
 
 Lieux : New Lavandia = `NewMauville` ; Nénucrique = `LilycoveCity` ; Planque Magma = `MagmaHideout` ; Algatia = `MossdeepCity` ; Mont Mémoria = `MtPyre` ; Grotte Tréfonds = `ShoalCave` ; Grotte Originelle = `CaveOfOrigin` ; Caverne Fondmer = `SeafloorCavern` ; Pilier Céleste = `SkyPillar` ; Atalanopolis = `SootopolisCity` ; Pacifiville = `PacifidlogTown` ; Grotte Zénith = `ScorchedSlab` ; Épave = `AbandonedShip` ; Sentier Sinuroc = `JaggedPass` ; Chemin Ardent = `FieryPath`.
 
@@ -202,7 +208,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 
 - **Dresseurs** : `src/data/trainers.party`. Une version `Difficulty: Hard` faite à la main est utilisée telle quelle ; sinon la règle +10 % s'applique (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c` ; `FillPartnerParty`, `src/battle_partner.c` ; formule `GetDifficultyLevel`, `src/caps.c`). Partenaires : `src/data/battle_partners.party`. Nouveaux dresseurs : `TRAINER_NABLA_*` 855-857 (`include/constants/opponents.h`, place pour 6 de plus).
 - **Niveaux (4.3)** : `dev_scripts/nabla/scale_levels.py`.
-  - Réglages : `PARTS` (facteurs par étape), `MAP_PARTS` (étape de chaque map), `EXCLUDED` (dresseurs de la 4.2).
+  - Réglages : `PARTS` (facteurs par étape), `MAP_PARTS` (étape de chaque map), `EXCLUDED` (dresseurs de la 4.2), `FIXED_LAND_LEVELS` (niveau imposé : Route Victoire 55), `LEVELS_FROM` (tables ajoutées).
   - Il repart toujours des dresseurs d'expansion (commit 87cc74b5ec) et des tables sauvages de la 4.1 (commit 476e2584ec). Une table `_Night` ajoutée depuis prend les niveaux de sa table de jour.
   - Table ajoutée par Nabla dans une map d'origine (Grotte Zénith) : `LEVELS_FROM` lui donne les niveaux d'origine d'une table voisine, et la map doit être dans `MAP_PARTS` (sinon `scale_levels.py` et `list_encounters.py` s'arrêtent).
   - Évolution des sauvages dans le jeu : `GetNablaWildEvolution` (`src/wild_encounter.c`), `NABLA_OTHER_EVOLUTIONS_LEVEL` = 40 (`include/constants/nabla.h`). Même règle en Python : `scale_levels.wild_forms`, utilisée par `coverage.py` et `list_encounters.py`.

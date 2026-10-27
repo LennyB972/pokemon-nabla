@@ -77,6 +77,8 @@ STATIC_POKEMON = [
     ("data/scripts/kecleon.inc", "KECLEON"),
 ]
 STATIC_PARTS = {"NewMauville_Inside": 5, "AquaHideout_B1F": 6, "Route120": 5, "kecleon.inc": 5}
+# Grass and cave Pokémon of a map at a level chosen by the user, whatever their original levels
+FIXED_LAND_LEVELS = {"VictoryRoad": 55}
 # Tables added by Pokémon Nabla to original maps: the table whose original levels they take
 LEVELS_FROM = {"gScorchedSlab": "gRoute120"}
 # Trainers of step 4.2 (and the Gym Leaders' rematches, after the League)
@@ -304,6 +306,7 @@ def scale_wild(report):
         part = map_part(folders[e["map"]])
         if part is None:
             continue
+        fixed = next((level for prefix, level in FIXED_LAND_LEVELS.items() if folders[e["map"]].startswith(prefix)), None)
         # A night table added after step 4.1 has the levels of the day table of its map
         before = (original.get(label) or original.get(LEVELS_FROM.get(label))
                   or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None))
@@ -320,6 +323,8 @@ def scale_wild(report):
                 p = max(part, AREA_PARTS.get(area, 0), ROD_PARTS[rods[i]] if area == "fishing_mons" else 0)
                 mon["min_level"] = scale(old["min_level"], p)
                 mon["max_level"] = max(mon["min_level"], scale(old["max_level"], p))
+                if area == "land_mons" and fixed is not None:
+                    mon["min_level"] = mon["max_level"] = fixed
                 ranges.append((old["min_level"], old["max_level"], mon["min_level"], mon["max_level"]))
             if ranges:
                 report["wild"].append((folders[e["map"]], label, area, ranges))

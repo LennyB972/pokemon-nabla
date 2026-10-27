@@ -1037,7 +1037,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | GraniteCave_1F | `gGraniteCave_1F` | herbes | 6-10 | 6-11 |
 | GraniteCave_B1F | `gGraniteCave_B1F` | herbes | 9-11 | 9-12 |
 | MtPyre_1F | `gMtPyre_1F` | herbes | 22-29 | 27-35 |
-| VictoryRoad_1F | `gVictoryRoad_1F` | herbes | 36-40 | 50-56 |
+| VictoryRoad_1F | `gVictoryRoad_1F` | herbes | 36-40 | 55-55 |
 | Underwater_Route126 | `gUnderwater_Route126` | Surf | 20-35 | 26-45 |
 | AbandonedShip_Rooms_B1F | `gAbandonedShip_Rooms_B1F` | Surf | 5-35 | 6-43 |
 | AbandonedShip_Rooms_B1F | `gAbandonedShip_Rooms_B1F` | pêche | 5-35 | 6-43 |
@@ -1128,11 +1128,9 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | CaveOfOrigin_UnusedRubySapphireMap2 | `gCaveOfOrigin_UnusedRubySapphireMap2` | herbes | 30-36 | 38-46 |
 | CaveOfOrigin_UnusedRubySapphireMap3 | `gCaveOfOrigin_UnusedRubySapphireMap3` | herbes | 30-36 | 38-46 |
 | NewMauville_Entrance | `gNewMauville_Entrance` | herbes | 22-26 | 27-32 |
-| VictoryRoad_B1F | `gVictoryRoad_B1F` | herbes | 38-42 | 53-59 |
+| VictoryRoad_B1F | `gVictoryRoad_B1F` | herbes | 38-42 | 55-55 |
 | VictoryRoad_B1F | `gVictoryRoad_B1F` | Éclate-Roc | 30-40 | 42-56 |
-| VictoryRoad_B2F | `gVictoryRoad_B2F` | herbes | 40-44 | 56-62 |
-| VictoryRoad_B2F | `gVictoryRoad_B2F` | Surf | 25-40 | 35-56 |
-| VictoryRoad_B2F | `gVictoryRoad_B2F` | pêche | 5-45 | 7-63 |
+| VictoryRoad_B2F | `gVictoryRoad_B2F` | herbes | 40-44 | 55-55 |
 | MeteorFalls_1F_1R | `gMeteorFalls_1F_1R` | herbes | 14-20 | 16-23 |
 | MeteorFalls_1F_1R | `gMeteorFalls_1F_1R` | Surf | 5-35 | 6-43 |
 | MeteorFalls_1F_1R | `gMeteorFalls_1F_1R` | pêche | 5-45 | 6-55 |

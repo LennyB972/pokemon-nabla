@@ -12380,7 +12380,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sZweilousLevelUpLearnset,
         .teachableLearnset = sZweilousTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 64, SPECIES_HYDREIGON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_HYDREIGON}), // Pokémon Nabla: 55 instead of 64, like Dragonite and Tyranitar
     },
 
     [SPECIES_HYDREIGON] =
