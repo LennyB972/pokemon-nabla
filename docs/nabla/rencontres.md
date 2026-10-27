@@ -528,14 +528,14 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 - **Surf** : Tatsugiri-Curly 60 % (42-49) · Tatsugiri-Droopy 30 % (42-49) · Tatsugiri-Stretchy 10 % (7-49) — *changé : +Tatsugiri-Curly, +Tatsugiri-Droopy, +Tatsugiri-Stretchy, −Golbat, −Solrock*
 
 ### Victory Road 1F
-- **Herbes** : Dragonite 20 % (55) · Tyranitar 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Salamence 5 % (55) · Metagross 5 % (55) · Garchomp 5 % (55) · Hydreigon 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Aron, −Golbat, −Hariyama, −Lairon, −Loudred, −Makuhita, −Whismur, −Zubat*
+- **Herbes** : Garchomp 20 % (55) · Hydreigon 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Dragonite 5 % (55) · Tyranitar 5 % (55) · Salamence 5 % (55) · Metagross 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Aron, −Golbat, −Hariyama, −Lairon, −Loudred, −Makuhita, −Whismur, −Zubat*
 
 ### Victory Road B1F
 - **Herbes** : Salamence 20 % (55) · Metagross 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Dragonite 5 % (55) · Tyranitar 5 % (55) · Garchomp 5 % (55) · Hydreigon 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Golbat, −Hariyama, −Lairon, −Mawile*
 - **Éclate-Roc** : Graveler 70 % (42-56) → en jeu : Golem · Geodude 30 % (42-56) → en jeu : Golem
 
 ### Victory Road B2F
-- **Herbes** : Garchomp 20 % (55) · Hydreigon 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Dragonite 5 % (55) · Tyranitar 5 % (55) · Salamence 5 % (55) · Metagross 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Golbat, −Lairon, −Mawile, −Sableye*
+- **Herbes** : Dragonite 20 % (55) · Tyranitar 20 % (55) · Goodra-Hisui 10 % (55) · Kommo-O 10 % (55) · Dragapult 10 % (55) · Baxcalibur 10 % (55) · Salamence 5 % (55) · Metagross 5 % (55) · Garchomp 5 % (55) · Hydreigon 5 % (55) — *changé : +Baxcalibur, +Dragapult, +Dragonite, +Garchomp, +Goodra-Hisui, +Hydreigon, +Kommo-O, +Metagross, +Salamence, +Tyranitar, −Golbat, −Lairon, −Mawile, −Sableye*
 
 ## Hors aventure (après la Ligue, zones Nabla)
 

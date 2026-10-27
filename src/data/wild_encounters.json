@@ -2452,12 +2452,12 @@
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_DRAGONITE"
+                "species": "SPECIES_GARCHOMP"
               },
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_TYRANITAR"
+                "species": "SPECIES_HYDREIGON"
               },
               {
                 "min_level": 55,
@@ -2482,6 +2482,16 @@
               {
                 "min_level": 55,
                 "max_level": 55,
+                "species": "SPECIES_DRAGONITE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_TYRANITAR"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
                 "species": "SPECIES_SALAMENCE"
               },
               {
@@ -2492,22 +2502,12 @@
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_GARCHOMP"
+                "species": "SPECIES_SALAMENCE"
               },
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_HYDREIGON"
-              },
-              {
-                "min_level": 55,
-                "max_level": 55,
-                "species": "SPECIES_GARCHOMP"
-              },
-              {
-                "min_level": 55,
-                "max_level": 55,
-                "species": "SPECIES_HYDREIGON"
+                "species": "SPECIES_METAGROSS"
               }
             ]
           }
@@ -12919,12 +12919,12 @@
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_GARCHOMP"
+                "species": "SPECIES_DRAGONITE"
               },
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_HYDREIGON"
+                "species": "SPECIES_TYRANITAR"
               },
               {
                 "min_level": 55,
@@ -12949,16 +12949,6 @@
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_DRAGONITE"
-              },
-              {
-                "min_level": 55,
-                "max_level": 55,
-                "species": "SPECIES_TYRANITAR"
-              },
-              {
-                "min_level": 55,
-                "max_level": 55,
                 "species": "SPECIES_SALAMENCE"
               },
               {
@@ -12969,12 +12959,22 @@
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_SALAMENCE"
+                "species": "SPECIES_GARCHOMP"
               },
               {
                 "min_level": 55,
                 "max_level": 55,
-                "species": "SPECIES_METAGROSS"
+                "species": "SPECIES_HYDREIGON"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_GARCHOMP"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_HYDREIGON"
               }
             ]
           }
