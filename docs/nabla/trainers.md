@@ -2239,9 +2239,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 - Level cap à ce moment : **51**. Événement Nabla (histoire de l'utilisateur) : juste après le sommet du Mont Mémoria, avant le Repaire Magma.
 - **Équipes proposées par Claude, à corriger** : un peu en dessous de celles du Repaire Magma (Tabitha 40-43, Max 43-45) ; Timmy se bat ensuite à 40-43.
+- Cinq sbires, chacun au bord d'un passage obligé qu'il regarde en travers : impossible de les éviter.
 - Combat en duo contre Max et Tabitha : **3 Pokémon par dresseur** (le joueur en choisit 3), Timmy allié. Objets de soin : aucun.
 
-### Sbire 1, couloir ouest (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_1`, 858)
+### Sbire 1, à l'entrée de la forêt (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_1`, 858)
 
 ```
 Mightyena
@@ -2253,7 +2254,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 ```
 
-### Sbire 2, prairie (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_2`, 859)
+### Sbire 2, couloir ouest (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_2`, 859)
 
 ```
 Golbat
@@ -2265,15 +2266,39 @@ Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 ```
 
-### Sbire 3, devant le sanctuaire (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_3`, 860)
+### Sbire 3, entrée du couloir est (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_3`, 860)
 
 ```
 Houndoom
-Level: 38
+Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Claydol
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+### Sbire 4, chemin du bas (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_4`, 863)
+
+```
+Weezing
 Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Torkoal
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+```
+
+### Sbire 5, devant le sanctuaire (`TRAINER_NABLA_GRUNT_EMERALD_FOREST_5` = `TRAINER_GRUNT_UNUSED`, 568, dresseur qu'Émeraude n'utilise pas)
+
+```
+Golbat
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Camerupt
+Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 ```
 

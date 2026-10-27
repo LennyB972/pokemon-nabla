@@ -65,7 +65,7 @@
     },
     {
       "local_id": "LOCALID_EMERALD_FOREST_SANCTUARY_CELEBI",
-      "graphics_id": "OBJ_EVENT_GFX_CELEBI",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CELEBI)",
       "x": 10,
       "y": 4,
       "elevation": 3,

@@ -867,12 +867,14 @@
 #define TRAINER_NABLA_GRUNT_EMERALD_FOREST_3 860
 #define TRAINER_NABLA_TABITHA_EMERALD_FOREST 861
 #define TRAINER_NABLA_MAXIE_EMERALD_FOREST  862
+#define TRAINER_NABLA_GRUNT_EMERALD_FOREST_4 863
+#define TRAINER_NABLA_GRUNT_EMERALD_FOREST_5 TRAINER_GRUNT_UNUSED // Pokémon Nabla: a trainer Emerald never uses
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     863
+#define TRAINERS_COUNT_EMERALD     864
 #define MAX_TRAINERS_COUNT_EMERALD 864
 
 #if IS_FRLG

@@ -103,7 +103,7 @@ Nabla_EmeraldForest_Entrance_Movement_WallyGoesAhead:
 	walk_fast_down
 	step_end
 
-@ The forest: Magma grunts
+@ The forest: Magma grunts, each one by a way the player has to take, looking across it
 
 Nabla_EmeraldForest_EventScript_SetUp::
 	setflag FLAG_TEMP_11
@@ -125,6 +125,16 @@ Nabla_EmeraldForest_EventScript_Grunt2::
 Nabla_EmeraldForest_EventScript_Grunt3::
 	trainerbattle_single TRAINER_NABLA_GRUNT_EMERALD_FOREST_3, Nabla_Text_ForestGrunt3Intro, Nabla_Text_ForestGrunt3Defeat
 	msgbox Nabla_Text_ForestGrunt3PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Nabla_EmeraldForest_EventScript_Grunt4::
+	trainerbattle_single TRAINER_NABLA_GRUNT_EMERALD_FOREST_4, Nabla_Text_ForestGrunt4Intro, Nabla_Text_ForestGrunt4Defeat
+	msgbox Nabla_Text_ForestGrunt4PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Nabla_EmeraldForest_EventScript_Grunt5::
+	trainerbattle_single TRAINER_NABLA_GRUNT_EMERALD_FOREST_5, Nabla_Text_ForestGrunt5Intro, Nabla_Text_ForestGrunt5Defeat
+	msgbox Nabla_Text_ForestGrunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ The sanctuary: Maxie and Tabitha, then Celebi and Wally

@@ -206,7 +206,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 
 ## Repères techniques
 
-- **Dresseurs** : `src/data/trainers.party`. Une version `Difficulty: Hard` faite à la main est utilisée telle quelle ; sinon la règle +10 % s'applique (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c` ; `FillPartnerParty`, `src/battle_partner.c` ; formule `GetDifficultyLevel`, `src/caps.c`). Partenaires : `src/data/battle_partners.party`. Nouveaux dresseurs : `TRAINER_NABLA_*` 855-862 (`include/constants/opponents.h`, place pour 1 de plus avant `MAX_TRAINERS_COUNT`).
+- **Dresseurs** : `src/data/trainers.party`. Une version `Difficulty: Hard` faite à la main est utilisée telle quelle ; sinon la règle +10 % s'applique (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c` ; `FillPartnerParty`, `src/battle_partner.c` ; formule `GetDifficultyLevel`, `src/caps.c`). Partenaires : `src/data/battle_partners.party`. Nouveaux dresseurs : `TRAINER_NABLA_*` 855-863 (`include/constants/opponents.h`) : **plus aucun numéro libre** (les flags des dresseurs touchent ceux du système) ; pour en ajouter, reprendre un dresseur qu'Émeraude n'utilise pas, comme `TRAINER_GRUNT_UNUSED` (568, devenu le 5ᵉ sbire de la forêt).
 - **Niveaux (4.3)** : `dev_scripts/nabla/scale_levels.py`.
   - Réglages : `PARTS` (facteurs par étape), `MAP_PARTS` (étape de chaque map), `EXCLUDED` (dresseurs de la 4.2), `FIXED_LAND_LEVELS` (niveau imposé : Route Victoire 55), `LEVELS_FROM` (tables ajoutées).
   - Il repart toujours des dresseurs d'expansion (commit 87cc74b5ec) et des tables sauvages de la 4.1 (commit 476e2584ec). Une table `_Night` ajoutée depuis prend les niveaux de sa table de jour.
@@ -249,6 +249,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 - Relancer `scale_levels.py` écrase les niveaux des dresseurs ordinaires et des sauvages, y compris une retouche faite dans Porymap. Pour rééquilibrer, changer un facteur ou l'étape d'une map dans le script.
 - Objets de map : ajouter en fin de liste uniquement (sinon `addobject` casse, cas de Latios). Listes numérotées (maps, layouts, sections de carte, dresseurs) : ajouter toujours **à la fin**.
 - `wild_encounters.json` contient aussi les tables de RFVF (labels `_FireRed`/`_LeafGreen`) : les ignorer, et ne pas en parler à l'utilisateur, qui ne s'occupe que d'Émeraude.
+- Sprites de PNJ : `OBJ_EVENT_GFX_CELEBI` et les autres sprites « Frlg » ou Pokémon « old » utilisent des palettes qui n'existent que dans la version Rouge Feu : le jeu plante. Pour un Pokémon en PNJ, `OBJ_EVENT_GFX_SPECIES(NOM)`.
 - Tests d'expansion qui supposent un comportement que Nabla change : les adapter avec un commentaire « Pokémon Nabla » (Ball Fetch, Evolution Tracker, prix et EV des vitamines dans nos tests).
 - **Dessin** :
   - le bloc `e` est le haut d'un petit arbre, pas une frange d'herbe ;

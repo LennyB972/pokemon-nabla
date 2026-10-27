@@ -55,13 +55,35 @@ Nabla_Text_ForestGrunt2PostBattle:
 	.string "forest… It's not just a legend!$"
 
 Nabla_Text_ForestGrunt3Intro:
+	.string "Lost in the woods, kid?\n"
+	.string "I'll show you the way out!$"
+
+Nabla_Text_ForestGrunt3Defeat:
+	.string "Looks like I'm the one who's lost…$"
+
+Nabla_Text_ForestGrunt3PostBattle:
+	.string "This forest is a real maze…\n"
+	.string "Don't tell the others I said that.$"
+
+Nabla_Text_ForestGrunt4Intro:
+	.string "Our leader said nobody gets\n"
+	.string "through. Nobody!$"
+
+Nabla_Text_ForestGrunt4Defeat:
+	.string "Sorry, leader…$"
+
+Nabla_Text_ForestGrunt4PostBattle:
+	.string "TABITHA is with our leader.\n"
+	.string "You'll never beat them both!$"
+
+Nabla_Text_ForestGrunt5Intro:
 	.string "The heart of the forest is just\n"
 	.string "ahead. Nobody else goes in!$"
 
-Nabla_Text_ForestGrunt3Defeat:
+Nabla_Text_ForestGrunt5Defeat:
 	.string "Our leader won't be happy…$"
 
-Nabla_Text_ForestGrunt3PostBattle:
+Nabla_Text_ForestGrunt5PostBattle:
 	.string "Go on, then…\n"
 	.string "MAXIE will deal with you himself.$"
 
