@@ -327,6 +327,17 @@
   - Correctif d'expansion : `GetTrainerPartyFromId` et `GetTrainerPartySizeFromId` (`include/data.h`) suivent `Copy Pool`. Sans lui, un dresseur qui reprend l'équipe d'un autre donnait 20 ₽ et faisait une division par zéro dans le Match Call. À proposer en amont.
   - **Test** (menu debug, *Set Flag* `0x87F` pour le Conseil 4) : *Trainers → Trainer 1* : 770 Roxanne, 771 Roxanne (revanche 3, même équipe), 774 Bastien, 778 Voltère, 782 Adriane, 786 Norman, 790 Alizée, 794 Lévy & Tatia (duo), 798 Juan, 657 et 658 Timmy, 804 Pierre, 462 Marc, 117 Max, 173 Arthur. Vérifier les Méga-Évolutions, l'argent gagné après un combat de revanche 3 à 5, et un appel Match Call d'un Champion.
 - Talent Aura Protectrice (Méga-Lucario Z), qu'expansion n'avait pas codé : divise par deux les dégâts des attaques de contact (comme Toison Épaisse, sans la faiblesse au Feu), ignoré par Brise Moule ; définition donnée par l'utilisateur. `GetDefenderAbilitiesModifier` (`src/battle_util.c`), description dans `src/data/abilities.h`. Tests : `test/nabla_aura_guard.c`. Si expansion le code un jour, garder une seule version au merge.
+- Étape 7.2 — défense du titre (`docs/nabla/postgame.md`) :
+  - Salle du Maître, une fois le joueur Maître : Marc n'est plus là (flag d'objet `FLAG_IS_CHAMPION`) ; le joueur prend la place du Maître, le challenger entre (Lévy & Tatia à deux), combat au niveau 100, récompense, la porte du Panthéon s'ouvre et le joueur y entre seul. Panthéon : sans Marc ni ses répliques, enregistrement, générique, réveil à la maison (comme Émeraude). Appels ajoutés au début des scènes d'origine (`EverGrandeCity_ChampionsRoom_EventScript_EnterRoom`, `EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame`) et à la transition de la salle du Maître.
+  - Ordre : Timmy, Pierre, Marc, puis au hasard parmi les 13 sans le dernier battu (`VAR_NABLA_TITLE_DEFENSE`, 0x408B, ex-`VAR_UNUSED_0x408B`). Récompenses : GS Ball, Charme Chroma, Master Ball, puis tirage (Master Ball, Patch Talent, Bouchon d'Or, 5 Bouchons d'Argent, 10 PP Max, Charme Exp. et Charme Ovale une fois chacun) ; dans le PC si le sac est plein.
+  - GS Ball : nouvel objet rare (`ITEM_GS_BALL` = 874, ajouté avant `ITEMS_COUNT`), icône de la Poké Ball avec une palette or/argent. Celebi niveau 80 au vieil arbre du sanctuaire (`bg_events` ajoutés sur ses 4 cases) ; la GS Ball disparaît à la capture. Couverture : 9 / 97 légendaires (avec Celebi).
+  - Entraîneur Ultime au Centre Pokémon de la Ligue (1er étage, case 14, 6, en fin de liste) : Bouchon d'Argent = une stat, Bouchon d'Or = toutes, sans condition de niveau.
+  - Textes écrits par Claude (anglais), à relire par l'utilisateur.
+  - **Test** (partie quickstart ou copie de sauvegarde ; une équipe solide) :
+    - menu debug : *Set Flag* `0x87F` (Maître), puis *Utilities → Warp to map warp…* → *EverGrande City Champions Room*, warp 0 : la scène se déclenche ;
+    - challenger forcé : *Set Var* `0x408B` = 0 (Timmy), 1 (Pierre), 2 (Marc) ; 3 à 15 = tirage au hasard (sauf le challenger n° valeur − 3) ;
+    - vérifier : arrivée du challenger (Lévy & Tatia à deux, en duo), récompense, porte du Panthéon, Panthéon seul, générique (B), réveil ;
+    - GS Ball : *Give item* 874 si besoin, puis le vieil arbre du sanctuaire ; Bouchons : *Give item* 133 (Bouchon d'Argent) et 134 (Bouchon d'Or), Entraîneur Ultime au 1er étage du Centre Pokémon de la Ligue.
 
 ## Bugs connus
 

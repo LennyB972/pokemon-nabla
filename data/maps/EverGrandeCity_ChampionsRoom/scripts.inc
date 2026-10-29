@@ -6,6 +6,7 @@ EverGrandeCity_ChampionsRoom_MapScripts::
 
 EverGrandeCity_ChampionsRoom_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
+	call Nabla_ChampionsRoom_EventScript_SetUpChallenger
 	end
 
 EverGrandeCity_ChampionsRoom_OnWarp:
@@ -21,6 +22,7 @@ EverGrandeCity_ChampionsRoom_OnFrame:
 	.2byte 0
 
 EverGrandeCity_ChampionsRoom_EventScript_EnterRoom::
+	goto_if_set FLAG_IS_CHAMPION, Nabla_ChampionsRoom_EventScript_TitleDefense
 	lockall
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
 	waitmovement 0

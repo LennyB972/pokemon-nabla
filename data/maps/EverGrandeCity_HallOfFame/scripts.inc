@@ -16,6 +16,7 @@ EverGrandeCity_HallOfFame_OnFrame:
 	.2byte 0
 
 EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
+	goto_if_set FLAG_IS_CHAMPION, Nabla_HallOfFame_EventScript_EnterAlone
 	lockall
 	applymovement LOCALID_HALL_OF_FAME_WALLACE, EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame1
 	applymovement LOCALID_PLAYER, EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame1

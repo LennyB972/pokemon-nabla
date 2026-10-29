@@ -1764,3 +1764,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/emerald_forest.inc"
 	.include "data/scripts/nabla/post_game.inc"
 	.include "data/text/nabla/post_game.inc"
+	.include "data/scripts/nabla/title_defense.inc"
+	.include "data/text/nabla/title_defense.inc"
+	.include "data/scripts/nabla/hyper_training.inc"
+	.include "data/text/nabla/hyper_training.inc"

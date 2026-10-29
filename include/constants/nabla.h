@@ -30,4 +30,26 @@
 // Rayquaza and Deoxys at the top of Sky Pillar, after the eighth Gym (data/scripts/nabla/rayquaza_event.inc)
 #define NABLA_SKY_PILLAR_LEGENDARIES_LEVEL 65
 
+// Legendary Pokémon after the League (Celebi with the GS Ball, mirages...)
+#define NABLA_POST_GAME_LEGENDARIES_LEVEL 80
+
+// Title defense (data/scripts/nabla/title_defense.inc): challengers, in the order of the first three.
+// VAR_NABLA_TITLE_DEFENSE is the next of the first three challengers, then NABLA_TITLE_DEFENSE_RANDOM
+// + the last challenger beaten.
+#define NABLA_CHALLENGER_WALLY         0
+#define NABLA_CHALLENGER_STEVEN        1
+#define NABLA_CHALLENGER_WALLACE       2
+#define NABLA_CHALLENGER_ROXANNE       3
+#define NABLA_CHALLENGER_BRAWLY        4
+#define NABLA_CHALLENGER_WATTSON       5
+#define NABLA_CHALLENGER_FLANNERY      6
+#define NABLA_CHALLENGER_NORMAN        7
+#define NABLA_CHALLENGER_WINONA        8
+#define NABLA_CHALLENGER_TATE_AND_LIZA 9
+#define NABLA_CHALLENGER_JUAN          10
+#define NABLA_CHALLENGER_MAXIE         11
+#define NABLA_CHALLENGER_ARCHIE        12
+#define NABLA_CHALLENGERS_COUNT        13
+#define NABLA_TITLE_DEFENSE_RANDOM     3
+
 #endif // GUARD_CONSTANTS_NABLA_H

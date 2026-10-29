@@ -10,7 +10,10 @@ Conception validée avec l'utilisateur (2026-10-29). Chaque partie est construit
 - **Générique** : complet la première fois ; ensuite, B le passe (Émeraude se contentait de l'accélérer).
 - **Revanches des Champions et de Timmy** : tout au niveau 100, une équipe par personnage (composée par l'utilisateur, sets de Claude), en **simple** sauf Lévy & Tatia (duo), **IA intelligente**. L'équipe est sur la revanche 2 ; les revanches 3 à 5 la reprennent (`Copy Pool`). Fiche : fin de `docs/nabla/trainers.md`.
 
-## Défense du titre (7.2)
+## Défense du titre (7.2, faite)
+
+Scripts : `data/scripts/nabla/title_defense.inc` (textes `data/text/nabla/title_defense.inc`), appelés depuis les scènes d'origine de la salle du Maître et du Panthéon quand `FLAG_IS_CHAMPION` est posé. Marc (salle du Maître et Panthéon) a ce flag comme flag d'objet : il n'est plus là une fois le joueur Maître. Le challenger (et le 2ᵉ jumeau pour Lévy & Tatia) : objets ajoutés en fin de liste de la salle du Maître, sprites `VAR_OBJ_GFX_ID_1` / `_2`, cachés par `FLAG_TEMP_11`. Suivi : `VAR_NABLA_TITLE_DEFENSE` (0x408B) et les constantes `NABLA_CHALLENGER_*` (`include/constants/nabla.h`) ; challenger de la visite dans `VAR_TEMP_2`.
+
 
 - **Déroulé** : le joueur refait le Conseil 4 ; la salle du Maître est vide, un challenger arrive ; combat au niveau 100 ; le joueur entre **seul** au Panthéon (pas de Marc, ni de May ni du Prof. Seko). Variante des scènes de la salle du Maître et du Panthéon, à tester en jeu.
 - **Challengers** (13) : Timmy (`TRAINER_WALLY_VR_5`), Pierre (`TRAINER_STEVEN`), Marc, les 8 Champions (leur revanche 5), Max et Arthur. Équipes au niveau 100, prêtes (7.1b). Marc, Max et Arthur ont leur propre dresseur, repris d'un dresseur inutilisé d'Émeraude : `TRAINER_NABLA_WALLACE_TITLE_DEFENSE`, `_MAXIE_`, `_ARCHIE_` (`include/constants/opponents.h`).
@@ -20,7 +23,8 @@ Conception validée avec l'utilisateur (2026-10-29). Chaque partie est construit
   - Pierre : le **Charme Chroma** ;
   - Marc : une **Master Ball** ;
   - ensuite, tirage : Master Ball, Patch Talent, Bouchon d'Or, 5 Bouchons d'Argent, 10 PP Max, Charme Exp. et Charme Ovale (une seule fois chacun). Rien d'achetable.
-- **Entraînement ultime** : un PNJ qui utilise les Bouchons (fonctions natives `CanHyperTrain` / `HyperTrain`), au Centre Pokémon de la Ligue par exemple.
+- **Entraînement ultime** : PNJ au Centre Pokémon de la Ligue (1er étage), commandes natives `canhypertrain` / `hypertrain` (`data/scripts/nabla/hyper_training.inc`).
+- **Celebi** : au vieil arbre du sanctuaire de la Forêt Émeraude (4 cases de l'arbre, `Nabla_EmeraldForest_Sanctuary_EventScript_OldTree`), avec la GS Ball : Celebi niveau 80 (`NABLA_POST_GAME_LEGENDARIES_LEVEL`), qui revient tant qu'il n'est pas capturé ; la GS Ball disparaît à la capture.
 
 ## Pierre et la Flûte Éon (7.3)
 

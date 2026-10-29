@@ -135,5 +135,38 @@
       "script": "Nabla_EmeraldForest_Sanctuary_EventScript_Arrive"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_OldTree"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_OldTree"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_OldTree"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Nabla_EmeraldForest_Sanctuary_EventScript_OldTree"
+    }
+  ]
 }

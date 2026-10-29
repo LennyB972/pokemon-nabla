@@ -167,3 +167,13 @@ Nabla_Text_WallyFarewell:
 	.string "The next time we battle,\n"
 	.string "we'll win for sure!\p"
 	.string "See you, {PLAYER}{KUN}!$"
+
+Nabla_Text_OldTree:
+	.string "It's a very old tree.\n"
+	.string "Its leaves rustle gently…$"
+
+Nabla_Text_GSBallShakes:
+	.string "The GS BALL is shaking!$"
+
+Nabla_Text_CelebiWentBack:
+	.string "CELEBI went back into the old tree…$"

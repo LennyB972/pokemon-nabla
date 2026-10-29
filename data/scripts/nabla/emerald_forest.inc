@@ -288,3 +288,35 @@ Nabla_EmeraldForest_Sanctuary_Movement_CelebiGoesToWally:
 	walk_left
 	face_up
 	step_end
+
+@ After the League: with the GS BALL (Wally's reward in the title defense), a Celebi comes out of the old tree.
+@ It comes back until it is caught; the GS BALL is used up then.
+Nabla_EmeraldForest_Sanctuary_EventScript_OldTree::
+	lockall
+	checkitem ITEM_GS_BALL
+	goto_if_eq VAR_RESULT, TRUE, Nabla_EmeraldForest_Sanctuary_EventScript_GSBall
+	msgbox Nabla_Text_OldTree, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Nabla_EmeraldForest_Sanctuary_EventScript_GSBall:
+	msgbox Nabla_Text_GSBallShakes, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_MORNING_SUN
+	fadescreenswapbuffers FADE_TO_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitse
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_CELEBI, NABLA_POST_GAME_LEGENDARIES_LEVEL
+	special BattleSetup_StartLegendaryBattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Nabla_EmeraldForest_Sanctuary_EventScript_CaughtCelebi
+	msgbox Nabla_Text_CelebiWentBack, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Nabla_EmeraldForest_Sanctuary_EventScript_CaughtCelebi:
+	removeitem ITEM_GS_BALL
+	releaseall
+	end

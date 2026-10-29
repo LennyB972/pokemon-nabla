@@ -89,6 +89,15 @@ Liste générée par `python3 dev_scripts/nabla/list_items.py` (objets cachés e
 | ShoalCave_LowTideIceRoom | 13, 2 | `ITEM_GLALITITE` | `FLAG_NABLA_ITEM_SHOAL_CAVE_LOW_TIDE_ICE_ROOM_GLALITITE` |
 | ShoalCave_LowTideLowerRoom | 6, 2 | `ITEM_FROSLASSITE` | `FLAG_NABLA_ITEM_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM_FROSLASSITE` |
 
+## Récompenses de la défense du titre
+
+Données par le challenger battu dans la salle du Maître (`data/scripts/nabla/title_defense.inc`) ; dans le PC si le sac est plein.
+
+- **Timmy** (1ʳᵉ défense) : **GS Ball** (objet rare ajouté par Nabla, `ITEM_GS_BALL`, icône de la Poké Ball recolorée `graphics/items/icon_palettes/gs_ball.pal`). Au vieil arbre du sanctuaire de la Forêt Émeraude, elle fait apparaître Celebi (niveau 80) ; elle disparaît quand il est capturé.
+- **Pierre** (2ᵉ) : Charme Chroma. **Marc** (3ᵉ) : Master Ball.
+- **Ensuite**, au hasard : Master Ball, Patch Talent, Bouchon d'Or, 5 Bouchons d'Argent, 10 PP Max, Charme Exp., Charme Ovale (chaque charme une seule fois).
+- **Bouchons** : l'Entraîneur Ultime du Centre Pokémon de la Ligue (1er étage, case 14, 6) monte une stat (Bouchon d'Argent) ou toutes (Bouchon d'Or) au maximum (`data/scripts/nabla/hyper_training.inc`).
+
 ## Objets tenus par les Pokémon sauvages
 
 - **Emblème du Général** : tenu par tous les Scalproie sauvages (au lieu de 5 % ; `src/data/pokemon/species_info/gen_5_families.h`), comme les Scalproie chefs d'Écarlate/Violet. Un Scalproie qui en bat 3 évolue en Scalpereur. On les croise dans le Safari d'Unys après la Ligue.

@@ -1,0 +1,379 @@
+@ Title defense: once the player is the Champion, a challenger waits for them in the Champion's room, then
+@ the player enters the Hall of Fame alone. VAR_NABLA_TITLE_DEFENSE: the next of the first three challengers
+@ (Wally, Steven, Wallace), then NABLA_TITLE_DEFENSE_RANDOM + the last challenger beaten (include/constants/nabla.h).
+@ The challenger of this visit is in VAR_TEMP_2.
+
+@ Champion's room, on transition: hides the challengers, picks the next one and sets their graphics
+Nabla_ChampionsRoom_EventScript_SetUpChallenger::
+	setflag FLAG_TEMP_11  @ Challengers
+	goto_if_unset FLAG_IS_CHAMPION, Common_EventScript_NopReturn
+	copyvar VAR_TEMP_2, VAR_NABLA_TITLE_DEFENSE
+	goto_if_lt VAR_TEMP_2, NABLA_TITLE_DEFENSE_RANDOM, Nabla_ChampionsRoom_EventScript_SetChallengerGfx
+	@ Any challenger but the last one beaten
+	copyvar VAR_TEMP_3, VAR_NABLA_TITLE_DEFENSE
+	subvar VAR_TEMP_3, NABLA_TITLE_DEFENSE_RANDOM
+	random NABLA_CHALLENGERS_COUNT - 1
+	copyvar VAR_TEMP_2, VAR_RESULT
+	goto_if_lt VAR_TEMP_2, VAR_TEMP_3, Nabla_ChampionsRoom_EventScript_SetChallengerGfx
+	addvar VAR_TEMP_2, 1
+Nabla_ChampionsRoom_EventScript_SetChallengerGfx:
+	switch VAR_TEMP_2
+	case NABLA_CHALLENGER_WALLY, Nabla_ChampionsRoom_EventScript_WallyGfx
+	case NABLA_CHALLENGER_STEVEN, Nabla_ChampionsRoom_EventScript_StevenGfx
+	case NABLA_CHALLENGER_WALLACE, Nabla_ChampionsRoom_EventScript_WallaceGfx
+	case NABLA_CHALLENGER_ROXANNE, Nabla_ChampionsRoom_EventScript_RoxanneGfx
+	case NABLA_CHALLENGER_BRAWLY, Nabla_ChampionsRoom_EventScript_BrawlyGfx
+	case NABLA_CHALLENGER_WATTSON, Nabla_ChampionsRoom_EventScript_WattsonGfx
+	case NABLA_CHALLENGER_FLANNERY, Nabla_ChampionsRoom_EventScript_FlanneryGfx
+	case NABLA_CHALLENGER_NORMAN, Nabla_ChampionsRoom_EventScript_NormanGfx
+	case NABLA_CHALLENGER_WINONA, Nabla_ChampionsRoom_EventScript_WinonaGfx
+	case NABLA_CHALLENGER_TATE_AND_LIZA, Nabla_ChampionsRoom_EventScript_TateAndLizaGfx
+	case NABLA_CHALLENGER_JUAN, Nabla_ChampionsRoom_EventScript_JuanGfx
+	case NABLA_CHALLENGER_MAXIE, Nabla_ChampionsRoom_EventScript_MaxieGfx
+	case NABLA_CHALLENGER_ARCHIE, Nabla_ChampionsRoom_EventScript_ArchieGfx
+	return
+
+Nabla_ChampionsRoom_EventScript_WallyGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WALLY
+	return
+
+Nabla_ChampionsRoom_EventScript_StevenGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_STEVEN
+	return
+
+Nabla_ChampionsRoom_EventScript_WallaceGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WALLACE
+	return
+
+Nabla_ChampionsRoom_EventScript_RoxanneGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ROXANNE
+	return
+
+Nabla_ChampionsRoom_EventScript_BrawlyGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BRAWLY
+	return
+
+Nabla_ChampionsRoom_EventScript_WattsonGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WATTSON
+	return
+
+Nabla_ChampionsRoom_EventScript_FlanneryGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_FLANNERY
+	return
+
+Nabla_ChampionsRoom_EventScript_NormanGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_NORMAN
+	return
+
+Nabla_ChampionsRoom_EventScript_WinonaGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_WINONA
+	return
+
+Nabla_ChampionsRoom_EventScript_TateAndLizaGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_TATE
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_LIZA
+	return
+
+Nabla_ChampionsRoom_EventScript_JuanGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_JUAN
+	return
+
+Nabla_ChampionsRoom_EventScript_MaxieGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_MAXIE
+	return
+
+Nabla_ChampionsRoom_EventScript_ArchieGfx:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_ARCHIE
+	return
+
+@ Champion's room, on frame (instead of Wallace's scene): the player takes the Champion's place and the challenger comes in
+Nabla_ChampionsRoom_EventScript_TitleDefense::
+	lockall
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Nabla_ChampionsRoom_Movement_PlayerToChampionsPlace
+	waitmovement 0
+	setvar VAR_TEMP_1, 1
+	delay 30
+	msgbox Nabla_Text_TitleDefenseChallengerArrives, MSGBOX_DEFAULT
+	closemessage
+	goto_if_eq VAR_TEMP_2, NABLA_CHALLENGER_TATE_AND_LIZA, Nabla_ChampionsRoom_EventScript_TwinsArrive
+	addobject LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER
+	applymovement LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER, Nabla_ChampionsRoom_Movement_ChallengerApproach
+	waitmovement 0
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBattle
+
+Nabla_ChampionsRoom_EventScript_TwinsArrive:
+	addobject LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER
+	applymovement LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER, Nabla_ChampionsRoom_Movement_TateEnters
+	waitmovement 0
+	addobject LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER_2
+	applymovement LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER, Nabla_ChampionsRoom_Movement_TateApproach
+	applymovement LOCALID_CHAMPIONS_ROOM_NABLA_CHALLENGER_2, Nabla_ChampionsRoom_Movement_LizaApproach
+	waitmovement 0
+Nabla_ChampionsRoom_EventScript_ChallengerBattle:
+	switch VAR_TEMP_2
+	case NABLA_CHALLENGER_WALLY, Nabla_ChampionsRoom_EventScript_Wally
+	case NABLA_CHALLENGER_STEVEN, Nabla_ChampionsRoom_EventScript_Steven
+	case NABLA_CHALLENGER_WALLACE, Nabla_ChampionsRoom_EventScript_Wallace
+	case NABLA_CHALLENGER_ROXANNE, Nabla_ChampionsRoom_EventScript_Roxanne
+	case NABLA_CHALLENGER_BRAWLY, Nabla_ChampionsRoom_EventScript_Brawly
+	case NABLA_CHALLENGER_WATTSON, Nabla_ChampionsRoom_EventScript_Wattson
+	case NABLA_CHALLENGER_FLANNERY, Nabla_ChampionsRoom_EventScript_Flannery
+	case NABLA_CHALLENGER_NORMAN, Nabla_ChampionsRoom_EventScript_Norman
+	case NABLA_CHALLENGER_WINONA, Nabla_ChampionsRoom_EventScript_Winona
+	case NABLA_CHALLENGER_TATE_AND_LIZA, Nabla_ChampionsRoom_EventScript_TateAndLiza
+	case NABLA_CHALLENGER_JUAN, Nabla_ChampionsRoom_EventScript_Juan
+	case NABLA_CHALLENGER_MAXIE, Nabla_ChampionsRoom_EventScript_Maxie
+	case NABLA_CHALLENGER_ARCHIE, Nabla_ChampionsRoom_EventScript_Archie
+	releaseall
+	end
+
+Nabla_ChampionsRoom_EventScript_Wally:
+	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	msgbox Nabla_Text_TitleDefenseWallyIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_WALLY_VR_5, Nabla_Text_TitleDefenseWallyDefeat
+	msgbox Nabla_Text_TitleDefenseWallyReward, MSGBOX_DEFAULT
+	giveitem ITEM_GS_BALL
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_Steven:
+	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	msgbox Nabla_Text_TitleDefenseStevenIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_STEVEN, Nabla_Text_TitleDefenseStevenDefeat
+	msgbox Nabla_Text_TitleDefenseStevenReward, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_Wallace:
+	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	msgbox Nabla_Text_TitleDefenseWallaceIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_NABLA_WALLACE_TITLE_DEFENSE, Nabla_Text_TitleDefenseWallaceDefeat
+	msgbox Nabla_Text_TitleDefenseWallaceReward, MSGBOX_DEFAULT
+	giveitem ITEM_MASTER_BALL
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_Roxanne:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseRoxanneIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ROXANNE_5, Nabla_Text_TitleDefenseRoxanneDefeat
+	msgbox Nabla_Text_TitleDefenseRoxanneReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Brawly:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseBrawlyIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BRAWLY_5, Nabla_Text_TitleDefenseBrawlyDefeat
+	msgbox Nabla_Text_TitleDefenseBrawlyReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Wattson:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseWattsonIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_WATTSON_5, Nabla_Text_TitleDefenseWattsonDefeat
+	msgbox Nabla_Text_TitleDefenseWattsonReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Flannery:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseFlanneryIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_FLANNERY_5, Nabla_Text_TitleDefenseFlanneryDefeat
+	msgbox Nabla_Text_TitleDefenseFlanneryReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Norman:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseNormanIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_NORMAN_5, Nabla_Text_TitleDefenseNormanDefeat
+	msgbox Nabla_Text_TitleDefenseNormanReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Winona:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseWinonaIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_WINONA_5, Nabla_Text_TitleDefenseWinonaDefeat
+	msgbox Nabla_Text_TitleDefenseWinonaReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_TateAndLiza:
+	playbgm MUS_ENCOUNTER_TWINS, FALSE
+	msgbox Nabla_Text_TitleDefenseTateAndLizaIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_TATE_AND_LIZA_5, Nabla_Text_TitleDefenseTateAndLizaDefeat
+	msgbox Nabla_Text_TitleDefenseTateAndLizaReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Juan:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox Nabla_Text_TitleDefenseJuanIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_JUAN_5, Nabla_Text_TitleDefenseJuanDefeat
+	msgbox Nabla_Text_TitleDefenseJuanReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Maxie:
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	msgbox Nabla_Text_TitleDefenseMaxieIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_NABLA_MAXIE_TITLE_DEFENSE, Nabla_Text_TitleDefenseMaxieDefeat
+	msgbox Nabla_Text_TitleDefenseMaxieReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+Nabla_ChampionsRoom_EventScript_Archie:
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	msgbox Nabla_Text_TitleDefenseArchieIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_NABLA_ARCHIE_TITLE_DEFENSE, Nabla_Text_TitleDefenseArchieDefeat
+	msgbox Nabla_Text_TitleDefenseArchieReward, MSGBOX_DEFAULT
+	goto Nabla_ChampionsRoom_EventScript_RandomReward
+
+@ After the first three challengers: a random reward (each charm only once)
+Nabla_ChampionsRoom_EventScript_RandomReward:
+	random 7
+	switch VAR_RESULT
+	case 0, Nabla_ChampionsRoom_EventScript_RewardMasterBall
+	case 1, Nabla_ChampionsRoom_EventScript_RewardAbilityPatch
+	case 2, Nabla_ChampionsRoom_EventScript_RewardGoldBottleCap
+	case 3, Nabla_ChampionsRoom_EventScript_RewardBottleCaps
+	case 4, Nabla_ChampionsRoom_EventScript_RewardPPMax
+	case 5, Nabla_ChampionsRoom_EventScript_RewardExpCharm
+	case 6, Nabla_ChampionsRoom_EventScript_RewardOvalCharm
+	end
+
+Nabla_ChampionsRoom_EventScript_RewardMasterBall:
+	giveitem ITEM_MASTER_BALL
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardAbilityPatch:
+	giveitem ITEM_ABILITY_PATCH
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardGoldBottleCap:
+	giveitem ITEM_GOLD_BOTTLE_CAP
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardBottleCaps:
+	giveitem ITEM_BOTTLE_CAP, 5
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardPPMax:
+	giveitem ITEM_PP_MAX, 10
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardExpCharm:
+	checkitem ITEM_EXP_CHARM
+	goto_if_eq VAR_RESULT, TRUE, Nabla_ChampionsRoom_EventScript_RandomReward
+	giveitem ITEM_EXP_CHARM
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+Nabla_ChampionsRoom_EventScript_RewardOvalCharm:
+	checkitem ITEM_OVAL_CHARM
+	goto_if_eq VAR_RESULT, TRUE, Nabla_ChampionsRoom_EventScript_RandomReward
+	giveitem ITEM_OVAL_CHARM
+	goto Nabla_ChampionsRoom_EventScript_ChallengerBeaten
+
+@ The reward was given (in the PC if the bag was full); the next challenger is set and the Hall of Fame opens
+Nabla_ChampionsRoom_EventScript_ChallengerBeaten:
+	call_if_eq VAR_0x8007, FALSE, Nabla_ChampionsRoom_EventScript_RewardToPC
+	goto_if_lt VAR_NABLA_TITLE_DEFENSE, NABLA_CHALLENGER_WALLACE, Nabla_ChampionsRoom_EventScript_NextFixedChallenger
+	copyvar VAR_NABLA_TITLE_DEFENSE, VAR_TEMP_2
+	addvar VAR_NABLA_TITLE_DEFENSE, NABLA_TITLE_DEFENSE_RANDOM
+	goto Nabla_ChampionsRoom_EventScript_OpenHallOfFame
+
+Nabla_ChampionsRoom_EventScript_NextFixedChallenger:
+	addvar VAR_NABLA_TITLE_DEFENSE, 1
+Nabla_ChampionsRoom_EventScript_OpenHallOfFame:
+	closemessage
+	playse SE_DOOR
+	setmetatile 6, 1, METATILE_EliteFour_OpenDoorChampion_Frame, FALSE
+	setmetatile 6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE
+	special DrawWholeMapView
+	delay 30
+	applymovement LOCALID_PLAYER, Nabla_ChampionsRoom_Movement_PlayerToHallOfFame
+	waitmovement 0
+	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
+	waitstate
+	releaseall
+	end
+
+Nabla_ChampionsRoom_EventScript_RewardToPC:
+	addpcitem VAR_0x8000, VAR_0x8001
+	msgbox Nabla_Text_TitleDefenseRewardSentToPC, MSGBOX_DEFAULT
+	return
+
+Nabla_ChampionsRoom_Movement_PlayerToChampionsPlace:
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+Nabla_ChampionsRoom_Movement_ChallengerApproach:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Nabla_ChampionsRoom_Movement_TateEnters:
+	walk_up
+	walk_up
+	step_end
+
+Nabla_ChampionsRoom_Movement_TateApproach:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	step_end
+
+Nabla_ChampionsRoom_Movement_LizaApproach:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	step_end
+
+Nabla_ChampionsRoom_Movement_PlayerToHallOfFame:
+	face_up
+	delay_16
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+@ Hall of Fame (instead of the scene with Wallace): the Champion enters alone
+Nabla_HallOfFame_EventScript_EnterAlone::
+	lockall
+	applymovement LOCALID_PLAYER, Nabla_HallOfFame_Movement_WalkIn
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	delay 20
+	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD
+	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD
+	delay 40
+	setvar VAR_TEMP_1, 1
+	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
+	end
+
+Nabla_HallOfFame_Movement_WalkIn:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
