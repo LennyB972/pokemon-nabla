@@ -14,11 +14,6 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 - **Rencontres** (choisies par l'utilisateur, à appliquer quand la zone existera) : Grimalin 20 %, Brocélôme 20 %, Mushana 20 %, Florges 20 %, Magirêve 10 %, Bombydou 10 % (`IMPIDIMP`, `PHANTUMP`, `MUSHARNA`, `FLORGES`, `MISMAGIUS`, `CUTIEFLY`). Niveaux : ceux des Routes 122-123.
 - **À définir** : les ennemis (Team Aqua/Magma ? autres ?), l'entrée de la forêt, qui dessine.
 
-### Îles accessibles par Plongée
-- **Idée** : des zones sous-marines (Plongée) qui mènent à des îles en plus, hors scénario.
-- **Place** : la mer de l'est de Hoenn a de la place sur la carte de la région.
-- **À définir** : combien d'îles, sur quelles routes marines, leur contenu.
-
 ### Pilier Céleste entre la 8e arène et la Ligue (fait)
 - **Fait** : événement de Rayquaza et Deoxys (voir `PROGRESS.md`, scripts dans `data/scripts/nabla/rayquaza_event.inc`). Rencontres du Pilier : lot 8.
 
@@ -28,6 +23,4 @@ Idées de nouvelles zones et d'ajouts narratifs, à compléter au fil des idées
 
 ## Après la Ligue
 
-### Îles mirages des légendaires
-- **Idée** : des îles mirages pour capturer les légendaires, avec un système proche de la Flûte Éon de ROSA, sans le vol en 3D (étape 7.4 de la roadmap).
-- **À définir** : l'objet ou le moyen d'y aller, les conditions de déblocage, la répartition des légendaires.
+Conception validée (Ligue au niveau 100, défense du titre, Flûte Éon, mirages des légendaires, assistant du labo) : `docs/nabla/postgame.md`. Les îles par Plongée sont abandonnées (2026-10-29) : les mirages suffisent pour les légendaires.

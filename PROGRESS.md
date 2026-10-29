@@ -367,6 +367,9 @@
 | 2026-10-27 | Un Pokémon qui connaît une CS peut être envoyé au PC à l'échange de capture (`B_CATCH_SWAP_CHECK_HMS` FALSE) : les CS du sac suffisent dans Nabla. |
 | 2026-10-27 | Route Victoire : pseudo-légendaires au niveau 55 ; leurs lignées évoluent au niveau 35 au plus (premier stade) et 55 au plus (dernier) : Solochi, Fantyrm, Mucuscule à 35, Trioxhydre et Lanssorien à 55. |
 | 2026-10-27 | Forêt Émeraude : Timmy arrive au sommet du Mont Mémoria ; duo avec Timmy contre Max et Tabitha ; événement obligatoire (Repaire Magma fermé avant) ; équipes proposées par Claude, à corriger. |
+| 2026-10-29 | Post-game (`docs/nabla/postgame.md`) : tout au niveau 100 après la 1ʳᵉ victoire (Conseil 4 et Marc avec leurs équipes actuelles, Pierre, revanches des Champions et de Timmy, défense du titre) ; cadeau de la Ligue (150 Bonbons Exp. XL, 50 Super Bonbons) déposé dans le PC ; générique passable avec B après le premier. |
+| 2026-10-29 | Défense du titre : Timmy (GS Ball → 2ᵉ Celebi), Pierre (Charme Chroma), Marc (Master Ball), puis tirage parmi 13 challengers (avec Max et Arthur) ; récompenses rares, rien d'achetable. Le joueur entre seul au Panthéon. |
+| 2026-10-29 | Légendaires au niveau 80, après la Ligue (avant : seulement Rayquaza, Deoxys, et Latios en cadeau). Flûte Éon donnée par Pierre chez lui (Maman le signale au réveil) ; 23 mirages + les îles d'événement existantes ; mirage débloqué par des captures, Pokémon caché par l'équipe + un autel ; Meltan, Cosmog, Type:0, Wushours en cadeau ; Cosmog et Wushours peuvent se reproduire. Îles par Plongée abandonnées. Objets de forme et Méga-Gemmes : assistant du labo. |
 
 ## Questions ouvertes
 

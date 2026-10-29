@@ -233,12 +233,13 @@ Constat : 420 lignées non légendaires existent, Hoenn en propose ~85. Plutôt 
 
 | Étape | Contenu | Risque |
 |---|---|---|
-| 7.1 | Conseil 4 renforcé après la 1ʳᵉ victoire (rematch) | 🟡 |
-| 7.2 | Défense du titre (challengers à la Ligue) | 🟡 |
-| 7.3 | Légendaires et fabuleux capturables — d'abord ceux qui ont une place logique, puis le reste dans les zones de la phase 6 | 🔴 |
-| 7.4 | Système « Flûte Éon » : îles mirages débloquées sous conditions, introduit par Latios | 🔴 |
+| 7.1 | Ligue au niveau 100 après la 1ʳᵉ victoire, Pierre au niveau 100, cadeau de la Ligue, générique passable ; revanches des Champions et de Timmy au niveau 100 | 🟡 |
+| 7.2 | Défense du titre (13 challengers, récompenses) | 🟡 |
+| 7.3 | Flûte Éon donnée par Pierre, premiers mirages | 🔴 |
+| 7.4 | Légendaires et fabuleux au niveau 80, par lots (lieux existants et 23 mirages) | 🔴 |
+| 7.5 | Assistant du labo (objets de forme, Méga-Gemmes) | 🟡 |
 
-Chaque étape fera l'objet d'une mini-conception validée avant de commencer.
+Conception validée : `docs/nabla/postgame.md`.
 
 ## Phase 8 — Release 1.0
 Build release, patch BPS, tests sur plusieurs émulateurs (mGBA, VBA-M, un émulateur mobile), crédit RHH dans le générique de fin, notes de version. 🟢
