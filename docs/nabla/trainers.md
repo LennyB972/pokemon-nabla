@@ -757,6 +757,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 - **Règles** : comme les Champions de la 6ᵉ arène et plus : 6 Pokémon et une Méga-Évolution par équipe, dans les deux modes (proposition, libre à toi de faire autrement). Niveaux à relever : Juan est désormais au niveau 59.
 - **Level cap** : un seul cap après le 8ᵉ badge (Route Victoire et Ligue), au niveau du Pokémon le plus fort de Marc : **72** (`src/caps.c`, 79 en Difficile).
+- **Après la Ligue** (7.1) : une fois le joueur Maître, le Conseil 4 et Marc reprennent ces équipes au niveau 100, dans les deux modes (`GetDifficultyTrainerMonLevel`, `src/battle_setup.c`). Pierre (Chutes Météore, `TRAINER_STEVEN`) est au niveau 100.
 - **Formes Originelles** : le jeu suit la génération 9, où les Orbes ne changent plus la forme. Dialga, Palkia et Giratina Originels tiennent donc Adamant Crystal, Lustrous Globe et Griseous Core (même bonus que les Orbes).
 - **Difficile** : même équipe, niveaux +10 % (règle automatique).
 

@@ -335,14 +335,16 @@ static void CB2_Credits(void)
     RunTasks();
     AnimateSprites();
 
-    if ((JOY_HELD(B_BUTTON))
+    // Pokémon Nabla: after the first time, B skips the credits (instead of speeding them up)
+    if (JOY_NEW(B_BUTTON)
      && gHasHallOfFameRecords
      && gTasks[sSavedTaskId].func == Task_CreditsMain)
     {
-        // Speed up credits
-        VBlankCB_Credits();
-        RunTasks();
-        AnimateSprites();
+        DestroyTask(gTasks[sSavedTaskId].tTaskId_UpdatePage);
+        ResetCreditsTasks(sSavedTaskId);
+        FadeOutBGM(4);
+        BeginNormalPaletteFade(PALETTES_ALL, 8, 0, 16, RGB_BLACK);
+        gTasks[sSavedTaskId].func = Task_CreditsSoftReset;
     }
     BuildOamBuffer();
     UpdatePaletteFade();

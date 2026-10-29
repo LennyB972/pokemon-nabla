@@ -1,8 +1,12 @@
 #include "global.h"
+#include "battle_setup.h"
 #include "caps.h"
+#include "data.h"
 #include "difficulty.h"
 #include "event_data.h"
+#include "malloc.h"
 #include "test/test.h"
+#include "constants/trainers.h"
 
 TEST("Nabla: Hard mode raises levels by 10%, rounded down, at least one level")
 {
@@ -32,4 +36,25 @@ TEST("Nabla: level caps follow the difficulty")
     SetCurrentDifficultyLevel(difficulty);
     EXPECT_EQ(GetCurrentLevelCap(), cap);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+}
+
+TEST("Nabla: the Elite Four and the Champion are level 100 once the player is the Champion")
+{
+    u32 trainerClass = TRAINER_CLASS_ELITE_FOUR, isChampion = FALSE, level = 0;
+    struct Trainer trainer;
+    struct Pokemon *party = Alloc(PARTY_SIZE * sizeof(struct Pokemon));
+
+    PARAMETRIZE { trainerClass = TRAINER_CLASS_ELITE_FOUR; isChampion = FALSE; level = 5; }
+    PARAMETRIZE { trainerClass = TRAINER_CLASS_ELITE_FOUR; isChampion = TRUE; level = MAX_LEVEL; }
+    PARAMETRIZE { trainerClass = TRAINER_CLASS_CHAMPION; isChampion = TRUE; level = MAX_LEVEL; }
+    PARAMETRIZE { trainerClass = TRAINER_CLASS_RIVAL; isChampion = TRUE; level = 5; }
+
+    memcpy(&trainer, GetTrainerStructFromId(1), sizeof(trainer));
+    trainer.trainerClass = trainerClass;
+    if (isChampion)
+        FlagSet(FLAG_IS_CHAMPION);
+    CreateNPCTrainerPartyFromTrainer(party, &trainer);
+    EXPECT_EQ(GetMonData(&party[0], MON_DATA_LEVEL), level);
+    FlagClear(FLAG_IS_CHAMPION);
+    Free(party);
 }

@@ -1762,3 +1762,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/rayquaza_event.inc"
 	.include "data/scripts/nabla/emerald_forest.inc"
 	.include "data/text/nabla/emerald_forest.inc"
+	.include "data/scripts/nabla/post_game.inc"
+	.include "data/text/nabla/post_game.inc"

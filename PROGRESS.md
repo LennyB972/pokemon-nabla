@@ -308,6 +308,16 @@
   - Événement obligatoire : tant qu'il n'est pas fini, un garde Magma ajouté devant le Repaire Magma (Sentier Sinuroc) bloque l'entrée.
   - Dresseurs `TRAINER_NABLA_GRUNT_EMERALD_FOREST_1` à `_5`, `TRAINER_NABLA_TABITHA_EMERALD_FOREST`, `TRAINER_NABLA_MAXIE_EMERALD_FOREST` (858-863 et 568) et allié `PARTNER_WALLY_EMERALD_FOREST` : équipes proposées par Claude, validées par l'utilisateur (`docs/nabla/trainers.md`).
   - Flags `FLAG_NABLA_EMERALD_FOREST_CALL`, `_WALLY_MET`, `_DONE` (0x29E-0x2A0) ; qui est visible sur chaque map est réglé en y entrant (flags temporaires).
+- Conception du post-game (2026-10-29, validée par l'utilisateur) : `docs/nabla/postgame.md` (Ligue au niveau 100, défense du titre, Flûte Éon, 23 mirages, assistant du labo, ordre de construction). Îles par Plongée abandonnées.
+- Étape 7.1a — Ligue après la première victoire :
+  - Conseil 4 et Marc au niveau 100 une fois le joueur Maître (`FLAG_IS_CHAMPION`), avec leurs équipes actuelles, en Normal comme en Difficile : règle sur les classes de dresseur Conseil 4 et Maître dans `GetDifficultyTrainerMonLevel` (`src/battle_setup.c`). Test : `test/nabla_difficulty.c`.
+  - Pierre aux Chutes Météore (`TRAINER_STEVEN`) au niveau 100.
+  - Cadeau de la Ligue : à la fin de la scène du réveil après le premier Panthéon (billet de Norman, reportage sur Latias/Latios), Maman annonce un colis de la Ligue ; 150 Bonbons Exp. XL et 50 Super Bonbons sont déposés dans le PC du joueur (stockage d'objets, `addpcitem`). Script `data/scripts/nabla/post_game.inc`, appelé depuis `PlayersHouse_1F_EventScript_InitLatiRoamer`. Si le stockage du PC était plein (50 objets différents), le cadeau serait perdu : cas jugé impossible en pratique.
+  - Générique : le premier passe en entier ; ensuite, B le passe (Émeraude l'accélérait seulement tant que B était maintenu), `CB2_Credits` dans `src/credits.c`.
+  - **Test** (sur une partie quickstart ou une copie de sauvegarde, car le Panthéon termine la Ligue) :
+    - menu debug, *Utilities → Warp* vers le Panthéon (`EverGrande City Hall Of Fame`) : Panthéon, générique complet, réveil ; descendre : billet, reportage, puis Maman parle du colis ; PC de la chambre → *ITEM STORAGE* → *WITHDRAW ITEM* : 150 Bonbons Exp. XL, 50 Super Bonbons ;
+    - refaire le warp vers le Panthéon : pendant le générique, B le passe (retour à l'écran titre, la partie est déjà sauvegardée) ;
+    - combats : *Set Flag* `0x87F` (Maître), puis *Trainers → Trainer 1* 261 à 264 (Conseil 4), 335 (Marc), 804 (Pierre) : tous les Pokémon au niveau 100 ; sans le flag, le Conseil 4 garde ses niveaux de l'aventure.
 
 ## Bugs connus
 

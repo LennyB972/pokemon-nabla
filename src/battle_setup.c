@@ -2232,9 +2232,13 @@ void SetMultiTrainerBattle(struct ScriptContext *ctx)
 };
 
 // Pokémon Nabla: in Hard mode, opponents without a party of their own for Hard mode use their Normal
-// party at a higher level (see GetDifficultyLevel)
+// party at a higher level (see GetDifficultyLevel). Once the player is the Champion, the Elite Four
+// and the Champion use their party at level 100, in both modes.
 static u8 GetDifficultyTrainerMonLevel(const struct Trainer *trainer, u8 level)
 {
+    if (FlagGet(FLAG_IS_CHAMPION)
+     && (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR || trainer->trainerClass == TRAINER_CLASS_CHAMPION))
+        return MAX_LEVEL;
     if (trainer < gTrainers[DIFFICULTY_NORMAL] || trainer >= gTrainers[DIFFICULTY_NORMAL] + TRAINERS_COUNT)
         return level;
     return GetDifficultyLevel(level);
