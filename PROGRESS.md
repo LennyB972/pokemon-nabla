@@ -326,6 +326,7 @@
   - IA intelligente aussi pour le Conseil 4 et Marc une fois le joueur Maître (`IsNablaPostGameLeagueTrainer`, partagé avec la règle du niveau 100 ; `src/battle_ai_main.c`).
   - Correctif d'expansion : `GetTrainerPartyFromId` et `GetTrainerPartySizeFromId` (`include/data.h`) suivent `Copy Pool`. Sans lui, un dresseur qui reprend l'équipe d'un autre donnait 20 ₽ et faisait une division par zéro dans le Match Call. À proposer en amont.
   - **Test** (menu debug, *Set Flag* `0x87F` pour le Conseil 4) : *Trainers → Trainer 1* : 770 Roxanne, 771 Roxanne (revanche 3, même équipe), 774 Bastien, 778 Voltère, 782 Adriane, 786 Norman, 790 Alizée, 794 Lévy & Tatia (duo), 798 Juan, 657 et 658 Timmy, 804 Pierre, 462 Marc, 117 Max, 173 Arthur. Vérifier les Méga-Évolutions, l'argent gagné après un combat de revanche 3 à 5, et un appel Match Call d'un Champion.
+- Talent Aura Protectrice (Méga-Lucario Z), qu'expansion n'avait pas codé : divise par deux les dégâts des attaques de contact (comme Toison Épaisse, sans la faiblesse au Feu), ignoré par Brise Moule ; définition donnée par l'utilisateur. `GetDefenderAbilitiesModifier` (`src/battle_util.c`), description dans `src/data/abilities.h`. Tests : `test/nabla_aura_guard.c`. Si expansion le code un jour, garder une seule version au merge.
 
 ## Bugs connus
 

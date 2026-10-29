@@ -83,7 +83,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 - `export DEVKITPRO=/opt/devkitpro DEVKITARM=/opt/devkitpro/devkitARM`, puis `make -j$(sysctl -n hw.ncpu)` → `pokeemerald.gba`.
 - `make check` (~8 min). Référence :
-  - **0 FAIL**, 5 396 réussis (5 877 au total) ;
+  - **0 FAIL**, 5 399 réussis (5 880 au total) ;
   - 33 `ASSUMPTION_FAIL` (Grêle → Neige, normal), 18 known failing, 9 expect failing, 421 TO_DO.
   - `make check TESTS="Nabla"` : tests Nabla seuls (`test/nabla_*.c`).
 - Patch : `./make_bps.sh` (ROM propre `../rom/emerald_us.gba`, Flips `../tools/flips`).
@@ -145,6 +145,8 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 2. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il choisit les objets), événement de West Beach.
 3. **Équilibrage** après sa partie complète (niveaux, level caps).
 4. **Phase 8 Release 1.0**.
+
+Merges d'expansion : Aura Protectrice (`ABILITY_AURA_GUARD`) est codée par Nabla ; si expansion la code aussi, garder une seule version.
 
 À proposer un jour en amont (expansion) : correctif `AreMultiPartiesFullTeams` (`src/battle_util.c`) ; `GetTrainerPartyFromId` / `GetTrainerPartySizeFromId` qui suivent `Copy Pool` (`include/data.h`).
 
@@ -252,7 +254,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 - **Fichiers d'expansion modifiés** (attention aux merges upstream ; `pokedex_plus_hgss.c` est le plus risqué) :
   - `src/{battle_ai_main,battle_message,battle_partner,battle_script_commands,battle_setup,battle_util,caps,credits,field_message_box,field_move,field_player_avatar,item_menu,list_menu,menu,new_game,option_menu,party_menu,pokedex_plus_hgss,pokemon,pokemon_summary_screen,scrcmd,shop_criteria,strings,wild_encounter}.c` ;
   - `data/specials.inc`, `data/event_scripts.s` ;
-  - `src/data/{items.h,trainers.party,battle_partners.party,wild_encounters.json}`, `src/data/pokemon/item_effects.h`, `src/data/pokemon/species_info/gen_*_families.h`, `src/data/pokemon/level_up_learnsets/gen_9.h`, `src/data/region_map/*` ;
+  - `src/data/{abilities.h,items.h,trainers.party,battle_partners.party,wild_encounters.json}`, `src/data/pokemon/item_effects.h`, `src/data/pokemon/species_info/gen_*_families.h`, `src/data/pokemon/level_up_learnsets/gen_9.h`, `src/data/region_map/*` ;
   - `data/maps/map_groups.json`, `data/layouts/layouts.json` ;
   - `include/{battle_setup.h,data.h,global.h,caps.h,field_message_box.h,field_move.h,party_menu.h,pokedex_plus_hgss.h,strings.h,wild_encounter.h}`, `include/constants/{flags,vars,global,opponents,battle_partner,battle_string_ids,item_effects}.h`, `include/config/*.h` ;
   - `test/battle/{evolution_tracker,ability/ball_fetch}.c` ;

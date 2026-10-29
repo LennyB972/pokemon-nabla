@@ -2884,6 +2884,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - **Revanches des Champions** : l'équipe est sur la revanche 2 (`_2`) ; les revanches 3 à 5 la reprennent (`Copy Pool`). Ce sont aussi les challengers de la défense du titre. Même chose pour Timmy (`WALLY_VR_2`, puis `VR_3` à `VR_5`).
 - **Marc** : l'équipe du premier combat, avec des EV et des sets revus, sur un dresseur à part (le premier combat de la Ligue ne change pas). Max et Arthur : dresseurs à part aussi (numéros d'Émeraude inutilisés).
 - Le premier Pokémon est celui qui ouvre le combat ; le Méga est en dernier.
+- Méga-Lucario Z (Bastien) : talent Aura Protectrice, codé par Nabla (dégâts des attaques de contact divisés par deux).
 
 ## Roxanne
 
