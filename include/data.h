@@ -325,9 +325,14 @@ static inline const enum TrainerBattleType GetTrainerBattleType(u16 trainerId)
     return GetTrainerStructFromId(trainerId)->battleType;
 }
 
+// Pokémon Nabla: a trainer with "Copy Pool" uses the party (and, if it has none, the party size) of the copied trainer
 static inline const u8 GetTrainerPartySizeFromId(u16 trainerId)
 {
-    return GetTrainerStructFromId(trainerId)->partySize;
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
+
+    if (trainer->partySize == 0 && trainer->overrideTrainer)
+        trainer = GetTrainerStructFromId(trainer->overrideTrainer);
+    return trainer->partySize;
 }
 
 static inline const bool32 DoesTrainerHaveMugshot(u16 trainerId)
@@ -347,7 +352,11 @@ static inline const enum Item *GetTrainerItemsFromId(u16 trainerId)
 
 static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 {
-    return GetTrainerStructFromId(trainerId)->party;
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
+
+    if (trainer->overrideTrainer)
+        trainer = GetTrainerStructFromId(trainer->overrideTrainer);
+    return trainer->party;
 }
 
 static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)

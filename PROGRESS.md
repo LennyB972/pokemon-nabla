@@ -318,6 +318,14 @@
     - menu debug, *Utilities → Warp* vers le Panthéon (`EverGrande City Hall Of Fame`) : Panthéon, générique complet, réveil ; descendre : billet, reportage, puis Maman parle du colis ; PC de la chambre → *ITEM STORAGE* → *WITHDRAW ITEM* : 150 Bonbons Exp. XL, 50 Super Bonbons ;
     - refaire le warp vers le Panthéon : pendant le générique, B le passe (retour à l'écran titre, la partie est déjà sauvegardée) ;
     - combats : *Set Flag* `0x87F` (Maître), puis *Trainers → Trainer 1* 261 à 264 (Conseil 4), 335 (Marc), 804 (Pierre) : tous les Pokémon au niveau 100 ; sans le flag, le Conseil 4 garde ses niveaux de l'aventure.
+- Étape 7.1b — revanches et challengers au niveau 100 (équipes de l'utilisateur, sets de Claude ; fiche en fin de `docs/nabla/trainers.md`) :
+  - 8 Champions : équipe sur la revanche 2 (`_2`), les revanches 3 à 5 la reprennent (`Copy Pool`, natif) ; **simple** sauf Lévy & Tatia (duo) ; les scripts d'arène d'origine (`trainerbattle_rematch_double`) ne changent pas : le format vient des données du dresseur, le script demande seulement 2 Pokémon.
+  - Timmy : `WALLY_VR_2` (sets revus : Magnézone Lunettes Choix, Pyrax Grosses Bottes, Celebi Machination / Soin), `VR_3` à `VR_5` la reprennent. Pierre (`TRAINER_STEVEN`) : nouvelle équipe.
+  - Défense du titre : Max, Arthur et Marc ont leur propre dresseur, repris de dresseurs qu'Émeraude n'utilise pas (`TRAINER_CINDY_2`, `_DUDLEY`, `_KAYLEE`, alias `TRAINER_NABLA_*_TITLE_DEFENSE`). Marc : l'équipe du premier combat avec des EV et des sets revus (Arceus Danse Lames, Méga-Magearna attaquant spécial) ; le premier combat de la Ligue ne change pas.
+  - Tous : niveau 100, IV 31, EV et natures, IA intelligente (`AI: Smart Trainer`). Attaques vérifiées dans les jeux officiels (`src/data/pokemon/all_learnables.json`), sauf Surchauffe de Motisma Chaleur et Lame Souveraine de Zacian Couronné (attaques de forme).
+  - IA intelligente aussi pour le Conseil 4 et Marc une fois le joueur Maître (`IsNablaPostGameLeagueTrainer`, partagé avec la règle du niveau 100 ; `src/battle_ai_main.c`).
+  - Correctif d'expansion : `GetTrainerPartyFromId` et `GetTrainerPartySizeFromId` (`include/data.h`) suivent `Copy Pool`. Sans lui, un dresseur qui reprend l'équipe d'un autre donnait 20 ₽ et faisait une division par zéro dans le Match Call. À proposer en amont.
+  - **Test** (menu debug, *Set Flag* `0x87F` pour le Conseil 4) : *Trainers → Trainer 1* : 770 Roxanne, 771 Roxanne (revanche 3, même équipe), 774 Bastien, 778 Voltère, 782 Adriane, 786 Norman, 790 Alizée, 794 Lévy & Tatia (duo), 798 Juan, 657 et 658 Timmy, 804 Pierre, 462 Marc, 117 Max, 173 Arthur. Vérifier les Méga-Évolutions, l'argent gagné après un combat de revanche 3 à 5, et un appel Match Call d'un Champion.
 
 ## Bugs connus
 
@@ -379,6 +387,7 @@
 | 2026-10-27 | Forêt Émeraude : Timmy arrive au sommet du Mont Mémoria ; duo avec Timmy contre Max et Tabitha ; événement obligatoire (Repaire Magma fermé avant) ; équipes proposées par Claude, à corriger. |
 | 2026-10-29 | Post-game (`docs/nabla/postgame.md`) : tout au niveau 100 après la 1ʳᵉ victoire (Conseil 4 et Marc avec leurs équipes actuelles, Pierre, revanches des Champions et de Timmy, défense du titre) ; cadeau de la Ligue (150 Bonbons Exp. XL, 50 Super Bonbons) déposé dans le PC ; générique passable avec B après le premier. |
 | 2026-10-29 | Défense du titre : Timmy (GS Ball → 2ᵉ Celebi), Pierre (Charme Chroma), Marc (Master Ball), puis tirage parmi 13 challengers (avec Max et Arthur) ; récompenses rares, rien d'achetable. Le joueur entre seul au Panthéon. |
+| 2026-10-29 | Revanches des Champions et défense du titre en simple, sauf Lévy & Tatia (duo) ; IA intelligente pour tous les combats au niveau 100 (revanches, challengers, Conseil 4 et Marc après la Ligue) ; Méga-Gardevoir pour Lévy & Tatia. |
 | 2026-10-29 | Légendaires au niveau 80, après la Ligue (avant : seulement Rayquaza, Deoxys, et Latios en cadeau). Flûte Éon donnée par Pierre chez lui (Maman le signale au réveil) ; 23 mirages + les îles d'événement existantes ; mirage débloqué par des captures, Pokémon caché par l'équipe + un autel ; Meltan, Cosmog, Type:0, Wushours en cadeau ; Cosmog et Wushours peuvent se reproduire. Îles par Plongée abandonnées. Objets de forme et Méga-Gemmes : assistant du labo. |
 
 ## Questions ouvertes

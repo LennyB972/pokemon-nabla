@@ -283,7 +283,12 @@ static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
         else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
             flags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
         else
+        {
             flags = GetTrainerAIFlagsFromId(trainerId);
+            // Pokémon Nabla: smart AI for the Elite Four and the Champion after the first win
+            if (IsNablaPostGameLeagueTrainer(GetTrainerStructFromId(trainerId)))
+                flags |= AI_FLAG_SMART_TRAINER;
+        }
     }
 
     if (IsDoubleBattle() && flags != 0)

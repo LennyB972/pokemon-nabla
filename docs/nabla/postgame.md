@@ -4,16 +4,16 @@ Conception validée avec l'utilisateur (2026-10-29). Chaque partie est construit
 
 ## Ligue après la première victoire (7.1)
 
-- **Conseil 4 et Marc** : leurs équipes actuelles, au niveau 100, dès que le joueur est Maître (`FLAG_IS_CHAMPION`). Règle par classe de dresseur (Conseil 4, Maître) dans `GetDifficultyTrainerMonLevel` (`src/battle_setup.c`), en Normal comme en Difficile.
+- **Conseil 4 et Marc** : leurs équipes actuelles, au niveau 100 et avec l'IA intelligente, dès que le joueur est Maître (`FLAG_IS_CHAMPION`). Règle par classe de dresseur (Conseil 4, Maître) : `IsNablaPostGameLeagueTrainer` (`src/battle_setup.c`), utilisée pour le niveau et pour l'IA (`src/battle_ai_main.c`), en Normal comme en Difficile.
 - **Pierre** (Chutes Météore) : niveau 100 (`TRAINER_STEVEN`).
 - **Cadeau de la Ligue** : au réveil après le premier Panthéon, Maman annonce un colis de la Ligue, déposé dans le PC du joueur (stockage d'objets) : 150 Bonbons Exp. XL et 50 Super Bonbons (150 XL ≈ une équipe de 6 Pokémon à croissance lente du niveau 72 au niveau 100).
 - **Générique** : complet la première fois ; ensuite, B le passe (Émeraude se contentait de l'accélérer).
-- **Revanches des Champions et de Timmy** : tout au niveau 100, une équipe par personnage (posée sur les revanches natives d'Émeraude). Équipes à fournir par l'utilisateur.
+- **Revanches des Champions et de Timmy** : tout au niveau 100, une équipe par personnage (composée par l'utilisateur, sets de Claude), en **simple** sauf Lévy & Tatia (duo), **IA intelligente**. L'équipe est sur la revanche 2 ; les revanches 3 à 5 la reprennent (`Copy Pool`). Fiche : fin de `docs/nabla/trainers.md`.
 
 ## Défense du titre (7.2)
 
 - **Déroulé** : le joueur refait le Conseil 4 ; la salle du Maître est vide, un challenger arrive ; combat au niveau 100 ; le joueur entre **seul** au Panthéon (pas de Marc, ni de May ni du Prof. Seko). Variante des scènes de la salle du Maître et du Panthéon, à tester en jeu.
-- **Challengers** (13) : Timmy, Pierre, Marc, les 8 Champions, Max et Arthur. Équipes au niveau 100 (utilisateur). Max a besoin d'un nouveau dresseur à 6 Pokémon (numéro repris d'un dresseur inutilisé d'Émeraude).
+- **Challengers** (13) : Timmy (`TRAINER_WALLY_VR_5`), Pierre (`TRAINER_STEVEN`), Marc, les 8 Champions (leur revanche 5), Max et Arthur. Équipes au niveau 100, prêtes (7.1b). Marc, Max et Arthur ont leur propre dresseur, repris d'un dresseur inutilisé d'Émeraude : `TRAINER_NABLA_WALLACE_TITLE_DEFENSE`, `_MAXIE_`, `_ARCHIE_` (`include/constants/opponents.h`).
 - **Ordre** : Timmy, puis Pierre, puis Marc ; ensuite tirage au hasard parmi les 13, sans retomber sur le même deux fois de suite. Une var compte les défenses.
 - **Récompenses** :
   - Timmy : une **GS Ball** (nouvel objet rare) ; au vieil arbre du sanctuaire de la Forêt Émeraude, Celebi apparaît au niveau 80 ;

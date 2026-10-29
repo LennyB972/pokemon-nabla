@@ -869,6 +869,10 @@
 #define TRAINER_NABLA_MAXIE_EMERALD_FOREST  862
 #define TRAINER_NABLA_GRUNT_EMERALD_FOREST_4 863
 #define TRAINER_NABLA_GRUNT_EMERALD_FOREST_5 TRAINER_GRUNT_UNUSED // Pokémon Nabla: a trainer Emerald never uses
+// Pokémon Nabla: challengers of the title defense, on trainers Emerald never uses
+#define TRAINER_NABLA_MAXIE_TITLE_DEFENSE   TRAINER_CINDY_2
+#define TRAINER_NABLA_ARCHIE_TITLE_DEFENSE  TRAINER_DUDLEY
+#define TRAINER_NABLA_WALLACE_TITLE_DEFENSE TRAINER_KAYLEE
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

@@ -1883,7 +1883,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 ## Timmy — revanches (après la Ligue, Route Victoire)
 
-Même équipe et mêmes sets que sur la Route Victoire, tous les Pokémon au niveau **80** (1ʳᵉ revanche), **90** (2ᵉ), puis **100** (3ᵉ et suivantes). `TRAINER_WALLY_VR_2` à `VR_5`.
+Même équipe que sur la Route Victoire, au niveau **100**, sets revus : voir « Post-game » en fin de fiche. `TRAINER_WALLY_VR_2` (`VR_3` à `VR_5` reprennent son équipe).
 
 # Team Aqua et Team Magma (4.2d)
 
@@ -2875,4 +2875,793 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Crunch
 - Waterfall
 - Ice Fang
+```
+
+# Post-game (7.1b) — revanches et challengers de la défense du titre
+
+- **Équipes** : composées par l'utilisateur (2026-10-29) ; sets, objets, natures et EV proposés par Claude (sets compétitifs, attaques des jeux officiels vérifiées avec `src/data/pokemon/all_learnables.json`).
+- **Tous au niveau 100**, IV 31 partout, **IA intelligente** (`AI: Smart Trainer`), en **simple** sauf Lévy & Tatia (duo). Une Méga par équipe (Lévy & Tatia : Méga-Gardevoir, choix de l'utilisateur).
+- **Revanches des Champions** : l'équipe est sur la revanche 2 (`_2`) ; les revanches 3 à 5 la reprennent (`Copy Pool`). Ce sont aussi les challengers de la défense du titre. Même chose pour Timmy (`WALLY_VR_2`, puis `VR_3` à `VR_5`).
+- **Marc** : l'équipe du premier combat, avec des EV et des sets revus, sur un dresseur à part (le premier combat de la Ligue ne change pas). Max et Arthur : dresseurs à part aussi (numéros d'Émeraude inutilisés).
+- Le premier Pokémon est celui qui ouvre le combat ; le Méga est en dernier.
+
+## Roxanne
+
+`TRAINER_ROXANNE_2` (770)
+
+```
+Golem @ Custap Berry
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Stealth Rock
+- Earthquake
+- Stone Edge
+- Explosion
+
+Terrakion @ Choice Scarf
+Ability: Justified
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Close Combat
+- Stone Edge
+- Earthquake
+- X-Scissor
+
+Armaldo @ Leftovers
+Ability: Battle Armor
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Swords Dance
+- Stone Edge
+- X-Scissor
+- Earthquake
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Salt Cure
+- Iron Defense
+- Body Press
+- Recover
+
+Stakataka @ Life Orb
+Ability: Beast Boost
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
+- Trick Room
+- Gyro Ball
+- Stone Edge
+- Earthquake
+
+Glimmora @ Glimmoranite
+Ability: Toxic Debris
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Power Gem
+- Sludge Bomb
+- Earth Power
+- Energy Ball
+```
+
+## Bastien (Brawly)
+
+`TRAINER_BRAWLY_2` (774)
+
+```
+Breloom @ Focus Sash
+Ability: Technician
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Spore
+- Bullet Seed
+- Mach Punch
+- Rock Tomb
+
+Sneasler @ White Herb
+Ability: Unburden
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Close Combat
+- Dire Claw
+- Acrobatics
+- Swords Dance
+
+Pangoro @ Assault Vest
+Ability: Iron Fist
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Drain Punch
+- Knock Off
+- Ice Punch
+- Bullet Punch
+
+Iron Valiant @ Booster Energy
+Ability: Quark Drive
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Moonblast
+- Close Combat
+- Knock Off
+- Shadow Ball
+
+Koraidon @ Life Orb
+Ability: Orichalcum Pulse
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Collision Course
+- Flare Blitz
+- Dragon Claw
+- U-turn
+
+Lucario @ Lucarionite Z
+Ability: Inner Focus
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Aura Sphere
+- Flash Cannon
+- Vacuum Wave
+```
+
+## Voltère (Wattson)
+
+`TRAINER_WATTSON_2` (778)
+
+```
+Miraidon @ Choice Specs
+Ability: Hadron Engine
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Electro Drift
+- Draco Meteor
+- Volt Switch
+- Overheat
+
+Toxtricity @ Throat Spray
+Ability: Punk Rock
+EVs: 252 SpA / 4 Def / 252 Spe
+Hasty Nature
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
+
+Magnezone @ Assault Vest
+Ability: Magnet Pull
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Raikou @ Leftovers
+Ability: Pressure
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Calm Mind
+- Thunderbolt
+- Shadow Ball
+- Scald
+
+Luxray @ Flame Orb
+Ability: Guts
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Facade
+- Wild Charge
+- Crunch
+- Ice Fang
+
+Eelektross @ Eelektrossite
+Ability: Levitate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Coil
+- Wild Charge
+- Drain Punch
+- Fire Punch
+```
+
+## Adriane (Flannery)
+
+`TRAINER_FLANNERY_2` (782)
+
+```
+Arcanine-Hisui @ Choice Band
+Ability: Rock Head
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Head Smash
+- Flare Blitz
+- Extreme Speed
+- Close Combat
+
+Rotom-Heat @ Leftovers
+Ability: Levitate
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Overheat
+- Volt Switch
+- Will-O-Wisp
+- Pain Split
+
+Volcarona @ Heavy-Duty Boots
+Ability: Flame Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+Chi-Yu @ Choice Specs
+Ability: Beads of Ruin
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Overheat
+- Flamethrower
+- Dark Pulse
+- Psychic
+
+Reshiram @ Life Orb
+Ability: Turboblaze
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Blue Flare
+- Draco Meteor
+- Earth Power
+- Roost
+
+Scovillain @ Scovillainite
+Ability: Chlorophyll
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Flamethrower
+- Energy Ball
+- Crunch
+- Stomping Tantrum
+```
+
+## Norman
+
+`TRAINER_NORMAN_2` (786)
+
+```
+Obstagoon @ Flame Orb
+Ability: Guts
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Facade
+- Knock Off
+- Close Combat
+- Obstruct
+
+Zoroark-Hisui @ Life Orb
+Ability: Illusion
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Hyper Voice
+- Bitter Malice
+- Focus Blast
+
+Meloetta @ Choice Specs
+Ability: Serene Grace
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Hyper Voice
+- Psyshock
+- Focus Blast
+- Shadow Ball
+
+Ursaluna-Bloodmoon @ Leftovers
+Ability: Mind's Eye
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Blood Moon
+- Earth Power
+- Vacuum Wave
+- Moonlight
+
+Arceus @ Silk Scarf
+Ability: Multitype
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Extreme Speed
+- Shadow Claw
+- Earthquake
+
+Lopunny @ Lopunnite
+Ability: Limber
+Happiness: 255
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Fake Out
+- Return
+- High Jump Kick
+- Ice Punch
+```
+
+## Alizée (Winona)
+
+`TRAINER_WINONA_2` (790)
+
+```
+Landorus-Therian @ Rocky Helmet
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Stealth Rock
+- Earthquake
+- Stone Edge
+- U-turn
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Iron Defense
+- Body Press
+- Roost
+- Brave Bird
+
+Talonflame @ Heavy-Duty Boots
+Ability: Gale Wings
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Brave Bird
+- Flare Blitz
+- Roost
+
+Togekiss @ Leftovers
+Ability: Serene Grace
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Air Slash
+- Dazzling Gleam
+- Roost
+
+Yveltal @ Life Orb
+Ability: Dark Aura
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Dark Pulse
+- Oblivion Wing
+- Focus Blast
+- Heat Wave
+
+Dragonite @ Dragoninite
+Ability: Multiscale
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Hurricane
+- Draco Meteor
+- Flamethrower
+- Roost
+```
+
+## Lévy & Tatia — en duo
+
+`TRAINER_TATE_AND_LIZA_2` (794)
+
+```
+Jirachi @ Sitrus Berry
+Ability: Serene Grace
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Iron Head
+- Helping Hand
+- Life Dew
+- Protect
+
+Calyrex-Shadow @ Focus Sash
+Ability: As One Shadow Rider
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Astral Barrage
+- Psyshock
+- Nasty Plot
+- Protect
+
+Gardevoir @ Gardevoirite
+Ability: Trace
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Hyper Voice
+- Psyshock
+- Mystical Fire
+- Protect
+
+Gallade @ Life Orb
+Ability: Sharpness
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Protect
+
+Iron Boulder @ Booster Energy
+Ability: Quark Drive
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Mighty Cleave
+- Close Combat
+- Zen Headbutt
+- Protect
+
+Cresselia @ Leftovers
+Ability: Levitate
+EVs: 252 HP / 252 Def / 4 SpD
+Bold Nature
+- Icy Wind
+- Moonblast
+- Lunar Blessing
+- Helping Hand
+```
+
+## Juan
+
+`TRAINER_JUAN_2` (798)
+
+```
+Pelipper @ Damp Rock
+Ability: Drizzle
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Hurricane
+- Hydro Pump
+- U-turn
+- Roost
+
+Palkia @ Lustrous Orb
+Ability: Pressure
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Spacial Rend
+- Hydro Pump
+- Thunder
+- Fire Blast
+
+Urshifu-Rapid-Strike @ Choice Scarf
+Ability: Unseen Fist
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Surging Strikes
+- Close Combat
+- Aqua Jet
+- U-turn
+
+Volcanion @ Heavy-Duty Boots
+Ability: Water Absorb
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Steam Eruption
+- Flamethrower
+- Earth Power
+- Sludge Bomb
+
+Tapu Fini @ Leftovers
+Ability: Misty Surge
+EVs: 252 HP / 252 Def / 4 SpA
+Bold Nature
+- Calm Mind
+- Scald
+- Draining Kiss
+- Taunt
+
+Greninja @ Greninjite
+Ability: Protean
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- Grass Knot
+```
+
+## Timmy (Wally)
+
+`TRAINER_WALLY_VR_2` (657)
+
+```
+Magnezone @ Choice Specs
+Ability: Magnet Pull
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Altaria @ Lum Berry
+Ability: Natural Cure
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Volcarona @ Heavy-Duty Boots
+Ability: Flame Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Roost
+
+Celebi @ Leftovers
+Ability: Natural Cure
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Giga Drain
+- Earth Power
+- Recover
+
+Ceruledge @ Life Orb
+Ability: Flash Fire
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Swords Dance
+- Bitter Blade
+- Poltergeist
+- Shadow Sneak
+
+Gallade @ Galladite
+Ability: Sharpness
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+```
+
+## Pierre (Steven) — Chutes Météore
+
+`TRAINER_STEVEN` (804)
+
+```
+Skarmory @ Rocky Helmet
+Ability: Sturdy
+EVs: 252 HP / 4 Atk / 252 Def
+Impish Nature
+- Stealth Rock
+- Spikes
+- Roost
+- Brave Bird
+
+Excadrill @ Air Balloon
+Ability: Mold Breaker
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Earthquake
+- Iron Head
+- Rock Slide
+
+Kartana @ Choice Band
+Ability: Beast Boost
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Leaf Blade
+- Sacred Sword
+- Smart Strike
+- Knock Off
+
+Gholdengo @ Leftovers
+Ability: Good as Gold
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Make It Rain
+- Shadow Ball
+- Recover
+
+Zacian-Crowned @ Rusted Sword
+Ability: Intrepid Sword
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Behemoth Blade
+- Close Combat
+- Play Rough
+
+Metagross @ Metagrossite
+Ability: Clear Body
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+```
+
+## Marc (Wallace) — défense du titre
+
+`TRAINER_NABLA_WALLACE_TITLE_DEFENSE` (= `TRAINER_KAYLEE`, 462)
+
+```
+Kyogre @ Blue Orb
+Ability: Drizzle
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Calm Mind
+
+Zygarde-50-Power-Construct @ Leftovers
+Ability: Power Construct
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Thousand Arrows
+- Coil
+- Glare
+- Substitute
+
+Miraidon @ Choice Scarf
+Ability: Hadron Engine
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Electro Drift
+- Draco Meteor
+- Dazzling Gleam
+- Volt Switch
+
+Arceus @ Silk Scarf
+Ability: Multitype
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Swords Dance
+- Extreme Speed
+- Earthquake
+- Recover
+
+Calyrex-Shadow @ Choice Specs
+Ability: As One Shadow Rider
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Astral Barrage
+- Psyshock
+- Draining Kiss
+- Trick
+
+Magearna @ Magearnite
+Ability: Soul-Heart
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Fleur Cannon
+- Flash Cannon
+- Aura Sphere
+- Volt Switch
+```
+
+## Max (Maxie) — défense du titre
+
+`TRAINER_NABLA_MAXIE_TITLE_DEFENSE` (= `TRAINER_CINDY_2`, 117)
+
+```
+Torkoal @ Heat Rock
+Ability: Drought
+EVs: 252 HP / 252 SpA / 4 SpD
+Quiet Nature
+- Eruption
+- Solar Beam
+- Earth Power
+- Yawn
+
+Coalossal @ Leftovers
+Ability: Flame Body
+EVs: 252 HP / 252 Def / 4 SpD
+Bold Nature
+- Stealth Rock
+- Will-O-Wisp
+- Flamethrower
+- Rapid Spin
+
+Incineroar @ Sitrus Berry
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Fake Out
+- Flare Blitz
+- Knock Off
+- Parting Shot
+
+Marowak-Alola @ Thick Club
+Ability: Rock Head
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Swords Dance
+- Flare Blitz
+- Shadow Bone
+- Bonemerang
+
+Iron Moth @ Booster Energy
+Ability: Quark Drive
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Fiery Dance
+- Sludge Wave
+- Energy Ball
+- Dazzling Gleam
+
+Heatran @ Heatranite
+Ability: Flash Fire
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Magma Storm
+- Earth Power
+- Solar Beam
+- Flash Cannon
+```
+
+## Arthur (Archie) — défense du titre
+
+`TRAINER_NABLA_ARCHIE_TITLE_DEFENSE` (= `TRAINER_DUDLEY`, 173)
+
+```
+Politoed @ Damp Rock
+Ability: Drizzle
+EVs: 252 HP / 252 Def / 4 SpD
+Bold Nature
+- Scald
+- Ice Beam
+- Encore
+- Haze
+
+Basculegion @ Choice Band
+Ability: Swift Swim
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Wave Crash
+- Last Respects
+- Aqua Jet
+- Flip Turn
+
+Seismitoad @ Life Orb
+Ability: Swift Swim
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Hydro Pump
+- Earth Power
+- Sludge Wave
+- Focus Blast
+
+Gyarados @ Lum Berry
+Ability: Moxie
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Ice Fang
+
+Tatsugiri @ Focus Sash
+Ability: Storm Drain
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Nasty Plot
+- Dragon Pulse
+- Surf
+- Icy Wind
+
+Starmie @ Starminite
+Ability: Natural Cure
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Liquidation
+- Zen Headbutt
+- Rapid Spin
+- Recover
 ```
