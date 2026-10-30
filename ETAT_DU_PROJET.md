@@ -34,7 +34,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - Reste : les objets (West Beach, culs-de-sac de la forêt) et l'événement de West Beach (`docs/nabla/world.md`). Îles par Plongée abandonnées (2026-10-29).
 - **Événement du Pilier Céleste** (scénario de l'utilisateur, fait, validé en jeu le 2026-10-27) : Pierre à la sortie de l'arène d'Atalanopolis, Route Victoire bloquée jusqu'à la fin, Rayquaza (mange la Météorite, Draco Ascension, Méga sans gemme, toujours placé en tête d'équipe) puis Deoxys au sommet, niveau 65 ; Cozmo laisse la Météorite ; rocher blanc d'Algatia pour les formes de Deoxys.
 - **Phase 7 (post-game)** : conception validée le 2026-10-29 (`docs/nabla/postgame.md`) : tout au niveau 100 après la Ligue ; défense du titre (13 challengers, ordre Timmy → Pierre → Marc puis tirage, récompenses rares) ; légendaires au niveau 80 via la Flûte Éon donnée par Pierre (23 mirages + îles d'événement existantes) ; assistant du labo pour les objets de forme.
-  - **7.2 faite** (à tester en jeu) : défense du titre (Timmy, Pierre, Marc, puis tirage), récompenses, GS Ball et Celebi niveau 80 au vieil arbre, Entraîneur Ultime au Centre Pokémon de la Ligue. Textes écrits par Claude, à relire.
+  - **7.2 faite** (Celebi et Entraîneur Ultime validés en jeu le 2026-10-30 ; scène de la salle du Maître à tester) : défense du titre (Timmy, Pierre, Marc, puis tirage), récompenses, GS Ball et Celebi niveau 80 au vieil arbre, Entraîneur Ultime au Centre Pokémon de la Ligue. Textes écrits par Claude, à relire.
   - **7.1b faite** (à tester en jeu) : équipes de l'utilisateur au niveau 100 pour les revanches des Champions (simple, sauf Lévy & Tatia en duo) et de Timmy, Pierre, et les challengers Marc, Max, Arthur (dresseurs à part) ; sets, EV, natures de Claude ; IA intelligente.
   - **7.1a faite** (à tester en jeu) : Conseil 4 et Marc au niveau 100 une fois Maître (règle par classe de dresseur), Pierre au niveau 100, cadeau de la Ligue (150 Bonbons Exp. XL + 50 Super Bonbons dans le PC, annoncé par Maman au réveil), générique passable avec B à partir du 2ᵉ Panthéon.
 - **Partie complète de l'utilisateur en v1** : elle servira à l'équilibrage final (niveaux, équipes, level caps). Il a déjà dit vouloir relever un peu les niveaux, à faire après sa partie de test en cours.
@@ -93,6 +93,8 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - un dresseur : *Trainers… → Trainer 1* (numéro), puis *Try Battle* ;
   - histoire d'Atalanopolis faite (pour tester le Pilier Céleste) : *Set Flag* `0x137` (porte du Pilier), `0x305` (Rayquaza endormi retiré), `0x9E` (porte de l'arène), *Set Var* `0x40CA` = 3 et `0x40D7` = 1 ; 8e badge : *Set Flag* `0x86E` ; Ligue finie : `0x864` ;
   - un duo : *Trainer 2* et *Partner*, ou *Utilities → Steven Multi* pour le Centre Spatial ;
+  - gagner un combat sans le jouer : SELECT en combat → *Instant Win* ;
+  - warp vers une salle de la Ligue (le menu n'affiche que « EVER GRANDE CITY ») : Group 16, Map 4 = salle du Maître, Map 11 = Panthéon, Map 10 = Centre Pokémon ;
   - Difficile : *Flags & Vars → Set Var* `0x404E` = 2 (Normal = 1) ;
   - Maître de la Ligue : *Set Flag* `0x87F` ;
   - argent : *Give → Max Money*.
@@ -122,7 +124,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## En attente côté utilisateur
 
-- **Tests des 7.1a, 7.1b et 7.2** (procédure 7.2 : warp vers la salle du Maître avec le flag Maître, var `0x408B` pour choisir le challenger) : procédures dans `PROGRESS.md` (warp vers le Panthéon, Maman et le PC, B pendant le 2ᵉ générique ; combats debug des revanches et des challengers, numéros 770-804, 657, 462, 117, 173).
+- **Tests des 7.1a, 7.1b et 7.2** (procédure 7.2 : flag Maître `0x87F`, warp Group 16 / Map 4 / Warp 0, var `0x408B` pour choisir le challenger, *Instant Win* avec SELECT en combat) : procédures dans `PROGRESS.md` (warp vers le Panthéon, Maman et le PC, B pendant le 2ᵉ générique ; combats debug des revanches et des challengers, numéros 770-804, 657, 462, 117, 173).
 - **Textes de la défense du titre** à relire (`data/text/nabla/title_defense.inc`) ; liste des récompenses du tirage validée, il pourra la retoucher.
 - **Lot de rencontres d'après la Ligue**, s'il veut en changer : Grotte Altérée, Passage du Désert, Grotte Artisan, Grotte Tellurique / Grotte Marine, île Mirage de la Route 130, zones sous-marines (inchangées pour l'instant). Il l'envoie en message ou en fichier texte.
 - **Équilibrage des niveaux**, étape à part après sa partie complète : relever un peu les niveaux (facteurs `PARTS` de `scale_levels.py`) ; West Beach et Forêt Émeraude (zones Nabla, hors script) à régler à la main (forêt à 30-34 : Grimalin y est déjà Fourbelin).

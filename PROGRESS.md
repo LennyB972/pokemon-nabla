@@ -333,8 +333,10 @@
   - GS Ball : nouvel objet rare (`ITEM_GS_BALL` = 874, ajouté avant `ITEMS_COUNT`), icône de la Poké Ball avec une palette or/argent. Celebi niveau 80 au vieil arbre du sanctuaire (`bg_events` ajoutés sur ses 4 cases) ; la GS Ball disparaît à la capture. Couverture : 9 / 97 légendaires (avec Celebi).
   - Entraîneur Ultime au Centre Pokémon de la Ligue (1er étage, case 14, 6, en fin de liste) : Bouchon d'Argent = une stat, Bouchon d'Or = toutes, sans condition de niveau.
   - Textes écrits par Claude (anglais), à relire par l'utilisateur.
+  - Validés en jeu par l'utilisateur (2026-10-30) : Celebi et la GS Ball, l'Entraîneur Ultime. Arrivée des challengers et suite de la scène : test en cours.
   - **Test** (partie quickstart ou copie de sauvegarde ; une équipe solide) :
-    - menu debug : *Set Flag* `0x87F` (Maître), puis *Utilities → Warp to map warp…* → *EverGrande City Champions Room*, warp 0 : la scène se déclenche ;
+    - menu debug : *Set Flag* `0x87F` (Maître), puis *Utilities → Warp to map warp…* → **Group 16, Map 4, Warp 0** (salle du Maître ; le menu n'affiche que « EVER GRANDE CITY » pour toutes les salles de la Ligue) : la scène se déclenche ;
+    - sans équipe de niveau 100 : en combat, SELECT ouvre le menu debug de combat → *Instant Win* ;
     - challenger forcé : *Set Var* `0x408B` = 0 (Timmy), 1 (Pierre), 2 (Marc) ; 3 à 15 = tirage au hasard (sauf le challenger n° valeur − 3) ;
     - vérifier : arrivée du challenger (Lévy & Tatia à deux, en duo), récompense, porte du Panthéon, Panthéon seul, générique (B), réveil ;
     - GS Ball : *Give item* 874 si besoin, puis le vieil arbre du sanctuaire ; Bouchons : *Give item* 133 (Bouchon d'Argent) et 134 (Bouchon d'Or), Entraîneur Ultime au 1er étage du Centre Pokémon de la Ligue.
