@@ -333,7 +333,7 @@
   - GS Ball : nouvel objet rare (`ITEM_GS_BALL` = 874, ajouté avant `ITEMS_COUNT`), icône de la Poké Ball avec une palette or/argent. Celebi niveau 80 au vieil arbre du sanctuaire (`bg_events` ajoutés sur ses 4 cases) ; la GS Ball disparaît à la capture. Couverture : 9 / 97 légendaires (avec Celebi).
   - Entraîneur Ultime au Centre Pokémon de la Ligue (1er étage, case 14, 6, en fin de liste) : Bouchon d'Argent = une stat, Bouchon d'Or = toutes, sans condition de niveau.
   - Textes écrits par Claude (anglais), à relire par l'utilisateur.
-  - Validés en jeu par l'utilisateur (2026-10-30) : Celebi et la GS Ball, l'Entraîneur Ultime. Arrivée des challengers et suite de la scène : test en cours.
+  - Validés en jeu par l'utilisateur : Celebi et la GS Ball, l'Entraîneur Ultime (2026-10-30) ; première Ligue, défenses contre Timmy, Pierre et Marc, Panthéon seul, générique passable avec B à partir du 2ᵉ, récompenses (2026-11-03). Reste à voir : Lévy & Tatia (arrivée à deux, duo). Le message de Maman sur Pierre viendra avec la Flûte Éon (7.3).
   - **Test** (partie quickstart ou copie de sauvegarde ; une équipe solide) :
     - menu debug : *Set Flag* `0x87F` (Maître), puis *Utilities → Warp to map warp…* → **Group 16, Map 4, Warp 0** (salle du Maître ; le menu n'affiche que « EVER GRANDE CITY » pour toutes les salles de la Ligue) : la scène se déclenche ;
     - sans équipe de niveau 100 : en combat, SELECT ouvre le menu debug de combat → *Instant Win* ;
