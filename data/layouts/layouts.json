@@ -9382,7 +9382,7 @@
     {
       "id": "LAYOUT_NABLA_MOON_ISLAND",
       "name": "NablaMoonIsland_Layout",
-      "width": 30,
+      "width": 32,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
