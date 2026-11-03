@@ -14,6 +14,7 @@ MossdeepCity_StevensHouse_EventScript_HideStevensNote::
 
 MossdeepCity_StevensHouse_OnTransition:
 	call_if_eq VAR_STEVENS_HOUSE_STATE, 2, MossdeepCity_StevensHouse_EventScript_SetStevenPos
+	call Nabla_StevensHouse_EventScript_SetUp
 	end
 
 MossdeepCity_StevensHouse_EventScript_SetStevenPos::

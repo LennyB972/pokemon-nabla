@@ -28,7 +28,7 @@ Scripts : `data/scripts/nabla/title_defense.inc` (textes `data/text/nabla/title_
 
 ## Pierre et la Flûte Éon (7.3a, faite)
 
-- Au réveil après le premier Panthéon, Maman dit aussi qu'un homme élégant, STEVEN, attend le joueur chez lui à Algatia (`data/scripts/nabla/post_game.inc` ; elle fait réapparaître le personnage d'origine de Pierre dans sa maison).
+- Au réveil après le premier Panthéon, Maman dit aussi qu'un homme élégant, STEVEN, attend le joueur chez lui à Algatia (`data/scripts/nabla/post_game.inc`). Le personnage d'origine de Pierre est chez lui dès que la Ligue est gagnée, tant que le joueur n'a pas la Flûte (`Nabla_StevensHouse_EventScript_SetUp`), même sans la scène de Maman.
 - Chez lui, Pierre donne la **Flûte Éon** (`ITEM_EON_FLUTE`, objet rare ajouté par Nabla) et explique les mirages, puis repart aux Chutes Météore. Terhal et la lettre d'origine restent.
 - **Flûte** (`data/scripts/nabla/eon_flute.inc`, `src/nabla_eon_flute.c`, `ItemUseOutOfBattle_EonFlute` dans `src/item_use.c`) : depuis le sac, là où le Vol est possible ; Latios crie, la liste des destinations s'affiche, fondu, arrivée. Depuis une destination (repérée par sa section de carte, `sEonFluteDestinations`), la Flûte ramène là où on était (point gardé dans le warp dynamique de la sauvegarde).
 - **Destinations** : Île Lointaine, Rocher Nombril, Île Aurore (îles d'événement d'Émeraude, qu'on atteignait avec des tickets). Leurs bateaux et marins sont cachés (flag d'objet `FLAG_SYS_GAME_CLEAR`). Mew, Lugia, Ho-Oh au niveau 80, et ils reviennent à la visite suivante s'ils sont vaincus (plus de `FLAG_DEFEATED_*`). Île Aurore : Jirachi (`FLAG_NABLA_JIRACHI_CAUGHT`), visible au centre de l'île, sans l'énigme du triangle de Deoxys (Deoxys et le triangle sont cachés).

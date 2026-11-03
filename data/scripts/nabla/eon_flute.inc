@@ -56,8 +56,15 @@ Nabla_EventScript_EonFluteStay:
 	releaseall
 	end
 
-@ Mossdeep City, Steven's house, after the League (MOM tells the player he's waiting there):
-@ Steven gives the Eon Flute, then leaves for Meteor Falls
+@ Mossdeep City, Steven's house, after the League (MOM tells the player he's waiting there): Steven is at home
+@ until he gives the Eon Flute, also in a game that was already past the League; then he leaves for Meteor Falls
+Nabla_StevensHouse_EventScript_SetUp::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Common_EventScript_NopReturn
+	checkitem ITEM_EON_FLUTE
+	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN
+	return
+
 Nabla_StevensHouse_EventScript_EonFlute::
 	lock
 	faceplayer
