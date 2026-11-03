@@ -351,6 +351,8 @@
   - Dans la liste de la Flûte (« BIRD ISLET »), arrivée sur la plage sud ; la Flûte y ramène au point de départ.
   - Artikodin, Électhor, Sulfura le jour, leurs formes de Galar la nuit (18 h-6 h), niveau 80, sur trois perchoirs ; capturé : disparaît (flags 0x2A2-0x2A7) ; vaincu ou en fuite : revient à la visite suivante. Script commun des légendaires de mirage (`Nabla_EventScript_MirageLegendary`, `data/scripts/nabla/mirages.inc`), aussi utilisé par Jirachi.
   - Couverture : 20 / 97 légendaires (formes de Galar comprises).
+  - Les légendaires des mirages (et Jirachi) sont animés sur place (`MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_*`), à la demande de l'utilisateur (les sprites immobiles faisaient figés).
+  - Testé en jeu par l'utilisateur la nuit (2026-11-03) ; le jour reste à voir (en jouant entre 6 h et 18 h).
   - **Test** : la Flûte → BIRD ISLET ; le jour, les trois oiseaux de Kanto ; la nuit (menu debug *Utilities → Time Functions*, ou l'horloge), ceux de Galar ; une capture fait disparaître l'oiseau, une fuite le fait revenir en repartant puis en revenant ; la Flûte ramène au point de départ.
 
 ## Bugs connus
