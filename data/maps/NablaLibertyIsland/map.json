@@ -1,0 +1,50 @@
+{
+  "id": "MAP_NABLA_LIBERTY_ISLAND",
+  "name": "NablaLibertyIsland",
+  "layout": "LAYOUT_NABLA_LIBERTY_ISLAND",
+  "music": "MUS_ROUTE120",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_NABLA_LIBERTY_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_LIBERTY_ISLAND_VICTINI",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VICTINI)",
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_LibertyIsland_EventScript_Victini",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "local_id": "LOCALID_LIBERTY_ISLAND_MELOETTA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MELOETTA)",
+      "x": 11,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_LibertyIsland_EventScript_Meloetta",
+      "flag": "FLAG_TEMP_12"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

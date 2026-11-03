@@ -15,6 +15,8 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_BIRTH_ISLAND,
     MAPSEC_NABLA_BIRD_ISLET,
     MAPSEC_NABLA_MOON_ISLAND,
+    MAPSEC_NABLA_LIBERTY_ISLAND,
+    MAPSEC_NABLA_TAPU_ISLANDS,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

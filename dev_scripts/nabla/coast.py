@@ -101,6 +101,49 @@ def to_blocks(grid, objects, outside=lambda x, y: "w"):
     return out, problems
 
 
+def sea_rocks(grid, objects, rng):
+    """Rocks in the sea along the edges of the map (the map has an even size): two neighbouring rocks always share a
+    side, the corners are closed right at the edge, and a rock keeps a row of water from the land."""
+    H, W = len(grid), len(grid[0])
+    assert W % 2 == 0 and H % 2 == 0
+    rocks = set()
+
+    def water(x, y):
+        return all(0 <= x + i < W and 0 <= y + j < H and grid[y + j][x + i] == "~" and (x + i, y + j) not in rocks
+                   for i in range(2) for j in range(2))
+
+    def rock(x, y):
+        assert water(x, y), (x, y)
+        objects.append(("searock", x, y, rng.choice(["foam", "foam", "brown", "moss"])))
+        rocks.update((x + i, y + j) for i in range(2) for j in range(2))
+    for x in range(0, W, 2):
+        corner = x in (0, 2, W - 4, W - 2)
+        rock(x, 0 if corner or not water(x, 2) else rng.choice([0, 1]))
+        rock(x, H - 2 if corner or not water(x, H - 4) else rng.choice([H - 2, H - 3]))
+    for y in range(2, H - 2, 2):
+        rock(0 if not water(2, y) else rng.choice([0, 1]), y)
+        rock(W - 2 if not water(W - 4, y) else W - 2 - rng.choice([0, 1]), y)
+
+
+def check_reachable(grid, objects, start):
+    """Every cell the player can reach from start, walking or surfing, is away from the edges of the map (no
+    invisible wall). Returns the cells reached."""
+    H, W = len(grid), len(grid[0])
+    blocked = set()
+    for o in objects:
+        w, h = {"tree": (2, o[3] if len(o) > 3 else 3), "dome": (3, 3), "searock": (2, 2)}[o[0]]
+        blocked.update((o[1] + i, o[2] + j) for i in range(w) for j in range(h))
+    seen, todo = set(), [start]
+    while todo:
+        x, y = todo.pop()
+        if (x, y) in seen or not (0 <= x < W and 0 <= y < H) or (x, y) in blocked or grid[y][x] in "orD":
+            continue
+        seen.add((x, y))
+        assert 0 < x < W - 1 and 0 < y < H - 1, ("reaches the edge", x, y)
+        todo += [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
+    return seen
+
+
 def write(path, out):
     H, W = len(out), len(out[0])
     open(path, "wb").write(struct.pack("<%dH" % (W * H), *[v for row in out for v in row]))

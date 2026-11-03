@@ -136,3 +136,115 @@ Nabla_MoonIsland_EventScript_Darkrai::
 	setflag FLAG_NABLA_DARKRAI_CAUGHT
 	release
 	end
+
+@ Liberty Island: Victini and Meloetta, on the ring of sand
+Nabla_LibertyIsland_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Victini
+	setflag FLAG_TEMP_12  @ Meloetta
+	call_if_unset FLAG_NABLA_VICTINI_CAUGHT, Nabla_LibertyIsland_EventScript_ShowVictini
+	call_if_unset FLAG_NABLA_MELOETTA_CAUGHT, Nabla_LibertyIsland_EventScript_ShowMeloetta
+	return
+
+Nabla_LibertyIsland_EventScript_ShowVictini:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_LibertyIsland_EventScript_ShowMeloetta:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_LibertyIsland_EventScript_Victini::
+	setvar VAR_0x8004, SPECIES_VICTINI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_VICTINI_CAUGHT
+	release
+	end
+
+Nabla_LibertyIsland_EventScript_Meloetta::
+	setvar VAR_0x8004, SPECIES_MELOETTA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MELOETTA_CAUGHT
+	release
+	end
+
+@ Tapu Islands: one islet for each Tapu, Zeraora and Marshadow on the main island
+Nabla_TapuIslands_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ TapuKoko
+	setflag FLAG_TEMP_12  @ TapuLele
+	setflag FLAG_TEMP_13  @ TapuBulu
+	setflag FLAG_TEMP_14  @ TapuFini
+	setflag FLAG_TEMP_15  @ Marshadow
+	setflag FLAG_TEMP_16  @ Zeraora
+	call_if_unset FLAG_NABLA_TAPU_KOKO_CAUGHT, Nabla_TapuIslands_EventScript_ShowTapuKoko
+	call_if_unset FLAG_NABLA_TAPU_LELE_CAUGHT, Nabla_TapuIslands_EventScript_ShowTapuLele
+	call_if_unset FLAG_NABLA_TAPU_BULU_CAUGHT, Nabla_TapuIslands_EventScript_ShowTapuBulu
+	call_if_unset FLAG_NABLA_TAPU_FINI_CAUGHT, Nabla_TapuIslands_EventScript_ShowTapuFini
+	call_if_unset FLAG_NABLA_MARSHADOW_CAUGHT, Nabla_TapuIslands_EventScript_ShowMarshadow
+	call_if_unset FLAG_NABLA_ZERAORA_CAUGHT, Nabla_TapuIslands_EventScript_ShowZeraora
+	return
+
+Nabla_TapuIslands_EventScript_ShowTapuKoko:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_TapuIslands_EventScript_ShowTapuLele:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_TapuIslands_EventScript_ShowTapuBulu:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_TapuIslands_EventScript_ShowTapuFini:
+	clearflag FLAG_TEMP_14
+	return
+
+Nabla_TapuIslands_EventScript_ShowMarshadow:
+	clearflag FLAG_TEMP_15
+	return
+
+Nabla_TapuIslands_EventScript_ShowZeraora:
+	clearflag FLAG_TEMP_16
+	return
+
+Nabla_TapuIslands_EventScript_TapuKoko::
+	setvar VAR_0x8004, SPECIES_TAPU_KOKO
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TAPU_KOKO_CAUGHT
+	release
+	end
+
+Nabla_TapuIslands_EventScript_TapuLele::
+	setvar VAR_0x8004, SPECIES_TAPU_LELE
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TAPU_LELE_CAUGHT
+	release
+	end
+
+Nabla_TapuIslands_EventScript_TapuBulu::
+	setvar VAR_0x8004, SPECIES_TAPU_BULU
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TAPU_BULU_CAUGHT
+	release
+	end
+
+Nabla_TapuIslands_EventScript_TapuFini::
+	setvar VAR_0x8004, SPECIES_TAPU_FINI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TAPU_FINI_CAUGHT
+	release
+	end
+
+Nabla_TapuIslands_EventScript_Marshadow::
+	setvar VAR_0x8004, SPECIES_MARSHADOW
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MARSHADOW_CAUGHT
+	release
+	end
+
+Nabla_TapuIslands_EventScript_Zeraora::
+	setvar VAR_0x8004, SPECIES_ZERAORA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ZERAORA_CAUGHT
+	release
+	end

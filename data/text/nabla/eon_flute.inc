@@ -21,6 +21,12 @@ Nabla_Text_BirdIslet:
 Nabla_Text_MoonIsland:
 	.string "MOON ISLAND$"
 
+Nabla_Text_LibertyIsland:
+	.string "LIBERTY ISLAND$"
+
+Nabla_Text_TapuIslands:
+	.string "TAPU ISLANDS$"
+
 Nabla_Text_MomStevenCameBy:
 	.string "MOM: And an elegant young man named\n"
 	.string "STEVEN came by while you were away.\p"

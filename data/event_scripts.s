@@ -606,6 +606,8 @@ gStdScripts_End::
 	.include "data/maps/NablaEmeraldForest_Sanctuary/scripts.inc"
 	.include "data/maps/NablaBirdIslet/scripts.inc"
 	.include "data/maps/NablaMoonIsland/scripts.inc"
+	.include "data/maps/NablaLibertyIsland/scripts.inc"
+	.include "data/maps/NablaTapuIslands/scripts.inc"
 
 .if IS_FRLG
 

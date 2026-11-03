@@ -1654,6 +1654,14 @@
     {
       "id": "MAPSEC_NABLA_MOON_ISLAND",
       "name": "MOON ISLAND"
+    },
+    {
+      "id": "MAPSEC_NABLA_LIBERTY_ISLAND",
+      "name": "LIBERTY ISLAND"
+    },
+    {
+      "id": "MAPSEC_NABLA_TAPU_ISLANDS",
+      "name": "TAPU ISLANDS"
     }
   ]
 }
