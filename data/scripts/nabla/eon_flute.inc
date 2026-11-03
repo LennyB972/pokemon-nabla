@@ -12,6 +12,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_NavelRock, 1
 	dynmultipush Nabla_Text_BirthIsland, 2
 	dynmultipush Nabla_Text_BirdIslet, 3
+	dynmultipush Nabla_Text_MoonIsland, 4
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -19,6 +20,7 @@ Nabla_EventScript_EonFlute::
 	case 1, Nabla_EventScript_EonFluteToNavelRock
 	case 2, Nabla_EventScript_EonFluteToBirthIsland
 	case 3, Nabla_EventScript_EonFluteToBirdIslet
+	case 4, Nabla_EventScript_EonFluteToMoonIsland
 	releaseall
 	end
 
@@ -46,6 +48,13 @@ Nabla_EventScript_EonFluteToBirthIsland:
 Nabla_EventScript_EonFluteToBirdIslet:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_BIRD_ISLET, 12, 19
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToMoonIsland:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_MOON_ISLAND, 15, 16
 	waitstate
 	releaseall
 	end

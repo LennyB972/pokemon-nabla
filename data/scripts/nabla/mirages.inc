@@ -107,3 +107,32 @@ Nabla_BirdIslet_EventScript_MoltresGalar::
 	setflag FLAG_NABLA_MOLTRES_GALAR_CAUGHT
 	release
 	end
+
+@ Moon Island: Cresselia by day, Darkrai at night, in the clearing
+Nabla_MoonIsland_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Cresselia
+	setflag FLAG_TEMP_12  @ Darkrai
+	specialvar VAR_RESULT, NablaMirage_IsNight
+	goto_if_eq VAR_RESULT, TRUE, Nabla_MoonIsland_EventScript_SetUpNight
+	goto_if_set FLAG_NABLA_CRESSELIA_CAUGHT, Common_EventScript_NopReturn
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_MoonIsland_EventScript_SetUpNight:
+	goto_if_set FLAG_NABLA_DARKRAI_CAUGHT, Common_EventScript_NopReturn
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_MoonIsland_EventScript_Cresselia::
+	setvar VAR_0x8004, SPECIES_CRESSELIA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_CRESSELIA_CAUGHT
+	release
+	end
+
+Nabla_MoonIsland_EventScript_Darkrai::
+	setvar VAR_0x8004, SPECIES_DARKRAI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_DARKRAI_CAUGHT
+	release
+	end

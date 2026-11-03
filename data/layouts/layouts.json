@@ -9378,6 +9378,17 @@
       "border_filepath": "data/layouts/NablaBirdIslet/border.bin",
       "blockdata_filepath": "data/layouts/NablaBirdIslet/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_MOON_ISLAND",
+      "name": "NablaMoonIsland_Layout",
+      "width": 30,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/NablaMoonIsland/border.bin",
+      "blockdata_filepath": "data/layouts/NablaMoonIsland/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

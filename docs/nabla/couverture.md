@@ -4,7 +4,7 @@ Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosm�
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
 - **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
-- **Légendaires et fabuleux** : 20 / 97 (les autres : phase 7).
+- **Légendaires et fabuleux** : 22 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
@@ -12,7 +12,7 @@ Aucune.
 
 ## Légendaires et fabuleux obtenables
 
-Articuno, Articuno_Galar, Celebi, Deoxys_Normal, Groudon, Ho_Oh, Jirachi, Kyogre, Latias, Latios, Lugia, Mew, Moltres, Moltres_Galar, Rayquaza, Regice, Regirock, Registeel, Zapdos, Zapdos_Galar
+Articuno, Articuno_Galar, Celebi, Cresselia, Darkrai, Deoxys_Normal, Groudon, Ho_Oh, Jirachi, Kyogre, Latias, Latios, Lugia, Mew, Moltres, Moltres_Galar, Rayquaza, Regice, Regirock, Registeel, Zapdos, Zapdos_Galar
 
 ## Évolutions à vérifier en jeu
 

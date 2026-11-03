@@ -1650,6 +1650,10 @@
     {
       "id": "MAPSEC_NABLA_BIRD_ISLET",
       "name": "BIRD ISLET"
+    },
+    {
+      "id": "MAPSEC_NABLA_MOON_ISLAND",
+      "name": "MOON ISLAND"
     }
   ]
 }

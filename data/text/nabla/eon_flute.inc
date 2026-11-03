@@ -18,6 +18,9 @@ Nabla_Text_BirthIsland:
 Nabla_Text_BirdIslet:
 	.string "BIRD ISLET$"
 
+Nabla_Text_MoonIsland:
+	.string "MOON ISLAND$"
+
 Nabla_Text_MomStevenCameBy:
 	.string "MOM: And an elegant young man named\n"
 	.string "STEVEN came by while you were away.\p"

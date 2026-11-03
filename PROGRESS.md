@@ -354,6 +354,8 @@
   - Les légendaires des mirages (et Jirachi) sont animés sur place (`MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_*`), à la demande de l'utilisateur (les sprites immobiles faisaient figés).
   - Testé en jeu par l'utilisateur la nuit (2026-11-03) ; le jour reste à voir (en jouant entre 6 h et 18 h).
   - **Test** : la Flûte → BIRD ISLET ; le jour, les trois oiseaux de Kanto ; la nuit (menu debug *Utilities → Time Functions*, ou l'horloge), ceux de Galar ; une capture fait disparaître l'oiseau, une fuite le fait revenir en repartant puis en revenant ; la Flûte ramène au point de départ.
+- Étape 7.4, mirage de l'Île Lune (`NablaMoonIsland`, 30 × 24, « MOON ISLAND ») : une première version en croissant de sable a été refusée par l'utilisateur, qui veut des îles au-dessus de la mer comme l'Île Aurore, pas des plages. L'île reprend donc la montagne, les falaises et les arbres de l'Île Aurore (`dev_scripts/nabla/draw_moon_island.py`), sans quai ni escalier ; au sommet, une pleine lune d'herbe claire avec Cresselia le jour et Darkrai la nuit (niveau 80, flags 0x2A8-0x2A9), animés sur place ; mer infranchissable ; musique de la Chambre Scellée. Couverture : 22 / 97 légendaires.
+  - **Test** : la Flûte → MOON ISLAND (arrivée au pied du sommet) ; Darkrai la nuit (Cresselia le jour), combat niveau 80, capture, retour avec la Flûte.
 
 ## Bugs connus
 
