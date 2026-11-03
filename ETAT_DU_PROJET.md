@@ -248,7 +248,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
   - marche à suivre dans `docs/nabla/zones.md` ;
   - image : `python3 dev_scripts/nabla/render_map.py <Map> out.png --grid` (blocs animés en gris).
 - **Dessin de maps** :
-  - Côtes : conversion commune `dev_scripts/nabla/coast.py` (West Beach, Îlot des Oiseaux `draw_bird_islet.py`). Îles des mirages : **au-dessus de la mer, comme l'Île Aurore** (préférence de l'utilisateur, pas de plage) : `draw_moon_island.py` assemble les pièces de l'Île Aurore (croissant de l'Île Lune ; pièces et règles dans `docs/nabla/zones.md`). Avec ces pièces, les pentes ne descendent que vers le bas : formes « montagne » ou baies en V ouvertes vers le nord.
+  - Côtes : conversion commune `dev_scripts/nabla/coast.py` (West Beach, Îlot des Oiseaux `draw_bird_islet.py`). Îles des mirages : **au-dessus de la mer, comme l'Île Aurore** (préférence de l'utilisateur, pas de plage) : `draw_moon_island.py` reprend la map de l'Île Aurore (pièces relevées dans `docs/nabla/zones.md`). Avec ces pièces, pas de vraie courbe : les croissants essayés ne se lisaient pas.
   - La Forêt Émeraude est dessinée par `python3 dev_scripts/nabla/draw_emerald_forest.py` (règles des arbres dans `docs/nabla/zones.md`).
   - West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes → blocs ; le relancer écrase les retouches Porymap).
   - Règles des tuiles dans `docs/nabla/zones.md` : rivage `11b`-`12d` et coins `13d 13e 145 146`, herbe dans le sable `118`-`12a`, arbres `1ce`…, dômes, rochers marins de trois sortes, bloc `e` interdit seul, bords de carte fermés.
