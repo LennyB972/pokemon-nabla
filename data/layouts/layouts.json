@@ -9367,6 +9367,17 @@
       "border_filepath": "data/layouts/NablaEmeraldForest_Sanctuary/border.bin",
       "blockdata_filepath": "data/layouts/NablaEmeraldForest_Sanctuary/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_BIRD_ISLET",
+      "name": "NablaBirdIslet_Layout",
+      "width": 26,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/NablaBirdIslet/border.bin",
+      "blockdata_filepath": "data/layouts/NablaBirdIslet/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

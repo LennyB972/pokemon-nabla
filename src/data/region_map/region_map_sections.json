@@ -1646,6 +1646,10 @@
       "y": 7,
       "width": 1,
       "height": 2
+    },
+    {
+      "id": "MAPSEC_NABLA_BIRD_ISLET",
+      "name": "BIRD ISLET"
     }
   ]
 }

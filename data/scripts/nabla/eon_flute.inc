@@ -11,12 +11,14 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_FarawayIsland, 0
 	dynmultipush Nabla_Text_NavelRock, 1
 	dynmultipush Nabla_Text_BirthIsland, 2
+	dynmultipush Nabla_Text_BirdIslet, 3
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
 	case 0, Nabla_EventScript_EonFluteToFarawayIsland
 	case 1, Nabla_EventScript_EonFluteToNavelRock
 	case 2, Nabla_EventScript_EonFluteToBirthIsland
+	case 3, Nabla_EventScript_EonFluteToBirdIslet
 	releaseall
 	end
 
@@ -37,6 +39,13 @@ Nabla_EventScript_EonFluteToNavelRock:
 Nabla_EventScript_EonFluteToBirthIsland:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_BIRTH_ISLAND_HARBOR, 8, 4
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToBirdIslet:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_BIRD_ISLET, 12, 19
 	waitstate
 	releaseall
 	end
@@ -89,21 +98,8 @@ Nabla_BirthIsland_EventScript_SetUp::
 	return
 
 Nabla_BirthIsland_EventScript_Jirachi::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_JIRACHI, NABLA_POST_GAME_LEGENDARIES_LEVEL
-	special BattleSetup_StartLegendaryBattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Nabla_BirthIsland_EventScript_CaughtJirachi
 	setvar VAR_0x8004, SPECIES_JIRACHI
-	goto Common_EventScript_LegendaryFlewAway
-
-Nabla_BirthIsland_EventScript_CaughtJirachi:
+	call Nabla_EventScript_MirageLegendary
 	setflag FLAG_NABLA_JIRACHI_CAUGHT
-	removeobject VAR_LAST_TALKED
 	release
 	end

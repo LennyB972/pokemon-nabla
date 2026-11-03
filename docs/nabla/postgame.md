@@ -26,12 +26,14 @@ Scripts : `data/scripts/nabla/title_defense.inc` (textes `data/text/nabla/title_
 - **Entraînement ultime** : PNJ au Centre Pokémon de la Ligue (1er étage), commandes natives `canhypertrain` / `hypertrain` (`data/scripts/nabla/hyper_training.inc`).
 - **Celebi** : au vieil arbre du sanctuaire de la Forêt Émeraude (4 cases de l'arbre, `Nabla_EmeraldForest_Sanctuary_EventScript_OldTree`), avec la GS Ball : Celebi niveau 80 (`NABLA_POST_GAME_LEGENDARIES_LEVEL`), qui revient tant qu'il n'est pas capturé ; la GS Ball disparaît à la capture.
 
-## Pierre et la Flûte Éon (7.3a, faite)
+## Pierre et la Flûte Éon (7.3a et 7.3b, faites)
 
 - Au réveil après le premier Panthéon, Maman dit aussi qu'un homme élégant, STEVEN, attend le joueur chez lui à Algatia (`data/scripts/nabla/post_game.inc`). Le personnage d'origine de Pierre est chez lui dès que la Ligue est gagnée, tant que le joueur n'a pas la Flûte (`Nabla_StevensHouse_EventScript_SetUp`), même sans la scène de Maman.
 - Chez lui, Pierre donne la **Flûte Éon** (`ITEM_EON_FLUTE`, objet rare ajouté par Nabla) et explique les mirages, puis repart aux Chutes Météore. Terhal et la lettre d'origine restent.
 - **Flûte** (`data/scripts/nabla/eon_flute.inc`, `src/nabla_eon_flute.c`, `ItemUseOutOfBattle_EonFlute` dans `src/item_use.c`) : depuis le sac, là où le Vol est possible ; Latios crie, la liste des destinations s'affiche, fondu, arrivée. Depuis une destination (repérée par sa section de carte, `sEonFluteDestinations`), la Flûte ramène là où on était (point gardé dans le warp dynamique de la sauvegarde).
 - **Destinations** : Île Lointaine, Rocher Nombril, Île Aurore (îles d'événement d'Émeraude, qu'on atteignait avec des tickets). Leurs bateaux et marins sont cachés (flag d'objet `FLAG_SYS_GAME_CLEAR`). Mew, Lugia, Ho-Oh au niveau 80, et ils reviennent à la visite suivante s'ils sont vaincus (plus de `FLAG_DEFEATED_*`). Île Aurore : Jirachi (`FLAG_NABLA_JIRACHI_CAUGHT`), visible au centre de l'île, sans l'énigme du triangle de Deoxys (Deoxys et le triangle sont cachés).
+- **Îlot des Oiseaux** (7.3b, premier mirage, `NablaBirdIslet`) : Artikodin (ouest), Électhor (nord), Sulfura (est) le jour, leurs formes de Galar la nuit (`NablaMirage_IsNight`, nuit de 18 h à 6 h comme les rencontres), niveau 80. Un flag par oiseau (`FLAG_NABLA_*_CAUGHT`, 0x2A2-0x2A7).
+- **Légendaire d'un mirage** (modèle commun, `data/scripts/nabla/mirages.inc`) : un objet par légendaire (sprite `OBJ_EVENT_GFX_SPECIES`), caché à l'arrivée par un flag temporaire s'il est capturé ou si ce n'est pas son heure ; son script met l'espèce dans `VAR_0x8004`, appelle `Nabla_EventScript_MirageLegendary` (cri, combat niveau 80 ; vaincu ou en fuite : il s'envole jusqu'à la visite suivante) et pose son flag s'il est capturé. `coverage.py` reconnaît ce modèle.
 - **Ajouter une destination** : une entrée dans `Nabla_EventScript_EonFlute` (`dynmultipush`, sous condition pour un mirage à débloquer) et sa section de carte dans `sEonFluteDestinations`.
 
 ## Légendaires (7.4)

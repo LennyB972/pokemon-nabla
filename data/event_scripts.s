@@ -604,6 +604,7 @@ gStdScripts_End::
 	.include "data/maps/NablaEmeraldForest_Entrance/scripts.inc"
 	.include "data/maps/NablaEmeraldForest/scripts.inc"
 	.include "data/maps/NablaEmeraldForest_Sanctuary/scripts.inc"
+	.include "data/maps/NablaBirdIslet/scripts.inc"
 
 .if IS_FRLG
 
@@ -1770,3 +1771,4 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/hyper_training.inc"
 	.include "data/scripts/nabla/eon_flute.inc"
 	.include "data/text/nabla/eon_flute.inc"
+	.include "data/scripts/nabla/mirages.inc"

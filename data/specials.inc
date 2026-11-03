@@ -650,3 +650,4 @@ gSpecials::
 	def_special NablaEonFlute_IsAtDestination
 	def_special NablaEonFlute_SaveReturnPoint
 	def_special NablaEonFlute_WarpBack
+	def_special NablaMirage_IsNight

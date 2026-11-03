@@ -4,5 +4,6 @@
 bool8 NablaEonFlute_IsAtDestination(void);
 void NablaEonFlute_SaveReturnPoint(void);
 void NablaEonFlute_WarpBack(void);
+bool8 NablaMirage_IsNight(void);
 
 #endif // GUARD_NABLA_EON_FLUTE_H

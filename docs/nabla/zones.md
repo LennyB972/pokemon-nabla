@@ -6,6 +6,7 @@
 |---|---|---|---|---|
 | WEST BEACH (Plage de l'Ouest) | `NablaWestBeach` (30 × 26) | Route 115 : bande de sable vers l'ouest au sud de la route (connexion est ↔ ouest, sans Surf) | case du bas de la route 115 (`MAPSEC_NABLA_WEST_BEACH`) | v2 (avant le 1er badge) : grande plage de sable entourée par la mer au nord, à l'ouest et au sud (rivage arrondi, rangée de rochers dans l'eau au bord de la carte : pas de mur invisible), îlots d'herbe aux bords arrondis avec hautes herbes, bosquets, dômes de rochers au milieu du sable, liseré de plage à l'est qui prolonge la côte de la Route 115. Herbes 5-8 : Taupikeau, Crabicoque, Concombaffe, Bacabouh, Krabby, Babimanta, Flingouste, Stari ; Surf et pêche : Vorastérie, Tentacool |
 | EMERALD FOREST (Forêt Émeraude) | `NablaEmeraldForest_Entrance` (24 × 22), `NablaEmeraldForest` (48 × 56), `NablaEmeraldForest_Sanctuary` (22 × 18) | Route 123 : chemin vers le sud dans l'encoche des arbres du bas, colonnes 102-107 (connexions continues Route 123 → lisière → forêt → sanctuaire) | deux cases sous la Route 123 (`MAPSEC_NABLA_EMERALD_FOREST`) | Lisière en petits arbres comme la Route 123, puis grands arbres du Bois Clémenti ; forêt sinueuse (clairière avec un îlot, recoin à l'est, couloir ouest avec un rebord et une boucle, prairie, couloir est avec une poche cachée, chemin vers le sanctuaire) ; sanctuaire : clairière, vieil arbre entouré de fleurs. Ombre et musique du Bois Clémenti (lisière ensoleillée). Herbes 30-34 (lisière et forêt) : Grimalin, Brocélôme, Mushana, Florges, Magirêve, Bombydou. Dessinée par `dev_scripts/nabla/draw_emerald_forest.py` |
+| BIRD ISLET (Îlot des Oiseaux) | `NablaBirdIslet` (26 × 24) | Flûte Éon, après la Ligue (arrivée case 12, 19) | aucune case (`MAPSEC_NABLA_BIRD_ISLET`, nom affiché à l'arrivée) | Premier mirage : îlot rond en pleine mer (anneau de sable, prairie, 4 arbres, fleurs), rochers dans l'eau au bord de la carte. Artikodin, Électhor, Sulfura le jour ; leurs formes de Galar la nuit ; niveau 80 (`data/scripts/nabla/mirages.inc`). Musique des îles d'événement (`MUS_ABANDONED_SHIP`). Dessinée par `dev_scripts/nabla/draw_bird_islet.py` |
 
 ## Créer une zone
 
@@ -25,7 +26,7 @@ Porymap réécrit à sa façon certains fichiers qu'il enregistre (ordre des cl�
 
 ## Dessiner une côte (leçons de West Beach v2)
 
-West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes → blocs, bords choisis selon les voisins, valeurs des blocs reprises d'Émeraude) : base à réutiliser pour d'autres plages. Le relancer écrase les retouches faites dans Porymap.
+West Beach est dessinée par `python3 dev_scripts/nabla/draw_west_beach.py` (plan en formes), l'Îlot des Oiseaux par `draw_bird_islet.py` ; la conversion en blocs (bords choisis selon les voisins, valeurs des blocs reprises d'Émeraude) est commune : `dev_scripts/nabla/coast.py`, à réutiliser pour les prochaines côtes. Relancer un script écrase les retouches faites dans Porymap.
 
 
 - Rivage sable/eau (jeu General) : `11b 11c 11d / 123 124 125 / 12b 12c 12d`, coins intérieurs `13d 13e 145 146`. Les bords côté eau (`11b 11d 123 125 12b 12c 12d 145 146`) sont des cases d'eau (Surf, hauteur 1) dessinées avec du sable ; `11c 13d 13e` sont du sable.

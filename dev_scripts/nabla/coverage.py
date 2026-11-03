@@ -122,6 +122,9 @@ def main():
     for f, text in scripts.items():
         for cmd, name in re.findall(r"^\s*(givemon|giveegg|setwildbattle|seteventmon)\s+SPECIES_(\w+)", text, re.M):
             add(aliases.get(name, name), ("cadeau" if cmd in ("givemon", "giveegg") else "fixe") + " (" + f.split("/")[-2 if "maps" in f else -1] + ")")
+        # Legendary Pokémon of the mirages (data/scripts/nabla/mirages.inc)
+        for name in re.findall(r"setvar VAR_0x8004, SPECIES_(\w+)\n\tcall Nabla_EventScript_MirageLegendary", text):
+            add(aliases.get(name, name), "fixe (" + f.split("/")[-1] + ")")
     trades = open("include/constants/trade.h").read().split("// FRLG")[0]
     trade_data = open("src/data/trade.h").read()
     for trade in re.findall(r"INGAME_TRADE_(\w+),", trades):

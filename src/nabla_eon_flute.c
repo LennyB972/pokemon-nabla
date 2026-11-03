@@ -2,6 +2,7 @@
 #include "field_screen_effect.h"
 #include "nabla_eon_flute.h"
 #include "overworld.h"
+#include "rtc.h"
 #include "constants/region_map_sections.h"
 
 // Pokémon Nabla: the Eon Flute (data/scripts/nabla/eon_flute.inc). Latios takes the player to the places
@@ -12,6 +13,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_FARAWAY_ISLAND,
     MAPSEC_NAVEL_ROCK,
     MAPSEC_BIRTH_ISLAND,
+    MAPSEC_NABLA_BIRD_ISLET,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)
@@ -35,4 +37,10 @@ void NablaEonFlute_WarpBack(void)
     SetWarpDestinationToDynamicWarp(0);
     DoWarp();
     ResetInitialPlayerAvatarState();
+}
+
+// The legendary Pokémon of some mirages change at night (data/scripts/nabla/mirages.inc)
+bool8 NablaMirage_IsNight(void)
+{
+    return GetTimeOfDay() == TIME_NIGHT;
 }
