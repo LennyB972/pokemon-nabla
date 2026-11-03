@@ -55,7 +55,7 @@ NavelRock_Top_EventScript_HoOh::
 	applymovement LOCALID_NAVEL_ROCK_HO_OH, NavelRock_Top_Movement_HoOhApproach
 	waitmovement 0
 	special RemoveCameraObject
-	seteventmon SPECIES_HO_OH, 70
+	seteventmon SPECIES_HO_OH, NABLA_POST_GAME_LEGENDARIES_LEVEL  @ Pokémon Nabla
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -69,7 +69,7 @@ NavelRock_Top_EventScript_HoOh::
 	end
 
 NavelRock_Top_EventScript_DefeatedHoOh::
-	setflag FLAG_DEFEATED_HO_OH
+	@ Pokémon Nabla: no FLAG_DEFEATED_HO_OH, it comes back on the next visit
 	setvar VAR_0x8004, SPECIES_HO_OH
 	goto Common_EventScript_LegendaryFlewAway
 	end

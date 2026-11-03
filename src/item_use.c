@@ -30,6 +30,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "metatile_behavior.h"
+#include "nabla_eon_flute.h"
 #include "oras_dowse.h"
 #include "overworld.h"
 #include "palette.h"
@@ -822,6 +823,28 @@ static void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId)
     LockPlayerFieldControls();
     ScriptContext_SetupScript(BerryTree_EventScript_ItemUseWailmerPail);
     DestroyTask(taskId);
+}
+
+// Pokémon Nabla: the Eon Flute calls Latios where Fly can be used, or in a place Latios took the player to
+// (data/scripts/nabla/eon_flute.inc)
+static void ItemUseOnFieldCB_EonFlute(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(Nabla_EventScript_EonFlute);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_EonFlute(u8 taskId)
+{
+    if (NablaEonFlute_IsAtDestination() || Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_EonFlute;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
 }
 
 static bool8 TryToWaterSudowoodo(void)

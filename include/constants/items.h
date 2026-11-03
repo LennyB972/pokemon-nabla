@@ -1054,6 +1054,7 @@ enum __attribute__((packed)) Item
 
     // Pokémon Nabla
     ITEM_GS_BALL = 874,
+    ITEM_EON_FLUTE = 875,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

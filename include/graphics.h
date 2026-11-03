@@ -1773,6 +1773,7 @@ extern const u32 gItemIcon_TwiceSpicedRadish[];
 extern const u16 gItemIconPalette_TwiceSpicedRadish[];
 // Pokémon Nabla
 extern const u16 gItemIconPalette_GSBall[];
+extern const u16 gItemIconPalette_EonFlute[];
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];

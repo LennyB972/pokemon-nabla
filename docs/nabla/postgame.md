@@ -26,11 +26,13 @@ Scripts : `data/scripts/nabla/title_defense.inc` (textes `data/text/nabla/title_
 - **Entraînement ultime** : PNJ au Centre Pokémon de la Ligue (1er étage), commandes natives `canhypertrain` / `hypertrain` (`data/scripts/nabla/hyper_training.inc`).
 - **Celebi** : au vieil arbre du sanctuaire de la Forêt Émeraude (4 cases de l'arbre, `Nabla_EmeraldForest_Sanctuary_EventScript_OldTree`), avec la GS Ball : Celebi niveau 80 (`NABLA_POST_GAME_LEGENDARIES_LEVEL`), qui revient tant qu'il n'est pas capturé ; la GS Ball disparaît à la capture.
 
-## Pierre et la Flûte Éon (7.3)
+## Pierre et la Flûte Éon (7.3a, faite)
 
-- Au réveil après le premier Panthéon, Maman dit aussi qu'un homme élégant, STEVEN, attend le joueur chez lui à Algatia (ajouté avec cette étape).
-- Chez lui, Pierre donne la **Flûte Éon** (nouvel objet rare) et explique les mirages, puis repart aux Chutes Météore. Terhal et la lettre d'origine restent.
-- **Flûte** : depuis le sac, en extérieur ; Latios crie, la liste des mirages débloqués s'affiche, fondu, arrivée. Rejouer de la Flûte ramène là où on était.
+- Au réveil après le premier Panthéon, Maman dit aussi qu'un homme élégant, STEVEN, attend le joueur chez lui à Algatia (`data/scripts/nabla/post_game.inc` ; elle fait réapparaître le personnage d'origine de Pierre dans sa maison).
+- Chez lui, Pierre donne la **Flûte Éon** (`ITEM_EON_FLUTE`, objet rare ajouté par Nabla) et explique les mirages, puis repart aux Chutes Météore. Terhal et la lettre d'origine restent.
+- **Flûte** (`data/scripts/nabla/eon_flute.inc`, `src/nabla_eon_flute.c`, `ItemUseOutOfBattle_EonFlute` dans `src/item_use.c`) : depuis le sac, là où le Vol est possible ; Latios crie, la liste des destinations s'affiche, fondu, arrivée. Depuis une destination (repérée par sa section de carte, `sEonFluteDestinations`), la Flûte ramène là où on était (point gardé dans le warp dynamique de la sauvegarde).
+- **Destinations** : Île Lointaine, Rocher Nombril, Île Aurore (îles d'événement d'Émeraude, qu'on atteignait avec des tickets). Leurs bateaux et marins sont cachés (flag d'objet `FLAG_SYS_GAME_CLEAR`). Mew, Lugia, Ho-Oh au niveau 80, et ils reviennent à la visite suivante s'ils sont vaincus (plus de `FLAG_DEFEATED_*`). Île Aurore : Jirachi (`FLAG_NABLA_JIRACHI_CAUGHT`), visible au centre de l'île, sans l'énigme du triangle de Deoxys (Deoxys et le triangle sont cachés).
+- **Ajouter une destination** : une entrée dans `Nabla_EventScript_EonFlute` (`dynmultipush`, sous condition pour un mirage à débloquer) et sa section de carte dans `sEonFluteDestinations`.
 
 ## Légendaires (7.4)
 

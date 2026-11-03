@@ -96,6 +96,7 @@ Données par le challenger battu dans la salle du Maître (`data/scripts/nabla/t
 - **Timmy** (1ʳᵉ défense) : **GS Ball** (objet rare ajouté par Nabla, `ITEM_GS_BALL`, icône de la Poké Ball recolorée `graphics/items/icon_palettes/gs_ball.pal`). Au vieil arbre du sanctuaire de la Forêt Émeraude, elle fait apparaître Celebi (niveau 80) ; elle disparaît quand il est capturé.
 - **Pierre** (2ᵉ) : Charme Chroma. **Marc** (3ᵉ) : Master Ball.
 - **Ensuite**, au hasard : Master Ball, Patch Talent, Bouchon d'Or, 5 Bouchons d'Argent, 10 PP Max, Charme Exp., Charme Ovale (chaque charme une seule fois).
+- **Flûte Éon** (objet rare ajouté par Nabla, `ITEM_EON_FLUTE`, icône de la flûte d'expansion avec une palette rouge et bleue `graphics/items/icon_palettes/eon_flute.pal`) : donnée par Pierre chez lui à Algatia après la Ligue (`docs/nabla/postgame.md`).
 - **Bouchons** : l'Entraîneur Ultime du Centre Pokémon de la Ligue (1er étage, case 14, 6) monte une stat (Bouchon d'Argent) ou toutes (Bouchon d'Or) au maximum (`data/scripts/nabla/hyper_training.inc`).
 
 ## Objets tenus par les Pokémon sauvages

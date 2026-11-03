@@ -117,9 +117,11 @@ def main():
                         wild.add(name)
     add("FEEBAS", "Route 119")
     wild.add("FEEBAS")
+    # Species constants that are aliases of a form (SPECIES_DEOXYS is SPECIES_DEOXYS_NORMAL)
+    aliases = dict(re.findall(r"^\s*SPECIES_(\w+)\s*=\s*SPECIES_(\w+),", open("include/constants/species.h").read(), re.M))
     for f, text in scripts.items():
-        for cmd, name in re.findall(r"^\s*(givemon|giveegg|setwildbattle)\s+SPECIES_(\w+)", text, re.M):
-            add(name, ("fixe" if cmd == "setwildbattle" else "cadeau") + " (" + f.split("/")[-2 if "maps" in f else -1] + ")")
+        for cmd, name in re.findall(r"^\s*(givemon|giveegg|setwildbattle|seteventmon)\s+SPECIES_(\w+)", text, re.M):
+            add(aliases.get(name, name), ("cadeau" if cmd in ("givemon", "giveegg") else "fixe") + " (" + f.split("/")[-2 if "maps" in f else -1] + ")")
     trades = open("include/constants/trade.h").read().split("// FRLG")[0]
     trade_data = open("src/data/trade.h").read()
     for trade in re.findall(r"INGAME_TRADE_(\w+),", trades):
@@ -153,7 +155,7 @@ def main():
     while changed:
         changed = False
         # Held items of wild Pokémon (Thief, Covet)
-        for name in [n for n in wild if n in reached]:
+        for name in sorted(n for n in wild if n in reached):
             for item in re.findall(r"\.item(?:Common|Rare) = (ITEM_\w+)", bodies.get(name, "")):
                 if item not in items:
                     items[item] = "tenu par " + name.title() + " sauvage"

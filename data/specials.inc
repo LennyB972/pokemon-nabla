@@ -647,3 +647,6 @@ gSpecials::
 	def_special NablaRayquazaEvent_SwapRayquazaIntoParty
 	def_special NablaWhiteRock_HasFormChangeMon
 	def_special NablaWhiteRock_TryFormChange
+	def_special NablaEonFlute_IsAtDestination
+	def_special NablaEonFlute_SaveReturnPoint
+	def_special NablaEonFlute_WarpBack

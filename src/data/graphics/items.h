@@ -2116,3 +2116,5 @@ const u16 gItemIconPalette_TwiceSpicedRadish[] = INCGFX_U16("graphics/items/icon
 // Pokémon Nabla
 
 const u16 gItemIconPalette_GSBall[] = INCGFX_U16("graphics/items/icon_palettes/gs_ball.pal", ".gbapal");
+
+const u16 gItemIconPalette_EonFlute[] = INCGFX_U16("graphics/items/icon_palettes/eon_flute.pal", ".gbapal");

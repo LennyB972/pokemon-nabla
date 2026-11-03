@@ -806,4 +806,7 @@ extern const u8 CableClub_EventScript_ShowBattleRecords_Frlg[];
 extern const u8 EventScript_Indigo_UltimateGoal[];
 extern const u8 EventScript_Indigo_HighestAuthority[];
 
+// Pokémon Nabla
+extern const u8 Nabla_EventScript_EonFlute[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

@@ -1,0 +1,42 @@
+Nabla_Text_EonFluteWhereTo:
+	.string "LATIOS answered the EON FLUTE!\n"
+	.string "Where do you want to go?$"
+
+Nabla_Text_EonFluteGoBack:
+	.string "LATIOS answered the EON FLUTE!\n"
+	.string "Go back to where you were?$"
+
+Nabla_Text_FarawayIsland:
+	.string "FARAWAY ISLAND$"
+
+Nabla_Text_NavelRock:
+	.string "NAVEL ROCK$"
+
+Nabla_Text_BirthIsland:
+	.string "BIRTH ISLAND$"
+
+Nabla_Text_MomStevenCameBy:
+	.string "MOM: And an elegant young man named\n"
+	.string "STEVEN came by while you were away.\p"
+	.string "He said he'll be waiting for you\n"
+	.string "at his house in MOSSDEEP CITY.$"
+
+Nabla_Text_StevenEonFlute:
+	.string "STEVEN: {PLAYER}{KUN}! Congratulations,\n"
+	.string "CHAMPION. I knew you could do it.\p"
+	.string "I have something for you.\n"
+	.string "Please, take it.$"
+
+Nabla_Text_StevenAboutEonFlute:
+	.string "STEVEN: That's the EON FLUTE.\n"
+	.string "When you play it, LATIOS will come.\p"
+	.string "It will carry you to faraway places\n"
+	.string "where legendary POKéMON live.\p"
+	.string "They say some islands appear and\n"
+	.string "vanish like mirages…\p"
+	.string "Some of them may only show up once\n"
+	.string "you've caught certain POKéMON.\p"
+	.string "When you want to come back, just\n"
+	.string "play the flute again.\p"
+	.string "I'll be at METEOR FALLS.\n"
+	.string "Come battle me anytime!$"

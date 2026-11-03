@@ -16117,6 +16117,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeBall,
         .iconPalette = gItemIconPalette_GSBall,
     },
+
+    [ITEM_EON_FLUTE] =
+    {
+        .name = ITEM_NAME("Eon Flute"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A flute that calls\n"
+            "Latios, to fly to\n"
+            "faraway places."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_EonFlute,
+        .iconPic = gItemIcon_Flute,
+        .iconPalette = gItemIconPalette_EonFlute,
+    },
 };
 
 #undef ITEM_NAME

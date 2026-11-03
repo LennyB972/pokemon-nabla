@@ -127,7 +127,7 @@ FarawayIsland_Interior_EventScript_Mew::
 	special DestroyMewEmergingGrassSprite
 	delay 40
 	waitmoncry
-	seteventmon SPECIES_MEW, 30
+	seteventmon SPECIES_MEW, NABLA_POST_GAME_LEGENDARIES_LEVEL  @ Pokémon Nabla
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -141,7 +141,7 @@ FarawayIsland_Interior_EventScript_Mew::
 	end
 
 FarawayIsland_Interior_EventScript_MewDefeated::
-	setflag FLAG_DEFEATED_MEW
+	@ Pokémon Nabla: no FLAG_DEFEATED_MEW, it comes back on the next visit
 	setvar VAR_0x8004, SPECIES_MEW
 	goto Common_EventScript_LegendaryFlewAway
 	end

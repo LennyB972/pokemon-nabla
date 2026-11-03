@@ -132,6 +132,7 @@ MossdeepCity_StevensHouse_EventScript_RockDisplay::
 	end
 
 MossdeepCity_StevensHouse_EventScript_Steven::
+	goto_if_set FLAG_SYS_GAME_CLEAR, Nabla_StevensHouse_EventScript_EonFlute
 	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_NPC
 	end
 

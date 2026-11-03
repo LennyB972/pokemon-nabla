@@ -1768,3 +1768,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/title_defense.inc"
 	.include "data/scripts/nabla/hyper_training.inc"
 	.include "data/text/nabla/hyper_training.inc"
+	.include "data/scripts/nabla/eon_flute.inc"
+	.include "data/text/nabla/eon_flute.inc"
