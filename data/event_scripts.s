@@ -613,6 +613,7 @@ gStdScripts_End::
 	.include "data/maps/NablaThreeLakes/scripts.inc"
 	.include "data/maps/NablaSpearPillar/scripts.inc"
 	.include "data/maps/NablaStarkMountain/scripts.inc"
+	.include "data/maps/NablaFlowerParadise/scripts.inc"
 
 .if IS_FRLG
 

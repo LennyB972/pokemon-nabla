@@ -185,7 +185,8 @@ def runs(column):
     return out
 
 
-def draw(name, plan, details, exits, border):
+def draw(name, plan, details, exits, border, start=None):
+    """Draws a map from its plan; start is a cell the player reaches, for a map without exits."""
     grid = ["".join(c * 2 for c in row) for row in plan]
     H, W = len(grid), len(grid[0])
     assert all(len(row) == W for row in grid), name
@@ -250,7 +251,7 @@ def draw(name, plan, details, exits, border):
     for side, first, last in exits:
         for i in range(first, last + 1):
             allowed.add({"up": (i, 0), "down": (i, H - 1), "left": (0, i), "right": (W - 1, i)}[side])
-    start = next(iter(sorted(allowed)))
+    start = start or next(iter(sorted(allowed)))
     seen, todo = {start}, [start]
     while todo:
         x, y = todo.pop()

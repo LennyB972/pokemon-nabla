@@ -24,6 +24,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_THREE_LAKES,
     MAPSEC_NABLA_SPEAR_PILLAR,
     MAPSEC_NABLA_STARK_MOUNTAIN,
+    MAPSEC_NABLA_FLOWER_PARADISE,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

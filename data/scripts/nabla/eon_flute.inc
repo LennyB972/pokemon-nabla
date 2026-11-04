@@ -23,6 +23,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_ThreeLakes, 9
 	call Nabla_EventScript_EonFluteListSpearPillar
 	dynmultipush Nabla_Text_StarkMountain, 11
+	dynmultipush Nabla_Text_FlowerParadise, 12
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -38,6 +39,7 @@ Nabla_EventScript_EonFlute::
 	case 9, Nabla_EventScript_EonFluteToThreeLakes
 	case 10, Nabla_EventScript_EonFluteToSpearPillar
 	case 11, Nabla_EventScript_EonFluteToStarkMountain
+	case 12, Nabla_EventScript_EonFluteToFlowerParadise
 	releaseall
 	end
 
@@ -145,6 +147,13 @@ Nabla_EventScript_EonFluteToSpearPillar:
 Nabla_EventScript_EonFluteToStarkMountain:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_STARK_MOUNTAIN, 21, 19
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToFlowerParadise:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_FLOWER_PARADISE, 17, 16
 	waitstate
 	releaseall
 	end
