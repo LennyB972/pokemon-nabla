@@ -3,7 +3,7 @@
 
 A cave taken from Meteor Falls' lower floor (tilesets General and MeteorFalls): its lake with a peninsula in the
 middle, without the ladders, the entrance of the cave to the north and the exit to the south.
-Mewtwo waits on the peninsula, in front of its rock, and its two Mega Stones on the two platforms. The player arrives
+Mewtwo waits on the peninsula, in front of its rock; its two Mega Stones lie on the plateau and on a platform. The player arrives
 on the plateau, to the south-west, and walks to them; from the shore at the left of the lake, they can surf to the
 shores of the north and of the south.
 
@@ -12,14 +12,15 @@ Usage (from the repo root): python3 dev_scripts/nabla/draw_cerulean_cave.py
 """
 import struct
 
+import reach
+
 W, H = 29, 38
 MEWTWO = (17, 16)
-ITEMS = {"MEWTWONITE_X": (7, 10), "MEWTWONITE_Y": (3, 22)}  # on the platforms
+ITEMS = {"MEWTWONITE_X": (7, 7), "MEWTWONITE_Y": (3, 22)}  # on the plateau, on the platform at the bottom
 ARRIVAL = (12, 23)
 
 src = open("data/layouts/MeteorFalls_B1F_1R/map.bin", "rb").read()
 src = [[struct.unpack_from("<H", src, 2 * (y * W + x))[0] for x in range(W)] for y in range(H)]
-elevation = lambda v: v >> 12
 WALL, BOTTOM_WALL, BOX_FACE = src[2][13], src[37][16], src[14][17]  # 0x244, 0x286, 0x219
 floor = lambda e: src[16][7] & 0x3FF | e << 12                     # 0x201, no collision
 
@@ -47,51 +48,13 @@ for x in (7, 8, 9):
     out[19][x] &= 0x0FFF
 
 
-# Every cell without collision can be reached from the arrival, walking or surfing (rules of the game: two
-# elevations other than 0 and 15 must be equal; surfing starts and stops on elevation 3, on water of elevation 1),
-# without going through Mewtwo and the Mega Stones, which can be reached walking
+# Every cell without collision can be reached from the arrival, walking or surfing, without going through Mewtwo and
+# the Mega Stones, which can be reached on foot
 OBJECTS = {MEWTWO, *ITEMS.values()}
-
-
-def moves(x, y, surfing):
-    for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
-        if not (0 <= nx < W and 0 <= ny < H) or (out[ny][nx] >> 10) & 3:
-            continue
-        if (nx, ny) in OBJECTS:
-            if not surfing and elevation(out[ny][nx]) in (elevation(out[y][x]), 0, 15):
-                objects_reached.add((nx, ny))
-            continue
-        e0, e1 = elevation(out[y][x]), elevation(out[ny][nx])
-        if surfing:
-            if e1 == 1:
-                yield nx, ny, True
-            elif e1 == 3:
-                yield nx, ny, False
-        elif e1 == 1:
-            if e0 == 3:
-                yield nx, ny, True
-        elif e0 in (0, 15) or e1 in (0, 15) or e0 == e1:
-            yield nx, ny, False
-
-
-objects_reached = set()
-seen, todo = set(), [ARRIVAL + (False,)]
-while todo:
-    state = todo.pop()
-    if state not in seen:
-        seen.add(state)
-        todo += moves(*state)
-reached = {(x, y) for x, y, _ in seen}
-missed = [(x, y) for y in range(H) for x in range(W)
-          if not (out[y][x] >> 10) & 3 and (x, y) not in reached | OBJECTS]
+cells, talked = reach.reach(out, ARRIVAL, OBJECTS)
+missed = [(x, y) for y in range(H) for x in range(W) if not reach.blocked(out[y][x]) and (x, y) not in cells | OBJECTS]
 assert not missed, missed
-# A cell of elevation 0 or 15 lets the player walk on the water next to it
-for y in range(H):
-    for x in range(W):
-        if elevation(out[y][x]) in (0, 15) and not (out[y][x] >> 10) & 3:
-            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
-                assert not (0 <= nx < W and 0 <= ny < H) or elevation(out[ny][nx]) != 1, (x, y)
-assert objects_reached == OBJECTS, OBJECTS - objects_reached
+assert talked == OBJECTS, OBJECTS - talked
 assert out[MEWTWO[1]][MEWTWO[0]] == floor(4)
 assert out[ARRIVAL[1]][ARRIVAL[0]] == floor(4)
 open("data/layouts/NablaCeruleanCave/map.bin", "wb").write(struct.pack("<%dH" % (W * H), *[v for row in out for v in row]))

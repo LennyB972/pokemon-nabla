@@ -44,6 +44,13 @@ for y in (10, 11, 12):
     for x in (6, 7, 13, 14):
         out[y][x] = SAND
 
+# The top of the rock in the middle has no collision (in Navel Rock, the player could walk on it from the north of
+# the ring): blocked
+for y in range(5, 9):
+    for x in range(9, 12):
+        if not (out[y][x] >> 10) & 3:
+            out[y][x] |= 1 << 10
+
 # The whole ring can be walked from the arrival
 free = lambda x, y: 0 <= x < W and 0 <= y < H and not (out[y][x] >> 10) & 3
 seen, todo = set(), [ARRIVAL]
