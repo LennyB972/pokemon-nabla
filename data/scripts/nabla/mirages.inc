@@ -445,7 +445,7 @@ Nabla_SpearPillar_EventScript_AltarWaits:
 	end
 
 Nabla_SpearPillar_EventScript_AltarQuiet:
-	msgbox Nabla_Text_SpearPillarAltar, MSGBOX_DEFAULT
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
 	release
 	end
 
@@ -526,5 +526,93 @@ Nabla_SeaTemple_EventScript_Manaphy::
 	setvar VAR_0x8004, SPECIES_MANAPHY
 	call Nabla_EventScript_MirageLegendary
 	setflag FLAG_NABLA_MANAPHY_CAUGHT
+	release
+	end
+
+@ Pinwheel Forest: Cobalion, Terrakion and Virizion in the woods, Keldeo at the altar
+Nabla_PinwheelForest_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Cobalion
+	setflag FLAG_TEMP_12  @ Terrakion
+	setflag FLAG_TEMP_13  @ Virizion
+	setflag FLAG_TEMP_14  @ Keldeo
+	call_if_unset FLAG_NABLA_COBALION_CAUGHT, Nabla_PinwheelForest_EventScript_ShowCobalion
+	call_if_unset FLAG_NABLA_TERRAKION_CAUGHT, Nabla_PinwheelForest_EventScript_ShowTerrakion
+	call_if_unset FLAG_NABLA_VIRIZION_CAUGHT, Nabla_PinwheelForest_EventScript_ShowVirizion
+	return
+
+Nabla_PinwheelForest_EventScript_ShowCobalion:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_PinwheelForest_EventScript_ShowTerrakion:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_PinwheelForest_EventScript_ShowVirizion:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_PinwheelForest_EventScript_Cobalion::
+	setvar VAR_0x8004, SPECIES_COBALION
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_COBALION_CAUGHT
+	release
+	end
+
+Nabla_PinwheelForest_EventScript_Terrakion::
+	setvar VAR_0x8004, SPECIES_TERRAKION
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TERRAKION_CAUGHT
+	release
+	end
+
+Nabla_PinwheelForest_EventScript_Virizion::
+	setvar VAR_0x8004, SPECIES_VIRIZION
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_VIRIZION_CAUGHT
+	release
+	end
+
+Nabla_PinwheelForest_EventScript_Keldeo::
+	setvar VAR_0x8004, SPECIES_KELDEO
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_KELDEO_CAUGHT
+	release
+	end
+
+Nabla_PinwheelForest_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_KELDEO_CAUGHT, Nabla_PinwheelForest_EventScript_AltarNotKeldeo
+	goto_if_unset FLAG_TEMP_14, Nabla_PinwheelForest_EventScript_AltarNotKeldeo
+	setvar VAR_0x8004, SPECIES_COBALION
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_PinwheelForest_EventScript_AltarNotKeldeo
+	setvar VAR_0x8004, SPECIES_TERRAKION
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_PinwheelForest_EventScript_AltarNotKeldeo
+	setvar VAR_0x8004, SPECIES_VIRIZION
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_PinwheelForest_EventScript_AltarNotKeldeo
+	msgbox Nabla_Text_PinwheelForestAltarAwakensKeldeo, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_KELDEO, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_14
+	addobject LOCALID_PINWHEEL_FOREST_KELDEO
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_PinwheelForest_EventScript_AltarNotKeldeo:
+	goto_if_unset FLAG_TEMP_14, Nabla_PinwheelForest_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_KELDEO_CAUGHT, Nabla_PinwheelForest_EventScript_AltarWaits
+Nabla_PinwheelForest_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_PinwheelForest_EventScript_AltarWaits:
+	msgbox Nabla_Text_PinwheelForestAltarWaits, MSGBOX_DEFAULT
 	release
 	end

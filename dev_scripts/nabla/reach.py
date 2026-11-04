@@ -3,7 +3,7 @@
 src/event_object_movement.c; IsPlayerFacingSurfableFishableWater and CanStopSurfing, src/field_player_avatar.c):
 a block with collision stops the player; two elevations other than 0 and 15 must be equal (a block of elevation 0,
 like stairs, goes between elevations); surfing starts from elevation 3 onto water of elevation 1 and stops on
-elevation 3.
+elevation 3; a ledge is jumped in its direction, landing two cells further.
 
 Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell, that no
 object cuts off a part of the map, and that the Pokémon in view never fill the memory of sprites: the whole sheet of
@@ -26,9 +26,25 @@ elevation = lambda v: v >> 12
 blocked = lambda v: (v >> 10) & 3
 
 
-def reach(blocks, start, objects=()):
+def ledges(blocks, primary, secondary):
+    """The direction (dx, dy) in which each ledge of a layout is jumped (behaviors MB_JUMP_*), None elsewhere."""
+    names = re.findall(r"^\s*(MB_\w+)", open("include/constants/metatile_behaviors.h").read(), re.M)
+    folder = lambda tileset, kind: "data/tilesets/%s/%s/metatile_attributes.bin" % (
+        kind, re.sub(r"(?<!^)(?=[A-Z])", "_", tileset[len("gTileset_"):]).lower())
+    attributes = open(folder(primary, "primary"), "rb").read(), open(folder(secondary, "secondary"), "rb").read()
+    directions = {"MB_JUMP_EAST": (1, 0), "MB_JUMP_WEST": (-1, 0), "MB_JUMP_NORTH": (0, -1), "MB_JUMP_SOUTH": (0, 1)}
+
+    def jump(v):
+        m = v & 0x3FF
+        data, i = (attributes[0], m) if m < 0x200 else (attributes[1], m - 0x200)
+        return directions.get(names[struct.unpack_from("<H", data, 2 * i)[0] & 0xFF])
+    return [[jump(v) for v in row] for row in blocks]
+
+
+def reach(blocks, start, objects=(), jumps=None):
     """The cells reached from start, walking or surfing, without going through the objects, and the objects next to
-    a cell reached on foot, at its elevation (where the player can talk to them)."""
+    a cell reached on foot, at its elevation (where the player can talk to them). jumps: ledges(...), for a map with
+    ledges."""
     H, W = len(blocks), len(blocks[0])
     objects = set(objects)
     seen, talked, todo = set(), set(), [tuple(start) + (False,)]
@@ -40,7 +56,14 @@ def reach(blocks, start, objects=()):
         x, y, surfing = state
         e0 = elevation(blocks[y][x])
         for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
-            if not (0 <= nx < W and 0 <= ny < H) or blocked(blocks[ny][nx]):
+            if not (0 <= nx < W and 0 <= ny < H):
+                continue
+            if jumps and not surfing and jumps[ny][nx] == (nx - x, ny - y):
+                lx, ly = 2 * nx - x, 2 * ny - y
+                if 0 <= lx < W and 0 <= ly < H and not blocked(blocks[ly][lx]) and (lx, ly) not in objects:
+                    todo.append((lx, ly, False))
+                continue
+            if blocked(blocks[ny][nx]):
                 continue
             e1 = elevation(blocks[ny][nx])
             if (nx, ny) in objects:
@@ -73,19 +96,21 @@ def sheet_tiles(graphics_id):
 
 
 def load(name):
+    """The map.json of a map, its blocks and its ledges."""
     m = json.load(open("data/maps/%s/map.json" % name))
     layout = next(l for l in json.load(open("data/layouts/layouts.json"))["layouts"] if l.get("id") == m["layout"])
     W, H = layout["width"], layout["height"]
     raw = open(layout["blockdata_filepath"], "rb").read()
-    return m, [[struct.unpack_from("<H", raw, 2 * (y * W + x))[0] for x in range(W)] for y in range(H)]
+    blocks = [[struct.unpack_from("<H", raw, 2 * (y * W + x))[0] for x in range(W)] for y in range(H)]
+    return m, blocks, ledges(blocks, layout["primary_tileset"], layout["secondary_tileset"])
 
 
 if __name__ == "__main__":
     name, start = sys.argv[1], (int(sys.argv[2]), int(sys.argv[3]))
-    m, blocks = load(name)
+    m, blocks, jumps = load(name)
     objects = {(o["x"], o["y"]): o for o in m["object_events"]}
-    cells, talked = reach(blocks, start, objects)
-    alone, _ = reach(blocks, start)
+    cells, talked = reach(blocks, start, objects, jumps)
+    alone, _ = reach(blocks, start, (), jumps)
     problems = ["%s at (%d, %d): not reached on foot" % (o["graphics_id"], x, y)
                 for (x, y), o in objects.items() if (x, y) not in talked]
     problems += ["%s at (%d, %d): elevation %d on a block of elevation %d"

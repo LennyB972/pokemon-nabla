@@ -25,6 +25,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_StarkMountain, 11
 	dynmultipush Nabla_Text_FlowerParadise, 12
 	dynmultipush Nabla_Text_SeaTemple, 13
+	dynmultipush Nabla_Text_PinwheelForest, 14
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -42,6 +43,7 @@ Nabla_EventScript_EonFlute::
 	case 11, Nabla_EventScript_EonFluteToStarkMountain
 	case 12, Nabla_EventScript_EonFluteToFlowerParadise
 	case 13, Nabla_EventScript_EonFluteToSeaTemple
+	case 14, Nabla_EventScript_EonFluteToPinwheelForest
 	releaseall
 	end
 
@@ -163,6 +165,13 @@ Nabla_EventScript_EonFluteToFlowerParadise:
 Nabla_EventScript_EonFluteToSeaTemple:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_SEA_TEMPLE, 7, 4
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToPinwheelForest:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_PINWHEEL_FOREST, 16, 36
 	waitstate
 	releaseall
 	end

@@ -9488,6 +9488,17 @@
       "border_filepath": "data/layouts/NablaSeaTemple/border.bin",
       "blockdata_filepath": "data/layouts/NablaSeaTemple/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_PINWHEEL_FOREST",
+      "name": "NablaPinwheelForest_Layout",
+      "width": 48,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NablaPinwheelForest/border.bin",
+      "blockdata_filepath": "data/layouts/NablaPinwheelForest/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

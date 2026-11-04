@@ -73,3 +73,6 @@ Nabla_Text_FlowerParadise:
 
 Nabla_Text_SeaTemple:
 	.string "SEA TEMPLE$"
+
+Nabla_Text_PinwheelForest:
+	.string "PINWHEEL FOREST$"

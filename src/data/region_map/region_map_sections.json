@@ -1690,6 +1690,10 @@
     {
       "id": "MAPSEC_NABLA_SEA_TEMPLE",
       "name": "SEA TEMPLE"
+    },
+    {
+      "id": "MAPSEC_NABLA_PINWHEEL_FOREST",
+      "name": "PINWHEEL FOREST"
     }
   ]
 }
