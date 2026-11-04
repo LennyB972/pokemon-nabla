@@ -9433,6 +9433,17 @@
       "border_filepath": "data/layouts/NablaBurnedTower/border.bin",
       "blockdata_filepath": "data/layouts/NablaBurnedTower/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_THREE_LAKES",
+      "name": "NablaThreeLakes_Layout",
+      "width": 33,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NablaThreeLakes/border.bin",
+      "blockdata_filepath": "data/layouts/NablaThreeLakes/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

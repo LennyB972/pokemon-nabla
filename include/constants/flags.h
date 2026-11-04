@@ -63,9 +63,9 @@
 #define FLAG_NABLA_SAFARI_STARTERS 0x29 // Nabla: Safari Zone special zone unlocked
 #define FLAG_NABLA_SAFARI_PARADOX 0x2A // Nabla: Safari Zone special zone unlocked
 #define FLAG_NABLA_SAFARI_ULTRA_BEASTS 0x2B // Nabla: Safari Zone special zone unlocked
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_NABLA_UXIE_CAUGHT 0x2C
+#define FLAG_NABLA_MESPRIT_CAUGHT 0x2D
+#define FLAG_NABLA_AZELF_CAUGHT 0x2E
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag

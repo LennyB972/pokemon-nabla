@@ -1670,6 +1670,10 @@
     {
       "id": "MAPSEC_NABLA_BURNED_TOWER",
       "name": "BURNED TOWER"
+    },
+    {
+      "id": "MAPSEC_NABLA_THREE_LAKES",
+      "name": "THREE LAKES"
     }
   ]
 }

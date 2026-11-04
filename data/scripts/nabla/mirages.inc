@@ -308,3 +308,46 @@ Nabla_BurnedTower_EventScript_Suicune::
 	setflag FLAG_NABLA_SUICUNE_CAUGHT
 	release
 	end
+
+@ Three Lakes: Uxie, Mesprit and Azelf, on the banks of the three ponds
+Nabla_ThreeLakes_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Uxie
+	setflag FLAG_TEMP_12  @ Mesprit
+	setflag FLAG_TEMP_13  @ Azelf
+	call_if_unset FLAG_NABLA_UXIE_CAUGHT, Nabla_ThreeLakes_EventScript_ShowUxie
+	call_if_unset FLAG_NABLA_MESPRIT_CAUGHT, Nabla_ThreeLakes_EventScript_ShowMesprit
+	call_if_unset FLAG_NABLA_AZELF_CAUGHT, Nabla_ThreeLakes_EventScript_ShowAzelf
+	return
+
+Nabla_ThreeLakes_EventScript_ShowUxie:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_ThreeLakes_EventScript_ShowMesprit:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_ThreeLakes_EventScript_ShowAzelf:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_ThreeLakes_EventScript_Uxie::
+	setvar VAR_0x8004, SPECIES_UXIE
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_UXIE_CAUGHT
+	release
+	end
+
+Nabla_ThreeLakes_EventScript_Mesprit::
+	setvar VAR_0x8004, SPECIES_MESPRIT
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MESPRIT_CAUGHT
+	release
+	end
+
+Nabla_ThreeLakes_EventScript_Azelf::
+	setvar VAR_0x8004, SPECIES_AZELF
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_AZELF_CAUGHT
+	release
+	end

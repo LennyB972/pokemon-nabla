@@ -33,6 +33,9 @@ Nabla_Text_CeruleanCave:
 Nabla_Text_BurnedTower:
 	.string "BURNED TOWER$"
 
+Nabla_Text_ThreeLakes:
+	.string "THREE LAKES$"
+
 Nabla_Text_MomStevenCameBy:
 	.string "MOM: And an elegant young man named\n"
 	.string "STEVEN came by while you were away.\p"
