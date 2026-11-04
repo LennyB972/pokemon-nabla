@@ -1666,6 +1666,10 @@
     {
       "id": "MAPSEC_NABLA_CERULEAN_CAVE",
       "name": "CERULEAN CAVE"
+    },
+    {
+      "id": "MAPSEC_NABLA_BURNED_TOWER",
+      "name": "BURNED TOWER"
     }
   ]
 }

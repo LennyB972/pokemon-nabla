@@ -265,3 +265,46 @@ Nabla_CeruleanCave_EventScript_Mewtwo::
 	setflag FLAG_NABLA_MEWTWO_CAUGHT
 	release
 	end
+
+@ Burned Tower: Raikou, Entei and Suicune, in the hall (the tower is in the list of the Eon Flute once Ho-Oh is caught)
+Nabla_BurnedTower_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Raikou
+	setflag FLAG_TEMP_12  @ Entei
+	setflag FLAG_TEMP_13  @ Suicune
+	call_if_unset FLAG_NABLA_RAIKOU_CAUGHT, Nabla_BurnedTower_EventScript_ShowRaikou
+	call_if_unset FLAG_NABLA_ENTEI_CAUGHT, Nabla_BurnedTower_EventScript_ShowEntei
+	call_if_unset FLAG_NABLA_SUICUNE_CAUGHT, Nabla_BurnedTower_EventScript_ShowSuicune
+	return
+
+Nabla_BurnedTower_EventScript_ShowRaikou:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_BurnedTower_EventScript_ShowEntei:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_BurnedTower_EventScript_ShowSuicune:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_BurnedTower_EventScript_Raikou::
+	setvar VAR_0x8004, SPECIES_RAIKOU
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_RAIKOU_CAUGHT
+	release
+	end
+
+Nabla_BurnedTower_EventScript_Entei::
+	setvar VAR_0x8004, SPECIES_ENTEI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ENTEI_CAUGHT
+	release
+	end
+
+Nabla_BurnedTower_EventScript_Suicune::
+	setvar VAR_0x8004, SPECIES_SUICUNE
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_SUICUNE_CAUGHT
+	release
+	end

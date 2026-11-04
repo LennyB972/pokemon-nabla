@@ -18,6 +18,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_LIBERTY_ISLAND,
     MAPSEC_NABLA_TAPU_ISLANDS,
     MAPSEC_NABLA_CERULEAN_CAVE,
+    MAPSEC_NABLA_BURNED_TOWER,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

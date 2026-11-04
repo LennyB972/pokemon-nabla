@@ -9422,6 +9422,17 @@
       "border_filepath": "data/layouts/NablaCeruleanCave/border.bin",
       "blockdata_filepath": "data/layouts/NablaCeruleanCave/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_BURNED_TOWER",
+      "name": "NablaBurnedTower_Layout",
+      "width": 22,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NablaBurnedTower/border.bin",
+      "blockdata_filepath": "data/layouts/NablaBurnedTower/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
