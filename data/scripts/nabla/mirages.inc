@@ -248,3 +248,20 @@ Nabla_TapuIslands_EventScript_Zeraora::
 	setflag FLAG_NABLA_ZERAORA_CAUGHT
 	release
 	end
+
+@ Cerulean Cave: Mewtwo, on the peninsula of the lake (the cave is in the list of the Eon Flute once Mew is caught)
+Nabla_CeruleanCave_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Mewtwo
+	call_if_unset FLAG_NABLA_MEWTWO_CAUGHT, Nabla_CeruleanCave_EventScript_ShowMewtwo
+	return
+
+Nabla_CeruleanCave_EventScript_ShowMewtwo:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_CeruleanCave_EventScript_Mewtwo::
+	setvar VAR_0x8004, SPECIES_MEWTWO
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MEWTWO_CAUGHT
+	release
+	end

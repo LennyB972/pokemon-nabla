@@ -1,0 +1,62 @@
+{
+  "id": "MAP_NABLA_CERULEAN_CAVE",
+  "name": "NablaCeruleanCave",
+  "layout": "LAYOUT_NABLA_CERULEAN_CAVE",
+  "music": "MUS_CAVE_OF_ORIGIN",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_NABLA_CERULEAN_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_CERULEAN_CAVE_MEWTWO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
+      "x": 17,
+      "y": 16,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_CeruleanCave_EventScript_Mewtwo",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 10,
+      "elevation": 5,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MEWTWONITE_X",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_NABLA_ITEM_CERULEAN_CAVE_MEWTWONITE_X"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 3,
+      "y": 22,
+      "elevation": 5,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MEWTWONITE_Y",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_NABLA_ITEM_CERULEAN_CAVE_MEWTWONITE_Y"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

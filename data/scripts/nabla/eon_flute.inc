@@ -15,6 +15,8 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_MoonIsland, 4
 	dynmultipush Nabla_Text_LibertyIsland, 5
 	dynmultipush Nabla_Text_TapuIslands, 6
+	getcaughtmon SPECIES_MEW
+	call_if_eq VAR_RESULT, TRUE, Nabla_EventScript_EonFluteListCeruleanCave
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -25,6 +27,7 @@ Nabla_EventScript_EonFlute::
 	case 4, Nabla_EventScript_EonFluteToMoonIsland
 	case 5, Nabla_EventScript_EonFluteToLibertyIsland
 	case 6, Nabla_EventScript_EonFluteToTapuIslands
+	case 7, Nabla_EventScript_EonFluteToCeruleanCave
 	releaseall
 	end
 
@@ -73,6 +76,18 @@ Nabla_EventScript_EonFluteToLibertyIsland:
 Nabla_EventScript_EonFluteToTapuIslands:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_TAPU_ISLANDS, 20, 23
+	waitstate
+	releaseall
+	end
+
+@ The mirages to unlock are in the list once the Pokémon they ask for are caught
+Nabla_EventScript_EonFluteListCeruleanCave:
+	dynmultipush Nabla_Text_CeruleanCave, 7
+	return
+
+Nabla_EventScript_EonFluteToCeruleanCave:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_CERULEAN_CAVE, 12, 23
 	waitstate
 	releaseall
 	end
