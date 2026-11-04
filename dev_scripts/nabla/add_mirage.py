@@ -21,6 +21,11 @@ def rep(path, old, new):
     open(path, "w", encoding="utf-8").write(s.replace(old, new))
 
 
+def append(path, text):
+    s = open(path, encoding="utf-8").read()
+    open(path, "w", encoding="utf-8").write(s.rstrip("\n") + "\n" + text + "\n")
+
+
 def camel(name):
     return "".join(w.capitalize() for w in name.split("_"))
 
@@ -91,8 +96,7 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
     for species, *_ in legendaries:
         lines += ["", "Nabla_%s_EventScript_%s::" % (short, camel(species)), "\tsetvar VAR_0x8004, SPECIES_%s" % species,
                   "\tcall Nabla_EventScript_MirageLegendary", "\tsetflag FLAG_NABLA_%s_CAUGHT" % species, "\trelease", "\tend"]
-    path = "data/scripts/nabla/mirages.inc"
-    open(path, "w", encoding="utf-8").write(open(path, encoding="utf-8").read().rstrip("\n") + "\n" + "\n".join(lines) + "\n")
+    append("data/scripts/nabla/mirages.inc", "\n".join(lines))
 
     # The list of the Eon Flute: the next number, under conditions if the mirage is unlocked by caught Pokémon
     path = "data/scripts/nabla/eon_flute.inc"
@@ -113,6 +117,5 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
                 "\twaitstate\n\treleaseall\n\tend\n\n" % (short, upper, arrival[0], arrival[1]))
     s = s.replace("Nabla_EventScript_EonFluteGoBack:", scripts + "Nabla_EventScript_EonFluteGoBack:", 1)
     open(path, "w", encoding="utf-8").write(s)
-    path = "data/text/nabla/eon_flute.inc"
-    open(path, "w", encoding="utf-8").write(open(path, encoding="utf-8").read().rstrip("\n") + '\n\n%s:\n\t.string "%s$"\n' % (text, place))
+    append("data/text/nabla/eon_flute.inc", '\n%s:\n\t.string "%s$"' % (text, place))
     return number
