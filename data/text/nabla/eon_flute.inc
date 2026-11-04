@@ -39,6 +39,9 @@ Nabla_Text_ThreeLakes:
 Nabla_Text_SpearPillar:
 	.string "SPEAR PILLAR$"
 
+Nabla_Text_StarkMountain:
+	.string "STARK MOUNTAIN$"
+
 Nabla_Text_MomStevenCameBy:
 	.string "MOM: And an elegant young man named\n"
 	.string "STEVEN came by while you were away.\p"

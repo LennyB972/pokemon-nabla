@@ -448,3 +448,34 @@ Nabla_SpearPillar_EventScript_AltarQuiet:
 	msgbox Nabla_Text_SpearPillarAltar, MSGBOX_DEFAULT
 	release
 	end
+
+@ Stark Mountain: Heatran by the lava, Volcanion on the ledge to the east
+Nabla_StarkMountain_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Heatran
+	setflag FLAG_TEMP_12  @ Volcanion
+	call_if_unset FLAG_NABLA_HEATRAN_CAUGHT, Nabla_StarkMountain_EventScript_ShowHeatran
+	call_if_unset FLAG_NABLA_VOLCANION_CAUGHT, Nabla_StarkMountain_EventScript_ShowVolcanion
+	return
+
+Nabla_StarkMountain_EventScript_ShowHeatran:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_StarkMountain_EventScript_ShowVolcanion:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_StarkMountain_EventScript_Heatran::
+	setvar VAR_0x8004, SPECIES_HEATRAN
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_HEATRAN_CAUGHT
+	release
+	end
+
+Nabla_StarkMountain_EventScript_Volcanion::
+	setvar VAR_0x8004, SPECIES_VOLCANION
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_VOLCANION_CAUGHT
+	release
+	end

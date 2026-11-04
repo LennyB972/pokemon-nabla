@@ -22,6 +22,7 @@ Nabla_EventScript_EonFlute::
 	call_if_eq VAR_RESULT, TRUE, Nabla_EventScript_EonFluteListBurnedTower
 	dynmultipush Nabla_Text_ThreeLakes, 9
 	call Nabla_EventScript_EonFluteListSpearPillar
+	dynmultipush Nabla_Text_StarkMountain, 11
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -36,6 +37,7 @@ Nabla_EventScript_EonFlute::
 	case 8, Nabla_EventScript_EonFluteToBurnedTower
 	case 9, Nabla_EventScript_EonFluteToThreeLakes
 	case 10, Nabla_EventScript_EonFluteToSpearPillar
+	case 11, Nabla_EventScript_EonFluteToStarkMountain
 	releaseall
 	end
 
@@ -136,6 +138,13 @@ Nabla_EventScript_EonFluteToThreeLakes:
 Nabla_EventScript_EonFluteToSpearPillar:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_SPEAR_PILLAR, 12, 16
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToStarkMountain:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_STARK_MOUNTAIN, 21, 19
 	waitstate
 	releaseall
 	end

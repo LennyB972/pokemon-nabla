@@ -1678,6 +1678,10 @@
     {
       "id": "MAPSEC_NABLA_SPEAR_PILLAR",
       "name": "SPEAR PILLAR"
+    },
+    {
+      "id": "MAPSEC_NABLA_STARK_MOUNTAIN",
+      "name": "STARK MOUNTAIN"
     }
   ]
 }
