@@ -4,7 +4,7 @@ Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosm�
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
 - **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
-- **Légendaires et fabuleux** : 50 / 97 (les autres : phase 7).
+- **Légendaires et fabuleux** : 54 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
@@ -12,7 +12,7 @@ Aucune.
 
 ## Légendaires et fabuleux obtenables
 
-Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cresselia, Darkrai, Deoxys_Normal, Dialga, Entei, Giratina_Altered, Groudon, Heatran, Ho_Oh, Jirachi, Keldeo_Ordinary, Kyogre, Latias, Latios, Lugia, Manaphy, Marshadow, Meloetta_Aria, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Shaymin_Land, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Uxie, Victini, Virizion, Volcanion, Zapdos, Zapdos_Galar, Zarude, Zeraora
+Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cresselia, Darkrai, Deoxys_Normal, Dialga, Enamorus_Incarnate, Entei, Giratina_Altered, Groudon, Heatran, Ho_Oh, Jirachi, Keldeo_Ordinary, Kyogre, Landorus_Incarnate, Latias, Latios, Lugia, Manaphy, Marshadow, Meloetta_Aria, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Shaymin_Land, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Thundurus_Incarnate, Tornadus_Incarnate, Uxie, Victini, Virizion, Volcanion, Zapdos, Zapdos_Galar, Zarude, Zeraora
 
 ## Évolutions à vérifier en jeu
 

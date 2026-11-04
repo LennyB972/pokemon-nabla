@@ -76,3 +76,6 @@ Nabla_Text_SeaTemple:
 
 Nabla_Text_PinwheelForest:
 	.string "PINWHEEL FOREST$"
+
+Nabla_Text_AbundantShrine:
+	.string "ABUNDANT SHRINE$"

@@ -1694,6 +1694,10 @@
     {
       "id": "MAPSEC_NABLA_PINWHEEL_FOREST",
       "name": "PINWHEEL FOREST"
+    },
+    {
+      "id": "MAPSEC_NABLA_ABUNDANT_SHRINE",
+      "name": "ABUNDANT SHRINE"
     }
   ]
 }

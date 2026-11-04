@@ -384,6 +384,8 @@
 - Le Temple de la Mer est testé en jeu par l'utilisateur (2026-11-04).
 - Mirage de la Forêt de la Justice (`NablaPinwheelForest`, 48 × 44, « PINWHEEL FOREST », la Forêt d'Empoigne d'où vient Viridium) : le Bois Clémenti (`dev_scripts/nabla/draw_pinwheel_forest.py`) fermé : ses trois sorties en arbres (règles des arbres de la forêt, collision des arbres du bois), sans panneaux ni arbres à couper. Cobaltium, Terrakium, Viridium (flags 0x38-0x3A) dispersés ; autel dans la clairière du nord : Keldeo (0x3B) apparaît avec les trois dans l'équipe. `reach.py` gère maintenant les rebords (une partie du bois ne s'atteint qu'en sautant) ; `add_mirage.py` génère l'autel et ses textes ; texte commun `Nabla_Text_AncientAltar`. Niveau 80, musique et ombre du Bois Clémenti, pas de condition.
   - **Test** : la Flûte → PINWHEEL FOREST ; les trois dans le bois (Cobaltium à l'est, par les rebords) ; l'autel sans eux (« waiting for the SWORDS OF JUSTICE… »), avec eux (Keldeo apparaît) ; retour avec la Flûte.
+- Mirage du Plateau des Forces (`NablaAbundantShrine`, 50 × 37, « ABUNDANT SHRINE », le Sanctuaire Abondance d'Unys) : sommet du Mont Mémoria (`dev_scripts/nabla/draw_abundant_shrine.py`) sans tombes (herbe, raccords vérifiés) ni escalier de descente. Boréas et Fulguris dans le labyrinthe (flags 0x3C-0x3D) ; le sanctuaire des orbes sert d'autel (`add_mirage.py` : autel « panneau », `altar_sign`) : Démétéros (0x3E) avec Boréas et Fulguris dans l'équipe, puis Amovénus (0x3F) avec les trois. Musique du temps anormal ; pas de condition.
+  - **Test** : la Flûte → ABUNDANT SHRINE ; Boréas (ouest), Fulguris (est) ; le sanctuaire sans eux, avec Boréas et Fulguris (Démétéros), puis avec les trois (Amovénus) ; retour avec la Flûte.
 
 ## Bugs connus
 

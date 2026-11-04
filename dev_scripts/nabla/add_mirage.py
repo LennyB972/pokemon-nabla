@@ -10,7 +10,8 @@ Used from a short script, once per mirage:
                    unlocked_by=["SPECIES_UXIE", ...], comment="Flower Paradise: Shaymin in the flowers...")
 A mirage with hidden Pokémon also gets an altar: altar=(x, y), hidden=[("KELDEO", x, y, flag, ["COBALION", ...])]
 (the Pokémon asked for in the party, checked in turn at the altar) and altar_waits, the text of the altar while it
-waits for them (data/text/nabla/mirages.inc).
+waits for them (data/text/nabla/mirages.inc). The altar is a statue, or with altar_sign a block of the map (a shrine)
+read from below.
 Flags are given as numbers of FLAG_UNUSED_* flags, which get their Nabla names.
 """
 import json
@@ -67,7 +68,7 @@ def altar_script(short, upper, first, hidden):
 
 
 def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocked_by=(), weather="WEATHER_NONE",
-        map_type="MAP_TYPE_ROUTE", allow_cycling=True, altar=None, hidden=(), altar_waits=""):
+        map_type="MAP_TYPE_ROUTE", allow_cycling=True, altar=None, hidden=(), altar_waits="", altar_sign=False):
     short = map_name[len("Nabla"):]                                   # FlowerParadise
     upper = re.sub(r"(?<!^)(?=[A-Z])", "_", short).upper()            # FLOWER_PARADISE
     mapsec = "MAPSEC_NABLA_" + upper
@@ -97,7 +98,12 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
                         "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE",
                         "trainer_sight_or_berry_tree_id": "0", "script": "Nabla_%s_EventScript_%s" % (short, camel(species)),
                         "flag": "FLAG_TEMP_%d" % (11 + i)})
-    if altar:
+    bg_events = []
+    if altar and altar_sign:                       # a block of the map read from below, like a sign
+        bg_events.append({"type": "sign", "x": altar[0], "y": altar[1], "elevation": 0,
+                          "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+                          "script": "Nabla_%s_EventScript_Altar" % short})
+    elif altar:
         objects.append({"local_id": "LOCALID_%s_ALTAR" % upper, "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
                         "x": altar[0], "y": altar[1], "elevation": 3, "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
                         "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE",
@@ -113,7 +119,7 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
          "region": "REGION_HOENN", "region_map_section": mapsec, "requires_flash": False, "weather": weather,
          "map_type": map_type, "allow_cycling": allow_cycling, "allow_escaping": False, "allow_running": True,
          "show_map_name": True, "battle_scene": "MAP_BATTLE_SCENE_NORMAL", "connections": None, "object_events": objects,
-         "warp_events": [], "coord_events": [], "bg_events": []}
+         "warp_events": [], "coord_events": [], "bg_events": bg_events}
     os.makedirs("data/maps/" + map_name, exist_ok=True)
     open("data/maps/%s/map.json" % map_name, "w", encoding="utf-8").write(json.dumps(m, indent=2, ensure_ascii=False) + "\n")
     open("data/maps/%s/scripts.inc" % map_name, "w", encoding="utf-8").write(

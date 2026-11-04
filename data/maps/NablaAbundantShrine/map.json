@@ -1,0 +1,87 @@
+{
+  "id": "MAP_NABLA_ABUNDANT_SHRINE",
+  "name": "NablaAbundantShrine",
+  "layout": "LAYOUT_NABLA_ABUNDANT_SHRINE",
+  "music": "MUS_ABNORMAL_WEATHER",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_NABLA_ABUNDANT_SHRINE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_ABUNDANT_SHRINE_TORNADUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TORNADUS)",
+      "x": 10,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_AbundantShrine_EventScript_Tornadus",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "local_id": "LOCALID_ABUNDANT_SHRINE_THUNDURUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(THUNDURUS)",
+      "x": 36,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_AbundantShrine_EventScript_Thundurus",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_ABUNDANT_SHRINE_LANDORUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LANDORUS)",
+      "x": 21,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_AbundantShrine_EventScript_Landorus",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "local_id": "LOCALID_ABUNDANT_SHRINE_ENAMORUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ENAMORUS)",
+      "x": 25,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Nabla_AbundantShrine_EventScript_Enamorus",
+      "flag": "FLAG_TEMP_14"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Nabla_AbundantShrine_EventScript_Altar"
+    }
+  ]
+}

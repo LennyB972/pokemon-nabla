@@ -616,3 +616,107 @@ Nabla_PinwheelForest_EventScript_AltarWaits:
 	msgbox Nabla_Text_PinwheelForestAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Abundant Shrine: Tornadus and Thundurus in the maze; Landorus, then Enamorus, at the shrine
+Nabla_AbundantShrine_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Tornadus
+	setflag FLAG_TEMP_12  @ Thundurus
+	setflag FLAG_TEMP_13  @ Landorus
+	setflag FLAG_TEMP_14  @ Enamorus
+	call_if_unset FLAG_NABLA_TORNADUS_CAUGHT, Nabla_AbundantShrine_EventScript_ShowTornadus
+	call_if_unset FLAG_NABLA_THUNDURUS_CAUGHT, Nabla_AbundantShrine_EventScript_ShowThundurus
+	return
+
+Nabla_AbundantShrine_EventScript_ShowTornadus:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_AbundantShrine_EventScript_ShowThundurus:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_AbundantShrine_EventScript_Tornadus::
+	setvar VAR_0x8004, SPECIES_TORNADUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TORNADUS_CAUGHT
+	release
+	end
+
+Nabla_AbundantShrine_EventScript_Thundurus::
+	setvar VAR_0x8004, SPECIES_THUNDURUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_THUNDURUS_CAUGHT
+	release
+	end
+
+Nabla_AbundantShrine_EventScript_Landorus::
+	setvar VAR_0x8004, SPECIES_LANDORUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_LANDORUS_CAUGHT
+	release
+	end
+
+Nabla_AbundantShrine_EventScript_Enamorus::
+	setvar VAR_0x8004, SPECIES_ENAMORUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ENAMORUS_CAUGHT
+	release
+	end
+
+Nabla_AbundantShrine_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_LANDORUS_CAUGHT, Nabla_AbundantShrine_EventScript_AltarNotLandorus
+	goto_if_unset FLAG_TEMP_13, Nabla_AbundantShrine_EventScript_AltarNotLandorus
+	setvar VAR_0x8004, SPECIES_TORNADUS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AbundantShrine_EventScript_AltarNotLandorus
+	setvar VAR_0x8004, SPECIES_THUNDURUS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AbundantShrine_EventScript_AltarNotLandorus
+	msgbox Nabla_Text_AbundantShrineAltarAwakensLandorus, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_LANDORUS, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_13
+	addobject LOCALID_ABUNDANT_SHRINE_LANDORUS
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_AbundantShrine_EventScript_AltarNotLandorus:
+	goto_if_set FLAG_NABLA_ENAMORUS_CAUGHT, Nabla_AbundantShrine_EventScript_AltarNotEnamorus
+	goto_if_unset FLAG_TEMP_14, Nabla_AbundantShrine_EventScript_AltarNotEnamorus
+	setvar VAR_0x8004, SPECIES_TORNADUS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AbundantShrine_EventScript_AltarNotEnamorus
+	setvar VAR_0x8004, SPECIES_THUNDURUS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AbundantShrine_EventScript_AltarNotEnamorus
+	setvar VAR_0x8004, SPECIES_LANDORUS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AbundantShrine_EventScript_AltarNotEnamorus
+	msgbox Nabla_Text_AbundantShrineAltarAwakensEnamorus, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_ENAMORUS, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_14
+	addobject LOCALID_ABUNDANT_SHRINE_ENAMORUS
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_AbundantShrine_EventScript_AltarNotEnamorus:
+	goto_if_unset FLAG_TEMP_13, Nabla_AbundantShrine_EventScript_AltarQuiet
+	goto_if_unset FLAG_TEMP_14, Nabla_AbundantShrine_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_LANDORUS_CAUGHT, Nabla_AbundantShrine_EventScript_AltarWaits
+	goto_if_unset FLAG_NABLA_ENAMORUS_CAUGHT, Nabla_AbundantShrine_EventScript_AltarWaits
+Nabla_AbundantShrine_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_AbundantShrine_EventScript_AltarWaits:
+	msgbox Nabla_Text_AbundantShrineAltarWaits, MSGBOX_DEFAULT
+	release
+	end

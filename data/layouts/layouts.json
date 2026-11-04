@@ -9499,6 +9499,17 @@
       "border_filepath": "data/layouts/NablaPinwheelForest/border.bin",
       "blockdata_filepath": "data/layouts/NablaPinwheelForest/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_ABUNDANT_SHRINE",
+      "name": "NablaAbundantShrine_Layout",
+      "width": 50,
+      "height": 37,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NablaAbundantShrine/border.bin",
+      "blockdata_filepath": "data/layouts/NablaAbundantShrine/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

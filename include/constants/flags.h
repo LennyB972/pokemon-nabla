@@ -79,10 +79,10 @@
 #define FLAG_NABLA_TERRAKION_CAUGHT 0x39
 #define FLAG_NABLA_VIRIZION_CAUGHT 0x3A
 #define FLAG_NABLA_KELDEO_CAUGHT 0x3B
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_NABLA_TORNADUS_CAUGHT 0x3C
+#define FLAG_NABLA_THUNDURUS_CAUGHT 0x3D
+#define FLAG_NABLA_LANDORUS_CAUGHT 0x3E
+#define FLAG_NABLA_ENAMORUS_CAUGHT 0x3F
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag

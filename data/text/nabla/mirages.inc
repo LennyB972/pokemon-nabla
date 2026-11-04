@@ -20,3 +20,16 @@ Nabla_Text_PinwheelForestAltarWaits:
 Nabla_Text_PinwheelForestAltarAwakensKeldeo:
 	.string "COBALION, TERRAKION and VIRIZION\n"
 	.string "react to the altar!$"
+
+Nabla_Text_AbundantShrineAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "FORCES OF NATURE…$"
+
+Nabla_Text_AbundantShrineAltarAwakensLandorus:
+	.string "TORNADUS and THUNDURUS\n"
+	.string "react to the altar!$"
+
+Nabla_Text_AbundantShrineAltarAwakensEnamorus:
+	.string "TORNADUS, THUNDURUS and LANDORUS\n"
+	.string "react to the altar!$"
