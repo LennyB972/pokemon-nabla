@@ -1674,6 +1674,10 @@
     {
       "id": "MAPSEC_NABLA_THREE_LAKES",
       "name": "THREE LAKES"
+    },
+    {
+      "id": "MAPSEC_NABLA_SPEAR_PILLAR",
+      "name": "SPEAR PILLAR"
     }
   ]
 }

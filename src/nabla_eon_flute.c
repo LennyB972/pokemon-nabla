@@ -1,7 +1,9 @@
 #include "global.h"
+#include "event_data.h"
 #include "field_screen_effect.h"
 #include "nabla_eon_flute.h"
 #include "overworld.h"
+#include "pokemon.h"
 #include "rtc.h"
 #include "constants/region_map_sections.h"
 
@@ -20,6 +22,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_CERULEAN_CAVE,
     MAPSEC_NABLA_BURNED_TOWER,
     MAPSEC_NABLA_THREE_LAKES,
+    MAPSEC_NABLA_SPEAR_PILLAR,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)
@@ -49,4 +52,19 @@ void NablaEonFlute_WarpBack(void)
 bool8 NablaMirage_IsNight(void)
 {
     return GetTimeOfDay() == TIME_NIGHT;
+}
+
+// A Pokémon hidden in a mirage shows up at its altar when the player has the Pokémon it asks for in their party
+// (data/scripts/nabla/mirages.inc): TRUE if the party has the species in VAR_0x8004, in any of its forms
+bool8 NablaMirage_PartyHasSpecies(void)
+{
+    enum Species species = GET_BASE_SPECIES_ID(gSpecialVar_0x8004);
+
+    for (u32 i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG)
+         && GET_BASE_SPECIES_ID(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES)) == species)
+            return TRUE;
+    }
+    return FALSE;
 }

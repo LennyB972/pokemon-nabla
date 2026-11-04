@@ -611,6 +611,7 @@ gStdScripts_End::
 	.include "data/maps/NablaCeruleanCave/scripts.inc"
 	.include "data/maps/NablaBurnedTower/scripts.inc"
 	.include "data/maps/NablaThreeLakes/scripts.inc"
+	.include "data/maps/NablaSpearPillar/scripts.inc"
 
 .if IS_FRLG
 
@@ -1778,3 +1779,4 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/nabla/eon_flute.inc"
 	.include "data/text/nabla/eon_flute.inc"
 	.include "data/scripts/nabla/mirages.inc"
+	.include "data/text/nabla/mirages.inc"

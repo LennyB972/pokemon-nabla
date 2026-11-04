@@ -66,10 +66,10 @@
 #define FLAG_NABLA_UXIE_CAUGHT 0x2C
 #define FLAG_NABLA_MESPRIT_CAUGHT 0x2D
 #define FLAG_NABLA_AZELF_CAUGHT 0x2E
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_NABLA_DIALGA_CAUGHT 0x2F
+#define FLAG_NABLA_PALKIA_CAUGHT 0x30
+#define FLAG_NABLA_GIRATINA_CAUGHT 0x31
+#define FLAG_NABLA_ARCEUS_CAUGHT 0x32
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag

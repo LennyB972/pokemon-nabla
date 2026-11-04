@@ -351,3 +351,90 @@ Nabla_ThreeLakes_EventScript_Azelf::
 	setflag FLAG_NABLA_AZELF_CAUGHT
 	release
 	end
+
+@ Spear Pillar: Dialga, Palkia and Giratina on the roof and its ledge (the place is in the list of the Eon Flute
+@ once Uxie, Mesprit and Azelf are caught); Arceus appears at the altar when the three are in the party
+Nabla_SpearPillar_EventScript_SetUp::
+	setflag FLAG_TEMP_11  @ Dialga
+	setflag FLAG_TEMP_12  @ Palkia
+	setflag FLAG_TEMP_13  @ Giratina
+	setflag FLAG_TEMP_14  @ Arceus
+	call_if_unset FLAG_NABLA_DIALGA_CAUGHT, Nabla_SpearPillar_EventScript_ShowDialga
+	call_if_unset FLAG_NABLA_PALKIA_CAUGHT, Nabla_SpearPillar_EventScript_ShowPalkia
+	call_if_unset FLAG_NABLA_GIRATINA_CAUGHT, Nabla_SpearPillar_EventScript_ShowGiratina
+	return
+
+Nabla_SpearPillar_EventScript_ShowDialga:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_SpearPillar_EventScript_ShowPalkia:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_SpearPillar_EventScript_ShowGiratina:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_SpearPillar_EventScript_Dialga::
+	setvar VAR_0x8004, SPECIES_DIALGA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_DIALGA_CAUGHT
+	release
+	end
+
+Nabla_SpearPillar_EventScript_Palkia::
+	setvar VAR_0x8004, SPECIES_PALKIA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_PALKIA_CAUGHT
+	release
+	end
+
+Nabla_SpearPillar_EventScript_Giratina::
+	setvar VAR_0x8004, SPECIES_GIRATINA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_GIRATINA_CAUGHT
+	release
+	end
+
+Nabla_SpearPillar_EventScript_Arceus::
+	setvar VAR_0x8004, SPECIES_ARCEUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ARCEUS_CAUGHT
+	release
+	end
+
+@ The altar: with Dialga, Palkia and Giratina in the party, Arceus appears behind it (until the player leaves)
+Nabla_SpearPillar_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_ARCEUS_CAUGHT, Nabla_SpearPillar_EventScript_AltarQuiet
+	goto_if_unset FLAG_TEMP_14, Nabla_SpearPillar_EventScript_AltarQuiet
+	setvar VAR_0x8004, SPECIES_DIALGA
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_SpearPillar_EventScript_AltarWaits
+	setvar VAR_0x8004, SPECIES_PALKIA
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_SpearPillar_EventScript_AltarWaits
+	setvar VAR_0x8004, SPECIES_GIRATINA
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_SpearPillar_EventScript_AltarWaits
+	msgbox Nabla_Text_SpearPillarAltarAwakens, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_14
+	addobject LOCALID_SPEAR_PILLAR_ARCEUS
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+
+Nabla_SpearPillar_EventScript_AltarWaits:
+	msgbox Nabla_Text_SpearPillarAltarWaits, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_SpearPillar_EventScript_AltarQuiet:
+	msgbox Nabla_Text_SpearPillarAltar, MSGBOX_DEFAULT
+	release
+	end

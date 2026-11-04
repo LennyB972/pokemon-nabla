@@ -9444,6 +9444,17 @@
       "border_filepath": "data/layouts/NablaThreeLakes/border.bin",
       "blockdata_filepath": "data/layouts/NablaThreeLakes/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_SPEAR_PILLAR",
+      "name": "NablaSpearPillar_Layout",
+      "width": 27,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/NablaSpearPillar/border.bin",
+      "blockdata_filepath": "data/layouts/NablaSpearPillar/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

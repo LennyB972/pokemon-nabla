@@ -36,6 +36,9 @@ Nabla_Text_BurnedTower:
 Nabla_Text_ThreeLakes:
 	.string "THREE LAKES$"
 
+Nabla_Text_SpearPillar:
+	.string "SPEAR PILLAR$"
+
 Nabla_Text_MomStevenCameBy:
 	.string "MOM: And an elegant young man named\n"
 	.string "STEVEN came by while you were away.\p"

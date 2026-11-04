@@ -651,3 +651,4 @@ gSpecials::
 	def_special NablaEonFlute_SaveReturnPoint
 	def_special NablaEonFlute_WarpBack
 	def_special NablaMirage_IsNight
+	def_special NablaMirage_PartyHasSpecies

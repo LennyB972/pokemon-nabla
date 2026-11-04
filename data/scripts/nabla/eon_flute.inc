@@ -21,6 +21,7 @@ Nabla_EventScript_EonFlute::
 	getcaughtmon SPECIES_HO_OH
 	call_if_eq VAR_RESULT, TRUE, Nabla_EventScript_EonFluteListBurnedTower
 	dynmultipush Nabla_Text_ThreeLakes, 9
+	call Nabla_EventScript_EonFluteListSpearPillar
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -34,6 +35,7 @@ Nabla_EventScript_EonFlute::
 	case 7, Nabla_EventScript_EonFluteToCeruleanCave
 	case 8, Nabla_EventScript_EonFluteToBurnedTower
 	case 9, Nabla_EventScript_EonFluteToThreeLakes
+	case 10, Nabla_EventScript_EonFluteToSpearPillar
 	releaseall
 	end
 
@@ -99,6 +101,17 @@ Nabla_EventScript_EonFluteListBurnedTower:
 	dynmultipush Nabla_Text_BurnedTower, 8
 	return
 
+Nabla_EventScript_EonFluteListSpearPillar:
+	getcaughtmon SPECIES_UXIE
+	goto_if_eq VAR_RESULT, FALSE, Nabla_EventScript_EonFluteListNothing
+	getcaughtmon SPECIES_MESPRIT
+	goto_if_eq VAR_RESULT, FALSE, Nabla_EventScript_EonFluteListNothing
+	getcaughtmon SPECIES_AZELF
+	goto_if_eq VAR_RESULT, FALSE, Nabla_EventScript_EonFluteListNothing
+	dynmultipush Nabla_Text_SpearPillar, 10
+Nabla_EventScript_EonFluteListNothing:
+	return
+
 Nabla_EventScript_EonFluteToCeruleanCave:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_CERULEAN_CAVE, 12, 23
@@ -116,6 +129,13 @@ Nabla_EventScript_EonFluteToBurnedTower:
 Nabla_EventScript_EonFluteToThreeLakes:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_THREE_LAKES, 15, 16
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToSpearPillar:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_SPEAR_PILLAR, 12, 16
 	waitstate
 	releaseall
 	end
