@@ -1,5 +1,7 @@
 @ Legendary Pokémon of the places the Eon Flute leads to (docs/nabla/postgame.md). Each one is an object, visible
 @ until it is caught (one FLAG_NABLA_*_CAUGHT each), hidden by a temporary flag set when entering the map.
+@ The following Pokémon stays in its ball there: the whole sheet of each sprite in view is loaded, and big ones
+@ (64 x 64) would not fit with it (dev_scripts/nabla/reach.py checks the maps).
 
 @ Battle with the legendary Pokémon the player talked to (species in VAR_0x8004), at level 80. Returns if it was
 @ caught (the caller sets its flag and releases); otherwise it flies away until the next visit.
@@ -23,6 +25,7 @@ Nabla_EventScript_MirageLegendary::
 
 @ Bird Islet: Articuno, Zapdos and Moltres by day, their forms of Galar at night
 Nabla_BirdIslet_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Articuno
 	setflag FLAG_TEMP_12  @ Zapdos
 	setflag FLAG_TEMP_13  @ Moltres
@@ -110,6 +113,7 @@ Nabla_BirdIslet_EventScript_MoltresGalar::
 
 @ Moon Island: Cresselia by day, Darkrai at night, in the clearing
 Nabla_MoonIsland_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Cresselia
 	setflag FLAG_TEMP_12  @ Darkrai
 	specialvar VAR_RESULT, NablaMirage_IsNight
@@ -139,6 +143,7 @@ Nabla_MoonIsland_EventScript_Darkrai::
 
 @ Liberty Island: Victini and Meloetta, on the ring of sand
 Nabla_LibertyIsland_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Victini
 	setflag FLAG_TEMP_12  @ Meloetta
 	call_if_unset FLAG_NABLA_VICTINI_CAUGHT, Nabla_LibertyIsland_EventScript_ShowVictini
@@ -169,6 +174,7 @@ Nabla_LibertyIsland_EventScript_Meloetta::
 
 @ Tapu Islands: one islet for each Tapu, Zeraora and Marshadow on the main island
 Nabla_TapuIslands_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ TapuKoko
 	setflag FLAG_TEMP_12  @ TapuLele
 	setflag FLAG_TEMP_13  @ TapuBulu
@@ -251,6 +257,7 @@ Nabla_TapuIslands_EventScript_Zeraora::
 
 @ Cerulean Cave: Mewtwo, on the peninsula of the lake (the cave is in the list of the Eon Flute once Mew is caught)
 Nabla_CeruleanCave_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Mewtwo
 	call_if_unset FLAG_NABLA_MEWTWO_CAUGHT, Nabla_CeruleanCave_EventScript_ShowMewtwo
 	return
@@ -268,6 +275,7 @@ Nabla_CeruleanCave_EventScript_Mewtwo::
 
 @ Burned Tower: Raikou, Entei and Suicune, in the hall (the tower is in the list of the Eon Flute once Ho-Oh is caught)
 Nabla_BurnedTower_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Raikou
 	setflag FLAG_TEMP_12  @ Entei
 	setflag FLAG_TEMP_13  @ Suicune
@@ -311,6 +319,7 @@ Nabla_BurnedTower_EventScript_Suicune::
 
 @ Three Lakes: Uxie, Mesprit and Azelf, on the banks of the three ponds
 Nabla_ThreeLakes_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Uxie
 	setflag FLAG_TEMP_12  @ Mesprit
 	setflag FLAG_TEMP_13  @ Azelf
@@ -355,6 +364,7 @@ Nabla_ThreeLakes_EventScript_Azelf::
 @ Spear Pillar: Dialga, Palkia and Giratina on the roof and its ledge (the place is in the list of the Eon Flute
 @ once Uxie, Mesprit and Azelf are caught); Arceus appears at the altar when the three are in the party
 Nabla_SpearPillar_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	setflag FLAG_TEMP_11  @ Dialga
 	setflag FLAG_TEMP_12  @ Palkia
 	setflag FLAG_TEMP_13  @ Giratina

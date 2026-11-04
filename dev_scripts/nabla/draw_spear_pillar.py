@@ -5,8 +5,9 @@ The roof of the Sky Pillar (tilesets General and Pacifidlog), with its rubble, i
 its holes are plain floor (there is no floor below to fall to), the door to the floor below is wall, and the sky
 above the roof is blocked. The rubble that closed the middle of the roof (the way to Rayquaza) is opened in a few
 places, so that the whole roof and the ledge below it can be walked; single cells closed by rubble are blocked.
-The player arrives on the ledge and goes up by the stairs. Dialga waits on the west of the roof, Palkia on the
-east, Giratina at the end of the ledge; the altar stands in the middle of the roof, and Arceus appears behind it.
+The player arrives on the ledge and goes up by the stairs. The altar stands in the north-west corner of the roof,
+and Arceus appears behind it; Dialga waits on the west of the roof, Palkia on the east, Giratina at the end of the
+ledge. Their sprites are big (64 x 64): never more than two of them in view (reach.py checks it).
 
 Running it again overwrites the map, including changes made in Porymap since.
 Usage (from the repo root): python3 dev_scripts/nabla/draw_spear_pillar.py
@@ -16,12 +17,12 @@ import struct
 import reach
 
 W, H = 27, 24
-LEGENDARIES = {"DIALGA": (4, 7), "PALKIA": (20, 7), "GIRATINA": (26, 16)}
-ALTAR, ARCEUS = (14, 5), (14, 4)
+LEGENDARIES = {"DIALGA": (5, 10), "PALKIA": (23, 6), "GIRATINA": (26, 16)}
+ALTAR, ARCEUS = (2, 5), (2, 4)
 ARRIVAL = (12, 16)
-# Rubble opened: between the middle of the roof and its west, its east, the north-west of the middle, the two
-# cells next to Arceus, and along the ledge
-OPENED = [(8, 12), (20, 12), (10, 6), (13, 4), (15, 4), (6, 16), (17, 16), (20, 17), (22, 17)]
+# Rubble opened: between the middle of the roof and its west, its east, the north-west of the middle, and along the
+# ledge
+OPENED = [(8, 12), (20, 12), (10, 6), (6, 16), (17, 16), (20, 17), (22, 17)]
 
 src = open("data/layouts/SkyPillar_Top/map.bin", "rb").read()
 src = [[struct.unpack_from("<H", src, 2 * (y * W + x))[0] for x in range(W)] for y in range(H)]

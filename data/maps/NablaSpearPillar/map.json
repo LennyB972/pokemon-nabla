@@ -18,8 +18,8 @@
     {
       "local_id": "LOCALID_SPEAR_PILLAR_DIALGA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DIALGA)",
-      "x": 4,
-      "y": 7,
+      "x": 5,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -32,8 +32,8 @@
     {
       "local_id": "LOCALID_SPEAR_PILLAR_PALKIA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PALKIA)",
-      "x": 20,
-      "y": 7,
+      "x": 23,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -49,7 +49,7 @@
       "x": 26,
       "y": 16,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -60,7 +60,7 @@
     {
       "local_id": "LOCALID_SPEAR_PILLAR_ARCEUS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARCEUS)",
-      "x": 14,
+      "x": 2,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
@@ -74,7 +74,7 @@
     {
       "local_id": "LOCALID_SPEAR_PILLAR_ALTAR",
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 14,
+      "x": 2,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",

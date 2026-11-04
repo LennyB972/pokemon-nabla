@@ -5,13 +5,22 @@ a block with collision stops the player; two elevations other than 0 and 15 must
 like stairs, goes between elevations); surfing starts from elevation 3 onto water of elevation 1 and stops on
 elevation 3.
 
-Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell, and that
-no object cuts off a part of the map.
+Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell, that no
+object cuts off a part of the map, and that the Pokémon in view never fill the memory of sprites: the whole sheet of
+a Pokémon's sprite is loaded (OW_GFX_COMPRESS), 384 tiles for a big one (64 x 64), and only two big sheets fit next
+to the player (the mirages hide the following Pokémon with FLAG_TEMP_HIDE_FOLLOWER); beyond, sprites show garbage.
 Usage (from the repo root): python3 dev_scripts/nabla/reach.py <Map> <x> <y>
 """
 import json
+import os
+import re
 import struct
 import sys
+
+from PIL import Image
+
+SPRITE_TILES = 768                   # two big sheets
+VIEW_LEFT, VIEW_RIGHT, VIEW_UP, VIEW_DOWN = 9, 10, 7, 9  # objects spawned around the player (TrySpawnObjectEvents)
 
 elevation = lambda v: v >> 12
 blocked = lambda v: (v >> 10) & 3
@@ -49,6 +58,20 @@ def reach(blocks, start, objects=()):
     return {(x, y) for x, y, _ in seen}, talked
 
 
+def sheet_tiles(graphics_id):
+    """Tiles of the whole sheet of a Pokémon's sprite (OBJ_EVENT_GFX_SPECIES), 0 for other objects."""
+    m = re.fullmatch(r"OBJ_EVENT_GFX_SPECIES\((\w+)\)", graphics_id)
+    if not m:
+        return 0
+    name = m.group(1).lower()
+    base, _, form = name.rpartition("_")
+    for path in ("graphics/pokemon/%s/overworld.png" % name, "graphics/pokemon/%s/%s/overworld.png" % (base, form)):
+        if os.path.exists(path):
+            w, h = Image.open(path).size
+            return w * h // 64
+    raise FileNotFoundError(graphics_id)
+
+
 def load(name):
     m = json.load(open("data/maps/%s/map.json" % name))
     layout = next(l for l in json.load(open("data/layouts/layouts.json"))["layouts"] if l.get("id") == m["layout"])
@@ -69,5 +92,13 @@ if __name__ == "__main__":
                  % (o["graphics_id"], x, y, o["elevation"], elevation(blocks[y][x]))
                  for (x, y), o in objects.items() if elevation(blocks[y][x]) not in (o["elevation"], 0, 15)]
     problems += ["(%d, %d): cut off by the objects" % c for c in sorted(alone - cells - set(objects))]
+    # The sheets in view, from every cell the player can stand on (one sheet per species)
+    for px, py in sorted(cells):
+        sheets = {o["graphics_id"]: sheet_tiles(o["graphics_id"]) for (x, y), o in objects.items()
+                  if px - VIEW_LEFT <= x <= px + VIEW_RIGHT and py - VIEW_UP <= y <= py + VIEW_DOWN}
+        if sum(sheets.values()) > SPRITE_TILES:
+            problems.append("(%d, %d): too many sprites in view (%d tiles): %s"
+                            % (px, py, sum(sheets.values()), ", ".join(sorted(g for g in sheets if sheets[g]))))
+            break
     print("\n".join(problems) or "%s: every object can be reached on foot" % name)
     sys.exit(bool(problems))

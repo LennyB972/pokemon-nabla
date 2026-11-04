@@ -274,6 +274,7 @@ Formes régionales : `_ALOLA`, `_GALAR`, `_HISUI` (exemples : RATTATA_ALOLA, ZIG
 ## Pièges déjà rencontrés
 
 - Ne jamais réattribuer un flag ou une var Nabla libéré (sauvegardes de l'utilisateur).
+- **Sprites des Pokémon en PNJ** : chaque Pokémon à l'écran charge toutes ses poses (`OW_GFX_COMPRESS`) : 384 tuiles pour un gros sprite (64 × 64), 96 pour un petit ; au-delà de deux gros à l'écran, ils s'affichent en morceaux. Sur les mirages, le suiveur est caché (`FLAG_TEMP_HIDE_FOLLOWER`) et `reach.py` vérifie la mémoire (Palkia en morceaux, 2026-11-04).
 - Relancer `scale_levels.py` écrase les niveaux des dresseurs ordinaires et des sauvages, y compris une retouche faite dans Porymap. Pour rééquilibrer, changer un facteur ou l'étape d'une map dans le script.
 - Objets de map : ajouter en fin de liste uniquement (sinon `addobject` casse, cas de Latios). Listes numérotées (maps, layouts, sections de carte, dresseurs) : ajouter toujours **à la fin**.
 - `wild_encounters.json` contient aussi les tables de RFVF (labels `_FireRed`/`_LeafGreen`) : les ignorer, et ne pas en parler à l'utilisateur, qui ne s'occupe que d'Émeraude.
