@@ -510,3 +510,21 @@ Nabla_FlowerParadise_EventScript_Zarude::
 	setflag FLAG_NABLA_ZARUDE_CAUGHT
 	release
 	end
+
+@ Sea Temple, under the sea: Manaphy in front of the carved rock
+Nabla_SeaTemple_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Manaphy
+	call_if_unset FLAG_NABLA_MANAPHY_CAUGHT, Nabla_SeaTemple_EventScript_ShowManaphy
+	return
+
+Nabla_SeaTemple_EventScript_ShowManaphy:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_SeaTemple_EventScript_Manaphy::
+	setvar VAR_0x8004, SPECIES_MANAPHY
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MANAPHY_CAUGHT
+	release
+	end

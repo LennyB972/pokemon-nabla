@@ -70,3 +70,6 @@ Nabla_Text_StevenAboutEonFlute:
 
 Nabla_Text_FlowerParadise:
 	.string "FLOWER PARADISE$"
+
+Nabla_Text_SeaTemple:
+	.string "SEA TEMPLE$"

@@ -9477,6 +9477,17 @@
       "border_filepath": "data/layouts/NablaFlowerParadise/border.bin",
       "blockdata_filepath": "data/layouts/NablaFlowerParadise/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_SEA_TEMPLE",
+      "name": "NablaSeaTemple_Layout",
+      "width": 22,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/NablaSeaTemple/border.bin",
+      "blockdata_filepath": "data/layouts/NablaSeaTemple/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
