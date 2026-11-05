@@ -9,6 +9,7 @@ Run on a map, it checks that the player can walk to every object of the map (Pok
 object cuts off a part of the map, and that the Pokémon in view never fill the memory of sprites: the whole sheet of
 a Pokémon's sprite is loaded (OW_GFX_COMPRESS), 384 tiles for a big one (64 x 64), and only two big sheets fit next
 to the player (the mirages hide the following Pokémon with FLAG_TEMP_HIDE_FOLLOWER); beyond, sprites show garbage.
+A Pokémon called by an altar is never there with the Pokémon it asks for in the party (caught, so gone from the map).
 Usage (from the repo root): python3 dev_scripts/nabla/reach.py <Map> <x> <y>
 """
 import json
@@ -95,6 +96,13 @@ def sheet_tiles(graphics_id):
     raise FileNotFoundError(graphics_id)
 
 
+def altar_requirements():
+    """The Pokémon each Pokémon called by an altar asks for (data/scripts/nabla/mirages.inc), as species names."""
+    s = open("data/scripts/nabla/mirages.inc", encoding="utf-8").read()
+    return {m.group(1): set(re.findall(r"setvar VAR_0x8004, SPECIES_(\w+)", m.group(2))) for m in
+            re.finditer(r"goto_if_set FLAG_NABLA_(\w+)_CAUGHT, \w+\n(.*?)\taddobject LOCALID_\w+?_\1\n", s, re.S)}
+
+
 def load(name):
     """The map.json of a map, its blocks and its ledges."""
     m = json.load(open("data/maps/%s/map.json" % name))
@@ -117,13 +125,22 @@ if __name__ == "__main__":
                  % (o["graphics_id"], x, y, o["elevation"], elevation(blocks[y][x]))
                  for (x, y), o in objects.items() if elevation(blocks[y][x]) not in (o["elevation"], 0, 15)]
     problems += ["(%d, %d): cut off by the objects" % c for c in sorted(alone - cells - set(objects))]
-    # The sheets in view, from every cell the player can stand on (one sheet per species)
+    # The sheets in view, from every cell the player can stand on (one sheet per species), the Pokémon called by an
+    # altar being there or not, without the Pokémon they ask for when they are
+    species = lambda o: re.sub(r"OBJ_EVENT_GFX_SPECIES\((\w+)\)", r"\1", o["graphics_id"])
+    requirements = altar_requirements()
+    called = sorted({species(o) for o in objects.values()} & set(requirements))
     for px, py in sorted(cells):
-        sheets = {o["graphics_id"]: sheet_tiles(o["graphics_id"]) for (x, y), o in objects.items()
-                  if px - VIEW_LEFT <= x <= px + VIEW_RIGHT and py - VIEW_UP <= y <= py + VIEW_DOWN}
-        if sum(sheets.values()) > SPRITE_TILES:
-            problems.append("(%d, %d): too many sprites in view (%d tiles): %s"
-                            % (px, py, sum(sheets.values()), ", ".join(sorted(g for g in sheets if sheets[g]))))
+        in_view = {species(o): sheet_tiles(o["graphics_id"]) for (x, y), o in objects.items()
+                   if px - VIEW_LEFT <= x <= px + VIEW_RIGHT and py - VIEW_UP <= y <= py + VIEW_DOWN}
+        worst = (0, ())
+        for k in range(1 << len(called)):
+            there = {c for i, c in enumerate(called) if k >> i & 1}
+            gone = set(called) - there | set().union(*(requirements[c] for c in there))
+            seen = {sp: tiles for sp, tiles in in_view.items() if sp not in gone}
+            worst = max(worst, (sum(seen.values()), tuple(sorted(sp for sp in seen if seen[sp]))))
+        if worst[0] > SPRITE_TILES:
+            problems.append("(%d, %d): too many sprites in view (%d tiles): %s" % (px, py, worst[0], ", ".join(worst[1])))
             break
     print("\n".join(problems) or "%s: every object can be reached on foot" % name)
     sys.exit(bool(problems))

@@ -33,3 +33,12 @@ Nabla_Text_AbundantShrineAltarAwakensLandorus:
 Nabla_Text_AbundantShrineAltarAwakensEnamorus:
 	.string "TORNADUS, THUNDURUS and LANDORUS\n"
 	.string "react to the altar!$"
+
+Nabla_Text_DragonspiralAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "dragons of truth and ideals…$"
+
+Nabla_Text_DragonspiralAltarAwakensKyurem:
+	.string "RESHIRAM and ZEKROM\n"
+	.string "react to the altar!$"

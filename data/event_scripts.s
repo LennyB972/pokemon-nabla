@@ -617,6 +617,7 @@ gStdScripts_End::
 	.include "data/maps/NablaSeaTemple/scripts.inc"
 	.include "data/maps/NablaPinwheelForest/scripts.inc"
 	.include "data/maps/NablaAbundantShrine/scripts.inc"
+	.include "data/maps/NablaDragonspiral/scripts.inc"
 
 .if IS_FRLG
 

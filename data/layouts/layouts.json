@@ -9510,6 +9510,17 @@
       "border_filepath": "data/layouts/NablaAbundantShrine/border.bin",
       "blockdata_filepath": "data/layouts/NablaAbundantShrine/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_DRAGONSPIRAL",
+      "name": "NablaDragonspiral_Layout",
+      "width": 28,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/NablaDragonspiral/border.bin",
+      "blockdata_filepath": "data/layouts/NablaDragonspiral/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

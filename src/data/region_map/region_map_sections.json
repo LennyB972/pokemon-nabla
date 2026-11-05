@@ -1698,6 +1698,10 @@
     {
       "id": "MAPSEC_NABLA_ABUNDANT_SHRINE",
       "name": "ABUNDANT SHRINE"
+    },
+    {
+      "id": "MAPSEC_NABLA_DRAGONSPIRAL",
+      "name": "DRAGONSPIRAL"
     }
   ]
 }

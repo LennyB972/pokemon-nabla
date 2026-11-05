@@ -720,3 +720,75 @@ Nabla_AbundantShrine_EventScript_AltarWaits:
 	msgbox Nabla_Text_AbundantShrineAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Dragonspiral: Reshiram and Zekrom around the tower, Kyurem at the altar
+Nabla_Dragonspiral_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Reshiram
+	setflag FLAG_TEMP_12  @ Zekrom
+	setflag FLAG_TEMP_13  @ Kyurem
+	call_if_unset FLAG_NABLA_RESHIRAM_CAUGHT, Nabla_Dragonspiral_EventScript_ShowReshiram
+	call_if_unset FLAG_NABLA_ZEKROM_CAUGHT, Nabla_Dragonspiral_EventScript_ShowZekrom
+	return
+
+Nabla_Dragonspiral_EventScript_ShowReshiram:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_Dragonspiral_EventScript_ShowZekrom:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_Dragonspiral_EventScript_Reshiram::
+	setvar VAR_0x8004, SPECIES_RESHIRAM
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_RESHIRAM_CAUGHT
+	release
+	end
+
+Nabla_Dragonspiral_EventScript_Zekrom::
+	setvar VAR_0x8004, SPECIES_ZEKROM
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ZEKROM_CAUGHT
+	release
+	end
+
+Nabla_Dragonspiral_EventScript_Kyurem::
+	setvar VAR_0x8004, SPECIES_KYUREM
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_KYUREM_CAUGHT
+	release
+	end
+
+Nabla_Dragonspiral_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_KYUREM_CAUGHT, Nabla_Dragonspiral_EventScript_AltarNotKyurem
+	goto_if_unset FLAG_TEMP_13, Nabla_Dragonspiral_EventScript_AltarNotKyurem
+	setvar VAR_0x8004, SPECIES_RESHIRAM
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_Dragonspiral_EventScript_AltarNotKyurem
+	setvar VAR_0x8004, SPECIES_ZEKROM
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_Dragonspiral_EventScript_AltarNotKyurem
+	msgbox Nabla_Text_DragonspiralAltarAwakensKyurem, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_KYUREM, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_13
+	addobject LOCALID_DRAGONSPIRAL_KYUREM
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_Dragonspiral_EventScript_AltarNotKyurem:
+	goto_if_unset FLAG_TEMP_13, Nabla_Dragonspiral_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_KYUREM_CAUGHT, Nabla_Dragonspiral_EventScript_AltarWaits
+Nabla_Dragonspiral_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_Dragonspiral_EventScript_AltarWaits:
+	msgbox Nabla_Text_DragonspiralAltarWaits, MSGBOX_DEFAULT
+	release
+	end

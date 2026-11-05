@@ -79,3 +79,6 @@ Nabla_Text_PinwheelForest:
 
 Nabla_Text_AbundantShrine:
 	.string "ABUNDANT SHRINE$"
+
+Nabla_Text_Dragonspiral:
+	.string "DRAGONSPIRAL$"

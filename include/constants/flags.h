@@ -83,9 +83,9 @@
 #define FLAG_NABLA_THUNDURUS_CAUGHT 0x3D
 #define FLAG_NABLA_LANDORUS_CAUGHT 0x3E
 #define FLAG_NABLA_ENAMORUS_CAUGHT 0x3F
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_NABLA_RESHIRAM_CAUGHT 0x40
+#define FLAG_NABLA_ZEKROM_CAUGHT 0x41
+#define FLAG_NABLA_KYUREM_CAUGHT 0x42
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
