@@ -24,7 +24,17 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 44,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Nabla_SealedChamber_EventScript_Current"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

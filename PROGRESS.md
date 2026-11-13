@@ -416,6 +416,13 @@
 - Mirage de Kitakami (`NablaKitakami`, 40 × 20, « KITAKAMI »), image validée par l'utilisateur (2026-11-14), dernier des 23 mirages : une clairière dessinée avec le générateur de forêt (`dev_scripts/nabla/draw_kitakami.py`) : hautes herbes, bosquets, étang, place centrale fleurie. Félicanis (0x4A0), Fortusimia (0x4A1), Favianos (0x4A2), Ogerpon (0x4A3) ; Pêchaminus (0x4A4) à l'autel avec les trois Loyaux dans l'équipe. Couverture : 92 / 97 légendaires ; manquent Regigigas, Regieleki, Regidrago (Chambre Scellée) et les deux Shifours (rouleaux de l'assistant du labo). Musique de Cimetronelle ; pas de condition.
   - **Test** : la Flûte → KITAKAMI ; arrivée au sud ; Félicanis, Fortusimia, Favianos, Ogerpon ; l'autel sans les Loyaux (« waiting for the LOYAL THREE… »), avec eux (Pêchaminus apparaît) ; retour avec la Flûte.
 - **Les 23 mirages sont branchés** (26 destinations de la Flûte Éon avec les trois îles d'événement).
+- Fin de 7.4, la Chambre Scellée (choix de l'utilisateur, 2026-11-14 ; `data/scripts/nabla/sealed_chamber.inc`, cartes d'Émeraude par ajouts) :
+  - **fermée jusqu'à la Ligue** par un courant : coord event sur la case d'où l'on remonte dans la Chambre (`Underwater_SealedChamber`, 12, 44) ; avant `FLAG_SYS_GAME_CLEAR`, message et le joueur repoussé d'une case. Les grottes des Regis, ouvertes par l'énigme de la Chambre, restent donc fermées aussi ;
+  - Regirock, Regice, Registeel au niveau 80 (`NABLA_POST_GAME_LEGENDARIES_LEVEL` dans `DesertRuins`, `IslandCave`, `AncientTomb`) ;
+  - salle intérieure : Regieleki (0x4A5) et Regidrago (0x4A6) entre les piliers ; Regigigas (0x4A7) apparaît au milieu quand on lit le mur du fond avec Regirock, Regice et Registeel dans l'équipe (`call` ajouté avant l'énigme Relicanth / Wailord, intacte) ; modèle des mirages ;
+  - Latiasite : donnée par l'assistant du labo (7.5).
+  - Couverture : 95 / 97 légendaires (manquent les deux Shifours : rouleaux de l'assistant du labo).
+  - **Test** (menu debug) : avant la Ligue, plonger Route 134 et nager vers la remontée de la Chambre : message, repoussé ; après la Ligue (flag `FLAG_SYS_GAME_CLEAR`) : on remonte ; salle intérieure : Regieleki, Regidrago ; le mur du fond avec Regirock, Regice, Registeel dans l'équipe : Regigigas apparaît ; les Regis d'Émeraude au niveau 80.
 
 ## Bugs connus
 

@@ -1,9 +1,11 @@
 SealedChamber_InnerRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Nabla_SealedChamber_OnTransition  @ Pokémon Nabla
 	.byte 0
 
 SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	lockall
 	braillemsgbox SealedChamber_InnerRoom_Braille_FirstWailordLastRelicanth
+	call Nabla_SealedChamber_EventScript_BackWall  @ Pokémon Nabla
 	goto_if_set FLAG_REGI_DOORS_OPENED, SealedChamber_InnerRoom_EventScript_NoEffect
 	specialvar VAR_RESULT, CheckRelicanthWailord
 	goto_if_eq VAR_RESULT, FALSE, SealedChamber_InnerRoom_EventScript_NoEffect

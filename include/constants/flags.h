@@ -1240,9 +1240,9 @@
 #define FLAG_NABLA_FEZANDIPITI_CAUGHT 0x4A2
 #define FLAG_NABLA_OGERPON_CAUGHT 0x4A3
 #define FLAG_NABLA_PECHARUNT_CAUGHT 0x4A4
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_NABLA_REGIELEKI_CAUGHT 0x4A5
+#define FLAG_NABLA_REGIDRAGO_CAUGHT 0x4A6
+#define FLAG_NABLA_REGIGIGAS_CAUGHT 0x4A7
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag

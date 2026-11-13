@@ -1795,3 +1795,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/eon_flute.inc"
 	.include "data/scripts/nabla/mirages.inc"
 	.include "data/text/nabla/mirages.inc"
+	.include "data/scripts/nabla/sealed_chamber.inc"
+	.include "data/text/nabla/sealed_chamber.inc"
