@@ -4,7 +4,7 @@ Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosm�
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
 - **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
-- **Légendaires et fabuleux** : 73 / 97 (les autres : phase 7).
+- **Légendaires et fabuleux** : 77 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
@@ -12,7 +12,7 @@ Aucune.
 
 ## Légendaires et fabuleux obtenables
 
-Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cosmoem, Cosmog, Cresselia, Darkrai, Deoxys_Normal, Dialga, Diancie, Enamorus_Incarnate, Entei, Genesect, Giratina_Altered, Groudon, Heatran, Ho_Oh, Hoopa_Confined, Jirachi, Keldeo_Ordinary, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Lunala, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Necrozma, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Reshiram, Shaymin_Land, Silvally_Normal, Solgaleo, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Thundurus_Incarnate, Tornadus_Incarnate, Type_Null, Uxie, Victini, Virizion, Volcanion, Xerneas_Neutral, Yveltal, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
+Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cosmoem, Cosmog, Cresselia, Darkrai, Deoxys_Normal, Dialga, Diancie, Enamorus_Incarnate, Entei, Eternatus, Genesect, Giratina_Altered, Groudon, Heatran, Ho_Oh, Hoopa_Confined, Jirachi, Keldeo_Ordinary, Kubfu, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Lunala, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Necrozma, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Reshiram, Shaymin_Land, Silvally_Normal, Solgaleo, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Thundurus_Incarnate, Tornadus_Incarnate, Type_Null, Uxie, Victini, Virizion, Volcanion, Xerneas_Neutral, Yveltal, Zacian_Hero, Zamazenta_Hero, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
 
 ## Évolutions à vérifier en jeu
 
@@ -61,6 +61,8 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Reaper Cloth | boutique ou script (evolution_items.inc) |
 | Ribbon Sweet | boutique ou script (evolution_items.inc) |
 | Sachet | boutique ou script (evolution_items.inc) |
+| Scroll Of Darkness | **introuvable** |
+| Scroll Of Waters | **introuvable** |
 | Shiny Stone | boutique ou script (evolution_items.inc) |
 | Star Sweet | boutique ou script (evolution_items.inc) |
 | Strawberry Sweet | boutique ou script (evolution_items.inc) |

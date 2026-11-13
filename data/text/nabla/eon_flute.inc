@@ -94,3 +94,6 @@ Nabla_Text_DiamondMine:
 
 Nabla_Text_SunMoonAltar:
 	.string "SUN & MOON ALTAR$"
+
+Nabla_Text_IsleOfArmor:
+	.string "ISLE OF ARMOR$"

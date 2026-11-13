@@ -1718,6 +1718,10 @@
     {
       "id": "MAPSEC_NABLA_SUN_MOON_ALTAR",
       "name": "SUN & MOON ALTAR"
+    },
+    {
+      "id": "MAPSEC_NABLA_ISLE_OF_ARMOR",
+      "name": "ISLE OF ARMOR"
     }
   ]
 }

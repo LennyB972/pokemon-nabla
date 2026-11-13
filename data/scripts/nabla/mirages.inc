@@ -1097,3 +1097,89 @@ Nabla_SunMoonAltar_EventScript_AltarWaits:
 	msgbox Nabla_Text_SunMoonAltarAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Isle of Armor: Zacian and Zamazenta on the grass, Kubfu comes along, Eternatus at the altar
+Nabla_IsleOfArmor_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Zacian
+	setflag FLAG_TEMP_12  @ Zamazenta
+	setflag FLAG_TEMP_13  @ Kubfu
+	setflag FLAG_TEMP_14  @ Eternatus
+	call_if_unset FLAG_NABLA_ZACIAN_CAUGHT, Nabla_IsleOfArmor_EventScript_ShowZacian
+	call_if_unset FLAG_NABLA_ZAMAZENTA_CAUGHT, Nabla_IsleOfArmor_EventScript_ShowZamazenta
+	call_if_unset FLAG_NABLA_RECEIVED_KUBFU, Nabla_IsleOfArmor_EventScript_ShowKubfu
+	return
+
+Nabla_IsleOfArmor_EventScript_ShowZacian:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_IsleOfArmor_EventScript_ShowZamazenta:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_IsleOfArmor_EventScript_ShowKubfu:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_IsleOfArmor_EventScript_Zacian::
+	setvar VAR_0x8004, SPECIES_ZACIAN
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ZACIAN_CAUGHT
+	release
+	end
+
+Nabla_IsleOfArmor_EventScript_Zamazenta::
+	setvar VAR_0x8004, SPECIES_ZAMAZENTA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ZAMAZENTA_CAUGHT
+	release
+	end
+
+Nabla_IsleOfArmor_EventScript_Kubfu::
+	setvar VAR_0x8005, 10
+	setvar VAR_0x8004, SPECIES_KUBFU
+	call Nabla_EventScript_MirageGift
+	setflag FLAG_NABLA_RECEIVED_KUBFU
+	release
+	end
+
+Nabla_IsleOfArmor_EventScript_Eternatus::
+	setvar VAR_0x8004, SPECIES_ETERNATUS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ETERNATUS_CAUGHT
+	release
+	end
+
+Nabla_IsleOfArmor_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_ETERNATUS_CAUGHT, Nabla_IsleOfArmor_EventScript_AltarNotEternatus
+	goto_if_unset FLAG_TEMP_14, Nabla_IsleOfArmor_EventScript_AltarNotEternatus
+	setvar VAR_0x8004, SPECIES_ZACIAN
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_IsleOfArmor_EventScript_AltarNotEternatus
+	setvar VAR_0x8004, SPECIES_ZAMAZENTA
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_IsleOfArmor_EventScript_AltarNotEternatus
+	msgbox Nabla_Text_IsleOfArmorAltarAwakensEternatus, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_ETERNATUS, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_14
+	addobject LOCALID_ISLE_OF_ARMOR_ETERNATUS
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_IsleOfArmor_EventScript_AltarNotEternatus:
+	goto_if_unset FLAG_TEMP_14, Nabla_IsleOfArmor_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_ETERNATUS_CAUGHT, Nabla_IsleOfArmor_EventScript_AltarWaits
+Nabla_IsleOfArmor_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_IsleOfArmor_EventScript_AltarWaits:
+	msgbox Nabla_Text_IsleOfArmorAltarWaits, MSGBOX_DEFAULT
+	release
+	end

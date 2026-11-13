@@ -9565,6 +9565,17 @@
       "border_filepath": "data/layouts/NablaSunMoonAltar/border.bin",
       "blockdata_filepath": "data/layouts/NablaSunMoonAltar/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_ISLE_OF_ARMOR",
+      "name": "NablaIsleOfArmor_Layout",
+      "width": 36,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/NablaIsleOfArmor/border.bin",
+      "blockdata_filepath": "data/layouts/NablaIsleOfArmor/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

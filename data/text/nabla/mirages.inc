@@ -76,3 +76,12 @@ Nabla_Text_SunMoonAltarAltarWaits:
 Nabla_Text_SunMoonAltarAltarAwakensNecrozma:
 	.string "{STR_VAR_1}\n"
 	.string "reacts to the altar!$"
+
+Nabla_Text_IsleOfArmorAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "sword and the shield of Galar…$"
+
+Nabla_Text_IsleOfArmorAltarAwakensEternatus:
+	.string "ZACIAN and ZAMAZENTA\n"
+	.string "react to the altar!$"

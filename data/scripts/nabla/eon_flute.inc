@@ -32,6 +32,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_KalosSanctuary, 18
 	dynmultipush Nabla_Text_DiamondMine, 19
 	dynmultipush Nabla_Text_SunMoonAltar, 20
+	dynmultipush Nabla_Text_IsleOfArmor, 21
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -56,6 +57,7 @@ Nabla_EventScript_EonFlute::
 	case 18, Nabla_EventScript_EonFluteToKalosSanctuary
 	case 19, Nabla_EventScript_EonFluteToDiamondMine
 	case 20, Nabla_EventScript_EonFluteToSunMoonAltar
+	case 21, Nabla_EventScript_EonFluteToIsleOfArmor
 	releaseall
 	end
 
@@ -226,6 +228,13 @@ Nabla_EventScript_EonFluteToDiamondMine:
 Nabla_EventScript_EonFluteToSunMoonAltar:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_SUN_MOON_ALTAR, 10, 18
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToIsleOfArmor:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_ISLE_OF_ARMOR, 27, 14
 	waitstate
 	releaseall
 	end
