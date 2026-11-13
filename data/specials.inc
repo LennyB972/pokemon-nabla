@@ -652,3 +652,6 @@ gSpecials::
 	def_special NablaEonFlute_WarpBack
 	def_special NablaMirage_IsNight
 	def_special NablaMirage_PartyHasSpecies
+	def_special NablaLabAssistant_Check
+	def_special NablaLabAssistant_NextItem
+	def_special NablaLabAssistant_GiveAllItems

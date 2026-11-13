@@ -147,6 +147,8 @@ def main():
         items.setdefault(item, "Ramassage")
     for item in re.findall(r"ITEM_\w+", open("data/maps/BattleFrontier_ExchangeServiceCorner/scripts.inc").read()):
         items.setdefault(item, "Échange de PCo")
+    for item in re.findall(r"ITEM_\w+", open("src/nabla_lab_assistant.c").read()):  # data/scripts/nabla/lab_assistant.inc
+        items.setdefault(item, "assistant du labo")
 
     # Evolutions triggered by a script of the game (Runerigus: Route 111 carvings)
     triggers = {t for text in scripts.values() for t in re.findall(r"tryspecialevo (EVO_TRIGGER_\w+)", text)}
@@ -170,6 +172,10 @@ def main():
                 base = species[base]["pre"]
             if is_species(base) and base not in reached and "EGG_GROUP_NO_EGGS_DISCOVERED" not in bodies[name] and not species[name]["legend"]:
                 reached[base] = "œuf de " + name.title()
+                changed = True
+            # Manaphy's Egg gives Phione (src/daycare.c)
+            if name == "MANAPHY" and "PHIONE" not in reached:
+                reached["PHIONE"] = "œuf de Manaphy"
                 changed = True
             for method, param, target, conditions in evos.get(name, []):
                 if not is_species(target) or target in reached:

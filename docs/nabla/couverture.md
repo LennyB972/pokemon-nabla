@@ -4,7 +4,7 @@ Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosm�
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
 - **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
-- **Légendaires et fabuleux** : 95 / 97 (les autres : phase 7).
+- **Légendaires et fabuleux** : 97 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
@@ -12,7 +12,7 @@ Aucune.
 
 ## Légendaires et fabuleux obtenables
 
-Arceus_Normal, Articuno, Articuno_Galar, Azelf, Calyrex, Celebi, Chi_Yu, Chien_Pao, Cobalion, Cosmoem, Cosmog, Cresselia, Darkrai, Deoxys_Normal, Dialga, Diancie, Enamorus_Incarnate, Entei, Eternatus, Fezandipiti, Genesect, Giratina_Altered, Glastrier, Groudon, Heatran, Ho_Oh, Hoopa_Confined, Jirachi, Keldeo_Ordinary, Koraidon, Kubfu, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Lunala, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Miraidon, Moltres, Moltres_Galar, Munkidori, Necrozma, Ogerpon_Teal, Okidogi, Palkia, Pecharunt, Raikou, Rayquaza, Regice, Regidrago, Regieleki, Regigigas, Regirock, Registeel, Reshiram, Shaymin_Land, Silvally_Normal, Solgaleo, Spectrier, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terapagos_Normal, Terrakion, Thundurus_Incarnate, Ting_Lu, Tornadus_Incarnate, Type_Null, Uxie, Victini, Virizion, Volcanion, Wo_Chien, Xerneas_Neutral, Yveltal, Zacian_Hero, Zamazenta_Hero, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
+Arceus_Normal, Articuno, Articuno_Galar, Azelf, Calyrex, Celebi, Chi_Yu, Chien_Pao, Cobalion, Cosmoem, Cosmog, Cresselia, Darkrai, Deoxys_Normal, Dialga, Diancie, Enamorus_Incarnate, Entei, Eternatus, Fezandipiti, Genesect, Giratina_Altered, Glastrier, Groudon, Heatran, Ho_Oh, Hoopa_Confined, Jirachi, Keldeo_Ordinary, Koraidon, Kubfu, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Lunala, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Miraidon, Moltres, Moltres_Galar, Munkidori, Necrozma, Ogerpon_Teal, Okidogi, Palkia, Pecharunt, Phione, Raikou, Rayquaza, Regice, Regidrago, Regieleki, Regigigas, Regirock, Registeel, Reshiram, Shaymin_Land, Silvally_Normal, Solgaleo, Spectrier, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terapagos_Normal, Terrakion, Thundurus_Incarnate, Ting_Lu, Tornadus_Incarnate, Type_Null, Urshifu_Single_Strike, Uxie, Victini, Virizion, Volcanion, Wo_Chien, Xerneas_Neutral, Yveltal, Zacian_Hero, Zamazenta_Hero, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
 
 ## Évolutions à vérifier en jeu
 
@@ -61,8 +61,8 @@ Conditions que le script ne peut pas vérifier (combat, pas, météo, lieu, capa
 | Reaper Cloth | boutique ou script (evolution_items.inc) |
 | Ribbon Sweet | boutique ou script (evolution_items.inc) |
 | Sachet | boutique ou script (evolution_items.inc) |
-| Scroll Of Darkness | **introuvable** |
-| Scroll Of Waters | **introuvable** |
+| Scroll Of Darkness | assistant du labo |
+| Scroll Of Waters | assistant du labo |
 | Shiny Stone | boutique ou script (evolution_items.inc) |
 | Star Sweet | boutique ou script (evolution_items.inc) |
 | Strawberry Sweet | boutique ou script (evolution_items.inc) |

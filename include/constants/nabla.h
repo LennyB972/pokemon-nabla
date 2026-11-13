@@ -52,4 +52,12 @@
 #define NABLA_CHALLENGERS_COUNT        13
 #define NABLA_TITLE_DEFENSE_RANDOM     3
 
+// What the lab assistant does with the Pokémon shown (NablaLabAssistant_Check, src/nabla_lab_assistant.c)
+#define LAB_ASSISTANT_NOTHING          0   // no item goes with it
+#define LAB_ASSISTANT_HAS_ALL          1   // all its items are in the bag
+#define LAB_ASSISTANT_ITEMS            2   // items to give, one by one
+#define LAB_ASSISTANT_MANY_ITEMS       3   // more than LAB_ASSISTANT_ONE_BY_ONE: given at once
+#define LAB_ASSISTANT_SECRET_MOVE      4   // Keldeo, Meloetta: the Move Relearner
+#define LAB_ASSISTANT_ONE_BY_ONE       4
+
 #endif // GUARD_CONSTANTS_NABLA_H

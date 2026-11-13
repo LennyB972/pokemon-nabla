@@ -1797,3 +1797,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/text/nabla/mirages.inc"
 	.include "data/scripts/nabla/sealed_chamber.inc"
 	.include "data/text/nabla/sealed_chamber.inc"
+	.include "data/scripts/nabla/lab_assistant.inc"
+	.include "data/text/nabla/lab_assistant.inc"

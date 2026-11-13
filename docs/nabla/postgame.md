@@ -118,9 +118,12 @@ Construits avec les tuiles d'Émeraude ; une carte peut être redessinée plus t
 
 ## Assistant du labo (7.5)
 
-Au labo du Prof. Seko : il parle d'objets qui appartiennent à des Pokémon surpuissants ; on choisit un Pokémon de l'équipe et il donne ses objets de forme et ses Méga-Gemmes (et, si besoin, apprend Lame Ointe à Keldeo ou Chant Antique à Meloetta).
+Un nouveau personnage dans le labo du Prof. Seko (Bourg-en-Vol), visible après la Ligue (caché par un flag temporaire avant `FLAG_SYS_GAME_CLEAR`, appel ajouté au `OnTransition` du labo) ; l'assistant d'Émeraude ne change pas (choix de l'utilisateur, 2026-11-14). Script `data/scripts/nabla/lab_assistant.inc`, table des objets `src/nabla_lab_assistant.c`.
 
-Objets déjà prévus (validés par l'utilisateur, 2026-11-13) : Pointeaux ADN (Kyurem), Modules de Genesect, Fiole Scellée (Hoopa), Moniteur Solaire et Moniteur Lunaire (fusions de Necrozma), Ultranécrozium Z (Ultra-Necrozma), ROM de Silvallié, Rouleau des Ténèbres et Rouleau des Eaux (Wushours), Épée Rouillée et Bouclier Rouillé (Zacian, Zamazenta), Rênes de l'Unité (Sylveroy), Masques d'Ogerpon, Latiasite (Latias n'a pas de mirage : choix de l'utilisateur). Un objet consommé à l'évolution (les rouleaux) est redonné quand le sac n'en a plus.
+- On lui montre un Pokémon de l'équipe (`ChoosePartyMon`) ; il donne les objets qui vont avec et **qui ne sont pas dans le sac** : un objet tenu ou consommé (rouleau) est donc redonné. Jusqu'à 4 objets : un par un (message natif d'objet reçu) ; plus (Plaques, ROM) : tous d'un coup, en un seul message.
+- Keldeo et Meloetta : il ouvre le menu du Maître des Capacités (gratuit) pour leur faire retrouver Lame Ointe ou Chant Antique, capacités apprises par niveau.
+- Objets (validés par l'utilisateur, 2026-11-13 et 2026-11-14) : Orbe Rouge (Groudon), Orbe Bleu (Kyogre), Latiasite, Cristal Adamant (Dialga), Globe Lustre (Palkia), Noyau Platiné (Giratina), Gracidée (Shaymin), les 17 Plaques (Arceus), Miroir Sacré (Boréas, Fulguris, Démétéros, Amovénus), Pointeaux ADN (Kyurem), les 4 Modules (Genesect), Cube Zygarde, Fiole Scellée (Hoopa), les 17 ROM (Silvallié), Moniteurs Solaire et Lunaire et Ultranécrozium Z (Necrozma), Rouleaux des Ténèbres et des Eaux (Wushours), Épée Rouillée (Zacian), Bouclier Rouillé (Zamazenta), Rênes de l'Unité (Sylveroy), les 3 Masques (Ogerpon). La Météorite (Deoxys) est déjà donnée ailleurs (Cosmo, événement du Pilier Céleste).
+- `coverage.py` lit la table : avec les rouleaux, Shifours est obtenable ; avec l'œuf de Manaphy (Phione, natif), les 97 légendaires et fabuleux le sont tous.
 
 ## Ordre de construction
 
