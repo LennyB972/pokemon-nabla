@@ -9521,6 +9521,17 @@
       "border_filepath": "data/layouts/NablaDragonspiral/border.bin",
       "blockdata_filepath": "data/layouts/NablaDragonspiral/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_POWER_PLANT",
+      "name": "NablaPowerPlant_Layout",
+      "width": 41,
+      "height": 41,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/NablaPowerPlant/border.bin",
+      "blockdata_filepath": "data/layouts/NablaPowerPlant/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
