@@ -7334,7 +7334,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 120,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), // Pokémon Nabla: breeds (its egg gives Kubfu)
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Kubfu"),
@@ -7380,10 +7380,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKubfuLevelUpLearnset,
         .teachableLearnset = sKubfuTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_SCRIPT_TRIGGER, EVO_TRIGGER_DARK_SCROLL, SPECIES_URSHIFU_SINGLE_STRIKE},
-                                {EVO_SCRIPT_TRIGGER, EVO_TRIGGER_WATER_SCROLL, SPECIES_URSHIFU_RAPID_STRIKE},
-                                {EVO_ITEM, ITEM_SCROLL_OF_DARKNESS, SPECIES_URSHIFU_SINGLE_STRIKE},
-                                {EVO_ITEM, ITEM_SCROLL_OF_WATERS,   SPECIES_URSHIFU_RAPID_STRIKE}),
+        // Pokémon Nabla: at level 50 holding its scroll, instead of the towers of the Isle of Armor
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_URSHIFU_SINGLE_STRIKE, CONDITIONS({IF_HOLD_ITEM, ITEM_SCROLL_OF_DARKNESS})},
+                                {EVO_LEVEL, 50, SPECIES_URSHIFU_RAPID_STRIKE, CONDITIONS({IF_HOLD_ITEM, ITEM_SCROLL_OF_WATERS})}),
     },
 
     [SPECIES_URSHIFU_SINGLE_STRIKE] =
@@ -7402,7 +7401,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 120,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), // Pokémon Nabla: breeds (its egg gives Kubfu)
         .abilities = { ABILITY_UNSEEN_FIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Urshifu"),
@@ -7470,7 +7469,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 120,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), // Pokémon Nabla: breeds (its egg gives Kubfu)
         .abilities = { ABILITY_UNSEEN_FIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Urshifu"),
@@ -7530,7 +7529,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 120,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), // Pokémon Nabla: breeds (its egg gives Kubfu)
         .abilities = { ABILITY_UNSEEN_FIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Urshifu"),
@@ -7598,7 +7597,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 120,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), // Pokémon Nabla: breeds (its egg gives Kubfu)
         .abilities = { ABILITY_UNSEEN_FIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Urshifu"),

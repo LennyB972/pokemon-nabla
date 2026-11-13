@@ -67,7 +67,8 @@ Scripts : `data/scripts/nabla/title_defense.inc` (textes `data/text/nabla/title_
 - **Méga-Gemmes des légendaires** : au sol dans leur mirage, accessibles à pied (vérifié avec `dev_scripts/nabla/reach.py`).
 - **Jour / nuit** : vérifié à l'arrivée sur le mirage.
 - **Cadeaux** (sans combat) : Cosmog, Type:0, Wushours, Meltan.
-- **Œufs** : la lignée de Cosmog (groupe Amorphe) et celle de Wushours (groupe Humanoïde) peuvent se reproduire ; l'œuf donne Cosmog ou Wushours. Phione vient de l'œuf de Manaphy (natif).
+- **Œufs** : la lignée de Cosmog (groupe Amorphe, asexuée : avec Métamorph) et celle de Wushours (groupe Humanoïde) peuvent se reproduire ; l'œuf donne Cosmog ou Wushours (groupes d'œufs changés dans `gen_7_families.h` et `gen_8_families.h`). Phione vient de l'œuf de Manaphy (natif).
+- **Wushours** évolue au **niveau 50 en tenant son rouleau** (Rouleau des Ténèbres : Shifours Poing Final ; Rouleau des Eaux : Mille Poings ; choix de l'utilisateur, à la place des tours de l'Île de l'Armure). Les rouleaux deviennent des objets ordinaires qu'on peut tenir (comme la Pierre Ovale, `src/data/items.h`) ; ils sont consommés à l'évolution.
 
 ### Lieux existants
 
@@ -112,6 +113,8 @@ Construits avec les tuiles d'Émeraude ; une carte peut être redessinée plus t
 ## Assistant du labo (7.5)
 
 Au labo du Prof. Seko : il parle d'objets qui appartiennent à des Pokémon surpuissants ; on choisit un Pokémon de l'équipe et il donne ses objets de forme et ses Méga-Gemmes (et, si besoin, apprend Lame Ointe à Keldeo ou Chant Antique à Meloetta).
+
+Objets déjà prévus (validés par l'utilisateur, 2026-11-13) : Pointeaux ADN (Kyurem), Modules de Genesect, Fiole Scellée (Hoopa), Moniteur Solaire et Moniteur Lunaire (fusions de Necrozma), Ultranécrozium Z (Ultra-Necrozma), ROM de Silvallié, Rouleau des Ténèbres et Rouleau des Eaux (Wushours). Un objet consommé à l'évolution (les rouleaux) est redonné quand le sac n'en a plus.
 
 ## Ordre de construction
 

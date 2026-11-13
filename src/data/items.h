@@ -15071,11 +15071,11 @@ const struct ItemInfo gItemsInfo[] =
             "A peculiar scroll\n"
             "that makes certain\n"
             "Pokémon evolve."),
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
+        // Pokémon Nabla: held by Kubfu to evolve at level 50, like the Oval Stone (a key item can't be held)
+        .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
         .effect = gItemEffect_EvoItem,
         .iconPic = gItemIcon_ScrollOfDarkness,
         .iconPalette = gItemIconPalette_ScrollOfDarkness,
@@ -15090,11 +15090,11 @@ const struct ItemInfo gItemsInfo[] =
             "A peculiar scroll\n"
             "that makes certain\n"
             "Pokémon evolve."),
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
+        // Pokémon Nabla: held by Kubfu to evolve at level 50, like the Oval Stone (a key item can't be held)
+        .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
         .effect = gItemEffect_EvoItem,
         .iconPic = gItemIcon_ScrollOfWaters,
         .iconPalette = gItemIconPalette_ScrollOfWaters,
