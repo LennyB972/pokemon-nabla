@@ -1235,11 +1235,11 @@
 #define FLAG_NABLA_KORAIDON_CAUGHT 0x49D
 #define FLAG_NABLA_MIRAIDON_CAUGHT 0x49E
 #define FLAG_NABLA_TERAPAGOS_CAUGHT 0x49F
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_NABLA_OKIDOGI_CAUGHT 0x4A0
+#define FLAG_NABLA_MUNKIDORI_CAUGHT 0x4A1
+#define FLAG_NABLA_FEZANDIPITI_CAUGHT 0x4A2
+#define FLAG_NABLA_OGERPON_CAUGHT 0x4A3
+#define FLAG_NABLA_PECHARUNT_CAUGHT 0x4A4
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag

@@ -1734,6 +1734,10 @@
     {
       "id": "MAPSEC_NABLA_AREA_ZERO",
       "name": "AREA ZERO"
+    },
+    {
+      "id": "MAPSEC_NABLA_KITAKAMI",
+      "name": "KITAKAMI"
     }
   ]
 }

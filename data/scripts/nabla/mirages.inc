@@ -1356,3 +1356,104 @@ Nabla_AreaZero_EventScript_AltarWaits:
 	msgbox Nabla_Text_AreaZeroAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Kitakami: the Loyal Three and Ogerpon in the clearing, Pecharunt at the altar
+Nabla_Kitakami_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Okidogi
+	setflag FLAG_TEMP_12  @ Munkidori
+	setflag FLAG_TEMP_13  @ Fezandipiti
+	setflag FLAG_TEMP_14  @ Ogerpon
+	setflag FLAG_TEMP_15  @ Pecharunt
+	call_if_unset FLAG_NABLA_OKIDOGI_CAUGHT, Nabla_Kitakami_EventScript_ShowOkidogi
+	call_if_unset FLAG_NABLA_MUNKIDORI_CAUGHT, Nabla_Kitakami_EventScript_ShowMunkidori
+	call_if_unset FLAG_NABLA_FEZANDIPITI_CAUGHT, Nabla_Kitakami_EventScript_ShowFezandipiti
+	call_if_unset FLAG_NABLA_OGERPON_CAUGHT, Nabla_Kitakami_EventScript_ShowOgerpon
+	return
+
+Nabla_Kitakami_EventScript_ShowOkidogi:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_Kitakami_EventScript_ShowMunkidori:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_Kitakami_EventScript_ShowFezandipiti:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_Kitakami_EventScript_ShowOgerpon:
+	clearflag FLAG_TEMP_14
+	return
+
+Nabla_Kitakami_EventScript_Okidogi::
+	setvar VAR_0x8004, SPECIES_OKIDOGI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_OKIDOGI_CAUGHT
+	release
+	end
+
+Nabla_Kitakami_EventScript_Munkidori::
+	setvar VAR_0x8004, SPECIES_MUNKIDORI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MUNKIDORI_CAUGHT
+	release
+	end
+
+Nabla_Kitakami_EventScript_Fezandipiti::
+	setvar VAR_0x8004, SPECIES_FEZANDIPITI
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_FEZANDIPITI_CAUGHT
+	release
+	end
+
+Nabla_Kitakami_EventScript_Ogerpon::
+	setvar VAR_0x8004, SPECIES_OGERPON
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_OGERPON_CAUGHT
+	release
+	end
+
+Nabla_Kitakami_EventScript_Pecharunt::
+	setvar VAR_0x8004, SPECIES_PECHARUNT
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_PECHARUNT_CAUGHT
+	release
+	end
+
+Nabla_Kitakami_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_PECHARUNT_CAUGHT, Nabla_Kitakami_EventScript_AltarNotPecharunt
+	goto_if_unset FLAG_TEMP_15, Nabla_Kitakami_EventScript_AltarNotPecharunt
+	setvar VAR_0x8004, SPECIES_OKIDOGI
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_Kitakami_EventScript_AltarNotPecharunt
+	setvar VAR_0x8004, SPECIES_MUNKIDORI
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_Kitakami_EventScript_AltarNotPecharunt
+	setvar VAR_0x8004, SPECIES_FEZANDIPITI
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_Kitakami_EventScript_AltarNotPecharunt
+	msgbox Nabla_Text_KitakamiAltarAwakensPecharunt, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_PECHARUNT, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_15
+	addobject LOCALID_KITAKAMI_PECHARUNT
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_Kitakami_EventScript_AltarNotPecharunt:
+	goto_if_unset FLAG_TEMP_15, Nabla_Kitakami_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_PECHARUNT_CAUGHT, Nabla_Kitakami_EventScript_AltarWaits
+Nabla_Kitakami_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_Kitakami_EventScript_AltarWaits:
+	msgbox Nabla_Text_KitakamiAltarWaits, MSGBOX_DEFAULT
+	release
+	end

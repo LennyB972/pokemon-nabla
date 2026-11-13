@@ -94,3 +94,12 @@ Nabla_Text_AreaZeroAltarWaits:
 Nabla_Text_AreaZeroAltarAwakensTerapagos:
 	.string "KORAIDON and MIRAIDON\n"
 	.string "react to the altar!$"
+
+Nabla_Text_KitakamiAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "LOYAL THREE…$"
+
+Nabla_Text_KitakamiAltarAwakensPecharunt:
+	.string "OKIDOGI, MUNKIDORI and FEZANDIPITI\n"
+	.string "react to the altar!$"

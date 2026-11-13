@@ -9609,6 +9609,17 @@
       "border_filepath": "data/layouts/NablaAreaZero/border.bin",
       "blockdata_filepath": "data/layouts/NablaAreaZero/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_KITAKAMI",
+      "name": "NablaKitakami_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/NablaKitakami/border.bin",
+      "blockdata_filepath": "data/layouts/NablaKitakami/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

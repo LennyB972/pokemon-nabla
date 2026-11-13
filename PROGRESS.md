@@ -413,6 +413,9 @@
 - Les Ruines du Fléau sont testées en jeu par l'utilisateur (2026-11-14).
 - Mirage du Cratère de Paldea (`NablaAreaZero`, 27 × 30, « AREA ZERO »), base choisie par l'utilisateur (le fond de la Grotte Marine plutôt que le désert de la Route 111, qui n'est pas fermé) et image validée (2026-11-14) : `dev_scripts/nabla/draw_area_zero.py` : sortie murée ; le lac de Kyogre, bloquant dans Émeraude, se surfe. Koraidon (0x49D), Miraidon (0x49E) ; Terapagos (0x49F) apparaît dans le lac à l'appel de l'autel (Koraidon et Miraidon dans l'équipe), demande de l'utilisateur, et se rejoint en Surf (`reach.py` : parler en surfant à un Pokémon dans l'eau). Couverture : 87 / 97 légendaires. Musique du temps anormal ; pas de condition.
   - **Test** : la Flûte → AREA ZERO ; arrivée en haut ; Koraidon (salle du milieu), Miraidon (à droite du lac) ; l'autel sans eux (« waiting for the POKéMON of the past and the future… »), avec eux (Terapagos apparaît dans le lac) ; Surf jusqu'à Terapagos et combat ; retour avec la Flûte.
+- Mirage de Kitakami (`NablaKitakami`, 40 × 20, « KITAKAMI »), image validée par l'utilisateur (2026-11-14), dernier des 23 mirages : une clairière dessinée avec le générateur de forêt (`dev_scripts/nabla/draw_kitakami.py`) : hautes herbes, bosquets, étang, place centrale fleurie. Félicanis (0x4A0), Fortusimia (0x4A1), Favianos (0x4A2), Ogerpon (0x4A3) ; Pêchaminus (0x4A4) à l'autel avec les trois Loyaux dans l'équipe. Couverture : 92 / 97 légendaires ; manquent Regigigas, Regieleki, Regidrago (Chambre Scellée) et les deux Shifours (rouleaux de l'assistant du labo). Musique de Cimetronelle ; pas de condition.
+  - **Test** : la Flûte → KITAKAMI ; arrivée au sud ; Félicanis, Fortusimia, Favianos, Ogerpon ; l'autel sans les Loyaux (« waiting for the LOYAL THREE… »), avec eux (Pêchaminus apparaît) ; retour avec la Flûte.
+- **Les 23 mirages sont branchés** (26 destinations de la Flûte Éon avec les trois îles d'événement).
 
 ## Bugs connus
 

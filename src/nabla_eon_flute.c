@@ -37,6 +37,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_CROWN_TUNDRA,
     MAPSEC_NABLA_SHRINE_OF_RUIN,
     MAPSEC_NABLA_AREA_ZERO,
+    MAPSEC_NABLA_KITAKAMI,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

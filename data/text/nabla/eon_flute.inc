@@ -106,3 +106,6 @@ Nabla_Text_ShrineOfRuin:
 
 Nabla_Text_AreaZero:
 	.string "AREA ZERO$"
+
+Nabla_Text_Kitakami:
+	.string "KITAKAMI$"
