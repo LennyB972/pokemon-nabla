@@ -9,10 +9,11 @@ Used from a short script, once per mirage:
                    legendaries=[("SHAYMIN", 14, 8, 0x35), ...], items=[("ITEM_X", x, y, flag), ...],
                    unlocked_by=["SPECIES_UXIE", ...], comment="Flower Paradise: Shaymin in the flowers...")
 A mirage with hidden Pokémon also gets an altar: altar=(x, y), hidden=[("KELDEO", x, y, flag, ["COBALION", ...])]
-(the Pokémon asked for in the party, checked in turn at the altar) and altar_waits, the text of the altar while it
+(the Pokémon asked for in the party, checked in turn at the altar; a tuple asks for one of them: ("SOLGALEO",
+"LUNALA")) and altar_waits, the text of the altar while it
 waits for them (data/text/nabla/mirages.inc). The altar is a statue, or with altar_sign a block of the map (a shrine)
 read from below. Pokémon given without a battle (they come with the player when talked to): gifts=[("MELTAN", x, y,
-flag)].
+flag)], at level 80, or [("COSMOG", x, y, flag, 5)].
 Flags are given as numbers of FLAG_UNUSED_* flags, which get their Nabla names.
 """
 import json
@@ -51,9 +52,17 @@ def altar_script(short, upper, first, hidden):
         skip = "Nabla_%s_EventScript_AltarNot%s" % (short, camel(species))
         temp = "FLAG_TEMP_%d" % (11 + first + k)
         lines += ["\tgoto_if_set FLAG_NABLA_%s_CAUGHT, %s" % (species, skip), "\tgoto_if_unset %s, %s" % (temp, skip)]
-        for r in required:
+        for j, r in enumerate(required):
+            if isinstance(r, tuple):                   # one of them, named in the text (STR_VAR_1)
+                found = "Nabla_%s_EventScript_Altar%sFound%d" % (short, camel(species), j)
+                for other in r[:-1]:
+                    lines += ["\tsetvar VAR_0x8004, SPECIES_%s" % other,
+                              "\tspecialvar VAR_RESULT, NablaMirage_PartyHasSpecies", "\tgoto_if_eq VAR_RESULT, TRUE, " + found]
+                r = r[-1]
             lines += ["\tsetvar VAR_0x8004, SPECIES_%s" % r, "\tspecialvar VAR_RESULT, NablaMirage_PartyHasSpecies",
                       "\tgoto_if_eq VAR_RESULT, FALSE, %s" % skip]
+            if isinstance(required[j], tuple):
+                lines += [found + ":", "\tbufferspeciesname STR_VAR_1, VAR_0x8004"]
         lines += ["\tmsgbox Nabla_Text_%sAltarAwakens%s, MSGBOX_DEFAULT" % (short, camel(species)), "\tclosemessage",
                   "\tplaymoncry SPECIES_%s, CRY_MODE_ENCOUNTER" % species, "\tfadescreenswapbuffers FADE_TO_WHITE",
                   "\tclearflag " + temp, "\taddobject LOCALID_%s_%s" % (upper, species),
@@ -73,9 +82,9 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
     short = map_name[len("Nabla"):]                                   # FlowerParadise
     upper = re.sub(r"(?<!^)(?=[A-Z])", "_", short).upper()            # FLOWER_PARADISE
     mapsec = "MAPSEC_NABLA_" + upper
-    shown = [*legendaries, *gifts]                                    # there on arrival, until caught or received
+    shown = [*legendaries, *(g[:4] for g in gifts)]                   # there on arrival, until caught or received
     every = [*shown, *(h[:4] for h in hidden)]
-    given = {species for species, *_ in gifts}
+    given = {g[0]: g[4] if len(g) > 4 else "NABLA_POST_GAME_LEGENDARIES_LEVEL" for g in gifts}  # their levels
     done = lambda species: ("FLAG_NABLA_RECEIVED_%s" if species in given else "FLAG_NABLA_%s_CAUGHT") % species
 
     # The place: a destination of the Eon Flute, its region map section, its map in the group of Nabla
@@ -139,7 +148,10 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
     for i, (species, *_) in enumerate(shown):
         lines += ["", "Nabla_%s_EventScript_Show%s:" % (short, camel(species)), "\tclearflag FLAG_TEMP_%d" % (11 + i), "\treturn"]
     for species, *_ in every:
-        lines += ["", "Nabla_%s_EventScript_%s::" % (short, camel(species)), "\tsetvar VAR_0x8004, SPECIES_%s" % species,
+        lines += ["", "Nabla_%s_EventScript_%s::" % (short, camel(species))]
+        if species in given:
+            lines.append("\tsetvar VAR_0x8005, %s" % given[species])
+        lines += ["\tsetvar VAR_0x8004, SPECIES_%s" % species,
                   "\tcall Nabla_EventScript_Mirage" + ("Gift" if species in given else "Legendary"),
                   "\tsetflag " + done(species), "\trelease", "\tend"]
     if altar:
@@ -148,7 +160,7 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
         texts = ["", "Nabla_Text_%sAltarWaits:" % short, '\t.string "An ancient altar.\\p"']
         texts += ['\t.string "%s\\n"' % line for line in lines_of_text[:-1]] + ['\t.string "%s$"' % lines_of_text[-1]]
         for species, *_, required in hidden:
-            names = [r.replace("_", " ") for r in required]
+            names = ["{STR_VAR_1}" if isinstance(r, tuple) else r.replace("_", " ") for r in required]
             who = names[0] if len(names) == 1 else "%s and %s" % (", ".join(names[:-1]), names[-1])
             texts += ["", "Nabla_Text_%sAltarAwakens%s:" % (short, camel(species)), '\t.string "%s\\n"' % who,
                       '\t.string "%s to the altar!$"' % ("reacts" if len(names) == 1 else "react")]

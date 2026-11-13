@@ -67,3 +67,12 @@ Nabla_Text_KalosSanctuaryAltarWaits:
 Nabla_Text_KalosSanctuaryAltarAwakensZygarde:
 	.string "XERNEAS and YVELTAL\n"
 	.string "react to the altar!$"
+
+Nabla_Text_SunMoonAltarAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "POKéMON of the sun or the moon…$"
+
+Nabla_Text_SunMoonAltarAltarAwakensNecrozma:
+	.string "{STR_VAR_1}\n"
+	.string "reacts to the altar!$"

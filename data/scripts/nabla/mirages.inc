@@ -23,8 +23,8 @@ Nabla_EventScript_MirageLegendary::
 	removeobject VAR_LAST_TALKED
 	return
 
-@ Gift of the Pokémon the player talked to (species in VAR_0x8004), at level 80, like BELDUM in Emerald: it comes
-@ with the player, to the party or the PC, and can be nicknamed. Returns if it came (the caller sets its flag and
+@ Gift of the Pokémon the player talked to (species in VAR_0x8004, level in VAR_0x8005), like BELDUM in Emerald: it
+@ comes with the player, to the party or the PC, and can be nicknamed. Returns if it came (the caller sets its flag and
 @ releases); with no room left, it stays there.
 Nabla_EventScript_MirageGift::
 	lock
@@ -35,7 +35,7 @@ Nabla_EventScript_MirageGift::
 	msgbox Nabla_Text_MirageGiftWantsToCome, MSGBOX_DEFAULT
 	waitmoncry
 	copyvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_0x8004
-	givemon VAR_0x8004, NABLA_POST_GAME_LEGENDARIES_LEVEL
+	givemon VAR_0x8004, VAR_0x8005
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Nabla_EventScript_MirageGiftParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Nabla_EventScript_MirageGiftPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -875,6 +875,7 @@ Nabla_PowerPlant_EventScript_Magearna::
 	end
 
 Nabla_PowerPlant_EventScript_Meltan::
+	setvar VAR_0x8005, NABLA_POST_GAME_LEGENDARIES_LEVEL
 	setvar VAR_0x8004, SPECIES_MELTAN
 	call Nabla_EventScript_MirageGift
 	setflag FLAG_NABLA_RECEIVED_MELTAN
@@ -1018,5 +1019,81 @@ Nabla_DiamondMine_EventScript_Hoopa::
 	setvar VAR_0x8004, SPECIES_HOOPA
 	call Nabla_EventScript_MirageLegendary
 	setflag FLAG_NABLA_HOOPA_CAUGHT
+	release
+	end
+
+@ Sun & Moon Altar: Cosmog and Type: Null come along, Necrozma at the altar with Solgaleo or Lunala
+Nabla_SunMoonAltar_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Cosmog
+	setflag FLAG_TEMP_12  @ TypeNull
+	setflag FLAG_TEMP_13  @ Necrozma
+	call_if_unset FLAG_NABLA_RECEIVED_COSMOG, Nabla_SunMoonAltar_EventScript_ShowCosmog
+	call_if_unset FLAG_NABLA_RECEIVED_TYPE_NULL, Nabla_SunMoonAltar_EventScript_ShowTypeNull
+	return
+
+Nabla_SunMoonAltar_EventScript_ShowCosmog:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_SunMoonAltar_EventScript_ShowTypeNull:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_SunMoonAltar_EventScript_Cosmog::
+	setvar VAR_0x8005, 5
+	setvar VAR_0x8004, SPECIES_COSMOG
+	call Nabla_EventScript_MirageGift
+	setflag FLAG_NABLA_RECEIVED_COSMOG
+	release
+	end
+
+Nabla_SunMoonAltar_EventScript_TypeNull::
+	setvar VAR_0x8005, 40
+	setvar VAR_0x8004, SPECIES_TYPE_NULL
+	call Nabla_EventScript_MirageGift
+	setflag FLAG_NABLA_RECEIVED_TYPE_NULL
+	release
+	end
+
+Nabla_SunMoonAltar_EventScript_Necrozma::
+	setvar VAR_0x8004, SPECIES_NECROZMA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_NECROZMA_CAUGHT
+	release
+	end
+
+Nabla_SunMoonAltar_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_NECROZMA_CAUGHT, Nabla_SunMoonAltar_EventScript_AltarNotNecrozma
+	goto_if_unset FLAG_TEMP_13, Nabla_SunMoonAltar_EventScript_AltarNotNecrozma
+	setvar VAR_0x8004, SPECIES_SOLGALEO
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, TRUE, Nabla_SunMoonAltar_EventScript_AltarNecrozmaFound0
+	setvar VAR_0x8004, SPECIES_LUNALA
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_SunMoonAltar_EventScript_AltarNotNecrozma
+Nabla_SunMoonAltar_EventScript_AltarNecrozmaFound0:
+	bufferspeciesname STR_VAR_1, VAR_0x8004
+	msgbox Nabla_Text_SunMoonAltarAltarAwakensNecrozma, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_NECROZMA, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_13
+	addobject LOCALID_SUN_MOON_ALTAR_NECROZMA
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_SunMoonAltar_EventScript_AltarNotNecrozma:
+	goto_if_unset FLAG_TEMP_13, Nabla_SunMoonAltar_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_NECROZMA_CAUGHT, Nabla_SunMoonAltar_EventScript_AltarWaits
+Nabla_SunMoonAltar_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_SunMoonAltar_EventScript_AltarWaits:
+	msgbox Nabla_Text_SunMoonAltarAltarWaits, MSGBOX_DEFAULT
 	release
 	end

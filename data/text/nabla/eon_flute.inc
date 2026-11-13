@@ -91,3 +91,6 @@ Nabla_Text_KalosSanctuary:
 
 Nabla_Text_DiamondMine:
 	.string "DIAMOND MINE$"
+
+Nabla_Text_SunMoonAltar:
+	.string "SUN & MOON ALTAR$"

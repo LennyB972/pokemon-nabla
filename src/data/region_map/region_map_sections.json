@@ -1714,6 +1714,10 @@
     {
       "id": "MAPSEC_NABLA_DIAMOND_MINE",
       "name": "DIAMOND MINE"
+    },
+    {
+      "id": "MAPSEC_NABLA_SUN_MOON_ALTAR",
+      "name": "SUN & MOON ALTAR"
     }
   ]
 }

@@ -95,9 +95,9 @@
 #define FLAG_NABLA_ZYGARDE_CAUGHT 0x49
 #define FLAG_NABLA_DIANCIE_CAUGHT 0x4A
 #define FLAG_NABLA_HOOPA_CAUGHT 0x4B
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define FLAG_NABLA_RECEIVED_COSMOG 0x4C
+#define FLAG_NABLA_RECEIVED_TYPE_NULL 0x4D
+#define FLAG_NABLA_NECROZMA_CAUGHT 0x4E
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts
