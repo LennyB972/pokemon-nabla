@@ -1183,3 +1183,47 @@ Nabla_IsleOfArmor_EventScript_AltarWaits:
 	msgbox Nabla_Text_IsleOfArmorAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Crown Tundra: Calyrex on the plateau, Glastrier and Spectrier on the ice
+Nabla_CrownTundra_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Calyrex
+	setflag FLAG_TEMP_12  @ Glastrier
+	setflag FLAG_TEMP_13  @ Spectrier
+	call_if_unset FLAG_NABLA_CALYREX_CAUGHT, Nabla_CrownTundra_EventScript_ShowCalyrex
+	call_if_unset FLAG_NABLA_GLASTRIER_CAUGHT, Nabla_CrownTundra_EventScript_ShowGlastrier
+	call_if_unset FLAG_NABLA_SPECTRIER_CAUGHT, Nabla_CrownTundra_EventScript_ShowSpectrier
+	return
+
+Nabla_CrownTundra_EventScript_ShowCalyrex:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_CrownTundra_EventScript_ShowGlastrier:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_CrownTundra_EventScript_ShowSpectrier:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_CrownTundra_EventScript_Calyrex::
+	setvar VAR_0x8004, SPECIES_CALYREX
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_CALYREX_CAUGHT
+	release
+	end
+
+Nabla_CrownTundra_EventScript_Glastrier::
+	setvar VAR_0x8004, SPECIES_GLASTRIER
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_GLASTRIER_CAUGHT
+	release
+	end
+
+Nabla_CrownTundra_EventScript_Spectrier::
+	setvar VAR_0x8004, SPECIES_SPECTRIER
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_SPECTRIER_CAUGHT
+	release
+	end

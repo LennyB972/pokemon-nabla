@@ -1722,6 +1722,10 @@
     {
       "id": "MAPSEC_NABLA_ISLE_OF_ARMOR",
       "name": "ISLE OF ARMOR"
+    },
+    {
+      "id": "MAPSEC_NABLA_CROWN_TUNDRA",
+      "name": "CROWN TUNDRA"
     }
   ]
 }

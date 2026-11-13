@@ -19,6 +19,7 @@ Flags are given as numbers of FLAG_UNUSED_* flags, which get their Nabla names.
 import json
 import os
 import re
+import struct
 
 
 def rep(path, old, new):
@@ -103,12 +104,16 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
         json.load(open(path))
 
     # The map: one object per legendary, hidden by a temporary flag until set up (the hidden ones until the altar calls
-    # them), the altar and the items
+    # them), the altar and the items, each at the elevation of its block (3 on a block that goes between elevations)
+    layout = next(l for l in json.load(open("data/layouts/layouts.json"))["layouts"] if l.get("id") == "LAYOUT_NABLA_" + upper)
+    blocks = open(layout["blockdata_filepath"], "rb").read()
+    level = lambda x, y: struct.unpack_from("<H", blocks, 2 * (y * layout["width"] + x))[0] >> 12
+    elevation = lambda x, y: level(x, y) if level(x, y) not in (0, 15) else 3
     objects = []
     for i, (species, x, y, flag) in enumerate(every):
         name_flag(flag, done(species))
         objects.append({"local_id": "LOCALID_%s_%s" % (upper, species), "graphics_id": "OBJ_EVENT_GFX_SPECIES(%s)" % species,
-                        "x": x, "y": y, "elevation": 3, "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+                        "x": x, "y": y, "elevation": elevation(x, y), "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
                         "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE",
                         "trainer_sight_or_berry_tree_id": "0", "script": "Nabla_%s_EventScript_%s" % (short, camel(species)),
                         "flag": "FLAG_TEMP_%d" % (11 + i)})
@@ -119,13 +124,13 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
                           "script": "Nabla_%s_EventScript_Altar" % short})
     elif altar:
         objects.append({"local_id": "LOCALID_%s_ALTAR" % upper, "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-                        "x": altar[0], "y": altar[1], "elevation": 3, "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+                        "x": altar[0], "y": altar[1], "elevation": elevation(*altar), "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
                         "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE",
                         "trainer_sight_or_berry_tree_id": "0", "script": "Nabla_%s_EventScript_Altar" % short, "flag": "0"})
     for item, x, y, flag in items:
         flag_name = "FLAG_NABLA_ITEM_%s_%s" % (upper, item[len("ITEM_"):])
         name_flag(flag, flag_name)
-        objects.append({"graphics_id": "OBJ_EVENT_GFX_ITEM_BALL", "x": x, "y": y, "elevation": 3,
+        objects.append({"graphics_id": "OBJ_EVENT_GFX_ITEM_BALL", "x": x, "y": y, "elevation": elevation(x, y),
                         "movement_type": "MOVEMENT_TYPE_LOOK_AROUND", "movement_range_x": 0, "movement_range_y": 0,
                         "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": item,
                         "script": "Common_EventScript_FindItem", "flag": flag_name})

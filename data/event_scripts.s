@@ -623,6 +623,7 @@ gStdScripts_End::
 	.include "data/maps/NablaDiamondMine/scripts.inc"
 	.include "data/maps/NablaSunMoonAltar/scripts.inc"
 	.include "data/maps/NablaIsleOfArmor/scripts.inc"
+	.include "data/maps/NablaCrownTundra/scripts.inc"
 
 .if IS_FRLG
 

@@ -97,3 +97,6 @@ Nabla_Text_SunMoonAltar:
 
 Nabla_Text_IsleOfArmor:
 	.string "ISLE OF ARMOR$"
+
+Nabla_Text_CrownTundra:
+	.string "CROWN TUNDRA$"

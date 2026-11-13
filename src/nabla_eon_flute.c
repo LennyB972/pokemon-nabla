@@ -34,6 +34,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_DIAMOND_MINE,
     MAPSEC_NABLA_SUN_MOON_ALTAR,
     MAPSEC_NABLA_ISLE_OF_ARMOR,
+    MAPSEC_NABLA_CROWN_TUNDRA,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

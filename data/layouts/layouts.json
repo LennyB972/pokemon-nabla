@@ -9576,6 +9576,17 @@
       "border_filepath": "data/layouts/NablaIsleOfArmor/border.bin",
       "blockdata_filepath": "data/layouts/NablaIsleOfArmor/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_CROWN_TUNDRA",
+      "name": "NablaCrownTundra_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NablaCrownTundra/border.bin",
+      "blockdata_filepath": "data/layouts/NablaCrownTundra/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
