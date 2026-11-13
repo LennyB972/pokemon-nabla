@@ -11,7 +11,8 @@ Used from a short script, once per mirage:
 A mirage with hidden Pokémon also gets an altar: altar=(x, y), hidden=[("KELDEO", x, y, flag, ["COBALION", ...])]
 (the Pokémon asked for in the party, checked in turn at the altar) and altar_waits, the text of the altar while it
 waits for them (data/text/nabla/mirages.inc). The altar is a statue, or with altar_sign a block of the map (a shrine)
-read from below.
+read from below. Pokémon given without a battle (they come with the player when talked to): gifts=[("MELTAN", x, y,
+flag)].
 Flags are given as numbers of FLAG_UNUSED_* flags, which get their Nabla names.
 """
 import json
@@ -68,10 +69,14 @@ def altar_script(short, upper, first, hidden):
 
 
 def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocked_by=(), weather="WEATHER_NONE",
-        map_type="MAP_TYPE_ROUTE", allow_cycling=True, altar=None, hidden=(), altar_waits="", altar_sign=False):
+        map_type="MAP_TYPE_ROUTE", allow_cycling=True, altar=None, hidden=(), altar_waits="", altar_sign=False, gifts=()):
     short = map_name[len("Nabla"):]                                   # FlowerParadise
     upper = re.sub(r"(?<!^)(?=[A-Z])", "_", short).upper()            # FLOWER_PARADISE
     mapsec = "MAPSEC_NABLA_" + upper
+    shown = [*legendaries, *gifts]                                    # there on arrival, until caught or received
+    every = [*shown, *(h[:4] for h in hidden)]
+    given = {species for species, *_ in gifts}
+    done = lambda species: ("FLAG_NABLA_RECEIVED_%s" if species in given else "FLAG_NABLA_%s_CAUGHT") % species
 
     # The place: a destination of the Eon Flute, its region map section, its map in the group of Nabla
     rep("src/nabla_eon_flute.c", "\n};\n\nbool8 NablaEonFlute_IsAtDestination", "\n    %s,\n};\n\nbool8 NablaEonFlute_IsAtDestination" % mapsec)
@@ -91,8 +96,8 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
     # The map: one object per legendary, hidden by a temporary flag until set up (the hidden ones until the altar calls
     # them), the altar and the items
     objects = []
-    for i, (species, x, y, flag) in enumerate([*legendaries, *(h[:4] for h in hidden)]):
-        name_flag(flag, "FLAG_NABLA_%s_CAUGHT" % species)
+    for i, (species, x, y, flag) in enumerate(every):
+        name_flag(flag, done(species))
         objects.append({"local_id": "LOCALID_%s_%s" % (upper, species), "graphics_id": "OBJ_EVENT_GFX_SPECIES(%s)" % species,
                         "x": x, "y": y, "elevation": 3, "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
                         "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE",
@@ -126,19 +131,19 @@ def add(map_name, place, arrival, legendaries, music, comment, items=(), unlocke
         "%s_MapScripts::\n\tmap_script MAP_SCRIPT_ON_TRANSITION, %s_OnTransition\n\t.byte 0\n\n"
         "%s_OnTransition:\n\tcall Nabla_%s_EventScript_SetUp\n\tend\n" % (map_name, map_name, map_name, short))
 
-    # The scripts of the legendaries
-    every = [*legendaries, *(h[:4] for h in hidden)]
+    # The scripts of the legendaries and of the gifts
     lines = ["", "@ " + comment, "Nabla_%s_EventScript_SetUp::" % short, "\tsetflag FLAG_TEMP_HIDE_FOLLOWER"]
     lines += ["\tsetflag FLAG_TEMP_%d  @ %s" % (11 + i, camel(s)) for i, (s, *_) in enumerate(every)]
-    lines += ["\tcall_if_unset FLAG_NABLA_%s_CAUGHT, Nabla_%s_EventScript_Show%s" % (s, short, camel(s)) for s, *_ in legendaries]
+    lines += ["\tcall_if_unset %s, Nabla_%s_EventScript_Show%s" % (done(s), short, camel(s)) for s, *_ in shown]
     lines.append("\treturn")
-    for i, (species, *_) in enumerate(legendaries):
+    for i, (species, *_) in enumerate(shown):
         lines += ["", "Nabla_%s_EventScript_Show%s:" % (short, camel(species)), "\tclearflag FLAG_TEMP_%d" % (11 + i), "\treturn"]
     for species, *_ in every:
         lines += ["", "Nabla_%s_EventScript_%s::" % (short, camel(species)), "\tsetvar VAR_0x8004, SPECIES_%s" % species,
-                  "\tcall Nabla_EventScript_MirageLegendary", "\tsetflag FLAG_NABLA_%s_CAUGHT" % species, "\trelease", "\tend"]
+                  "\tcall Nabla_EventScript_Mirage" + ("Gift" if species in given else "Legendary"),
+                  "\tsetflag " + done(species), "\trelease", "\tend"]
     if altar:
-        lines += altar_script(short, upper, len(legendaries), hidden)
+        lines += altar_script(short, upper, len(shown), hidden)
         lines_of_text = altar_waits.split("\n")
         texts = ["", "Nabla_Text_%sAltarWaits:" % short, '\t.string "An ancient altar.\\p"']
         texts += ['\t.string "%s\\n"' % line for line in lines_of_text[:-1]] + ['\t.string "%s$"' % lines_of_text[-1]]

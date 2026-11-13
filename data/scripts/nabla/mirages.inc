@@ -1,7 +1,7 @@
 @ Legendary Pokémon of the places the Eon Flute leads to (docs/nabla/postgame.md). Each one is an object, visible
 @ until it is caught (one FLAG_NABLA_*_CAUGHT each), hidden by a temporary flag set when entering the map.
-@ The following Pokémon stays in its ball there: the whole sheet of each sprite in view is loaded, and big ones
-@ (64 x 64) would not fit with it (dev_scripts/nabla/reach.py checks the maps).
+@ The following Pokémon stays in its ball there (set when the sheets of the sprites were compressed: the whole sheet
+@ of each sprite in view was loaded, and big ones (64 x 64) did not fit with it; OW_GFX_COMPRESS is off since).
 
 @ Battle with the legendary Pokémon the player talked to (species in VAR_0x8004), at level 80. Returns if it was
 @ caught (the caller sets its flag and releases); otherwise it flies away until the next visit.
@@ -21,6 +21,49 @@ Nabla_EventScript_MirageLegendary::
 	copyvar VAR_0x8004, VAR_TEMP_9
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_LegendaryFlewAway
 	removeobject VAR_LAST_TALKED
+	return
+
+@ Gift of the Pokémon the player talked to (species in VAR_0x8004), at level 80, like BELDUM in Emerald: it comes
+@ with the player, to the party or the PC, and can be nicknamed. Returns if it came (the caller sets its flag and
+@ releases); with no room left, it stays there.
+Nabla_EventScript_MirageGift::
+	lock
+	faceplayer
+	waitse
+	playmoncry VAR_0x8004, CRY_MODE_NORMAL
+	bufferspeciesname STR_VAR_1, VAR_0x8004
+	msgbox Nabla_Text_MirageGiftWantsToCome, MSGBOX_DEFAULT
+	waitmoncry
+	copyvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_0x8004
+	givemon VAR_0x8004, NABLA_POST_GAME_LEGENDARIES_LEVEL
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Nabla_EventScript_MirageGiftParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Nabla_EventScript_MirageGiftPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+
+Nabla_EventScript_MirageGiftParty:
+	call Nabla_EventScript_MirageGiftFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Nabla_EventScript_MirageGiftDone
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+Nabla_EventScript_MirageGiftPC:
+	call Nabla_EventScript_MirageGiftFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Nabla_EventScript_MirageGiftToPC
+	call Common_EventScript_NameReceivedBoxMon
+Nabla_EventScript_MirageGiftToPC:
+	call Common_EventScript_TransferredToPC
+Nabla_EventScript_MirageGiftDone:
+	return
+
+Nabla_EventScript_MirageGiftFanfare:
+	removeobject VAR_LAST_TALKED
+	playfanfare MUS_OBTAIN_ITEM
+	message Nabla_Text_MirageGiftReceived
+	waitmessage
+	waitfanfare
 	return
 
 @ Bird Islet: Articuno, Zapdos and Moltres by day, their forms of Galar at night
@@ -790,5 +833,87 @@ Nabla_Dragonspiral_EventScript_AltarQuiet:
 
 Nabla_Dragonspiral_EventScript_AltarWaits:
 	msgbox Nabla_Text_DragonspiralAltarWaits, MSGBOX_DEFAULT
+	release
+	end
+
+@ P2 Laboratory: Genesect and Magearna in the abandoned plant, Meltan comes along, Melmetal at the altar
+Nabla_PowerPlant_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Genesect
+	setflag FLAG_TEMP_12  @ Magearna
+	setflag FLAG_TEMP_13  @ Meltan
+	setflag FLAG_TEMP_14  @ Melmetal
+	call_if_unset FLAG_NABLA_GENESECT_CAUGHT, Nabla_PowerPlant_EventScript_ShowGenesect
+	call_if_unset FLAG_NABLA_MAGEARNA_CAUGHT, Nabla_PowerPlant_EventScript_ShowMagearna
+	call_if_unset FLAG_NABLA_RECEIVED_MELTAN, Nabla_PowerPlant_EventScript_ShowMeltan
+	return
+
+Nabla_PowerPlant_EventScript_ShowGenesect:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_PowerPlant_EventScript_ShowMagearna:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_PowerPlant_EventScript_ShowMeltan:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_PowerPlant_EventScript_Genesect::
+	setvar VAR_0x8004, SPECIES_GENESECT
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_GENESECT_CAUGHT
+	release
+	end
+
+Nabla_PowerPlant_EventScript_Magearna::
+	setvar VAR_0x8004, SPECIES_MAGEARNA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MAGEARNA_CAUGHT
+	release
+	end
+
+Nabla_PowerPlant_EventScript_Meltan::
+	setvar VAR_0x8004, SPECIES_MELTAN
+	call Nabla_EventScript_MirageGift
+	setflag FLAG_NABLA_RECEIVED_MELTAN
+	release
+	end
+
+Nabla_PowerPlant_EventScript_Melmetal::
+	setvar VAR_0x8004, SPECIES_MELMETAL
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MELMETAL_CAUGHT
+	release
+	end
+
+Nabla_PowerPlant_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_MELMETAL_CAUGHT, Nabla_PowerPlant_EventScript_AltarNotMelmetal
+	goto_if_unset FLAG_TEMP_14, Nabla_PowerPlant_EventScript_AltarNotMelmetal
+	setvar VAR_0x8004, SPECIES_MELTAN
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_PowerPlant_EventScript_AltarNotMelmetal
+	msgbox Nabla_Text_PowerPlantAltarAwakensMelmetal, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_MELMETAL, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_14
+	addobject LOCALID_POWER_PLANT_MELMETAL
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_PowerPlant_EventScript_AltarNotMelmetal:
+	goto_if_unset FLAG_TEMP_14, Nabla_PowerPlant_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_MELMETAL_CAUGHT, Nabla_PowerPlant_EventScript_AltarWaits
+Nabla_PowerPlant_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_PowerPlant_EventScript_AltarWaits:
+	msgbox Nabla_Text_PowerPlantAltarWaits, MSGBOX_DEFAULT
 	release
 	end

@@ -29,6 +29,7 @@ static const mapsec_u8_t sEonFluteDestinations[] =
     MAPSEC_NABLA_PINWHEEL_FOREST,
     MAPSEC_NABLA_ABUNDANT_SHRINE,
     MAPSEC_NABLA_DRAGONSPIRAL,
+    MAPSEC_NABLA_POWER_PLANT,
 };
 
 bool8 NablaEonFlute_IsAtDestination(void)

@@ -82,3 +82,6 @@ Nabla_Text_AbundantShrine:
 
 Nabla_Text_Dragonspiral:
 	.string "DRAGONSPIRAL$"
+
+Nabla_Text_PowerPlant:
+	.string "P2 LABORATORY$"

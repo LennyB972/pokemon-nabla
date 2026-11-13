@@ -1702,6 +1702,10 @@
     {
       "id": "MAPSEC_NABLA_DRAGONSPIRAL",
       "name": "DRAGONSPIRAL"
+    },
+    {
+      "id": "MAPSEC_NABLA_POWER_PLANT",
+      "name": "P2 LABORATORY"
     }
   ]
 }
