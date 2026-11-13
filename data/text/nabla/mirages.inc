@@ -58,3 +58,12 @@ Nabla_Text_PowerPlantAltarWaits:
 Nabla_Text_PowerPlantAltarAwakensMelmetal:
 	.string "MELTAN\n"
 	.string "reacts to the altar!$"
+
+Nabla_Text_KalosSanctuaryAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "POKéMON of life and destruction…$"
+
+Nabla_Text_KalosSanctuaryAltarAwakensZygarde:
+	.string "XERNEAS and YVELTAL\n"
+	.string "react to the altar!$"

@@ -917,3 +917,75 @@ Nabla_PowerPlant_EventScript_AltarWaits:
 	msgbox Nabla_Text_PowerPlantAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Kalos Sanctuary: Xerneas and Yveltal on each side of the pool, Zygarde at the altar
+Nabla_KalosSanctuary_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Xerneas
+	setflag FLAG_TEMP_12  @ Yveltal
+	setflag FLAG_TEMP_13  @ Zygarde
+	call_if_unset FLAG_NABLA_XERNEAS_CAUGHT, Nabla_KalosSanctuary_EventScript_ShowXerneas
+	call_if_unset FLAG_NABLA_YVELTAL_CAUGHT, Nabla_KalosSanctuary_EventScript_ShowYveltal
+	return
+
+Nabla_KalosSanctuary_EventScript_ShowXerneas:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_KalosSanctuary_EventScript_ShowYveltal:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_KalosSanctuary_EventScript_Xerneas::
+	setvar VAR_0x8004, SPECIES_XERNEAS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_XERNEAS_CAUGHT
+	release
+	end
+
+Nabla_KalosSanctuary_EventScript_Yveltal::
+	setvar VAR_0x8004, SPECIES_YVELTAL
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_YVELTAL_CAUGHT
+	release
+	end
+
+Nabla_KalosSanctuary_EventScript_Zygarde::
+	setvar VAR_0x8004, SPECIES_ZYGARDE
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_ZYGARDE_CAUGHT
+	release
+	end
+
+Nabla_KalosSanctuary_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_ZYGARDE_CAUGHT, Nabla_KalosSanctuary_EventScript_AltarNotZygarde
+	goto_if_unset FLAG_TEMP_13, Nabla_KalosSanctuary_EventScript_AltarNotZygarde
+	setvar VAR_0x8004, SPECIES_XERNEAS
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_KalosSanctuary_EventScript_AltarNotZygarde
+	setvar VAR_0x8004, SPECIES_YVELTAL
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_KalosSanctuary_EventScript_AltarNotZygarde
+	msgbox Nabla_Text_KalosSanctuaryAltarAwakensZygarde, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_ZYGARDE, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_13
+	addobject LOCALID_KALOS_SANCTUARY_ZYGARDE
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_KalosSanctuary_EventScript_AltarNotZygarde:
+	goto_if_unset FLAG_TEMP_13, Nabla_KalosSanctuary_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_ZYGARDE_CAUGHT, Nabla_KalosSanctuary_EventScript_AltarWaits
+Nabla_KalosSanctuary_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_KalosSanctuary_EventScript_AltarWaits:
+	msgbox Nabla_Text_KalosSanctuaryAltarWaits, MSGBOX_DEFAULT
+	release
+	end

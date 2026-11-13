@@ -1706,6 +1706,10 @@
     {
       "id": "MAPSEC_NABLA_POWER_PLANT",
       "name": "P2 LABORATORY"
+    },
+    {
+      "id": "MAPSEC_NABLA_KALOS_SANCTUARY",
+      "name": "KALOS SANCTUARY"
     }
   ]
 }

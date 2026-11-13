@@ -90,9 +90,9 @@
 #define FLAG_NABLA_MAGEARNA_CAUGHT 0x44
 #define FLAG_NABLA_MELMETAL_CAUGHT 0x45
 #define FLAG_NABLA_RECEIVED_MELTAN 0x46
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_NABLA_XERNEAS_CAUGHT 0x47
+#define FLAG_NABLA_YVELTAL_CAUGHT 0x48
+#define FLAG_NABLA_ZYGARDE_CAUGHT 0x49
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
@@ -776,7 +776,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
 
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
+#define FLAG_NABLA_ITEM_KALOS_SANCTUARY_ZYGARDITE 0x2D9
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB

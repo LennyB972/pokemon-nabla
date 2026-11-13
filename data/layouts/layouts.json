@@ -9532,6 +9532,17 @@
       "border_filepath": "data/layouts/NablaPowerPlant/border.bin",
       "blockdata_filepath": "data/layouts/NablaPowerPlant/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_KALOS_SANCTUARY",
+      "name": "NablaKalosSanctuary_Layout",
+      "width": 21,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NablaKalosSanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/NablaKalosSanctuary/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

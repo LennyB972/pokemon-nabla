@@ -85,3 +85,6 @@ Nabla_Text_Dragonspiral:
 
 Nabla_Text_PowerPlant:
 	.string "P2 LABORATORY$"
+
+Nabla_Text_KalosSanctuary:
+	.string "KALOS SANCTUARY$"
