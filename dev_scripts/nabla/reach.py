@@ -5,8 +5,8 @@ a block with collision stops the player; two elevations other than 0 and 15 must
 like stairs, goes between elevations); surfing starts from elevation 3 onto water of elevation 1 and stops on
 elevation 3; a ledge is jumped in its direction, landing two cells further.
 
-Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell and that
-no object cuts off a part of the map. With compressed sprites (OW_GFX_COMPRESS, include/config/overworld.h; off in
+Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell, or surf to
+those in the water, and that no object cuts off a part of the map. With compressed sprites (OW_GFX_COMPRESS, include/config/overworld.h; off in
 Nabla since Reshiram showed garbage), it also checks that the Pokémon in view never fill the memory of sprites: the
 whole sheet of each sprite is then loaded, 384 tiles for a big one (64 x 64), and two big sheets were already too
 many. A Pokémon called by an altar is never there with the Pokémon it asks for in the party (caught, so gone).
@@ -44,8 +44,8 @@ def ledges(blocks, primary, secondary):
 
 def reach(blocks, start, objects=(), jumps=None):
     """The cells reached from start, walking or surfing, without going through the objects, and the objects next to
-    a cell reached on foot, at its elevation (where the player can talk to them). jumps: ledges(...), for a map with
-    ledges."""
+    a cell reached on foot, at its elevation, or in the water next to a cell reached surfing (where the player can talk
+    to them). jumps: ledges(...), for a map with ledges."""
     H, W = len(blocks), len(blocks[0])
     objects = set(objects)
     seen, talked, todo = set(), set(), [tuple(start) + (False,)]
@@ -68,7 +68,7 @@ def reach(blocks, start, objects=(), jumps=None):
                 continue
             e1 = elevation(blocks[ny][nx])
             if (nx, ny) in objects:
-                if not surfing and e1 in (e0, 0, 15):
+                if e1 in (e0, 0, 15) if not surfing else e1 == 1:
                     talked.add((nx, ny))
             elif surfing:
                 if e1 in (1, 3):
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     objects = {(o["x"], o["y"]): o for o in m["object_events"]}
     cells, talked = reach(blocks, start, objects, jumps)
     alone, _ = reach(blocks, start, (), jumps)
-    problems = ["%s at (%d, %d): not reached on foot" % (o["graphics_id"], x, y)
+    problems = ["%s at (%d, %d): not reached" % (o["graphics_id"], x, y)
                 for (x, y), o in objects.items() if (x, y) not in talked]
     problems += ["%s at (%d, %d): elevation %d on a block of elevation %d"
                  % (o["graphics_id"], x, y, o["elevation"], elevation(blocks[y][x]))
@@ -143,5 +143,5 @@ if __name__ == "__main__":
         if worst[0] > SPRITE_TILES:
             problems.append("(%d, %d): too many sprites in view (%d tiles): %s" % (px, py, worst[0], ", ".join(worst[1])))
             break
-    print("\n".join(problems) or "%s: every object can be reached on foot" % name)
+    print("\n".join(problems) or "%s: every object can be reached (on foot, or surfing in the water)" % name)
     sys.exit(bool(problems))

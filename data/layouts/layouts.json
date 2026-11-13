@@ -9598,6 +9598,17 @@
       "border_filepath": "data/layouts/NablaShrineOfRuin/border.bin",
       "blockdata_filepath": "data/layouts/NablaShrineOfRuin/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_AREA_ZERO",
+      "name": "NablaAreaZero_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NablaAreaZero/border.bin",
+      "blockdata_filepath": "data/layouts/NablaAreaZero/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

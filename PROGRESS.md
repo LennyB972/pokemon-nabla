@@ -410,6 +410,9 @@
   - **Test** : la Flûte → CROWN TUNDRA ; arrivée à l'est ; on ne glisse nulle part ; Sylveroy sur le plateau (par l'escalier à l'ouest), Blizzeval, Spectreval ; retour avec la Flûte.
 - Mirage des Ruines du Fléau (`NablaShrineOfRuin`, 21 × 17, « SHRINE OF RUIN »), image validée par l'utilisateur (2026-11-13) : le rez-de-chaussée de la Tour Mirage (`dev_scripts/nabla/draw_shrine_of_ruin.py`), échelle et sortie murées. Les quatre Trésors du Fléau aux quatre coins de l'anneau (0x499-0x49C). Couverture : 84 / 97 légendaires. Musique de la Tour Mirage ; pas de condition.
   - **Test** : la Flûte → SHRINE OF RUIN ; arrivée en bas ; tour de l'anneau : Chongjian, Baojian, Dinglu, Yuyu ; retour avec la Flûte.
+- Les Ruines du Fléau sont testées en jeu par l'utilisateur (2026-11-14).
+- Mirage du Cratère de Paldea (`NablaAreaZero`, 27 × 30, « AREA ZERO »), base choisie par l'utilisateur (le fond de la Grotte Marine plutôt que le désert de la Route 111, qui n'est pas fermé) et image validée (2026-11-14) : `dev_scripts/nabla/draw_area_zero.py` : sortie murée ; le lac de Kyogre, bloquant dans Émeraude, se surfe. Koraidon (0x49D), Miraidon (0x49E) ; Terapagos (0x49F) apparaît dans le lac à l'appel de l'autel (Koraidon et Miraidon dans l'équipe), demande de l'utilisateur, et se rejoint en Surf (`reach.py` : parler en surfant à un Pokémon dans l'eau). Couverture : 87 / 97 légendaires. Musique du temps anormal ; pas de condition.
+  - **Test** : la Flûte → AREA ZERO ; arrivée en haut ; Koraidon (salle du milieu), Miraidon (à droite du lac) ; l'autel sans eux (« waiting for the POKéMON of the past and the future… »), avec eux (Terapagos apparaît dans le lac) ; Surf jusqu'à Terapagos et combat ; retour avec la Flûte.
 
 ## Bugs connus
 

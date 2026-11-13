@@ -35,6 +35,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_IsleOfArmor, 21
 	dynmultipush Nabla_Text_CrownTundra, 22
 	dynmultipush Nabla_Text_ShrineOfRuin, 23
+	dynmultipush Nabla_Text_AreaZero, 24
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -62,6 +63,7 @@ Nabla_EventScript_EonFlute::
 	case 21, Nabla_EventScript_EonFluteToIsleOfArmor
 	case 22, Nabla_EventScript_EonFluteToCrownTundra
 	case 23, Nabla_EventScript_EonFluteToShrineOfRuin
+	case 24, Nabla_EventScript_EonFluteToAreaZero
 	releaseall
 	end
 
@@ -253,6 +255,13 @@ Nabla_EventScript_EonFluteToCrownTundra:
 Nabla_EventScript_EonFluteToShrineOfRuin:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_SHRINE_OF_RUIN, 10, 13
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToAreaZero:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_AREA_ZERO, 20, 3
 	waitstate
 	releaseall
 	end

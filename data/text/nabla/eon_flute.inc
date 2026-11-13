@@ -103,3 +103,6 @@ Nabla_Text_CrownTundra:
 
 Nabla_Text_ShrineOfRuin:
 	.string "SHRINE OF RUIN$"
+
+Nabla_Text_AreaZero:
+	.string "AREA ZERO$"

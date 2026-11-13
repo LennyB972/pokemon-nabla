@@ -85,3 +85,12 @@ Nabla_Text_IsleOfArmorAltarWaits:
 Nabla_Text_IsleOfArmorAltarAwakensEternatus:
 	.string "ZACIAN and ZAMAZENTA\n"
 	.string "react to the altar!$"
+
+Nabla_Text_AreaZeroAltarWaits:
+	.string "An ancient altar.\p"
+	.string "It seems to be waiting for the\n"
+	.string "POKéMON of the past and the future…$"
+
+Nabla_Text_AreaZeroAltarAwakensTerapagos:
+	.string "KORAIDON and MIRAIDON\n"
+	.string "react to the altar!$"

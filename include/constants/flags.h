@@ -1232,9 +1232,9 @@
 #define FLAG_NABLA_CHIEN_PAO_CAUGHT 0x49A
 #define FLAG_NABLA_TING_LU_CAUGHT 0x49B
 #define FLAG_NABLA_CHI_YU_CAUGHT 0x49C
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_NABLA_KORAIDON_CAUGHT 0x49D
+#define FLAG_NABLA_MIRAIDON_CAUGHT 0x49E
+#define FLAG_NABLA_TERAPAGOS_CAUGHT 0x49F
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag

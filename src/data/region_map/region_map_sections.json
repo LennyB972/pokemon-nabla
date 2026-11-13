@@ -1730,6 +1730,10 @@
     {
       "id": "MAPSEC_NABLA_SHRINE_OF_RUIN",
       "name": "SHRINE OF RUIN"
+    },
+    {
+      "id": "MAPSEC_NABLA_AREA_ZERO",
+      "name": "AREA ZERO"
     }
   ]
 }

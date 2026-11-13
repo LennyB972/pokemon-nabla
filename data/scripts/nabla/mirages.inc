@@ -1284,3 +1284,75 @@ Nabla_ShrineOfRuin_EventScript_ChiYu::
 	setflag FLAG_NABLA_CHI_YU_CAUGHT
 	release
 	end
+
+@ Area Zero: Koraidon and Miraidon in the crater, Terapagos in the lake, called by the altar
+Nabla_AreaZero_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Koraidon
+	setflag FLAG_TEMP_12  @ Miraidon
+	setflag FLAG_TEMP_13  @ Terapagos
+	call_if_unset FLAG_NABLA_KORAIDON_CAUGHT, Nabla_AreaZero_EventScript_ShowKoraidon
+	call_if_unset FLAG_NABLA_MIRAIDON_CAUGHT, Nabla_AreaZero_EventScript_ShowMiraidon
+	return
+
+Nabla_AreaZero_EventScript_ShowKoraidon:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_AreaZero_EventScript_ShowMiraidon:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_AreaZero_EventScript_Koraidon::
+	setvar VAR_0x8004, SPECIES_KORAIDON
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_KORAIDON_CAUGHT
+	release
+	end
+
+Nabla_AreaZero_EventScript_Miraidon::
+	setvar VAR_0x8004, SPECIES_MIRAIDON
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_MIRAIDON_CAUGHT
+	release
+	end
+
+Nabla_AreaZero_EventScript_Terapagos::
+	setvar VAR_0x8004, SPECIES_TERAPAGOS
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TERAPAGOS_CAUGHT
+	release
+	end
+
+Nabla_AreaZero_EventScript_Altar::
+	lock
+	goto_if_set FLAG_NABLA_TERAPAGOS_CAUGHT, Nabla_AreaZero_EventScript_AltarNotTerapagos
+	goto_if_unset FLAG_TEMP_13, Nabla_AreaZero_EventScript_AltarNotTerapagos
+	setvar VAR_0x8004, SPECIES_KORAIDON
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AreaZero_EventScript_AltarNotTerapagos
+	setvar VAR_0x8004, SPECIES_MIRAIDON
+	specialvar VAR_RESULT, NablaMirage_PartyHasSpecies
+	goto_if_eq VAR_RESULT, FALSE, Nabla_AreaZero_EventScript_AltarNotTerapagos
+	msgbox Nabla_Text_AreaZeroAltarAwakensTerapagos, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_TERAPAGOS, CRY_MODE_ENCOUNTER
+	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_TEMP_13
+	addobject LOCALID_AREA_ZERO_TERAPAGOS
+	fadescreenswapbuffers FADE_FROM_WHITE
+	waitmoncry
+	release
+	end
+Nabla_AreaZero_EventScript_AltarNotTerapagos:
+	goto_if_unset FLAG_TEMP_13, Nabla_AreaZero_EventScript_AltarQuiet
+	goto_if_unset FLAG_NABLA_TERAPAGOS_CAUGHT, Nabla_AreaZero_EventScript_AltarWaits
+Nabla_AreaZero_EventScript_AltarQuiet:
+	msgbox Nabla_Text_AncientAltar, MSGBOX_DEFAULT
+	release
+	end
+
+Nabla_AreaZero_EventScript_AltarWaits:
+	msgbox Nabla_Text_AreaZeroAltarWaits, MSGBOX_DEFAULT
+	release
+	end
