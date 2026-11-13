@@ -5,11 +5,11 @@ a block with collision stops the player; two elevations other than 0 and 15 must
 like stairs, goes between elevations); surfing starts from elevation 3 onto water of elevation 1 and stops on
 elevation 3; a ledge is jumped in its direction, landing two cells further.
 
-Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell, that no
-object cuts off a part of the map, and that the Pokémon in view never fill the memory of sprites: the whole sheet of
-a Pokémon's sprite is loaded (OW_GFX_COMPRESS), 384 tiles for a big one (64 x 64), and only two big sheets fit next
-to the player (the mirages hide the following Pokémon with FLAG_TEMP_HIDE_FOLLOWER); beyond, sprites show garbage.
-A Pokémon called by an altar is never there with the Pokémon it asks for in the party (caught, so gone from the map).
+Run on a map, it checks that the player can walk to every object of the map (Pokémon, items) from a cell and that
+no object cuts off a part of the map. With compressed sprites (OW_GFX_COMPRESS, include/config/overworld.h; off in
+Nabla since Reshiram showed garbage), it also checks that the Pokémon in view never fill the memory of sprites: the
+whole sheet of each sprite is then loaded, 384 tiles for a big one (64 x 64), and two big sheets were already too
+many. A Pokémon called by an altar is never there with the Pokémon it asks for in the party (caught, so gone).
 Usage (from the repo root): python3 dev_scripts/nabla/reach.py <Map> <x> <y>
 """
 import json
@@ -20,7 +20,7 @@ import sys
 
 from PIL import Image
 
-SPRITE_TILES = 768                   # two big sheets
+SPRITE_TILES = 384                   # one big sheet
 VIEW_LEFT, VIEW_RIGHT, VIEW_UP, VIEW_DOWN = 9, 10, 7, 9  # objects spawned around the player (TrySpawnObjectEvents)
 
 elevation = lambda v: v >> 12
@@ -125,12 +125,13 @@ if __name__ == "__main__":
                  % (o["graphics_id"], x, y, o["elevation"], elevation(blocks[y][x]))
                  for (x, y), o in objects.items() if elevation(blocks[y][x]) not in (o["elevation"], 0, 15)]
     problems += ["(%d, %d): cut off by the objects" % c for c in sorted(alone - cells - set(objects))]
-    # The sheets in view, from every cell the player can stand on (one sheet per species), the Pokémon called by an
-    # altar being there or not, without the Pokémon they ask for when they are
+    # With compressed sprites, the sheets in view, from every cell the player can stand on (one sheet per species), the
+    # Pokémon called by an altar being there or not, without the Pokémon they ask for when they are
     species = lambda o: re.sub(r"OBJ_EVENT_GFX_SPECIES\((\w+)\)", r"\1", o["graphics_id"])
     requirements = altar_requirements()
     called = sorted({species(o) for o in objects.values()} & set(requirements))
-    for px, py in sorted(cells):
+    compressed = re.search(r"^#define OW_GFX_COMPRESS\s+TRUE", open("include/config/overworld.h").read(), re.M)
+    for px, py in sorted(cells) if compressed else ():
         in_view = {species(o): sheet_tiles(o["graphics_id"]) for (x, y), o in objects.items()
                    if px - VIEW_LEFT <= x <= px + VIEW_RIGHT and py - VIEW_UP <= y <= py + VIEW_DOWN}
         worst = (0, ())
