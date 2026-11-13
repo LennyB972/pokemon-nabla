@@ -9543,6 +9543,17 @@
       "border_filepath": "data/layouts/NablaKalosSanctuary/border.bin",
       "blockdata_filepath": "data/layouts/NablaKalosSanctuary/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_DIAMOND_MINE",
+      "name": "NablaDiamondMine_Layout",
+      "width": 32,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NablaDiamondMine/border.bin",
+      "blockdata_filepath": "data/layouts/NablaDiamondMine/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

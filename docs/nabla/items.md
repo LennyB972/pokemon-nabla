@@ -80,6 +80,7 @@ Liste générée par `python3 dev_scripts/nabla/list_items.py` (objets cachés e
 | MtPyre_2F | 6, 3 | `ITEM_BANETTITE` | `FLAG_NABLA_ITEM_MT_PYRE_2F_BANETTITE` |
 | MtPyre_Exterior | 14, 7 | `ITEM_MEDICHAMITE` | `FLAG_NABLA_ITEM_MT_PYRE_EXTERIOR_MEDICHAMITE` |
 | MtPyre_Summit | 22, 2 | `ITEM_CHIMECHITE` | `FLAG_NABLA_ITEM_MT_PYRE_SUMMIT_CHIMECHITE` |
+| NablaDiamondMine | 3, 13 | `ITEM_DIANCITE` | `FLAG_NABLA_ITEM_DIAMOND_MINE_DIANCITE` |
 | NablaKalosSanctuary | 13, 19 | `ITEM_ZYGARDITE` | `FLAG_NABLA_ITEM_KALOS_SANCTUARY_ZYGARDITE` |
 | NablaCeruleanCave | 7, 7 | `ITEM_MEWTWONITE_X` | `FLAG_NABLA_ITEM_CERULEAN_CAVE_MEWTWONITE_X` |
 | NablaCeruleanCave | 3, 22 | `ITEM_MEWTWONITE_Y` | `FLAG_NABLA_ITEM_CERULEAN_CAVE_MEWTWONITE_Y` |
@@ -114,7 +115,7 @@ Données par le challenger battu dans la salle du Maître (`data/scripts/nabla/t
 
 - **Pokémon sauvages** : chaque Pokémon non légendaire dont la lignée a une Méga-Évolution porte la Méga-Gemme de sa lignée en **objet rare** (5 %, 20 % avec Œil Composé / Super Chance en tête). Dracaufeu et Raichu : la gemme X ; Absol, Carchacrok, Lucario : la gemme de base (pas la Z) ; Tarsal/Kirlia : Gardevoirite ; Stalgamin : Oniglalite. L'ancien objet rare est passé en objet commun quand la case était libre (46 espèces), sinon il a été retiré : Morceau d'Étoile de Stari/Staross et Baie Sitrus de Nanméouïe (leur case commune était déjà prise par Poussière Étoile et Baie Oran). Données : `.itemRare` / `.itemCommon` dans `src/data/pokemon/species_info/gen_*_families.h`.
 - **Route 120** : Steven donne la Méga-Gemme du starter avec le Scope Devon (`Nabla_Route120_EventScript_GiveStarterMegaStone`).
-- **Latiosite** : donné avec Latios (événement de l'Île du Sud). Méga-Gemmes des légendaires : au sol dans leur mirage (Mewtwo X et Y dans la Grotte Azurée, Darkraïte sur l'Île Lune, Zéraoraïte dans l'Archipel des Tokos, Heatranite au Volcan, Magearnite à l'Usine Abandonnée, Zygardite au Sanctuaire de Kalos). La Diancite ira à la Mine de Diamants ; la Latiasite reste à placer.
+- **Latiosite** : donné avec Latios (événement de l'Île du Sud). Méga-Gemmes des légendaires : au sol dans leur mirage (Mewtwo X et Y dans la Grotte Azurée, Darkraïte sur l'Île Lune, Zéraoraïte dans l'Archipel des Tokos, Heatranite au Volcan, Magearnite à l'Usine Abandonnée, Zygardite au Sanctuaire de Kalos, Diancite à la Mine de Diamants) ; la Latiasite reste à placer.
 - **Au sol, visibles** : Poké Balls (flags `FLAG_NABLA_ITEM_*`, objets ajoutés en fin de `object_events`), listées plus haut dans « Objets au sol ».
 
 ## Ajouter ou déplacer un objet caché

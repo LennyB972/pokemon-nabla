@@ -1710,6 +1710,10 @@
     {
       "id": "MAPSEC_NABLA_KALOS_SANCTUARY",
       "name": "KALOS SANCTUARY"
+    },
+    {
+      "id": "MAPSEC_NABLA_DIAMOND_MINE",
+      "name": "DIAMOND MINE"
     }
   ]
 }

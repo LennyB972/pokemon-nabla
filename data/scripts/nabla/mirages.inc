@@ -989,3 +989,34 @@ Nabla_KalosSanctuary_EventScript_AltarWaits:
 	msgbox Nabla_Text_KalosSanctuaryAltarWaits, MSGBOX_DEFAULT
 	release
 	end
+
+@ Diamond Mine: Hoopa on the mound, Diancie in the sand pit
+Nabla_DiamondMine_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ Diancie
+	setflag FLAG_TEMP_12  @ Hoopa
+	call_if_unset FLAG_NABLA_DIANCIE_CAUGHT, Nabla_DiamondMine_EventScript_ShowDiancie
+	call_if_unset FLAG_NABLA_HOOPA_CAUGHT, Nabla_DiamondMine_EventScript_ShowHoopa
+	return
+
+Nabla_DiamondMine_EventScript_ShowDiancie:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_DiamondMine_EventScript_ShowHoopa:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_DiamondMine_EventScript_Diancie::
+	setvar VAR_0x8004, SPECIES_DIANCIE
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_DIANCIE_CAUGHT
+	release
+	end
+
+Nabla_DiamondMine_EventScript_Hoopa::
+	setvar VAR_0x8004, SPECIES_HOOPA
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_HOOPA_CAUGHT
+	release
+	end

@@ -88,3 +88,6 @@ Nabla_Text_PowerPlant:
 
 Nabla_Text_KalosSanctuary:
 	.string "KALOS SANCTUARY$"
+
+Nabla_Text_DiamondMine:
+	.string "DIAMOND MINE$"

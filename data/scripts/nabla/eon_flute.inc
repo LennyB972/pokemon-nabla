@@ -30,6 +30,7 @@ Nabla_EventScript_EonFlute::
 	dynmultipush Nabla_Text_Dragonspiral, 16
 	dynmultipush Nabla_Text_PowerPlant, 17
 	dynmultipush Nabla_Text_KalosSanctuary, 18
+	dynmultipush Nabla_Text_DiamondMine, 19
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	closemessage
 	switch VAR_RESULT
@@ -52,6 +53,7 @@ Nabla_EventScript_EonFlute::
 	case 16, Nabla_EventScript_EonFluteToDragonspiral
 	case 17, Nabla_EventScript_EonFluteToPowerPlant
 	case 18, Nabla_EventScript_EonFluteToKalosSanctuary
+	case 19, Nabla_EventScript_EonFluteToDiamondMine
 	releaseall
 	end
 
@@ -208,6 +210,13 @@ Nabla_EventScript_EonFluteToPowerPlant:
 Nabla_EventScript_EonFluteToKalosSanctuary:
 	special NablaEonFlute_SaveReturnPoint
 	warp MAP_NABLA_KALOS_SANCTUARY, 10, 16
+	waitstate
+	releaseall
+	end
+
+Nabla_EventScript_EonFluteToDiamondMine:
+	special NablaEonFlute_SaveReturnPoint
+	warp MAP_NABLA_DIAMOND_MINE, 29, 5
 	waitstate
 	releaseall
 	end

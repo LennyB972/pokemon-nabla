@@ -4,7 +4,7 @@ Généré par `python3 dev_scripts/nabla/coverage.py`. Une espèce (formes cosm�
 peut la capturer ou la recevoir, la faire éclore ou y faire évoluer une espèce obtenable avec un objet trouvable.
 
 - **Espèces obtenables** : 984 / 984 hors légendaires et fabuleux.
-- **Légendaires et fabuleux** : 64 / 97 (les autres : phase 7).
+- **Légendaires et fabuleux** : 66 / 97 (les autres : phase 7).
 
 ## Espèces manquantes (hors légendaires)
 
@@ -12,7 +12,7 @@ Aucune.
 
 ## Légendaires et fabuleux obtenables
 
-Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cresselia, Darkrai, Deoxys_Normal, Dialga, Enamorus_Incarnate, Entei, Genesect, Giratina_Altered, Groudon, Heatran, Ho_Oh, Jirachi, Keldeo_Ordinary, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Reshiram, Shaymin_Land, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Thundurus_Incarnate, Tornadus_Incarnate, Uxie, Victini, Virizion, Volcanion, Xerneas_Neutral, Yveltal, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
+Arceus_Normal, Articuno, Articuno_Galar, Azelf, Celebi, Cobalion, Cresselia, Darkrai, Deoxys_Normal, Dialga, Diancie, Enamorus_Incarnate, Entei, Genesect, Giratina_Altered, Groudon, Heatran, Ho_Oh, Hoopa_Confined, Jirachi, Keldeo_Ordinary, Kyogre, Kyurem, Landorus_Incarnate, Latias, Latios, Lugia, Magearna, Manaphy, Marshadow, Melmetal, Meloetta_Aria, Meltan, Mesprit, Mew, Mewtwo, Moltres, Moltres_Galar, Palkia, Raikou, Rayquaza, Regice, Regirock, Registeel, Reshiram, Shaymin_Land, Suicune, Tapu_Bulu, Tapu_Fini, Tapu_Koko, Tapu_Lele, Terrakion, Thundurus_Incarnate, Tornadus_Incarnate, Uxie, Victini, Virizion, Volcanion, Xerneas_Neutral, Yveltal, Zapdos, Zapdos_Galar, Zarude, Zekrom, Zeraora, Zygarde_50
 
 ## Évolutions à vérifier en jeu
 
