@@ -1726,6 +1726,10 @@
     {
       "id": "MAPSEC_NABLA_CROWN_TUNDRA",
       "name": "CROWN TUNDRA"
+    },
+    {
+      "id": "MAPSEC_NABLA_SHRINE_OF_RUIN",
+      "name": "SHRINE OF RUIN"
     }
   ]
 }

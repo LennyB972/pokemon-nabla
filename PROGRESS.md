@@ -408,6 +408,8 @@
 - L'Autel du Soleil et de la Lune et l'Île de l'Armure sont testés en jeu par l'utilisateur (2026-11-13).
 - Mirage de la Toundra Couronnée (`NablaCrownTundra`, 20 × 30, « CROWN TUNDRA »), image validée par l'utilisateur (2026-11-13) : la salle de glace de la Grotte Tréfonds (`dev_scripts/nabla/draw_crown_tundra.py`) sans glissade (glace, bordures et marques en glace mouchetée ; échelle en sol, son haut en mur) : toutes les cases à pied. Sylveroy (0x496) sur le plateau, Blizzeval (0x497) au nord-ouest, Spectreval (0x498) à l'est ; pas d'autel. `add_mirage.py` met maintenant chaque objet à l'élévation de sa case (Sylveroy sur le plateau, élévation 4 : `reach.py` l'avait signalé) ; tous les mirages revérifiés. Couverture : 80 / 97 légendaires. Musique de la Grotte Tréfonds ; pas de condition.
   - **Test** : la Flûte → CROWN TUNDRA ; arrivée à l'est ; on ne glisse nulle part ; Sylveroy sur le plateau (par l'escalier à l'ouest), Blizzeval, Spectreval ; retour avec la Flûte.
+- Mirage des Ruines du Fléau (`NablaShrineOfRuin`, 21 × 17, « SHRINE OF RUIN »), image validée par l'utilisateur (2026-11-13) : le rez-de-chaussée de la Tour Mirage (`dev_scripts/nabla/draw_shrine_of_ruin.py`), échelle et sortie murées. Les quatre Trésors du Fléau aux quatre coins de l'anneau (0x499-0x49C). Couverture : 84 / 97 légendaires. Musique de la Tour Mirage ; pas de condition.
+  - **Test** : la Flûte → SHRINE OF RUIN ; arrivée en bas ; tour de l'anneau : Chongjian, Baojian, Dinglu, Yuyu ; retour avec la Flûte.
 
 ## Bugs connus
 

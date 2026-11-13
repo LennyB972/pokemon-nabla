@@ -1228,10 +1228,10 @@
 #define FLAG_NABLA_CALYREX_CAUGHT 0x496
 #define FLAG_NABLA_GLASTRIER_CAUGHT 0x497
 #define FLAG_NABLA_SPECTRIER_CAUGHT 0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_NABLA_WO_CHIEN_CAUGHT 0x499
+#define FLAG_NABLA_CHIEN_PAO_CAUGHT 0x49A
+#define FLAG_NABLA_TING_LU_CAUGHT 0x49B
+#define FLAG_NABLA_CHI_YU_CAUGHT 0x49C
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag

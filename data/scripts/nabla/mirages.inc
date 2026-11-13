@@ -1227,3 +1227,60 @@ Nabla_CrownTundra_EventScript_Spectrier::
 	setflag FLAG_NABLA_SPECTRIER_CAUGHT
 	release
 	end
+
+@ Shrine of Ruin: the four Treasures of Ruin at the corners of the ring
+Nabla_ShrineOfRuin_EventScript_SetUp::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_TEMP_11  @ WoChien
+	setflag FLAG_TEMP_12  @ ChienPao
+	setflag FLAG_TEMP_13  @ TingLu
+	setflag FLAG_TEMP_14  @ ChiYu
+	call_if_unset FLAG_NABLA_WO_CHIEN_CAUGHT, Nabla_ShrineOfRuin_EventScript_ShowWoChien
+	call_if_unset FLAG_NABLA_CHIEN_PAO_CAUGHT, Nabla_ShrineOfRuin_EventScript_ShowChienPao
+	call_if_unset FLAG_NABLA_TING_LU_CAUGHT, Nabla_ShrineOfRuin_EventScript_ShowTingLu
+	call_if_unset FLAG_NABLA_CHI_YU_CAUGHT, Nabla_ShrineOfRuin_EventScript_ShowChiYu
+	return
+
+Nabla_ShrineOfRuin_EventScript_ShowWoChien:
+	clearflag FLAG_TEMP_11
+	return
+
+Nabla_ShrineOfRuin_EventScript_ShowChienPao:
+	clearflag FLAG_TEMP_12
+	return
+
+Nabla_ShrineOfRuin_EventScript_ShowTingLu:
+	clearflag FLAG_TEMP_13
+	return
+
+Nabla_ShrineOfRuin_EventScript_ShowChiYu:
+	clearflag FLAG_TEMP_14
+	return
+
+Nabla_ShrineOfRuin_EventScript_WoChien::
+	setvar VAR_0x8004, SPECIES_WO_CHIEN
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_WO_CHIEN_CAUGHT
+	release
+	end
+
+Nabla_ShrineOfRuin_EventScript_ChienPao::
+	setvar VAR_0x8004, SPECIES_CHIEN_PAO
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_CHIEN_PAO_CAUGHT
+	release
+	end
+
+Nabla_ShrineOfRuin_EventScript_TingLu::
+	setvar VAR_0x8004, SPECIES_TING_LU
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_TING_LU_CAUGHT
+	release
+	end
+
+Nabla_ShrineOfRuin_EventScript_ChiYu::
+	setvar VAR_0x8004, SPECIES_CHI_YU
+	call Nabla_EventScript_MirageLegendary
+	setflag FLAG_NABLA_CHI_YU_CAUGHT
+	release
+	end

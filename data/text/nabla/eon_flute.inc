@@ -100,3 +100,6 @@ Nabla_Text_IsleOfArmor:
 
 Nabla_Text_CrownTundra:
 	.string "CROWN TUNDRA$"
+
+Nabla_Text_ShrineOfRuin:
+	.string "SHRINE OF RUIN$"

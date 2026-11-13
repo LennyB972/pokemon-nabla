@@ -9587,6 +9587,17 @@
       "border_filepath": "data/layouts/NablaCrownTundra/border.bin",
       "blockdata_filepath": "data/layouts/NablaCrownTundra/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NABLA_SHRINE_OF_RUIN",
+      "name": "NablaShrineOfRuin_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/NablaShrineOfRuin/border.bin",
+      "blockdata_filepath": "data/layouts/NablaShrineOfRuin/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
