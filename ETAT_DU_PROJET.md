@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : 7.4 et 7.5 sont finies : les 23 mirages, la Chambre Scellée et l'assistant du labo (objets de forme) ; les 97 légendaires et fabuleux sont obtenables, avec les outils `add_mirage.py` (brancher un mirage, avec autel et cadeaux), `reach.py` (accès à pied, rebords) et `seams.py` (raccords de tuiles) ; les derniers sont l'Usine Abandonnée (« P2 LABORATORY » : Genesect, Magearna, Meltan en cadeau, Melmetal à l'autel, Magearnite) , le Sanctuaire de Kalos (salle de la Chambre Scellée : Xerneas, Yveltal, Zygarde à l'autel, Zygardite), la Mine de Diamants (Grotte Granite : Diancie, Hoopa, Diancite), l'Autel du Soleil et de la Lune (salle intérieure de la Chambre Scellée : Cosmog niveau 5 et Type:0 niveau 40 en cadeau, Type:0 évolue au niveau 50, Necrozma à l'autel avec Solgaleo ou Lunala), l'Île de l'Armure (la West Beach en île : Zacian, Zamazenta, Wushours niveau 10 en cadeau, Éthernatos à l'autel), la Toundra Couronnée (salle de glace de la Grotte Tréfonds sans glissade : Sylveroy, Blizzeval, Spectreval), les Ruines du Fléau (rez-de-chaussée de la Tour Mirage : les quatre Trésors du Fléau), le Cratère de Paldea (fond de la Grotte Marine : Koraidon, Miraidon, Terapagos dans le lac à l'appel de l'autel, rejoint en Surf) et Kitakami (clairière : les trois Loyaux, Ogerpon, Pêchaminus à l'autel) ; Wushours et Cosmog peuvent se reproduire, Wushours évolue au niveau 50 en tenant son rouleau. À tester de mon côté : assistant du labo (labo de Seko après la Ligue), Chambre Scellée (courant avant la Ligue, Regieleki, Regidrago, Regigigas au mur du fond), Kitakami, Cratère de Paldea, Toundra Couronnée, évolution et œufs de Wushours et Cosmog, Mine de Diamants, Sanctuaire de Kalos, Usine Abandonnée, Tour Dragospire, Jardin Fleuri, Grotte Azurée, Tour Cendrée, Lacs. Prochaine chose : la phase 7 est finie côté contenu ; restent le lot de rencontres d'après la Ligue (quand je l'enverrai), les petits restes de la phase 6, puis la phase 8 (release) : à me proposer.
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : la phase 7 est finie : les 23 mirages (tous testés par moi sauf les plus anciens listés plus bas), la Chambre Scellée (je ne la teste pas, je te fais confiance) et l'assistant du labo (objets de forme, vérifié par des tests automatiques, `test/nabla_lab_assistant.c`) ; les 97 légendaires et fabuleux sont obtenables. Wushours et Cosmog se reproduisent, Wushours évolue au niveau 50 en tenant son rouleau, Type:0 au niveau 50 (tests automatiques, `test/nabla_post_game_pokemon.c`). Pas de lot de rencontres d'après la Ligue (abandonné). À tester de mon côté : l'assistant du labo (labo de Seko après la Ligue), Tour Dragospire, Jardin Fleuri, Grotte Azurée, Tour Cendrée, Lacs. Prochaine chose : je t'enverrai les objets des zones d'origine (West Beach, culs-de-sac de la forêt) ; sinon, propose-moi la suite (équilibrage après ma partie, phase 8).
 
 ## Où on en est
 
@@ -134,7 +134,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 - **Tests des 7.1a, 7.1b et 7.2** (procédure 7.2 : flag Maître `0x87F`, warp Group 16 / Map 4 / Warp 0, var `0x408B` pour choisir le challenger, *Instant Win* avec SELECT en combat) : procédures dans `PROGRESS.md` (warp vers le Panthéon, Maman et le PC, B pendant le 2ᵉ générique ; combats debug des revanches et des challengers, numéros 770-804, 657, 462, 117, 173).
 - **Test de la Grotte Azurée** : absente de la liste sans Mew, Mewtwo et ses deux Méga-Gemmes (plateau, estrade du bas) à pied ; Darkraïte (Île Lune) et Zéraoraïte (Archipel des Tokos) au sol ; Tour Cendrée (Raikou, Entei, Suicune ; absente sans Ho-Oh) ; Lacs (escaliers de droite vers le plateau) ; Colonnes Lances (autel avec et sans le trio dans l'équipe, Palkia entier) ; Volcan ; Îlot des Oiseaux absent sans Lugia ; Surf depuis la rive gauche du lac ; procédure dans `PROGRESS.md`.
 - **Textes de la défense du titre** à relire (`data/text/nabla/title_defense.inc`) ; liste des récompenses du tirage validée, il pourra la retoucher.
-- **Lot de rencontres d'après la Ligue**, s'il veut en changer : Grotte Altérée, Passage du Désert, Grotte Artisan, Grotte Tellurique / Grotte Marine, île Mirage de la Route 130, zones sous-marines (inchangées pour l'instant). Il l'envoie en message ou en fichier texte.
+- ~~Lot de rencontres d'après la Ligue~~ : abandonné par l'utilisateur (2026-11-16). Zones concernées, inchangées : Grotte Altérée, Passage du Désert, Grotte Artisan, Grotte Tellurique / Grotte Marine, île Mirage de la Route 130, zones sous-marines (inchangées pour l'instant). Il l'envoie en message ou en fichier texte.
 - **Équilibrage des niveaux**, étape à part après sa partie complète : relever un peu les niveaux (facteurs `PARTS` de `scale_levels.py`) ; West Beach et Forêt Émeraude (zones Nabla, hors script) à régler à la main (forêt à 30-34 : Grimalin y est déjà Fourbelin).
 - **Tests encore à faire** (il fera surtout sa partie complète) :
   - 4.2c rival et Timmy, 4.2d Aqua/Magma (numéros dans `include/constants/opponents.h` et `docs/nabla/trainers.md`) ;
@@ -148,11 +148,9 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
-1. **Post-game**, dans l'ordre de `docs/nabla/postgame.md` :
-   - le lot de rencontres d'après la Ligue, quand il l'envoie.
-2. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il choisit les objets), événement de West Beach.
-3. **Équilibrage** après sa partie complète (niveaux, level caps).
-4. **Phase 8 Release 1.0**.
+1. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il les enverra), événement de West Beach.
+2. **Équilibrage** après sa partie complète (niveaux, level caps).
+3. **Phase 8 Release 1.0**.
 
 Merges d'expansion : Aura Protectrice (`ABILITY_AURA_GUARD`) est codée par Nabla ; si expansion la code aussi, garder une seule version.
 
