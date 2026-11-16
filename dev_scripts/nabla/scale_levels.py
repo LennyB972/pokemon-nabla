@@ -5,7 +5,8 @@ Each part of the adventure (between two badges) gets a factor: the new level cap
 of the strongest Pokémon of the original Gym Leader. A level is multiplied by the factor of the part of
 the adventure where it is met: that of its map (MAP_PARTS), or, for a trainer, that of its original
 level if it is later (trainers reached with Surf, rematches). Wild Pokémon met with Surf, Rock Smash or
-a rod also start at the part where these are obtained.
+a rod also start at the part where these are obtained. Surf and the rods then get one range of 3 levels per
+table, set on the grass of their part of the adventure (WATER_LEVELS).
 
 Trainers' Pokémon evolve when the new level reaches their evolution level (level 40 for the evolutions
 that need more than a level: trade, item, friendship...). Wild Pokémon evolve in the game itself
@@ -17,10 +18,12 @@ a manual change to one of them is lost (the trainers of step 4.2 are left out, s
 
 Usage (from the repo root): python3 dev_scripts/nabla/scale_levels.py (also rewrites docs/nabla/levels.md)
 """
+import collections
 import glob
 import json
 import os
 import re
+import statistics
 import subprocess
 import sys
 
@@ -69,6 +72,13 @@ MAP_PARTS = [
 # Good Rod on Route 118, Super Rod in Mossdeep)
 AREA_PARTS = {"water_mons": 5, "rock_smash_mons": 3}
 ROD_PARTS = {"old_rod": 1, "good_rod": 5, "super_rod": 6}
+# Surf and the rods (choice of the user, 2026-11-16): instead of Emerald's wide ranges (5-35...), one range of
+# WATER_SPREAD + 1 levels per table and per way, whose top is the level of the grass of the part of the adventure
+# (median, over its maps, of their highest grass level) for Surf and the Super Rod, that level minus GOOD_ROD_BELOW
+# for the Good Rod, and Emerald's highest Old Rod level, scaled, for the Old Rod (weak Pokémon)
+WATER_SPREAD = 2
+GOOD_ROD_BELOW = 5
+OLD_ROD_LEVEL = 10
 # Non-legendary static Pokémon of the story: (script, species)
 STATIC_POKEMON = [
     ("data/maps/NewMauville_Inside/scripts.inc", "VOLTORB"),
@@ -299,6 +309,7 @@ def scale_wild(report):
     original = {e["base_label"]: e for e in json.loads(git_show(WILD_REV, path))["wild_encounter_groups"][0]["encounters"]}
     group = data["wild_encounter_groups"][0]
     rods = {i: rod for rod, slots in [f for f in group["fields"] if f["type"] == "fishing_mons"][0]["groups"].items() for i in slots}
+    tables = []
     for e in group["encounters"]:
         label = e["base_label"]
         if label.endswith(("_FireRed", "_LeafGreen")) or e["map"] not in folders:
@@ -310,24 +321,35 @@ def scale_wild(report):
         # A night table added after step 4.1 has the levels of the day table of its map
         before = (original.get(label) or original.get(LEVELS_FROM.get(label))
                   or (original.get(label[:-len("_Night")]) if label.endswith("_Night") else None))
-        for area, table in e.items():
-            if not area.endswith("_mons"):
+        tables += [(folders[e["map"]], label, area, table, before, part, fixed) for area, table in e.items()
+                   if area.endswith("_mons")]
+    # The grass first: the level of the grass of each part of the adventure sets Surf and the rods
+    grass = collections.defaultdict(dict)
+    for folder, label, area, table, before, part, fixed in sorted(tables, key=lambda t: t[2] != "land_mons"):
+        ranges = []
+        for i, mon in enumerate(table["mons"]):
+            try:
+                old = before[area]["mons"][i]
+            except (TypeError, KeyError, IndexError):
+                report["unmatched"].append((label, area, i))
                 continue
-            ranges = []
-            for i, mon in enumerate(table["mons"]):
-                try:
-                    old = before[area]["mons"][i]
-                except (TypeError, KeyError, IndexError):
-                    report["unmatched"].append((label, area, i))
-                    continue
-                p = max(part, AREA_PARTS.get(area, 0), ROD_PARTS[rods[i]] if area == "fishing_mons" else 0)
-                mon["min_level"] = scale(old["min_level"], p)
-                mon["max_level"] = max(mon["min_level"], scale(old["max_level"], p))
-                if area == "land_mons" and fixed is not None:
-                    mon["min_level"] = mon["max_level"] = fixed
-                ranges.append((old["min_level"], old["max_level"], mon["min_level"], mon["max_level"]))
-            if ranges:
-                report["wild"].append((folders[e["map"]], label, area, ranges))
+            p = max(part, AREA_PARTS.get(area, 0), ROD_PARTS[rods[i]] if area == "fishing_mons" else 0)
+            mon["min_level"] = scale(old["min_level"], p)
+            mon["max_level"] = max(mon["min_level"], scale(old["max_level"], p))
+            if area == "land_mons" and fixed is not None:
+                mon["min_level"] = mon["max_level"] = fixed
+            if area in ("water_mons", "fishing_mons"):
+                level = statistics.median_low(grass[p].values())
+                top = {"old_rod": scale(OLD_ROD_LEVEL, p), "good_rod": level - GOOD_ROD_BELOW}.get(
+                    rods[i] if area == "fishing_mons" else None, level)
+                mon["min_level"], mon["max_level"] = top - WATER_SPREAD, top
+            ranges.append((old["min_level"], old["max_level"], mon["min_level"], mon["max_level"]))
+        if area == "land_mons" and ranges:
+            grass[part][folder] = max(r[3] for r in ranges)
+        if ranges:
+            report["wild"].append((folder, label, area, ranges))
+    report["wild"].sort(key=lambda w: [t[1] for t in tables].index(w[1]))  # in the order of the tables
+    report["water_levels"] = {p: statistics.median_low(levels.values()) for p, levels in grass.items()}
     with open(path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
@@ -363,6 +385,12 @@ def write_doc(report):
               "(dresseurs en Surf, revanches).",
               "- Pokémon sauvages : au plus tôt l'étape où on les rencontre (Surf : 5ᵉ badge, Éclate-Roc : 3ᵉ, "
               "Canne : 1er, Super Canne : 5ᵉ, Méga Canne : 6ᵉ).",
+              "- Surf et pêche (choix de l'utilisateur, 2026-11-16) : une seule fourchette de %d niveaux par table et "
+              "par moyen, calée sur les herbes de l'étape (niveau des herbes : médiane, sur les maps de l'étape, de "
+              "leur plus haut niveau d'herbes) : Surf et Méga Canne à ce niveau, Super Canne %d niveaux en dessous, "
+              "Canne au niveau %d d'Émeraude relevé (Pokémon faibles). Niveau des herbes : %s." % (
+                  WATER_SPREAD + 1, GOOD_ROD_BELOW, OLD_ROD_LEVEL,
+                  ", ".join("%s %d" % (PARTS[p][0], level) for p, level in sorted(report["water_levels"].items()))),
               "- Évolutions : un Pokémon de dresseur évolue quand le relèvement lui fait atteindre son niveau "
               "d'évolution ; les évolutions par échange, objet, bonheur… se font au niveau %d. Les Pokémon sauvages "
               "évoluent dans le jeu, selon leur niveau (même règle)." % OTHER_EVOLUTIONS_LEVEL,
