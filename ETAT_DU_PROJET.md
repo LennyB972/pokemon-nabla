@@ -4,7 +4,7 @@ Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (r
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : la phase 7 est finie : les 23 mirages (tous testés par moi sauf les plus anciens listés plus bas), la Chambre Scellée (je ne la teste pas, je te fais confiance) et l'assistant du labo (objets de forme, vérifié par des tests automatiques, `test/nabla_lab_assistant.c`) ; les 97 légendaires et fabuleux sont obtenables. Wushours et Cosmog se reproduisent, Wushours évolue au niveau 50 en tenant son rouleau, Type:0 au niveau 50 (tests automatiques, `test/nabla_post_game_pokemon.c`). Pas de lot de rencontres d'après la Ligue (abandonné). À tester de mon côté : l'assistant du labo (labo de Seko après la Ligue), Tour Dragospire, Jardin Fleuri, Grotte Azurée, Tour Cendrée, Lacs. Prochaine chose : je t'enverrai les objets des zones d'origine (West Beach, culs-de-sac de la forêt) ; sinon, propose-moi la suite (équilibrage après ma partie, phase 8).
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : la phase 7 est finie : les 23 mirages (tous testés par moi), la Chambre Scellée (je ne la teste pas, je te fais confiance) et l'assistant du labo (objets de forme, vérifié par des tests automatiques, `test/nabla_lab_assistant.c`) ; les 97 légendaires et fabuleux sont obtenables. Wushours et Cosmog se reproduisent, Wushours évolue au niveau 50 en tenant son rouleau, Type:0 au niveau 50 (tests automatiques, `test/nabla_post_game_pokemon.c`). Pas de lot de rencontres d'après la Ligue (abandonné). En cours : ma partie de test complète, nouvelle partie sur `pokeemerald-release.gba` (je note bugs, textes et niveaux). Prochaine chose : traiter mes retours de partie (bugs, équilibrage des niveaux), puis les objets des zones d'origine que je t'enverrai, puis la phase 8.
 
 ## Où on en est
 
@@ -148,6 +148,7 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
 
 ## Prochaines étapes (dans l'ordre)
 
+0. **Partie de test complète de l'utilisateur** (commencée le 2026-11-16) : traiter ses retours (bugs, textes, équilibrage).
 1. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il les enverra), événement de West Beach.
 2. **Équilibrage** après sa partie complète (niveaux, level caps).
 3. **Phase 8 Release 1.0**.
