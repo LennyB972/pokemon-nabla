@@ -143,13 +143,13 @@ Romhack d'Émeraude sur pokeemerald-expansion 1.17.2 (RHH), distribué en patch 
   - inscriptions de Tutétékri (Route 111) ;
   - vendeur d'objets d'évolution du marché de Poivressel.
 - **Décision ouverte** : ajouter le nom à la main (`setspeaker`) dans les dialogues sans nom des personnages principaux (Pierre dans la Grotte Granite…).
-- **West Beach** : il ajoutera des objets plus tard, et peut-être un événement pour y attirer le joueur (un dresseur qui propose un échange contre un Pokémon de West Beach).
+- **West Beach** : il ajoutera des objets plus tard, et un événement pour y attirer le joueur. Constat de sa partie de test (2026-11-17) : rien ne mène à West Beach ; il faudra au moins un PNJ qui en parle (idée plus ancienne : un dresseur qui propose un échange contre un Pokémon de West Beach).
 - Il retouchera parfois des maps dans Porymap (et préviendra).
 
 ## Prochaines étapes (dans l'ordre)
 
 0. **Partie de test complète de l'utilisateur** (commencée le 2026-11-16) : traiter ses retours (bugs, textes, équilibrage).
-1. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il les enverra), événement de West Beach.
+1. **Petits restes de la phase 6** : objets de West Beach et des culs-de-sac de la forêt (il les enverra), événement de West Beach (au moins un PNJ qui en parle).
 2. **Équilibrage** après sa partie complète (niveaux, level caps).
 3. **Phase 8 Release 1.0**.
 
