@@ -1,10 +1,10 @@
-# État du projet — Pokémon Nabla (au 2026-11-13)
+# État du projet — Pokémon Nabla (au 2026-11-17)
 
 Point de reprise d'une nouvelle session. À lire en premier, puis `CLAUDE.md` (règles permanentes), `ROADMAP.md` (plan) et `PROGRESS.md` (journal détaillé et décisions datées).
 
 ## Prompt de reprise (à envoyer en début de session)
 
-> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : la phase 7 est finie : les 23 mirages (tous testés par moi), la Chambre Scellée (je ne la teste pas, je te fais confiance) et l'assistant du labo (objets de forme, vérifié par des tests automatiques, `test/nabla_lab_assistant.c`) ; les 97 légendaires et fabuleux sont obtenables. Wushours et Cosmog se reproduisent, Wushours évolue au niveau 50 en tenant son rouleau, Type:0 au niveau 50 (tests automatiques, `test/nabla_post_game_pokemon.c`). Pas de lot de rencontres d'après la Ligue (abandonné). Surf et pêche resserrés à 3 niveaux, calés sur les herbes de l'étape (`scale_levels.py`). En cours : ma partie de test complète, nouvelle partie sur `pokeemerald-release.gba` (je note bugs, textes et niveaux). Prochaine chose : traiter mes retours de partie (bugs, équilibrage des niveaux), puis les objets des zones d'origine que je t'enverrai, puis la phase 8.
+> Pokémon Nabla. Lis d'abord `ETAT_DU_PROJET.md`, puis `CLAUDE.md` et `PROGRESS.md`, et repars de là. Dernières choses faites : la phase 7 est finie : les 23 mirages (tous testés par moi), la Chambre Scellée (je ne la teste pas, je te fais confiance) et l'assistant du labo (objets de forme, vérifié par des tests automatiques, `test/nabla_lab_assistant.c`) ; les 97 légendaires et fabuleux sont obtenables. Wushours et Cosmog se reproduisent, Wushours évolue au niveau 50 en tenant son rouleau, Type:0 au niveau 50 (tests automatiques, `test/nabla_post_game_pokemon.c`). Pas de lot de rencontres d'après la Ligue (abandonné). Surf et pêche resserrés à 3 niveaux, calés sur les herbes de l'étape (`scale_levels.py`). Level cap courant affiché dans le menu START (2026-11-17, pendant ma partie). En cours : ma partie de test complète, nouvelle partie sur `pokeemerald-release.gba` (je note bugs, textes et niveaux). Prochaine chose : traiter mes retours de partie (bugs, équilibrage des niveaux), puis les objets des zones d'origine que je t'enverrai, puis la phase 8.
 
 ## Où on en est
 

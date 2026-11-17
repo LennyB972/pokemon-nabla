@@ -8,7 +8,7 @@
 
 - Modern battle mechanics (Gen 9 damage, Fairy type, recent abilities and moves), Mega Evolution
 - Full National Pokédex (Gen 1 to 9)
-- Two difficulty modes and optional level caps, chosen at the start of the game
+- Two difficulty modes and optional level caps, chosen at the start of the game (the current level cap is shown in the START menu)
 - Quality of life: running indoors, instant text, modern Exp. Share, reusable TMs, HMs replaced by key items, following Pokémon, day/night cycle
 - New areas during the adventure and in the post-game, story additions, stronger post-game League
 

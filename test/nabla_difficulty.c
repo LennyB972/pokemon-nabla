@@ -38,6 +38,29 @@ TEST("Nabla: level caps follow the difficulty")
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
 
+// The start menu shows the level cap while it is below 100 (src/start_menu.c)
+TEST("Nabla: level caps follow the badges, and are lifted without level caps and once the player is the Champion")
+{
+    u32 i, levelCaps = TRUE, badges = 0, isChampion = FALSE, cap = 0;
+
+    PARAMETRIZE { levelCaps = FALSE; cap = MAX_LEVEL; }
+    PARAMETRIZE { badges = 1; cap = 20; }
+    PARAMETRIZE { badges = 8; cap = 72; }
+    PARAMETRIZE { badges = 8; isChampion = TRUE; cap = MAX_LEVEL; }
+
+    if (levelCaps)
+        FlagSet(FLAG_NABLA_LEVEL_CAPS);
+    for (i = 0; i < badges; i++)
+        FlagSet(FLAG_BADGE01_GET + i);
+    if (isChampion)
+        FlagSet(FLAG_IS_CHAMPION);
+    EXPECT_EQ(GetCurrentLevelCap(), cap);
+    FlagClear(FLAG_NABLA_LEVEL_CAPS);
+    for (i = 0; i < badges; i++)
+        FlagClear(FLAG_BADGE01_GET + i);
+    FlagClear(FLAG_IS_CHAMPION);
+}
+
 TEST("Nabla: the Elite Four and the Champion are level 100 once the player is the Champion")
 {
     u32 trainerClass = TRAINER_CLASS_ELITE_FOUR, isChampion = FALSE, level = 0;

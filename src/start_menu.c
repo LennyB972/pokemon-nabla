@@ -4,6 +4,7 @@
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "bg.h"
+#include "caps.h"
 #include "debug.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -86,6 +87,8 @@ COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
+EWRAM_DATA static u8 sLevelCapWindowId = 0;
+EWRAM_DATA static bool8 sShowLevelCap = FALSE;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
 EWRAM_DATA static u8 sCurrentStartMenuActions[9] = {0};
@@ -187,7 +190,18 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .baseBlock = 0x8
 };
 
+static const struct WindowTemplate sWindowTemplate_LevelCap = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 8,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x8
+};
+
 static const u8 sText_MenuDebug[] = _("DEBUG");
+static const u8 sText_LevelCap[] = _("LEVEL CAP\n{LV}{STR_VAR_1}");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -258,6 +272,7 @@ static void BuildBattlePyramidStartMenu(void);
 static void BuildMultiPartnerRoomStartMenu(void);
 static void ShowSafariBallsWindow(void);
 static void ShowPyramidFloorWindow(void);
+static void ShowLevelCapWindow(void);
 static void RemoveExtraStartMenuWindows(void);
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count);
 static bool32 InitStartMenuStep(void);
@@ -283,6 +298,7 @@ static void HideStartMenuDebug(void);
 static void BuildStartMenuActions(void)
 {
     sNumStartMenuActions = 0;
+    sShowLevelCap = FALSE;
 
     if (IsOverworldLinkActive() == TRUE)
     {
@@ -310,6 +326,8 @@ static void BuildStartMenuActions(void)
     }
     else
     {
+        // Pokémon Nabla: the normal start menu shows the current level cap, when level caps are on
+        sShowLevelCap = (GetCurrentLevelCap() < MAX_LEVEL);
         if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
             BuildDebugStartMenu();
         else
@@ -465,8 +483,26 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+static void ShowLevelCapWindow(void)
+{
+    sLevelCapWindowId = AddWindow(&sWindowTemplate_LevelCap);
+    PutWindowTilemap(sLevelCapWindowId);
+    DrawStdWindowFrame(sLevelCapWindowId, FALSE);
+    ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar4, sText_LevelCap);
+    AddTextPrinterParameterized(sLevelCapWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sLevelCapWindowId, COPYWIN_GFX);
+}
+
 static void RemoveExtraStartMenuWindows(void)
 {
+    if (sShowLevelCap)
+    {
+        ClearStdWindowAndFrameToTransparent(sLevelCapWindowId, FALSE);
+        CopyWindowToVram(sLevelCapWindowId, COPYWIN_GFX);
+        RemoveWindow(sLevelCapWindowId);
+        sShowLevelCap = FALSE;
+    }
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariBallsWindowId, FALSE);
@@ -535,6 +571,8 @@ static bool32 InitStartMenuStep(void)
             ShowSafariBallsWindow();
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             ShowPyramidFloorWindow();
+        if (sShowLevelCap)
+            ShowLevelCapWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
