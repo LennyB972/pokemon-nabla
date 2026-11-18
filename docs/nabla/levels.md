@@ -214,6 +214,7 @@ Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi
 | `TRAINER_KIM_AND_IRIS` | Swablu 32 | Altaria 39 |
 | `TRAINER_LISA_AND_RAY` | Goldeen 27 | Seaking 34 |
 | `TRAINER_LISA_AND_RAY` | Tentacool 25 | Tentacruel 31 |
+| `TRAINER_CHRIS` | Feebas 26 | Milotic 32 |
 | `TRAINER_SOPHIE` | Marill 17 | Azumarill 20 |
 | `TRAINER_GRUNT_MAGMA_HIDEOUT_3` | Numel 29 | Camerupt 35 |
 | `TRAINER_GRUNT_MAGMA_HIDEOUT_5` | Numel 28 | Camerupt 34 |

@@ -97,6 +97,8 @@ EXCLUDED = re.compile(r"TRAINER_((ROXANNE|BRAWLY|WATTSON|FLANNERY|NORMAN|WINONA|
                       r"|ARCHIE|MATT|MAXIE_\w+|SHELLY_\w+|TABITHA_\w+|NABLA_\w+)$")
 
 OTHER_EVOLUTIONS_LEVEL = 40  # NABLA_OTHER_EVOLUTIONS_LEVEL
+# Species that evolve by level in Pokémon Nabla only (Feebas: instead of beauty; Type: Null: instead of friendship)
+ADDED_LEVEL_EVOLUTIONS = {"FEEBAS", "TYPE_NULL"}
 # Conditions that choose between evolutions; the others are requirements, met from level 40
 BRANCH_CONDITIONS = {"IF_GENDER", "IF_TIME", "IF_NOT_TIME", "IF_ATK_GT_DEF", "IF_ATK_EQ_DEF", "IF_ATK_LT_DEF",
                      "IF_PID_UPPER_MODULO_10_GT", "IF_PID_UPPER_MODULO_10_EQ", "IF_PID_UPPER_MODULO_10_LT",
@@ -179,11 +181,11 @@ def wild_forms(evos, name, level, regions=("REGION_HOENN",)):
 
 def trainer_evolution(evos, name, old_level, level):
     # A trainer's Pokémon evolves when the raise of its level makes it reach its evolution level (an
-    # original Pokémon that could already evolve stays as it is); the first evolution of the list when
-    # there are several
+    # original Pokémon that could already evolve stays as it is, but not one whose level evolution is added
+    # by Pokémon Nabla); the first evolution of the list when there are several
     for method, param, target, conditions in evos.get(name, []):
         if is_level_evolution(method, param, conditions) and region_ok(conditions, ("REGION_HOENN",)):
-            if int(param) <= old_level:
+            if int(param) <= old_level and name not in ADDED_LEVEL_EVOLUTIONS:
                 return None
             if int(param) <= level:
                 return target

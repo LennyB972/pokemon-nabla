@@ -80,8 +80,8 @@ Généré par `python3 dev_scripts/nabla/list_encounters.py` : ne pas modifier �
 ### Route 106
 - **Surf** : Tentacool 60 % (32-34) → en jeu : Tentacruel · Wingull 35 % (32-34) → en jeu : Pelipper · Pelipper 5 % (32-34)
 - **Canne** : Feebas 70 % (9-11) · Magikarp 30 % (9-11) — *changé : +Feebas, −Tentacool*
-- **Super Canne** : Feebas 60 % (27-29) · Magikarp 40 % (27-29) → en jeu : Gyarados — *changé : +Feebas, −Tentacool, −Wailmer*
-- **Méga Canne** : Feebas 60 % (37-39) · Magikarp 40 % (37-39) → en jeu : Gyarados — *changé : +Feebas, +Magikarp, −Wailmer*
+- **Super Canne** : Feebas 60 % (27-29) → en jeu : Milotic · Magikarp 40 % (27-29) → en jeu : Gyarados — *changé : +Feebas, −Tentacool, −Wailmer*
+- **Méga Canne** : Feebas 60 % (37-39) → en jeu : Milotic · Magikarp 40 % (37-39) → en jeu : Gyarados — *changé : +Feebas, +Magikarp, −Wailmer*
 
 ### Rusturf Tunnel
 - **Herbes** : Axew 20 % (6) · Gible 20 % (7) · Larvitar 20 % (6) · Beldum 20 % (7) · Deino 20 % (5-8) — *changé : +Axew, +Beldum, +Deino, +Gible, +Larvitar, −Whismur*

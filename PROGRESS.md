@@ -435,6 +435,7 @@
 - Bonbons Exp. et lettres (demande de l'utilisateur, 2026-11-18, pendant sa partie) : les Boutiques vendent les Bonbons Exp. XS et S dès le début, M au 1ᵉʳ badge, L au 3ᵉ (`Nabla_Pokemart_Items`, `sShopItemRequirements`). Plus de lettres en vente, sauf la Lettre Port (la dame de Lavandia l'échange contre la Boîte Jetons : sans elle, plus de Casino) ; Lettres Vague et Méca retirées aussi du 2ᵉ étage du Centre Commercial de Nénucrique. Sauvegarde non touchée. Test : `test/nabla_pokemart.c`.
 - À noter pour l'équilibrage (demande de l'utilisateur, 2026-11-18) : réduire l'écart de niveau des sauvages : pour une même espèce sur une même route, au plus 2 niveaux entre le min et le max.
 - Sauvages en Difficile (demande de l'utilisateur, 2026-11-18, pendant sa partie) : +10 % comme les dresseurs (`GetDifficultyLevel` appliqué dans `ChooseWildMonLevel`, `src/wild_encounter.c` : herbes, Surf, pêche, Éclate-Roc, Barpau ; le Repousse compare avec ce niveau). Pas les tables du Safari (niveau par région), de la Pike et de la Pyramide, ni les Pokémon fixes. Sauvegarde non touchée. Test : `test/nabla_difficulty.c`. Le relèvement des sauvages et l'écart de 2 niveaux attendent la fin de sa partie (son choix).
+- Barpau (demande de l'utilisateur, 2026-11-18, pendant sa partie) : évolue en Milobellus au niveau 20, sans condition, au lieu de la Beauté 170 (`gen_3_families.h` ; échange et Bel'Écaille gardés). Sauvages : à la Route 106, Super Canne (27-29) et Méga Canne (37-39) donnent Milobellus (évolution selon le niveau) ; les cases à Barpau de la Route 119 donnent toujours Barpau (choix de l'utilisateur : la chasse au Barpau d'origine). Dresseurs : `scale_levels.py` ne garde plus tel quel un Pokémon d'origine dont l'évolution par niveau est ajoutée par Nabla (`ADDED_LEVEL_EVOLUTIONS` : Barpau, Type:0) ; Annika garde ses Milobellus 50, Chris (Route 119) passe de Barpau 32 à Milobellus 32. Sauvegarde non touchée (un Barpau de niveau 20 ou plus évolue au prochain niveau). Test : `test/nabla_evolutions.c`.
 
 ## Bugs connus
 
@@ -502,6 +503,7 @@
 | 2026-11-16 | Pas de lot de rencontres d'après la Ligue. La Chambre Scellée n'est pas testée par l'utilisateur (il la verra pendant sa partie) ; l'assistant du labo est vérifié par des tests automatiques. |
 | 2026-11-16 | Surf et pêche : une fourchette de 3 niveaux par table et par moyen, calée sur les herbes de l'étape (Surf et Méga Canne au niveau des herbes, Super Canne −5, Canne faible). |
 | 2026-11-18 | Difficile : les sauvages prennent aussi +10 %. Rééquilibrage des sauvages (relèvement, au plus 2 niveaux d'écart par espèce et par route) après la partie de test. Bonbons Exp. vendus plus tôt (XS et S dès le début, M au 1ᵉʳ badge, L au 3ᵉ) ; plus de lettres en vente sauf la Lettre Port (Boîte Jetons). |
+| 2026-11-18 | Barpau évolue au niveau 20 sans condition ; les cases à Barpau de la Route 119 donnent toujours Barpau ; Chris (Route 119) a un Milobellus. |
 
 ## Questions ouvertes
 
