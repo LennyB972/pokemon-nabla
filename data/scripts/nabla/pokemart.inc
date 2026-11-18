@@ -34,12 +34,10 @@ Nabla_Pokemart_Items::
 	.2byte ITEM_X_ACCURACY
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_EXP_CANDY_XS
 	.2byte ITEM_EXP_CANDY_S
 	.2byte ITEM_EXP_CANDY_M
 	.2byte ITEM_EXP_CANDY_L
 	.2byte ITEM_LINKING_CORD
-	.2byte ITEM_ORANGE_MAIL
-	.2byte ITEM_HARBOR_MAIL
-	.2byte ITEM_WOOD_MAIL
-	.2byte ITEM_SHADOW_MAIL
+	.2byte ITEM_HARBOR_MAIL  @ the only Mail sold: the woman of Mauville trades it for the Coin Case
 	pokemartlistend

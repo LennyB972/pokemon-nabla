@@ -8,18 +8,19 @@ Référence de tous les objets que Nabla rend trouvables ou achetables. À tenir
 
 | Badges | Articles débloqués |
 |---|---|
-| 0 | Poké Ball (après avoir reçu le Pokédex), Potion, Super Potion, Antidote, Anti-Para, Réveil, Corde Sortie (objet rare réutilisable : achat unique, 1 000 ₽), Repousse, Attaque +, Défense +, Vitesse +, Lettre Orange |
-| 1 | Chrono Ball, Bis Ball |
-| 2 | Super Ball, Précision +, Muscle +, Défense Spéciale, Bonbon Exp. S, Lettre Port |
-| 3 | Faiblo Ball, Rappel, Anti-Brûle, Antigel, Queue Skitty, Super Repousse, Spécial +, Fil de Liaison |
-| 4 | Bonbon Exp. M |
-| 5 | Hyper Ball, Hyper Potion, Lettre Bois |
-| 6 | Filet Ball, Scuba Ball, Total Soin, Max Repousse, Bonbon Exp. L |
-| 7 | Potion Max, Lettre Ombre |
+| 0 | Poké Ball (après avoir reçu le Pokédex), Potion, Super Potion, Antidote, Anti-Para, Réveil, Corde Sortie (objet rare réutilisable : achat unique, 1 000 ₽), Repousse, Attaque +, Défense +, Vitesse +, Bonbon Exp. XS, Bonbon Exp. S |
+| 1 | Chrono Ball, Bis Ball, Bonbon Exp. M |
+| 2 | Super Ball, Précision +, Muscle +, Défense Spéciale, Lettre Port (la seule lettre vendue : la dame de Lavandia l'échange contre la Boîte Jetons) |
+| 3 | Faiblo Ball, Rappel, Anti-Brûle, Antigel, Queue Skitty, Super Repousse, Spécial +, Fil de Liaison, Bonbon Exp. L |
+| 5 | Hyper Ball, Hyper Potion |
+| 6 | Filet Ball, Scuba Ball, Total Soin, Max Repousse |
+| 7 | Potion Max |
 | Maître de la Ligue | Beast Ball (1 000 ₽ ; prix 0 dans expansion, fixé par Nabla) |
 
 - Modifier un palier : tableau `sShopItemRequirements` dans `src/shop_criteria.c` (badges, et un flag optionnel). Il s'applique à toutes les boutiques normales.
 - Ajouter un article : l'ajouter à `Nabla_Pokemart_Items`, et au tableau s'il doit être débloqué plus tard.
+- Bonbons Exp. avancés (retour de la partie de test, 2026-11-18 : monter de niveau était trop long) : XS et S dès le début, M au 1ᵉʳ badge, L au 3ᵉ (au lieu de S au 2ᵉ, M au 4ᵉ, L au 6ᵉ). Avec les level caps, ils ne font pas dépasser le cap. Test : `test/nabla_pokemart.c`.
+- Plus de lettres (demande de l'utilisateur), sauf la Lettre Port : ni Lettre Orange, Bois ou Ombre dans les Boutiques, ni Lettre Vague et Méca au 2ᵉ étage du Centre Commercial de Nénucrique.
 
 **Autres vendeurs** :
 
