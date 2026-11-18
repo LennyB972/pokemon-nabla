@@ -434,6 +434,7 @@
 - Partie de test, retour de l'utilisateur (2026-11-18, Difficile avec level caps, à Mérouville) : monter de niveau est trop long et pas amusant. Pistes : relever les niveaux des sauvages (étape d'équilibrage), ou vendre des Bonbons Exp. dès la 1ʳᵉ arène. Écart actuel entre les herbes et le cap Difficile : avant le 1ᵉʳ badge 2-9 contre 17, 1ᵉʳ → 2ᵉ badge 5-11 contre 22, 2ᵉ → 3ᵉ badge 14-25 contre 29, 3ᵉ → 4ᵉ badge 16-21 contre 37, 5ᵉ → 6ᵉ badge 30-34 contre 45. En Difficile, seuls les dresseurs (et le partenaire) prennent +10 % : les sauvages et les Pokémon fixes gardent les niveaux du mode Normal, alors que les caps montent de 10 % (à décider à l'équilibrage).
 - Bonbons Exp. et lettres (demande de l'utilisateur, 2026-11-18, pendant sa partie) : les Boutiques vendent les Bonbons Exp. XS et S dès le début, M au 1ᵉʳ badge, L au 3ᵉ (`Nabla_Pokemart_Items`, `sShopItemRequirements`). Plus de lettres en vente, sauf la Lettre Port (la dame de Lavandia l'échange contre la Boîte Jetons : sans elle, plus de Casino) ; Lettres Vague et Méca retirées aussi du 2ᵉ étage du Centre Commercial de Nénucrique. Sauvegarde non touchée. Test : `test/nabla_pokemart.c`.
 - À noter pour l'équilibrage (demande de l'utilisateur, 2026-11-18) : réduire l'écart de niveau des sauvages : pour une même espèce sur une même route, au plus 2 niveaux entre le min et le max.
+- Sauvages en Difficile (demande de l'utilisateur, 2026-11-18, pendant sa partie) : +10 % comme les dresseurs (`GetDifficultyLevel` appliqué dans `ChooseWildMonLevel`, `src/wild_encounter.c` : herbes, Surf, pêche, Éclate-Roc, Barpau ; le Repousse compare avec ce niveau). Pas les tables du Safari (niveau par région), de la Pike et de la Pyramide, ni les Pokémon fixes. Sauvegarde non touchée. Test : `test/nabla_difficulty.c`. Le relèvement des sauvages et l'écart de 2 niveaux attendent la fin de sa partie (son choix).
 
 ## Bugs connus
 
@@ -500,6 +501,7 @@
 | 2026-11-04 | Pokémon caché d'un mirage : avec les Pokémon demandés dans l'équipe, on parle à l'autel, le Pokémon apparaît devant l'autel (cri), puis on lui parle pour le combattre, comme aux autres légendaires. Méga-Gemmes des légendaires au sol dans leur mirage, accessibles à pied |
 | 2026-11-16 | Pas de lot de rencontres d'après la Ligue. La Chambre Scellée n'est pas testée par l'utilisateur (il la verra pendant sa partie) ; l'assistant du labo est vérifié par des tests automatiques. |
 | 2026-11-16 | Surf et pêche : une fourchette de 3 niveaux par table et par moyen, calée sur les herbes de l'étape (Surf et Méga Canne au niveau des herbes, Super Canne −5, Canne faible). |
+| 2026-11-18 | Difficile : les sauvages prennent aussi +10 %. Rééquilibrage des sauvages (relèvement, au plus 2 niveaux d'écart par espèce et par route) après la partie de test. Bonbons Exp. vendus plus tôt (XS et S dès le début, M au 1ᵉʳ badge, L au 3ᵉ) ; plus de lettres en vente sauf la Lettre Port (Boîte Jetons). |
 
 ## Questions ouvertes
 

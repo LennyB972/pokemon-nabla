@@ -9,6 +9,7 @@ Fiche de travail de l'étape 4.2. C'est l'utilisateur qui compose les équipes ;
 - **Mode Difficile** : **même équipe** qu'en Normal, avec des niveaux plus hauts. Règle automatique pour **tous les dresseurs adverses** et les partenaires (Pierre Rochard) : niveau × 1,1 arrondi à l'entier inférieur, et au moins +1 (57 → 62, 9 → 10). Les sets pourront changer plus tard. Exception : un dresseur qui a sa propre équipe Difficile (`Difficulty: Hard` dans `trainers.party`) l'utilise telle quelle.
 - **Talents** : le meilleur en compétitif (sets de référence Smogon / Coupcritique), choisi par Claude quand il n'est pas précisé.
 - **Level caps** : niveau du Pokémon le plus fort de chaque Champion (`src/caps.c`) ; en Difficile, même règle des +10 %. Le cap courant s'affiche dans le menu START.
+- **Pokémon sauvages** : en Difficile, eux aussi +10 % (même règle, au moment de la rencontre : `ChooseWildMonLevel`, `src/wild_encounter.c`). Pas les tables du Safari ni de la Pike et de la Pyramide, ni les Pokémon fixes (cadeaux, légendaires).
 
 ## Comment écrire une équipe
 

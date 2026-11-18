@@ -2,6 +2,7 @@
 #include "battle_setup.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "caps.h"
 #include "event_data.h"
 #include "fieldmap.h"
 #include "fishing.h"
@@ -372,7 +373,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
-u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
+static u8 ChooseNormalWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
 {
     u8 min;
     u8 max;
@@ -419,6 +420,12 @@ u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, en
         else // Failsafe
             return wildPokemon[wildMonIndex].maxLevel + 1;
     }
+}
+
+// Pokémon Nabla: in Hard mode, wild Pokémon are higher, like the opponents' Pokémon (see GetDifficultyLevel)
+u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
+{
+    return GetDifficultyLevel(ChooseNormalWildMonLevel(wildPokemon, wildMonIndex, area));
 }
 
 // Pokémon Nabla: each Safari Zone area has one table per region after its own,

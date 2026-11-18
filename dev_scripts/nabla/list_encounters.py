@@ -85,6 +85,8 @@ def main():
              "- Emplacements d'une zone d'herbes : 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 % ; Surf et Éclate-Roc : "
              "60, 30, 5, 4, 1 % ; Canne : 70, 30 % ; Super Canne : 60, 20, 20 % ; Méga Canne : 40, 40, 15, 4, 1 %.",
              "- « Nuit » : table utilisée la nuit (sinon la même table jour et nuit).",
+             "- Niveaux du mode Normal. En Difficile, les sauvages sont 10 % plus hauts (×1,1 arrondi à l'inférieur, "
+             "au moins +1), comme les dresseurs.",
              "- Changements depuis Émeraude : espèces ajoutées (+) et retirées (−) dans chaque zone.",
              "- Le Safari a ses propres tables par région : `docs/nabla/safari.md`. Barpau : cases spéciales de la "
              "Route 119, niveaux 20-25.", ""]

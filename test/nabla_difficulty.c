@@ -5,6 +5,8 @@
 #include "difficulty.h"
 #include "event_data.h"
 #include "malloc.h"
+#include "pokemon.h"
+#include "wild_encounter.h"
 #include "test/test.h"
 #include "constants/trainers.h"
 
@@ -22,6 +24,20 @@ TEST("Nabla: Hard mode raises levels by 10%, rounded down, at least one level")
     EXPECT_EQ(GetDifficultyLevel(level), normal);
     SetCurrentDifficultyLevel(DIFFICULTY_HARD);
     EXPECT_EQ(GetDifficultyLevel(level), hard);
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+}
+
+TEST("Nabla: Hard mode raises the levels of wild Pokémon by 10%")
+{
+    u32 difficulty = DIFFICULTY_NORMAL, level = 0;
+    const struct WildPokemon wildPokemon[] = {{.minLevel = 20, .maxLevel = 20, .species = SPECIES_ZIGZAGOON}};
+
+    PARAMETRIZE { difficulty = DIFFICULTY_NORMAL; level = 20; }
+    PARAMETRIZE { difficulty = DIFFICULTY_HARD; level = 22; }
+
+    ZeroPlayerPartyMons();
+    SetCurrentDifficultyLevel(difficulty);
+    EXPECT_EQ(ChooseWildMonLevel(wildPokemon, 0, WILD_AREA_LAND), level);
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
 

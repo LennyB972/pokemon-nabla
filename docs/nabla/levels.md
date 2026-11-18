@@ -2,6 +2,8 @@
 
 Généré par `python3 dev_scripts/nabla/scale_levels.py` : ne pas modifier à la main. Pour rééquilibrer une étape de l'aventure, changer son facteur (`PARTS`) ou la place d'une map (`MAP_PARTS`) dans le script et le relancer : il repart toujours des niveaux d'origine.
 
+Niveaux du mode Normal. En Difficile, dresseurs et sauvages sont 10 % plus hauts au moment du combat (×1,1 arrondi à l'inférieur, au moins +1 : `GetDifficultyLevel`, `src/caps.c`).
+
 ## Facteurs
 
 Un niveau est multiplié par le facteur de l'étape où on le rencontre (arrondi). Facteur = level cap Nabla ÷ niveau du Pokémon le plus fort du Champion d'origine.
